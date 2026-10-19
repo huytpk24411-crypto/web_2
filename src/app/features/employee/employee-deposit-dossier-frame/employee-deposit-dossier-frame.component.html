@@ -1,0 +1,153 @@
+<div class="breadcrumb">Nghiệp vụ báo cọc › Hồ sơ đặt cọc phòng</div>
+<div class="page-title">
+  <div>
+    <h1>PHIẾU BÁO GIỮ CHỖ PHÒNG</h1>
+    <p>Thông tin khách hàng, căn phòng và phương thức thanh toán.</p>
+  </div>
+  <a class="btn soft" routerLink="/employee/deals/deal1">Lịch sử giao dịch</a>
+</div>
+<form [formGroup]="form" (ngSubmit)="submit()" class="split">
+  <div>
+    <section class="panel">
+      <h3 class="form-section-heading"><span>1</span> Thông tin khách giữ chỗ phòng</h3>
+      <label class="field"
+        ><span>Nguồn hồ sơ</span
+        ><select formControlName="bookingId" (change)="selectBooking()">
+          <option value="">Cọc trực tiếp (không có booking)</option>
+          <option *ngFor="let b of deposits.eligibleBookings()" [value]="b.id">
+            {{ b.id }} • {{ b.name }} • {{ b.amount | number }} đ
+          </option>
+        </select></label
+      >
+      <div class="grid two">
+        <label class="field"
+          ><span>Họ và tên khách thuê *</span
+          ><input formControlName="customerName" placeholder="NGUYỄN TRẦN ANH TÚ" /><app-form-error
+            [control]="form.controls.customerName" /></label
+        ><label class="field"
+          ><span>Số điện thoại liên hệ *</span
+          ><input formControlName="phone" type="tel" placeholder="0901234567" /><app-form-error
+            [control]="form.controls.phone"
+        /></label>
+      </div>
+      <label class="field"
+        ><span>Địa chỉ liên hệ</span
+        ><input formControlName="address" placeholder="Địa chỉ khách hàng cung cấp"
+      /></label>
+      <div class="notice">Hồ sơ demo không yêu cầu tải giấy tờ định danh thật.</div>
+    </section>
+    <section class="panel">
+      <h3 class="form-section-heading">
+        <span>2</span> Chi tiết vị trí căn hộ &amp; phòng giữ chỗ
+      </h3>
+      <label class="field"
+        ><span>Phòng / Căn hộ *</span
+        ><select formControlName="roomId">
+          <option *ngFor="let r of rooms.rooms()" [value]="r.id">
+            {{ r.code }} – {{ r.name }}
+          </option></select
+        ><app-form-error [control]="form.controls.roomId"
+      /></label>
+      <div class="inline-room" *ngIf="room as r">
+        <img [src]="r.images[0]" [alt]="r.name" />
+        <div>
+          <strong>{{ r.name }}</strong>
+          <p class="muted small" style="margin: 4px 0">{{ r.address }}</p>
+          <app-status-badge [status]="r.status" />
+        </div>
+      </div>
+    </section>
+    <section class="panel">
+      <h3 class="form-section-heading"><span>3</span> Giá thuê &amp; định mức tiền giữ phòng</h3>
+      <div class="grid three">
+        <div class="field">
+          <span>Tiền thuê / tháng</span
+          ><strong class="control">{{ room?.price | number }} đ</strong>
+        </div>
+        <label class="field"
+          ><span>Tổng tiền cọc *</span
+          ><input type="number" formControlName="total" min="1" /><app-form-error
+            [control]="form.controls.total"
+        /></label>
+        <div class="field">
+          <span>Khấu trừ giữ chỗ</span
+          ><strong class="control green">{{ credit | number }} đ</strong>
+        </div>
+      </div>
+      <div class="grid two">
+        <label class="field"
+          ><span>Thời hạn hợp đồng (tháng) *</span
+          ><input type="number" formControlName="duration" min="1" /><app-form-error
+            [control]="form.controls.duration" /></label
+        ><label class="field"
+          ><span>Ngày bắt đầu thuê *</span
+          ><input type="date" formControlName="startDate" /><app-form-error
+            [control]="form.controls.startDate"
+        /></label>
+      </div>
+      <div class="notice warning">
+        Tiền giữ chỗ đã xác nhận chỉ được khấu trừ một lần. Phải thu = Tổng cọc − Giữ chỗ đã ghi
+        nhận.
+      </div>
+    </section>
+    <section class="panel">
+      <h3 class="form-section-heading"><span>4</span> Phương thức thanh toán</h3>
+      <div class="grid two">
+        <label class="payment-method"
+          ><input type="radio" value="QR" formControlName="method" /><span
+            ><strong>Chuyển khoản ngân hàng (VietQR)</strong
+            ><small>Xác nhận giao dịch mô phỏng</small></span
+          ></label
+        ><label class="payment-method"
+          ><input type="radio" value="CASH" formControlName="method" /><span
+            ><strong>Nhận tiền mặt trực tiếp</strong><small>Xác nhận tiền mặt mô phỏng</small></span
+          ></label
+        >
+      </div>
+      <label class="check"
+        ><input type="checkbox" formControlName="terms" />Tôi đã kiểm tra thông tin và hiểu đây là
+        hồ sơ mô phỏng.</label
+      ><app-form-error [control]="form.controls.terms" />
+    </section>
+  </div>
+  <aside class="sticky">
+    <section class="panel">
+      <span class="eyebrow">BẢN TÓM TẮT HỒ SƠ</span>
+      <h2 style="margin: 10px 0 20px">Tóm tắt Phiếu cọc</h2>
+      <div class="detail-list">
+        <div>
+          <span>Phòng</span><strong>{{ room?.code }}</strong>
+        </div>
+        <div>
+          <span>Khách hàng</span
+          ><strong>{{ form.controls.customerName.value || 'Chưa nhập' }}</strong>
+        </div>
+        <div>
+          <span>Tổng cọc</span><strong>{{ form.controls.total.value | number }} đ</strong>
+        </div>
+        <div>
+          <span>Khấu trừ giữ chỗ</span><strong class="green">−{{ credit | number }} đ</strong>
+        </div>
+      </div>
+      <div class="soft-box" style="margin: 22px 0">
+        <small>SỐ TIỀN CÒN PHẢI THU</small>
+        <h1 class="blue" style="margin-top: 8px">{{ due | number }} đ</h1>
+        <span class="badge"
+          >{{ form.controls.method.value === 'QR' ? 'VietQR' : 'Tiền mặt' }} • Demo</span
+        >
+      </div>
+      <p class="error" *ngIf="error" role="alert">{{ error }}</p>
+      <button class="btn primary full" type="submit">
+        <app-icon name="plus" [size]="16" /> Tạo hồ sơ &amp; đến xác nhận
+      </button>
+      <p class="tip">Chưa có khoản tiền nào được xác nhận ở bước này.</p>
+    </section>
+    <div class="notice">
+      <strong>Quy trình lập phiếu iHOUZZ Uni</strong>
+      <p style="margin-top: 8px">
+        Lập hồ sơ → xác nhận mô phỏng → in bản xem trước chứng từ. Phòng chỉ được cập nhật sau xác
+        nhận.
+      </p>
+    </div>
+  </aside>
+</form>

@@ -1,0 +1,37 @@
+﻿.room-toast {
+  top: 80px;
+  bottom: auto;
+  align-items: flex-start;
+  width: min(420px, calc(100vw - 28px));
+  max-width: calc(100vw - 28px);
+  border-radius: 16px;
+  border-left: 5px solid #58b9ff;
+  padding: 16px;
+  right: 14px;
+}
+.room-toast strong {
+  font-size: 13px;
+}
+.room-toast p {
+  font-size: 12px;
+  margin: 5px 0;
+  color: #827171;
+  overflow-wrap: anywhere;
+}
+.room-toast a {
+  font-size: 11px;
+  color: #006b9b;
+}
+.success-circle {
+  border-radius: 12px;
+  background: #e5efff;
+  color: #006b9b;
+  padding: 8px;
+}
+.room-toast .icon-btn {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  margin-left: auto;
+  flex-shrink: 0;
+}

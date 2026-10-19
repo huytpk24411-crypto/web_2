@@ -1,0 +1,357 @@
+.payroll-page .finance-heading {
+  gap: 10px;
+}
+.finance-heading > div:first-child {
+  flex: 1;
+  min-width: 280px;
+}
+.payroll-page .finance-heading h1 {
+  font-size: 25px;
+}
+.payroll-page .finance-heading > .finance-actions {
+  max-width: 59%;
+}
+.period-select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border-radius: 12px;
+  padding: 0 10px;
+  white-space: nowrap;
+  color: #008175;
+}
+.period-select select {
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  padding: 11px 0;
+  color: #222c31;
+  font-weight: 600;
+}
+.payroll-page .finance-stats {
+  gap: 15px;
+}
+.payroll-page .finance-stat .stat-value {
+  font-size: 25px;
+}
+.shift-total {
+  float: right;
+  color: #262a30;
+}
+.payroll-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(270px, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+.team-performance .finance-card-head {
+  align-items: flex-start;
+  gap: 8px;
+}
+.team-performance h2 {
+  font-size: 17px;
+}
+.team-performance .finance-subtitle {
+  margin-bottom: 0;
+}
+.team-keys {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+  font-size: 9px;
+  color: #59666a;
+  padding-top: 6px;
+}
+.team-keys .finance-dot {
+  width: 8px;
+  height: 8px;
+  margin-top: 0;
+}
+.team-block {
+  background: #f2f3f5;
+  border-radius: 13px;
+  padding: 18px 16px;
+  margin: 16px 0;
+}
+.team-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.team-number {
+  background: #e0e3e6;
+  border-radius: 5px;
+  padding: 4px 8px;
+  font-size: 10px;
+  line-height: 1.3;
+}
+.team-top > b {
+  font-size: 13px;
+  line-height: 1.5;
+  flex: 1;
+}
+.team-lead {
+  font-size: 11px;
+  color: #647174;
+  max-width: 125px;
+}
+.team-amount {
+  margin-left: auto;
+  font-size: 17px;
+  line-height: 1.45;
+  white-space: nowrap;
+  color: #465457;
+}
+.team-amount b {
+  color: #586177;
+}
+.team-progress {
+  height: 12px;
+  border-radius: 10px;
+  background: #dfe2e5;
+  margin: 12px 0 8px;
+  overflow: hidden;
+}
+.team-progress > span {
+  display: block;
+  height: 100%;
+  background: #2861f6;
+  border-radius: 10px;
+}
+.second-team .team-progress > span {
+  background: #586177;
+}
+.team-foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #526164;
+  gap: 8px;
+}
+.team-summary {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  font-size: 11px;
+  flex-wrap: wrap;
+}
+.team-summary .finance-btn {
+  font-size: 11px;
+}
+.payout-card {
+  display: flex;
+  flex-direction: column;
+}
+.payout-card .finance-donut {
+  width: 160px;
+  height: 160px;
+  margin: 2px auto 16px;
+}
+.payout-card .finance-card-head {
+  margin-bottom: 15px;
+}
+.payout-card .finance-legend {
+  font-size: 11px;
+}
+.bank-button {
+  width: 100%;
+  margin-top: auto;
+}
+.payroll-table-card {
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.payroll-table-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 16px 16px;
+  gap: 16px;
+}
+.payroll-table-heading h2 {
+  font-size: 19px;
+  margin-bottom: 6px;
+}
+.payroll-table-heading .finance-badge {
+  background: #e5e7eb;
+  color: #313b43;
+  font-size: 10px;
+}
+.table-tools {
+  width: 270px;
+  flex-shrink: 0;
+}
+.payroll-tabs {
+  display: flex;
+  background: #f2f3f5;
+  padding: 4px;
+  border-radius: 13px;
+  gap: 3px;
+  font-size: 10px;
+}
+.payroll-tabs button {
+  border: 0;
+  background: transparent;
+  border-radius: 10px;
+  padding: 3px 7px;
+  white-space: nowrap;
+  color: #344348;
+}
+.payroll-tabs button.active {
+  background: white;
+  color: #202527;
+  font-weight: 700;
+}
+.payroll-search {
+  display: flex;
+  align-items: center;
+  background: #f2f3f5;
+  padding: 6px 10px;
+  border-radius: 10px;
+  gap: 8px;
+  margin-top: 7px;
+}
+.payroll-search input {
+  border: 0;
+  min-width: 0;
+  width: 100%;
+  background: transparent;
+  padding: 2px;
+  font-size: 12px;
+}
+.payroll-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  white-space: nowrap;
+  table-layout: auto;
+}
+.payroll-table th {
+  padding: 11px 12px;
+  background: #f2f3f5;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  color: #526164;
+  text-align: left;
+  border: 0;
+}
+.payroll-table th:nth-child(n + 3),
+.payroll-table td:nth-child(n + 3) {
+  text-align: right;
+}
+.payroll-table td {
+  padding: 14px 12px;
+  border: 0;
+  background: white;
+}
+.payroll-table tbody tr:hover td {
+  background: #fafbfe;
+}
+.payroll-table small {
+  display: block;
+  font-size: 11px;
+  color: #637174;
+}
+.payroll-table .finance-badge {
+  font-size: 10px;
+  padding: 1px 8px;
+  white-space: nowrap;
+}
+.employee-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: #252b31;
+  font-size: 13px;
+  text-align: left;
+}
+.employee-link:hover b {
+  color: #2861f6;
+}
+.employee-avatar {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: #e5e7eb;
+  border-radius: 50%;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.avatar-KA {
+  background: #00766c;
+  color: white;
+}
+.avatar-QD {
+  background: #586177;
+  color: white;
+}
+.avatar-TH {
+  background: #67d6cc;
+}
+.avatar-VK {
+  background: #c1cae4;
+}
+.payroll-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f2f3f5;
+  font-size: 11px;
+  color: #556368;
+  gap: 10px;
+}
+.footer-separator {
+  margin: 0 12px;
+}
+.payroll-pagination b {
+  color: #292e33;
+}
+.payroll-pagination .finance-actions {
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+.payroll-pagination button {
+  border: 0;
+  background: none;
+  min-width: 30px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+.payroll-pagination button.active {
+  background: #2861f6;
+  color: white;
+}
+.payroll-policies {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.payroll-policies article {
+  display: flex;
+  gap: 9px;
+  padding: 17px;
+}
+.payroll-policies h3 {
+  font-size: 15px;
+  margin: 0 0 4px;
+}
+.payroll-policies p {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #637174;
+  margin: 0;
+}
+.empty-payroll {
+  text-align: center !important;
+  padding: 35px !important;
+}

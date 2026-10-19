@@ -1,0 +1,6 @@
+<div class="toast" *ngIf="message" role="status">
+  <app-icon name="check" /><span>{{ message }}</span
+  ><button class="icon-btn" (click)="closed.emit()" aria-label="Đóng thông báo">
+    <app-icon name="close" [size]="14" />
+  </button>
+</div>

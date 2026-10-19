@@ -1,0 +1,323 @@
+<div class="dashboard">
+  <div class="dashboard-heading">
+    <div>
+      <div class="title-line">
+        <h1>Bảng Điều Hành Trung Tâm</h1>
+        <span class="status-pill green-pill">● Trực tuyến</span>
+      </div>
+      <p>
+        Cập nhật lúc {{ updatedAt }} · Toàn hệ thống Khu đô thị ĐHQG TP.HCM &amp; KTX Hoàng Diệu
+      </p>
+    </div>
+    <div class="dashboard-actions">
+      <label class="month-picker"
+        ><app-icon name="calendar" [size]="17" /><span
+          ><small>THÁNG</small
+          ><select
+            aria-label="Chọn tháng báo cáo"
+            [(ngModel)]="month"
+            (ngModelChange)="changeMonth()"
+          >
+            <option *ngFor="let item of periods" [value]="item.id">{{ item.label }}</option>
+          </select></span
+        ></label
+      >
+      <button
+        class="btn"
+        (click)="
+          dialog = {
+            type: 'export',
+            title: 'Xuất báo cáo mẫu',
+            text:
+              'Chọn định dạng cho báo cáo tháng ' +
+              period.label +
+              '. Toàn bộ số liệu là dữ liệu minh họa.',
+          }
+        "
+      >
+        <app-icon name="download" [size]="15" />Xuất báo cáo
+      </button>
+      <button
+        class="btn primary"
+        (click)="requestApproval()"
+        [disabled]="!visibleTransactions.length"
+      >
+        <app-icon name="flame" [size]="15" />Duyệt nhanh ({{ visibleTransactions.length }})
+      </button>
+    </div>
+  </div>
+  <div class="demo-caption">
+    <app-icon name="info" [size]="14" />Bản minh họa · Số liệu tài chính, GPS và trạng thái phòng là
+    dữ liệu mẫu.
+  </div>
+  <section class="kpi-grid" aria-label="Chỉ số tổng quan">
+    <article class="kpi">
+      <div class="kpi-label">
+        Tổng Doanh thu tháng<span class="kpi-icon blue-tone"
+          ><app-icon name="wallet" [size]="17"
+        /></span>
+      </div>
+      <strong class="revenue"
+        >{{ period.revenue | number: '1.0-0' }}<span class="currency"> đ</span></strong
+      >
+      <div class="kpi-foot">
+        <b class="positive">↗ +{{ period.growth }}%</b><span>so với tháng trước</span>
+      </div>
+    </article>
+    <article class="kpi">
+      <div class="kpi-label">
+        Cọc mới &amp; Chờ duyệt<span class="kpi-icon amber-tone"
+          ><app-icon name="file" [size]="17"
+        /></span>
+      </div>
+      <strong>{{ period.depositCount }} đơn cọc</strong>
+      <div class="kpi-foot">
+        <b class="warning-text">● {{ pendingCount }} giao dịch chờ duyệt</b
+        ><span>Hạn chót 24h</span>
+      </div>
+    </article>
+    <article class="kpi">
+      <div class="kpi-label">
+        Tỷ lệ lấp đầy phòng<span class="kpi-icon green-tone"
+          ><app-icon name="building" [size]="17"
+        /></span>
+      </div>
+      <strong class="positive">{{ period.occupancy }}%</strong>
+      <div class="kpi-foot">
+        <span>Trống {{ period.vacant }} phòng / giường</span><span>Tổng 190 đơn vị</span>
+      </div>
+    </article>
+    <article class="kpi">
+      <div class="kpi-label">
+        Nhân sự trong ca trực<span class="kpi-icon violet-tone"
+          ><app-icon name="users" [size]="17"
+        /></span>
+      </div>
+      <strong>12 / 16</strong>
+      <div class="kpi-foot">
+        <b class="negative">◷ 2 nhân viên trễ</b><span>Tự động phạt<br />-50.000 đ</span>
+      </div>
+    </article>
+  </section>
+  <div class="operations-grid">
+    <section class="dashboard-panel approvals" id="approvals">
+      <div class="panel-heading">
+        <div>
+          <h2>
+            Hàng chờ Phê duyệt Giao dịch &amp; Cọc
+            <span class="status-pill amber-pill">{{ pendingCount }} chờ duyệt</span>
+          </h2>
+          <p>
+            Xác thực ủy nhiệm chi (UNC) ngân hàng, kích hoạt khóa phòng hoặc lập biên bản tịch thu
+            cọc.
+          </p>
+        </div>
+        <label class="queue-filter"
+          ><span>Lọc nhanh:</span
+          ><select aria-label="Lọc giao dịch" [(ngModel)]="filter">
+            <option value="all">Tất cả giao dịch</option>
+            <option value="deposit">Cọc ngân hàng</option>
+            <option value="forfeiture">Tịch thu cọc</option>
+            <option value="contract">Hợp đồng</option>
+          </select></label
+        >
+      </div>
+      <article
+        class="transaction"
+        *ngFor="let item of visibleTransactions"
+        [class.forfeiture]="item.kind === 'forfeiture'"
+      >
+        <span class="transaction-icon" [class.contract-icon]="item.kind === 'contract'"
+          ><app-icon
+            *ngIf="item.kind === 'forfeiture'; else letterIcon"
+            name="shield"
+            [size]="20"
+          /><ng-template #letterIcon>{{ item.icon }}</ng-template></span
+        >
+        <div class="transaction-content">
+          <div class="transaction-title">
+            <h3>{{ item.id }}</h3>
+            <span class="transaction-badge" [class.contract-badge]="item.kind === 'contract'">{{
+              item.badge
+            }}</span>
+          </div>
+          <p class="transaction-room">
+            Phòng: <b>{{ item.room }}</b>
+          </p>
+          <p>
+            NVKD: <span class="staff-name">{{ item.staff }}</span> · Khách thuê:
+            <b>{{ item.customer }}</b>
+          </p>
+          <div class="transaction-meta">
+            <strong>{{ item.amountLabel }}: {{ item.amount | number: '1.0-0' }} đ</strong
+            ><span>{{ item.submitted }}</span
+            ><button
+              class="text-button"
+              *ngIf="item.kind === 'deposit'"
+              (click)="
+                showInfo(
+                  'Ủy nhiệm chi mẫu',
+                  item.id +
+                    ' · Chứng từ minh họa đã được tiếp nhận. Không có chứng từ ngân hàng hay giao dịch tiền thật.'
+                )
+              "
+            >
+              <app-icon name="image" [size]="13" />Xem ảnh UNC
+            </button>
+          </div>
+          <div class="transaction-actions">
+            <button
+              class="btn primary"
+              [class.forfeit-button]="item.kind === 'forfeiture'"
+              (click)="requestApproval(item)"
+            >
+              <app-icon [name]="item.kind === 'contract' ? 'edit' : 'check'" [size]="15" />{{
+                item.action
+              }}</button
+            ><button class="btn" (click)="secondaryAction(item)">{{ item.secondary }}</button>
+          </div>
+        </div>
+      </article>
+      <div class="queue-empty" *ngIf="!visibleTransactions.length">
+        <app-icon name="check" [size]="28" />
+        <h3>
+          {{ pendingCount ? 'Không có giao dịch trong bộ lọc này' : 'Đã xử lý hết hàng chờ mẫu' }}
+        </h3>
+        <p>Đổi bộ lọc hoặc tải lại trang để xem lại dữ liệu minh họa.</p>
+        <button class="btn" *ngIf="filter !== 'all'" (click)="filter = 'all'">
+          Xem tất cả giao dịch
+        </button>
+      </div>
+    </section>
+    <app-admin-shift-monitor
+      [shifts]="shifts"
+      (inspect)="
+        showInfo(
+          'Bảng Kỷ luật & Khiếu nại',
+          'Mẫu: Trần Quốc Dũng đến trễ 24 phút, mức phạt dự kiến 50.000 đ. Có 1 khiếu nại đang chờ xem xét. GPS và khoản phạt không phải dữ liệu thực tế.'
+        )
+      "
+    />
+  </div>
+  <section class="dashboard-panel performance-panel" id="performance">
+    <div class="panel-heading">
+      <div>
+        <h2>Hiệu suất Doanh số &amp; Hoa hồng theo Nhóm</h2>
+        <p>Phân bổ chỉ tiêu doanh thu thực nhận tháng {{ period.label }}</p>
+      </div>
+      <div class="chart-legend">
+        <span>● Nhóm Khu B ĐHQG</span><span>● Nhóm KTX Hoàng Diệu</span>
+      </div>
+    </div>
+    <div class="team-row">
+      <div class="team-label">
+        <span
+          ><b>Nhóm 01: Khu B &amp; Làng Đại Học</b>
+          <span class="muted">(Trưởng nhóm: Tăng Khả Ái)</span></span
+        ><strong
+          >{{ period.team1 | number }} đ / {{ teamTarget1 | number }} đ ({{
+            (period.team1 / teamTarget1) * 100 | number: '1.1-1'
+          }}%)</strong
+        >
+      </div>
+      <div
+        class="team-progress"
+        role="progressbar"
+        aria-label="Doanh số nhóm Khu B"
+        [attr.aria-valuenow]="period.team1"
+        aria-valuemin="0"
+        [attr.aria-valuemax]="teamTarget1"
+      >
+        <span [style.width.%]="(period.team1 / teamTarget1) * 100"></span>
+      </div>
+    </div>
+    <div class="team-row second-team">
+      <div class="team-label">
+        <span
+          ><b>Nhóm 02: KTX Hoàng Diệu &amp; Kha Vạn Cân</b>
+          <span class="muted">(Trưởng nhóm: Trần Quốc Dũng)</span></span
+        ><strong
+          >{{ period.team2 | number }} đ / {{ teamTarget2 | number }} đ ({{
+            (period.team2 / teamTarget2) * 100 | number: '1.1-1'
+          }}%)</strong
+        >
+      </div>
+      <div
+        class="team-progress"
+        role="progressbar"
+        aria-label="Doanh số nhóm KTX Hoàng Diệu"
+        [attr.aria-valuenow]="period.team2"
+        aria-valuemin="0"
+        [attr.aria-valuemax]="teamTarget2"
+      >
+        <span [style.width.%]="(period.team2 / teamTarget2) * 100"></span>
+      </div>
+    </div>
+    <div class="commission-footer">
+      <span
+        >Tổng hoa hồng dự kiến giải ngân kỳ này: <b>{{ period.revenue * 0.1 | number }} đ</b></span
+      ><button
+        class="text-button"
+        (click)="
+          showInfo(
+            'Bảng tính hoa hồng mẫu',
+            'Mức hoa hồng minh họa bằng 10% doanh thu của tháng đang chọn. Chưa áp dụng chính sách hay tính lương thực tế.'
+          )
+        "
+      >
+        Xem bảng tính hoa hồng chi tiết <app-icon name="arrow" [size]="14" />
+      </button>
+    </div>
+  </section>
+  <section class="dashboard-panel inventory-panel">
+    <div class="panel-heading">
+      <h2>
+        <app-icon name="building" [size]="16" />Trạng thái Giỏ hàng Phòng &amp; Tòa nhà iHOUZZ Uni
+      </h2>
+      <a class="text-button" routerLink="/admin/rooms"
+        >Đi đến Sơ đồ Mặt bằng &amp; Giỏ hàng Trống <app-icon name="arrow" [size]="14"
+      /></a>
+    </div>
+    <div class="inventory-grid">
+      <div>
+        <strong>{{ period.occupied }} / 190</strong><span>Đang có khách thuê</span>
+      </div>
+      <div>
+        <strong>{{ period.available }}</strong
+        ><span>Phòng trống sẵn sàng đón khách</span>
+      </div>
+      <div><strong>4</strong><span>Đang giữ cọc tạm thời (Lock 24h)</span></div>
+      <div><strong>2</strong><span>Bảo trì / Sửa chữa bàn giao</span></div>
+    </div>
+  </section>
+</div>
+<div class="modal-backdrop" *ngIf="dialog as current" (click)="dialog = null">
+  <section
+    class="modal dashboard-dialog"
+    appDialogFocus
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="dashboard-dialog-title"
+    (keydown.escape)="dialog = null"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="dialog-heading">
+      <h2 id="dashboard-dialog-title">{{ current.title }}</h2>
+      <button class="icon-btn" (click)="dialog = null" aria-label="Đóng hộp thoại">
+        <app-icon name="close" />
+      </button>
+    </div>
+    <p>{{ current.text }}</p>
+    <div class="dialog-actions">
+      <button class="btn" (click)="dialog = null">
+        {{ current.type === 'info' ? 'Đã hiểu' : 'Hủy' }}</button
+      ><button class="btn primary" *ngIf="current.type === 'approve'" (click)="confirmApproval()">
+        Xác nhận duyệt mẫu</button
+      ><ng-container *ngIf="current.type === 'export'"
+        ><button class="btn primary" (click)="exportReport()">Tải CSV / Excel</button
+        ><button class="btn" (click)="printReport()">In / Lưu PDF</button></ng-container
+      >
+    </div>
+  </section>
+</div>
+<app-toast [message]="toast" (closed)="toast = ''" />

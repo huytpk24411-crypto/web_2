@@ -1,0 +1,63 @@
+﻿.completion-modal {
+  background: radial-gradient(ellipse at top right, #e2f3ff, white 45%);
+}
+.success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #006b9b;
+  color: white;
+  border: 8px solid #e4f2fc;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 9px #006b9b22;
+}
+.completion-modal h2 {
+  font-size: 22px;
+  margin: 13px 0 8px;
+}
+.completion-modal > p {
+  color: #816a69;
+  font-size: 13px;
+}
+.completion-modal .inline-room {
+  text-align: left;
+  margin-top: 22px;
+}
+.completion-modal .inline-room small {
+  display: block;
+  font-size: 11px;
+  color: #816a69;
+}
+.completion-price {
+  display: block;
+  color: #bd1630;
+  font-size: 20px;
+  margin-top: 4px;
+}
+.completion-price small {
+  display: inline !important;
+  font-weight: 400;
+}
+.completion-next {
+  background: #ebebff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 22px;
+  text-align: left;
+}
+.completion-next h4 {
+  font-size: 13px;
+  font-weight: 500;
+}
+.completion-next .btn:not(.primary) {
+  background: white;
+}
+.completion-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}

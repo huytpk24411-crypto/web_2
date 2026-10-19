@@ -1,0 +1,248 @@
+.hot-heading {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #df4039;
+}
+.hot-heading app-icon {
+  color: #ef443d;
+}
+.section {
+  padding-top: 35px;
+  padding-bottom: 16px;
+}
+.section-heading p {
+  margin: 4px 0 0;
+}
+.partners {
+  text-align: center;
+  padding: 65px 0 60px;
+}
+.partners h2 {
+  font-size: 24px;
+}
+.partners p {
+  font-size: 12px;
+  color: #9aa2ad;
+}
+.partners > div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 55px;
+  color: #a1a6ae;
+  font-size: 15px;
+  margin-top: 40px;
+  letter-spacing: 1px;
+}
+@media (max-width: 600px) {
+  .partners {
+    padding: 40px 0;
+  }
+  .partners h2 {
+    font-size: 20px;
+  }
+  .partners > div {
+    gap: 25px;
+    font-size: 12px;
+  }
+}
+.discovery {
+  padding-top: 60px;
+}
+.school-cards,
+.building-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+.school-card {
+  border: 1px solid #dfecf5;
+  border-radius: 16px;
+  background: #eff8f6;
+  overflow: hidden;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+}
+.school-card:nth-child(2) {
+  background: #eef5ff;
+}
+.school-card:nth-child(3) {
+  background: #fff3ee;
+}
+.school-card:nth-child(4) {
+  background: #f4f1ff;
+}
+.school-art {
+  height: 125px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  background: radial-gradient(circle, #fff 50%, transparent 51%);
+}
+.school-art img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+.school-card h3 {
+  font-size: 15px;
+  margin-bottom: 7px;
+  min-height: 46px;
+}
+.school-card p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.school-card .link {
+  font-size: 12px;
+  margin-top: auto;
+}
+.steps {
+  padding-top: 58px;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 28px;
+}
+.steps-grid article {
+  display: flex;
+  gap: 18px;
+}
+.step-number {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e7efff;
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  font-weight: 700;
+}
+.steps-grid h3 {
+  margin-bottom: 8px;
+}
+.steps-grid p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.steps-grid a {
+  font-size: 12px;
+}
+.home-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  background: linear-gradient(110deg, #e3f1ff, #edf8ff 60%, #d9edff);
+  border: 1px solid #dceafa;
+  border-radius: 18px;
+  padding: 36px;
+  margin: 40px 0 14px;
+}
+.home-cta p {
+  margin: 0;
+  color: var(--muted);
+}
+.home-cta .btn {
+  flex-shrink: 0;
+}
+.building-cards a {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 22px;
+}
+.building-cards app-icon {
+  color: var(--primary);
+}
+.building-cards h3 {
+  margin: 12px 0 8px;
+}
+.building-cards p,
+.building-cards span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.faq {
+  max-width: 860px;
+  margin: 20px auto 50px;
+}
+.faq > h2 {
+  margin-bottom: 20px;
+}
+.faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.faq details p {
+  padding: 15px 0 0;
+  color: var(--muted);
+  margin: 0;
+}
+.room-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 1000px) {
+  .school-cards,
+  .building-cards,
+  .room-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .steps-grid {
+    gap: 18px;
+  }
+  .steps-grid article {
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  .room-grid {
+    grid-template-columns: 1fr;
+  }
+  .school-cards,
+  .building-cards {
+    gap: 12px;
+  }
+  .school-card {
+    padding: 14px;
+  }
+  .school-card h3 {
+    font-size: 13px;
+  }
+  .school-art {
+    height: 100px;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .steps-grid article {
+    flex-direction: row;
+  }
+  .home-cta {
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .discovery,
+  .steps {
+    padding-top: 32px;
+  }
+}
+.school-art img[src*='hcmussh'],
+.school-art img[src*='ufm'] {
+  background: #1b365e;
+  border-radius: 50%;
+  padding: 8px;
+}

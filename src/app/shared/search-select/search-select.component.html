@@ -1,0 +1,32 @@
+<span class="field-label">{{ label }}</span
+><button
+  type="button"
+  class="select-trigger"
+  [attr.aria-label]="label + ': ' + selected"
+  [attr.aria-expanded]="open"
+  (click)="open = !open"
+>
+  <span class="selected-label">{{ selected }}</span>
+  <app-icon name="chevron" [size]="13" />
+</button>
+<div class="select-menu" *ngIf="open">
+  <input
+    [attr.aria-label]="'Tìm ' + label.toLowerCase()"
+    [ngModel]="query"
+    (ngModelChange)="query = $event"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="Gõ để tìm…"
+  />
+  <div class="options">
+    <button type="button" (click)="select('')">{{ placeholder }}</button
+    ><button
+      type="button"
+      *ngFor="let option of matches"
+      (click)="select(option.value)"
+      [class.active]="value === option.value"
+    >
+      {{ option.label }} <span *ngIf="value === option.value">✓</span>
+    </button>
+    <p *ngIf="!matches.length">Không có lựa chọn phù hợp.</p>
+  </div>
+</div>

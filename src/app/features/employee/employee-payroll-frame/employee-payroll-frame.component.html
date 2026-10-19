@@ -1,0 +1,131 @@
+<div class="page-title">
+  <div>
+    <h1>Xin chào, {{ auth.account()?.name }}.</h1>
+    <p>Cùng nhìn lại những nỗ lực và thành quả của bạn trong tháng.</p>
+  </div>
+  <div class="row">
+    <label
+      ><span class="sr-only">Kỳ lương</span
+      ><select class="control" [(ngModel)]="period">
+        <option value="2026-10">Kỳ lương 10/2026</option>
+        <option value="2026-09">Kỳ lương 09/2026</option>
+      </select></label
+    ><button class="btn" (click)="print()">
+      <app-icon name="download" [size]="15" /> In bảng lương
+    </button>
+  </div>
+</div>
+<div class="grid three payroll-stats">
+  <div class="panel">
+    <span class="muted small">TỔNG THỰC NHẬN THÁNG</span>
+    <h1 class="blue">{{ payroll.net(slip) | number }} <small>đ</small></h1>
+    <span class="badge green">Kỳ lương mẫu • Chưa chi trả</span>
+  </div>
+  <div class="panel">
+    <span class="muted small">HOA HỒNG MÔI GIỚI</span>
+    <h1>{{ payroll.commission(slip) | number }} <small>đ</small></h1>
+    <p class="tip">{{ slip.commissionRate * 100 }}% doanh thu được phân bổ</p>
+  </div>
+  <div class="panel">
+    <span class="muted small">KHẤU TRỪ CHUYÊN CẦN / PHẠT ĐI TRỄ</span>
+    <h1 class="red">-{{ slip.deduction | number }} <small>đ</small></h1>
+    <p class="tip">Dữ liệu chấm công minh họa</p>
+  </div>
+</div>
+<div class="split">
+  <div>
+    <section class="panel">
+      <h3><app-icon name="wallet" /> Chi tiết các khoản thu nhập cơ bản</h3>
+      <div class="pay-line">
+        <div><strong>Lương căn bản theo ca trực</strong><small>Chính sách lương mẫu</small></div>
+        <strong>{{ slip.base | number }} đ</strong>
+      </div>
+      <div class="pay-line">
+        <div>
+          <strong>Phụ cấp trách nhiệm &amp; Data hotline</strong
+          ><small>Hỗ trợ công việc tư vấn phòng</small>
+        </div>
+        <strong>{{ slip.allowance | number }} đ</strong>
+      </div>
+      <div class="pay-line">
+        <div>
+          <strong>Thưởng KPI hoàn thành chỉ tiêu</strong><small>Cấu hình minh họa theo kỳ</small>
+        </div>
+        <strong class="green">+{{ slip.bonus | number }} đ</strong>
+      </div>
+    </section>
+    <section class="panel">
+      <h3><app-icon name="chart" /> Bảng tính hoa hồng môi giới trong tháng</h3>
+      <div class="notice">
+        Doanh thu công ty là phí môi giới chủ phòng trả. Khoản cọc khách hàng không được tính là
+        doanh thu môi giới.
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>KỲ TÍNH</th>
+              <th>DOANH THU PHÂN BỔ</th>
+              <th>TỶ LỆ</th>
+              <th>HOA HỒNG</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ period }}</td>
+              <td>{{ slip.brokerageRevenue | number }} đ</td>
+              <td>{{ slip.commissionRate * 100 }}%</td>
+              <td class="blue">
+                <strong>{{ payroll.commission(slip) | number }} đ</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="soft-box" style="margin-top: 22px">
+        <div class="row between">
+          <strong>Tổng doanh thu phân bổ</strong
+          ><strong class="blue">{{ slip.brokerageRevenue | number }} đ</strong>
+        </div>
+        <div class="divider"></div>
+        <div class="row between">
+          <strong>Tổng hoa hồng kỳ này</strong
+          ><strong>{{ payroll.commission(slip) | number }} đ</strong>
+        </div>
+      </div>
+      <p class="tip">Tỷ lệ hoa hồng là cấu hình demo, chưa có bảng chính sách chính thức.</p>
+    </section>
+    <section class="panel">
+      <div class="row between">
+        <strong>Thực lĩnh dự kiến</strong>
+        <h2 class="blue" style="margin: 0">{{ payroll.net(slip) | number }} đ</h2>
+      </div>
+      <p class="tip">Lương cơ bản + phụ cấp + hoa hồng + thưởng − khấu trừ.</p>
+      <button class="btn primary" (click)="toast = 'Đã ghi nhận bạn xem bảng lương mô phỏng.'">
+        Đã xem bảng lương
+      </button>
+    </section>
+  </div>
+  <aside>
+    <section class="panel">
+      <h3>Quy định về thời gian</h3>
+      <div class="detail-list">
+        <div><span>Ca sáng</span><strong>08:30 – 12:00</strong></div>
+        <div><span>Ca chiều</span><strong>13:30 – 17:30</strong></div>
+      </div>
+      <div class="divider"></div>
+      <h4>Phí phạt đi trễ • Demo</h4>
+      <div class="pay-line"><span>10 phút</span><strong>10.000 đ</strong></div>
+      <div class="pay-line"><span>20 phút</span><strong>40.000 đ</strong></div>
+      <div class="pay-line"><span>30 phút</span><strong>70.000 đ</strong></div>
+      <div class="pay-line"><span>Vắng ca</span><strong class="red">300.000 đ</strong></div>
+    </section>
+    <section class="panel">
+      <h3>Nhật ký trừ &amp; khấu trừ</h3>
+      <p class="muted small">Tổng khấu trừ mẫu của kỳ {{ period }}</p>
+      <h2 class="red">-{{ slip.deduction | number }} đ</h2>
+      <div class="notice warning">Bảng lương chưa liên kết hệ thống nhân sự hay thanh toán.</div>
+    </section>
+  </aside>
+</div>
+<app-toast [message]="toast" (closed)="toast = ''" />

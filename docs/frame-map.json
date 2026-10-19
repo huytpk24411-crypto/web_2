@@ -1,0 +1,407 @@
+[
+  {
+    "number": 1,
+    "frame": "2. Trong ca trực & To-do List (iHOUZZ Uni).png",
+    "reference": "WEB NÂNG CAO (1)/2. Trong ca trực & To-do List (iHOUZZ Uni).png",
+    "component": "EmployeeShiftTasksFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-shift-tasks-frame/employee-shift-tasks-frame.component.ts",
+      "src/app/features/employee/employee-shift-tasks-frame/employee-shift-tasks-frame.component.html",
+      "src/app/features/employee/employee-shift-tasks-frame/employee-shift-tasks-frame.component.css",
+      "src/app/features/employee/employee-shift-tasks-frame/employee-shift-tasks-frame.component.spec.ts"
+    ],
+    "route": "/employee/shifts/:id/tasks",
+    "flow": "Check-in → đánh dấu công việc → bàn giao ca",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 2,
+    "frame": "1. Chấm công - Check-in đầu ca (iHOUZZ Uni).png",
+    "reference": "WEB NÂNG CAO (1)/1. Chấm công - Check-in đầu ca (iHOUZZ Uni).png",
+    "component": "EmployeeCheckInFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-check-in-frame/employee-check-in-frame.component.ts",
+      "src/app/features/employee/employee-check-in-frame/employee-check-in-frame.component.html",
+      "src/app/features/employee/employee-check-in-frame/employee-check-in-frame.component.css",
+      "src/app/features/employee/employee-check-in-frame/employee-check-in-frame.component.spec.ts"
+    ],
+    "route": "/employee/shifts/:id/check-in",
+    "flow": "Ca đã đăng ký → chọn ảnh → check-in",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 3,
+    "frame": "3. Check-out thành công & Bàn giao ca (iHOUZZ Uni).png",
+    "reference": "WEB NÂNG CAO (1)/3. Check-out thành công & Bàn giao ca (iHOUZZ Uni).png",
+    "component": "EmployeeCheckOutFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-check-out-frame/employee-check-out-frame.component.ts",
+      "src/app/features/employee/employee-check-out-frame/employee-check-out-frame.component.html",
+      "src/app/features/employee/employee-check-out-frame/employee-check-out-frame.component.css",
+      "src/app/features/employee/employee-check-out-frame/employee-check-out-frame.component.spec.ts"
+    ],
+    "route": "/employee/shifts/:id/check-out",
+    "flow": "Trong ca → ghi bàn giao → kết thúc → ca tiếp theo",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 4,
+    "frame": "Bảng lương & Hoa hồng giao dịch - iHOUZZ Uni.png",
+    "reference": "WEB NÂNG CAO (1)/Bảng lương & Hoa hồng giao dịch - iHOUZZ Uni.png",
+    "component": "EmployeePayrollFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-payroll-frame/employee-payroll-frame.component.ts",
+      "src/app/features/employee/employee-payroll-frame/employee-payroll-frame.component.html",
+      "src/app/features/employee/employee-payroll-frame/employee-payroll-frame.component.css",
+      "src/app/features/employee/employee-payroll-frame/employee-payroll-frame.component.spec.ts"
+    ],
+    "route": "/employee/payroll",
+    "flow": "Menu bảng lương → chọn kỳ → in",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 5,
+    "frame": "Báo cọc & Hồ sơ đặt cọc phòng - iHOUZZ Uni.png",
+    "reference": "WEB NÂNG CAO (1)/Báo cọc & Hồ sơ đặt cọc phòng - iHOUZZ Uni.png",
+    "component": "EmployeeDepositDossierFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-deposit-dossier-frame/employee-deposit-dossier-frame.component.ts",
+      "src/app/features/employee/employee-deposit-dossier-frame/employee-deposit-dossier-frame.component.html",
+      "src/app/features/employee/employee-deposit-dossier-frame/employee-deposit-dossier-frame.component.css",
+      "src/app/features/employee/employee-deposit-dossier-frame/employee-deposit-dossier-frame.component.spec.ts"
+    ],
+    "route": "/employee/deposits/new",
+    "flow": "Menu báo cọc → nhập hồ sơ → xác nhận QR/tiền mặt",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 6,
+    "frame": "Xác nhận cọc VietQR & Xuất phiếu cọc PDF - iHOUZZ Uni.png",
+    "reference": "WEB NÂNG CAO (1)/Xác nhận cọc VietQR & Xuất phiếu cọc PDF - iHOUZZ Uni.png",
+    "component": "EmployeeQrDepositReceiptFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-qr-deposit-receipt-frame/employee-qr-deposit-receipt-frame.component.ts",
+      "src/app/features/employee/employee-qr-deposit-receipt-frame/employee-qr-deposit-receipt-frame.component.html",
+      "src/app/features/employee/employee-qr-deposit-receipt-frame/employee-qr-deposit-receipt-frame.component.css",
+      "src/app/features/employee/employee-qr-deposit-receipt-frame/employee-qr-deposit-receipt-frame.component.spec.ts"
+    ],
+    "route": "/employee/deposits/:id/qr-receipt",
+    "flow": "Hồ sơ cọc → QR demo → xác nhận → in",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 7,
+    "frame": "Xác nhận cọc Tiền mặt & Xuất phiếu thu cọc PDF - iHOUZZ Uni.png",
+    "reference": "WEB NÂNG CAO (1)/Xác nhận cọc Tiền mặt & Xuất phiếu thu cọc PDF - iHOUZZ Uni.png",
+    "component": "EmployeeCashDepositReceiptFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-cash-deposit-receipt-frame/employee-cash-deposit-receipt-frame.component.ts",
+      "src/app/features/employee/employee-cash-deposit-receipt-frame/employee-cash-deposit-receipt-frame.component.html",
+      "src/app/features/employee/employee-cash-deposit-receipt-frame/employee-cash-deposit-receipt-frame.component.css",
+      "src/app/features/employee/employee-cash-deposit-receipt-frame/employee-cash-deposit-receipt-frame.component.spec.ts"
+    ],
+    "route": "/employee/deposits/:id/cash-receipt",
+    "flow": "Hồ sơ cọc → tiền mặt demo → xác nhận → in",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 8,
+    "frame": "Đăng ký ca làm việc tuần mới - iHOUZZ Uni.png",
+    "reference": "WEB NÂNG CAO (1)/Đăng ký ca làm việc tuần mới - iHOUZZ Uni.png",
+    "component": "EmployeeShiftRegistrationFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-shift-registration-frame/employee-shift-registration-frame.component.ts",
+      "src/app/features/employee/employee-shift-registration-frame/employee-shift-registration-frame.component.html",
+      "src/app/features/employee/employee-shift-registration-frame/employee-shift-registration-frame.component.css",
+      "src/app/features/employee/employee-shift-registration-frame/employee-shift-registration-frame.component.spec.ts"
+    ],
+    "route": "/employee/shifts/register",
+    "flow": "Chọn ca còn chỗ → đăng ký ngay → ca của tôi",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 9,
+    "frame": "Giao dịch trực tiếp & Xử lý cọc - iHOUZZ Uni.png",
+    "reference": "WEB NÂNG CAO (1)/Giao dịch trực tiếp & Xử lý cọc - iHOUZZ Uni.png",
+    "component": "EmployeeDirectDealFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-direct-deal-frame/employee-direct-deal-frame.component.ts",
+      "src/app/features/employee/employee-direct-deal-frame/employee-direct-deal-frame.component.html",
+      "src/app/features/employee/employee-direct-deal-frame/employee-direct-deal-frame.component.css",
+      "src/app/features/employee/employee-direct-deal-frame/employee-direct-deal-frame.component.spec.ts"
+    ],
+    "route": "/employee/deals/:id",
+    "flow": "Danh sách giao dịch → nhận nhà/bỏ cọc",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 10,
+    "frame": "Giao dịch trực tiếp - Xử lý Khách bỏ cọc & Xuất biên bản phạt - iHOUZZ Uni.png",
+    "reference": "WEB NÂNG CAO (1)/Giao dịch trực tiếp - Xử lý Khách bỏ cọc & Xuất biên bản phạt - iHOUZZ Uni.png",
+    "component": "EmployeeForfeitureFrameComponent",
+    "files": [
+      "src/app/features/employee/employee-forfeiture-frame/employee-forfeiture-frame.component.ts",
+      "src/app/features/employee/employee-forfeiture-frame/employee-forfeiture-frame.component.html",
+      "src/app/features/employee/employee-forfeiture-frame/employee-forfeiture-frame.component.css",
+      "src/app/features/employee/employee-forfeiture-frame/employee-forfeiture-frame.component.spec.ts"
+    ],
+    "route": "/employee/deals/:id/forfeiture",
+    "flow": "Giao dịch đã có cọc → nhập lý do → xử lý → in",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 11,
+    "frame": "Trang chủ iHOUZZ Uni - Tìm phòng & Đăng nhập/Đăng ký (Desktop).png",
+    "reference": "WEB NÂNG CAO (1)/Trang chủ iHOUZZ Uni - Tìm phòng & Đăng nhập/Đăng ký (Desktop).png",
+    "component": "CustomerHomeFrameComponent",
+    "files": [
+      "src/app/features/customer/customer-home-frame/customer-home-frame.component.ts",
+      "src/app/features/customer/customer-home-frame/customer-home-frame.component.html",
+      "src/app/features/customer/customer-home-frame/customer-home-frame.component.css",
+      "src/app/features/customer/customer-home-frame/customer-home-frame.component.spec.ts"
+    ],
+    "route": "/",
+    "flow": "Guest → tìm kiếm → danh sách/chi tiết → đăng ký/đăng nhập",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 12,
+    "frame": "Tất cả các phòng.png",
+    "reference": "WEB NÂNG CAO (1)/Tất cả các phòng.png",
+    "component": "CustomerRoomListFrameComponent",
+    "files": [
+      "src/app/features/customer/customer-room-list-frame/customer-room-list-frame.component.ts",
+      "src/app/features/customer/customer-room-list-frame/customer-room-list-frame.component.html",
+      "src/app/features/customer/customer-room-list-frame/customer-room-list-frame.component.css",
+      "src/app/features/customer/customer-room-list-frame/customer-room-list-frame.component.spec.ts"
+    ],
+    "route": "/rooms",
+    "flow": "Bộ lọc → danh sách → phân trang/chi tiết",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 13,
+    "frame": "PHÒNG YÊU THÍCH.png",
+    "reference": "WEB NÂNG CAO (1)/PHÒNG YÊU THÍCH.png",
+    "component": "CustomerFavoritesFrameComponent",
+    "files": [
+      "src/app/features/customer/customer-favorites-frame/customer-favorites-frame.component.ts",
+      "src/app/features/customer/customer-favorites-frame/customer-favorites-frame.component.html",
+      "src/app/features/customer/customer-favorites-frame/customer-favorites-frame.component.css",
+      "src/app/features/customer/customer-favorites-frame/customer-favorites-frame.component.spec.ts"
+    ],
+    "route": "/favorites",
+    "flow": "Header yêu thích → xem/bỏ lưu phòng",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 14,
+    "frame": "Chi tiết phòng & Đặt lịch/Giữ chỗ - iHOUZZ Uni (Desktop).png",
+    "reference": "WEB NÂNG CAO (1)/Chi tiết phòng & Đặt lịch/Giữ chỗ - iHOUZZ Uni (Desktop).png",
+    "component": "CustomerRoomDetailFrameComponent",
+    "files": [
+      "src/app/features/customer/customer-room-detail-frame/customer-room-detail-frame.component.ts",
+      "src/app/features/customer/customer-room-detail-frame/customer-room-detail-frame.component.html",
+      "src/app/features/customer/customer-room-detail-frame/customer-room-detail-frame.component.css",
+      "src/app/features/customer/customer-room-detail-frame/customer-room-detail-frame.component.spec.ts"
+    ],
+    "route": "/rooms/:id",
+    "flow": "Danh sách → ảnh/tiện ích → đặt lịch/giữ chỗ",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 15,
+    "frame": "Báo Cọc & Giữ Chỗ Phòng Trực Tuyến - iHOUZZ Uni.png",
+    "reference": "WEB NÂNG CAO (1)/Báo Cọc & Giữ Chỗ Phòng Trực Tuyến - iHOUZZ Uni.png",
+    "component": "CustomerHoldPaymentFrameComponent",
+    "files": [
+      "src/app/features/customer/customer-hold-payment-frame/customer-hold-payment-frame.component.ts",
+      "src/app/features/customer/customer-hold-payment-frame/customer-hold-payment-frame.component.html",
+      "src/app/features/customer/customer-hold-payment-frame/customer-hold-payment-frame.component.css",
+      "src/app/features/customer/customer-hold-payment-frame/customer-hold-payment-frame.component.spec.ts"
+    ],
+    "route": "/bookings/new?roomId=:id",
+    "flow": "Phòng → tạo yêu cầu → xác nhận thanh toán demo",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 16,
+    "frame": "Xuất Phiếu Cọc & Biên Lai Điện Tử PDF - iHOUZZ Uni (Đồng bộ Báo Cọc).png",
+    "reference": "WEB NÂNG CAO (1)/Xuất Phiếu Cọc & Biên Lai Điện Tử PDF - iHOUZZ Uni (Đồng bộ Báo Cọc).png",
+    "component": "CustomerBookingReceiptFrameComponent",
+    "files": [
+      "src/app/features/customer/customer-booking-receipt-frame/customer-booking-receipt-frame.component.ts",
+      "src/app/features/customer/customer-booking-receipt-frame/customer-booking-receipt-frame.component.html",
+      "src/app/features/customer/customer-booking-receipt-frame/customer-booking-receipt-frame.component.css",
+      "src/app/features/customer/customer-booking-receipt-frame/customer-booking-receipt-frame.component.spec.ts"
+    ],
+    "route": "/bookings/:id/receipt",
+    "flow": "Giữ chỗ đã xác nhận → xem tham chiếu → in/PDF",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 17,
+    "frame": "Đặt Lịch Xem Phòng - iHOUZZ Uni (Desktop).png",
+    "reference": "WEB NÂNG CAO (1)/Đặt Lịch Xem Phòng - iHOUZZ Uni (Desktop).png",
+    "component": "CustomerViewingScheduleFrameComponent",
+    "files": [
+      "src/app/features/customer/customer-viewing-schedule-frame/customer-viewing-schedule-frame.component.ts",
+      "src/app/features/customer/customer-viewing-schedule-frame/customer-viewing-schedule-frame.component.html",
+      "src/app/features/customer/customer-viewing-schedule-frame/customer-viewing-schedule-frame.component.css",
+      "src/app/features/customer/customer-viewing-schedule-frame/customer-viewing-schedule-frame.component.spec.ts"
+    ],
+    "route": "/viewings/new?roomId=:id",
+    "flow": "Phòng → chọn nhiều phòng → chọn giờ → xác nhận/hủy",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 18,
+    "frame": "Tổng quan Quản trị (Admin Portal).png",
+    "reference": "WEB NÂNG CAO (1)/Tổng quan Quản trị (Admin Portal).png",
+    "component": "AdminDashboardFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-dashboard-frame/admin-dashboard-frame.component.ts",
+      "src/app/features/admin/admin-dashboard-frame/admin-dashboard-frame.component.html",
+      "src/app/features/admin/admin-dashboard-frame/admin-dashboard-frame.component.css",
+      "src/app/features/admin/admin-dashboard-frame/admin-dashboard-frame.component.spec.ts"
+    ],
+    "route": "/admin",
+    "flow": "Đăng nhập admin → phòng/nhân sự/giao dịch/báo cáo",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 19,
+    "frame": "Thêm Phòng Mới (Báo Lỗi Trùng Dữ Liệu) - iHOUZZ Uni Admin.png",
+    "reference": "WEB NÂNG CAO (1)/Thêm Phòng Mới (Báo Lỗi Trùng Dữ Liệu) - iHOUZZ Uni Admin.png",
+    "component": "AdminAddRoomDuplicateFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-add-room-duplicate-frame/admin-add-room-duplicate-frame.component.ts",
+      "src/app/features/admin/admin-add-room-duplicate-frame/admin-add-room-duplicate-frame.component.html",
+      "src/app/features/admin/admin-add-room-duplicate-frame/admin-add-room-duplicate-frame.component.css",
+      "src/app/features/admin/admin-add-room-duplicate-frame/admin-add-room-duplicate-frame.component.spec.ts"
+    ],
+    "route": "/admin/rooms/new/duplicate",
+    "flow": "Lưu mã/số phòng trùng → sửa dữ liệu → lưu lại",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 20,
+    "frame": "Chỉnh sửa Thông tin Phòng - iHOUZZ Uni Admin.png",
+    "reference": "WEB NÂNG CAO (1)/Chỉnh sửa Thông tin Phòng - iHOUZZ Uni Admin.png",
+    "component": "AdminEditRoomFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-edit-room-frame/admin-edit-room-frame.component.ts",
+      "src/app/features/admin/admin-edit-room-frame/admin-edit-room-frame.component.html",
+      "src/app/features/admin/admin-edit-room-frame/admin-edit-room-frame.component.css",
+      "src/app/features/admin/admin-edit-room-frame/admin-edit-room-frame.component.spec.ts"
+    ],
+    "route": "/admin/rooms/:id/edit",
+    "flow": "Danh sách → sửa → lưu → dialog hoàn tất",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 21,
+    "frame": "Danh sách Phòng - iHOUZZ Uni Admin.png",
+    "reference": "WEB NÂNG CAO (1)/Danh sách Phòng - iHOUZZ Uni Admin.png",
+    "component": "AdminRoomListFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-room-list-frame/admin-room-list-frame.component.ts",
+      "src/app/features/admin/admin-room-list-frame/admin-room-list-frame.component.html",
+      "src/app/features/admin/admin-room-list-frame/admin-room-list-frame.component.css",
+      "src/app/features/admin/admin-room-list-frame/admin-room-list-frame.component.spec.ts"
+    ],
+    "route": "/admin/rooms",
+    "flow": "Dashboard/sidebar → lọc/thêm/sửa/ảnh/ẩn/xóa",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 22,
+    "frame": "Xác nhận Xóa hoặc Ẩn Phòng & Toast - iHOUZZ Uni Admin.png",
+    "reference": "WEB NÂNG CAO (1)/Xác nhận Xóa hoặc Ẩn Phòng & Toast - iHOUZZ Uni Admin.png",
+    "component": "AdminRoomDeleteConfirmFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-room-delete-confirm-frame/admin-room-delete-confirm-frame.component.ts",
+      "src/app/features/admin/admin-room-delete-confirm-frame/admin-room-delete-confirm-frame.component.html",
+      "src/app/features/admin/admin-room-delete-confirm-frame/admin-room-delete-confirm-frame.component.css",
+      "src/app/features/admin/admin-room-delete-confirm-frame/admin-room-delete-confirm-frame.component.spec.ts"
+    ],
+    "route": "/admin/rooms · dialog xác nhận",
+    "flow": "Nút ẩn/xóa → xác nhận ẩn hoặc xóa → toast; Escape để đóng",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 23,
+    "frame": "Xác nhận Xóa hoặc Ẩn Phòng & Toast - iHOUZZ Uni Admin 2.png",
+    "reference": "WEB NÂNG CAO (1)/Xác nhận Xóa hoặc Ẩn Phòng & Toast - iHOUZZ Uni Admin 2.png",
+    "component": "AdminRoomDeleteToastFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-room-delete-toast-frame/admin-room-delete-toast-frame.component.ts",
+      "src/app/features/admin/admin-room-delete-toast-frame/admin-room-delete-toast-frame.component.html",
+      "src/app/features/admin/admin-room-delete-toast-frame/admin-room-delete-toast-frame.component.css",
+      "src/app/features/admin/admin-room-delete-toast-frame/admin-room-delete-toast-frame.component.spec.ts"
+    ],
+    "route": "/admin/rooms · toast kết quả",
+    "flow": "Ẩn/xóa thành công → đọc trạng thái → đóng toast",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 24,
+    "frame": "Quản lý Hình ảnh Phòng - iHOUZZ Uni Admin.png",
+    "reference": "WEB NÂNG CAO (1)/Quản lý Hình ảnh Phòng - iHOUZZ Uni Admin.png",
+    "component": "AdminRoomImagesFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-room-images-frame/admin-room-images-frame.component.ts",
+      "src/app/features/admin/admin-room-images-frame/admin-room-images-frame.component.html",
+      "src/app/features/admin/admin-room-images-frame/admin-room-images-frame.component.css",
+      "src/app/features/admin/admin-room-images-frame/admin-room-images-frame.component.spec.ts"
+    ],
+    "route": "/admin/rooms/:id/images",
+    "flow": "Danh sách/sửa → tải/sắp xếp/chọn ảnh bìa/xóa ảnh → lưu",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 25,
+    "frame": "Hộp thoại Kết thúc Thao tác - iHOUZZ Uni Admin.png",
+    "reference": "WEB NÂNG CAO (1)/Hộp thoại Kết thúc Thao tác - iHOUZZ Uni Admin.png",
+    "component": "AdminActionCompleteFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-action-complete-frame/admin-action-complete-frame.component.ts",
+      "src/app/features/admin/admin-action-complete-frame/admin-action-complete-frame.component.html",
+      "src/app/features/admin/admin-action-complete-frame/admin-action-complete-frame.component.css",
+      "src/app/features/admin/admin-action-complete-frame/admin-action-complete-frame.component.spec.ts"
+    ],
+    "route": "/admin/rooms?saved=:id · dialog kết quả",
+    "flow": "Lưu thêm/sửa/ảnh → tiếp tục thêm hoặc về danh sách",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 26,
+    "frame": "Danh sách nhân sự.png",
+    "reference": "WEB NÂNG CAO (1)/Danh sách nhân sự.png",
+    "component": "AdminStaffListFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-staff-list-frame/admin-staff-list-frame.component.ts",
+      "src/app/features/admin/admin-staff-list-frame/admin-staff-list-frame.component.html",
+      "src/app/features/admin/admin-staff-list-frame/admin-staff-list-frame.component.css",
+      "src/app/features/admin/admin-staff-list-frame/admin-staff-list-frame.component.spec.ts"
+    ],
+    "route": "/admin/staff",
+    "flow": "Dashboard/sidebar → tìm nhân viên → xem hồ sơ",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  },
+  {
+    "number": 27,
+    "frame": "Thêm phòng mới.png",
+    "reference": "WEB NÂNG CAO (1)/Thêm phòng mới.png",
+    "component": "AdminAddRoomFrameComponent",
+    "files": [
+      "src/app/features/admin/admin-add-room-frame/admin-add-room-frame.component.ts",
+      "src/app/features/admin/admin-add-room-frame/admin-add-room-frame.component.html",
+      "src/app/features/admin/admin-add-room-frame/admin-add-room-frame.component.css",
+      "src/app/features/admin/admin-add-room-frame/admin-add-room-frame.component.spec.ts"
+    ],
+    "route": "/admin/rooms/new",
+    "flow": "Thêm mới → nhập thông tin → kiểm tra trùng → lưu",
+    "status": "Đã triển khai; đủ 4 file và test render"
+  }
+]

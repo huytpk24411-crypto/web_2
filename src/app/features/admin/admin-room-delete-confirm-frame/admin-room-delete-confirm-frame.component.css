@@ -1,0 +1,137 @@
+﻿.delete-heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-right: 25px;
+}
+.warning-icon {
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  width: 48px;
+  height: 48px;
+  background: #ffdddd;
+  color: #bd1630;
+  flex-shrink: 0;
+}
+.delete-heading h2 {
+  font-size: 22px;
+  margin: 4px 0 0;
+}
+.delete-heading .eyebrow {
+  font-size: 10px;
+}
+.delete-description {
+  color: #7c6261;
+  font-size: 13px;
+  margin: 16px 0;
+}
+.summary-name {
+  display: block;
+  font-size: 14px;
+  margin-top: 3px;
+}
+.summary-price {
+  display: block;
+  font-size: 19px;
+  color: #bd1630;
+  margin-top: 2px;
+}
+.summary-price small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #786463;
+}
+.action-option {
+  padding: 20px 16px;
+  margin-top: 16px;
+  border: 1px solid #eeeef8;
+  border-radius: 14px;
+  background: #f5f4ff;
+}
+.action-option.chosen {
+  background: white;
+  border-color: #a7d6ef;
+}
+.action-option > label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+.action-option input {
+  accent-color: #006b9b;
+  margin-top: 5px;
+}
+.action-option h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.action-option p {
+  font-size: 12px;
+  color: #826b69;
+  margin: 7px 0 17px 25px;
+}
+.option-footer {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 25px;
+}
+.option-footer > span {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 11px;
+  color: #006b9b;
+}
+.option-footer > span.red {
+  color: #bd1630;
+}
+.delete-option.chosen {
+  border-color: #f19fa8;
+  background: #fff7f8;
+}
+.delete-bottom {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.delete-bottom span {
+  display: flex;
+  gap: 4px;
+  color: #826b69;
+  font-size: 10px;
+}
+.history-note {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  .delete-heading h2 {
+    font-size: 19px;
+  }
+  .warning-icon {
+    width: 36px;
+    height: 40px;
+  }
+  .action-option {
+    padding: 14px 10px;
+  }
+  .action-option h3 {
+    font-size: 16px;
+  }
+  .option-footer {
+    padding-left: 0;
+  }
+  .option-footer .btn {
+    margin-left: auto;
+  }
+}

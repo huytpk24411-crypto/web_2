@@ -1,0 +1,21 @@
+<app-map-search [compact]="true" />
+<section class="container section">
+  <div class="section-heading">
+    <div>
+      <h1>Phòng ưa thích</h1>
+      <p class="muted small">
+        {{ saved.length }} không gian sống bạn đã lưu cho hành trình sắp tới
+      </p>
+    </div>
+    <a routerLink="/rooms" class="btn soft sm"
+      >Khám phá thêm <app-icon name="arrow" [size]="14"
+    /></a>
+  </div>
+  <div class="room-grid"><app-room-card *ngFor="let room of saved" [room]="room" /></div>
+  <div class="empty" *ngIf="!saved.length">
+    <app-icon name="heart" [size]="42" />
+    <h2>Danh sách yêu thích đang trống</h2>
+    <p>Nhấn biểu tượng trái tim trên phòng bạn muốn lưu.</p>
+    <a routerLink="/rooms" class="btn primary">Tìm phòng của bạn</a>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-09T13:43:10.412Z",
+  "provider": "OpenStreetMap raster tiles",
+  "successfulTileRequests": 77,
+  "examples": [
+    "https://tile.openstreetmap.org/13/6525/3847.png",
+    "https://tile.openstreetmap.org/13/6522/3848.png",
+    "https://tile.openstreetmap.org/13/6523/3847.png"
+  ],
+  "note": "Real network; no key; school coordinates sourced, properties illustrative."
+}

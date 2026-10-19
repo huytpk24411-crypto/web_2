@@ -1,0 +1,220 @@
+﻿.room-form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+}
+.room-form-layout.edit-layout {
+  grid-template-columns: minmax(0, 2fr) minmax(250px, 1fr);
+  align-items: start;
+}
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.wide-name {
+  grid-column: span 2;
+}
+.floor-number {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.form-row {
+  margin-top: 18px;
+}
+.price-field input {
+  color: #bd1630 !important;
+  font-weight: 650 !important;
+  font-size: 18px !important;
+}
+.fee-box {
+  background: #f3f2ff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 18px;
+}
+.fee-box h4 {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: #006b9b;
+  font-size: 12px;
+}
+.fee-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.fee-grid .field,
+.internet-fee {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 10px;
+}
+.fee-grid .field input {
+  background: #f7f8fb;
+  padding: 7px;
+  min-height: 32px;
+  font-size: 12px;
+}
+.fee-grid small {
+  color: #8b7776;
+  font-size: 9px;
+}
+.internet-fee {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.internet-fee strong {
+  color: #006b9b;
+}
+.amenity-picker {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+.amenity-picker label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #f3f2ff;
+  padding: 11px;
+  border-radius: 9px;
+  font-size: 11px;
+  color: #475066;
+  cursor: pointer;
+}
+.amenity-picker label.selected {
+  background: #d8eaff;
+  color: #006b9b;
+}
+.amenity-picker input {
+  accent-color: #006b9b;
+}
+.description-suggestions,
+.legacy-amenities {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 13px;
+  font-size: 10px;
+  color: #8b7776;
+}
+.description-suggestions button {
+  border: 0;
+}
+.preview-cover {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: #f3f2ff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.preview-cover img {
+  width: 100%;
+  height: 170px;
+}
+.preview-cover .badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.mini-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin: 10px 0;
+}
+.mini-photos button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.mini-photos img {
+  width: 100%;
+  height: 85px;
+  border-radius: 8px;
+}
+.edit-preview .btn {
+  width: 100%;
+}
+.edit-preview small {
+  display: block;
+  color: #8b7776;
+  font-size: 10px;
+  margin-top: 9px;
+}
+.edit-preview p {
+  font-size: 12px;
+  color: #8b7776;
+}
+.map-placeholder {
+  display: grid;
+  place-items: center;
+  gap: 9px;
+  text-align: center;
+  min-height: 170px;
+  background: #ebebff;
+  border-radius: 12px;
+  color: #006b9b;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+.duplicate-banner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 22px;
+  flex-wrap: wrap;
+}
+.duplicate-banner > div {
+  flex: 1 1 250px;
+}
+.duplicate-banner h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.duplicate-banner p {
+  margin: 0;
+  font-size: 12px;
+}
+.duplicate-banner > app-icon {
+  flex-shrink: 0;
+}
+@media (max-width: 1150px) {
+  .room-form-layout.edit-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .edit-preview {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .fee-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .identity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .identity-grid,
+  .edit-preview {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .wide-name {
+    grid-column: auto;
+  }
+  .fee-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .amenity-picker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

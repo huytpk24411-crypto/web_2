@@ -1,0 +1,356 @@
+<div class="finance-page approvals-page">
+  <header class="finance-heading">
+    <div>
+      <h1>Phê duyệt Cọc &amp; Quản lý Giao dịch</h1>
+      <span class="finance-badge red">● {{ pending.length }} đơn cọc chờ xử lý gấp trong 24h</span>
+      <p>
+        Kiểm tra Ủy nhiệm chi (UNC) ngân hàng, xác nhận bảo chứng thanh toán và kích hoạt khóa phòng
+        tự động trên toàn hệ sinh thái iHOUZZ Uni.
+      </p>
+    </div>
+    <div class="finance-actions">
+      <span class="finance-badge"
+        ><app-icon name="calendar" [size]="14" /> Kỳ đối soát: 03/2026</span
+      ><button class="finance-btn soft" (click)="export()">
+        <app-icon name="download" [size]="15" />Xuất báo cáo giao dịch (Excel)</button
+      ><button class="finance-btn primary" [disabled]="!actionableCount" (click)="open('approve')">
+        <app-icon name="shield" [size]="15" />Duyệt nhanh tất cả hợp lệ ({{ actionableCount }})
+      </button>
+    </div>
+  </header>
+  <section class="finance-stats" aria-label="Tổng quan hồ sơ cọc">
+    <article class="finance-stat">
+      <span class="finance-icon teal stat-icon"><app-icon name="wallet" /></span
+      ><span class="stat-label">Tổng cọc tháng hiện tại</span
+      ><strong class="stat-value">18 <small>đơn cọc</small></strong
+      ><b class="finance-teal">82.500.000 đ</b>
+      <p class="finance-teal">↗ +22% so với cùng kỳ tháng 02</p>
+    </article>
+    <article class="finance-stat">
+      <span class="finance-icon amber stat-icon"><app-icon name="clock" /></span
+      ><span class="stat-label">Chờ đối soát UNC ngân hàng</span
+      ><strong class="stat-value finance-amber"
+        >{{ pending.length }} <small>đơn cần duyệt</small></strong
+      ><b>{{ pendingAmount | number: '1.0-0' : 'vi' }} đ</b>
+      <p class="finance-red">◷ Hạn chót xử lý trong vòng 24h</p>
+    </article>
+    <article class="finance-stat">
+      <span class="finance-icon stat-icon"><app-icon name="lock" /></span
+      ><span class="stat-label">Đã kích hoạt khóa phòng</span
+      ><strong class="stat-value">{{ 14 + approved.length }} <small>thành công</small></strong
+      ><b>{{ approvedAmount | number: '1.0-0' : 'vi' }} đ</b>
+      <p class="finance-teal">◎ Tỷ lệ hoàn tất ký số: 93.3%</p>
+    </article>
+    <article class="finance-stat warning-stat">
+      <span class="finance-icon red stat-icon"><app-icon name="info" /></span
+      ><span class="stat-label">Quá hạn thanh toán / Ký HĐ</span
+      ><strong class="stat-value finance-red"
+        >{{ records[2].state === 'pending' ? 2 : 1 }} <small>đơn vi phạm</small></strong
+      ><b>{{ records[2].state === 'pending' ? '2.200.000' : '0' }} đ</b>
+      <p>Chờ xuất biên bản thu ngân sách</p>
+    </article>
+  </section>
+  <section class="finance-card approvals-list">
+    <div class="finance-card-head">
+      <h2>
+        Danh sách hồ sơ cần phê duyệt <span class="finance-badge">{{ visible.length }} hồ sơ</span>
+      </h2>
+      <span class="finance-small finance-muted">Dữ liệu mẫu · Kỳ tháng 03/2026</span>
+    </div>
+    <form class="approval-filters" (ngSubmit)="apply()">
+      <label class="search-field"
+        ><app-icon name="search" [size]="16" /><input
+          name="search"
+          [(ngModel)]="search"
+          placeholder="Tìm theo mã HĐ, mã cọc, khách thuê..."
+          aria-label="Tìm hồ sơ"
+      /></label>
+      <select name="cluster" [(ngModel)]="cluster" aria-label="Cụm KTX / Dự án">
+        <option value="all">Tất cả Cụm KTX / Dự án</option>
+        <option value="hd">KTX Hoàng Diệu</option>
+        <option value="kb">ĐHQG Khu B</option>
+        <option value="da">Dĩ An / The Nestro</option>
+      </select>
+      <select name="amount" [(ngModel)]="amount" aria-label="Khoảng tiền cọc">
+        <option value="all">Tất cả khoảng tiền cọc</option>
+        <option value="small">Dưới 5 triệu đồng</option>
+        <option value="large">Từ 5 triệu đồng</option>
+      </select>
+      <select name="status" [(ngModel)]="status" aria-label="Trạng thái hồ sơ">
+        <option value="pending">Chờ duyệt</option>
+        <option value="approved">Đã duyệt</option>
+        <option value="rejected">Đã từ chối</option>
+        <option value="all">Tất cả trạng thái</option>
+      </select>
+      <button class="finance-btn primary" type="submit">
+        <app-icon name="filter" [size]="14" />Áp dụng lọc</button
+      ><button
+        class="finance-btn soft"
+        type="button"
+        (click)="resetFilters()"
+        aria-label="Đặt lại bộ lọc"
+      >
+        ↻
+      </button>
+    </form>
+    <article
+      class="approval-record"
+      *ngFor="let r of visible"
+      [class.forfeiture]="r.kind === 'forfeiture'"
+    >
+      <span
+        class="finance-icon"
+        [class.teal]="r.kind === 'deposit'"
+        [class.amber]="r.kind === 'waiting'"
+        [class.red]="r.kind === 'forfeiture'"
+        ><app-icon *ngIf="r.kind === 'forfeiture'; else initials" name="info" /><ng-template
+          #initials
+          >{{ r.kind === 'contract' ? 'HĐ' : 'UNC' }}</ng-template
+        ></span
+      >
+      <div class="record-content">
+        <div class="record-title">
+          <button class="record-id" (click)="open('detail', r)">#{{ r.id }}</button
+          ><span
+            class="finance-badge"
+            [class.amber]="r.kind === 'waiting'"
+            [class.red]="r.kind === 'forfeiture'"
+            >{{ r.badge }}</span
+          ><span
+            *ngIf="r.state !== 'pending'"
+            class="finance-badge"
+            [class.teal]="r.state === 'approved'"
+            [class.red]="r.state === 'rejected'"
+            >{{ r.state === 'approved' ? 'Đã duyệt' : 'Đã từ chối' }}</span
+          >
+        </div>
+        <span class="room-label">{{ r.room }}</span>
+        <p>
+          NVKD phụ trách: <b class="finance-blue">{{ r.staff }}</b>
+        </p>
+        <p>
+          Khách thuê: <b [class.finance-red]="r.kind === 'forfeiture'">{{ r.customer }}</b>
+        </p>
+        <p [class.finance-red]="r.kind === 'forfeiture'">
+          {{ r.kind === 'forfeiture' ? 'Cảnh báo: ' : r.kind === 'contract' ? '' : '◷ Nộp lúc: '
+          }}{{ r.time }}
+        </p>
+        <div class="record-amount" [class.finance-red]="r.kind === 'forfeiture'">
+          <app-icon [name]="r.kind === 'forfeiture' ? 'building' : 'shield'" [size]="15" />{{
+            r.kind === 'forfeiture'
+              ? 'Thu hồi về ngân sách:'
+              : r.kind === 'waiting'
+                ? 'Tiền cọc giữ chỗ:'
+                : 'Tiền cọc:'
+          }}
+          <strong [class.finance-amber]="r.kind === 'waiting'"
+            >{{ r.amount | number: '1.0-0' : 'vi' }} đ</strong
+          ><b *ngIf="r.kind === 'contract'">(Đã xác minh)</b>
+        </div>
+        <button
+          *ngIf="r.kind === 'deposit'"
+          class="finance-btn link record-note"
+          (click)="open('evidence', r)"
+        >
+          <app-icon name="image" [size]="12" />{{ r.note }}
+        </button>
+        <p
+          *ngIf="r.kind !== 'deposit'"
+          class="record-note"
+          [class.finance-blue]="r.kind === 'contract'"
+        >
+          {{ r.note }}
+        </p>
+        <span *ngIf="r.extended" class="finance-badge teal">Đã gia hạn 24h</span
+        ><span *ngIf="r.requested" class="finance-badge amber">Đang chờ bổ sung hồ sơ</span>
+      </div>
+      <div class="record-actions">
+        <div class="finance-actions">
+          <button
+            *ngIf="r.kind === 'deposit' && r.state === 'pending'"
+            class="finance-btn"
+            (click)="open('request', r)"
+          >
+            Yêu cầu nộp bổ sung</button
+          ><button *ngIf="r.kind === 'waiting'" class="finance-btn" (click)="open('detail', r)">
+            Xem chi tiết phòng</button
+          ><button
+            *ngIf="r.kind === 'deposit' || r.kind === 'waiting'"
+            class="finance-btn dark"
+            (click)="open('evidence', r)"
+          >
+            <app-icon name="file" [size]="14" />{{
+              r.kind === 'deposit' ? 'Kiểm tra UNC' : 'Xem UNC'
+            }}</button
+          ><button
+            *ngIf="r.kind === 'forfeiture' && r.state === 'pending'"
+            class="finance-btn"
+            [disabled]="r.extended"
+            (click)="open('extend', r)"
+          >
+            Gia hạn 24h hỗ trợ sinh viên</button
+          ><button *ngIf="r.kind === 'contract'" class="finance-btn" (click)="open('contract', r)">
+            Xem Dự thảo điều khoản</button
+          ><button
+            *ngIf="r.state === 'pending'"
+            class="finance-btn primary"
+            [class.danger]="r.kind === 'forfeiture'"
+            (click)="open('approve', r)"
+          >
+            <app-icon [name]="r.kind === 'contract' ? 'edit' : 'shield'" [size]="15" />{{
+              r.action
+            }}
+          </button>
+        </div>
+        <button *ngIf="r.state === 'pending'" class="reject-link" (click)="open('reject', r)">
+          Từ chối hồ sơ
+        </button>
+      </div>
+    </article>
+    <div class="empty-approvals" *ngIf="!visible.length">
+      <app-icon name="shield" [size]="30" />
+      <h3>Không có hồ sơ phù hợp</h3>
+      <p>Thử thay đổi bộ lọc hoặc xem các hồ sơ đã xử lý.</p>
+      <button class="finance-btn" (click)="status = 'all'; apply()">Xem tất cả hồ sơ</button>
+    </div>
+  </section>
+  <section class="approval-bottom">
+    <article class="finance-card">
+      <h3><app-icon name="shield" [size]="19" /> Quy trình Bảo chứng Cọc 3 Bước</h3>
+      <p class="finance-subtitle">
+        Hệ thống áp dụng chuẩn Escrow đối với tiền cọc sinh viên, đảm bảo quyền lợi người cho thuê
+        và người thuê.
+      </p>
+      <ol>
+        <li><b>Khớp lệnh UNC:</b> Đối soát mã ngân hàng</li>
+        <li><b>Khóa phòng 24h:</b> Chặn trùng lặp giao dịch</li>
+        <li><b>Ký HĐ điện tử:</b> Tự động chuyển cọc</li>
+      </ol>
+      <span class="finance-badge">ⓘ Cam kết hoàn cọc 100% trong 24h</span>
+    </article>
+    <article class="finance-card room-preview">
+      <div class="finance-card-head">
+        <h3>Mặt Bằng Căn Hộ</h3>
+        <span class="finance-badge teal">Đã chuẩn bị bàn giao</span>
+      </div>
+      <div class="room-photo">
+        <img src="/assets/about-studio.jpg" alt="Phòng mẫu KTX Hoàng Diệu" /><span
+          >KTX Hoàng Diệu · Tầng 4</span
+        >
+      </div>
+      <div class="room-facts">
+        <span>Diện tích:<b>28 m² · Có ban công</b></span
+        ><span>Nội thất:<b>Full máy lạnh, tủ lạnh</b></span>
+      </div>
+      <button class="finance-btn link" (click)="open('detail', records[0])">
+        Xem thông tin bàn giao <app-icon name="arrow" [size]="14" />
+      </button>
+    </article>
+    <article class="finance-card">
+      <h3>Phân bổ Cọc theo Cụm Tòa</h3>
+      <p class="finance-subtitle">Số lượng tiền cọc đang nắm giữ tại các cụm làng đại học.</p>
+      <div
+        class="finance-donut distribution"
+        role="img"
+        aria-label="Hoàng Diệu 52%, Khu B 30%, Nhà Phố Dĩ An 18%"
+      >
+        <div><small>Quỹ bảo chứng</small><strong>82,5M</strong></div>
+      </div>
+      <div class="finance-legend">
+        <span class="finance-dot"></span>KTX Hoàng Diệu (52%)<b>42.900.000 đ</b>
+      </div>
+      <div class="finance-legend">
+        <span class="finance-dot gray"></span>ĐHQG Khu B (30%)<b>24.750.000 đ</b>
+      </div>
+      <div class="finance-legend">
+        <span class="finance-dot amber"></span>Nhà Phố Dĩ An (18%)<b>14.850.000 đ</b>
+      </div>
+      <button class="finance-btn link" (click)="open('distribution', records[0])">
+        Xem chi tiết luồng tiền ký quỹ →
+      </button>
+    </article>
+  </section>
+</div>
+<div class="modal-backdrop" *ngIf="dialog as d" (click)="dialog = null">
+  <section
+    class="modal finance-modal"
+    appDialogFocus
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="approval-dialog-title"
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="dialog = null"
+  >
+    <h2 id="approval-dialog-title">{{ d.title }}</h2>
+    <p>Hồ sơ minh họa · Chỉ cập nhật trạng thái demo trong phiên này.</p>
+    <ng-container *ngFor="let r of d.items"
+      ><dl>
+        <dt>Mã giao dịch</dt>
+        <dd>#{{ r.id }}</dd>
+        <dt>Phòng / Căn hộ</dt>
+        <dd>{{ r.room }}</dd>
+        <dt>Khách thuê</dt>
+        <dd>{{ r.customer }}</dd>
+        <dt>Nhân viên</dt>
+        <dd>{{ r.staff }}</dd>
+        <dt>Số tiền</dt>
+        <dd>{{ r.amount | number: '1.0-0' : 'vi' }} đ</dd>
+      </dl></ng-container
+    >
+    <p *ngIf="d.items[0].processingNote">Ghi chú xử lý: {{ d.items[0].processingNote }}</p>
+    <div class="finance-soft" *ngIf="d.type === 'evidence'">
+      <h3>Ủy nhiệm chi mẫu</h3>
+      <p>Nội dung: {{ d.items[0].id }} · Tiền cọc {{ d.items[0].room }}</p>
+      <p>
+        {{
+          d.items[0].kind === 'waiting'
+            ? 'Techcombank · Chờ khớp lệnh đối soát'
+            : 'VietinBank · Đã nhận thông tin chuyển khoản'
+        }}
+      </p>
+      <small>Chứng từ minh họa bằng dữ liệu, chưa có ảnh UNC thật.</small>
+    </div>
+    <div class="finance-soft" *ngIf="d.type === 'contract'">
+      Hợp đồng mẫu 12 tháng · Giá thuê 5.500.000 đ/tháng · Cọc giữ 5.500.000 đ. Bàn giao đủ nội
+      thất, phí dịch vụ theo phụ lục; hoàn cọc theo điều kiện bàn giao.
+    </div>
+    <p *ngIf="d.type === 'approve'">
+      Xác nhận phê duyệt {{ d.items.length }} hồ sơ đang chọn? Trạng thái sẽ được chuyển sang “Đã
+      duyệt”.
+    </p>
+    <p *ngIf="d.type === 'extend'">
+      Gia hạn một lần thêm 24 giờ cho hồ sơ này. Trạng thái chờ duyệt được giữ lại.
+    </p>
+    <p *ngIf="d.type === 'distribution'">
+      KTX Hoàng Diệu: 42.900.000 đ · ĐHQG Khu B: 24.750.000 đ · Nhà Phố Dĩ An: 14.850.000 đ. Tổng
+      quỹ mẫu: 82.500.000 đ.
+    </p>
+    <label *ngIf="d.type === 'reject' || d.type === 'request'"
+      >{{ d.type === 'reject' ? 'Lý do từ chối' : 'Nội dung cần bổ sung'
+      }}<textarea [(ngModel)]="reason" aria-label="Nội dung xử lý hồ sơ"></textarea>
+    </label>
+    <p class="error" *ngIf="error" role="alert">{{ error }}</p>
+    <div class="finance-actions">
+      <button class="finance-btn soft" (click)="dialog = null">
+        {{ ['approve', 'reject', 'request', 'extend'].includes(d.type) ? 'Hủy' : 'Đóng' }}</button
+      ><button
+        *ngIf="['approve', 'reject', 'request', 'extend'].includes(d.type)"
+        class="finance-btn primary"
+        [class.danger]="d.type === 'reject'"
+        (click)="confirm()"
+      >
+        Xác nhận
+        {{
+          d.type === 'approve'
+            ? 'duyệt'
+            : d.type === 'reject'
+              ? 'từ chối'
+              : d.type === 'extend'
+                ? 'gia hạn'
+                : 'yêu cầu'
+        }}
+      </button>
+    </div>
+  </section>
+</div>
+<app-toast [message]="toast" (closed)="toast = ''" />

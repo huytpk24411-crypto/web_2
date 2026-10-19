@@ -1,0 +1,118 @@
+<div class="notice success">
+  <strong
+    >✓ Chúc {{ auth.account()?.name }} một ca làm việc tràn đầy năng lượng &amp; đạt nhiều doanh
+    số!</strong
+  >
+</div>
+<div class="step-strip">
+  <div class="done">
+    <b>✓</b><span>Check-in đầu ca<small>Xác nhận ảnh minh chứng</small></span>
+  </div>
+  <div class="current">
+    <b>2</b><span>Trong ca & To-do<small>Thực hiện công việc</small></span>
+  </div>
+  <div class="">
+    <b>3</b><span>Check-out cuối ca<small>Bàn giao & kết thúc</small></span>
+  </div>
+</div>
+<div class="split" *ngIf="assignment as a; else missing">
+  <div>
+    <section class="panel">
+      <span class="eyebrow">BỘ ĐẾM THỜI GIAN LÀM VIỆC</span>
+      <h2>{{ shift?.label }} ({{ shift?.start }} – {{ shift?.end }})</h2>
+      <div class="grid two">
+        <div class="soft-box">
+          <small class="muted">Đã check-in lúc</small>
+          <h2 class="blue" style="margin-top: 6px">
+            {{ attendance.get(id)?.checkInAt | date: 'HH:mm:ss' }}
+          </h2>
+          <small class="muted">{{ shift?.date | date: 'dd/MM/yyyy' }}</small>
+        </div>
+        <div>
+          <div class="row between small">
+            <strong>Mức độ hoàn thành chung</strong><strong class="blue">{{ percent }}%</strong>
+          </div>
+          <div class="progress" style="margin-top: 15px">
+            <span [style.width.%]="percent"></span>
+          </div>
+          <p class="tip">{{ done }} / {{ tasks.list(id).length }} công việc hoàn thành</p>
+        </div>
+      </div>
+    </section>
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h3>Nhiệm vụ &amp; To-do cá nhân hôm nay</h3>
+          <p class="muted small">Trạng thái cá nhân tách biệt với tiến độ chung của nhóm.</p>
+        </div>
+        <span class="badge">{{ tasks.list(id).length }} việc</span>
+      </div>
+      <label class="field"
+        ><span class="sr-only">Tìm nhiệm vụ</span
+        ><input [(ngModel)]="filter" placeholder="Tìm nhanh đầu việc cần xử lý..."
+      /></label>
+      <div class="task-row" *ngFor="let task of list" [class.done]="mineDone(task.doneBy)">
+        <label
+          ><input
+            type="checkbox"
+            [checked]="mineDone(task.doneBy)"
+            (change)="tasks.toggle(task.id, id)"
+            [disabled]="a.status !== 'IN_PROGRESS'"
+          /><span
+            ><strong>{{ task.title }}</strong
+            ><small
+              >{{ task.assigneeIds.length }} người phụ trách • Cá nhân:
+              {{ mineDone(task.doneBy) ? 'Đã xong' : 'Chưa xong' }}</small
+            ><small *ngIf="task.carriedFrom" class="blue">Được bàn giao từ ca trước</small></span
+          ></label
+        ><app-status-badge [status]="task.status" />
+      </div>
+      <div class="empty" *ngIf="!list.length">Không có công việc phù hợp.</div>
+      <a
+        class="btn primary full"
+        style="margin-top: 20px"
+        [routerLink]="['/employee/shifts', id, 'check-out']"
+        ><app-icon name="check" [size]="15" /> CHECK-OUT &amp; BÀN GIAO CA</a
+      >
+      <div *ngIf="a.status === 'REGISTERED'" class="notice warning">
+        Ca chưa check-in.
+        <a class="link" [routerLink]="['/employee/shifts', id, 'check-in']">Đi đến check-in</a>
+      </div>
+    </section>
+  </div>
+  <aside>
+    <section class="panel">
+      <h3><app-icon name="calendar" /> Thông tin ca trực</h3>
+      <div class="detail-list">
+        <div>
+          <span>Nhân viên</span><strong>{{ auth.account()?.name }}</strong>
+        </div>
+        <div>
+          <span>Ngày làm việc</span><strong>{{ shift?.date | date: 'dd/MM/yyyy' }}</strong>
+        </div>
+        <div>
+          <span>Ca làm</span><strong>{{ shift?.label }}</strong>
+        </div>
+        <div><span>Trạng thái</span><app-status-badge [status]="a.status" /></div>
+      </div>
+    </section>
+    <div class="notice warning">
+      Công việc chưa hoàn thành có thể được chuyển sang một ca đã đăng ký khác khi bàn giao.
+    </div>
+    <section class="panel">
+      <h3>Lịch sử gần nhất</h3>
+      <div class="history-item" *ngFor="let item of shifts.mine().slice(-4)">
+        <strong>{{ shifts.shift(item.shiftId)?.date | date: 'dd/MM/yyyy' }}</strong
+        ><small>{{ shifts.shift(item.shiftId)?.label }}</small
+        ><app-status-badge [status]="item.status" />
+      </div>
+    </section>
+  </aside>
+</div>
+<ng-template #missing
+  ><div class="empty">
+    <h2>Không tìm thấy ca làm của bạn</h2>
+    <p>Chọn một lần phân ca đã đăng ký để tiếp tục.</p>
+    <a class="btn primary" routerLink="/employee/shifts">Xem ca làm của tôi</a>
+  </div></ng-template
+>

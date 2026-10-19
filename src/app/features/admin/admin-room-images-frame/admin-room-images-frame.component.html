@@ -1,0 +1,50 @@
+﻿<div class="breadcrumb">
+  <a routerLink="/admin/rooms">Quản trị Phòng &amp; Tòa nhà › Danh sách phòng</a> › #{{
+    room?.code
+  }}
+</div>
+<ng-container *ngIf="room as r; else missing">
+  <div class="page-title">
+    <div>
+      <h1>Thư viện &amp; Quản lý Hình ảnh: {{ r.name }} #{{ r.code }}</h1>
+      <span class="badge blue">● Thư viện phòng</span>
+      <p>Tối ưu ảnh chất lượng cao để giới thiệu không gian sống đến sinh viên và cộng tác viên.</p>
+    </div>
+  </div>
+  <div class="gallery-actions">
+    <button class="btn" (click)="showPreview()">
+      <app-icon name="eye" [size]="16" />Xem trước tin phòng</button
+    ><button class="btn primary" (click)="save()" [disabled]="saving()">
+      Lưu thay đổi thư viện
+    </button>
+  </div>
+  <p class="demo-note">
+    <app-icon name="info" [size]="14" />Thay đổi chỉ lưu trong trình duyệt khi bấm Lưu. Hủy bỏ để
+    giữ thư viện hiện tại.
+  </p>
+  <section class="panel">
+    <app-admin-room-photo-editor
+      [urls]="images()"
+      (urlsChange)="images.set($event)"
+      (message)="toast = $event"
+    />
+  </section>
+  <p class="notice error" *ngIf="error()" role="alert">{{ error() }}</p>
+  <footer class="room-footer">
+    <span><app-icon name="image" [size]="16" /> Đã chọn {{ images().length }} / 15 ảnh tối đa</span>
+    <div class="actions">
+      <a class="btn" [routerLink]="['/admin/rooms', id, 'edit']">Hủy bỏ</a
+      ><button class="btn teal" (click)="save()" [disabled]="saving()">
+        <app-icon name="check" [size]="16" />{{ saving() ? 'Đang lưu...' : 'Lưu thay đổi' }}
+      </button>
+    </div>
+  </footer>
+</ng-container>
+<ng-template #missing
+  ><div class="empty">
+    <h2>Không tìm thấy phòng</h2>
+    <a class="btn primary" routerLink="/admin/rooms">Về danh sách phòng</a>
+  </div></ng-template
+>
+<app-admin-room-preview *ngIf="preview" [room]="preview" (closed)="preview = undefined" />
+<app-toast [message]="toast" (closed)="toast = ''" />

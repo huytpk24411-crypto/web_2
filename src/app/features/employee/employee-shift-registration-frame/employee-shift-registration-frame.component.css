@@ -1,0 +1,99 @@
+.intro {
+  grid-template-columns: 1.8fr 1fr;
+}
+.shift-grid {
+  max-width: 900px;
+}
+.shift-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.day-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.day-label small {
+  font-size: 11px;
+  color: var(--muted);
+}
+.shift-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #dce2ec;
+  border-radius: 6px;
+  padding: 17px;
+  cursor: pointer;
+  background: #fff;
+}
+.shift-card.selected {
+  background: #edf4ff;
+  border: 1.5px solid #155f9c;
+}
+.shift-card.full {
+  opacity: 0.5;
+  background: #f5f5f7;
+}
+.shift-card input {
+  accent-color: var(--primary);
+}
+.shift-card strong {
+  font-size: 12px;
+}
+.shift-card small {
+  display: block;
+  font-size: 10px;
+  color: #8493a7;
+}
+.shift-card .badge {
+  margin-left: auto;
+  font-size: 9px;
+}
+.grid.three strong {
+  font-size: 11px;
+}
+.grid.three app-icon {
+  color: var(--primary);
+  margin-right: 5px;
+}
+.grid.three p {
+  font-size: 11px;
+  margin: 6px 0 0;
+}
+@media (max-width: 900px) {
+  .shift-row {
+    grid-template-columns: 100px 1fr 1fr;
+    gap: 10px;
+  }
+  .shift-card {
+    padding: 12px;
+    gap: 7px;
+  }
+  .intro {
+    grid-template-columns: 1fr;
+  }
+  .shift-card .badge {
+    font-size: 8px;
+  }
+}
+@media (max-width: 550px) {
+  .shift-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .day-label {
+    grid-column: span 2;
+  }
+  .shift-card {
+    flex-wrap: wrap;
+  }
+  .shift-card .badge {
+    margin-left: 0;
+  }
+  .section-heading {
+    flex-wrap: wrap;
+  }
+}

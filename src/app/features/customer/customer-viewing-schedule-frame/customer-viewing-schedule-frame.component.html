@@ -1,0 +1,117 @@
+<div class="container">
+  <div class="breadcrumb">
+    <a routerLink="/">Trang chủ</a> › <a routerLink="/rooms">Tất cả phòng</a> › Đặt lịch xem phòng
+  </div>
+  <div class="step-strip">
+    <div class="current"><b>1</b><span>Chọn phòng &amp; thông tin liên hệ</span></div>
+    <div [class.done]="success">
+      <b>{{ success ? '✓' : '2' }}</b
+      ><span>Xác nhận lịch hẹn miễn phí</span>
+    </div>
+  </div>
+  <div class="notice success" *ngIf="success" role="status">
+    <strong>Đặt lịch xem phòng thành công!</strong>
+    <p style="margin: 5px 0 0">
+      Mã lịch: {{ success }} • Chúng tôi đã ghi nhận lịch hẹn mô phỏng của bạn.
+    </p>
+    <button class="btn sm" (click)="success = ''">Đặt thêm lịch</button>
+  </div>
+  <div class="split">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <section class="panel">
+        <h3><app-icon name="user" /> Thông tin người hẹn xem phòng</h3>
+        <div class="grid two">
+          <label class="field"
+            ><span>Họ và tên người xem *</span
+            ><input formControlName="name" autocomplete="name" /><app-form-error
+              [control]="form.controls.name" /></label
+          ><label class="field"
+            ><span>Số điện thoại di động *</span
+            ><input formControlName="phone" type="tel" autocomplete="tel" /><app-form-error
+              [control]="form.controls.phone"
+          /></label>
+        </div>
+        <h3><app-icon name="home" /> Chọn phòng muốn xem</h3>
+        <p class="muted small">Bạn có thể xem nhiều phòng trong cùng một lịch hẹn.</p>
+        <div class="room-picker">
+          <label
+            class="pick-room"
+            *ngFor="let r of available"
+            [class.selected]="selected.includes(r.id)"
+            ><input
+              type="checkbox"
+              [checked]="selected.includes(r.id)"
+              (change)="toggle(r.id)"
+            /><img [src]="r.images[0]" [alt]="r.name" /><span
+              ><strong>{{ r.name }}</strong
+              ><small>{{ r.price | number }} đ/tháng • {{ r.area }} m²</small></span
+            ></label
+          >
+        </div>
+        <div class="notice">Đã chọn {{ selected.length }} phòng trong lịch hẹn</div>
+      </section>
+      <section class="panel">
+        <h3><app-icon name="calendar" /> Thời gian và nhu cầu xem phòng</h3>
+        <label class="field"
+          ><span>Ngày &amp; giờ hẹn xem *</span
+          ><input type="datetime-local" formControlName="at" /><app-form-error
+            [control]="form.controls.at"
+        /></label>
+        <p class="tip">
+          Vui lòng chọn thời gian trong tương lai. Lịch demo chưa được đồng bộ với nhân viên.
+        </p>
+        <label class="field"
+          ><span>Ghi chú nhu cầu</span
+          ><textarea
+            formControlName="note"
+            placeholder="Số người ở, thời gian chuyển vào, ngân sách dự kiến..."
+          ></textarea>
+        </label>
+        <div class="error" role="alert" *ngIf="error">{{ error }}</div>
+        <button class="btn danger full" type="submit" [disabled]="!!success">
+          <app-icon name="calendar" [size]="16" /> XÁC NHẬN ĐẶT LỊCH XEM PHÒNG MIỄN PHÍ
+        </button>
+      </section>
+    </form>
+    <aside class="sticky">
+      <div class="panel" *ngIf="firstRoom as r">
+        <img class="selected-photo" [src]="r.images[0]" [alt]="r.name" /><span class="badge green"
+          >Đang trống • {{ r.code }}</span
+        >
+        <h3 style="margin: 12px 0">{{ r.name }}</h3>
+        <p class="muted small">{{ r.address }}</p>
+        <p class="price">{{ r.price | number }} đ<small> / tháng</small></p>
+        <div class="divider"></div>
+        <div class="row">
+          <img [src]="assets.avatar" class="avatar" alt="Chuyên viên Tăng Khả Ái" />
+          <div>
+            <strong>Tăng Khả Ái</strong>
+            <p class="muted small" style="margin: 2px 0">Chuyên viên tư vấn</p>
+          </div>
+        </div>
+      </div>
+      <div class="notice success">
+        <strong>✓ Cam kết từ iHOUZZ Uni</strong>
+        <p style="margin: 8px 0 0">
+          Xem phòng miễn phí, hỗ trợ tìm phòng phù hợp với nhu cầu và ngân sách của bạn.
+        </p>
+      </div>
+    </aside>
+  </div>
+  <section class="panel" *ngIf="viewings.list().length">
+    <h3>Lịch xem phòng của bạn</h3>
+    <div class="viewing-row" *ngFor="let v of viewings.list()">
+      <div>
+        <strong>{{ v.at | date: 'dd/MM/yyyy HH:mm' }}</strong>
+        <p class="muted small">{{ v.roomIds.length }} phòng • {{ v.name }} • {{ v.phone }}</p>
+      </div>
+      <app-status-badge [status]="v.status" /><button
+        class="btn sm"
+        *ngIf="v.status === 'SCHEDULED'"
+        (click)="cancel(v.id)"
+      >
+        Hủy lịch
+      </button>
+    </div>
+  </section>
+</div>

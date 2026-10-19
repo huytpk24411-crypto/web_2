@@ -1,0 +1,997 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-09T13:18:05Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 4837876390,
+      "lat": 10.876661,
+      "lon": 106.79895,
+      "tags": {
+        "amenity": "university",
+        "education": "university"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6741858303,
+      "lat": 10.8778839,
+      "lon": 106.8015666,
+      "tags": {
+        "addr:city": "Bình Dương",
+        "addr:district": "Dĩ An",
+        "addr:street": "Quảng trường sáng tạo",
+        "addr:subdistrict": "Đông Hòa",
+        "amenity": "university",
+        "internet_access": "wlan",
+        "name": "Ho Chi Minh city International University",
+        "name:vi": "Trường Đại học Quốc tế, Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "operator": "Vietnam National University HCMC",
+        "operator:type": "public",
+        "wikidata": "Q5873959",
+        "wikipedia": "en:Ho Chi Minh City International University"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6794788987,
+      "lat": 10.841436,
+      "lon": 106.8098568,
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại Học FPT Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6808469859,
+      "lat": 10.8772665,
+      "lon": 106.801773,
+      "tags": {
+        "amenity": "university",
+        "check_date": "2026-01-16",
+        "name": "Tòa nhà hành chính IU (Đang xây dựng)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9585835374,
+      "lat": 10.8131239,
+      "lon": 106.6947329,
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại Học Văn Lang - Cơ Sở 2"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587042690,
+      "lat": 10.7970171,
+      "lon": 106.7031929,
+      "tags": {
+        "addr:city": "Thành Phố Hồ Chí Minh",
+        "addr:district": "Quận Bình Thạnh",
+        "addr:housenumber": "276",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Điện Biên Phủ",
+        "addr:subdistrict": "17",
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại học Kinh tế Tài chính Thành phố Hồ Chí Minh (UEF)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587618717,
+      "lat": 10.8595247,
+      "lon": 106.7559889,
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại Học Cảnh Sát Nhân Dân - Cơ Sở 2"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9587618740,
+      "lat": 10.8602415,
+      "lon": 106.6946936,
+      "tags": {
+        "amenity": "university",
+        "name": "Đại học Nguyễn Tất Thành - Quận 12"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9593572487,
+      "lat": 10.8731005,
+      "lon": 106.8020069,
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Khoa học Xã hội và Nhân văn - CS Dĩ An"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9593572488,
+      "lat": 10.8759265,
+      "lon": 106.7977759,
+      "tags": {
+        "amenity": "university",
+        "name": "Đại học Khoa học Tự Nhiên Thành phố Hồ Chí Minh - Cơ sở Linh Trung"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9593572489,
+      "lat": 10.8753395,
+      "lon": 106.8000331,
+      "tags": {
+        "addr:city": "Thủ Dầu Một",
+        "addr:district": "Dĩ An",
+        "addr:province": "Bình Dương",
+        "addr:street": "Quảng Trường Sáng Tạo",
+        "addr:subdistrict": "Đông Hòa",
+        "amenity": "university",
+        "check_date": "2026-01-16",
+        "contact:facebook": "https://www.facebook.com/nvhsvtphcm",
+        "email": "vanphong@nhavanhoasinhvien.vn",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "mobile": "+842838351118",
+        "name": "Nhà Văn Hóa Sinh Viên",
+        "opening_hours": "Mo-Su 07:00-23:00",
+        "operator": "Đại học Quốc gia TP. Hồ Chí Minh (Vietnam National University Ho Chi Minh City)",
+        "operator:type": "public",
+        "panoramax": "a08c0d6c-cde6-43c0-851f-32e39fc69ffa",
+        "website": "https://www.nhavanhoasinhvien.vn/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9593572510,
+      "lat": 10.8710319,
+      "lon": 106.79145,
+      "tags": {
+        "amenity": "university",
+        "name": "Đại Học Nông Lâm Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9593572513,
+      "lat": 10.8799198,
+      "lon": 106.8047006,
+      "tags": {
+        "amenity": "university",
+        "name": "Đại học Bách Khoa - Cơ sở Dĩ An"
+      }
+    },
+    {
+      "type": "way",
+      "id": 39622432,
+      "center": {
+        "lat": 10.802379,
+        "lon": 106.6949014
+      },
+      "tags": {
+        "addr:housenumber": "5",
+        "addr:street": "Phan Đăng Lưu",
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại học Mỹ thuật Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 165420599,
+      "center": {
+        "lat": 10.7860261,
+        "lon": 106.7031781
+      },
+      "tags": {
+        "addr:housenumber": "10-12",
+        "addr:street": "Đinh Tiên Hoàng",
+        "amenity": "university",
+        "barrier": "fence",
+        "education": "university",
+        "int_name": "Ho Chi Minh City University of Social Sciences and Humanities",
+        "layer": "1",
+        "name": "Trường Đại học Khoa học xã hội và Nhân văn",
+        "name:en": "University of Social Sciences and Humanities - HCMC",
+        "name:ja": "ホーチミン市人文社会科学大学",
+        "name:vi-Hani": "大學科學社會吧人文",
+        "name:zh": "胡志明市社会科学与人文大学",
+        "official_name": "Trường Đại học Khoa học Xã hội và Nhân văn - ĐHQG TP.HCM - cơ sở 1",
+        "official_name:en": "University of Social Sciences and Humanities - VNUHCM - Campus 1",
+        "old_name": "Đại học Văn Khoa Sài Gòn",
+        "old_name:en": "Faculty of Letters",
+        "short_name": "ĐH KHXH&NV",
+        "short_name:en": "HCMUSSH"
+      }
+    },
+    {
+      "type": "way",
+      "id": 165420602,
+      "center": {
+        "lat": 10.7849244,
+        "lon": 106.7020679
+      },
+      "tags": {
+        "addr:housenumber": "41",
+        "addr:street": "Tôn Đức Thắng",
+        "amenity": "university",
+        "education": "university",
+        "int_name": "Faculty of Pharmacy",
+        "name": "Khoa Dược - Đại học Y Dược Thành phố Hồ Chí Minh",
+        "name:en": "Faculty of Pharmacy - Ho Chi Minh City Medicine and Pharmacy University",
+        "name:id": "Fakultas Farmasi",
+        "name:ja": "ホーチミン医科薬科大学（薬学部）",
+        "name:vi": "Khoa Dược - Đại học Y Dược Thành phố Hồ Chí Minh",
+        "name:zh": "胡志明市医药大学药科",
+        "short_name": "UPHCM",
+        "short_name:en": "UPHCM"
+      }
+    },
+    {
+      "type": "way",
+      "id": 186545014,
+      "center": {
+        "lat": 10.7824309,
+        "lon": 106.6944399
+      },
+      "tags": {
+        "addr:housenumber": "196",
+        "addr:street": "Đường Pasteur",
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại học Kiến trúc Thành phố Hồ Chí Minh",
+        "wikidata": "Q3037890",
+        "wikimedia_commons": "Category:Ho Chi Minh City University of Architecture",
+        "wikipedia": "vi:Trường Đại học Kiến trúc Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 192512338,
+      "center": {
+        "lat": 10.7924305,
+        "lon": 106.7113108
+      },
+      "tags": {
+        "addr:housenumber": "98",
+        "addr:street": "Ngô Tất Tố",
+        "amenity": "university",
+        "education": "university",
+        "name": "Đại học Tôn Đức Thắng"
+      }
+    },
+    {
+      "type": "way",
+      "id": 192512382,
+      "center": {
+        "lat": 10.8021655,
+        "lon": 106.714718
+      },
+      "tags": {
+        "addr:housenumber": "475",
+        "addr:street": "Điện Biên Phủ",
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại học Công nghệ Thành phố Hồ Chí Minh",
+        "name:en": "HCMC University of Technology"
+      }
+    },
+    {
+      "type": "way",
+      "id": 193085693,
+      "center": {
+        "lat": 10.7832846,
+        "lon": 106.7063885
+      },
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "faculty": "Kindergarten Education",
+        "name": "Trường Đại học Sài Gòn (cơ sở 2)",
+        "name:en": "Sai Gon University (the second campus)",
+        "name:ja": "サイゴン大学 （第二キャンパス）"
+      }
+    },
+    {
+      "type": "way",
+      "id": 218273808,
+      "center": {
+        "lat": 10.8520722,
+        "lon": 106.7717145
+      },
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:street": "Võ Văn Ngân",
+        "alt_name": "HCMUTE",
+        "amenity": "university",
+        "name": "Trường Đại học Công nghệ Kỹ thuật Thành phố Hồ Chí Minh",
+        "name:en": "Ho Chi Minh City University of Technology and Engineering",
+        "name:th": "มหาวิทยาลัยเทคโนโลยีและวิศวกรรมศาสตร์โฮจิมินห์",
+        "name:zh": "胡志明市科技工程大学",
+        "website": "https://www.hcmute.edu.vn/",
+        "wikidata": "Q10829131",
+        "wikimedia_commons": "Category:Ho Chi Minh City University of Technology and Education",
+        "wikipedia": "vi:Trường Đại học Công nghệ Kỹ thuật Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 226185751,
+      "center": {
+        "lat": 10.8048991,
+        "lon": 106.716779
+      },
+      "tags": {
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Bình Thạnh",
+        "addr:housenumber": "2",
+        "addr:postcode": "700000",
+        "addr:street": "Võ Oanh",
+        "addr:subdistrict": "25",
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại học Giao thông Vận tải Thành phố Hồ Chí Minh",
+        "website": "https://ut.edu.vn"
+      }
+    },
+    {
+      "type": "way",
+      "id": 263170654,
+      "center": {
+        "lat": 10.783026,
+        "lon": 106.6948717
+      },
+      "tags": {
+        "addr:street": "Nguyễn Ðình Chiểu",
+        "amenity": "university",
+        "education": "university",
+        "name": "Đại học Kinh tế Thành phố Hồ Chí Minh - Cơ sở A",
+        "name:en": "University of Economics Ho Chi Minh City - Campus A",
+        "name:id": "Universitas Ekonomi Kota Ho Chi Minh",
+        "name:vi": "Trường Đại học Kinh tế Thành phố Hồ Chí Minh - cơ sở A",
+        "name:vi-Hani": "大學經濟城埔胡志明-基所A",
+        "name:zh": "胡志明市经济大学",
+        "official_name": "Trường Đại học Kinh tế Thành phố Hồ Chí Minh",
+        "official_name:vi": "Trường Đại học Kinh tế Thành phố Hồ Chí Minh",
+        "service": "59C",
+        "short_name": "ĐHKT",
+        "short_name:en": "UEH",
+        "short_name:vi": "ĐHKT",
+        "wikidata": "Q2562140",
+        "wikimedia_commons": "Category:University of Economics Ho Chi Minh City",
+        "wikipedia": "vi:Trường Đại học Kinh tế Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 263311738,
+      "center": {
+        "lat": 10.7927633,
+        "lon": 106.7065142
+      },
+      "tags": {
+        "addr:housenumber": "2",
+        "addr:street": "Trường Sa",
+        "amenity": "university",
+        "building": "yes",
+        "education": "university",
+        "name": "Đại học Thuỷ Lợi - Cơ sở 2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 289042058,
+      "center": {
+        "lat": 10.8123535,
+        "lon": 106.7024202
+      },
+      "tags": {
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Bình Thạnh",
+        "addr:housenumber": "324",
+        "addr:street": "Chu Văn An",
+        "addr:subdistrict": "12",
+        "amenity": "university",
+        "barrier": "fence",
+        "education": "university",
+        "name": "Học viện Cán bộ Thành phố Hồ Chí Minh",
+        "office": "educational_institution",
+        "opening_hours": "Mo-Sa 08:00-20:00",
+        "phone": "+84 28 2243 7830",
+        "website": "http://hocviencanbo.hochiminhcity.gov.vn/web/guest/home"
+      }
+    },
+    {
+      "type": "way",
+      "id": 290326852,
+      "center": {
+        "lat": 10.8720215,
+        "lon": 106.7958388
+      },
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "amenity": "university",
+        "name": "Trường Đại học Thể dục Thể thao Thành phố Hồ Chí Minh",
+        "name:en": "Ho Chi Minh City University of Sports",
+        "name:vi": "Trường Đại học Thể dục Thể thao Thành phố Hồ Chí Minh",
+        "phone": "0932944442",
+        "website": "https://ush.edu.vn/",
+        "wikidata": "Q7579810",
+        "wikipedia": "vi:Trường Đại học Thể dục thể thao Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 291052405,
+      "center": {
+        "lat": 10.8952994,
+        "lon": 106.7925977
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Cao đẳng Công nghệ và Nông lâm Nam Bộ"
+      }
+    },
+    {
+      "type": "way",
+      "id": 301514506,
+      "center": {
+        "lat": 10.8571239,
+        "lon": 106.7608407
+      },
+      "tags": {
+        "addr:housenumber": "56",
+        "addr:street": "Hoàng Diệu 2",
+        "amenity": "university",
+        "name": "Trường Đại học Ngân hàng Thành phố Hồ Chí Minh",
+        "website": "https://buh.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 306440163,
+      "center": {
+        "lat": 10.8449562,
+        "lon": 106.7727016
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Saigon International University",
+        "wikidata": "Q10829119",
+        "wikimedia_commons": "Category:The Saigon International University",
+        "wikipedia": "en:The Saigon International University"
+      }
+    },
+    {
+      "type": "way",
+      "id": 318679201,
+      "center": {
+        "lat": 10.8067954,
+        "lon": 106.713052
+      },
+      "tags": {
+        "addr:housenumber": "25",
+        "addr:street": "Đường D5",
+        "amenity": "university",
+        "education": "university",
+        "name": "Phân hiệu Trường Đại học Ngoại thương tại Thành phố Hồ Chí Minh",
+        "name:en": "Foreign Trade University HCMC",
+        "opening_hours": "Mo-Su 06:00-21:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 325249009,
+      "center": {
+        "lat": 10.8299239,
+        "lon": 106.7137374
+      },
+      "tags": {
+        "addr:housenumber": "123",
+        "addr:street": "Quốc lộ 13",
+        "amenity": "university",
+        "name": "Trường Đại học Luật Thành phố Hồ Chí Minh (cơ sở 2)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 345416007,
+      "center": {
+        "lat": 10.846658,
+        "lon": 106.7944668
+      },
+      "tags": {
+        "addr:city": "Thành phố Thủ Đức",
+        "addr:housenumber": "451",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Đường Lê Văn Việt",
+        "addr:subdistrict": "Phường Tăng Nhơn Phú A",
+        "amenity": "university",
+        "internet_access": "yes",
+        "internet_access:fee": "yes",
+        "name": "Phân hiệu Trường Đại học Giao thông Vận tải tại Thành phố Hồ Chí Minh",
+        "operator": "Bộ Giáo dục và Đào tạo",
+        "operator:type": "government",
+        "start_date": "27/04/1990",
+        "website": "https://utc2.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 345416008,
+      "center": {
+        "lat": 10.8449038,
+        "lon": 106.7949267
+      },
+      "tags": {
+        "addr:city": "Thành phố Thủ Đức",
+        "addr:housenumber": "450",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Đường Lê Văn Việt",
+        "addr:subdistrict": "Phường Tăng Nhơn Phú A",
+        "amenity": "university",
+        "internet_access": "yes",
+        "name": "Phân hiệu Trường Đại học Giao thông vận tải tại Thành phố Hồ Chí Minh - Khu Văn phòng",
+        "operator": "Bộ Giáo dục và Đào tạo",
+        "operator:type": "government",
+        "start_date": "27/04/1990",
+        "website": "https://utc2.edu.vn/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 402881896,
+      "center": {
+        "lat": 10.8219489,
+        "lon": 106.7704677
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Văn hóa Thành phố Hồ Chí Minh - cơ sở 2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 403107465,
+      "center": {
+        "lat": 10.8588452,
+        "lon": 106.7553555
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Đại học Cảnh sát Nhân dân Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 493157641,
+      "center": {
+        "lat": 10.8273088,
+        "lon": 106.6994241
+      },
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại học Văn Lang"
+      }
+    },
+    {
+      "type": "way",
+      "id": 507538760,
+      "center": {
+        "lat": 10.8499148,
+        "lon": 106.7855939
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Học viện Chính trị khu vực II"
+      }
+    },
+    {
+      "type": "way",
+      "id": 507538761,
+      "center": {
+        "lat": 10.8489606,
+        "lon": 106.7920989
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Phân hiệu Học viện Tài chính tại Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 507538762,
+      "center": {
+        "lat": 10.8477293,
+        "lon": 106.7859253
+      },
+      "tags": {
+        "addr:housenumber": "97",
+        "addr:postcode": "700000",
+        "addr:street": "Man Thiện",
+        "amenity": "university",
+        "name": "Học viện Công nghệ Bưu chính Viễn thông - Cơ sở Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 507538770,
+      "center": {
+        "lat": 10.8452215,
+        "lon": 106.7969504
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Công nghệ Kỹ thuật Thành phố Hồ Chí Minh - cơ sở 2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 537669583,
+      "center": {
+        "lat": 10.7989905,
+        "lon": 106.706784
+      },
+      "tags": {
+        "addr:city": "Thành phố Hồ Chí Minh",
+        "addr:district": "Quận Bình Thạnh",
+        "addr:housenumber": "276",
+        "addr:postcode": "700000",
+        "addr:street": "Đường Điện Biên Phủ",
+        "addr:subdistrict": "Phường 17",
+        "amenity": "university",
+        "building:levels": "16",
+        "education": "university",
+        "ele": "15",
+        "name": "UEF - Đại học Kinh Tế Tài Chính"
+      }
+    },
+    {
+      "type": "way",
+      "id": 605281197,
+      "center": {
+        "lat": 10.8631668,
+        "lon": 106.812483
+      },
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "name": "Phân hiệu Học viện Thanh thiếu niên Việt Nam tại Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 605281203,
+      "center": {
+        "lat": 10.8677594,
+        "lon": 106.8111245
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Trung cấp Kỹ thuật Nông nghiệp Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 724934204,
+      "center": {
+        "lat": 10.8379239,
+        "lon": 106.8096846
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Nguyễn Tất Thành (cơ sở Thành phố Thủ Đức)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 737440143,
+      "center": {
+        "lat": 10.8420854,
+        "lon": 106.7645056
+      },
+      "tags": {
+        "addr:housenumber": "48",
+        "addr:street": "Đặng Văn Bi",
+        "amenity": "university",
+        "name": "Trường Đại học Kiến trúc Thành phố Hồ Chí Minh - Cơ sở Thủ Đức"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1022939891,
+      "center": {
+        "lat": 10.8414179,
+        "lon": 106.8100399
+      },
+      "tags": {
+        "addr:city": "Thành phố Thủ Đức",
+        "addr:housenumber": "Lô E2a-7",
+        "addr:street": "Đường D1",
+        "addr:subdistrict": "Long Thạnh Mỹ",
+        "amenity": "university",
+        "name": "Trường Đại học FPT Thành phố Hồ Chí Minh",
+        "name:en": "FPT University - HCMC Campus",
+        "website": "https://hcmuni.fpt.edu.vn",
+        "wikidata": "Q610220",
+        "wikipedia": "vi:Trường Đại học FPT"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1023330892,
+      "center": {
+        "lat": 10.8054057,
+        "lon": 106.7308464
+      },
+      "tags": {
+        "addr:housenumber": "51",
+        "addr:street": "Đường Quốc Hương",
+        "amenity": "university",
+        "name": "Trường Đại học Văn hóa Thành phố Hồ Chí Minh",
+        "name:en": "Ho Chi Minh City University of Culture",
+        "wikidata": "Q5873981",
+        "wikipedia": "vi:Trường Đại học Văn hóa Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1026567598,
+      "center": {
+        "lat": 10.9044363,
+        "lon": 106.8570293
+      },
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "name": "Phân hiệu Trường Đại học Mở Thành phố Hồ Chí Minh tại Đồng Nai"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1057874323,
+      "center": {
+        "lat": 10.8094852,
+        "lon": 106.7150377
+      },
+      "tags": {
+        "addr:housenumber": "36",
+        "addr:street": "Hẻm 31 Ung Văn Khiêm",
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại học Công nghệ Thành phố Hồ Chí Minh (cơ sở Ung Văn Khiêm)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1084609765,
+      "center": {
+        "lat": 10.8723693,
+        "lon": 106.805223
+      },
+      "tags": {
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Xa lộ Hà Nội",
+        "amenity": "university",
+        "name": "Trường Đại học An ninh Nhân dân",
+        "name:en": "People's Security University",
+        "name:vi": "Trường Đại học An ninh Nhân dân",
+        "operator": "Bộ Công an Việt Nam",
+        "operator:type": "government",
+        "website": "https://dhannd.edu.vn/",
+        "wikidata": "Q86012406",
+        "wikipedia": "vi:Trường Đại học An ninh nhân dân (Thành phố Hồ Chí Minh)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1085944223,
+      "center": {
+        "lat": 10.8597282,
+        "lon": 106.6946638
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Nguyễn Tất Thành (cơ sở Quận 12))"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1085965818,
+      "center": {
+        "lat": 10.7927721,
+        "lon": 106.7063694
+      },
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại học Thuỷ Lợi - Cơ sở 2"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1212036325,
+      "center": {
+        "lat": 10.8723619,
+        "lon": 106.7898363
+      },
+      "tags": {
+        "addr:district": "Thủ Đức",
+        "addr:postcode": "70000",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Đỗ Mười",
+        "addr:subdistrict": "Linh Trung",
+        "amenity": "university",
+        "education": "university",
+        "internet_access": "yes",
+        "name": "Trường Đại học Nông Lâm Thành phố Hồ Chí Minh",
+        "name:en": "Nong Lam University Ho Chi Minh City",
+        "name:vi": "Trường Đại học Nông Lâm Thành phố Hồ Chí Minh",
+        "operator": "Bộ Giáo dục và Đào tạo Việt Nam",
+        "operator:type": "government",
+        "phone": "+842838966780",
+        "website": "https://hcmuaf.edu.vn",
+        "wikidata": "Q5873976",
+        "wikipedia": "vi:Trường Đại học Nông Lâm Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1271061070,
+      "center": {
+        "lat": 10.8404375,
+        "lon": 106.8085906
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Công Nghệ Chi nhánh CNC"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1303838982,
+      "center": {
+        "lat": 10.8699883,
+        "lon": 106.8034308
+      },
+      "tags": {
+        "addr:city": "Hồ Chí Minh",
+        "amenity": "university",
+        "name": "Trường Đại học Công nghệ Thông tin",
+        "name:en": "University of Information Technology",
+        "name:vi": "Trường Đại học Công nghệ Thông tin",
+        "operator": "Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "operator:type": "university",
+        "website": "https://www.uit.edu.vn/",
+        "wikidata": "Q5873994",
+        "wikipedia": "vi:Trường Đại học Công nghệ Thông tin, Đại học Quốc gia Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1419077157,
+      "center": {
+        "lat": 10.8886404,
+        "lon": 106.797667
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Khoa học Sức khỏe",
+        "name:en": "University of Health Sciences",
+        "name:vi": "Trường Đại học Khoa học Sức khỏe",
+        "official_name": "Trường Đại học Khoa học Sức khỏe, Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "official_name:en": "University of Health Sciences, Viet Nam National University, Ho Chi Minh City",
+        "official_name:vi": "Trường Đại học Khoa học Sức khỏe, Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "operator": "Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "operator:type": "university",
+        "short_name": "UHS",
+        "website": "https://www.uhsvnu.edu.vn/",
+        "wikidata": "Q61131917",
+        "wikipedia": "vi:Trường Đại học Khoa học Sức khỏe, Đại học Quốc gia Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1419105579,
+      "center": {
+        "lat": 10.8761964,
+        "lon": 106.7969492
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Khoa học tự nhiên (cơ sở 2)",
+        "operator": "Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "operator:type": "university"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1419109086,
+      "center": {
+        "lat": 10.8776808,
+        "lon": 106.8012827
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Quốc tế",
+        "name:en": "Ho Chi Minh City International University",
+        "name:vi": "Trường Đại học Quốc tế",
+        "operator": "Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "operator:type": "university",
+        "website": "https://hcmiu.edu.vn/",
+        "wikidata": "Q5873959",
+        "wikipedia": "vi:Trường Đại học Quốc tế, Đại học Quốc gia Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1419118309,
+      "center": {
+        "lat": 10.8802192,
+        "lon": 106.8057041
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Bách khoa (cơ sở 2)",
+        "operator": "Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "operator:type": "university"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1419197268,
+      "center": {
+        "lat": 10.8710357,
+        "lon": 106.8001813
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Trường Đại học Khoa học Xã hội và Nhân văn (cơ sở 2)",
+        "operator": "Đại học Quốc gia Thành phố Hồ Chí Minh",
+        "operator:type": "university"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1529277586,
+      "center": {
+        "lat": 10.8500847,
+        "lon": 106.7642525
+      },
+      "tags": {
+        "addr:housenumber": "190",
+        "addr:street": "Võ Văn Ngân",
+        "amenity": "university",
+        "education": "university",
+        "name": "Trường Đại học Xây dựng Hà Nội - Phân hiệu tại Thành phố Hồ Chí Minh",
+        "old_name": "Trường Cao đẳng Xây dựng Thành phố Hồ Chí Minh"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 16241635,
+      "center": {
+        "lat": 10.8145273,
+        "lon": 106.8092252
+      },
+      "tags": {
+        "addr:housenumber": "306",
+        "addr:street": "Võ Văn Hát",
+        "amenity": "university",
+        "name": "Trường Đại học Tài chính - Marketing",
+        "type": "multipolygon"
+      }
+    }
+  ]
+}

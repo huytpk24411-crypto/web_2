@@ -1,0 +1,41 @@
+<header class="portal-header employee-header">
+  <app-brand />
+  <nav aria-label="Điều hướng nhân viên">
+    <a
+      routerLink="/employee/shifts"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ><app-icon name="clock" [size]="15" /> Chấm công</a
+    ><a routerLink="/employee/shifts/register" routerLinkActive="active"
+      ><app-icon name="calendar" [size]="15" /> Đăng ký ca</a
+    ><a routerLink="/employee/deposits/new" routerLinkActive="active"
+      ><app-icon name="file" [size]="15" /> Báo cọc</a
+    ><a routerLink="/employee/deals/deal1" routerLinkActive="active"
+      ><app-icon name="wallet" [size]="15" /> Giao dịch</a
+    ><a routerLink="/employee/payroll" routerLinkActive="active"
+      ><app-icon name="chart" [size]="15" /> Bảng lương</a
+    >
+  </nav>
+  <div class="portal-profile">
+    <img class="avatar" [src]="assets.avatar" alt="Ảnh đại diện nhân viên" />
+    <div class="profile-name">
+      <strong>{{ auth.account()?.name }}</strong
+      ><small>Chuyên viên tư vấn • Demo</small>
+    </div>
+    <a *ngIf="auth.account()?.role === 'ADMIN'" routerLink="/admin" class="badge">Admin</a
+    ><button class="icon-btn" (click)="logout()" aria-label="Đăng xuất">
+      <app-icon name="logout" [size]="15" />
+    </button>
+  </div>
+</header>
+<main class="employee-main">
+  <div class="portal-demo">
+    Không gian làm việc / iHOUZZ Uni <span class="demo-label">Dữ liệu mô phỏng</span>
+  </div>
+  <div class="notice warning" *ngIf="store.storageWarning()">{{ store.storageWarning() }}</div>
+  <router-outlet />
+</main>
+<footer class="portal-footer">
+  <span>© 2026 iHOUZZ Uni | Công ty CP Bất động sản iHOUZZ Uni</span
+  ><a routerLink="/">Về trang tìm phòng ↗</a><span>Phiên bản demo 1.0</span>
+</footer>

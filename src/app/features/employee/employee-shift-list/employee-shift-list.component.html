@@ -1,0 +1,47 @@
+<div class="page-title">
+  <div>
+    <h1>Ca làm của tôi</h1>
+    <p>Theo dõi chấm công và công việc theo từng lần phân ca.</p>
+  </div>
+  <a routerLink="/employee/shifts/register" class="btn primary"
+    ><app-icon name="plus" [size]="16" /> Đăng ký ca</a
+  >
+</div>
+<div class="grid three">
+  <article class="panel" *ngFor="let item of shifts.mine()">
+    <span class="badge">{{ shifts.shift(item.shiftId)?.date | date: 'EEEE, dd/MM/yyyy' }}</span>
+    <h2 style="margin-top: 15px">{{ shifts.shift(item.shiftId)?.label }}</h2>
+    <p class="muted">
+      {{ shifts.shift(item.shiftId)?.start }} – {{ shifts.shift(item.shiftId)?.end }}
+    </p>
+    <app-status-badge [status]="item.status" />
+    <p class="tip">Mã phân ca: {{ item.id }}</p>
+    <a
+      class="btn primary full"
+      style="margin-top: 20px"
+      [routerLink]="[
+        '/employee/shifts',
+        item.id,
+        item.status === 'REGISTERED'
+          ? 'check-in'
+          : item.status === 'IN_PROGRESS'
+            ? 'tasks'
+            : 'check-out',
+      ]"
+      >{{
+        item.status === 'REGISTERED'
+          ? 'Check-in đầu ca'
+          : item.status === 'IN_PROGRESS'
+            ? 'Tiếp tục công việc'
+            : 'Xem bàn giao ca'
+      }}
+      <app-icon name="arrow" [size]="15"
+    /></a>
+  </article>
+</div>
+<div *ngIf="!shifts.mine().length" class="empty">
+  <app-icon name="calendar" [size]="40" />
+  <h2>Bạn chưa đăng ký ca làm</h2>
+  <p>Đăng ký một ca để bắt đầu luồng check-in, làm việc và bàn giao.</p>
+  <a routerLink="/employee/shifts/register" class="btn primary">Đăng ký ca tuần mới</a>
+</div>

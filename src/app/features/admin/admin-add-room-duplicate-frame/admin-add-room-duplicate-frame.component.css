@@ -1,0 +1,26 @@
+.duplicate-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 22px;
+}
+.duplicate-banner h2 {
+  font-size: 18px;
+}
+.duplicate-banner p {
+  margin: 0;
+  font-size: 12px;
+}
+.duplicate-banner .btn {
+  margin-left: auto;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .duplicate-banner {
+    flex-wrap: wrap;
+  }
+  .duplicate-banner .btn {
+    margin-left: 0;
+  }
+}

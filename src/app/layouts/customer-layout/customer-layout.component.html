@@ -1,0 +1,74 @@
+<header class="customer-header">
+  <div class="container header-inner">
+    <app-brand />
+    <nav aria-label="Điều hướng chính">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        >Trang chủ</a
+      ><a routerLink="/rooms" routerLinkActive="active">Tất cả các phòng</a
+      ><a routerLink="/about" routerLinkActive="active">Giới thiệu</a
+      ><a routerLink="/contact" routerLinkActive="active">Liên hệ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="favorite-link" routerLink="/favorites" aria-label="Phòng yêu thích"
+        ><app-icon name="heart" /><span *ngIf="favorites.ids().length">{{
+          favorites.ids().length
+        }}</span></a
+      ><ng-container *ngIf="!auth.account(); else signed"
+        ><a class="login" routerLink="/login">Đăng nhập</a
+        ><a class="btn primary sm" routerLink="/register">Đăng ký</a></ng-container
+      ><ng-template #signed
+        ><a
+          *ngIf="auth.isEmployee()"
+          class="btn soft sm"
+          [routerLink]="auth.account()?.role === 'ADMIN' ? '/admin' : '/employee/shifts/register'"
+          >{{ auth.account()?.role === 'ADMIN' ? 'Quản trị' : 'Nhân viên' }}</a
+        ><span class="account-name">{{ auth.account()?.name }}</span
+        ><button class="icon-btn" (click)="logout()" aria-label="Đăng xuất">
+          <app-icon name="logout" [size]="15" /></button
+      ></ng-template>
+    </div>
+  </div>
+</header>
+<div *ngIf="store.storageWarning()" class="notice warning container" role="alert">
+  {{ store.storageWarning() }}
+</div>
+<main class="customer-page"><router-outlet /></main>
+<footer class="customer-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <app-brand />
+        <p>
+          Hệ sinh thái dịch vụ phòng trọ, căn hộ dành cho sinh viên. An tâm chọn phòng, vững bước
+          tương lai.
+        </p>
+        <p>Thông tin liên hệ chính thức sẽ được cập nhật khi được xác nhận.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Liên kết nhanh</h4>
+        <a routerLink="/">Trang chủ</a>
+        <a routerLink="/rooms">Tất cả các phòng</a>
+        <a routerLink="/about">Giới thiệu</a>
+        <a routerLink="/contact">Liên hệ</a>
+      </div>
+
+      <div class="footer-socials">
+        <h4>Mạng xã hội</h4>
+        <div class="socials" aria-label="Mạng xã hội iHOUZZ Uni">
+          <span class="social-badge" aria-label="Facebook">f</span>
+          <span class="social-badge" aria-label="Instagram">◎</span>
+          <span class="social-badge" aria-label="LinkedIn">in</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 iHOUZZ Uni. All rights reserved.</span>
+      <div class="footer-legal">
+        <span>Chính sách bảo mật</span>
+        <span>Điều khoản dịch vụ</span>
+      </div>
+    </div>
+  </div>
+</footer>

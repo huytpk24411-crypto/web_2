@@ -1,0 +1,12 @@
+﻿.gallery-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: -8px 0 18px;
+}
+.room-footer > span {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}

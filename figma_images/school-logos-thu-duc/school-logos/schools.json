@@ -1,0 +1,15 @@
+[
+  {"id":"hcmus","name":"Trường Đại học Khoa học Tự nhiên","logo":"hcmus.png","source":"https://hcmus.edu.vn/he-thong-nhan-dien-thuong-hieu/"},
+  {"id":"uit","name":"Trường Đại học Công nghệ Thông tin","logo":"uit.png","source":"https://vi.uit.edu.vn/vi/page/huong-dan-su-dung-logo-truong-dai-hoc-cong-nghe-thong-tin"},
+  {"id":"uel","name":"Trường Đại học Kinh tế - Luật","logo":"uel.svg","source":"https://www.uel.edu.vn/nhan-dien-thuong-hieu-uel"},
+  {"id":"hcmussh","name":"Trường Đại học Khoa học Xã hội và Nhân văn","logo":"hcmussh.png","source":"https://hcmussh.edu.vn/ocer/thuong-hieu"},
+  {"id":"hcmute","name":"Trường Đại học Công nghệ Kỹ thuật TP.HCM","logo":"hcmute.png","source":"https://hcmute.edu.vn/"},
+  {"id":"hcmuaf","name":"Trường Đại học Nông Lâm TP.HCM","logo":"hcmuaf.jpg","source":"https://tccb.hcmuaf.edu.vn/tccb-18308-1/vn/mau-bieu-trung.html"},
+  {"id":"hcmut","name":"Trường Đại học Bách khoa","logo":"hcmut.png","source":"https://hcmut.edu.vn/gioi-thieu/nhan-dien-thuong-hieu"},
+  {"id":"hcmiu","name":"Trường Đại học Quốc tế","logo":"hcmiu.png","source":"https://qato.hcmiu.edu.vn/master"},
+  {"id":"hub","name":"Trường Đại học Ngân hàng TP.HCM","logo":"hub.png","source":"https://nhaphoc.hub.edu.vn/"},
+  {"id":"ufm","name":"Trường Đại học Tài chính - Marketing","logo":"ufm.png","source":"https://ufm.edu.vn/"},
+  {"id":"fpt","name":"Trường Đại học FPT - Campus TP.HCM","logo":"fpt.png","source":"https://daihoc.fpt.edu.vn/hcm/"},
+  {"id":"uth","name":"Trường Đại học Giao thông vận tải TP.HCM","logo":"uth.png","source":"https://tuyensinh.ut.edu.vn/"},
+  {"id":"ush","name":"Trường Đại học Thể dục Thể thao TP.HCM","logo":"ush.png","source":"https://nhaphoc.ush.edu.vn/"}
+]

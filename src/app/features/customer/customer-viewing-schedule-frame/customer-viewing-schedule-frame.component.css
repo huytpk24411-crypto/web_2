@@ -1,0 +1,63 @@
+.room-picker {
+  max-height: 310px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+.pick-room {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pick-room.selected {
+  border-color: #8dbbe0;
+  background: #f2f8fe;
+}
+.pick-room img {
+  width: 49px;
+  height: 48px;
+  border-radius: 4px;
+}
+.pick-room strong {
+  display: block;
+  font-size: 11px;
+}
+.pick-room small {
+  font-size: 9px;
+  color: var(--muted);
+}
+.pick-room input {
+  accent-color: var(--primary);
+}
+.selected-photo {
+  height: 230px;
+  width: 100%;
+  border-radius: 7px;
+  margin-bottom: 17px;
+}
+.viewing-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.viewing-row > div {
+  flex: 1;
+}
+.viewing-row p {
+  margin: 4px 0 0;
+}
+@media (max-width: 500px) {
+  .room-picker {
+    grid-template-columns: 1fr;
+  }
+  .viewing-row {
+    flex-wrap: wrap;
+  }
+}

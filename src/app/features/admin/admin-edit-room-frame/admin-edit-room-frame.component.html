@@ -1,0 +1,17 @@
+﻿<div class="room-admin">
+  <div class="breadcrumb">
+    <a routerLink="/admin/rooms">Quản trị Phòng &amp; Tòa nhà › Danh sách phòng</a> › Chỉnh sửa #{{
+      room?.code || id
+    }}
+  </div>
+  <div class="page-title">
+    <div>
+      <h1>Chỉnh sửa Thông tin Phòng #{{ room?.code || id }}</h1>
+      <span class="badge blue">{{
+        room?.publicationStatus === 'PUBLISHED' ? '● Đang hiển thị trên Web' : '● Tin nội bộ'
+      }}</span>
+      <p>Quản lý dữ liệu công khai, chính sách cọc và biểu phí sinh hoạt phục vụ sinh viên.</p>
+    </div>
+  </div>
+  <app-room-form [roomId]="id" />
+</div>

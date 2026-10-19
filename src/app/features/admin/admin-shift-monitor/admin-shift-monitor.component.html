@@ -1,0 +1,34 @@
+<section class="dashboard-panel shift-panel">
+  <div class="panel-heading">
+    <div>
+      <h2>Giám sát Ca trực</h2>
+      <p>GPS &amp; Kỷ luật · Mô phỏng</p>
+    </div>
+    <span class="status-pill green-pill">● Live</span>
+  </div>
+  <div class="shift-card" *ngFor="let shift of shifts" [ngClass]="shift.tone">
+    <div class="shift-top">
+      <span class="shift-avatar">{{ shift.initials }}</span>
+      <div>
+        <h3>{{ shift.name }}</h3>
+        <p>{{ shift.detail }}</p>
+      </div>
+      <span class="shift-status">{{ shift.status }}</span>
+    </div>
+    <div class="shift-location">
+      <app-icon [name]="shift.tone === 'late' ? 'info' : 'pin'" [size]="13" /><span>{{
+        shift.location
+      }}</span
+      ><time>{{ shift.time }}</time>
+    </div>
+  </div>
+  <div class="shift-footer">
+    <button class="discipline-link" (click)="inspect.emit()">
+      <app-icon name="chart" [size]="15" />Xem Bảng Kỷ luật &amp; Khiếu nại (1)
+    </button>
+    <p>Quy định đi trễ: &gt;15p = -50k, &gt;30p = -100k <span>v2.4</span></p>
+  </div>
+  <a class="text-button schedule-link" routerLink="/admin/staff/schedule"
+    >Mở lịch ca trực <app-icon name="arrow" [size]="14"
+  /></a>
+</section>

@@ -1,0 +1,104 @@
+<div class="container section" *ngIf="hold as b; else missing">
+  <div class="step-strip no-print">
+    <div class="done"><b>✓</b><span>Thông tin &amp; yêu cầu giữ chỗ</span></div>
+    <div class="current"><b>2</b><span>Hoàn tất &amp; nhận bản xem trước</span></div>
+  </div>
+  <div class="notice" [class.success]="!!payment">
+    <div class="row between">
+      <div>
+        <strong>{{
+          payment ? 'Đã xác nhận giữ chỗ mô phỏng' : 'Yêu cầu đang chờ xác nhận'
+        }}</strong>
+        <p style="margin: 5px 0 0">
+          {{
+            payment
+              ? 'Phiếu demo đã sẵn sàng. Bạn có thể in hoặc lưu thành PDF từ trình duyệt.'
+              : 'Chưa phát sinh thanh toán. Không có biên lai thu tiền.'
+          }}
+        </p>
+      </div>
+      <button class="btn primary no-print" (click)="print()" [disabled]="!payment">
+        <app-icon name="download" [size]="15" /> In / Lưu PDF
+      </button>
+    </div>
+  </div>
+  <div class="split equal">
+    <div class="print-hide">
+      <section class="panel">
+        <h3><app-icon name="home" /> Thông tin phòng đã giữ chỗ</h3>
+        <div class="inline-room">
+          <img [src]="room?.images?.[0] || '/assets/room-placeholder.svg'" alt="Phòng giữ chỗ" />
+          <div>
+            <span class="badge">{{ room?.code || b.roomId }}</span>
+            <h3 style="margin: 5px 0">{{ room?.name }}</h3>
+            <p class="price" style="font-size: 18px; margin: 0">
+              {{ room?.price | number }} đ/tháng
+            </p>
+          </div>
+        </div>
+        <div class="detail-list" style="margin-top: 22px">
+          <div>
+            <span>Tiền giữ chỗ</span><strong>{{ b.amount | number }} đ</strong>
+          </div>
+          <div><span>Trạng thái</span><app-status-badge [status]="b.status" /></div>
+          <div *ngIf="b.expiresAt">
+            <span>Hết hạn giữ chỗ</span
+            ><strong>{{ b.expiresAt | date: 'dd/MM/yyyy HH:mm' }}</strong>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <h3><app-icon name="file" /> Tham chiếu giao dịch mô phỏng</h3>
+        <div class="detail-list">
+          <div>
+            <span>Mã yêu cầu</span><strong>{{ b.id }}</strong>
+          </div>
+          <div>
+            <span>Mã thanh toán</span><strong>{{ payment?.id || 'Chưa xác nhận' }}</strong>
+          </div>
+          <div>
+            <span>Khách hàng</span><strong>{{ b.name }}</strong>
+          </div>
+          <div><span>Phương thức</span><strong>VietQR • Demo</strong></div>
+          <div>
+            <span>Thời điểm</span
+            ><strong>{{ payment?.confirmedAt | date: 'dd/MM/yyyy HH:mm' }}</strong>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <h3>Hướng dẫn &amp; các bước tiếp theo</h3>
+        <div class="soft-box">
+          <h4>1. Lưu lại bản xem trước</h4>
+          <p class="muted small">Chọn In / Lưu PDF để mở hộp thoại in của trình duyệt.</p>
+          <h4>2. Hoàn tất hồ sơ cọc</h4>
+          <p class="muted small">
+            Nhân viên có thể lập hồ sơ cọc và khấu trừ 1.000.000 đ giữ chỗ này đúng một lần.
+          </p>
+          <h4>3. Chuẩn bị giấy tờ và nhận phòng</h4>
+          <p class="muted small">
+            Chứng từ tại đây chỉ phục vụ mô phỏng, không có giá trị giao dịch.
+          </p>
+        </div>
+        <a routerLink="/rooms" class="btn soft full" style="margin-top: 18px">Về danh mục phòng</a>
+      </section>
+    </div>
+    <app-receipt-preview
+      title="PHIẾU GIỮ CHỖ & BIÊN LAI MÔ PHỎNG"
+      [reference]="b.id"
+      [name]="b.name"
+      [roomCode]="room?.code || b.roomId"
+      [amount]="b.amount"
+      [confirmed]="!!payment"
+      [paymentId]="payment?.id || ''"
+      [date]="payment?.confirmedAt || ''"
+    />
+  </div>
+</div>
+<ng-template #missing
+  ><div class="not-found">
+    <h1>Không tìm thấy phiếu của bạn</h1>
+    <p>Phiếu chỉ hiển thị cho khách hàng sở hữu yêu cầu giữ chỗ.</p>
+    <a routerLink="/rooms" class="btn primary">Tìm phòng</a>
+  </div></ng-template
+>

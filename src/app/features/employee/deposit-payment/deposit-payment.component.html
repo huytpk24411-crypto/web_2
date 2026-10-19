@@ -1,0 +1,125 @@
+<div *ngIf="dossier as d; else missing">
+  <div class="step-strip no-print">
+    <div class="done"><b>✓</b><span>Thông tin &amp; Hồ sơ</span></div>
+    <div [class.current]="d.status === 'PENDING'" [class.done]="!!payment">
+      <b>{{ payment ? '✓' : '2' }}</b
+      ><span>Xác nhận {{ paymentMethod === 'QR' ? 'VietQR' : 'tiền mặt' }}</span>
+    </div>
+    <div [class.current]="!!payment"><b>3</b><span>In phiếu PDF &amp; Bàn giao</span></div>
+  </div>
+  <div class="split equal">
+    <div class="print-hide">
+      <section class="panel">
+        <h3><app-icon name="file" /> Hóa đơn &amp; tóm tắt giao dịch</h3>
+        <app-status-badge [status]="d.status" />
+        <div class="grid two" style="margin-top: 18px">
+          <div class="soft-box">
+            <small class="muted">Chủ thể nhận phòng</small>
+            <h4>{{ d.customerName }}</h4>
+            <small>{{ d.phone }}</small>
+          </div>
+          <div class="soft-box">
+            <small class="muted">Căn hộ / Phòng</small>
+            <h4>{{ room?.code }}</h4>
+            <small>{{ room?.name }}</small>
+          </div>
+        </div>
+        <div class="detail-list" style="margin-top: 20px">
+          <div>
+            <span>Tổng cọc</span><strong>{{ d.total | number }} đ</strong>
+          </div>
+          <div>
+            <span>Đã khấu trừ giữ chỗ</span
+            ><strong class="green">{{ d.holdCredit | number }} đ</strong>
+          </div>
+          <div>
+            <span>Còn phải thu</span><strong class="blue">{{ d.due | number }} đ</strong>
+          </div>
+          <div>
+            <span>Tham chiếu</span><strong>{{ d.id }}</strong>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <h3><app-icon name="wallet" /> Phương thức thanh toán</h3>
+        <div class="row">
+          <a
+            class="btn full"
+            [class.soft]="paymentMethod === 'QR'"
+            [routerLink]="['/employee/deposits', id, 'qr-receipt']"
+            >Chuyển khoản VietQR</a
+          ><a
+            class="btn full"
+            [class.soft]="paymentMethod === 'CASH'"
+            [routerLink]="['/employee/deposits', id, 'cash-receipt']"
+            >Tiền mặt</a
+          >
+        </div>
+        <div class="payment-amount">
+          <div *ngIf="paymentMethod === 'QR'" class="qr-demo">
+            <app-icon name="building" [size]="66" /><strong>QR DEMO</strong>
+          </div>
+          <small>{{
+            paymentMethod === 'QR' ? 'SỐ TIỀN CHUYỂN KHOẢN MÔ PHỎNG' : 'SỐ TIỀN MẶT CẦN XÁC NHẬN'
+          }}</small>
+          <h1>{{ d.due | number }} VND</h1>
+          <p>Không thực hiện giao dịch thật</p>
+        </div>
+        <div class="notice" [class.success]="!!payment">
+          <strong>{{ payment ? 'Đã xác nhận mô phỏng' : 'Chưa xác nhận thanh toán' }}</strong>
+          <p style="margin: 8px 0 0">
+            {{
+              payment
+                ? 'Mã thanh toán: ' + payment.id
+                : 'Thông tin chỉ lưu trên trình duyệt; không kết nối ngân hàng.'
+            }}
+          </p>
+        </div>
+        <ng-container *ngIf="d.status === 'PENDING'"
+          ><label class="check"
+            ><input type="checkbox" [(ngModel)]="acknowledge" />Tôi xác nhận đây là thao tác demo,
+            không thu tiền thật.</label
+          >
+          <p *ngIf="error" class="error" role="alert">{{ error }}</p>
+          <button class="btn success full" (click)="confirm()">
+            {{
+              paymentMethod === 'QR'
+                ? 'Xác nhận chuyển khoản mô phỏng'
+                : 'Xác nhận nhận tiền mặt mô phỏng'
+            }}
+          </button></ng-container
+        ><a class="btn soft full" style="margin-top: 15px" routerLink="/employee/deals/deal1"
+          >Đi đến quản lý giao dịch</a
+        >
+      </section>
+    </div>
+    <div>
+      <div class="row between no-print" style="margin-bottom: 15px">
+        <h3 style="margin: 0">Bản xem trước phiếu thu</h3>
+        <button class="btn primary" (click)="print()" [disabled]="!payment">
+          <app-icon name="download" [size]="15" /> In / Lưu PDF
+        </button>
+      </div>
+      <app-receipt-preview
+        [title]="
+          paymentMethod === 'QR'
+            ? 'PHIẾU CỌC CHUYỂN KHOẢN MÔ PHỎNG'
+            : 'PHIẾU THU CỌC TIỀN MẶT MÔ PHỎNG'
+        "
+        [reference]="d.id"
+        [name]="d.customerName"
+        [roomCode]="room?.code || d.roomId"
+        [amount]="d.due"
+        [confirmed]="!!payment"
+        [paymentId]="payment?.id || ''"
+        [date]="payment?.confirmedAt || ''"
+      />
+    </div>
+  </div>
+</div>
+<ng-template #missing
+  ><div class="empty">
+    <h2>Không tìm thấy hồ sơ cọc</h2>
+    <a routerLink="/employee/deposits/new" class="btn primary">Tạo hồ sơ cọc mới</a>
+  </div></ng-template
+>

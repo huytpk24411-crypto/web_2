@@ -1,0 +1,11 @@
+<div class="toast room-toast" role="status">
+  <span class="success-circle"><app-icon name="check" [size]="17" /></span>
+  <div>
+    <strong>Thao tác thành công!</strong>
+    <p>{{ message }}</p>
+    <a routerLink="/admin/rooms" (click)="closed.emit()">Về danh sách phòng</a>
+  </div>
+  <button class="icon-btn" (click)="closed.emit()" aria-label="Đóng thông báo">
+    <app-icon name="close" [size]="14" />
+  </button>
+</div>

@@ -1,0 +1,140 @@
+<app-map-search />
+<div class="container">
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <h2 class="hot-heading"><app-icon name="flame" [size]="23" /> Phòng HOT</h2>
+        <p class="muted small">Gợi ý nổi bật trong bộ sưu tập phòng mẫu</p>
+      </div>
+      <a class="link small" routerLink="/rooms" [queryParams]="search.params()"
+        >Khám phá thêm <app-icon name="arrow" [size]="15"
+      /></a>
+    </div>
+    <div class="room-grid">
+      <app-room-card *ngFor="let room of hot" [room]="room" />
+    </div>
+    <p class="empty" *ngIf="!hot.length">Không có phòng HOT phù hợp với bộ lọc hiện tại.</p>
+  </section>
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <h2>Tất cả phòng</h2>
+        <p class="muted small">Tìm không gian sống lý tưởng tại Làng Đại học</p>
+      </div>
+      <a class="link small" routerLink="/rooms" [queryParams]="search.params()"
+        >Xem tất cả <app-icon name="arrow" [size]="15"
+      /></a>
+    </div>
+    <div class="room-grid">
+      <app-room-card *ngFor="let room of all" [room]="room" />
+    </div>
+  </section>
+  <section class="section discovery">
+    <span class="eyebrow">BẮT ĐẦU TỪ NƠI BẠN HỌC</span>
+    <h2>Tìm phòng gần trường bạn</h2>
+    <p class="muted">
+      Chọn cơ sở để khám phá bản đồ và danh sách phòng. Quan hệ gần trường đang được minh họa.
+    </p>
+    <div class="school-cards">
+      <a
+        *ngFor="let s of locations.schools.slice(0, 4)"
+        routerLink="/rooms"
+        [queryParams]="{ school: s.id }"
+        class="school-card"
+        ><div class="school-art"><img [src]="s.logo" [alt]="s.name" loading="lazy" /></div>
+        <h3>{{ s.name }}</h3>
+        <p>{{ s.campus }}</p>
+        <span class="link">Xem phòng gần đây →</span></a
+      >
+    </div>
+  </section>
+  <section class="section steps">
+    <span class="eyebrow">ĐƠN GIẢN TRONG TỪNG BƯỚC</span>
+    <h2>Từ tìm phòng đến nhận phòng</h2>
+    <p class="muted">Chủ động khám phá, lựa chọn và sắp xếp lịch xem.</p>
+    <div class="steps-grid">
+      <article>
+        <span class="step-number">01</span>
+        <div>
+          <h3>Khám phá trên bản đồ</h3>
+          <p>Lọc theo trường, khu vực và ngân sách. Xem ảnh, tiện nghi của từng phòng.</p>
+          <a routerLink="/rooms" class="link">Khám phá phòng →</a>
+        </div>
+      </article>
+      <article>
+        <span class="step-number">02</span>
+        <div>
+          <h3>Đặt lịch xem phòng</h3>
+          <p>Chọn phòng phù hợp, đăng nhập và gửi lịch hẹn xem phòng.</p>
+          <a routerLink="/viewings/new" class="link">Đặt lịch xem →</a>
+        </div>
+      </article>
+      <article>
+        <span class="step-number">03</span>
+        <div>
+          <h3>Giữ chỗ sau khi lựa chọn</h3>
+          <p>Xác nhận thông tin và trải nghiệm giữ chỗ 48 giờ qua thanh toán mô phỏng.</p>
+          <a routerLink="/rooms" [queryParams]="{ status: 'AVAILABLE' }" class="link"
+            >Xem phòng trống →</a
+          >
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="home-cta">
+    <div>
+      <span class="eyebrow">KHÔNG GIAN MỚI, KHỞI ĐẦU MỚI</span>
+      <h2>Sẵn sàng tìm căn phòng phù hợp?</h2>
+      <p>Khám phá ảnh phòng và lưu lại những lựa chọn bạn yêu thích.</p>
+    </div>
+    <a routerLink="/rooms" class="btn danger">Xem tất cả phòng →</a>
+  </section>
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <h2>Khám phá theo tòa nhà</h2>
+        <p class="muted small">Danh mục minh họa · chờ dữ liệu tòa nhà từ MongoDB</p>
+      </div>
+    </div>
+    <div class="building-cards">
+      <a *ngFor="let p of buildings" routerLink="/rooms" [queryParams]="{ property: p.id }"
+        ><app-icon name="building" [size]="26" />
+        <h3>{{ p.name }}</h3>
+        <p>{{ p.address }}</p>
+        <span>{{ count(p.id) }} phòng trống · Demo →</span></a
+      >
+    </div>
+  </section>
+  <section class="section faq">
+    <span class="eyebrow">TRƯỚC KHI BẠN BẮT ĐẦU</span>
+    <h2>Câu hỏi thường gặp</h2>
+    <details>
+      <summary>Tôi có cần đăng nhập để tìm phòng không?</summary>
+      <p>
+        Bạn có thể xem bản đồ, lọc phòng và xem ảnh khi chưa đăng nhập. Đăng nhập để lưu yêu thích,
+        đặt lịch hoặc giữ chỗ.
+      </p>
+    </details>
+    <details>
+      <summary>Vị trí và ảnh phòng có phải dữ liệu thực tế không?</summary>
+      <p>
+        Bản đồ nền và vị trí trường lấy từ OpenStreetMap. Tòa nhà, ảnh và thông tin phòng hiện là
+        minh họa cho đồ án, sẽ được thay bằng dữ liệu MongoDB.
+      </p>
+    </details>
+    <details>
+      <summary>Giữ chỗ có thanh toán thật không?</summary>
+      <p>
+        Không. Luồng giữ chỗ là mô phỏng. Sau khi bạn chủ động xác nhận thanh toán demo, hệ thống
+        giữ phòng trong 48 giờ.
+      </p>
+    </details>
+    <details>
+      <summary>Làm sao xem lại những phòng đã lưu?</summary>
+      <p>
+        Đăng nhập tài khoản khách hàng rồi mở
+        <a routerLink="/favorites" class="link">Phòng yêu thích</a> trong menu.
+      </p>
+    </details>
+  </section>
+</div>
