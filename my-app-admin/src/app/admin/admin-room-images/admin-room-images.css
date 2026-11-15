@@ -1,0 +1,21 @@
+﻿.gallery-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: -8px 0 18px;
+}
+.room-footer > span {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.data-note {
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 18px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}

@@ -1,0 +1,38 @@
+﻿:host {
+  display: block;
+}
+.notice h1 {
+  margin: 0;
+  font-size: 22px;
+}
+.notice p {
+  margin: 5px 0 0;
+}
+.inline-room h3 {
+  margin: 5px 0;
+}
+.booking-details,
+.reload-button {
+  margin-top: 22px;
+}
+.receipt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+.detail-list strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.receipt-document h2 {
+  text-align: center;
+  margin: 24px 0;
+}
+@media print {
+  .receipt-document {
+    border: 0;
+    box-shadow: none;
+  }
+}

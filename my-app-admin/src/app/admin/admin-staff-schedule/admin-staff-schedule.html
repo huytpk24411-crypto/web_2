@@ -1,0 +1,1176 @@
+<div class="staff-page" data-view="schedule" [class.has-error]="!!error">
+  <p class="notice" role="status" *ngIf="repository.loading() || repository.shiftApi.loading()">
+    Đang tải dữ liệu từ máy chủ…
+  </p>
+  <div class="staff-tabs">
+    <a
+      routerLink="/admin/staff"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ><app-icon name="users" [size]="17" /> Danh sách nhân sự
+      <span>{{ employees.length }}</span></a
+    >
+    <a routerLink="/admin/staff/schedule" routerLinkActive="active"
+      ><app-icon name="calendar" [size]="17" /> Lịch làm việc &amp; Ca trực</a
+    >
+    <a routerLink="/admin/staff/performance" routerLinkActive="active"
+      ><app-icon name="chart" [size]="17" /> Theo dõi hiệu suất</a
+    >
+    <div class="staff-tabs-spacer"></div>
+    <span class="data-chip">● Dữ liệu từ máy chủ</span>
+  </div>
+
+  <ng-template #errorBanner
+    ><div class="notice error staff-error-banner" *ngIf="error" role="alert">
+      <span class="error-symbol">!</span>
+      <div>
+        <strong>Chưa thể thực hiện thao tác</strong>
+        <p>{{ error }}</p>
+      </div>
+    </div></ng-template
+  >
+  <ng-container><ng-container *ngTemplateOutlet="errorBanner" /></ng-container>
+  <div class="staff-toast" *ngIf="toast" role="status">
+    <span class="toast-check"><app-icon name="check" [size]="22" /></span>
+    <div>
+      <strong>{{
+        toast.startsWith('Xóa thành công') ? 'Xóa thành công!' : 'Thao tác thành công'
+      }}</strong>
+      <p>{{ toast }}</p>
+    </div>
+    <button class="icon-btn" aria-label="Đóng thông báo" (click)="toast = ''">
+      <app-icon name="close" [size]="16" />
+    </button>
+  </div>
+
+  <div class="breadcrumb">
+    <a routerLink="/admin/staff">Quản lý Nhân sự</a> › Lịch làm việc &amp; Ca trực
+  </div>
+  <header class="staff-page-title">
+    <div>
+      <h1>Lịch làm việc &amp; Ca trực</h1>
+      <p>Quản lý lịch tuần, công việc và đợt đăng ký của nhân viên.</p>
+    </div>
+  </header>
+  <nav class="schedule-tabs" aria-label="Lịch làm việc">
+    <button
+      type="button"
+      [class.active]="tab() === 'ca-truc'"
+      [attr.aria-current]="tab() === 'ca-truc' ? 'page' : null"
+      (click)="selectTab('ca-truc')"
+    >
+      Ca trực
+    </button>
+    <button
+      type="button"
+      [class.active]="tab() === 'cong-viec'"
+      [attr.aria-current]="tab() === 'cong-viec' ? 'page' : null"
+      (click)="selectTab('cong-viec')"
+    >
+      Công việc<span *ngIf="pendingConfirmCount() > 0"> ({{ pendingConfirmCount() }})</span>
+    </button>
+    <button
+      type="button"
+      [class.active]="tab() === 'dot-dang-ky'"
+      [attr.aria-current]="tab() === 'dot-dang-ky' ? 'page' : null"
+      (click)="selectTab('dot-dang-ky')"
+    >
+      Đợt đăng ký
+    </button>
+  </nav>
+  <ng-container *ngIf="tab() === 'dot-dang-ky'">
+    <div class="row">
+      <button class="btn primary" (click)="resetPeriodForm()" [disabled]="busy">
+        Tạo đợt đăng ký
+      </button>
+    </div>
+    <p class="notice">
+      Khi đóng đợt, nhân viên chưa đủ 5 ca sẽ được hệ thống xếp ngẫu nhiên cho đủ.
+    </p>
+    <section
+      class="panel period-manager"
+      id="period-manager"
+      aria-labelledby="period-manager-title"
+    >
+      <div class="section-heading">
+        <h2 id="period-manager-title">Quản lý đợt đăng ký</h2>
+        <span class="badge lilac">{{ periods.length }} đợt</span>
+      </div>
+      <button
+        class="btn sm finalized-toggle"
+        *ngIf="pastFinalizedPeriods.length"
+        (click)="showFinalizedPeriods = !showFinalizedPeriods"
+        [attr.aria-expanded]="showFinalizedPeriods"
+        aria-controls="period-table"
+      >
+        {{
+          showFinalizedPeriods
+            ? 'Ẩn các đợt đã chốt'
+            : 'Hiện các đợt đã chốt (' + pastFinalizedPeriods.length + ')'
+        }}
+      </button>
+      <div class="period-table-scroll" tabindex="0" aria-label="Danh sách mọi đợt đăng ký">
+        <table class="period-table" id="period-table" *ngIf="periods.length; else noPeriods">
+          <thead>
+            <tr>
+              <th>Tuần</th>
+              <th>Tên đợt</th>
+              <th>Trạng thái</th>
+              <th class="number">Số ca</th>
+              <th class="number">Lượt nhận ca</th>
+              <th class="number">Công việc</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let period of visiblePeriods" [attr.data-period-id]="period.id">
+              <td>
+                {{ period.weekStart | date: 'dd/MM' }}–{{ periodEnd(period) | date: 'dd/MM/yyyy' }}
+              </td>
+              <td>
+                <span
+                  class="period-name"
+                  [attr.title]="period.name"
+                  *ngIf="editingPeriodId !== period.id; else renamePeriod"
+                  >{{ period.name }}</span
+                >
+                <ng-template #renamePeriod
+                  ><form class="period-rename" (ngSubmit)="savePeriodName(period)">
+                    <label class="field"
+                      ><span>Tên đợt *</span
+                      ><input
+                        class="control"
+                        name="periodName"
+                        [(ngModel)]="periodName"
+                        required
+                        maxlength="200"
+                        #renameName="ngModel"
+                        [disabled]="busy"
+                        [attr.aria-invalid]="!!periodNameError" /><app-form-error
+                        [control]="renameName.control"
+                    /></label>
+                    <p class="field-error" role="alert" *ngIf="periodNameError">
+                      {{ periodNameError }}
+                    </p>
+                    <div class="row">
+                      <button class="btn primary sm" type="submit" [disabled]="busy">Lưu</button
+                      ><button
+                        class="btn sm"
+                        type="button"
+                        (click)="editingPeriodId = ''"
+                        [disabled]="busy"
+                      >
+                        Hủy
+                      </button>
+                    </div>
+                  </form></ng-template
+                >
+              </td>
+              <td>
+                <span
+                  class="badge"
+                  [class.green]="period.status === 'OPEN'"
+                  [class.lilac]="period.status === 'FINALIZED'"
+                  >{{ periodLabel(period) }}</span
+                >
+              </td>
+              <td class="number">{{ period.shiftCount ?? '—' }}</td>
+              <td class="number">{{ period.assignmentCount ?? '—' }}</td>
+              <td class="number">{{ period.taskCount ?? '—' }}</td>
+              <td>
+                <div class="row period-row-actions">
+                  <button class="btn sm" (click)="viewPeriod(period)">Xem lịch</button
+                  ><button class="btn sm" (click)="editPeriod(period)" [disabled]="busy">
+                    Sửa tên
+                  </button>
+                  <button
+                    class="btn sm"
+                    data-action="delete-period"
+                    *ngIf="period.canDelete"
+                    (click)="requestDeletePeriod(period)"
+                    [disabled]="busy"
+                  >
+                    Xóa
+                  </button>
+                  <ng-container [ngSwitch]="period.status || 'DRAFT'">
+                    <button
+                      class="btn sm"
+                      *ngSwitchCase="'DRAFT'"
+                      (click)="periodAction('open', period)"
+                      [disabled]="busy || !api.online() || !!periodActionReason(period, 'open')"
+                      [attr.title]="periodActionReason(period, 'open') || null"
+                      [attr.aria-describedby]="
+                        periodActionReason(period, 'open')
+                          ? 'period-open-reason-' + period.id
+                          : null
+                      "
+                    >
+                      Mở
+                    </button>
+                    <button
+                      class="btn sm"
+                      *ngSwitchCase="'OPEN'"
+                      (click)="periodAction('close', period)"
+                      [disabled]="busy || !api.online()"
+                    >
+                      Đóng
+                    </button>
+                    <button
+                      class="btn primary sm"
+                      *ngSwitchCase="'CLOSED'"
+                      (click)="periodAction('finalize', period)"
+                      [disabled]="busy || !api.online()"
+                    >
+                      Chốt
+                    </button>
+                  </ng-container>
+                  <button
+                    class="btn sm"
+                    data-action="fill-minimum"
+                    *ngIf="canFillMinimum(period)"
+                    (click)="fillMinimum(period)"
+                    [disabled]="busy || !api.online()"
+                    title="Xếp ngẫu nhiên cho ai chưa đủ 5 ca (ca chưa bắt đầu)"
+                  >
+                    Xếp bù ca thiếu
+                  </button>
+                </div>
+                <span
+                  class="sr-only"
+                  *ngIf="period.status === 'DRAFT' && periodActionReason(period, 'open')"
+                  [id]="'period-open-reason-' + period.id"
+                  >{{ periodActionReason(period, 'open') }}</span
+                >
+              </td>
+            </tr>
+            <tr *ngIf="!visiblePeriods.length">
+              <td colspan="7" class="empty mini">Không có đợt đăng ký đang hiển thị.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="period-delete-note muted">
+        Chỉ xóa được đợt chưa có nhân viên nhận ca và chưa có công việc.
+      </p>
+      <ng-template #noPeriods><p class="empty mini">Chưa có đợt đăng ký.</p></ng-template>
+    </section>
+    <form class="panel staff-period-form" *ngIf="showPeriodForm" (ngSubmit)="createPeriod()">
+      <h2>Tạo đợt đăng ký ca</h2>
+      <div class="form-grid">
+        <label class="field"
+          ><span>Tên đợt *</span
+          ><input
+            class="control"
+            name="name"
+            [ngModel]="periodForm.name"
+            (ngModelChange)="setPeriodName($event)"
+            required
+            maxlength="200"
+            #periodNameControl="ngModel"
+            [disabled]="busy"
+            [attr.aria-invalid]="!!periodNameError"
+          /><app-form-error [control]="periodNameControl.control" /><small
+            class="field-error"
+            role="alert"
+            *ngIf="periodNameError"
+            >{{ periodNameError }}</small
+          ></label
+        ><label class="field"
+          ><span>Ngày bắt đầu tuần (thứ Hai) *</span
+          ><input
+            class="control"
+            type="date"
+            name="weekStart"
+            [ngModel]="periodForm.weekStart"
+            (ngModelChange)="onPeriodWeekChange($event)"
+            required
+            [disabled]="busy"
+            [attr.aria-invalid]="!!periodWeekError"
+            aria-describedby="period-week-error"
+          /><small
+            class="field-error"
+            id="period-week-error"
+            role="alert"
+            *ngIf="periodWeekError"
+            >{{ periodWeekError }}</small
+          ></label
+        ><label class="field"
+          ><span>Mở đăng ký</span
+          ><input
+            class="control"
+            type="datetime-local"
+            name="opensAt"
+            [(ngModel)]="periodForm.opensAt"
+            disabled /></label
+        ><label class="field"
+          ><span>Đóng đăng ký</span
+          ><input
+            class="control"
+            type="datetime-local"
+            name="closesAt"
+            [(ngModel)]="periodForm.closesAt"
+            disabled /></label
+        ><label class="field"
+          ><span>Số chỗ mỗi ca</span
+          ><input
+            class="control"
+            type="number"
+            name="capacity"
+            min="1"
+            [(ngModel)]="periodForm.capacity"
+            disabled
+        /></label>
+      </div>
+      <div class="row">
+        <button class="btn" type="button" (click)="showPeriodForm = false" [disabled]="busy">
+          Hủy</button
+        ><button class="btn primary" type="submit" [disabled]="busy || api.loading()">
+          Tạo đợt và lịch tuần
+        </button>
+      </div>
+    </form>
+  </ng-container>
+  <ng-template #periodActions let-period>
+    <div class="period-actions">
+      <div class="period-action">
+        <button
+          class="btn sm"
+          (click)="periodAction('open', period)"
+          [disabled]="busy || !api.online() || !!periodActionReason(period, 'open')"
+        >
+          Mở</button
+        ><small class="action-reason" *ngIf="periodActionReason(period, 'open')">{{
+          periodActionReason(period, 'open')
+        }}</small>
+      </div>
+      <div class="period-action">
+        <button
+          class="btn sm"
+          (click)="periodAction('close', period)"
+          [disabled]="busy || !api.online() || !!periodActionReason(period, 'close')"
+        >
+          Đóng</button
+        ><small class="action-reason" *ngIf="periodActionReason(period, 'close')">{{
+          periodActionReason(period, 'close')
+        }}</small>
+      </div>
+      <div class="period-action">
+        <button
+          class="btn primary sm"
+          (click)="periodAction('finalize', period)"
+          [disabled]="busy || !api.online() || !!periodActionReason(period, 'finalize')"
+        >
+          Chốt</button
+        ><small class="action-reason" *ngIf="periodActionReason(period, 'finalize')">{{
+          periodActionReason(period, 'finalize')
+        }}</small>
+      </div>
+      <div class="period-action" *ngIf="canFillMinimum(period)">
+        <button
+          class="btn sm"
+          data-action="fill-minimum"
+          (click)="fillMinimum(period)"
+          [disabled]="busy || !api.online()"
+        >
+          Xếp bù ca thiếu</button
+        ><small class="action-reason">Xếp ngẫu nhiên cho ai chưa đủ 5 ca (ca chưa bắt đầu).</small>
+      </div>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="tab() === 'ca-truc'">
+    <div class="panel staff-schedule-toolbar">
+      <button class="btn" (click)="previousWeek()">‹ Tuần trước</button>
+      <strong>Tuần bắt đầu {{ currentWeek | date: 'dd/MM/yyyy' }}</strong>
+      <button class="btn" (click)="nextWeek()">Tuần sau ›</button>
+    </div>
+    <section class="panel period-state" aria-label="Đợt đăng ký tuần đang xem">
+      <ng-container *ngIf="currentPeriod as period; else noWeekPeriod">
+        <div class="row">
+          <strong>{{ period.name }}</strong
+          ><span class="badge lilac">{{ periodLabel(period) }}</span>
+        </div>
+        <ng-container *ngTemplateOutlet="periodActions; context: { $implicit: period }" />
+      </ng-container>
+      <ng-template #noWeekPeriod>
+        <p>Tuần này chưa có đợt đăng ký</p>
+        <button class="btn primary" (click)="createWeekPeriod()" [disabled]="busy || api.loading()">
+          Tạo đợt cho tuần này
+        </button>
+      </ng-template>
+    </section>
+    <section
+      class="panel staff-matrix-panel"
+      aria-labelledby="matrix-title"
+      [attr.aria-busy]="!!cellBusy() || api.loading()"
+    >
+      <div class="section-heading">
+        <h2 id="matrix-title">Lịch trực trong tuần</h2>
+        <span class="muted">{{ matrixEmployees.length }} nhân viên</span>
+      </div>
+      <p class="matrix-help">Chọn + Sáng / + Chiều để thêm ca. Chọn thẻ ca để xem công việc.</p>
+      <div class="matrix-scroll" tabindex="0" aria-label="Ma trận ca trực theo nhân viên và ngày">
+        <table class="staff-matrix">
+          <thead>
+            <tr>
+              <th scope="col">Nhân viên</th>
+              <th scope="col" *ngFor="let date of weekDates; let i = index">
+                {{ weekdays[i] }}<small>{{ date | date: 'dd/MM' }}</small>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of matrixEmployees" [attr.data-employee-id]="employee.id">
+              <th scope="row">
+                <div class="staff-person">
+                  <img
+                    *ngIf="employee.avatar; else initials"
+                    [src]="employee.avatar"
+                    alt=""
+                    appImageFallback
+                  />
+                  <ng-template #initials
+                    ><span class="avatar-initial" aria-hidden="true">{{
+                      employee.fullName.slice(0, 1)
+                    }}</span></ng-template
+                  >
+                  <span
+                    ><strong>{{ employee.fullName }}</strong
+                    ><small>{{ employee.employeeCode }}</small
+                    ><small class="week-count"
+                      >{{ employeeWeekCount(employee.id) }} ca / tuần</small
+                    ></span
+                  >
+                </div>
+              </th>
+              <td *ngFor="let date of weekDates">
+                <div
+                  class="matrix-half"
+                  *ngFor="let half of halves"
+                  [attr.data-half]="half"
+                  [attr.data-date]="date"
+                >
+                  <ng-container
+                    *ngTemplateOutlet="
+                      matrixHalf;
+                      context: {
+                        $implicit: employee,
+                        shift: matrixShift(date, half),
+                        half: half,
+                        date: date,
+                      }
+                    "
+                  />
+                </div>
+              </td>
+            </tr>
+            <tr *ngIf="!matrixEmployees.length">
+              <td colspan="8" class="empty">Chưa có nhân viên đang hoạt động.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </ng-container>
+  <ng-template #matrixHalf let-employee let-shift="shift" let-half="half" let-date="date">
+    <ng-container
+      *ngIf="shift && assignmentFor(employee.id, shift.id) as assignment; else emptyHalf"
+    >
+      <div class="assignment-slot">
+        <button
+          type="button"
+          class="matrix-assignment"
+          [class.afternoon]="half === 'Chiều'"
+          [attr.aria-expanded]="popover()?.assignmentId === assignment.id"
+          aria-haspopup="dialog"
+          (click)="openPopover(employee.id, shift, assignment, $event)"
+          [attr.aria-label]="employee.fullName + ', Ca ' + half.toLowerCase() + ', ' + date"
+        >
+          <strong>Ca {{ half.toLowerCase() }}</strong
+          ><span>{{ shift.start }} – {{ shift.end }}</span
+          ><small>· {{ ngLocation(shift.workLocationId) }}</small>
+          <span class="auto-badge" *ngIf="assignment.source === 'AUTO_RANDOM'">Tự xếp</span>
+        </button>
+        <button
+          type="button"
+          class="remove-assignment"
+          *ngIf="!shiftStarted(shift)"
+          [disabled]="busy || !!cellBusy()"
+          [attr.aria-label]="
+            'Xóa ca ' +
+            half.toLowerCase() +
+            ' của ' +
+            employee.fullName +
+            ' ngày ' +
+            (date | date: 'dd/MM/yyyy')
+          "
+          (click)="requestDeleteAssignment(employee.id, shift, assignment)"
+        >
+          <app-icon name="close" [size]="12" />
+        </button>
+      </div>
+    </ng-container>
+    <ng-template #emptyHalf>
+      <span class="empty-half-wrapper" [attr.title]="emptyReason(employee.id, shift)">
+        <button
+          type="button"
+          class="matrix-empty"
+          [disabled]="busy || !!cellBusy() || api.loading() || !!emptyReason(employee.id, shift)"
+          [attr.aria-label]="
+            'Thêm ca ' +
+            half.toLowerCase() +
+            ' cho ' +
+            employee.fullName +
+            ' ngày ' +
+            (date | date: 'dd/MM/yyyy')
+          "
+          (click)="addMatrixAssignment(employee.id, shift)"
+        >
+          {{ cellBusy() === employee.id + ':' + shift?.id ? 'Đang thêm…' : '+ ' + half
+          }}<small>Chưa nhận ca</small>
+        </button>
+      </span>
+    </ng-template>
+  </ng-template>
+
+  <section class="panel task-manager" *ngIf="tab() === 'cong-viec'" aria-labelledby="tasks-title">
+    <div class="section-heading">
+      <h2 id="tasks-title">Công việc</h2>
+      <button class="btn primary" [disabled]="busy || tasksLoading()" (click)="openTaskForm()">
+        Thêm công việc
+      </button>
+    </div>
+    <section
+      class="pending-confirm"
+      *ngIf="pendingConfirmCount() > 0 && !tasksLoading() && !tasksError()"
+      aria-labelledby="pending-confirm-title"
+    >
+      <h3 id="pending-confirm-title">Chờ xác nhận hoàn thành ({{ pendingConfirmCount() }})</h3>
+      <p class="notice error" role="alert" *ngIf="pendingConfirmError()">
+        {{ pendingConfirmError() }}
+      </p>
+      <div class="period-table-scroll" tabindex="0" aria-label="Công việc chờ xác nhận hoàn thành">
+        <table class="period-table pending-confirm-table">
+          <thead>
+            <tr>
+              <th>Công việc</th>
+              <th>Ca</th>
+              <th>Nhân viên đã làm</th>
+              <th>Giờ check-out</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of pendingConfirmTasks()" [attr.data-pending-task-id]="task.id">
+              <td>
+                <strong>{{ task.title }}</strong>
+                <p class="pending-description muted" [attr.title]="task.description">
+                  {{ task.description }}
+                </p>
+              </td>
+              <td>{{ pendingShiftLabel(task) }}</td>
+              <td>
+                <div *ngFor="let employee of task.pendingConfirm?.employees">
+                  {{ employee.fullName }} · {{ employee.employeeCode }}
+                </div>
+              </td>
+              <td>
+                <div *ngFor="let employee of task.pendingConfirm?.employees">
+                  {{
+                    employee.checkOutAt
+                      ? (employee.checkOutAt | date: 'HH:mm dd/MM' : '+0700')
+                      : '—'
+                  }}
+                </div>
+              </td>
+              <td>
+                <div class="task-actions">
+                  <button
+                    class="btn primary sm"
+                    [disabled]="busy"
+                    (click)="confirmPendingTask(task)"
+                  >
+                    Xác nhận hoàn thành
+                  </button>
+                  <button class="btn sm" [disabled]="busy" (click)="openTaskRejection(task)">
+                    Chưa hoàn thành
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <div class="task-filters">
+      <label class="field"
+        ><span>Trạng thái</span
+        ><select
+          class="control"
+          name="taskStatusFilter"
+          [ngModel]="taskFilter()"
+          (ngModelChange)="setTaskFilter($event)"
+        >
+          <option value="">Tất cả</option>
+          <option value="UNASSIGNED">Chưa giao</option>
+          <option value="ASSIGNED">Đã giao</option>
+          <option value="PENDING_CONFIRM">Chờ xác nhận</option>
+          <option value="WAITING_ADMIN">Chờ giao lại</option>
+          <option value="DONE">Hoàn thành</option>
+        </select></label
+      >
+      <label class="field"
+        ><span>Tìm theo tên công việc</span
+        ><input
+          class="control"
+          type="search"
+          name="taskQuery"
+          [ngModel]="taskQuery()"
+          (ngModelChange)="setTaskQuery($event)"
+      /></label>
+    </div>
+    <p role="status" *ngIf="tasksLoading()">Đang tải công việc…</p>
+    <div class="notice error" role="alert" *ngIf="tasksError()">
+      {{ tasksError() }}
+      <button class="btn sm" (click)="loadTasks()" [disabled]="tasksLoading()">Thử lại</button>
+    </div>
+    <ng-container *ngIf="!tasksLoading() && !tasksError()">
+      <div class="period-table-scroll" tabindex="0" aria-label="Danh sách quản lý công việc">
+        <table class="period-table task-table">
+          <thead>
+            <tr>
+              <th>Tên</th>
+              <th>Loại</th>
+              <th>Ca</th>
+              <th>Nhân viên</th>
+              <th>Trạng thái</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of pagedTasks" [attr.data-task-id]="task.id">
+              <td>
+                <strong>{{ task.title }}</strong>
+                <p class="task-description collapsed" [attr.title]="task.description">
+                  {{ task.description }}
+                </p>
+              </td>
+              <td>{{ task.kind === 'VIEWING' ? 'Dẫn khách xem phòng' : 'Công việc' }}</td>
+              <td>
+                <ng-container *ngIf="taskShift(task) as shift; else noTaskShift"
+                  >{{ shift.date | date: 'dd/MM/yyyy' }} ·
+                  {{ shift.startTime < '12:00' ? 'Sáng' : 'Chiều' }}</ng-container
+                ><ng-template #noTaskShift>—</ng-template>
+              </td>
+              <td>
+                <div *ngFor="let part of taskPeople(task)">
+                  {{ personName(part) }}<small class="muted">{{ personCode(part) }}</small>
+                </div>
+                <span *ngIf="!taskPeople(task).length">—</span>
+              </td>
+              <td>
+                <span [class]="'task-status ' + taskStatusClass(task)">{{ taskStatus(task) }}</span>
+              </td>
+              <td>
+                <div class="task-actions">
+                  <button class="btn sm" (click)="viewingTask.set(task)">Xem</button>
+                  <button
+                    class="btn sm"
+                    *ngIf="task.status === 'UNASSIGNED' || task.status === 'WAITING_ADMIN'"
+                    [disabled]="busy"
+                    (click)="editTask(task, true)"
+                  >
+                    Giao
+                  </button>
+                  <button
+                    class="btn sm"
+                    *ngIf="taskEditable(task)"
+                    [disabled]="busy"
+                    (click)="editTask(task)"
+                  >
+                    Sửa
+                  </button>
+                  <span
+                    *ngIf="taskEditable(task) && task.kind !== 'VIEWING'"
+                    [attr.title]="taskDeleteReason(task)"
+                  >
+                    <button
+                      class="btn sm"
+                      data-action="delete-task"
+                      [disabled]="busy || !!taskDeleteReason(task)"
+                      (click)="requestDeleteTask(task)"
+                      [attr.aria-describedby]="
+                        taskDeleteReason(task) ? 'task-delete-reason-' + task.id : null
+                      "
+                    >
+                      Xóa
+                    </button>
+                  </span>
+                </div>
+                <small
+                  class="action-reason"
+                  *ngIf="taskEditable(task) && task.kind !== 'VIEWING' && taskDeleteReason(task)"
+                  [id]="'task-delete-reason-' + task.id"
+                  >{{ taskDeleteReason(task) }}</small
+                >
+              </td>
+            </tr>
+            <tr *ngIf="!pagedTasks.length">
+              <td colspan="6" class="empty">Không có công việc phù hợp.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="task-pagination">
+        <span>{{ filteredTasks.length }} công việc · 20 / trang</span>
+        <div class="row">
+          <button
+            class="btn sm"
+            [disabled]="taskPage() <= 1"
+            (click)="taskPage.set(taskPage() - 1)"
+          >
+            Trang trước</button
+          ><span>Trang {{ taskPage() }} / {{ taskPageCount }}</span
+          ><button
+            class="btn sm"
+            [disabled]="taskPage() >= taskPageCount"
+            (click)="taskPage.set(taskPage() + 1)"
+          >
+            Trang sau
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </section>
+
+  <section
+    *ngIf="popover() as selection"
+    class="assignment-popover"
+    role="dialog"
+    aria-modal="false"
+    aria-labelledby="popover-title"
+    appDialogFocus
+    [style.top.px]="popoverPosition().top"
+    [style.left.px]="popoverPosition().left"
+  >
+    <div class="section-heading">
+      <h3 id="popover-title">{{ employeeFor(selection.employeeId)?.fullName }}</h3>
+      <button class="icon-btn" aria-label="Đóng chi tiết ca" (click)="popover.set(null)">×</button>
+    </div>
+    <p class="muted">{{ employeeFor(selection.employeeId)?.employeeCode }}</p>
+    <p *ngIf="shiftFor(selection.shiftId) as shift">
+      <strong>{{ shift.label }}</strong> {{ shift.start }} – {{ shift.end }}<br />{{
+        shift.date | date: 'dd/MM/yyyy'
+      }}
+      · {{ ngLocation(shift.workLocationId) }}
+    </p>
+    <p>
+      <span class="badge lilac">{{ assignmentStatus(selection.assignmentId) }}</span>
+    </p>
+    <h4>Công việc của lượt trực</h4>
+    <ul class="popover-tasks">
+      <li *ngFor="let task of assignmentTasks(selection.assignmentId)">
+        <span>{{ task.title }}</span
+        ><span [class]="'task-status ' + taskStatusClass(task)">{{ taskStatus(task) }}</span>
+      </li>
+    </ul>
+    <p class="muted" *ngIf="!assignmentTasks(selection.assignmentId).length">Chưa có công việc</p>
+  </section>
+
+  <div class="modal-backdrop" *ngIf="rejectingTask() as task" (click)="closeTaskRejection()">
+    <section
+      class="modal task-wizard task-rejection"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="reject-task-title"
+      appDialogFocus
+      (click)="$event.stopPropagation()"
+      [attr.aria-busy]="busy"
+    >
+      <div class="section-heading">
+        <h2 id="reject-task-title">Chưa hoàn thành</h2>
+        <button
+          class="icon-btn"
+          aria-label="Đóng hộp thoại chưa hoàn thành"
+          [disabled]="busy"
+          (click)="closeTaskRejection()"
+        >
+          ×
+        </button>
+      </div>
+      <p>
+        <strong>{{ task.title }}</strong>
+      </p>
+      <form class="task-editor" (ngSubmit)="submitTaskRejection(true)">
+        <label class="field" for="reject-reason"><span>Lý do chưa đạt *</span></label>
+        <textarea
+          id="reject-reason"
+          class="control"
+          name="rejectReason"
+          rows="4"
+          required
+          minlength="3"
+          maxlength="500"
+          [ngModel]="rejectReason()"
+          (ngModelChange)="rejectReason.set($event)"
+          [disabled]="busy"
+          #reasonControl="ngModel"
+          [attr.aria-invalid]="
+            !!rejectReasonError() || (reasonControl.invalid && reasonControl.touched)
+          "
+          aria-describedby="reject-reason-error"
+        ></textarea>
+        <app-form-error
+          *ngIf="!rejectReasonError()"
+          id="reject-reason-error"
+          [control]="reasonControl.control"
+        />
+        <p class="field-error" id="reject-reason-error" role="alert" *ngIf="rejectReasonError()">
+          {{ rejectReasonError() }}
+        </p>
+        <h3>Giao lại</h3>
+        <label class="field"
+          ><span>Chọn ca chưa bắt đầu</span>
+          <select
+            class="control"
+            name="rejectShift"
+            [ngModel]="rejectShiftId()"
+            (ngModelChange)="changeRejectShift($event)"
+            [disabled]="busy"
+          >
+            <option value="">Chọn ca để giao lại</option>
+            <option *ngFor="let shift of rejectShifts" [value]="shift.id">
+              {{ shift.label }} {{ shift.date | date: 'dd/MM/yyyy' }} · {{ shift.start }} –
+              {{ shift.end }}
+            </option>
+          </select>
+        </label>
+        <p class="muted" *ngIf="!rejectShifts.length">
+          Không có ca chưa bắt đầu có nhân viên trực. Bạn có thể trả lại, giao sau.
+        </p>
+        <fieldset class="assignee-options" *ngIf="rejectShiftId()">
+          <legend>Nhân viên đảm nhận *</legend>
+          <label *ngFor="let assignment of rejectAssignments">
+            <input
+              type="checkbox"
+              [checked]="rejectAssigneeIds().includes(assignment.id)"
+              [disabled]="busy"
+              (change)="setRejectAssignee(assignment.id, $any($event.target).checked)"
+            />
+            <span
+              >{{ employeeFor(assignment.employeeId)?.fullName
+              }}<small>{{ employeeFor(assignment.employeeId)?.employeeCode }}</small></span
+            >
+          </label>
+          <p *ngIf="!rejectAssignments.length">
+            Ca không còn phù hợp. Vui lòng chọn ca khác hoặc giao sau.
+          </p>
+        </fieldset>
+        <p class="notice error" role="alert" *ngIf="rejectError()">{{ rejectError() }}</p>
+        <div class="wizard-actions">
+          <button class="btn" type="button" [disabled]="busy" (click)="closeTaskRejection()">
+            Hủy
+          </button>
+          <button
+            class="btn"
+            type="button"
+            [disabled]="busy || !rejectReasonValid()"
+            (click)="submitTaskRejection(false)"
+          >
+            Trả lại, giao sau
+          </button>
+          <button class="btn primary" type="submit" [disabled]="busy || !canRejectAndAssign">
+            Trả lại &amp; giao lại
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" *ngIf="editorOpen()" (click)="closeTaskForm()">
+    <section
+      class="modal task-wizard"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="wizard-title"
+      appDialogFocus
+      (click)="$event.stopPropagation()"
+      [attr.aria-busy]="busy"
+    >
+      <div class="section-heading">
+        <h2 id="wizard-title">{{ editingTask() ? 'Sửa công việc' : 'Thêm công việc' }}</h2>
+        <button
+          class="icon-btn"
+          aria-label="Đóng trình công việc"
+          [disabled]="busy"
+          (click)="closeTaskForm()"
+        >
+          ×
+        </button>
+      </div>
+      <ol class="wizard-steps">
+        <li [attr.aria-current]="editorStep() === 1 ? 'step' : null">1. Thông tin</li>
+        <li [attr.aria-current]="editorStep() === 2 ? 'step' : null">2. Chọn ca</li>
+        <li [attr.aria-current]="editorStep() === 3 ? 'step' : null">3. Nhân viên</li>
+      </ol>
+      <form class="task-editor" (ngSubmit)="editorStep() === 3 ? saveTask() : nextTaskStep()">
+        <ng-container *ngIf="editorStep() === 1">
+          <label class="field"
+            ><span>Tên công việc *</span
+            ><input
+              class="control"
+              name="taskTitle"
+              required
+              [ngModel]="taskTitle()"
+              (ngModelChange)="taskTitle.set($event)"
+              [disabled]="busy || editingTask()?.kind === 'VIEWING'"
+              #titleControl="ngModel"
+              [attr.aria-invalid]="!!taskTitleError()"
+              aria-describedby="task-title-error" /><app-form-error
+              [control]="titleControl.control"
+          /></label>
+          <p class="field-error" id="task-title-error" role="alert" *ngIf="taskTitleError()">
+            {{ taskTitleError() }}
+          </p>
+          <label class="field"
+            ><span>Mô tả</span
+            ><textarea
+              class="control"
+              rows="4"
+              name="taskDescription"
+              maxlength="2000"
+              [ngModel]="taskDescription()"
+              (ngModelChange)="taskDescription.set($event)"
+              [disabled]="busy"
+              #descriptionControl="ngModel"
+              [attr.aria-invalid]="!!taskDescriptionError()"
+              aria-describedby="task-description-error"
+            ></textarea
+            ><app-form-error [control]="descriptionControl.control"
+          /></label>
+          <p
+            class="field-error"
+            id="task-description-error"
+            role="alert"
+            *ngIf="taskDescriptionError()"
+          >
+            {{ taskDescriptionError() }}
+          </p>
+          <p class="muted" *ngIf="editingTask()?.kind === 'VIEWING'">
+            Việc dẫn khách gắn với giờ xem, chỉ đổi nhân viên phụ trách và mô tả.
+          </p>
+        </ng-container>
+        <ng-container *ngIf="editorStep() === 2">
+          <label class="field"
+            ><span>Chọn tuần</span
+            ><input
+              class="control"
+              type="date"
+              name="taskWeek"
+              [ngModel]="taskWeek()"
+              (ngModelChange)="changeTaskWeek($event)"
+              [disabled]="busy || editingTask()?.kind === 'VIEWING'"
+          /></label>
+          <fieldset class="shift-options">
+            <legend>Chọn ca chưa kết thúc *</legend>
+            <label
+              *ngFor="let shift of taskShifts"
+              [class.disabled]="!eligibleAssignments(shift.id).length"
+            >
+              <input
+                type="radio"
+                name="taskShift"
+                [value]="shift.id"
+                [attr.value]="shift.id"
+                [ngModel]="taskShiftId()"
+                (ngModelChange)="changeTaskShift($event)"
+                [disabled]="busy || !eligibleAssignments(shift.id).length"
+              />
+              <span
+                >{{ shift.date | date: 'dd/MM/yyyy' }} ·
+                {{ shift.start < '12:00' ? 'Sáng' : 'Chiều'
+                }}<small
+                  >{{ shift.start }} – {{ shift.end }} ·
+                  {{ eligibleAssignments(shift.id).length }} người trực</small
+                ><small *ngIf="!eligibleAssignments(shift.id).length"
+                  >Ca chưa có nhân viên trực, không thể giao việc.</small
+                ></span
+              >
+            </label>
+            <p class="empty mini" *ngIf="!taskShifts.length">
+              Không có ca phù hợp chưa kết thúc trong tuần này.
+            </p>
+          </fieldset>
+        </ng-container>
+        <ng-container *ngIf="editorStep() === 3">
+          <p *ngIf="shiftFor(taskShiftId()) as shift">
+            {{ shift.date | date: 'dd/MM/yyyy' }} · {{ shift.label }} · {{ shift.start }} –
+            {{ shift.end }}
+          </p>
+          <fieldset class="assignee-options">
+            <legend>Nhân viên đảm nhận *</legend>
+            <label *ngFor="let assignment of taskFormAssignments"
+              ><input
+                type="checkbox"
+                [checked]="taskAssigneeIds().includes(assignment.id)"
+                [disabled]="busy || assigneeDone(assignment.id)"
+                (change)="setTaskAssignee(assignment.id, $any($event.target).checked)"
+              /><span
+                >{{ employeeFor(assignment.employeeId)?.fullName
+                }}<small
+                  >{{ employeeFor(assignment.employeeId)?.employeeCode
+                  }}{{ assigneeDone(assignment.id) ? ' · Đã hoàn thành phần việc' : '' }}</small
+                ></span
+              ></label
+            >
+            <p *ngIf="!taskFormAssignments.length">Ca chưa có nhân viên trực.</p>
+          </fieldset>
+        </ng-container>
+        <p class="notice error" role="alert" *ngIf="taskFormError()">{{ taskFormError() }}</p>
+        <div class="wizard-actions">
+          <button class="btn" type="button" [disabled]="busy" (click)="closeTaskForm()">Hủy</button>
+          <button
+            class="btn"
+            type="button"
+            *ngIf="editorStep() > 1"
+            [disabled]="busy"
+            (click)="editorStep.set(editorStep() === 3 ? 2 : 1)"
+          >
+            Quay lại
+          </button>
+          <button
+            class="btn"
+            type="button"
+            *ngIf="editorStep() === 1 && (!editingTask() || editingTask()?.status === 'UNASSIGNED')"
+            [disabled]="busy"
+            (click)="saveTask(true)"
+          >
+            Lưu chưa giao
+          </button>
+          <button
+            class="btn"
+            type="button"
+            *ngIf="editorStep() === 1 && editingTask() && editingTask()?.status !== 'UNASSIGNED'"
+            [disabled]="busy"
+            (click)="saveTask(false, true)"
+          >
+            Lưu thay đổi
+          </button>
+          <button
+            class="btn primary"
+            type="submit"
+            [disabled]="busy || (editorStep() === 3 && !taskAssigneeIds().length)"
+          >
+            {{ busy ? 'Đang lưu…' : editorStep() === 3 ? 'Giao việc' : 'Tiếp tục' }}
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" *ngIf="viewingTask() as task" (click)="viewingTask.set(null)">
+    <section
+      class="modal task-wizard"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="task-detail-title"
+      appDialogFocus
+      (click)="$event.stopPropagation()"
+    >
+      <div class="section-heading">
+        <h2 id="task-detail-title">{{ task.title }}</h2>
+        <button
+          class="icon-btn"
+          aria-label="Đóng chi tiết công việc"
+          (click)="viewingTask.set(null)"
+        >
+          ×
+        </button>
+      </div>
+      <span [class]="'task-status ' + taskStatusClass(task)">{{ taskStatus(task) }}</span>
+      <p>{{ task.kind === 'VIEWING' ? 'Dẫn khách xem phòng' : 'Công việc' }}</p>
+      <p class="task-description">{{ task.description || 'Chưa có mô tả' }}</p>
+      <p *ngIf="taskShift(task) as shift">
+        {{ shift.date | date: 'dd/MM/yyyy' }} · {{ shift.label }} · {{ shift.startTime }} –
+        {{ shift.endTime }}
+      </p>
+      <p *ngFor="let part of taskPeople(task)">{{ personName(part) }} · {{ personCode(part) }}</p>
+      <div *ngIf="task.viewing as viewing">
+        <h3>Lịch xem phòng</h3>
+        <p>{{ viewing.viewerName }} · {{ viewing.peopleCount }} người</p>
+        <p>
+          {{ viewing.date | date: 'dd/MM/yyyy' }} · {{ viewing.startTime }} – {{ viewing.endTime }}
+        </p>
+        <p *ngFor="let room of viewing.rooms">{{ room.code }} · {{ room.name }}</p>
+      </div>
+      <button class="btn" (click)="viewingTask.set(null)">Đóng</button>
+    </section>
+  </div>
+
+  <div
+    class="modal-backdrop"
+    *ngIf="confirmPeriod || confirmTask() || confirmAssignment()"
+    (click)="closeConfirmation()"
+  >
+    <section
+      class="modal staff-confirm-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="confirm-title"
+      appDialogFocus
+      (click)="$event.stopPropagation()"
+    >
+      <div class="modal-top">
+        <span class="warning-symbol" aria-hidden="true">!</span
+        ><button
+          class="icon-btn"
+          aria-label="Đóng xác nhận"
+          [disabled]="busy"
+          (click)="closeConfirmation()"
+        >
+          ×
+        </button>
+      </div>
+      <h2 id="confirm-title">
+        {{
+          confirmPeriod
+            ? 'Xóa đợt đăng ký?'
+            : confirmAssignment()
+              ? 'Xóa ca trực?'
+              : 'Xóa công việc?'
+        }}
+      </h2>
+      <p *ngIf="confirmPeriod as period">
+        Xóa đợt {{ period.name }} cùng 14 ca trong tuần? Chỉ thực hiện khi đợt chưa có nhân viên
+        nhận ca và chưa có công việc.
+      </p>
+      <p *ngIf="confirmTask() as task">Xóa hẳn công việc {{ task.title }}? Không thể hoàn tác.</p>
+      <ng-container *ngIf="confirmAssignment() as selection"
+        ><p>
+          {{ employeeFor(selection.employeeId)?.fullName }} ·
+          {{ employeeFor(selection.employeeId)?.employeeCode }}<br /><ng-container
+            *ngIf="shiftFor(selection.shiftId) as shift"
+            >{{ shift.label }} · {{ shift.date | date: 'dd/MM/yyyy' }} · {{ shift.start }} –
+            {{ shift.end }}</ng-container
+          >
+        </p>
+        <p>
+          {{ reassignmentCount(selection.assignmentId) }} công việc sẽ chuyển về Chờ giao lại
+        </p></ng-container
+      >
+      <p class="notice error" role="alert" *ngIf="error">{{ error }}</p>
+      <div class="row">
+        <button class="btn" [disabled]="busy" (click)="closeConfirmation()">Hủy</button
+        ><button
+          class="btn danger-button"
+          data-action="confirm-delete"
+          [disabled]="busy"
+          (click)="
+            confirmPeriod ? deletePeriod() : confirmAssignment() ? deleteAssignment() : deleteTask()
+          "
+        >
+          {{ busy ? 'Đang xử lý…' : confirmPeriod ? 'Xóa đợt và 14 ca' : 'Xóa' }}
+        </button>
+      </div>
+    </section>
+  </div>
+</div>

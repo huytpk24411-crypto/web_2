@@ -1,0 +1,194 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--background);
+}
+.employee-header {
+  height: 93px;
+  border-top: 28px solid var(--primary);
+  padding: 0 20px;
+  gap: 30px;
+  background: var(--surface);
+}
+.employee-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+.employee-brand strong {
+  display: block;
+  font-size: 21px;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+}
+.employee-brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.7px;
+}
+.employee-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 36px;
+  border-radius: 7px;
+  background: var(--primary);
+  color: var(--surface);
+}
+.employee-header nav {
+  gap: clamp(14px, 2.5vw, 36px);
+  min-width: 0;
+  overflow-x: auto;
+  align-items: center;
+}
+.employee-header nav a {
+  height: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom-width: 2px;
+}
+.employee-header nav a.active {
+  color: var(--primary-dark);
+  border-bottom-color: var(--primary-dark);
+}
+.employee-header .portal-profile {
+  gap: 10px;
+  flex-shrink: 0;
+}
+.employee-notification {
+  position: relative;
+  display: flex;
+  padding-right: 22px;
+  margin-right: 12px;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+}
+.employee-notification::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 12px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.employee-header .avatar {
+  width: 38px;
+  height: 38px;
+  border: 2px solid var(--primary-dark);
+  border-radius: 50%;
+}
+.employee-header .profile-name {
+  display: block;
+  max-width: 180px;
+}
+.employee-header .profile-name strong {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.employee-header .profile-name small {
+  font-size: 11px;
+}
+.employee-header .icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: auto;
+  padding: 8px;
+  margin-left: 18px;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--accent);
+  background: transparent;
+  font-size: 12px;
+}
+.employee-header .icon-btn:hover {
+  background: var(--soft);
+}
+.employee-main {
+  flex: 1;
+  width: calc(100% - 40px);
+  max-width: 1250px;
+  min-width: 0;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 24px 0 28px;
+}
+.employee-footer {
+  padding: 16px 20px;
+  gap: 16px 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 12px;
+  background: var(--surface);
+  color: var(--text);
+}
+.employee-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+.employee-footer a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (max-width: 1100px) {
+  .employee-header {
+    gap: 16px;
+  }
+  .employee-header .profile-name {
+    max-width: 130px;
+  }
+  .employee-notification {
+    padding-right: 10px;
+    margin-right: 0;
+  }
+  .employee-header .icon-btn {
+    margin-left: 0;
+  }
+}
+@media (max-width: 760px) {
+  .employee-header {
+    height: auto;
+    padding: 12px 14px 0;
+    gap: 12px;
+    border-top-width: 8px;
+    flex-wrap: wrap;
+  }
+  .employee-header nav {
+    order: 3;
+    flex-basis: 100%;
+    height: 42px;
+    gap: 24px;
+  }
+  .employee-header .profile-name,
+  .employee-notification {
+    display: none;
+  }
+  .employee-header .portal-profile {
+    margin-left: auto;
+    gap: 6px;
+  }
+  .employee-brand strong {
+    font-size: 18px;
+  }
+  .employee-main {
+    width: calc(100% - 28px);
+    padding-top: 18px;
+  }
+  .employee-footer {
+    padding: 16px 14px;
+  }
+}
+@media (max-width: 380px) {
+  .employee-header .icon-btn span {
+    display: none;
+  }
+}

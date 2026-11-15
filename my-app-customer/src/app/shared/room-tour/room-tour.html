@@ -1,0 +1,137 @@
+<section
+  class="tour-dialog"
+  appDialogFocus
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="room-tour-title"
+  [attr.aria-describedby]="
+    simulated ? 'room-tour-description room-tour-note' : 'room-tour-description'
+  "
+  (keydown)="keydown($event)"
+  (pointerdown)="interact()"
+>
+  <header class="tour-header">
+    <div>
+      <h2 id="room-tour-title">Xem phòng 360°</h2>
+      <small id="room-tour-description">Ảnh toàn cảnh 360°</small>
+    </div>
+    <button
+      type="button"
+      class="tour-button close"
+      aria-label="Đóng trình xem 360°"
+      (click)="closed.emit()"
+    >
+      ×
+    </button>
+  </header>
+
+  <div
+    #viewport
+    id="room-tour-scene"
+    class="tour-viewport"
+    [class.has-note]="simulated"
+    role="tabpanel"
+    [attr.aria-label]="activeScene()?.label || 'Ảnh phòng 360°'"
+    [attr.aria-busy]="loading() || transitioning()"
+  >
+    <canvas
+      #canvas
+      data-testid="room-tour-canvas"
+      [attr.tabindex]="unavailable() ? -1 : 0"
+      role="img"
+      [attr.aria-label]="
+        'Ảnh toàn cảnh 360°.' +
+        ' Dùng các phím mũi tên hoặc nhấn giữ và kéo để xoay, phím cộng và trừ để thu phóng.'
+      "
+      [hidden]="!!unavailable()"
+      (pointerdown)="pointerDown($event)"
+      (pointermove)="pointerMove($event)"
+      (pointerup)="pointerUp($event)"
+      (pointercancel)="pointerUp($event)"
+      (lostpointercapture)="pointerUp($event)"
+    ></canvas>
+    <div
+      class="hotspots"
+      [class.obscured]="loading() || transitioning() || !!error() || !!unavailable()"
+    >
+      <button
+        #hotspot
+        *ngFor="let item of activeScene()?.hotspots"
+        type="button"
+        class="tour-hotspot"
+        hidden
+        disabled
+        [attr.data-target]="item.target"
+        [attr.aria-label]="'Đi đến ' + item.label"
+        (click)="selectScene(item.target)"
+      >
+        <span aria-hidden="true">➜</span>{{ item.label }}
+      </button>
+    </div>
+    <p
+      class="tour-hint"
+      *ngIf="!dragged() && activeScene() && !loading() && !error() && !unavailable()"
+    >
+      Nhấn giữ và kéo để xoay
+    </p>
+    <div class="tour-status" *ngIf="loading() && !unavailable()" role="status">
+      Đang tải ảnh 360°…
+    </div>
+    <div class="tour-status" *ngIf="error() && !unavailable()" role="alert">
+      <p>{{ error() }}</p>
+      <button type="button" class="tour-button" (click)="retry()">Thử lại</button>
+    </div>
+    <div class="tour-status" *ngIf="unavailable()" role="alert">{{ unavailable() }}</div>
+    <small *ngIf="simulated" id="room-tour-note" class="tour-note">
+      Ảnh mô phỏng 360° dựng từ ảnh góc chụp
+    </small>
+  </div>
+
+  <footer class="tour-footer">
+    <div class="tour-controls" aria-label="Điều khiển góc nhìn">
+      <button
+        type="button"
+        class="tour-button"
+        aria-label="Phóng to"
+        [disabled]="!activeScene() || !!unavailable() || fov() <= 40"
+        (click)="zoom(-5)"
+      >
+        +
+      </button>
+      <button
+        type="button"
+        class="tour-button"
+        aria-label="Thu nhỏ"
+        [disabled]="!activeScene() || !!unavailable() || fov() >= maxFov"
+        (click)="zoom(5)"
+      >
+        −
+      </button>
+      <button
+        type="button"
+        class="tour-button"
+        [disabled]="!activeScene() || !!unavailable()"
+        (click)="resetView()"
+      >
+        Về góc ban đầu
+      </button>
+    </div>
+    <div class="scene-tabs" role="tablist" aria-label="Chọn cảnh trong phòng">
+      <button
+        *ngFor="let scene of tour.scenes; let i = index"
+        type="button"
+        role="tab"
+        aria-controls="room-tour-scene"
+        class="tour-button scene-tab"
+        [attr.aria-selected]="(activeScene()?.id || tour.startScene) === scene.id"
+        [attr.tabindex]="(activeScene()?.id || tour.startScene) === scene.id ? 0 : -1"
+        [disabled]="!!unavailable() || (!activeScene() && loading())"
+        (click)="selectScene(scene.id)"
+        (keydown)="tabKeydown($event, i)"
+      >
+        {{ scene.label }}
+      </button>
+    </div>
+    <span class="scene-announcement" aria-live="polite">{{ activeScene()?.label }}</span>
+  </footer>
+</section>

@@ -1,0 +1,600 @@
+[
+  {
+    "_id": "ccbc487e985e6ecb808168fa",
+    "id": "bl-0001",
+    "paymentId": "ttien-0001",
+    "number": "BL-2026-000001",
+    "issuedAt": "2026-08-03T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Nguyễn Trần Anh Tú",
+      "roomCode": "PHONG_46",
+      "amount": 8600000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "08ec537710f99a4d6b15268c",
+    "id": "bl-0002",
+    "paymentId": "ttien-0002",
+    "number": "BL-2026-000002",
+    "issuedAt": "2026-08-06T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Trần Minh Anh",
+      "roomCode": "PHONG_14",
+      "amount": 5500000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "ff2bbe19afb6c4988a52da4e",
+    "id": "bl-0003",
+    "paymentId": "ttien-0003",
+    "number": "BL-2026-000003",
+    "issuedAt": "2026-08-09T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Lê Minh Anh",
+      "roomCode": "PHONG_16",
+      "amount": 5300000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "3e8e8921558cc12d4606887a",
+    "id": "bl-0004",
+    "paymentId": "ttien-0004",
+    "number": "BL-2026-000004",
+    "issuedAt": "2026-08-12T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Phạm Minh Anh",
+      "roomCode": "PHONG_18",
+      "amount": 5800000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "cb41f8c2b41872db60f4fd13",
+    "id": "bl-0005",
+    "paymentId": "ttien-0005",
+    "number": "BL-2026-000005",
+    "issuedAt": "2026-08-15T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Hoàng Minh Anh",
+      "roomCode": "PHONG_01",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "d47326489943016663a37792",
+    "id": "bl-0006",
+    "paymentId": "ttien-0006",
+    "number": "BL-2026-000006",
+    "issuedAt": "2026-08-15T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Hoàng Minh Anh",
+      "roomCode": "PHONG_01",
+      "amount": 3200000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "8a30e118d50f71438271151b",
+    "id": "bl-0007",
+    "paymentId": "ttien-0007",
+    "number": "BL-2026-000007",
+    "issuedAt": "2026-08-18T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Võ Minh Anh",
+      "roomCode": "PHONG_02",
+      "amount": 4500000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "3448830a25fa65d0299e2a61",
+    "id": "bl-0008",
+    "paymentId": "ttien-0008",
+    "number": "BL-2026-000008",
+    "issuedAt": "2026-08-21T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Đỗ Minh Anh",
+      "roomCode": "PHONG_03",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "f9181f32834cf9490a5d454a",
+    "id": "bl-0009",
+    "paymentId": "ttien-0009",
+    "number": "BL-2026-000009",
+    "issuedAt": "2026-08-21T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Đỗ Minh Anh",
+      "roomCode": "PHONG_03",
+      "amount": 4200000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "1464cb79ae51918eda7da7a2",
+    "id": "bl-0010",
+    "paymentId": "ttien-0010",
+    "number": "BL-2026-000010",
+    "issuedAt": "2026-08-24T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Đinh Minh Anh",
+      "roomCode": "PHONG_04",
+      "amount": 4600000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "d6911cee2b69689aa8c9ed9d",
+    "id": "bl-0011",
+    "paymentId": "ttien-0011",
+    "number": "BL-2026-000011",
+    "issuedAt": "2026-08-27T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Nguyễn Quốc Khánh",
+      "roomCode": "PHONG_05",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "2e4b6e9093feac18ebe10bf2",
+    "id": "bl-0012",
+    "paymentId": "ttien-0012",
+    "number": "BL-2026-000012",
+    "issuedAt": "2026-08-27T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Nguyễn Quốc Khánh",
+      "roomCode": "PHONG_05",
+      "amount": 2900000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "9513288de41fbb288a965631",
+    "id": "bl-0013",
+    "paymentId": "ttien-0013",
+    "number": "BL-2026-000013",
+    "issuedAt": "2026-09-03T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Trần Quốc Khánh",
+      "roomCode": "PHONG_06",
+      "amount": 4300000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "30f403e5fc75eebd5ad80de0",
+    "id": "bl-0014",
+    "paymentId": "ttien-0014",
+    "number": "BL-2026-000014",
+    "issuedAt": "2026-09-06T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Lê Quốc Khánh",
+      "roomCode": "PHONG_07",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "a14761f82b4c7fea5b9fb96f",
+    "id": "bl-0015",
+    "paymentId": "ttien-0015",
+    "number": "BL-2026-000015",
+    "issuedAt": "2026-09-06T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Lê Quốc Khánh",
+      "roomCode": "PHONG_07",
+      "amount": 3400000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "2b4d36767a5b74c00b1e4206",
+    "id": "bl-0016",
+    "paymentId": "ttien-0016",
+    "number": "BL-2026-000016",
+    "issuedAt": "2026-09-09T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Phạm Quốc Khánh",
+      "roomCode": "PHONG_08",
+      "amount": 4700000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "f5018c279d8123d53b979094",
+    "id": "bl-0017",
+    "paymentId": "ttien-0017",
+    "number": "BL-2026-000017",
+    "issuedAt": "2026-09-12T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Hoàng Quốc Khánh",
+      "roomCode": "PHONG_09",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "dcea6cd665488e2d664b8769",
+    "id": "bl-0018",
+    "paymentId": "ttien-0018",
+    "number": "BL-2026-000018",
+    "issuedAt": "2026-09-12T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Hoàng Quốc Khánh",
+      "roomCode": "PHONG_09",
+      "amount": 3400000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "b1c8769bec7d3795256015ac",
+    "id": "bl-0019",
+    "paymentId": "ttien-0019",
+    "number": "BL-2026-000019",
+    "issuedAt": "2026-09-15T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Võ Quốc Khánh",
+      "roomCode": "PHONG_10",
+      "amount": 4200000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "bbc684a36d5d1de9f7d79578",
+    "id": "bl-0020",
+    "paymentId": "ttien-0020",
+    "number": "BL-2026-000020",
+    "issuedAt": "2026-09-18T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Đỗ Quốc Khánh",
+      "roomCode": "PHONG_11",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "4b4cb60bc81fe04d0b7bc578",
+    "id": "bl-0021",
+    "paymentId": "ttien-0021",
+    "number": "BL-2026-000021",
+    "issuedAt": "2026-09-18T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Đỗ Quốc Khánh",
+      "roomCode": "PHONG_11",
+      "amount": 5200000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "184202986ba865bae825b1f1",
+    "id": "bl-0022",
+    "paymentId": "ttien-0022",
+    "number": "BL-2026-000022",
+    "issuedAt": "2026-09-21T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Đinh Quốc Khánh",
+      "roomCode": "PHONG_12",
+      "amount": 4800000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "84f16ce2d4b14e877f80e025",
+    "id": "bl-0023",
+    "paymentId": "ttien-0023",
+    "number": "BL-2026-000023",
+    "issuedAt": "2026-09-24T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Nguyễn Thùy Dương",
+      "roomCode": "PHONG_13",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "e239409245176554d5f42cdc",
+    "id": "bl-0024",
+    "paymentId": "ttien-0024",
+    "number": "BL-2026-000024",
+    "issuedAt": "2026-09-24T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Nguyễn Thùy Dương",
+      "roomCode": "PHONG_13",
+      "amount": 3900000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "c4c1f9d3f983e588f63a7237",
+    "id": "bl-0025",
+    "paymentId": "ttien-0025",
+    "number": "BL-2026-000025",
+    "issuedAt": "2026-10-03T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Trần Thùy Dương",
+      "roomCode": "PHONG_15",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "e141722edcf090372bb76fb1",
+    "id": "bl-0026",
+    "paymentId": "ttien-0026",
+    "number": "BL-2026-000026",
+    "issuedAt": "2026-10-03T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Trần Thùy Dương",
+      "roomCode": "PHONG_15",
+      "amount": 2600000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "1ab5d53eff4499e169faaf02",
+    "id": "bl-0027",
+    "paymentId": "ttien-0027",
+    "number": "BL-2026-000027",
+    "issuedAt": "2026-10-06T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Lê Thùy Dương",
+      "roomCode": "PHONG_17",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "bf085b87f4f6e66e19eea3b0",
+    "id": "bl-0028",
+    "paymentId": "ttien-0028",
+    "number": "BL-2026-000028",
+    "issuedAt": "2026-10-06T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Lê Thùy Dương",
+      "roomCode": "PHONG_17",
+      "amount": 3300000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "ba2394f4141763e9aa07415c",
+    "id": "bl-0029",
+    "paymentId": "ttien-0029",
+    "number": "BL-2026-000029",
+    "issuedAt": "2026-10-09T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Phạm Thùy Dương",
+      "roomCode": "PHONG_19",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "a8d1b61f7567b3ba637ed6bf",
+    "id": "bl-0030",
+    "paymentId": "ttien-0030",
+    "number": "BL-2026-000030",
+    "issuedAt": "2026-10-09T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Phạm Thùy Dương",
+      "roomCode": "PHONG_19",
+      "amount": 4600000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "f1ae73b8c6633c5fa97cdb64",
+    "id": "bl-0031",
+    "paymentId": "ttien-0031",
+    "number": "BL-2026-000031",
+    "issuedAt": "2026-10-12T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Hoàng Thùy Dương",
+      "roomCode": "PHONG_20",
+      "amount": 4600000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "4d865348b5c1862ba623feb2",
+    "id": "bl-0032",
+    "paymentId": "ttien-0032",
+    "number": "BL-2026-000032",
+    "issuedAt": "2026-10-15T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Võ Thùy Dương",
+      "roomCode": "PHONG_21",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "e6ccb107503e974ca9880d0f",
+    "id": "bl-0033",
+    "paymentId": "ttien-0033",
+    "number": "BL-2026-000033",
+    "issuedAt": "2026-10-15T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Võ Thùy Dương",
+      "roomCode": "PHONG_21",
+      "amount": 2800000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "3d31e455f5619ee0df04e2bd",
+    "id": "bl-0034",
+    "paymentId": "ttien-0034",
+    "number": "BL-2026-000034",
+    "issuedAt": "2026-10-18T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Đỗ Thùy Dương",
+      "roomCode": "PHONG_22",
+      "amount": 4300000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "d37c8f2cc86a8e6020eb1a59",
+    "id": "bl-0035",
+    "paymentId": "ttien-0035",
+    "number": "BL-2026-000035",
+    "issuedAt": "2026-10-21T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Đinh Thùy Dương",
+      "roomCode": "PHONG_47",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "99906fa817d843330ad3255a",
+    "id": "bl-0036",
+    "paymentId": "ttien-0036",
+    "number": "BL-2026-000036",
+    "issuedAt": "2026-10-21T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Đinh Thùy Dương",
+      "roomCode": "PHONG_47",
+      "amount": 7900000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "e5b445def33f1f14f47d6f45",
+    "id": "bl-0037",
+    "paymentId": "ttien-0037",
+    "number": "BL-2026-000037",
+    "issuedAt": "2026-11-01T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Nguyễn Tuấn Kiệt",
+      "roomCode": "PHONG_23",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "a04b03249997242437e4c021",
+    "id": "bl-0038",
+    "paymentId": "ttien-0038",
+    "number": "BL-2026-000038",
+    "issuedAt": "2026-11-01T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Nguyễn Tuấn Kiệt",
+      "roomCode": "PHONG_23",
+      "amount": 3000000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "5f21e32943088ffd9d32d9bf",
+    "id": "bl-0039",
+    "paymentId": "ttien-0039",
+    "number": "BL-2026-000039",
+    "issuedAt": "2026-11-01T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Trần Tuấn Kiệt",
+      "roomCode": "PHONG_24",
+      "amount": 6000000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "8cc0ff08da620f8b319b78ea",
+    "id": "bl-0040",
+    "paymentId": "ttien-0041",
+    "number": "BL-2026-000040",
+    "issuedAt": "2026-11-01T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Phạm Tuấn Kiệt",
+      "roomCode": "PHONG_28",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "21ca7c63ccdb8d7b79c0f451",
+    "id": "bl-0041",
+    "paymentId": "ttien-0042",
+    "number": "BL-2026-000041",
+    "issuedAt": "2026-11-01T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Hoàng Tuấn Kiệt",
+      "roomCode": "PHONG_29",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "be8c84aca9f250ef14dbf19c",
+    "id": "bl-0042",
+    "paymentId": "ttien-0043",
+    "number": "BL-2026-000042",
+    "issuedAt": "2026-10-29T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Đỗ Tuấn Kiệt",
+      "roomCode": "PHONG_31",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "ad2247fb63b6619dc59e96fd",
+    "id": "bl-0043",
+    "paymentId": "ttien-0045",
+    "number": "BL-2026-000043",
+    "issuedAt": "2026-11-02T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Nguyễn Bảo Ngọc",
+      "roomCode": "PHONG_33",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "7994ce6a11875387c47fc85b",
+    "id": "bl-0044",
+    "paymentId": "ttien-0046",
+    "number": "BL-2026-000044",
+    "issuedAt": "2026-11-02T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Nguyễn Bảo Ngọc",
+      "roomCode": "PHONG_33",
+      "amount": 4500000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": "045ddc339c03bdceecda6436",
+    "id": "bl-0045",
+    "paymentId": "ttien-0047",
+    "number": "BL-2026-000045",
+    "issuedAt": "2026-11-02T03:12:00.000Z",
+    "snapshot": {
+      "payerName": "Trần Bảo Ngọc",
+      "roomCode": "PHONG_34",
+      "amount": 1000000,
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": "4df8bc3d48d6d30c136278c6",
+    "id": "bl-0046",
+    "paymentId": "ttien-0049",
+    "number": "BL-2026-000046",
+    "issuedAt": "2026-10-31T07:27:00.000Z",
+    "snapshot": {
+      "payerName": "Lê Bảo Ngọc",
+      "roomCode": "PHONG_35",
+      "amount": 4300000,
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  }
+]

@@ -1,0 +1,182 @@
+<div class="header-slot" [class.header-slot--home]="isHome()">
+  <header
+    #header
+    class="customer-header"
+    [class.customer-header--hero]="!headerLight()"
+    [class.customer-header--hidden]="headerHidden()"
+    (focusin)="showHeader()"
+  >
+    <div class="container header-inner">
+      <app-brand class="header-brand" [compact]="true" [onHero]="!headerLight()" />
+      <nav aria-label="Điều hướng chính">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          [routerLinkActiveOptions]="{
+            paths: 'exact',
+            queryParams: 'ignored',
+            fragment: 'ignored',
+            matrixParams: 'ignored',
+          }"
+          >Trang chủ</a
+        ><a routerLink="/rooms" routerLinkActive="active" ariaCurrentWhenActive="page">Tìm phòng</a
+        ><a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">Giới thiệu</a
+        ><a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Liên hệ</a>
+      </nav>
+      <div class="header-actions">
+        <a class="favorite-link" routerLink="/favorites" aria-label="Phòng yêu thích"
+          ><app-icon name="heart" /><span *ngIf="favorites.ids().length">{{
+            favorites.ids().length
+          }}</span></a
+        ><ng-container *ngIf="!auth.account(); else signed"
+          ><a class="login" routerLink="/login" [queryParams]="{ returnUrl: currentUrl }"
+            >Đăng nhập</a
+          ><a
+            class="btn primary sm"
+            routerLink="/register"
+            [queryParams]="{ returnUrl: currentUrl }"
+            >Đăng ký <span class="cta-arrow" aria-hidden="true">→</span></a
+          ></ng-container
+        ><ng-template #signed
+          ><a routerLink="/viewings/new" class="icon-btn" aria-label="Lịch xem của tôi"
+            ><app-icon name="calendar"
+          /></a>
+          <div class="notifications">
+            <button
+              #notificationToggle
+              type="button"
+              class="icon-btn notification-bell"
+              (click)="toggleNotifications()"
+              aria-label="Thông báo"
+              [attr.aria-expanded]="notificationsOpen()"
+              aria-controls="customer-notifications"
+            >
+              <app-icon name="bell" /><span *ngIf="notifications.unread()">{{
+                notifications.unread()
+              }}</span>
+            </button>
+            <section
+              id="customer-notifications"
+              class="notification-panel"
+              *ngIf="notificationsOpen()"
+              aria-label="Thông báo của bạn"
+            >
+              <div class="notification-heading">
+                <strong>Thông báo</strong>
+                <button
+                  type="button"
+                  class="btn sm"
+                  [disabled]="
+                    notifications.loading() || notifications.saving() || !notifications.unread()
+                  "
+                  (click)="notifications.markRead()"
+                >
+                  Đọc tất cả
+                </button>
+                <button
+                  type="button"
+                  class="icon-btn"
+                  aria-label="Đóng thông báo"
+                  (click)="closeNotifications()"
+                >
+                  <app-icon name="close" />
+                </button>
+              </div>
+              <p role="status" *ngIf="notifications.loading()">Đang tải thông báo...</p>
+              <p class="error" role="alert" *ngIf="notifications.error()">
+                {{ notifications.error() }}
+              </p>
+              <p
+                class="muted"
+                *ngIf="
+                  !notifications.loading() &&
+                  !notifications.error() &&
+                  !notifications.items().length
+                "
+              >
+                Chưa có thông báo.
+              </p>
+              <button
+                type="button"
+                class="notification-item"
+                *ngFor="let item of notifications.items()"
+                [class.unread]="!item.read"
+                [disabled]="notifications.loading() || notifications.saving() || item.read"
+                (click)="notifications.markRead(item.id)"
+                [attr.aria-label]="(item.read ? 'Đã đọc: ' : 'Đánh dấu đã đọc: ') + item.title"
+              >
+                <strong>{{ item.title }}</strong
+                ><span>{{ item.body }}</span
+                ><small>{{ item.createdAt | date: 'dd/MM/yyyy HH:mm' }}</small>
+              </button>
+            </section>
+          </div>
+          <div class="account-menu">
+            <button
+              #accountToggle
+              type="button"
+              class="icon-btn account-toggle"
+              (click)="toggleAccount()"
+              aria-label="Menu tài khoản"
+              [attr.aria-expanded]="accountOpen()"
+              aria-controls="customer-account-menu"
+            >
+              <app-icon name="user" /><app-icon
+                class="account-chevron"
+                name="chevron"
+                [size]="12"
+              />
+            </button>
+            <section
+              id="customer-account-menu"
+              class="account-panel"
+              [class.account-panel--open]="accountOpen()"
+              [attr.inert]="accountOpen() ? null : ''"
+              [attr.aria-hidden]="!accountOpen()"
+              aria-label="Tài khoản của bạn"
+            >
+              <strong class="account-name">{{ auth.account()?.name }}</strong>
+              <a routerLink="/favorites" (click)="closeAccount()">Phòng yêu thích</a>
+              <a routerLink="/viewings/new" (click)="closeAccount()">Lịch xem của tôi</a>
+              <button type="button" (click)="closeAccount(); logout()">
+                <app-icon name="logout" [size]="16" />Đăng xuất
+              </button>
+            </section>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </header>
+</div>
+<div *ngIf="favorites.error()" class="notice warning container" role="alert">
+  {{ favorites.error() }}
+</div>
+<div *ngIf="auth.error()" class="notice warning container" role="alert">{{ auth.error() }}</div>
+<main class="customer-page" [class.customer-page--home]="isHome()"><router-outlet /></main>
+<footer class="customer-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <app-brand />
+        <p>
+          Hệ sinh thái dịch vụ phòng trọ, căn hộ dành cho sinh viên. An tâm chọn phòng, vững bước
+          tương lai.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Liên kết nhanh</h4>
+        <a routerLink="/">Trang chủ</a>
+        <a routerLink="/rooms">Tìm phòng</a>
+        <a routerLink="/about">Giới thiệu</a>
+        <a routerLink="/contact">Liên hệ</a>
+        <a routerLink="/favorites">Phòng yêu thích</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 iHOUZZ Uni. All rights reserved.</span>
+    </div>
+  </div>
+</footer>

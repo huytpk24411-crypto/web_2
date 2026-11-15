@@ -1,0 +1,106 @@
+<div class="search-shell" (focusin)="interacting.emit(true)" (focusout)="blur($event)">
+  <form class="home-search-form" (ngSubmit)="open.set(false); search.search()">
+    <div class="location-field field">
+      <label for="home-location">Trường hoặc khu vực</label>
+      <div class="input-with-icon">
+        <app-icon name="pin" [size]="22" />
+        <input
+          id="home-location"
+          name="location"
+          role="combobox"
+          aria-autocomplete="list"
+          aria-haspopup="listbox"
+          aria-controls="home-location-options"
+          [attr.aria-expanded]="open()"
+          [attr.aria-activedescendant]="
+            open() && active() >= 0 ? 'home-location-option-' + active() : null
+          "
+          placeholder="Chọn nơi bạn học"
+          autocomplete="off"
+          [ngModel]="value"
+          (ngModelChange)="input($event)"
+          (focus)="begin()"
+          (keydown)="keydown($event)"
+        />
+      </div>
+      <div
+        *ngIf="open()"
+        id="home-location-options"
+        role="listbox"
+        aria-label="Trường, khu vực và tòa nhà"
+        class="location-options"
+      >
+        <p *ngIf="search.rooms.loading()" role="status">Đang tải gợi ý…</p>
+        <p *ngIf="!search.rooms.loading() && !options().length" role="status">
+          Không tìm thấy gợi ý. Bạn vẫn có thể tìm theo từ khóa đã nhập.
+        </p>
+        <ng-container *ngFor="let group of groups">
+          <div *ngIf="groupOptions(group).length" role="group" [attr.aria-label]="group">
+            <p class="option-group">{{ group }}</p>
+            <div
+              *ngFor="let option of groupOptions(group)"
+              role="option"
+              [id]="'home-location-option-' + optionIndex(option)"
+              [attr.aria-selected]="active() === optionIndex(option)"
+              [class.active-option]="active() === optionIndex(option)"
+              (mousedown)="$event.preventDefault()"
+              (click)="select(option)"
+            >
+              <strong>{{ option.label }}</strong
+              ><small *ngIf="option.detail">{{ option.detail }}</small>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="field">
+      <label for="home-budget">Ngân sách / tháng</label>
+      <select
+        id="home-budget"
+        name="budget"
+        [ngModel]="search.filter().maxPrice || ''"
+        (ngModelChange)="search.set({ maxPrice: $event || undefined })"
+      >
+        <option [ngValue]="''">Mọi mức giá</option>
+        <option *ngFor="let budget of budgets()" [ngValue]="budget">
+          Đến {{ budget | number: '1.0-0' : 'vi' }} đ
+        </option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="home-type">Loại phòng</label>
+      <select
+        id="home-type"
+        name="type"
+        [ngModel]="search.filter().type || ''"
+        (ngModelChange)="search.set({ type: $event })"
+      >
+        <option value="">Tất cả</option>
+        <option *ngFor="let type of types()" [value]="type">{{ type | roomType }}</option>
+        <option
+          *ngIf="search.filter().type && !types().includes(search.filter().type!)"
+          [value]="search.filter().type"
+        >
+          {{ search.filter().type | roomType }}
+        </option>
+      </select>
+    </div>
+    <button class="btn primary search-submit" type="submit" [disabled]="!!search.error()">
+      Tìm phòng <span aria-hidden="true">→</span>
+    </button>
+  </form>
+  <div class="search-footer">
+    <span *ngIf="search.error()" class="filter-error" role="alert">{{ search.error() }}</span>
+    <a class="advanced" routerLink="/rooms" [queryParams]="search.params()">Bộ lọc nâng cao →</a>
+  </div>
+  <div class="filter-chips" *ngIf="search.chips().length" aria-label="Bộ lọc đang áp dụng">
+    <button
+      *ngFor="let chip of search.chips()"
+      type="button"
+      (click)="search.remove(chip.key)"
+      [attr.aria-label]="'Xóa bộ lọc ' + chip.label"
+    >
+      {{ chip.label }} <span aria-hidden="true">×</span>
+    </button>
+  </div>
+</div>

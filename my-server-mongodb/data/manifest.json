@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "randomSeed": 20261103,
+  "asOf": "2026-11-15T20:56:40.096Z",
+  "collections": [
+    {
+      "name": "Role",
+      "file": "roles.json",
+      "count": 3,
+      "sha256": "9f0c4ac5dacf80b4e44be89ee309763488659bcafa2f5fc605959307a149186c"
+    },
+    {
+      "name": "AccountRole",
+      "file": "account-roles.json",
+      "count": 59,
+      "sha256": "5e6ed4e54bd951cc9fb0fd2397d89cc48d1b97f02f2b6869aa29b176a9c09f43"
+    },
+    {
+      "name": "Account",
+      "file": "accounts.json",
+      "count": 59,
+      "sha256": "a9c0641d757c4776a2a5ce4a08e28064bdd785d498a2994f2896b2ba91027b70"
+    },
+    {
+      "name": "AuditLog",
+      "file": "audit-logs.json",
+      "count": 977,
+      "sha256": "fd83118ea6b2bfc6ac093859a98247b27b03de4634faa78c8cbadab625c36d8e"
+    },
+    {
+      "name": "Policy",
+      "file": "policies.json",
+      "count": 3,
+      "sha256": "67b05bb034b5bb5ef36ad0bc8de5297450c3d9f94c7e46c9b4c261e723df8e83"
+    },
+    {
+      "name": "PolicyLevel",
+      "file": "policy-levels.json",
+      "count": 9,
+      "sha256": "8ed6b9a1124fa68c0a0d15b04898f2b33c4ae472011b358f918f7dee86992257"
+    },
+    {
+      "name": "Customer",
+      "file": "customers.json",
+      "count": 43,
+      "sha256": "cc79fd89514a1ae81611165b5b1218647f1c5ab751da65400e5776fcf16fe1d6"
+    },
+    {
+      "name": "Employee",
+      "file": "employees.json",
+      "count": 15,
+      "sha256": "03727e2b9a060fd340be331a3f178fcfb5cedc14c5d2f6e43c85b12879c1c4ee"
+    },
+    {
+      "name": "ContactRequest",
+      "file": "contact-requests.json",
+      "count": 26,
+      "sha256": "d647ae1b4b33c7a79097a9e07a037fc10eb316441f2a4901d09752b0fa87e9b2"
+    },
+    {
+      "name": "Notification",
+      "file": "notifications.json",
+      "count": 166,
+      "sha256": "e56534c5ac52eee38cd4fbbc1383dc5bdcc1d905d788f252180fcb6ea4a166e1"
+    },
+    {
+      "name": "Favorite",
+      "file": "favorites.json",
+      "count": 81,
+      "sha256": "bf48b333fff050bbe3b4da7fe648460a624caba20d0e449f9ad4aa1c4147a891"
+    },
+    {
+      "name": "Viewing",
+      "file": "viewings.json",
+      "count": 116,
+      "sha256": "cf91651d2a116574b53d68df9632fc4fbd9f73ef4dc50c644b15a933f90fe71b"
+    },
+    {
+      "name": "ViewingDetail",
+      "file": "viewing-details.json",
+      "count": 228,
+      "sha256": "e41816cc70ba8c6ba61ce9f2027bf0ddcbd6c9c91808a9ca6bd66c9545085b60"
+    },
+    {
+      "name": "Owner",
+      "file": "owners.json",
+      "count": 10,
+      "sha256": "fa54f9a11683783fd6caf67bb93d341ced16866aff0e1aaa041b7134b4e95569"
+    },
+    {
+      "name": "Room",
+      "file": "rooms.json",
+      "count": 51,
+      "sha256": "56e37835a0bbad671b3e3adf3277b039488ffd33ae847d07173faeb95f878a4d"
+    },
+    {
+      "name": "RoomImage",
+      "file": "room-images.json",
+      "count": 224,
+      "sha256": "6a0570e2a2d0429b97d4dcb77f3b4a49bb51c66d9a76fae8ca097ae6563022aa"
+    },
+    {
+      "name": "RoomPriceHistory",
+      "file": "room-price-history.json",
+      "count": 50,
+      "sha256": "557f0cd13e5d75e361d9bcfce30606e14ce410c1029d482a1a2e0e64860cd216"
+    },
+    {
+      "name": "Property",
+      "file": "properties.json",
+      "count": 8,
+      "sha256": "b346f9faedcf00c19a5592ab2c39c49e46ded02584d1d17669678e02c8f2e43e"
+    },
+    {
+      "name": "PropertySchool",
+      "file": "property-schools.json",
+      "count": 61,
+      "sha256": "42c879a779d35a64571b97da734c75ab2d045ddb051ba54858e2eb77eeb14d2e"
+    },
+    {
+      "name": "School",
+      "file": "schools.json",
+      "count": 13,
+      "sha256": "e3109837aa44283b66b554ddfe4cfccec0c6124d9d065b44cca959944e927962"
+    },
+    {
+      "name": "Hold",
+      "file": "holds.json",
+      "count": 22,
+      "sha256": "c37d339958aa313947fa35eee98fdad22105df37aece07344df3e584579fcb77"
+    },
+    {
+      "name": "Payment",
+      "file": "payments.json",
+      "count": 49,
+      "sha256": "2563f8836ec7c2d40fd1416bc9c4fd170fd0e2ac3484a6cbce2a52a319574c37"
+    },
+    {
+      "name": "Receipt",
+      "file": "receipts.json",
+      "count": 46,
+      "sha256": "af949ec235839f75db14aa3db8cd2c9bb7a934776021310ae38997358a46d70a"
+    },
+    {
+      "name": "Deposit",
+      "file": "deposits.json",
+      "count": 30,
+      "sha256": "400caa9fadf4826f0302f8600b4c2d57a1b9a03fa8dcf79113177f232928a948"
+    },
+    {
+      "name": "Contract",
+      "file": "contracts.json",
+      "count": 26,
+      "sha256": "4610f7a07ba887635f7e26331405da5f1b6daadc6374e1ecac8ff9ce3828dcbc"
+    },
+    {
+      "name": "BrokerageAgreement",
+      "file": "brokerage-agreements.json",
+      "count": 50,
+      "sha256": "83518cbb3d9f821dda5407ea6e7c672b30ce78cabbe0f433224e86f99807f809"
+    },
+    {
+      "name": "BrokerageTransaction",
+      "file": "brokerage-transactions.json",
+      "count": 25,
+      "sha256": "41765f8165c2cf38053fe928495a23b93a0e1f5682e1963c262339248afe0b89"
+    },
+    {
+      "name": "EmployeeRevenue",
+      "file": "employee-revenues.json",
+      "count": 60,
+      "sha256": "2ed6ecfe5afb377a8042d9fbe5bff91175c6ae49c2e1a0e9e8263f39adf3a753"
+    },
+    {
+      "name": "CompanyRevenue",
+      "file": "company-revenues.json",
+      "count": 4,
+      "sha256": "f9f9735724934a77be70e651d9b270f82753e3633e48015b028a5a9cec599820"
+    },
+    {
+      "name": "Commission",
+      "file": "commissions.json",
+      "count": 60,
+      "sha256": "466439f5095da353f5c30fb3a006077c1b17384e5166e5c49e44b7b59132b412"
+    },
+    {
+      "name": "PayrollPeriod",
+      "file": "payroll-periods.json",
+      "count": 4,
+      "sha256": "4a005a8925deb39fd2fdc98a0812f4cdfa2c76038ecd6597afe85c568594ae48"
+    },
+    {
+      "name": "Payslip",
+      "file": "payslips.json",
+      "count": 60,
+      "sha256": "cef472734940c0887b63234ce0c603857ce2268f1643acdfc21aa314a2beaf18"
+    },
+    {
+      "name": "PayrollAdjustment",
+      "file": "payroll-adjustments.json",
+      "count": 60,
+      "sha256": "215f25b250436f56e4131d9143a03f31204d6213eddf42f328bdbcab50dc5e93"
+    },
+    {
+      "name": "WorkLocation",
+      "file": "work-locations.json",
+      "count": 1,
+      "sha256": "a41b252deab49bcb1555e73e95593099e19f31e42ff62ed891393047c4a63bf8"
+    },
+    {
+      "name": "RegistrationPeriod",
+      "file": "registration-periods.json",
+      "count": 16,
+      "sha256": "f178ee03a51cb8e85524d5d7eb30dd0fc9ee0f16bb463e50b61d64a1ee61099a"
+    },
+    {
+      "name": "PeriodRegistration",
+      "file": "period-registrations.json",
+      "count": 240,
+      "sha256": "ecea2d9206c45a29891257b542c9ff3a04fa6b76a7f101b6c1875fcc184c3ef6"
+    },
+    {
+      "name": "Shift",
+      "file": "shifts.json",
+      "count": 224,
+      "sha256": "28322bc59f2ba670db36c210c143ef8815613de3eee4d6b5b2ec7af5ea567c56"
+    },
+    {
+      "name": "ShiftAssignment",
+      "file": "shift-assignments.json",
+      "count": 1205,
+      "sha256": "a1f3841b9e8549913da7f9b612c00f616b97bb60c34f5f79d6d0df71bfedd787"
+    },
+    {
+      "name": "Attendance",
+      "file": "attendance.json",
+      "count": 1007,
+      "sha256": "fb3d922edc709eb593d46b4da86ca56f34ed661303d9654963ea18c8d244ff53"
+    },
+    {
+      "name": "AttendanceEvidence",
+      "file": "attendance-evidence.json",
+      "count": 2014,
+      "sha256": "77d0e8acd6274caff516f8b4a2cf68fd4ad95cc97647c5947802e3e54145a6c5"
+    },
+    {
+      "name": "Task",
+      "file": "tasks.json",
+      "count": 50,
+      "sha256": "f1cabfdeba4dbdb1b11c2a8bc8654bb6b433c7ed0eb2fce53a5dd4ebdf3b07a6"
+    },
+    {
+      "name": "TaskShift",
+      "file": "task-shifts.json",
+      "count": 97,
+      "sha256": "6cf7ab2094facf7aa95fe31bef823162d8ce6bf3c7a8bd2d2b41b1716341eaf8"
+    },
+    {
+      "name": "TaskAssignment",
+      "file": "task-assignments.json",
+      "count": 98,
+      "sha256": "4ea3a94e01851feeed88adf155f51e9c15873a4d39da04c851402dc314f35d62"
+    }
+  ]
+}

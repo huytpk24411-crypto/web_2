@@ -1,0 +1,83 @@
+[
+  {
+    "_id": "7b6ff0e273a6d913a27b610a",
+    "id": "HOA_HONG-1",
+    "policyId": "HOA_HONG",
+    "from": 0,
+    "to": 10000000,
+    "rateBps": 2000,
+    "amount": null
+  },
+  {
+    "_id": "8e290aa5a477b1a0bcc0169c",
+    "id": "HOA_HONG-2",
+    "policyId": "HOA_HONG",
+    "from": 10000000,
+    "to": 15000000,
+    "rateBps": 3000,
+    "amount": null
+  },
+  {
+    "_id": "ca31026baa8da9b81c7981f4",
+    "id": "HOA_HONG-3",
+    "policyId": "HOA_HONG",
+    "from": 15000000,
+    "to": 20000000,
+    "rateBps": 3500,
+    "amount": null
+  },
+  {
+    "_id": "881358223ca7ea8147c33bbf",
+    "id": "HOA_HONG-4",
+    "policyId": "HOA_HONG",
+    "from": 20000000,
+    "to": 30000000,
+    "rateBps": 4000,
+    "amount": null
+  },
+  {
+    "_id": "e95d0641a9b8c43758e73f88",
+    "id": "HOA_HONG-5",
+    "policyId": "HOA_HONG",
+    "from": 30000000,
+    "to": null,
+    "rateBps": 4500,
+    "amount": null
+  },
+  {
+    "_id": "6011059f81ca38420cf56d6a",
+    "id": "PHAT_TRE-1",
+    "policyId": "PHAT_TRE",
+    "from": 1,
+    "to": 16,
+    "rateBps": null,
+    "amount": 20000
+  },
+  {
+    "_id": "9bf96cff18c2f9c3a9b3d5b6",
+    "id": "PHAT_TRE-2",
+    "policyId": "PHAT_TRE",
+    "from": 16,
+    "to": 31,
+    "rateBps": null,
+    "amount": 50000
+  },
+  {
+    "_id": "3b96cabfe4c175ae0781a9d0",
+    "id": "PHAT_TRE-3",
+    "policyId": "PHAT_TRE",
+    "from": 31,
+    "to": null,
+    "rateBps": null,
+    "amount": 100000
+  },
+  {
+    "_id": "3c7b640852dfa544739ae8ff",
+    "id": "GIU_CHO-1",
+    "policyId": "GIU_CHO",
+    "from": 0,
+    "to": null,
+    "rateBps": null,
+    "amount": 1000000
+  }
+]

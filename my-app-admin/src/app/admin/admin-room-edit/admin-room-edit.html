@@ -1,0 +1,50 @@
+﻿<div class="room-admin">
+  <div class="breadcrumb">
+    <a routerLink="/admin/rooms">Quản trị Phòng &amp; Tòa nhà › Danh sách phòng</a> › Chỉnh sửa #{{
+      room?.code || id
+    }}
+  </div>
+  <div class="page-title">
+    <div>
+      <h1>Chỉnh sửa Thông tin Phòng #{{ room?.code || id }}</h1>
+      <span class="badge blue">{{
+        room?.publicationStatus === 'PUBLISHED' ? '● Đang hiển thị trên Web' : '● Tin nội bộ'
+      }}</span>
+      <p>Quản lý dữ liệu công khai, chính sách cọc và biểu phí sinh hoạt phục vụ sinh viên.</p>
+    </div>
+  </div>
+  <app-room-form [roomId]="id" />
+  <section class="panel">
+    <h2>Lịch sử giá phòng</h2>
+    <p class="notice error" *ngIf="error" role="alert">{{ error }}</p>
+    <div
+      *ngIf="history.length; else noHistory"
+      class="price-history-scroll"
+      role="region"
+      aria-label="Bảng lịch sử giá phòng"
+      tabindex="0"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>Hiệu lực từ</th>
+            <th>Giá cũ</th>
+            <th>Giá mới</th>
+            <th>Người thay đổi</th>
+            <th>Lý do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of history">
+            <td>{{ entry.effectiveFrom | date: 'dd/MM/yyyy HH:mm' : '+0700' }}</td>
+            <td>{{ entry.oldPrice | number }} đ</td>
+            <td>{{ entry.newPrice | number }} đ</td>
+            <td>{{ entry.changedBy }}</td>
+            <td>{{ entry.reason || '—' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noHistory><p>Chưa có thay đổi giá.</p></ng-template>
+  </section>
+</div>

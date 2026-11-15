@@ -1,0 +1,237 @@
+<section class="finance-page approvals-page">
+  <header class="finance-heading">
+    <h1>Phê duyệt hợp đồng</h1>
+    <button
+      type="button"
+      class="finance-btn soft"
+      [disabled]="loading() || busy()"
+      (click)="reload()"
+    >
+      Tải lại
+    </button>
+  </header>
+
+  <div class="approval-tabs" role="tablist" aria-label="Trạng thái xác nhận hợp đồng">
+    <button
+      type="button"
+      id="pending-tab"
+      role="tab"
+      aria-controls="approval-panel"
+      [class.active]="tab() === 'pending'"
+      [attr.aria-selected]="tab() === 'pending'"
+      (click)="tab.set('pending')"
+    >
+      Hợp đồng chưa xác nhận ({{ pending().length }})
+    </button>
+    <button
+      type="button"
+      id="done-tab"
+      role="tab"
+      aria-controls="approval-panel"
+      [class.active]="tab() === 'done'"
+      [attr.aria-selected]="tab() === 'done'"
+      (click)="tab.set('done')"
+    >
+      Hợp đồng đã qua xác nhận
+    </button>
+  </div>
+
+  <section
+    class="finance-card"
+    id="approval-panel"
+    role="tabpanel"
+    [attr.aria-labelledby]="tab() === 'pending' ? 'pending-tab' : 'done-tab'"
+    [attr.aria-busy]="loading()"
+  >
+    <div class="approval-filters">
+      <label class="search-field"
+        >Tìm hợp đồng
+        <input
+          type="search"
+          [ngModel]="search()"
+          (ngModelChange)="search.set($event)"
+          placeholder="Số HĐ / mã phòng / tên khách / nhân viên"
+        />
+      </label>
+      <label *ngIf="tab() === 'done'"
+        >Kết quả
+        <select [ngModel]="outcome()" (ngModelChange)="outcome.set($event)">
+          <option value="all">Tất cả</option>
+          <option value="SUCCESS">Thành công</option>
+          <option value="ABANDONED">Khách bỏ cọc</option>
+        </select>
+      </label>
+    </div>
+    <p *ngIf="loading()" role="status">Đang tải hợp đồng…</p>
+    <p *ngIf="loadError()" role="alert" class="approval-error">{{ loadError() }}</p>
+    <div class="approval-table-wrap" *ngIf="!loading() && !loadError()">
+      <table class="approval-table" *ngIf="visible().length; else empty">
+        <caption class="sr-only">
+          {{
+            tab() === 'pending' ? 'Hợp đồng chưa xác nhận' : 'Hợp đồng đã qua xác nhận'
+          }}
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Số hợp đồng / trạng thái</th>
+            <th scope="col">Phòng</th>
+            <th scope="col">Khách / nhân viên</th>
+            <th scope="col">Ngày lập cọc</th>
+            <th scope="col" class="numeric">Tiền cọc</th>
+            <th scope="col">Thao tác / kết quả</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of visible()">
+            <td>
+              <strong>{{ contractNumber(item) }}</strong
+              ><span class="record-secondary">{{ contractStatus(item) }}</span>
+            </td>
+            <td>
+              {{ item.room?.code || '—'
+              }}<span class="record-secondary">{{ item.room?.name || '—' }}</span>
+            </td>
+            <td>
+              {{ item.customer?.name || '—'
+              }}<span class="record-secondary"
+                >{{ item.employee?.fullName || '—' }} {{ item.employee?.employeeCode }}</span
+              >
+            </td>
+            <td>
+              {{ date(item.depositAt)
+              }}<span *ngIf="item.overdue && tab() === 'pending'" class="finance-badge amber overdue"
+                >Đã quá {{ item.daysSinceDeposit }} ngày</span
+              >
+            </td>
+            <td class="numeric">{{ money(item.amounts.total) }}</td>
+            <td>
+              <div class="finance-actions record-actions">
+                <ng-container *ngIf="tab() === 'pending'; else result">
+                  <span
+                    class="approve-control"
+                    [attr.title]="canApprove(item) ? null : 'Hợp đồng chưa ký'"
+                    [attr.tabindex]="canApprove(item) ? null : 0"
+                  >
+                    <button
+                      type="button"
+                      class="finance-btn primary"
+                      [disabled]="busy() || !canApprove(item)"
+                      [attr.title]="canApprove(item) ? null : 'Hợp đồng chưa ký'"
+                      (click)="open('approve', item)"
+                    >
+                      Duyệt hợp đồng
+                    </button>
+                  </span>
+                  <button
+                    type="button"
+                    class="finance-btn danger"
+                    [disabled]="busy()"
+                    (click)="open('abandon', item)"
+                  >
+                    Khách bỏ cọc
+                  </button>
+                </ng-container>
+                <ng-template #result
+                  ><span
+                    class="finance-badge"
+                    [class.teal]="item.outcome === 'SUCCESS'"
+                    [class.red]="item.outcome === 'ABANDONED'"
+                    >{{ outcomeLabel(item) }}</span
+                  ></ng-template
+                >
+                <button
+                  type="button"
+                  class="finance-btn soft"
+                  [disabled]="busy()"
+                  (click)="open('detail', item)"
+                >
+                  Xem chi tiết
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #empty
+        ><p class="empty-approvals">
+          {{
+            search().trim() || (tab() === 'done' && outcome() !== 'all')
+              ? 'Không có hợp đồng phù hợp bộ lọc.'
+              : 'Chưa có hợp đồng trong mục này.'
+          }}
+        </p></ng-template
+      >
+    </div>
+  </section>
+</section>
+
+<div class="modal-backdrop" *ngIf="dialog() as current" (click)="close()">
+  <section
+    class="modal finance-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="approval-dialog-title"
+    appDialogFocus
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="close()"
+    [attr.aria-busy]="busy()"
+  >
+    <h2 id="approval-dialog-title">
+      {{
+        current.type === 'detail'
+          ? 'Chi tiết hợp đồng'
+          : current.type === 'approve'
+            ? 'Duyệt hợp đồng'
+            : 'Khách bỏ cọc'
+      }}
+    </h2>
+    <p *ngIf="current.type === 'approve'">
+      Xác nhận khách đã dọn vào ở? Hệ thống sẽ ghi nhận giao dịch thành công, gỡ phòng khỏi trang
+      cho thuê và xóa hợp đồng môi giới của phòng.
+    </p>
+    <p *ngIf="current.type === 'abandon'">
+      Xác nhận khách bỏ cọc? Hợp đồng sẽ không hiệu lực, phòng được đăng cho thuê lại; doanh thu và
+      phần của chủ nhà vẫn giữ.
+    </p>
+    <p *ngIf="current.type !== 'detail'">
+      <strong>{{ contractNumber(current.item) }}</strong> · {{ current.item.room?.code }} ·
+      {{ current.item.customer?.name }}
+    </p>
+    <dl *ngIf="current.type === 'detail'">
+      <ng-container *ngFor="let field of detail()"
+        ><dt>{{ field[0] }}</dt>
+        <dd>{{ field[1] }}</dd></ng-container
+      >
+    </dl>
+    <label *ngIf="current.type === 'abandon'" for="abandon-note"
+      >Ghi chú (tùy chọn, tối đa 500 ký tự)
+      <textarea
+        id="abandon-note"
+        maxlength="500"
+        [ngModel]="note()"
+        (ngModelChange)="note.set($event)"
+        [disabled]="busy()"
+        aria-describedby="note-count"
+      ></textarea>
+      <small id="note-count">{{ note().length }}/500 ký tự</small>
+    </label>
+    <p role="alert" class="approval-error" *ngIf="error()">{{ error() }}</p>
+    <div class="finance-actions">
+      <button type="button" class="finance-btn soft" [disabled]="busy()" (click)="close()">
+        {{ current.type === 'detail' ? 'Đóng' : 'Hủy' }}
+      </button>
+      <button
+        type="button"
+        *ngIf="current.type !== 'detail'"
+        class="finance-btn"
+        [class.primary]="current.type === 'approve'"
+        [class.danger]="current.type === 'abandon'"
+        [disabled]="busy() || (current.type === 'abandon' && note().length > 500)"
+        (click)="confirm()"
+      >
+        {{ busy() ? 'Đang lưu…' : 'Xác nhận' }}
+      </button>
+    </div>
+  </section>
+</div>
+<app-toast [message]="toast()" (closed)="toast.set('')" />

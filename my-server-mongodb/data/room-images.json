@@ -1,0 +1,2246 @@
+[
+  {
+    "_id": "f25fc9d9a116bb680cefc45c",
+    "id": "anh-01-01",
+    "roomId": "phong-01",
+    "url": "/assets/rooms/PHONG_01/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8d8b11bd81baa819e64770d7",
+    "id": "anh-01-02",
+    "roomId": "phong-01",
+    "url": "/assets/rooms/PHONG_01/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "b78424165cd27af359bd28e1",
+    "id": "anh-01-03",
+    "roomId": "phong-01",
+    "url": "/assets/rooms/PHONG_01/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8bd5cc165dd394b6a968d935",
+    "id": "anh-01-04",
+    "roomId": "phong-01",
+    "url": "/assets/rooms/PHONG_01/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d8e82b1ae5bc0acfc0207b1d",
+    "id": "anh-02-01",
+    "roomId": "phong-02",
+    "url": "/assets/rooms/PHONG_02/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "aaa4cae19486ae5984877635",
+    "id": "anh-02-02",
+    "roomId": "phong-02",
+    "url": "/assets/rooms/PHONG_02/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "b739baa3f50d2e4f1e908607",
+    "id": "anh-02-03",
+    "roomId": "phong-02",
+    "url": "/assets/rooms/PHONG_02/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "eb36b5f36b0c864a6a5ef06b",
+    "id": "anh-02-04",
+    "roomId": "phong-02",
+    "url": "/assets/rooms/PHONG_02/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "f80fb13f765a1a3b69278a76",
+    "id": "anh-03-01",
+    "roomId": "phong-03",
+    "url": "/assets/rooms/PHONG_03/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2be750699a8ac785691341f3",
+    "id": "anh-03-02",
+    "roomId": "phong-03",
+    "url": "/assets/rooms/PHONG_03/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "ef54a6e7ce4086a36a1dec3c",
+    "id": "anh-03-03",
+    "roomId": "phong-03",
+    "url": "/assets/rooms/PHONG_03/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5bc11edc5d379f0a32786836",
+    "id": "anh-03-04",
+    "roomId": "phong-03",
+    "url": "/assets/rooms/PHONG_03/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8a9baca3e9db614b7c6d6c3f",
+    "id": "anh-04-01",
+    "roomId": "phong-04",
+    "url": "/assets/rooms/PHONG_04/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "3232c3b154b94e881dbb357e",
+    "id": "anh-04-02",
+    "roomId": "phong-04",
+    "url": "/assets/rooms/PHONG_04/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2370e38eafda87b5f7b603ff",
+    "id": "anh-04-03",
+    "roomId": "phong-04",
+    "url": "/assets/rooms/PHONG_04/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "7640c34cfe65228cabdab34a",
+    "id": "anh-04-04",
+    "roomId": "phong-04",
+    "url": "/assets/rooms/PHONG_04/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "308e562fd6ef93ce32ffd95f",
+    "id": "anh-05-01",
+    "roomId": "phong-05",
+    "url": "/assets/rooms/PHONG_05/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "13bd9f15e407c3fbf1b13d5c",
+    "id": "anh-05-02",
+    "roomId": "phong-05",
+    "url": "/assets/rooms/PHONG_05/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8792f98b553d74a474f56510",
+    "id": "anh-05-03",
+    "roomId": "phong-05",
+    "url": "/assets/rooms/PHONG_05/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c06d7df587cd7fe073401412",
+    "id": "anh-05-04",
+    "roomId": "phong-05",
+    "url": "/assets/rooms/PHONG_05/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "18672e83e8e04a5087586f81",
+    "id": "anh-06-01",
+    "roomId": "phong-06",
+    "url": "/assets/rooms/PHONG_06/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "637e77778ea78877512fecda",
+    "id": "anh-06-02",
+    "roomId": "phong-06",
+    "url": "/assets/rooms/PHONG_06/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "ed1eb75a836583b383503487",
+    "id": "anh-06-03",
+    "roomId": "phong-06",
+    "url": "/assets/rooms/PHONG_06/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "7d65f2e555d1083dfbaaabd9",
+    "id": "anh-06-04",
+    "roomId": "phong-06",
+    "url": "/assets/rooms/PHONG_06/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5bea3b7d853721e594dd9eae",
+    "id": "anh-07-01",
+    "roomId": "phong-07",
+    "url": "/assets/rooms/PHONG_07/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d63a477e535c44973ac04774",
+    "id": "anh-07-02",
+    "roomId": "phong-07",
+    "url": "/assets/rooms/PHONG_07/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "750ea187b4d7a7219e5fe8f9",
+    "id": "anh-07-03",
+    "roomId": "phong-07",
+    "url": "/assets/rooms/PHONG_07/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "e9e9deb5e174ef5d78fc6315",
+    "id": "anh-07-04",
+    "roomId": "phong-07",
+    "url": "/assets/rooms/PHONG_07/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "64beb8a31d967ed4eeebfd89",
+    "id": "anh-08-01",
+    "roomId": "phong-08",
+    "url": "/assets/rooms/PHONG_08/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "6e28c30c2914d9139ad37867",
+    "id": "anh-08-02",
+    "roomId": "phong-08",
+    "url": "/assets/rooms/PHONG_08/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "879314ac98d61547bcc8926a",
+    "id": "anh-08-03",
+    "roomId": "phong-08",
+    "url": "/assets/rooms/PHONG_08/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "6c338e98796a15924f6b40b1",
+    "id": "anh-08-04",
+    "roomId": "phong-08",
+    "url": "/assets/rooms/PHONG_08/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d3f75efa1d2fec20027cdcf0",
+    "id": "anh-09-01",
+    "roomId": "phong-09",
+    "url": "/assets/rooms/PHONG_09/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "3c54981368b902d1af2a9a49",
+    "id": "anh-09-02",
+    "roomId": "phong-09",
+    "url": "/assets/rooms/PHONG_09/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "aded86ff9de4972ae4ace31b",
+    "id": "anh-09-03",
+    "roomId": "phong-09",
+    "url": "/assets/rooms/PHONG_09/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8c6b201124e0efff84d96927",
+    "id": "anh-09-04",
+    "roomId": "phong-09",
+    "url": "/assets/rooms/PHONG_09/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "4be01c4c4aba2749240d5a80",
+    "id": "anh-10-01",
+    "roomId": "phong-10",
+    "url": "/assets/rooms/PHONG_10/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "46e41d990075a6dc8f871d49",
+    "id": "anh-10-02",
+    "roomId": "phong-10",
+    "url": "/assets/rooms/PHONG_10/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "22dabbe2ceac443082e01aed",
+    "id": "anh-10-03",
+    "roomId": "phong-10",
+    "url": "/assets/rooms/PHONG_10/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "b28c0f831bf32829ed7c5303",
+    "id": "anh-10-04",
+    "roomId": "phong-10",
+    "url": "/assets/rooms/PHONG_10/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "1cacb9804cfa0d1a74f2a56c",
+    "id": "anh-11-01",
+    "roomId": "phong-11",
+    "url": "/assets/rooms/PHONG_11/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "13fc2e796091a138d502a26c",
+    "id": "anh-11-02",
+    "roomId": "phong-11",
+    "url": "/assets/rooms/PHONG_11/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "672c745e439996656a611d88",
+    "id": "anh-11-03",
+    "roomId": "phong-11",
+    "url": "/assets/rooms/PHONG_11/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "bbf811f10f86525d847df9c4",
+    "id": "anh-11-04",
+    "roomId": "phong-11",
+    "url": "/assets/rooms/PHONG_11/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2121a474bb500010051de8c0",
+    "id": "anh-12-01",
+    "roomId": "phong-12",
+    "url": "/assets/rooms/PHONG_12/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "7622d54e4c8346d96454962f",
+    "id": "anh-12-02",
+    "roomId": "phong-12",
+    "url": "/assets/rooms/PHONG_12/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "63d9e5010ee8f1bf04411456",
+    "id": "anh-12-03",
+    "roomId": "phong-12",
+    "url": "/assets/rooms/PHONG_12/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "98eb86ba343279643ef0cc9b",
+    "id": "anh-12-04",
+    "roomId": "phong-12",
+    "url": "/assets/rooms/PHONG_12/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d7e643d10421ea1473175bb2",
+    "id": "anh-13-01",
+    "roomId": "phong-13",
+    "url": "/assets/rooms/PHONG_13/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "245962dd61fe60eaecb75c89",
+    "id": "anh-13-02",
+    "roomId": "phong-13",
+    "url": "/assets/rooms/PHONG_13/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "f50ef8c60e5a1ab87aeab8c4",
+    "id": "anh-13-03",
+    "roomId": "phong-13",
+    "url": "/assets/rooms/PHONG_13/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "ea6f054426de73f4239a0f71",
+    "id": "anh-13-04",
+    "roomId": "phong-13",
+    "url": "/assets/rooms/PHONG_13/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c2251d3b0ba9f0cbfbaf614d",
+    "id": "anh-14-01",
+    "roomId": "phong-14",
+    "url": "/assets/rooms/PHONG_14/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "cadc253b4f197591aa33b5cc",
+    "id": "anh-14-02",
+    "roomId": "phong-14",
+    "url": "/assets/rooms/PHONG_14/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "1ba776833797541039a04c8a",
+    "id": "anh-14-03",
+    "roomId": "phong-14",
+    "url": "/assets/rooms/PHONG_14/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d4d1921b10cd2b3b2c6e1ac4",
+    "id": "anh-14-04",
+    "roomId": "phong-14",
+    "url": "/assets/rooms/PHONG_14/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "80a238789b2cdbcc8b775a1c",
+    "id": "anh-15-01",
+    "roomId": "phong-15",
+    "url": "/assets/rooms/PHONG_15/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "082bffadbb0c449c7db53faf",
+    "id": "anh-15-02",
+    "roomId": "phong-15",
+    "url": "/assets/rooms/PHONG_15/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "e892efef839cca02c5145cce",
+    "id": "anh-15-03",
+    "roomId": "phong-15",
+    "url": "/assets/rooms/PHONG_15/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "350d3942b9c3fa6f6ac73172",
+    "id": "anh-15-04",
+    "roomId": "phong-15",
+    "url": "/assets/rooms/PHONG_15/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5d6551cbd59787af73e38e0b",
+    "id": "anh-16-01",
+    "roomId": "phong-16",
+    "url": "/assets/rooms/PHONG_16/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "4ad9728188b34abb811b248c",
+    "id": "anh-16-02",
+    "roomId": "phong-16",
+    "url": "/assets/rooms/PHONG_16/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "16f4bbaa6e5d0ed84400b89c",
+    "id": "anh-16-03",
+    "roomId": "phong-16",
+    "url": "/assets/rooms/PHONG_16/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "55ee2f12a321e964d843892b",
+    "id": "anh-16-04",
+    "roomId": "phong-16",
+    "url": "/assets/rooms/PHONG_16/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "1c549691d5b36323d7e78c30",
+    "id": "anh-17-01",
+    "roomId": "phong-17",
+    "url": "/assets/rooms/PHONG_17/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "7f6b29701da3a45a889df21f",
+    "id": "anh-17-02",
+    "roomId": "phong-17",
+    "url": "/assets/rooms/PHONG_17/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8bb6458790121a3f1b131060",
+    "id": "anh-17-03",
+    "roomId": "phong-17",
+    "url": "/assets/rooms/PHONG_17/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "f7c0842015aeaed255e214d0",
+    "id": "anh-17-04",
+    "roomId": "phong-17",
+    "url": "/assets/rooms/PHONG_17/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "622989dde3b7d4714e18fefe",
+    "id": "anh-18-01",
+    "roomId": "phong-18",
+    "url": "/assets/rooms/PHONG_18/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "02975c80e896b6d3df996107",
+    "id": "anh-18-02",
+    "roomId": "phong-18",
+    "url": "/assets/rooms/PHONG_18/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8a29015d2b977cc26b7b3b98",
+    "id": "anh-18-03",
+    "roomId": "phong-18",
+    "url": "/assets/rooms/PHONG_18/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "7c7e26f808d79867b9b0c5f8",
+    "id": "anh-18-04",
+    "roomId": "phong-18",
+    "url": "/assets/rooms/PHONG_18/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "e7dcb2e1206c527493800e8a",
+    "id": "anh-19-01",
+    "roomId": "phong-19",
+    "url": "/assets/rooms/PHONG_19/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "b3812fc41c9a778a86eddc62",
+    "id": "anh-19-02",
+    "roomId": "phong-19",
+    "url": "/assets/rooms/PHONG_19/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "f506a87f28ecff6159b2b8c1",
+    "id": "anh-19-03",
+    "roomId": "phong-19",
+    "url": "/assets/rooms/PHONG_19/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "56c0089af52f7f30502c04c5",
+    "id": "anh-19-04",
+    "roomId": "phong-19",
+    "url": "/assets/rooms/PHONG_19/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "9ac24b24a3d54059cf370712",
+    "id": "anh-20-01",
+    "roomId": "phong-20",
+    "url": "/assets/rooms/PHONG_20/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d493f0711a9d85d544da3a32",
+    "id": "anh-20-02",
+    "roomId": "phong-20",
+    "url": "/assets/rooms/PHONG_20/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "41cf5f2002a00ad2ff9b6a69",
+    "id": "anh-20-03",
+    "roomId": "phong-20",
+    "url": "/assets/rooms/PHONG_20/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d80405ad02668b6eac265a95",
+    "id": "anh-20-04",
+    "roomId": "phong-20",
+    "url": "/assets/rooms/PHONG_20/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "1a75167a64d16507a25b7be7",
+    "id": "anh-21-01",
+    "roomId": "phong-21",
+    "url": "/assets/rooms/PHONG_21/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "43360e23a3749de78aac417c",
+    "id": "anh-21-02",
+    "roomId": "phong-21",
+    "url": "/assets/rooms/PHONG_21/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2af77dedf6845bf3de9eae92",
+    "id": "anh-21-03",
+    "roomId": "phong-21",
+    "url": "/assets/rooms/PHONG_21/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "7e93b87ca2e2c7bf5ea18d69",
+    "id": "anh-21-04",
+    "roomId": "phong-21",
+    "url": "/assets/rooms/PHONG_21/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "14dcf654527829fce6d1cd00",
+    "id": "anh-22-01",
+    "roomId": "phong-22",
+    "url": "/assets/rooms/PHONG_22/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2899f552f55ec648c058459d",
+    "id": "anh-22-02",
+    "roomId": "phong-22",
+    "url": "/assets/rooms/PHONG_22/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "572b108fba29bdf7144439f0",
+    "id": "anh-22-03",
+    "roomId": "phong-22",
+    "url": "/assets/rooms/PHONG_22/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "81a65d3d59a43926b7f2f928",
+    "id": "anh-22-04",
+    "roomId": "phong-22",
+    "url": "/assets/rooms/PHONG_22/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "51a0feb6586a304fb508b050",
+    "id": "anh-23-01",
+    "roomId": "phong-23",
+    "url": "/assets/rooms/PHONG_23/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d3c6c4da0d69d9f3c26d119c",
+    "id": "anh-23-02",
+    "roomId": "phong-23",
+    "url": "/assets/rooms/PHONG_23/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "e291c1e36d198204d70d3c9f",
+    "id": "anh-23-03",
+    "roomId": "phong-23",
+    "url": "/assets/rooms/PHONG_23/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "42b945cf1c6e3cacbb313eb6",
+    "id": "anh-23-04",
+    "roomId": "phong-23",
+    "url": "/assets/rooms/PHONG_23/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "eb4ec49a089d8ecc7eaadd16",
+    "id": "anh-24-01",
+    "roomId": "phong-24",
+    "url": "/assets/rooms/PHONG_24/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2ec25bed467a1b1056f6eced",
+    "id": "anh-24-02",
+    "roomId": "phong-24",
+    "url": "/assets/rooms/PHONG_24/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "6c550d807801015ca9cba659",
+    "id": "anh-24-03",
+    "roomId": "phong-24",
+    "url": "/assets/rooms/PHONG_24/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "47296b40d498ba9888c33ad0",
+    "id": "anh-24-04",
+    "roomId": "phong-24",
+    "url": "/assets/rooms/PHONG_24/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "251bb8382686006a6f8791a6",
+    "id": "anh-25-01",
+    "roomId": "phong-25",
+    "url": "/assets/rooms/PHONG_25/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5d82233d9f929d450b5879ca",
+    "id": "anh-25-02",
+    "roomId": "phong-25",
+    "url": "/assets/rooms/PHONG_25/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "863118f8f966b327a03836d1",
+    "id": "anh-25-03",
+    "roomId": "phong-25",
+    "url": "/assets/rooms/PHONG_25/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "12cfa3d45bf0762a9df5e634",
+    "id": "anh-25-04",
+    "roomId": "phong-25",
+    "url": "/assets/rooms/PHONG_25/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "9435ee57c5fcf5816fc78c0c",
+    "id": "anh-26-01",
+    "roomId": "phong-26",
+    "url": "/assets/rooms/PHONG_26/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "550f8d4f7fbd2fb3662f4d24",
+    "id": "anh-26-02",
+    "roomId": "phong-26",
+    "url": "/assets/rooms/PHONG_26/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2b62e966e56d533ac565bd3c",
+    "id": "anh-26-03",
+    "roomId": "phong-26",
+    "url": "/assets/rooms/PHONG_26/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8726dbbf5827f53ff3c2c112",
+    "id": "anh-26-04",
+    "roomId": "phong-26",
+    "url": "/assets/rooms/PHONG_26/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c6552f41ae8c0c112f7ca1d4",
+    "id": "anh-27-01",
+    "roomId": "phong-27",
+    "url": "/assets/rooms/PHONG_27/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "bbd38238132d977f619321bd",
+    "id": "anh-27-02",
+    "roomId": "phong-27",
+    "url": "/assets/rooms/PHONG_27/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "409206859ecdafb168b9028f",
+    "id": "anh-27-03",
+    "roomId": "phong-27",
+    "url": "/assets/rooms/PHONG_27/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5fd5d0554116a533a6ce0816",
+    "id": "anh-27-04",
+    "roomId": "phong-27",
+    "url": "/assets/rooms/PHONG_27/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "75145a48b9acf5961b6123c8",
+    "id": "anh-28-01",
+    "roomId": "phong-28",
+    "url": "/assets/rooms/PHONG_28/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "80031d3c54e210a2dfcbc4eb",
+    "id": "anh-28-02",
+    "roomId": "phong-28",
+    "url": "/assets/rooms/PHONG_28/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "7a49b74fc3db1af8011c38bf",
+    "id": "anh-28-03",
+    "roomId": "phong-28",
+    "url": "/assets/rooms/PHONG_28/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "b8c2b628eaa6781076c8a0c6",
+    "id": "anh-28-04",
+    "roomId": "phong-28",
+    "url": "/assets/rooms/PHONG_28/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "128612cf7ac3a43f1a74b5f6",
+    "id": "anh-29-01",
+    "roomId": "phong-29",
+    "url": "/assets/rooms/PHONG_29/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "22ef98860352a60e3de53796",
+    "id": "anh-29-02",
+    "roomId": "phong-29",
+    "url": "/assets/rooms/PHONG_29/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "a7d40bac2d2cf78ceba7cf54",
+    "id": "anh-29-03",
+    "roomId": "phong-29",
+    "url": "/assets/rooms/PHONG_29/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d59e471f65fd63523cf4918b",
+    "id": "anh-29-04",
+    "roomId": "phong-29",
+    "url": "/assets/rooms/PHONG_29/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "658b76ad72fd8a74ba4bff1b",
+    "id": "anh-30-01",
+    "roomId": "phong-30",
+    "url": "/assets/rooms/PHONG_30/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "f98b24e53e0f295a78468f0e",
+    "id": "anh-30-02",
+    "roomId": "phong-30",
+    "url": "/assets/rooms/PHONG_30/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "453d0748ec88d9057f028622",
+    "id": "anh-30-03",
+    "roomId": "phong-30",
+    "url": "/assets/rooms/PHONG_30/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "a89d70bb3be63d7ef09ade8c",
+    "id": "anh-30-04",
+    "roomId": "phong-30",
+    "url": "/assets/rooms/PHONG_30/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "0a554646cab502251ec1b08c",
+    "id": "anh-31-01",
+    "roomId": "phong-31",
+    "url": "/assets/rooms/PHONG_31/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d020d4c5bab466718523c7c9",
+    "id": "anh-31-02",
+    "roomId": "phong-31",
+    "url": "/assets/rooms/PHONG_31/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "6502d6a0abfe9f8e9c51f0ac",
+    "id": "anh-31-03",
+    "roomId": "phong-31",
+    "url": "/assets/rooms/PHONG_31/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d8c62abdbbf5eff28c3bea2f",
+    "id": "anh-31-04",
+    "roomId": "phong-31",
+    "url": "/assets/rooms/PHONG_31/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "1266bedbac63007174fbedd0",
+    "id": "anh-32-01",
+    "roomId": "phong-32",
+    "url": "/assets/rooms/PHONG_32/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2c2bf3cec5c27de111057cbe",
+    "id": "anh-32-02",
+    "roomId": "phong-32",
+    "url": "/assets/rooms/PHONG_32/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "1268c7fe6e6746359c34dd26",
+    "id": "anh-32-03",
+    "roomId": "phong-32",
+    "url": "/assets/rooms/PHONG_32/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "dc8179d2936b4472d87cbaa5",
+    "id": "anh-32-04",
+    "roomId": "phong-32",
+    "url": "/assets/rooms/PHONG_32/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "4da6913d4ede675f171fdd7c",
+    "id": "anh-33-01",
+    "roomId": "phong-33",
+    "url": "/assets/rooms/PHONG_33/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "dbf92b25dfa2e2ea58d8c6ac",
+    "id": "anh-33-02",
+    "roomId": "phong-33",
+    "url": "/assets/rooms/PHONG_33/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2caeddd90a9ab4e1e0b2b47a",
+    "id": "anh-33-03",
+    "roomId": "phong-33",
+    "url": "/assets/rooms/PHONG_33/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "77794aa1ff2cfbb65c593f24",
+    "id": "anh-33-04",
+    "roomId": "phong-33",
+    "url": "/assets/rooms/PHONG_33/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8939bc3fa8e8750e9bfb0ffa",
+    "id": "anh-34-01",
+    "roomId": "phong-34",
+    "url": "/assets/rooms/PHONG_34/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "963eaa3fbd043ab0c19be2ca",
+    "id": "anh-34-02",
+    "roomId": "phong-34",
+    "url": "/assets/rooms/PHONG_34/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5c149f2638e5e13ff717f789",
+    "id": "anh-34-03",
+    "roomId": "phong-34",
+    "url": "/assets/rooms/PHONG_34/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "1012d2601524225252ade862",
+    "id": "anh-34-04",
+    "roomId": "phong-34",
+    "url": "/assets/rooms/PHONG_34/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d51a461b2838f46dea23796e",
+    "id": "anh-35-01",
+    "roomId": "phong-35",
+    "url": "/assets/rooms/PHONG_35/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2b14001b46ac10dfec39db2c",
+    "id": "anh-35-02",
+    "roomId": "phong-35",
+    "url": "/assets/rooms/PHONG_35/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "fc04181cd81079b8ad88d720",
+    "id": "anh-35-03",
+    "roomId": "phong-35",
+    "url": "/assets/rooms/PHONG_35/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c554f5ad81f2a3a6f2009e47",
+    "id": "anh-35-04",
+    "roomId": "phong-35",
+    "url": "/assets/rooms/PHONG_35/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "6ba813738ce7d8635b248809",
+    "id": "anh-36-01",
+    "roomId": "phong-36",
+    "url": "/assets/rooms/PHONG_36/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "197e90052ff9b569a140cfaa",
+    "id": "anh-36-02",
+    "roomId": "phong-36",
+    "url": "/assets/rooms/PHONG_36/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d8458de6d66c4338e31696ca",
+    "id": "anh-36-03",
+    "roomId": "phong-36",
+    "url": "/assets/rooms/PHONG_36/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "72c67d4842f8aef9f07b5269",
+    "id": "anh-36-04",
+    "roomId": "phong-36",
+    "url": "/assets/rooms/PHONG_36/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "0f2046c8a1b830f909683ca3",
+    "id": "anh-37-01",
+    "roomId": "phong-37",
+    "url": "/assets/rooms/PHONG_37/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5eafacd8181988cfbd42e479",
+    "id": "anh-37-02",
+    "roomId": "phong-37",
+    "url": "/assets/rooms/PHONG_37/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "73e3b72972891d098590a6b1",
+    "id": "anh-37-03",
+    "roomId": "phong-37",
+    "url": "/assets/rooms/PHONG_37/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "58434a071b57787260c25e64",
+    "id": "anh-37-04",
+    "roomId": "phong-37",
+    "url": "/assets/rooms/PHONG_37/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "85dc651696ba8cdf6eba0ce9",
+    "id": "anh-38-01",
+    "roomId": "phong-38",
+    "url": "/assets/rooms/PHONG_38/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "b321967e563854d530a5b117",
+    "id": "anh-38-02",
+    "roomId": "phong-38",
+    "url": "/assets/rooms/PHONG_38/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "0cf700d5505435f134efa1fc",
+    "id": "anh-38-03",
+    "roomId": "phong-38",
+    "url": "/assets/rooms/PHONG_38/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "7f52bb68c8151a8b7f1ca27a",
+    "id": "anh-38-04",
+    "roomId": "phong-38",
+    "url": "/assets/rooms/PHONG_38/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d2bca80f5a667907b915e543",
+    "id": "anh-39-01",
+    "roomId": "phong-39",
+    "url": "/assets/rooms/PHONG_39/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "813385ab44d5f0c5ea980ca7",
+    "id": "anh-39-02",
+    "roomId": "phong-39",
+    "url": "/assets/rooms/PHONG_39/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "bd7569428c78f652c5a30129",
+    "id": "anh-39-03",
+    "roomId": "phong-39",
+    "url": "/assets/rooms/PHONG_39/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "027e0d392399eb46430b46e3",
+    "id": "anh-39-04",
+    "roomId": "phong-39",
+    "url": "/assets/rooms/PHONG_39/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "9c770acc5edf871f9675541d",
+    "id": "anh-40-01",
+    "roomId": "phong-40",
+    "url": "/assets/rooms/PHONG_40/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8ccb0a38ba7cc7666e511cc5",
+    "id": "anh-40-02",
+    "roomId": "phong-40",
+    "url": "/assets/rooms/PHONG_40/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c8148fc6fa37c6fa02abdebb",
+    "id": "anh-40-03",
+    "roomId": "phong-40",
+    "url": "/assets/rooms/PHONG_40/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "1577431047764c039b1ce14c",
+    "id": "anh-40-04",
+    "roomId": "phong-40",
+    "url": "/assets/rooms/PHONG_40/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "ef8d9f8dde7959dae2c7a100",
+    "id": "anh-41-01",
+    "roomId": "phong-41",
+    "url": "/assets/rooms/PHONG_41/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "3084358202d835a5386a2570",
+    "id": "anh-41-02",
+    "roomId": "phong-41",
+    "url": "/assets/rooms/PHONG_41/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d089d7a868ac9c068bb40bf8",
+    "id": "anh-41-03",
+    "roomId": "phong-41",
+    "url": "/assets/rooms/PHONG_41/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "f9e5314ad4d518af04c2f1c0",
+    "id": "anh-41-04",
+    "roomId": "phong-41",
+    "url": "/assets/rooms/PHONG_41/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "cfd3406f1334e0368267ad3b",
+    "id": "anh-42-01",
+    "roomId": "phong-42",
+    "url": "/assets/rooms/PHONG_42/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c895500f5e0d6acacf4ef925",
+    "id": "anh-42-02",
+    "roomId": "phong-42",
+    "url": "/assets/rooms/PHONG_42/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2ec3175b84034d372bed7b24",
+    "id": "anh-42-03",
+    "roomId": "phong-42",
+    "url": "/assets/rooms/PHONG_42/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "678eaf22aaf7b765e2708d14",
+    "id": "anh-42-04",
+    "roomId": "phong-42",
+    "url": "/assets/rooms/PHONG_42/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "153d7e8dca0fc05201b1e654",
+    "id": "anh-43-01",
+    "roomId": "phong-43",
+    "url": "/assets/rooms/PHONG_43/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "9ad7738a16e76a555203c837",
+    "id": "anh-43-02",
+    "roomId": "phong-43",
+    "url": "/assets/rooms/PHONG_43/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "4cdb85bbba0eaa8877978f38",
+    "id": "anh-43-03",
+    "roomId": "phong-43",
+    "url": "/assets/rooms/PHONG_43/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5d3622c21a7c16a5c3de5b40",
+    "id": "anh-43-04",
+    "roomId": "phong-43",
+    "url": "/assets/rooms/PHONG_43/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "7656187cefc82a72404f30e3",
+    "id": "anh-44-01",
+    "roomId": "phong-44",
+    "url": "/assets/rooms/PHONG_44/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "210cfb296126dc187396d4c8",
+    "id": "anh-44-02",
+    "roomId": "phong-44",
+    "url": "/assets/rooms/PHONG_44/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "29ab5e9217aaaea15620e550",
+    "id": "anh-44-03",
+    "roomId": "phong-44",
+    "url": "/assets/rooms/PHONG_44/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "ccccabe4f7e78240aebf37c2",
+    "id": "anh-44-04",
+    "roomId": "phong-44",
+    "url": "/assets/rooms/PHONG_44/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "582d445923077c6ce1342bf9",
+    "id": "anh-45-01",
+    "roomId": "phong-45",
+    "url": "/assets/rooms/PHONG_45/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "fd36e74917f55eee22c08e18",
+    "id": "anh-45-02",
+    "roomId": "phong-45",
+    "url": "/assets/rooms/PHONG_45/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "f3de56b780c328c31f42a969",
+    "id": "anh-45-03",
+    "roomId": "phong-45",
+    "url": "/assets/rooms/PHONG_45/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c0df46de77545ded7a0ec7bf",
+    "id": "anh-45-04",
+    "roomId": "phong-45",
+    "url": "/assets/rooms/PHONG_45/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5a13082dc47ca8576aa1ae8f",
+    "id": "anh-46-01",
+    "roomId": "phong-46",
+    "url": "/assets/rooms/PHONG_46/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "a722adcd435a95f587bea638",
+    "id": "anh-46-02",
+    "roomId": "phong-46",
+    "url": "/assets/rooms/PHONG_46/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d8bdc6b8c1ef473219b256ad",
+    "id": "anh-46-03",
+    "roomId": "phong-46",
+    "url": "/assets/rooms/PHONG_46/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "2a3e694ddf961ecd4c0e06fc",
+    "id": "anh-46-04",
+    "roomId": "phong-46",
+    "url": "/assets/rooms/PHONG_46/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "006e845e097477845f3ddebd",
+    "id": "anh-46-05",
+    "roomId": "phong-46",
+    "url": "/assets/rooms/PHONG_46/05_phong_bep_goc_doi_dien.webp",
+    "order": 5,
+    "caption": "Bếp góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "bbcac2a36d4d4c0fd03575fd",
+    "id": "anh-46-06",
+    "roomId": "phong-46",
+    "url": "/assets/rooms/PHONG_46/06_phong_khach_goc_doi_dien.webp",
+    "order": 6,
+    "caption": "Phòng khách góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "0b5bd2fffa27df0bb48a7d5e",
+    "id": "anh-46-07",
+    "roomId": "phong-46",
+    "url": "/assets/rooms/PHONG_46/07_nha_ve_sinh_goc_doi_dien.webp",
+    "order": 7,
+    "caption": "Nhà vệ sinh góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "9d8f3ba39fed3b0887e57fce",
+    "id": "anh-46-08",
+    "roomId": "phong-46",
+    "url": "/assets/rooms/PHONG_46/08_phong_ngu_goc_doi_dien.webp",
+    "order": 8,
+    "caption": "Phòng ngủ góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "369a75d4dfaed2fc518ca127",
+    "id": "anh-47-01",
+    "roomId": "phong-47",
+    "url": "/assets/rooms/PHONG_47/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "39ef54d6d6e03bce00a4030d",
+    "id": "anh-47-02",
+    "roomId": "phong-47",
+    "url": "/assets/rooms/PHONG_47/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "a514c1a0b2163509ef755dbf",
+    "id": "anh-47-03",
+    "roomId": "phong-47",
+    "url": "/assets/rooms/PHONG_47/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "9cf32bcd63c16b39a709298a",
+    "id": "anh-47-04",
+    "roomId": "phong-47",
+    "url": "/assets/rooms/PHONG_47/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c152d016b2b657f4990fc1b7",
+    "id": "anh-47-05",
+    "roomId": "phong-47",
+    "url": "/assets/rooms/PHONG_47/05_phong_bep_goc_doi_dien.webp",
+    "order": 5,
+    "caption": "Bếp góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "9361880ce380410471be7afb",
+    "id": "anh-47-06",
+    "roomId": "phong-47",
+    "url": "/assets/rooms/PHONG_47/06_phong_khach_goc_doi_dien.webp",
+    "order": 6,
+    "caption": "Phòng khách góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "e71324e7007f8d72995e43cf",
+    "id": "anh-47-07",
+    "roomId": "phong-47",
+    "url": "/assets/rooms/PHONG_47/07_nha_ve_sinh_goc_doi_dien.webp",
+    "order": 7,
+    "caption": "Nhà vệ sinh góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "d56ded96c21be584627faa81",
+    "id": "anh-47-08",
+    "roomId": "phong-47",
+    "url": "/assets/rooms/PHONG_47/08_phong_ngu_goc_doi_dien.webp",
+    "order": 8,
+    "caption": "Phòng ngủ góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "3dd0624b920fa211b92fa45f",
+    "id": "anh-48-01",
+    "roomId": "phong-48",
+    "url": "/assets/rooms/PHONG_48/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "b8c3cbbc1d7f4175d72debfe",
+    "id": "anh-48-02",
+    "roomId": "phong-48",
+    "url": "/assets/rooms/PHONG_48/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8da42f0daf027eb70cf34345",
+    "id": "anh-48-03",
+    "roomId": "phong-48",
+    "url": "/assets/rooms/PHONG_48/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "106fd1a25eabd23666a6c96b",
+    "id": "anh-48-04",
+    "roomId": "phong-48",
+    "url": "/assets/rooms/PHONG_48/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "848adf73e4ee78e931a61e8b",
+    "id": "anh-48-05",
+    "roomId": "phong-48",
+    "url": "/assets/rooms/PHONG_48/05_phong_bep_goc_doi_dien.webp",
+    "order": 5,
+    "caption": "Bếp góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5cd53ef4887cbde4cce58820",
+    "id": "anh-48-06",
+    "roomId": "phong-48",
+    "url": "/assets/rooms/PHONG_48/06_phong_khach_goc_doi_dien.webp",
+    "order": 6,
+    "caption": "Phòng khách góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "50104e9f518e9db6e11efa17",
+    "id": "anh-48-07",
+    "roomId": "phong-48",
+    "url": "/assets/rooms/PHONG_48/07_nha_ve_sinh_goc_doi_dien.webp",
+    "order": 7,
+    "caption": "Nhà vệ sinh góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "fdf4f2ed23a39a2315c47957",
+    "id": "anh-48-08",
+    "roomId": "phong-48",
+    "url": "/assets/rooms/PHONG_48/08_phong_ngu_goc_doi_dien.webp",
+    "order": 8,
+    "caption": "Phòng ngủ góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "fa392894f40a7454f6e66e72",
+    "id": "anh-49-01",
+    "roomId": "phong-49",
+    "url": "/assets/rooms/PHONG_49/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c7b336226df48f0e9d467c76",
+    "id": "anh-49-02",
+    "roomId": "phong-49",
+    "url": "/assets/rooms/PHONG_49/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "a743230c05100e1c8b5c417a",
+    "id": "anh-49-03",
+    "roomId": "phong-49",
+    "url": "/assets/rooms/PHONG_49/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "af2540d64682249c8d5e7886",
+    "id": "anh-49-04",
+    "roomId": "phong-49",
+    "url": "/assets/rooms/PHONG_49/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5752ffd3c5fcdf1f562d8002",
+    "id": "anh-49-05",
+    "roomId": "phong-49",
+    "url": "/assets/rooms/PHONG_49/05_phong_bep_goc_doi_dien.webp",
+    "order": 5,
+    "caption": "Bếp góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "302754f384d2a9f005afa18d",
+    "id": "anh-49-06",
+    "roomId": "phong-49",
+    "url": "/assets/rooms/PHONG_49/06_phong_khach_goc_doi_dien.webp",
+    "order": 6,
+    "caption": "Phòng khách góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c9397e8230b02370f89ae93b",
+    "id": "anh-49-07",
+    "roomId": "phong-49",
+    "url": "/assets/rooms/PHONG_49/07_nha_ve_sinh_goc_doi_dien.webp",
+    "order": 7,
+    "caption": "Nhà vệ sinh góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "6548283e8a6aa93f6aa4e373",
+    "id": "anh-49-08",
+    "roomId": "phong-49",
+    "url": "/assets/rooms/PHONG_49/08_phong_ngu_goc_doi_dien.webp",
+    "order": 8,
+    "caption": "Phòng ngủ góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8e8cac219639953c5ecf4bfc",
+    "id": "anh-50-01",
+    "roomId": "phong-50",
+    "url": "/assets/rooms/PHONG_50/01_phong_bep.webp",
+    "order": 1,
+    "caption": "Bếp",
+    "isCover": true,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "ac37779c5069f5dfa031a00d",
+    "id": "anh-50-02",
+    "roomId": "phong-50",
+    "url": "/assets/rooms/PHONG_50/02_phong_khach.webp",
+    "order": 2,
+    "caption": "Phòng khách",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "c034cf5f8486b53768d580be",
+    "id": "anh-50-03",
+    "roomId": "phong-50",
+    "url": "/assets/rooms/PHONG_50/03_nha_ve_sinh.webp",
+    "order": 3,
+    "caption": "Nhà vệ sinh",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "adbd063962834765a5af8bc2",
+    "id": "anh-50-04",
+    "roomId": "phong-50",
+    "url": "/assets/rooms/PHONG_50/04_phong_ngu.webp",
+    "order": 4,
+    "caption": "Phòng ngủ",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "8ae3e07df4cf77652d19309a",
+    "id": "anh-50-05",
+    "roomId": "phong-50",
+    "url": "/assets/rooms/PHONG_50/05_phong_bep_goc_doi_dien.webp",
+    "order": 5,
+    "caption": "Bếp góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "9978c6a6f4c12238820554ac",
+    "id": "anh-50-06",
+    "roomId": "phong-50",
+    "url": "/assets/rooms/PHONG_50/06_phong_khach_goc_doi_dien.webp",
+    "order": 6,
+    "caption": "Phòng khách góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "0f8a8c99aecbb6c5e3c48142",
+    "id": "anh-50-07",
+    "roomId": "phong-50",
+    "url": "/assets/rooms/PHONG_50/07_nha_ve_sinh_goc_doi_dien.webp",
+    "order": 7,
+    "caption": "Nhà vệ sinh góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "5b768cd9385861f0e186a153",
+    "id": "anh-50-08",
+    "roomId": "phong-50",
+    "url": "/assets/rooms/PHONG_50/08_phong_ngu_goc_doi_dien.webp",
+    "order": 8,
+    "caption": "Phòng ngủ góc đối diện",
+    "isCover": false,
+    "mimeType": "image/webp"
+  },
+  {
+    "_id": "6af840e2256b9a6c7b9badf2",
+    "roomId": "phong-6af840e2256b9a6c7b9badea",
+    "url": "/uploads/rooms/4a4ce038-7cc7-4414-a559-083d21c8ac84.png",
+    "order": 1,
+    "isCover": true,
+    "caption": "",
+    "mimeType": "image/png",
+    "id": "p6-6af840e2256b9a6c7b9badeb",
+    "_p6Token": "p6-op-6af840e2256b9a6c7b9badef:1"
+  },
+  {
+    "_id": "6af840e2256b9a6c7b9badf3",
+    "roomId": "phong-6af840e2256b9a6c7b9badea",
+    "url": "/uploads/rooms/158893f2-b202-4216-9161-eea3b0db566a.png",
+    "order": 2,
+    "isCover": false,
+    "caption": "",
+    "mimeType": "image/png",
+    "id": "p6-6af840e2256b9a6c7b9badec",
+    "_p6Token": "p6-op-6af840e2256b9a6c7b9badef:2"
+  },
+  {
+    "_id": "6af840e2256b9a6c7b9badf4",
+    "roomId": "phong-6af840e2256b9a6c7b9badea",
+    "url": "/uploads/rooms/11c36cb8-2fc9-40ec-8ddb-97b4704fbd98.png",
+    "order": 3,
+    "isCover": false,
+    "caption": "",
+    "mimeType": "image/png",
+    "id": "p6-6af840e2256b9a6c7b9baded",
+    "_p6Token": "p6-op-6af840e2256b9a6c7b9badef:3"
+  },
+  {
+    "_id": "6af840e2256b9a6c7b9badf5",
+    "roomId": "phong-6af840e2256b9a6c7b9badea",
+    "url": "/uploads/rooms/c4930238-d296-4ce6-b07f-2ce3f25736dd.png",
+    "order": 4,
+    "isCover": false,
+    "caption": "",
+    "mimeType": "image/png",
+    "id": "p6-6af840e2256b9a6c7b9badee",
+    "_p6Token": "p6-op-6af840e2256b9a6c7b9badef:4"
+  }
+]

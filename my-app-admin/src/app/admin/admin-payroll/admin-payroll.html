@@ -1,0 +1,569 @@
+<div class="finance-page payroll-page">
+  <header class="finance-heading">
+    <div>
+      <h1>Bảng lương &amp; Hiệu suất Doanh số</h1>
+      <span class="finance-badge">{{ period.periodId ? period.status : 'Chưa có kỳ lương' }}</span>
+      <p>Kỳ lương trên hệ thống · {{ period.label }}</p>
+    </div>
+    <div class="finance-actions">
+      <label class="period-select"
+        ><app-icon name="calendar" [size]="17" /><select
+          [(ngModel)]="month"
+          (ngModelChange)="changeMonth()"
+          aria-label="Chọn kỳ lương"
+        >
+          <option *ngFor="let p of periods" [value]="p.id">Tháng {{ p.label }}</option>
+        </select></label
+      ><button class="finance-btn" [disabled]="!generated" (click)="dialog = 'export'">
+        <app-icon name="download" [size]="16" />Xuất Báo cáo (Excel/PDF)
+      </button>
+      <ng-container *ngIf="api.online()">
+        <button
+          class="finance-btn"
+          [disabled]="
+            busy() ||
+            api.loading() ||
+            !period.periodId ||
+            period.status === 'CLOSED' ||
+            period.status === 'PAID'
+          "
+          (click)="dialog = 'create'"
+        >
+          Tính lương
+        </button>
+        <button
+          class="finance-btn primary"
+          [disabled]="busy() || api.loading() || period.status !== 'CALCULATED'"
+          (click)="dialog = 'close'"
+        >
+          Chốt kỳ lương
+        </button>
+      </ng-container>
+    </div>
+  </header>
+  <div class="finance-actions" *ngIf="api.online()">
+    <label>Tháng tạo kỳ * <input type="month" [(ngModel)]="newMonth" /></label>
+    <button
+      class="finance-btn"
+      [disabled]="busy() || api.loading() || !newMonth"
+      (click)="createPeriod()"
+    >
+      Tạo kỳ tháng
+    </button>
+    <button class="finance-btn" [disabled]="busy() || api.loading()" (click)="api.refresh(month)">
+      Tải lại
+    </button>
+    <app-status-badge [status]="period.status" />
+  </div>
+  <p role="status" *ngIf="api.loading()">Đang tải dữ liệu lương…</p>
+  <p role="alert" class="finance-red" *ngIf="actionError() || api.error()">
+    {{ actionError() || api.error() }}
+  </p>
+  <section class="finance-stats" aria-label="Tổng quan lương và doanh thu">
+    <article class="finance-stat">
+      <span class="finance-icon stat-icon"><app-icon name="wallet" /></span
+      ><span class="stat-label">TỔNG DOANH THU</span
+      ><strong class="stat-value finance-blue"
+        >{{ period.revenue | number: '1.0-0' : 'vi' }} đ</strong
+      >
+      <p>Doanh thu môi giới đã ghi nhận trong kỳ</p>
+    </article>
+    <article class="finance-stat">
+      <span class="finance-icon amber stat-icon"><app-icon name="star" /></span
+      ><span class="stat-label">TỔNG HOA HỒNG</span
+      ><strong class="stat-value">{{ commission | number: '1.0-0' : 'vi' }} đ</strong
+      ><span
+        class="finance-badge"
+        [class.amber]="pendingCount > 0"
+        [class.teal]="generated && !pendingCount"
+        >●
+        {{
+          !generated ? 'Chưa tạo bảng lương' : pendingCount ? 'Đang chờ duyệt chi' : 'Đã duyệt chi'
+        }}</span
+      >
+    </article>
+    <article class="finance-stat">
+      <span class="finance-icon gray stat-icon"><app-icon name="wallet" /></span
+      ><span class="stat-label">TỔNG LƯƠNG CỨNG<br />&amp; THƯỞNG</span
+      ><strong class="stat-value">{{ period.salary | number: '1.0-0' : 'vi' }} đ</strong>
+      <p>
+        ♧ {{ employees.length }} nhân sự
+        <b class="shift-total">{{ period.shiftCount }} ca đã chấm công</b>
+      </p>
+    </article>
+    <article class="finance-stat">
+      <span class="finance-icon red stat-icon"><app-icon name="clock" /></span
+      ><span class="stat-label">TỔNG KHẤU TRỪ</span
+      ><strong class="stat-value finance-red">-{{ period.fine | number: '1.0-0' : 'vi' }} đ</strong>
+      <p>
+        <span class="finance-red">△ {{ period.lateCount }} lượt trễ trong kỳ</span> · Theo phiếu
+        lương
+      </p>
+    </article>
+  </section>
+  <div class="payroll-overview">
+    <section class="finance-card team-performance">
+      <div class="finance-card-head">
+        <div>
+          <h2>Phân bổ Doanh thu theo Nhân viên</h2>
+          <p class="finance-subtitle">Tỷ trọng trong doanh thu tháng {{ period.label }}</p>
+        </div>
+        <div class="team-keys">
+          <span><i class="finance-dot"></i> {{ period.leader1 }}</span
+          ><span><i class="finance-dot gray"></i> {{ period.leader2 }}</span>
+        </div>
+      </div>
+      <article class="team-block">
+        <div class="team-top">
+          <span class="team-number">NV<br />01</span><b>{{ period.leader1 }}</b
+          ><span class="team-lead">Doanh thu phân bổ</span>
+          <div class="team-amount">
+            <b class="finance-blue">{{ period.team1 | number: '1.0-0' : 'vi' }} đ</b> /<br />{{
+              period.revenue | number: '1.0-0' : 'vi'
+            }}
+            đ ({{ (period.team1 / (period.revenue || 1)) * 100 | number: '1.1-1' }}%)
+          </div>
+        </div>
+        <div
+          class="team-progress"
+          role="progressbar"
+          [attr.aria-label]="'Tỷ trọng doanh thu ' + period.leader1"
+          [attr.aria-valuenow]="(period.team1 / (period.revenue || 1)) * 100"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <span [style.width.%]="(period.team1 / (period.revenue || 1)) * 100"></span>
+        </div>
+        <div class="team-foot">
+          <span>Đã giao kết {{ period.count1 }} hợp đồng mới</span
+          ><span
+            >Doanh thu nhân viên khác:
+            {{ (period.revenue || 0) - period.team1 | number: '1.0-0' : 'vi' }} đ</span
+          >
+        </div>
+      </article>
+      <article class="team-block second-team">
+        <div class="team-top">
+          <span class="team-number">NV<br />02</span><b>{{ period.leader2 }}</b
+          ><span class="team-lead">Doanh thu phân bổ</span>
+          <div class="team-amount">
+            <b>{{ period.team2 | number: '1.0-0' : 'vi' }} đ</b> /<br />{{
+              period.revenue | number: '1.0-0' : 'vi'
+            }}
+            đ ({{ (period.team2 / (period.revenue || 1)) * 100 | number: '1.1-1' }}%)
+          </div>
+        </div>
+        <div
+          class="team-progress"
+          role="progressbar"
+          [attr.aria-label]="'Tỷ trọng doanh thu ' + period.leader2"
+          [attr.aria-valuenow]="(period.team2 / (period.revenue || 1)) * 100"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <span [style.width.%]="(period.team2 / (period.revenue || 1)) * 100"></span>
+        </div>
+        <div class="team-foot">
+          <span>Đã giao kết {{ period.count2 }} hợp đồng mới</span
+          ><span
+            >Doanh thu nhân viên khác:
+            {{ (period.revenue || 0) - period.team2 | number: '1.0-0' : 'vi' }} đ</span
+          >
+        </div>
+      </article>
+      <div class="team-summary">
+        <span
+          >Tổng hoa hồng dự kiến giải ngân kỳ này:
+          <b class="finance-blue">{{ commission | number: '1.0-0' : 'vi' }} đ</b></span
+        ><button class="finance-btn link" (click)="dialog = 'policy'">
+          Xem quy chế tính bậc hoa hồng lũy tiến →
+        </button>
+      </div>
+    </section>
+    <section class="finance-card payout-card">
+      <div class="finance-card-head">
+        <h2>Cơ cấu Quỹ Chi trả</h2>
+        <span class="finance-badge">Tháng {{ period.label.slice(0, 2) }}</span>
+      </div>
+      <div
+        class="finance-donut"
+        [style.background]="
+          'conic-gradient(#2861f6 0 ' +
+          (period.salary / (period.salary + commission || 1)) * 100 +
+          '%, #aa6a00 0 100%)'
+        "
+        role="img"
+        [attr.aria-label]="'Quỹ chi trả ' + payout + ' đồng'"
+      >
+        <div>
+          <span>Tổng chi trả</span><strong>{{ payout / 1000000 | number: '1.1-1' }}M</strong
+          ><small>VND</small>
+        </div>
+      </div>
+      <div class="finance-legend">
+        <span class="finance-dot"></span>Lương cứng &amp; Thưởng<b
+          >{{ period.salary | number: '1.0-0' : 'vi' }} đ</b
+        >
+      </div>
+      <div class="finance-legend">
+        <span class="finance-dot amber"></span>Hoa hồng môi giới<b
+          >{{ commission | number: '1.0-0' : 'vi' }} đ</b
+        >
+      </div>
+      <div class="finance-legend finance-red">
+        <span class="finance-dot red"></span>Tổng khấu trừ<b
+          >-{{ period.fine | number: '1.0-0' : 'vi' }} đ</b
+        >
+      </div>
+      <button
+        class="finance-btn soft bank-button"
+        [disabled]="!generated || !approved.length"
+        (click)="dialog = 'payout'"
+      >
+        <app-icon name="building" [size]="17" />Xuất danh sách chi trả
+      </button>
+    </section>
+  </div>
+  <section class="finance-card payroll-table-card">
+    <div class="payroll-table-heading">
+      <div>
+        <h2>Chi tiết Bảng Lương &amp; Thưởng Nhân Viên</h2>
+        <span class="finance-badge">{{ employees.length }} nhân sự</span>
+      </div>
+      <div class="table-tools">
+        <div class="payroll-tabs" role="group" aria-label="Trạng thái bảng lương">
+          <button [class.active]="status === 'all'" (click)="filter('all')">Tất cả</button
+          ><button [class.active]="status === 'approved'" (click)="filter('approved')">
+            Đã duyệt ({{ generated ? approved.length : 0 }})</button
+          ><button [class.active]="status === 'pending'" (click)="filter('pending')">
+            Chờ duyệt ({{ pendingCount }})
+          </button>
+        </div>
+        <label class="payroll-search"
+          ><app-icon name="search" [size]="16" /><input
+            [(ngModel)]="search"
+            (ngModelChange)="page = 1"
+            placeholder="Tìm tên, mã NV..."
+            aria-label="Tìm nhân viên trong bảng lương"
+        /></label>
+      </div>
+    </div>
+    <table class="payroll-table">
+      <thead>
+        <tr>
+          <th>MÃ &amp; NHÂN VIÊN</th>
+          <th>CHỨC VỤ &amp; ĐỊA BÀN</th>
+          <th>LƯƠNG CỨNG</th>
+          <th>CA TRỰC</th>
+          <th>DOANH SỐ</th>
+          <th>HOA HỒNG</th>
+          <th>THƯỞNG</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of visible">
+          <td>
+            <button class="employee-link" (click)="detail(r)">
+              <span class="employee-avatar" [class]="'employee-avatar avatar-' + r.initials">{{
+                r.initials
+              }}</span
+              ><span
+                ><b>{{ r.name }}</b
+                ><small>#{{ r.code }}</small></span
+              >
+            </button>
+          </td>
+          <td>
+            <b>{{ r.role }}</b
+            ><small>{{ r.area }}</small>
+          </td>
+          <td>
+            <b>{{ r.salary | number: '1.0-0' : 'vi' }} đ</b>
+          </td>
+          <td>
+            <span class="finance-badge">{{ r.shifts }} ca</span>
+          </td>
+          <td>{{ r.sales ? (r.sales | number: '1.0-0' : 'vi') + ' đ' : '--' }}</td>
+          <td class="finance-teal">
+            <b>{{ r.commission | number: '1.0-0' : 'vi' }} đ</b>
+          </td>
+          <td [class.finance-amber]="r.bonus > 0">
+            {{ r.bonus ? '+' : '' }}{{ r.bonus | number: '1.0-0' : 'vi' }} đ
+          </td>
+        </tr>
+        <tr *ngIf="!visible.length">
+          <td colspan="7" class="empty-payroll">
+            <h3>
+              {{
+                generated
+                  ? 'Không tìm thấy nhân viên phù hợp'
+                  : 'Chưa có bảng lương tháng ' + period.label
+              }}
+            </h3>
+            <p>
+              {{
+                generated
+                  ? 'Thử thay đổi tên, mã NV hoặc bộ lọc.'
+                  : 'Tạo kỳ lương và tính lương để xem, duyệt phiếu lương của kỳ này.'
+              }}
+            </p>
+            <button
+              *ngIf="!generated && period.periodId"
+              [disabled]="
+                busy() ||
+                api.loading() ||
+                !!api.error() ||
+                period.status === 'CLOSED' ||
+                period.status === 'PAID'
+              "
+              class="finance-btn primary"
+              (click)="dialog = 'create'"
+            >
+              Tạo bảng lương
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <footer class="payroll-pagination">
+      <span
+        >Hiển thị <b>{{ visible.length }}</b> trên <b>{{ filtered.length }}</b> nhân sự
+        <span class="footer-separator">•</span> Tổng thực chi trang này:
+        <b>{{ pageTotal | number: '1.0-0' : 'vi' }} đ</b></span
+      >
+      <div class="finance-actions">
+        <button aria-label="Trang trước" [disabled]="page === 1" (click)="page = page - 1">‹</button
+        ><button
+          *ngFor="let n of pageNumbers"
+          [class.active]="page === n"
+          [attr.aria-label]="'Trang ' + n"
+          [attr.aria-current]="page === n ? 'page' : null"
+          (click)="page = n"
+        >
+          {{ n }}</button
+        ><button aria-label="Trang sau" [disabled]="page === pages" (click)="page = page + 1">
+          ›
+        </button>
+      </div>
+    </footer>
+  </section>
+  <section class="payroll-policies">
+    <article class="finance-card">
+      <span class="finance-icon"><app-icon name="shield" /></span>
+      <div>
+        <h3>Chính sách tính hoa hồng</h3>
+        <p>
+          <span *ngFor="let level of policies[0].levels"
+            >Từ {{ level.from | number }} đ: {{ level.rateBps! / 100 }}%.
+          </span>
+        </p>
+      </div>
+    </article>
+    <article class="finance-card">
+      <span class="finance-icon red"><app-icon name="pin" /></span>
+      <div>
+        <h3>Kỷ luật chấm công GPS</h3>
+        <p>
+          <span *ngFor="let level of policies[1].levels"
+            >Từ {{ level.from }} phút: -{{ level.amount | number }} đ.
+          </span>
+        </p>
+      </div>
+    </article>
+    <article class="finance-card">
+      <span class="finance-icon teal"><app-icon name="building" /></span>
+      <div>
+        <h3>Trạng thái kỳ lương</h3>
+        <p>
+          {{ period.status }} ·
+          {{
+            period.closedAt ? 'Chốt kỳ: ' + (period.closedAt | date: 'dd/MM/yyyy') : 'Kỳ chưa chốt'
+          }}.
+          {{
+            period.paidAt
+              ? 'Chi trả: ' + (period.paidAt | date: 'dd/MM/yyyy')
+              : 'Chưa có ngày chi trả trên hệ thống'
+          }}.
+        </p>
+      </div>
+    </article>
+  </section>
+</div>
+<div class="modal-backdrop" *ngIf="dialog" (click)="dialog = null">
+  <section
+    class="modal finance-modal"
+    appDialogFocus
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="payroll-dialog-title"
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="dialog = null"
+  >
+    <h2 id="payroll-dialog-title">
+      {{
+        dialog === 'export'
+          ? 'Xuất Báo cáo tháng ' + period.label
+          : dialog === 'close'
+            ? 'Chốt & Ký duyệt Bảng Lương?'
+            : dialog === 'create'
+              ? 'Tính lương tháng ' + period.label + '?'
+              : dialog === 'payout'
+                ? 'Danh sách chi trả'
+                : dialog === 'detail'
+                  ? 'Phiếu lương nhân viên'
+                  : 'Quy chế hoa hồng lũy tiến'
+      }}
+    </h2>
+    <p>Dữ liệu hệ thống cho kỳ {{ period.label }}.</p>
+    <p *ngIf="dialog === 'close'">
+      Đối soát số liệu lần cuối và khóa kỳ. Sau khi chốt, hãy duyệt từng phiếu để thông báo nhân
+      viên.
+    </p>
+    <p *ngIf="dialog === 'create'">
+      Tổng hợp doanh thu hợp đồng đã hoàn tất, chọn bậc hoa hồng tháng và giữ các khoản thưởng, khấu
+      trừ đã nhập.
+    </p>
+    <p *ngIf="dialog === 'payout'">
+      Xuất danh sách chi trả cho {{ approved.length }} nhân viên đã duyệt. Không gửi lệnh đến ngân
+      hàng.
+    </p>
+    <p *ngIf="dialog === 'policy'">
+      <span *ngFor="let policy of policies"
+        >{{ policy.name }} (phiên bản {{ policy.version }}).
+      </span>
+      Hoa hồng, thưởng và khấu trừ hiển thị theo số tiền trong phiếu lương trên hệ thống.
+    </p>
+    <ng-container *ngIf="dialog === 'detail' && selected as r"
+      ><dl>
+        <dt>Nhân viên</dt>
+        <dd>{{ r.name }} · #{{ r.code }}</dd>
+        <dt>Lương cứng</dt>
+        <dd>{{ r.salary | number: '1.0-0' : 'vi' }} đ</dd>
+        <dt>Hoa hồng</dt>
+        <dd>{{ r.commission | number: '1.0-0' : 'vi' }} đ</dd>
+        <dt>Thưởng</dt>
+        <dd>{{ r.bonus | number: '1.0-0' : 'vi' }} đ</dd>
+        <dt>Khấu trừ</dt>
+        <dd>{{ r.fine | number: '1.0-0' : 'vi' }} đ</dd>
+        <dt>Thực nhận</dt>
+        <dd class="finance-teal">{{ net(r) | number: '1.0-0' : 'vi' }} đ</dd>
+        <dt>Trạng thái</dt>
+        <dd>
+          {{
+            r.slipStatus === 'PAID' ? 'Đã trả' : approved.includes(r.id) ? 'Đã duyệt' : 'Chờ duyệt'
+          }}
+        </dd>
+        <ng-container *ngIf="api.online()">
+          <dt>Ngày trả</dt>
+          <dd>
+            {{
+              selectedSlip?.paidAt ? (selectedSlip?.paidAt | date: 'dd/MM/yyyy HH:mm') : 'Chưa trả'
+            }}
+          </dd>
+          <dt>Tỷ lệ hoa hồng tháng</dt>
+          <dd>{{ (selectedSlip?.commission?.rateBps || 0) / 100 }}%</dd>
+          <dt>Giao dịch doanh thu</dt>
+          <dd>
+            <p *ngFor="let t of selectedSlip?.transactions">
+              {{ t.id }} · {{ t.room }} · {{ t.amount | number }} đ
+            </p>
+          </dd>
+          <dt>Điều chỉnh và phạt trễ</dt>
+          <dd>{{ selectedSlip?.adjustment?.notes }}</dd>
+        </ng-container>
+      </dl></ng-container
+    >
+    <form
+      *ngIf="
+        api.online() &&
+        dialog === 'detail' &&
+        selected?.slipStatus === 'DRAFT' &&
+        (period.status === 'OPEN' || period.status === 'CALCULATED')
+      "
+      (ngSubmit)="adjust()"
+      #adjustmentForm="ngForm"
+    >
+      <label
+        >Loại điều chỉnh
+        <select name="kind" [(ngModel)]="adjustmentKind">
+          <option value="BONUS">Thưởng</option>
+          <option value="DEDUCTION">Khấu trừ</option>
+        </select></label
+      >
+      <label
+        >Số tiền (VNĐ) *
+        <input
+          name="amount"
+          type="number"
+          min="0"
+          step="1"
+          required
+          [(ngModel)]="adjustmentAmount"
+          #amountControl="ngModel"
+      /></label>
+      <app-form-error [control]="amountControl.control" />
+      <label
+        >Lý do *
+        <input
+          name="reason"
+          required
+          minlength="3"
+          [(ngModel)]="adjustmentReason"
+          #reasonControl="ngModel"
+      /></label>
+      <app-form-error [control]="reasonControl.control" />
+      <button class="finance-btn" [disabled]="busy() || api.saving() || adjustmentForm.invalid">
+        Lưu điều chỉnh
+      </button>
+    </form>
+    <p role="alert" class="finance-red" *ngIf="actionError()">{{ actionError() }}</p>
+    <div class="finance-actions">
+      <button class="finance-btn soft" (click)="dialog = null">Đóng</button
+      ><ng-container *ngIf="dialog === 'export'"
+        ><button class="finance-btn" (click)="print()">In / Lưu PDF</button
+        ><button class="finance-btn primary" (click)="export()">
+          Tải CSV / Excel
+        </button></ng-container
+      ><button
+        *ngIf="dialog === 'create' || dialog === 'close' || dialog === 'payout'"
+        class="finance-btn primary"
+        [disabled]="busy() || api.saving()"
+        (click)="confirm()"
+      >
+        {{
+          dialog === 'create'
+            ? 'Xác nhận tính lương'
+            : dialog === 'close'
+              ? 'Xác nhận chốt bảng lương'
+              : 'Xuất danh sách chi trả'
+        }}</button
+      ><button
+        *ngIf="
+          dialog === 'detail' &&
+          selected &&
+          !approved.includes(selected.id) &&
+          period.status === 'CLOSED'
+        "
+        class="finance-btn primary"
+        [disabled]="busy() || api.saving()"
+        (click)="approveRow()"
+      >
+        Duyệt phiếu lương này
+      </button>
+      <button
+        *ngIf="
+          api.online() &&
+          dialog === 'detail' &&
+          selected?.slipStatus === 'APPROVED' &&
+          period.status === 'CLOSED'
+        "
+        class="finance-btn primary"
+        [disabled]="busy() || api.saving()"
+        (click)="payRow()"
+      >
+        Đánh dấu đã trả
+      </button>
+    </div>
+  </section>
+</div>
+<app-toast [message]="toast()" (closed)="toast.set('')" />

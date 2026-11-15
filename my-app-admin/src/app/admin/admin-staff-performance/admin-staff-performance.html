@@ -1,0 +1,228 @@
+<div class="staff-page" data-view="performance" [class.has-error]="!!error">
+  <p class="notice" role="status" *ngIf="repository.loading() || repository.shiftApi.loading()">
+    Đang tải dữ liệu từ máy chủ…
+  </p>
+  <div class="staff-tabs">
+    <a
+      routerLink="/admin/staff"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ><app-icon name="users" [size]="17" /> Danh sách nhân sự
+      <span>{{ employees.length }}</span></a
+    >
+    <a routerLink="/admin/staff/schedule" routerLinkActive="active"
+      ><app-icon name="calendar" [size]="17" /> Lịch làm việc &amp; Ca trực</a
+    >
+    <a routerLink="/admin/staff/performance" routerLinkActive="active"
+      ><app-icon name="chart" [size]="17" /> Theo dõi hiệu suất</a
+    >
+    <div class="staff-tabs-spacer"></div>
+    <span class="data-chip">● Dữ liệu từ máy chủ</span>
+  </div>
+
+  <ng-template #errorBanner
+    ><div class="notice error staff-error-banner" *ngIf="error" role="alert">
+      <span class="error-symbol">!</span>
+      <div>
+        <strong>Chưa thể thực hiện thao tác</strong>
+        <p>{{ error }}</p>
+      </div>
+    </div></ng-template
+  >
+  <ng-container><ng-container *ngTemplateOutlet="errorBanner" /></ng-container>
+  <div class="staff-toast" *ngIf="toast" role="status">
+    <span class="toast-check"><app-icon name="check" [size]="22" /></span>
+    <div>
+      <strong>{{
+        toast.startsWith('Xóa thành công') ? 'Xóa thành công!' : 'Thao tác thành công'
+      }}</strong>
+      <p>{{ toast }}</p>
+    </div>
+    <button class="icon-btn" aria-label="Đóng thông báo" (click)="toast = ''">
+      <app-icon name="close" [size]="16" />
+    </button>
+  </div>
+
+  <div class="breadcrumb">
+    <a routerLink="/admin/staff">Quản lý Nhân sự</a> › Theo dõi hiệu suất
+  </div>
+  <header class="staff-page-title">
+    <div>
+      <h1>Theo dõi hiệu suất</h1>
+      <p>Chỉ số tính từ ca, chấm công và công việc trong kỳ đánh giá.</p>
+    </div>
+    <label class="field"
+      >Đợt / tuần<select class="control" [(ngModel)]="performancePeriod">
+        <option value="">Tất cả đợt</option>
+        <option *ngFor="let period of periods" [value]="period.id">{{ period.name }}</option>
+      </select></label
+    >
+  </header>
+  <div class="staff-stats">
+    <article class="staff-stat">
+      <span class="kpi-symbol"><app-icon name="calendar" [size]="20" /></span>
+      <span>CA ĐƯỢC PHÂN</span><strong>{{ performanceTotals.assigned }}</strong
+      ><small>Tổng đăng ký còn hiệu lực</small>
+    </article>
+    <article class="staff-stat">
+      <span class="kpi-symbol"><app-icon name="check" [size]="20" /></span><span>CA HOÀN THÀNH</span
+      ><strong>{{ performanceTotals.completed }}</strong
+      ><small>Trạng thái hoàn thành</small>
+    </article>
+    <article class="staff-stat">
+      <span class="kpi-symbol wine"><app-icon name="clock" [size]="20" /></span>
+      <span>ĐÚNG GIỜ</span
+      ><strong
+        >{{
+          performanceTotals.attendanceCount
+            ? ((performanceTotals.onTime / performanceTotals.attendanceCount) * 100
+              | number: '1.0-0')
+            : 0
+        }}%</strong
+      ><small
+        >{{ performanceTotals.onTime }}/{{ performanceTotals.attendanceCount }} lượt chấm công ·
+        check-in không sau giờ bắt đầu ca</small
+      >
+    </article>
+    <article class="staff-stat">
+      <span class="kpi-symbol wine"><app-icon name="file" [size]="20" /></span>
+      <span>CÔNG VIỆC XONG</span
+      ><strong
+        >{{
+          performanceTotals.tasksTotal
+            ? ((performanceTotals.tasksDone / performanceTotals.tasksTotal) * 100 | number: '1.0-0')
+            : 0
+        }}%</strong
+      ><small
+        >{{ performanceTotals.tasksDone }}/{{ performanceTotals.tasksTotal }} lượt giao việc</small
+      >
+    </article>
+  </div>
+  <div class="staff-performance-layout">
+    <section class="panel">
+      <h2><span class="blue-dot"></span>Tiến độ ca trực &amp; Tỷ lệ đúng giờ theo tuần</h2>
+      <p>So sánh số lượt hoàn thành và check-in đúng giờ trong kỳ.</p>
+      <div class="chart-legend"><span>● Ca hoàn thành</span><span>● Đúng giờ</span></div>
+      <div class="vertical-chart performance-chart">
+        <div class="chart-column" *ngFor="let bar of chartPeriods">
+          <div class="column-bars">
+            <div [style.height.%]="(bar.completed / chartMax) * 100">
+              <b>{{ bar.completed }} ca</b><i></i>
+            </div>
+            <div [style.height.%]="(bar.onTime / chartMax) * 100">
+              <b>{{ bar.onTime }} đúng giờ</b><i></i>
+            </div>
+          </div>
+          <small>{{ bar.label | date: 'dd/MM' }}</small>
+        </div>
+      </div>
+      <div class="matrix-note">
+        Đúng giờ = lượt check-in không sau giờ bắt đầu / tổng lượt check-in. Phút trễ = tổng
+        ceil((check-in − startsAt) / 60.000), tối thiểu 0. Mức phạt đối chiếu PHAT_TRE hiệu lực tại
+        lúc check-in.
+      </div>
+    </section>
+    <section class="panel">
+      <h2><span class="red-dot"></span>Phân bổ tiến độ công việc</h2>
+      <p>Tính theo lượt giao cho nhân viên trong kỳ đã chọn.</p>
+      <div class="donut-layout">
+        <div
+          class="performance-donut"
+          [style.background]="
+            'conic-gradient(#be1730 0% ' +
+            taskCompletion +
+            '%, #dbe2ff ' +
+            taskCompletion +
+            '% 100%)'
+          "
+        >
+          <div>
+            <strong>{{ taskCompletion }}%</strong><span>Hoàn thành</span>
+          </div>
+        </div>
+        <div class="donut-legend">
+          <div>
+            <span class="red-dot"></span><strong>Đã hoàn thành</strong
+            ><b>{{ performanceTotals.tasksDone }}</b>
+          </div>
+          <div>
+            <span class="blue-dot"></span><strong>Chưa hoàn thành</strong
+            ><b>{{ performanceTotals.tasksTotal - performanceTotals.tasksDone }}</b>
+          </div>
+          <small
+            >{{ performanceTotals.tasksTotal }} lượt giao việc · không nhân bản task chuyển
+            ca</small
+          >
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="panel">
+    <h2 class="ranking-title"><app-icon name="star" /> Hiệu suất nhân sự</h2>
+    <p class="tip">
+      Xếp theo tỷ lệ hoàn thành việc, sau đó số ca hoàn thành. Công việc = lượt hoàn thành / lượt
+      được giao (mỗi người một lượt); việc chuyển ca tính vào kỳ phát sinh, không tạo việc trùng.
+    </p>
+    <div class="ranking-search">
+      <span>{{ rankedEmployees.length }} nhân sự trong kỳ đánh giá</span
+      ><input
+        class="control"
+        [(ngModel)]="performanceQuery"
+        aria-label="Tìm nhân viên trong bảng hiệu suất"
+        placeholder="Lọc theo tên hoặc mã NV…"
+      />
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nhân viên</th>
+            <th>Chức vụ / Vị trí</th>
+            <th>Ca được phân</th>
+            <th>Ca hoàn thành</th>
+            <th>Đúng giờ</th>
+            <th>Phút trễ</th>
+            <th>Công việc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of rankedEmployees; let index = index">
+            <td>
+              <span class="row-number">{{ index + 1 }}</span>
+            </td>
+            <td>
+              <div class="staff-person">
+                <img appImageFallback [src]="row.employee.avatar" [alt]="row.employee.fullName" />
+                <div>
+                  <button class="text-button" (click)="openDetails(row.employee, 'performance')">
+                    {{ row.employee.fullName }}</button
+                  ><small>{{ row.employee.employeeCode }}</small>
+                </div>
+              </div>
+            </td>
+            <td>
+              <span class="badge lilac">{{ row.employee.position }}</span>
+            </td>
+            <td>{{ row.metrics.assigned }}</td>
+            <td>{{ row.metrics.completed }}</td>
+            <td>
+              {{ row.metrics.attendanceCount ? row.metrics.onTimeRate + '%' : 'Chưa có chấm công' }}
+            </td>
+            <td>{{ row.metrics.lateMinutes }}</td>
+            <td>
+              <div class="row">
+                <div class="bar-track"><i [style.width.%]="row.metrics.taskRate"></i></div>
+                <strong>{{ row.metrics.taskRate }}%</strong>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="empty" *ngIf="!rankedEmployees.length">Chưa có dữ liệu ca trong đợt đã chọn.</div>
+    </div>
+  </section>
+  <footer class="staff-data-footer">
+    <span>● Dữ liệu từ máy chủ</span>
+  </footer>
+</div>

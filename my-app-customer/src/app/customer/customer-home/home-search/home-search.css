@@ -1,0 +1,154 @@
+:host {
+  display: block;
+  position: relative;
+  z-index: 500;
+  width: min(1200px, calc(100% - 96px));
+  margin: -38px auto 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+.search-shell {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 24px 28px 14px;
+  box-shadow: var(--shadow-lg);
+}
+.home-search-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) minmax(0, 0.9fr) auto;
+  align-items: center;
+  gap: 22px;
+}
+.field {
+  min-width: 0;
+  position: relative;
+  padding-right: 22px;
+  border-right: 1px solid var(--line);
+}
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.input-with-icon {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.input-with-icon app-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+input,
+select {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid transparent;
+  padding: 6px 4px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 650;
+  font-size: 15px;
+  border-radius: 12px;
+}
+input::placeholder {
+  color: var(--text);
+  opacity: 1;
+}
+.search-submit {
+  min-height: 54px;
+  gap: 16px;
+  border-radius: 13px;
+  padding-inline: 24px;
+  font-size: 16px;
+  white-space: nowrap;
+}
+.search-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+.advanced {
+  color: var(--primary);
+  font-size: 12px;
+  padding: 6px 0;
+}
+.filter-error {
+  margin-right: auto;
+  color: var(--accent);
+}
+.location-options {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: -14px;
+  width: max(100%, 340px);
+  max-height: 350px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  padding: 8px;
+}
+.location-options p {
+  margin: 0;
+  padding: 10px;
+  font-size: 13px;
+}
+.location-options .option-group {
+  color: var(--primary);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+[role='option'] {
+  padding: 12px;
+  min-height: 44px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+[role='option']:hover,
+.active-option {
+  background: var(--soft);
+  color: var(--primary);
+}
+[role='option'] strong,
+[role='option'] small {
+  display: block;
+}
+[role='option'] strong {
+  font-size: 14px;
+}
+[role='option'] small {
+  color: var(--text);
+  font-size: 12px;
+}
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.filter-chips button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--soft);
+  color: var(--primary);
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+:is(input, select, button, a):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  box-shadow: var(--focus-ring);
+}

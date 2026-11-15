@@ -1,0 +1,617 @@
+[
+  {
+    "_id": "5f5dde456d32fb68b148f6d0",
+    "id": "dtnv-08-nv-01",
+    "employeeId": "nv-01",
+    "periodId": "luong-08",
+    "revenue": 12600000,
+    "transactionCount": 4,
+    "commissionId": "hh-08-nv-01",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "ec3d4ae7d28f6a3917141f42",
+    "id": "dtnv-08-nv-02",
+    "employeeId": "nv-02",
+    "periodId": "luong-08",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-08-nv-02",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "9874900f1143618c9068f00f",
+    "id": "dtnv-08-nv-03",
+    "employeeId": "nv-03",
+    "periodId": "luong-08",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-08-nv-03",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "94a47933822e0a4f4d3e9038",
+    "id": "dtnv-08-nv-04",
+    "employeeId": "nv-04",
+    "periodId": "luong-08",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-08-nv-04",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "864d98951a776497f39c03db",
+    "id": "dtnv-08-nv-05",
+    "employeeId": "nv-05",
+    "periodId": "luong-08",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-08-nv-05",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "89c5ae11143318bc60295fae",
+    "id": "dtnv-08-nv-06",
+    "employeeId": "nv-06",
+    "periodId": "luong-08",
+    "revenue": 2100000,
+    "transactionCount": 1,
+    "commissionId": "hh-08-nv-06",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "de7d5537a60fa03b025b3fbf",
+    "id": "dtnv-08-nv-07",
+    "employeeId": "nv-07",
+    "periodId": "luong-08",
+    "revenue": 2250000,
+    "transactionCount": 1,
+    "commissionId": "hh-08-nv-07",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "5cf33e7c51ec67ac9b6f73be",
+    "id": "dtnv-08-nv-08",
+    "employeeId": "nv-08",
+    "periodId": "luong-08",
+    "revenue": 2600000,
+    "transactionCount": 1,
+    "commissionId": "hh-08-nv-08",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "5ff763fd7125116645f15707",
+    "id": "dtnv-08-nv-09",
+    "employeeId": "nv-09",
+    "periodId": "luong-08",
+    "revenue": 2300000,
+    "transactionCount": 1,
+    "commissionId": "hh-08-nv-09",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "866b608daebb6afdd7965306",
+    "id": "dtnv-08-nv-10",
+    "employeeId": "nv-10",
+    "periodId": "luong-08",
+    "revenue": 1950000,
+    "transactionCount": 1,
+    "commissionId": "hh-08-nv-10",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "bb5f674d914e25ed863dc5ba",
+    "id": "dtnv-08-nv-11",
+    "employeeId": "nv-11",
+    "periodId": "luong-08",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-08-nv-11",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "e8eb1ddd2f423ce78902bbd6",
+    "id": "dtnv-08-nv-12",
+    "employeeId": "nv-12",
+    "periodId": "luong-08",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-08-nv-12",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "f81cbcc024f5a02cf403635a",
+    "id": "dtnv-08-nv-13",
+    "employeeId": "nv-13",
+    "periodId": "luong-08",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-08-nv-13",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "97c6b8cbbd55a5d3447a6332",
+    "id": "dtnv-08-nv-14",
+    "employeeId": "nv-14",
+    "periodId": "luong-08",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-08-nv-14",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "375ed51a5262d77caed7450d",
+    "id": "dtnv-08-nv-15",
+    "employeeId": "nv-15",
+    "periodId": "luong-08",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-08-nv-15",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "c2e7ad5a20fa48bf47cab29d",
+    "id": "dtnv-09-nv-01",
+    "employeeId": "nv-01",
+    "periodId": "luong-09",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-09-nv-01",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "39417f1fc18ef96b1b7c45e1",
+    "id": "dtnv-09-nv-02",
+    "employeeId": "nv-02",
+    "periodId": "luong-09",
+    "revenue": 2150000,
+    "transactionCount": 1,
+    "commissionId": "hh-09-nv-02",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "543a135116c9c85eac431475",
+    "id": "dtnv-09-nv-03",
+    "employeeId": "nv-03",
+    "periodId": "luong-09",
+    "revenue": 2200000,
+    "transactionCount": 1,
+    "commissionId": "hh-09-nv-03",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "06b21d542ff16ea081219691",
+    "id": "dtnv-09-nv-04",
+    "employeeId": "nv-04",
+    "periodId": "luong-09",
+    "revenue": 2350000,
+    "transactionCount": 1,
+    "commissionId": "hh-09-nv-04",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "4d049de21892eaf08a54eecb",
+    "id": "dtnv-09-nv-05",
+    "employeeId": "nv-05",
+    "periodId": "luong-09",
+    "revenue": 2200000,
+    "transactionCount": 1,
+    "commissionId": "hh-09-nv-05",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "084eea64663ec963ac4deb30",
+    "id": "dtnv-09-nv-06",
+    "employeeId": "nv-06",
+    "periodId": "luong-09",
+    "revenue": 2100000,
+    "transactionCount": 1,
+    "commissionId": "hh-09-nv-06",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "f86c6b0275901941bc39b9c6",
+    "id": "dtnv-09-nv-07",
+    "employeeId": "nv-07",
+    "periodId": "luong-09",
+    "revenue": 3100000,
+    "transactionCount": 1,
+    "commissionId": "hh-09-nv-07",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "fd904a5ad90d0d2241d50356",
+    "id": "dtnv-09-nv-08",
+    "employeeId": "nv-08",
+    "periodId": "luong-09",
+    "revenue": 2400000,
+    "transactionCount": 1,
+    "commissionId": "hh-09-nv-08",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "ec1cfd357470335a7e4ab2a8",
+    "id": "dtnv-09-nv-09",
+    "employeeId": "nv-09",
+    "periodId": "luong-09",
+    "revenue": 2450000,
+    "transactionCount": 1,
+    "commissionId": "hh-09-nv-09",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "2adb626f4750e1f1ce509f05",
+    "id": "dtnv-09-nv-10",
+    "employeeId": "nv-10",
+    "periodId": "luong-09",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-09-nv-10",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "522f7564d04293b84d56c746",
+    "id": "dtnv-09-nv-11",
+    "employeeId": "nv-11",
+    "periodId": "luong-09",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-09-nv-11",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "c713f6cfa7a61b919f9039fd",
+    "id": "dtnv-09-nv-12",
+    "employeeId": "nv-12",
+    "periodId": "luong-09",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-09-nv-12",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "8872585931e38ee28c9ae39d",
+    "id": "dtnv-09-nv-13",
+    "employeeId": "nv-13",
+    "periodId": "luong-09",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-09-nv-13",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "3f3833d0f25e016980daf9b7",
+    "id": "dtnv-09-nv-14",
+    "employeeId": "nv-14",
+    "periodId": "luong-09",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-09-nv-14",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "bc1f207790a3f944f1591947",
+    "id": "dtnv-09-nv-15",
+    "employeeId": "nv-15",
+    "periodId": "luong-09",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-09-nv-15",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "c889904fe7735f0bb5b9a31b",
+    "id": "dtnv-10-nv-01",
+    "employeeId": "nv-01",
+    "periodId": "luong-10",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-10-nv-01",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "745c5c0aa3f1b36ce51276d8",
+    "id": "dtnv-10-nv-02",
+    "employeeId": "nv-02",
+    "periodId": "luong-10",
+    "revenue": 1800000,
+    "transactionCount": 1,
+    "commissionId": "hh-10-nv-02",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "2f76ad46645719bb86fa2e1f",
+    "id": "dtnv-10-nv-03",
+    "employeeId": "nv-03",
+    "periodId": "luong-10",
+    "revenue": 2150000,
+    "transactionCount": 1,
+    "commissionId": "hh-10-nv-03",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "5bce6dc40ebe88155213a19e",
+    "id": "dtnv-10-nv-04",
+    "employeeId": "nv-04",
+    "periodId": "luong-10",
+    "revenue": 2800000,
+    "transactionCount": 1,
+    "commissionId": "hh-10-nv-04",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "e9feff276ec04d6ec37373ba",
+    "id": "dtnv-10-nv-05",
+    "employeeId": "nv-05",
+    "periodId": "luong-10",
+    "revenue": 2300000,
+    "transactionCount": 1,
+    "commissionId": "hh-10-nv-05",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "a5d77dac13e75babbefd7286",
+    "id": "dtnv-10-nv-06",
+    "employeeId": "nv-06",
+    "periodId": "luong-10",
+    "revenue": 1900000,
+    "transactionCount": 1,
+    "commissionId": "hh-10-nv-06",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "0b9b38b50aafa290702dcbe6",
+    "id": "dtnv-10-nv-07",
+    "employeeId": "nv-07",
+    "periodId": "luong-10",
+    "revenue": 2150000,
+    "transactionCount": 1,
+    "commissionId": "hh-10-nv-07",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "02c4ecc6e150af769188b9cd",
+    "id": "dtnv-10-nv-08",
+    "employeeId": "nv-08",
+    "periodId": "luong-10",
+    "revenue": 4450000,
+    "transactionCount": 1,
+    "commissionId": "hh-10-nv-08",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "edef07bc98d7d26cd8a5ac0a",
+    "id": "dtnv-10-nv-09",
+    "employeeId": "nv-09",
+    "periodId": "luong-10",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-10-nv-09",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "b0244afc5ac2b998403f73eb",
+    "id": "dtnv-10-nv-10",
+    "employeeId": "nv-10",
+    "periodId": "luong-10",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-10-nv-10",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "1f3974494c4450f1f76a0773",
+    "id": "dtnv-10-nv-11",
+    "employeeId": "nv-11",
+    "periodId": "luong-10",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-10-nv-11",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "b3258488c991428e8093ae61",
+    "id": "dtnv-10-nv-12",
+    "employeeId": "nv-12",
+    "periodId": "luong-10",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-10-nv-12",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "7bc91948e6b227b6fbbf8f06",
+    "id": "dtnv-10-nv-13",
+    "employeeId": "nv-13",
+    "periodId": "luong-10",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-10-nv-13",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "fdc8989dc0e0fefbbf6c31fe",
+    "id": "dtnv-10-nv-14",
+    "employeeId": "nv-14",
+    "periodId": "luong-10",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-10-nv-14",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "5d900b677688d2ae2717c81e",
+    "id": "dtnv-10-nv-15",
+    "employeeId": "nv-15",
+    "periodId": "luong-10",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "hh-10-nv-15",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "520bf98dfc80f23553791145",
+    "id": "dtnv-11-nv-01",
+    "employeeId": "nv-01",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e429966",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:3"
+  },
+  {
+    "_id": "14ae4b0c20b5679718db82cf",
+    "id": "dtnv-11-nv-02",
+    "employeeId": "nv-02",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e429967",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:7"
+  },
+  {
+    "_id": "72a96d00c8bc08707194a27f",
+    "id": "dtnv-11-nv-03",
+    "employeeId": "nv-03",
+    "periodId": "luong-11",
+    "revenue": 3000000,
+    "transactionCount": 1,
+    "commissionId": "p5-6aee1924f73417d00e429968",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:11"
+  },
+  {
+    "_id": "ab59358d8f74a77c9023affc",
+    "id": "dtnv-11-nv-04",
+    "employeeId": "nv-04",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e429969",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:15"
+  },
+  {
+    "_id": "0e9ac888f2d5a36bd4b4a9b7",
+    "id": "dtnv-11-nv-05",
+    "employeeId": "nv-05",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e42996a",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:19"
+  },
+  {
+    "_id": "2756a6f2e515a5d38860d40a",
+    "id": "dtnv-11-nv-06",
+    "employeeId": "nv-06",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e42996b",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:23"
+  },
+  {
+    "_id": "89683853b43830ef463a2399",
+    "id": "dtnv-11-nv-07",
+    "employeeId": "nv-07",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e42996c",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:27"
+  },
+  {
+    "_id": "8f4f024e1ae88aa1d9cfc2c2",
+    "id": "dtnv-11-nv-08",
+    "employeeId": "nv-08",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e42996d",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:31"
+  },
+  {
+    "_id": "10ae7e9504e01acf9b8fb714",
+    "id": "dtnv-11-nv-09",
+    "employeeId": "nv-09",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e42996e",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:35"
+  },
+  {
+    "_id": "b0a1af583d3383f5ab8bb4a1",
+    "id": "dtnv-11-nv-10",
+    "employeeId": "nv-10",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e42996f",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:39"
+  },
+  {
+    "_id": "ec749a7af24b9e3a2c83ac2a",
+    "id": "dtnv-11-nv-11",
+    "employeeId": "nv-11",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e429970",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:43"
+  },
+  {
+    "_id": "a00bd74cf08196600dc118b9",
+    "id": "dtnv-11-nv-12",
+    "employeeId": "nv-12",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e429971",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:47"
+  },
+  {
+    "_id": "3160984518812f0d72cbf086",
+    "id": "dtnv-11-nv-13",
+    "employeeId": "nv-13",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e429972",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:51"
+  },
+  {
+    "_id": "f2eab08268b9f2260e673df1",
+    "id": "dtnv-11-nv-14",
+    "employeeId": "nv-14",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1924f73417d00e429973",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:55"
+  },
+  {
+    "_id": "d7e4d1b3d02f5a3cc779cf89",
+    "id": "dtnv-11-nv-15",
+    "employeeId": "nv-15",
+    "periodId": "luong-11",
+    "revenue": 0,
+    "transactionCount": 0,
+    "commissionId": "p5-6aee1925f73417d00e429974",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:59"
+  }
+]

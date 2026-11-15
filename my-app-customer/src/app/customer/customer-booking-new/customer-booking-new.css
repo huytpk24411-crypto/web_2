@@ -1,0 +1,62 @@
+﻿.room-amount,
+.next-button {
+  margin-top: 20px;
+}
+.inline-room h3 {
+  margin: 4px 0;
+}
+.cancel-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+.transfer-reference {
+  flex-wrap: wrap;
+}
+.transfer-reference strong {
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+.copy-button,
+.status-button {
+  margin-top: 12px;
+}
+.countdown {
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--soft);
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.cancel-link {
+  display: block;
+  margin: 16px auto 0;
+  padding: 4px;
+  color: var(--primary);
+  background: transparent;
+  border: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.cancel-link:disabled {
+  color: var(--muted);
+  cursor: default;
+}
+.history-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.history-row > div {
+  flex: 1;
+}
+.history-row small {
+  display: block;
+}
+@media (max-width: 500px) {
+  .history-row {
+    flex-wrap: wrap;
+  }
+}

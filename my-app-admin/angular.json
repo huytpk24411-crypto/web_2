@@ -1,0 +1,147 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "my-app-admin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false,
+          "type": "",
+          "addTypeToClassName": false,
+          "inlineTemplate": false,
+          "inlineStyle": false,
+          "style": "css"
+        },
+        "@schematics/angular:directive": {
+          "standalone": false,
+          "type": "directive",
+          "addTypeToClassName": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false,
+          "typeSeparator": "."
+        },
+        "@schematics/angular:service": {
+          "type": "service",
+          "addTypeToClassName": false,
+          "typeSeparator": "-"
+        },
+        "@schematics/angular:guard": {
+          "typeSeparator": "."
+        },
+        "@schematics/angular:interceptor": {
+          "typeSeparator": "."
+        },
+        "@schematics/angular:module": {
+          "typeSeparator": "-"
+        },
+        "@schematics/angular:resolver": {
+          "typeSeparator": "."
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+            "allowedCommonJsDependencies": [
+              "leaflet",
+              "leaflet.markercluster"
+            ],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              {
+                "glob": "*",
+                "input": "public/assets/about",
+                "output": "/assets/"
+              },
+              {
+                "glob": "*",
+                "input": "public/assets/people",
+                "output": "/assets/"
+              },
+              {
+                "glob": "*",
+                "input": "public/assets/placeholders",
+                "output": "/assets/"
+              },
+              {
+                "glob": "*",
+                "input": "public/assets/rooms",
+                "output": "/assets/"
+              },
+              {
+                "glob": "*",
+                "input": "public/assets/icons",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/app/admin/staff-theme.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "host": "127.0.0.1",
+            "prebundle": false,
+            "proxyConfig": "src/proxy.conf.mjs",
+            "port": 4202
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "my-app-admin:build:production"
+            },
+            "development": {
+              "buildTarget": "my-app-admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "runnerConfig": "vitest-base.config.ts"
+          }
+        }
+      }
+    }
+  }
+}

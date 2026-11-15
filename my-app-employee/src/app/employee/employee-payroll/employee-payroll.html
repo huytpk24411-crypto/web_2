@@ -1,0 +1,182 @@
+<button
+  class="emp-btn no-print"
+  *ngIf="payroll.api.error()"
+  (click)="payroll.api.refresh()"
+  [disabled]="payroll.api.loading()"
+>
+  Tải lại dữ liệu
+</button>
+﻿
+<div class="emp-page-head">
+  <div>
+    <h1 class="emp-title">Xin chào, {{ auth.account()?.name }}.</h1>
+    <p class="emp-subtitle">
+      Bảng chi tiết thu nhập, hoa hồng kinh doanh và đối soát chuyên cần hàng tháng.
+    </p>
+  </div>
+  <div class="emp-actions">
+    <label class="period-label"
+      >Kỳ lương<select
+        class="control"
+        aria-label="Kỳ lương"
+        [(ngModel)]="period"
+        (ngModelChange)="changePeriod()"
+        [disabled]="payroll.api.loading()"
+      >
+        <option *ngFor="let p of periods" [value]="p">Kỳ lương {{ p }}</option>
+      </select></label
+    ><button class="emp-btn" [disabled]="!slip" (click)="print()">
+      <app-icon name="download" [size]="15" /> In bảng lương / Lưu PDF
+    </button>
+  </div>
+</div>
+<p role="status" *ngIf="payroll.api.loading()">Đang tải phiếu lương…</p>
+<p role="alert" *ngIf="payroll.api.error()">{{ payroll.api.error() }}</p>
+<p *ngIf="!slip && !payroll.api.loading()">Chưa có phiếu lương được tính cho kỳ này.</p>
+<ng-container *ngIf="slip as slip">
+  <div class="grid three payroll-stats">
+    <section class="emp-stat-card">
+      <app-icon class="stat-icon" name="wallet" /><span class="emp-stat-label"
+        >TỔNG THỰC NHẬN THÁNG</span
+      >
+      <p class="emp-stat-value blue">{{ payroll.net(slip) | number }} <small>đ</small></p>
+      <div class="stat-foot">
+        <span class="emp-badge emp-success">{{
+          slip.status === 'PAID'
+            ? 'Đã chi trả'
+            : slip.status === 'APPROVED'
+              ? 'Đã duyệt'
+              : 'Dự thảo'
+        }}</span>
+      </div>
+    </section>
+    <section class="emp-stat-card">
+      <app-icon class="stat-icon" name="chart" /><span class="emp-stat-label"
+        >HOA HỒNG MÔI GIỚI</span
+      >
+      <p class="emp-stat-value">{{ payroll.commission(slip) | number }} <small>đ</small></p>
+      <div class="stat-foot">{{ slip.commissionRate * 100 }}% doanh thu được phân bổ</div>
+    </section>
+    <section class="emp-stat-card deduction">
+      <app-icon class="stat-icon" name="clock" /><span class="emp-stat-label"
+        >KHẤU TRỪ CHUYÊN CẦN / PHẠT ĐI TRỄ</span
+      >
+      <p class="emp-stat-value red">
+        {{ (slip.deduction ? -slip.deduction : 0) | number }} <small>đ</small>
+      </p>
+      <div class="stat-foot">Khấu trừ trong phiếu lương</div>
+    </section>
+  </div>
+  <div class="emp-grid payroll-grid">
+    <div class="emp-stack">
+      <section class="emp-card income">
+        <div class="emp-card-head">
+          <h2><app-icon name="wallet" /> Chi tiết các khoản thu nhập cơ bản</h2>
+          <small class="muted">Kỳ: {{ period }}</small>
+        </div>
+        <div class="pay-line">
+          <div>
+            <strong>Lương căn bản theo ca trực</strong
+            ><small>Lương cơ bản tại thời điểm tính</small>
+          </div>
+          <strong>{{ slip.base | number }} đ</strong>
+        </div>
+
+        <div class="pay-line">
+          <div><strong>Thưởng</strong><small>Theo phiếu lương</small></div>
+          <strong class="green">+{{ slip.bonus | number }} đ</strong>
+        </div>
+      </section>
+      <section class="emp-card commission">
+        <div class="emp-card-head">
+          <div>
+            <h2><app-icon name="chart" /> Bảng tính hoa hồng môi giới trong tháng</h2>
+            <p class="emp-subtitle">Tổng hợp doanh thu phân bổ kỳ {{ period }}</p>
+          </div>
+          <span class="emp-badge emp-info">{{ payroll.commission(slip) | number }} đ</span>
+        </div>
+        <div class="emp-table-wrap">
+          <table class="emp-table commission-table">
+            <caption class="sr-only">
+              Chi tiết hoa hồng giao dịch kỳ
+              {{
+                period
+              }}
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Mã GD</th>
+                <th scope="col">Khách &amp; phòng</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col" class="emp-number">Doanh thu</th>
+                <th scope="col" class="emp-number">Tỷ lệ</th>
+                <th scope="col" class="emp-number">Hoa hồng</th>
+                <th scope="col">Ngày đối soát</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of payroll.transactions(slip)">
+                <td>{{ row.id }}</td>
+                <td>{{ row.customer }} · {{ row.room }}</td>
+                <td>{{ row.status === 'RECOGNIZED' ? 'Đã ghi nhận' : row.status }}</td>
+                <td class="emp-number">{{ row.amount | number }} đ</td>
+                <td class="emp-number">{{ slip.commissionRate * 100 }}%</td>
+                <td class="emp-number">Tính trên tổng tháng</td>
+                <td>{{ row.at | date: 'dd/MM/yyyy' }}</td>
+              </tr>
+              <tr *ngIf="!payroll.transactions(slip).length">
+                <td colspan="7" class="empty-details">
+                  <app-icon name="chart" /><strong
+                    >Chưa có dữ liệu giao dịch chi tiết theo kỳ lương.</strong
+                  ><span
+                    >Hiện chỉ có số liệu tổng hợp; chưa có mã giao dịch, khách, phòng, trạng thái và
+                    ngày đối soát.</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="3">Tổng doanh thu &amp; hoa hồng kỳ {{ period }}</th>
+                <td class="emp-number blue">{{ slip.brokerageRevenue | number }} đ</td>
+                <td class="emp-number">{{ slip.commissionRate * 100 }}%</td>
+                <td class="emp-number blue">{{ payroll.commission(slip) | number }} đ</td>
+                <td>—</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="emp-alert emp-info">
+          Doanh thu công ty là phí môi giới chủ phòng trả. Khoản cọc khách hàng không được tính là
+          doanh thu môi giới.
+        </p>
+        <p class="tip">Hoa hồng = tổng doanh thu tháng × tỷ lệ một bậc, làm tròn đến đồng.</p>
+      </section>
+    </div>
+    <aside class="emp-stack">
+      <section class="emp-card deductions">
+        <div class="emp-card-head">
+          <h2><app-icon name="clock" /> Nhật ký trễ &amp; khấu trừ</h2>
+        </div>
+        <div class="deduction-empty">
+          <strong>Kỳ {{ period }}</strong>
+          <p class="emp-subtitle" *ngFor="let line of payroll.notes(slip)">{{ line }}</p>
+          <p class="emp-subtitle" *ngFor="let entry of payroll.lateEntries(slip)">
+            <span *ngIf="entry.date">{{ entry.date | date: 'dd/MM/yyyy' }} · </span>Trễ
+            {{ entry.lateMinutes }} phút · {{ entry.amount | number }} đ
+          </p>
+          <p class="emp-subtitle" *ngIf="!payroll.lateEntries(slip).length">
+            Không có lượt trễ được ghi nhận trong kỳ.
+          </p>
+        </div>
+        <div class="emp-info-row deduction-total">
+          <strong>Tổng cộng tiền phạt khấu trừ:</strong
+          ><strong class="red">{{ (slip.deduction ? -slip.deduction : 0) | number }} đ</strong>
+        </div>
+        <p class="tip">Số liệu theo phiếu lương trên hệ thống.</p>
+        <p *ngIf="slip.paidAt">Ngày trả: {{ slip.paidAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+      </section>
+    </aside>
+  </div>
+</ng-container>
+<app-toast [message]="toast" (closed)="toast = ''" />

@@ -1,0 +1,279 @@
+<button
+  class="emp-btn no-print"
+  *ngIf="deposits.money.error()"
+  (click)="deposits.money.reload()"
+  [disabled]="deposits.money.loading()"
+>
+  Tải lại dữ liệu
+</button>
+<p *ngIf="deposits.money.loading()" role="status">Đang tải hồ sơ…</p>
+<div class="emp-breadcrumb">Nghiệp vụ cọc › Lập hồ sơ cọc</div>
+<div class="emp-card emp-page-head deposit-heading">
+  <div>
+    <div class="emp-actions document-meta">
+      <span class="emp-badge emp-info">HỒ SƠ CỌC</span
+      ><span class="emp-subtitle">Mã chứng từ: <b class="emp-mono">Chưa cấp</b></span>
+    </div>
+    <h1 class="emp-title">LẬP HỒ SƠ CỌC</h1>
+    <p class="emp-subtitle">Ghi nhận tiền cọc đã thu trực tiếp từ khách hàng.</p>
+  </div>
+  <div class="emp-actions">
+    <a class="emp-btn" routerLink="/employee/deals"
+      ><app-icon name="clock" [size]="16" /> Lịch sử giao dịch</a
+    >
+  </div>
+</div>
+<form
+  [attr.aria-busy]="busy"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="emp-grid deposit-grid"
+>
+  <div class="emp-stack">
+    <section class="emp-card">
+      <h3 class="form-section-heading deposit-section">
+        <span>I</span> Thông tin khách thuê phòng
+      </h3>
+      <label class="field"
+        ><span>Nguồn hồ sơ</span
+        ><select formControlName="bookingId" (change)="selectBooking()">
+          <option value="">Cọc trực tiếp (không có booking)</option>
+          <option *ngFor="let b of eligibleBookings(); trackBy: trackById" [value]="b.id">
+            {{ b.number || b.id }} • {{ b.name }} • {{ b.amount | number }} đ
+          </option>
+        </select></label
+      >
+      <div class="grid two">
+        <label class="field"
+          ><span>Họ và tên khách thuê *</span
+          ><span class="input-icon"
+            ><input
+              readonly
+              formControlName="customerName"
+              placeholder="Tên theo hồ sơ khách hàng" /><app-icon name="user" [size]="16" /></span
+          ><app-form-error [control]="form.controls.customerName" /></label
+        ><label class="field"
+          ><span>Số điện thoại liên hệ *</span
+          ><span class="input-icon"
+            ><input formControlName="phone" type="tel" placeholder="Nhập số điện thoại" /><app-icon
+              name="phone"
+              [size]="16" /></span
+          ><app-form-error [control]="form.controls.phone"
+        /></label>
+      </div>
+      <div class="document-attachments">
+        <div class="emp-card-head">
+          <strong>CCCD khách hàng *</strong>
+          <button
+            class="emp-btn"
+            type="button"
+            (click)="loadCustomer()"
+            [disabled]="busy || identityBusy()"
+          >
+            Tải hồ sơ khách hàng
+          </button>
+        </div>
+        <p class="tip">
+          Chọn phòng và nhập số điện thoại tài khoản khách hàng trước khi tải hồ sơ.
+        </p>
+        <p role="status" *ngIf="identityBusy()">Đang xử lý CCCD…</p>
+        <div *ngIf="customer()" [formGroup]="identityForm" class="grid two">
+          <label class="field"
+            ><span>Số CCCD (12 chữ số) *</span
+            ><input formControlName="idNumber" inputmode="numeric" maxlength="12" /><app-form-error
+              [control]="identityForm.controls.idNumber"
+          /></label>
+          <label class="field"
+            ><span>Ngày cấp *</span><input formControlName="issuedOn" type="date" /><app-form-error
+              [control]="identityForm.controls.issuedOn"
+          /></label>
+          <label class="field"
+            ><span>Nơi cấp *</span
+            ><input formControlName="issuedBy" maxlength="200" /><app-form-error
+              [control]="identityForm.controls.issuedBy"
+          /></label>
+          <label class="field"
+            ><span>Địa chỉ thường trú *</span
+            ><input formControlName="permanentAddress" maxlength="500" /><app-form-error
+              [control]="identityForm.controls.permanentAddress"
+          /></label>
+          <label class="field"
+            ><span>CCCD mặt trước *</span
+            ><input
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              (change)="uploadIdentity($event, 'frontImageUrl')"
+              [disabled]="identityBusy()"
+            /><app-form-error [control]="identityForm.controls.frontImageUrl" /><span
+              *ngIf="identityForm.controls.frontImageUrl.value"
+              >Đã tải ảnh mặt trước</span
+            ></label
+          >
+          <label class="field"
+            ><span>CCCD mặt sau *</span
+            ><input
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              (change)="uploadIdentity($event, 'backImageUrl')"
+              [disabled]="identityBusy()"
+            /><app-form-error [control]="identityForm.controls.backImageUrl" /><span
+              *ngIf="identityForm.controls.backImageUrl.value"
+              >Đã tải ảnh mặt sau</span
+            ></label
+          >
+          <button
+            class="emp-btn"
+            type="button"
+            (click)="saveIdentity()"
+            [disabled]="busy || identityBusy()"
+          >
+            Lưu CCCD
+          </button>
+          <p role="status" *ngIf="identityReady()">Hồ sơ CCCD đã đầy đủ.</p>
+        </div>
+      </div>
+    </section>
+    <section class="emp-card">
+      <h3 class="form-section-heading deposit-section">
+        <span>II</span> Chi tiết căn hộ &amp; phòng cọc
+      </h3>
+      <label class="field"
+        ><span>Phòng / Căn hộ *</span
+        ><select formControlName="roomId">
+          <option *ngFor="let r of selectableRooms(); trackBy: trackById" [value]="r.id">
+            {{ r.code }} – {{ r.name }}
+          </option></select
+        ><app-form-error [control]="form.controls.roomId"
+      /></label>
+      <div class="inline-room" *ngIf="room() as r">
+        <img [src]="r.images[0]" [alt]="r.name" />
+        <div>
+          <strong>{{ r.name }}</strong>
+          <p class="muted small room-address">{{ r.address }}</p>
+          <app-status-badge [status]="r.status" />
+        </div>
+      </div>
+    </section>
+    <section class="emp-card">
+      <h3 class="form-section-heading deposit-section">
+        <span>III</span> Giá thuê &amp; tiền cọc đã thu
+      </h3>
+      <div class="grid three">
+        <div class="field">
+          <span>Tiền thuê / tháng</span
+          ><strong class="control emp-mono">{{ room()?.price | number }} đ</strong>
+        </div>
+        <label class="field"
+          ><span>Tổng tiền cọc *</span
+          ><input class="emp-mono" type="number" formControlName="total" min="1" /><app-form-error
+            [control]="form.controls.total"
+        /></label>
+        <div class="field">
+          <span>Tiền giữ chỗ được trừ</span
+          ><strong class="control green emp-mono">{{ credit() | number }} đ</strong>
+        </div>
+      </div>
+      <div class="grid two">
+        <label class="field"
+          ><span>Thời hạn hợp đồng (tháng) *</span
+          ><input
+            class="emp-mono"
+            type="number"
+            formControlName="duration"
+            min="1" /><app-form-error [control]="form.controls.duration" /></label
+        ><label class="field"
+          ><span>Ngày bắt đầu thuê *</span
+          ><input type="date" formControlName="startDate" /><app-form-error
+            [control]="form.controls.startDate"
+        /></label>
+      </div>
+      <div class="emp-alert emp-warn">
+        Số tiền đã thu = Tổng tiền cọc − Tiền giữ chỗ được trừ. Tiền giữ chỗ chỉ được trừ một lần.
+      </div>
+    </section>
+    <section class="emp-card">
+      <h3 class="form-section-heading deposit-section"><span>IV</span> Hình thức thu</h3>
+      <div class="grid two">
+        <label
+          class="payment-method"
+          [class.selected]="form.controls.collectedMethod.value === 'BANK_TRANSFER'"
+          ><input type="radio" value="BANK_TRANSFER" formControlName="collectedMethod" /><span
+            ><strong>Chuyển khoản</strong><small>Chỉ ghi chú hình thức đã thu</small></span
+          ></label
+        ><label
+          class="payment-method"
+          [class.selected]="form.controls.collectedMethod.value === 'CASH'"
+          ><input type="radio" value="CASH" formControlName="collectedMethod" /><span
+            ><strong>Tiền mặt</strong><small>Chỉ ghi chú hình thức đã thu</small></span
+          ></label
+        >
+      </div>
+
+      <app-form-error [control]="form.controls.collectedMethod" />
+      <label class="field">
+        <span>Ghi chú</span>
+        <textarea formControlName="note" maxlength="500" rows="3"></textarea>
+        <app-form-error [control]="form.controls.note" />
+      </label>
+      <label class="check"
+        ><input type="checkbox" formControlName="terms" />Tôi đã kiểm tra và xác nhận thông tin hồ
+        sơ cọc.</label
+      ><app-form-error [control]="form.controls.terms" />
+    </section>
+  </div>
+  <aside class="sticky emp-stack deposit-summary">
+    <section class="emp-card">
+      <span class="emp-stat-label">BẢN TÓM TẮT HỒ SƠ</span>
+      <h2 class="summary-title">Tóm tắt hồ sơ cọc</h2>
+      <div class="summary-details">
+        <div>
+          <span>Phòng</span><strong>{{ room()?.code }}</strong>
+        </div>
+        <div>
+          <span>Khách hàng</span
+          ><strong>{{ form.controls.customerName.value || 'Chưa nhập' }}</strong>
+        </div>
+        <div>
+          <span>Tổng tiền cọc</span><strong>{{ form.controls.total.value | number }} đ</strong>
+        </div>
+        <div>
+          <span>Tiền giữ chỗ được trừ</span
+          ><strong class="green">−{{ credit() | number }} đ</strong>
+        </div>
+      </div>
+      <div class="emp-info-row">
+        <span>Thời hạn hợp đồng</span><strong>{{ form.controls.duration.value }} tháng</strong>
+      </div>
+      <div class="emp-info-row">
+        <span>Tiền thuê / tháng</span
+        ><strong class="emp-mono">{{ room()?.price | number }} đ</strong>
+      </div>
+      <div class="summary-amount">
+        <small>Số tiền đã thu</small>
+        <h2 class="emp-stat-value blue emp-mono" aria-live="polite">{{ due() | number }} đ</h2>
+        <span class="emp-badge emp-info">{{
+          form.controls.collectedMethod.value === 'BANK_TRANSFER' ? 'Chuyển khoản' : 'Tiền mặt'
+        }}</span>
+      </div>
+      <div class="emp-alert emp-info summary-policy">
+        <app-icon name="shield" [size]="18" />
+        <div>
+          <strong>Công ty 50% · Chủ nhà 50%</strong>
+          <p>Hồ sơ cọc được ghi nhận đã thu ngay. Tiếp tục lập hợp đồng trên trang giao dịch.</p>
+        </div>
+      </div>
+      <p class="error" *ngIf="error" role="alert">{{ error }}</p>
+      <button
+        class="emp-btn emp-primary emp-block"
+        type="submit"
+        [disabled]="busy || identityBusy() || deposits.money.loading()"
+      >
+        <app-icon name="plus" [size]="16" /> Lập hồ sơ cọc &amp; đến giao dịch
+      </button>
+      <a class="emp-btn emp-outline emp-block summary-secondary" routerLink="/employee/deals"
+        >Đi đến quản lý giao dịch</a
+      >
+      <p class="tip">Bạn tự chịu trách nhiệm biên lai thu tiền với khách hàng.</p>
+    </section>
+  </aside>
+</form>

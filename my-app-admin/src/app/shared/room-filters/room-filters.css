@@ -1,0 +1,276 @@
+:host {
+  display: block;
+  position: relative;
+  z-index: 500;
+}
+.filters {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 13px 17px;
+  box-shadow: 0 8px 24px #23395010;
+}
+.primary-fields {
+  display: grid;
+  grid-template-columns: 1.3fr 1.2fr 0.85fr 0.8fr auto auto;
+  gap: 10px;
+  align-items: center;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+label > span {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0 0 5px 10px;
+}
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  padding: 11px 12px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+select {
+  appearance: none;
+  padding-right: 32px;
+  min-height: 45px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2367758a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+}
+input:hover,
+select:hover {
+  border-color: var(--primary);
+}
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-color: var(--primary);
+  box-shadow: var(--focus-ring);
+}
+option:hover,
+option:active {
+  background: var(--soft);
+  color: var(--primary-dark);
+}
+.filters button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring);
+}
+.chip,
+.clear,
+.amenity {
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+.chip:hover,
+.amenity:hover {
+  background: var(--soft);
+}
+.clear:hover {
+  color: var(--primary-dark);
+}
+.chip:active,
+.clear:active {
+  transform: scale(0.97);
+}
+.amenity:active {
+  background: var(--soft);
+  color: var(--primary-dark);
+}
+.primary-fields > .btn {
+  margin-top: 19px;
+  min-height: 43px;
+  white-space: nowrap;
+}
+.hero-filter-layout .primary-fields {
+  grid-template-columns:
+    minmax(190px, 1.2fr) minmax(150px, 0.9fr) minmax(145px, 0.9fr)
+    auto;
+}
+.hero-filter-layout .primary-fields > label > span {
+  display: none;
+}
+.hero-filter-layout .primary-fields > .btn {
+  margin-top: 0;
+}
+.hero-filter-layout .primary-fields input,
+.hero-filter-layout .primary-fields select,
+.hero-filter-layout .primary-fields app-search-select {
+  min-height: 45px;
+}
+.hero-filter-layout .filter-summary {
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid #edf0f5;
+}
+.hero-filter-layout .filter-summary strong {
+  margin-left: auto;
+}
+.expanded {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.extra-fields {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+fieldset {
+  border: 0;
+  padding: 16px 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+legend {
+  font-weight: 600;
+  padding-top: 12px;
+}
+.amenity {
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+.amenity input {
+  width: auto;
+}
+.filter-summary {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin-top: 13px;
+}
+.clear {
+  background: none;
+  border: 0;
+  color: var(--primary);
+  text-decoration: underline;
+  margin-left: auto;
+}
+.filter-backdrop {
+  display: none;
+}
+@media (max-width: 1100px) {
+  .primary-fields {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .hero-filter-layout .primary-fields {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .filters {
+    padding: 14px;
+  }
+  .primary-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero-filter-layout .primary-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .primary-fields > label:first-child {
+    grid-column: 1/-1;
+  }
+  .primary-fields > .btn {
+    margin-top: 0;
+  }
+  .primary-fields > label:nth-of-type(4) {
+    grid-column: 1/-1;
+  }
+  .filter-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: #142c5270;
+    z-index: 899;
+    animation: filter-backdrop-enter var(--dur) var(--ease);
+  }
+  .expanded {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    background: white;
+    border-radius: 20px 20px 0 0;
+    max-height: 85dvh;
+    overflow: auto;
+    padding: 20px 18px;
+    animation: filter-dialog-enter var(--dur-slow) var(--ease);
+  }
+  .extra-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .filter-summary {
+    font-size: 11px;
+  }
+  .filter-summary .tag {
+    max-width: 100%;
+    white-space: normal;
+  }
+  .filter-toggle {
+    min-height: 44px;
+  }
+}
+@keyframes filter-backdrop-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes filter-dialog-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .filter-backdrop,
+  .expanded,
+  .filters :is(input, select, button, .amenity) {
+    animation: none;
+    transition: none;
+  }
+  .chip:active,
+  .clear:active {
+    transform: none;
+  }
+}
+.chip {
+  border: 0;
+  max-width: 100%;
+  text-align: left;
+}
+.primary-fields > app-search-select {
+  align-self: end;
+}
+@media (max-width: 760px) {
+  .primary-fields > label:last-of-type {
+    grid-column: 1/-1;
+  }
+}

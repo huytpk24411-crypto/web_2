@@ -1,0 +1,31 @@
+{
+  "ma_phong": "PHONG_46",
+  "ten_y_tuong": "Heritage Walnut",
+  "anh_minh_hoa_ai": true,
+  "loai_nguon_cho_360": "bo_anh_goc_nhin_tham_khao_chua_phai_panorama_360",
+  "bo_cuc_du_kien_khong_co_kich_thuoc_do_dac": "Entrance opens into living room. Galley kitchen sits on left side of living room, bathroom adjacent kitchen near entry. Bedroom behind fluted-glass door opposite kitchen; full-height bedroom window on far exterior wall. Consistent honey oak floor except wet rooms.",
+  "vat_lieu_phong_cach": "Premium Vietnamese urban rental apartment, 48 square meters, mid-century walnut cabinetry, warm honey oak floor, olive-green velvet accents, aged brass hardware, cream plaster, fluted glass partitions; elegant but practical, airy and daylight filled.",
+  "cac_khu_vuc": {
+    "phong_bep": {
+      "mo_ta": "Walnut galley kitchen with cream stone backsplash, slim brass rail and compact dining bar; visible side doorway to living room, avoid depicting bedroom inside kitchen.",
+      "anh_tu_loi_vao": "01_phong_bep.png",
+      "anh_tu_goc_doi_dien": "05_phong_bep_goc_doi_dien.png"
+    },
+    "phong_khach": {
+      "mo_ta": "A walnut media wall and olive velvet sofa, warm rug and brass floor lamp; kitchen doorway to camera-left and fluted bedroom door at rear-right, one main window ahead.",
+      "anh_tu_loi_vao": "02_phong_khach.png",
+      "anh_tu_goc_doi_dien": "06_phong_khach_goc_doi_dien.png"
+    },
+    "nha_ve_sinh": {
+      "mo_ta": "Cream terrazzo wall and brass fittings, walnut vanity, toilet and glass shower, compact but premium; doorway near vanity, shower at far wall.",
+      "anh_tu_loi_vao": "03_nha_ve_sinh.png",
+      "anh_tu_goc_doi_dien": "07_nha_ve_sinh_goc_doi_dien.png"
+    },
+    "phong_ngu": {
+      "mo_ta": "One double bed with walnut headboard, olive linen, brass reading lamps, fluted-glass bedroom entry behind camera, wide window opposite entry.",
+      "anh_tu_loi_vao": "04_phong_ngu.png",
+      "anh_tu_goc_doi_dien": "08_phong_ngu_goc_doi_dien.png"
+    }
+  },
+  "luu_y": "Khong co kich thuoc do dac, ma tran camera, depth map, anh panorama equirectangular hoac mesh 3D. Khong noi cac anh nay thanh panorama 360 chinh xac."
+}

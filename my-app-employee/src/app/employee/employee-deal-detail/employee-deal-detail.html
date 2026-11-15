@@ -1,0 +1,286 @@
+<header class="emp-page-head">
+  <div>
+    <div class="emp-actions">
+      <h1 class="emp-title">QUẢN LÝ GIAO DỊCH &amp; HỢP ĐỒNG</h1>
+      <span class="emp-badge emp-info">Trực tiếp tại điểm</span>
+    </div>
+    <p class="emp-subtitle">Lập hợp đồng, ghi nhận đã ký và theo dõi kết quả xác nhận của admin.</p>
+  </div>
+  <a routerLink="/employee/deposits/new" class="emp-btn emp-primary">+ Lập hồ sơ cọc</a>
+</header>
+<button
+  class="emp-btn no-print"
+  *ngIf="deals.money.error()"
+  (click)="deals.money.reload()"
+  [disabled]="deals.money.loading()"
+>
+  Tải lại dữ liệu
+</button>
+
+<section class="emp-card deposit-workspace" aria-label="Hồ sơ cọc">
+  <h2>Hồ sơ cọc</h2>
+  <p *ngIf="deals.money.loading()" role="status">Đang tải hồ sơ…</p>
+  <p *ngIf="error" class="error" role="alert">{{ error }}</p>
+  <details class="deposit-group" [open]="paidDeposits.length > 0">
+    <summary>Đã thu cọc – chờ lập hợp đồng ({{ paidDeposits.length }})</summary>
+    <div class="deposit-entry" *ngFor="let d of paidDeposits">
+      <div class="emp-actions deposit-row">
+        <a [routerLink]="['/employee/deals', d.id]"
+          >{{ d.number }} • {{ d.customerName || 'Chưa có tên khách hàng' }}</a
+        >
+        <span>{{ d.totalRequired | number }} đ</span
+        ><app-status-badge [status]="deals.money.label(d.status)" />
+        <button
+          *ngIf="!d.contractId"
+          class="emp-btn emp-primary"
+          (click)="chooseDeposit(d.id)"
+          [disabled]="busy"
+        >
+          Lập hợp đồng
+        </button>
+      </div>
+    </div>
+    <p *ngIf="!paidDeposits.length && !deals.money.loading()">
+      Không có hồ sơ cọc chờ lập hợp đồng.
+    </p>
+  </details>
+  <details class="deposit-group">
+    <summary>Đã bỏ cọc ({{ abandonedDeposits.length }})</summary>
+    <div class="emp-actions deposit-row" *ngFor="let d of abandonedDeposits">
+      <a [routerLink]="['/employee/deals', d.contractId || d.id]"
+        >{{ d.number }} • {{ d.customerName || 'Chưa có tên khách hàng' }}</a
+      >
+      <span>{{ d.abandonment?.reason }}</span
+      ><app-status-badge [status]="deals.money.label(d.status)" />
+    </div>
+    <p *ngIf="!abandonedDeposits.length && !deals.money.loading()">Không có hồ sơ đã bỏ cọc.</p>
+  </details>
+  <form *ngIf="contractDepositId" (ngSubmit)="createContract()" class="grid two">
+    <label class="field"
+      ><span>Ngày bắt đầu *</span
+      ><input type="date" name="contractStart" [(ngModel)]="contractStart" required
+    /></label>
+    <label class="field"
+      ><span>Ngày kết thúc *</span
+      ><input type="date" name="contractEnd" [(ngModel)]="contractEnd" required
+    /></label>
+    <label class="field"
+      ><span>Tiền thuê tháng (đ) *</span
+      ><input type="number" name="contractRent" [(ngModel)]="contractRent" min="1" required
+    /></label>
+    <button class="emp-btn emp-primary" type="submit" [disabled]="busy">
+      Tạo hợp đồng dự thảo
+    </button>
+  </form>
+</section>
+
+<div class="deal-stats">
+  <div class="emp-stat-card">
+    <span class="emp-stat-label">Tất cả đơn cọc</span
+    ><strong class="emp-stat-value">{{ deals.list().length }}</strong
+    ><small>Toàn bộ hồ sơ hiện có</small>
+  </div>
+  <div class="emp-stat-card waiting">
+    <span class="emp-stat-label">Chờ lập, ký hoặc admin xác nhận</span
+    ><strong class="emp-stat-value">{{ pending }}</strong
+    ><small>Hợp đồng chưa có kết quả</small>
+  </div>
+  <div class="emp-stat-card">
+    <span class="emp-stat-label">Đã nhận nhà thành công</span
+    ><strong class="emp-stat-value green">{{ completed }}</strong
+    ><small>Bàn giao thành công</small>
+  </div>
+  <div class="emp-stat-card">
+    <span class="emp-stat-label">Khách bỏ cọc</span
+    ><strong class="emp-stat-value red">{{ forfeited }}</strong
+    ><small>Đã xử lý nghiệp vụ</small>
+  </div>
+</div>
+<div class="emp-card deal-filters" role="search" aria-label="Lọc hợp đồng cọc">
+  <label class="search-field"
+    ><span>Tìm hợp đồng cọc</span
+    ><input type="search" [(ngModel)]="search" placeholder="Mã hợp đồng, khách hàng, phòng, SĐT"
+  /></label>
+  <label
+    ><span>Dự án</span
+    ><select [(ngModel)]="project">
+      <option value="">Tất cả dự án</option>
+      <option *ngFor="let name of projects" [value]="name">{{ name }}</option>
+    </select></label
+  >
+  <label><span>Tháng nhận nhà</span><input type="month" [(ngModel)]="month" /></label>
+  <button
+    type="button"
+    class="emp-btn"
+    (click)="search = ''; project = ''; month = ''"
+    aria-label="Làm mới bộ lọc"
+  >
+    ↻
+  </button>
+</div>
+<div class="deal-layout">
+  <aside class="emp-stack">
+    <div>
+      <div class="list-heading">
+        <h2>
+          Danh sách hợp đồng cọc
+          <span class="emp-badge emp-info">{{ visibleCards.length }} đơn</span>
+        </h2>
+        <small>Chọn đơn để xử lý</small>
+      </div>
+      <a
+        class="deal-card emp-card"
+        *ngFor="let card of visibleCards"
+        [routerLink]="['/employee/deals', card.deal.id]"
+        [class.active]="card.deal.id === id"
+        [attr.aria-current]="card.deal.id === id ? 'true' : null"
+      >
+        <span class="selection-label" *ngIf="card.deal.id === id">ĐANG THAO TÁC XỬ LÝ</span>
+        <div class="emp-actions">
+          <strong class="emp-mono contract-id">{{ card.deal.number }}</strong
+          ><app-status-badge [status]="card.deal.statusLabel" />
+        </div>
+        <h3>{{ card.deal.customerName }}</h3>
+        <p class="contact">SĐT: {{ card.deal.phone || 'Chưa có dữ liệu' }}</p>
+        <div class="contract-facts">
+          <div>
+            <small>Vị trí phòng / giường</small
+            ><strong>{{ card.room?.code || card.deal.roomId }}</strong
+            ><span>{{ card.room?.name }} · {{ card.room?.address }}</span>
+          </div>
+          <div>
+            <small>Cọc đã ghi nhận</small
+            ><strong class="contract-id">{{ card.deposit?.total || 0 | number }} đ</strong>
+          </div>
+        </div>
+        <div class="contract-foot">
+          <span
+            >Ngày nhận nhà:
+            <strong>{{
+              card.deposit?.startDate ? (card.deposit?.startDate | date: 'dd/MM/yyyy') : 'Chưa có'
+            }}</strong></span
+          ><span class="contract-id">Chi tiết nghiệp vụ ›</span>
+        </div>
+      </a>
+      <div class="emp-card empty" *ngIf="!visibleCards.length">Không có hợp đồng cọc phù hợp.</div>
+    </div>
+    <div class="emp-alert emp-info handover-rule">
+      <div>
+        <strong>Công ty 50% · Chủ nhà 50%</strong>
+        <p>Doanh thu được ghi nhận khi lập hồ sơ cọc. Hợp đồng đã ký chờ admin xác nhận kết quả.</p>
+      </div>
+    </div>
+  </aside>
+  <div class="emp-stack" *ngIf="deal as d; else missing">
+    <section class="emp-card dossier">
+      <div class="emp-card-head dossier-head">
+        <div>
+          <span class="emp-badge emp-info">HỒ SƠ BÀN GIAO</span>
+          <h2>
+            Nghiệp vụ xử lý cọc: <span class="emp-mono contract-id">{{ d.number }}</span>
+          </h2>
+          <p class="emp-subtitle">Khách hàng {{ d.customerName }} • {{ room?.name }}</p>
+        </div>
+        <app-status-badge [status]="d.statusLabel" />
+      </div>
+      <p class="step-label">LẬP HỢP ĐỒNG → ĐÃ KÝ → CHỜ ADMIN XÁC NHẬN</p>
+      <p class="emp-alert emp-info" *ngIf="d.apiStatus === 'SIGNED'">Đã ký – chờ admin xác nhận</p>
+      <p class="emp-alert emp-success" *ngIf="d.apiStatus === 'COMPLETED'">Thành công</p>
+      <p class="emp-alert emp-warn" *ngIf="d.status === 'FORFEITED'">
+        Khách bỏ cọc – hợp đồng không hiệu lực
+      </p>
+      <div class="settlement">
+        <h4>Thông tin bàn giao &amp; Quyết toán đợt 1</h4>
+        <div class="settlement-details">
+          <div class="emp-info-row">
+            <span>Khách hàng</span><strong>{{ d.customerName }}</strong>
+          </div>
+          <div class="emp-info-row">
+            <span>Căn phòng</span
+            ><strong>{{ room?.code }} · {{ room?.name }} · {{ room?.address }}</strong>
+          </div>
+          <div class="emp-info-row">
+            <span>Ngày nhận nhà theo hồ sơ cọc</span>
+            <strong>{{
+              deposit?.startDate ? (deposit?.startDate | date: 'dd/MM/yyyy') : 'Chưa có'
+            }}</strong>
+          </div>
+          <div class="emp-info-row">
+            <span>Tổng tiền cọc</span><strong>{{ deposit?.total || 0 | number }} đ</strong>
+          </div>
+          <div class="emp-info-row">
+            <span>Tiền giữ chỗ đã khấu trừ</span
+            ><strong class="green">{{ deposit?.holdCredit || 0 | number }} đ</strong>
+          </div>
+          <div class="emp-info-row">
+            <span>Phân chia tiền cọc</span><strong>Công ty 50% · Chủ nhà 50%</strong>
+          </div>
+          <div class="emp-info-row">
+            <span>Trạng thái hồ sơ</span><app-status-badge [status]="d.statusLabel" />
+          </div>
+        </div>
+      </div>
+
+      <div class="emp-alert emp-warn" *ngIf="!deposit">
+        Giao dịch chưa có hồ sơ cọc đã xác nhận.
+        <a
+          *ngIf="rooms.get(d.roomId)"
+          class="link"
+          routerLink="/employee/deposits/new"
+          [queryParams]="{ roomId: d.roomId }"
+          >Lập hồ sơ cọc mới</a
+        >
+        để kiểm tra toàn bộ quy trình.
+      </div>
+      <button
+        class="emp-btn"
+        *ngIf="d.apiStatus === 'PAID' && !contract"
+        (click)="chooseDeposit(d.depositId || d.id)"
+        [disabled]="busy"
+      >
+        Lập hợp đồng
+      </button>
+      <p class="error" *ngIf="error" role="alert">{{ error }}</p>
+      <button
+        *ngIf="d.apiStatus === 'DRAFT'"
+        class="emp-btn emp-primary emp-block"
+        (click)="sign()"
+        [disabled]="busy"
+      >
+        Đã ký
+      </button>
+    </section>
+    <section class="emp-card preview">
+      <div class="emp-card-head">
+        <h3>Khung xem trước biên bản bàn giao</h3>
+        <button class="emp-btn" (click)="print()" [disabled]="d.status !== 'COMPLETED'">
+          In / PDF
+        </button>
+      </div>
+      <div class="a4-stage">
+        <section *ngIf="contract as c" class="receipt-paper">
+          <h2>Hợp đồng {{ c.number }}</h2>
+          <p>
+            Khách hàng: {{ d.customerName }} • Phòng: {{ room?.code || c.roomId }} ·
+            {{ room?.name }} · {{ room?.address }}
+          </p>
+          <p>
+            Thời hạn: {{ c.startDate | date: 'dd/MM/yyyy' }} – {{ c.endDate | date: 'dd/MM/yyyy' }}
+          </p>
+          <p>Tiền thuê: {{ c.monthlyRent | number }} đ/tháng</p>
+          <p>Tổng tiền cọc: {{ c.depositAmount | number }} đ</p>
+          <p>Công ty 50% · Chủ nhà 50%</p>
+          <p>Trạng thái: {{ deals.money.label(c.status) }}</p>
+          <p *ngIf="c.completedAt">Hoàn tất: {{ c.completedAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+        </section>
+      </div>
+    </section>
+  </div>
+  <ng-template #missing
+    ><div class="empty">
+      <h2>{{ id ? 'Không tìm thấy giao dịch' : 'Chọn giao dịch để xem chi tiết' }}</h2>
+      <a routerLink="/employee/deposits/new" class="btn primary">Lập hồ sơ mới</a>
+    </div></ng-template
+  >
+</div>
+<app-toast [message]="toast" (closed)="toast = ''" />

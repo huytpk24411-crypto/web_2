@@ -1,0 +1,183 @@
+<main class="about-page">
+  <section class="about-hero about-container">
+    <div class="hero-copy">
+      <span class="eyebrow">VỀ IHOUZZ UNI</span>
+      <h1>Tìm chỗ ở phù hợp,<br /><span>an tâm mỗi ngày</span></h1>
+      <p>
+        Khám phá phòng quanh Thủ Đức và Dĩ An. So sánh vị trí, tiện ích và chủ động tìm hiểu phòng
+        phù hợp với bạn.
+      </p>
+      <div class="hero-actions">
+        <a routerLink="/rooms" class="btn primary">
+          Khám phá phòng <app-icon name="arrow" [size]="16" />
+        </a>
+        <a routerLink="/" fragment="map-area" class="btn map-button">
+          <app-icon name="pin" [size]="17" /> Xem bản đồ
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img
+        src="/assets/about/about-studio.jpg"
+        alt="Ảnh AI một căn studio sáng, có giường và bếp; không đại diện cho tin phòng cụ thể"
+        appImageFallback
+        loading="eager"
+        fetchpriority="high"
+        width="1536"
+        height="1024"
+      />
+      <div class="mini-map" aria-hidden="true">
+        <span class="map-route"></span>
+        <span class="map-marker"></span>
+        <span class="map-caption">Bản đồ</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits about-container" aria-label="Điểm nổi bật">
+    <article class="benefit">
+      <span class="benefit-icon"><app-icon name="pin" [size]="22" /></span>
+      <div>
+        <h2>Tìm gần trường</h2>
+        <p>Khám phá khu vực quanh trường bạn quan tâm.</p>
+      </div>
+    </article>
+    <article class="benefit">
+      <span class="benefit-icon"><app-icon name="file" [size]="22" /></span>
+      <div>
+        <h2>So sánh rõ ràng</h2>
+        <p>Xem thông tin, hình ảnh và tiện ích cạnh nhau.</p>
+      </div>
+    </article>
+    <article class="benefit">
+      <span class="benefit-icon"><app-icon name="calendar" [size]="22" /></span>
+      <div>
+        <h2>Đặt lịch xem thuận tiện</h2>
+        <p>Chọn phòng trước rồi gửi yêu cầu đặt lịch xem.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="about-story about-container">
+    <div class="story-copy">
+      <span class="eyebrow">GIỚI THIỆU VỀ IHOUZZ UNI</span>
+      <h2>Chúng tôi là ai?</h2>
+      <p>
+        iHOUZZ Uni là đồ án nền tảng giúp sinh viên khám phá và so sánh các lựa chọn chỗ ở. Website
+        cung cấp thông tin tìm phòng; nội dung này không xác nhận tin phòng hay địa điểm cụ thể.
+      </p>
+    </div>
+    <div class="story-image">
+      <img
+        src="/assets/about/about-community.jpg"
+        alt="Ảnh AI khu nhà ở nhiều tầng giữa không gian cây xanh; không đại diện cho một tòa nhà cụ thể"
+        appImageFallback
+        loading="lazy"
+        width="1536"
+        height="1024"
+      />
+    </div>
+  </section>
+
+  <section class="steps-section about-container">
+    <span class="eyebrow">HÀNH TRÌNH TÌM PHÒNG</span>
+    <h2>Chỉ 3 bước đơn giản</h2>
+    <div class="steps-grid">
+      <article class="step-card">
+        <div class="step-top">
+          <span class="step-number">01</span><app-icon name="pin" [size]="21" />
+        </div>
+        <h3>Chọn khu vực hoặc trường</h3>
+        <p>Chọn quận, khu vực hoặc trường đại học bạn quan tâm.</p>
+      </article>
+      <span class="step-arrow" aria-hidden="true"><app-icon name="arrow" [size]="20" /></span>
+      <article class="step-card">
+        <div class="step-top">
+          <span class="step-number">02</span><app-icon name="search" [size]="21" />
+        </div>
+        <h3>Xem và so sánh phòng</h3>
+        <p>Tham khảo hình ảnh, tiện ích, vị trí và mức giá hiển thị.</p>
+      </article>
+      <span class="step-arrow" aria-hidden="true"><app-icon name="arrow" [size]="20" /></span>
+      <article class="step-card">
+        <div class="step-top">
+          <span class="step-number">03</span><app-icon name="calendar" [size]="21" />
+        </div>
+        <h3>Chọn phòng rồi đặt lịch xem</h3>
+        <p>Chọn một phòng trước, sau đó mở tin phòng để gửi yêu cầu xem.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="start-section about-container">
+    <span class="eyebrow">BẮT ĐẦU NGAY</span>
+    <h2>Bắt đầu từ đâu?</h2>
+    <p class="section-intro">Chọn một cách khám phá phù hợp với nhu cầu của bạn.</p>
+    <div class="start-grid">
+      <a routerLink="/rooms" class="start-card">
+        <img
+          src="/assets/about/about-studio.jpg"
+          alt="Ảnh AI phòng studio; không đại diện cho tin phòng cụ thể"
+          appImageFallback
+          loading="lazy"
+          width="1536"
+          height="1024"
+        />
+        <span class="start-card-body">
+          <span class="start-icon"><app-icon name="home" [size]="21" /></span>
+          <span class="start-title">Tất cả phòng <app-icon name="arrow" [size]="15" /></span>
+          <span class="start-description">Xem danh sách phòng và các thông tin đang hiển thị.</span>
+        </span>
+      </a>
+      <a routerLink="/" fragment="map-area" class="start-card">
+        <span class="map-art" aria-hidden="true">
+          <span class="map-art-road road-one"></span>
+          <span class="map-art-road road-two"></span>
+          <span class="map-art-marker marker-one"><app-icon name="pin" [size]="18" /></span>
+          <span class="map-art-marker marker-two"><app-icon name="pin" [size]="18" /></span>
+          <span class="map-art-marker marker-three"><app-icon name="pin" [size]="18" /></span>
+        </span>
+        <span class="start-card-body">
+          <span class="start-icon"><app-icon name="pin" [size]="21" /></span>
+          <span class="start-title">Bản đồ khu vực <app-icon name="arrow" [size]="15" /></span>
+          <span class="start-description">Mở bản đồ tìm phòng trên trang chủ.</span>
+        </span>
+      </a>
+      <a routerLink="/contact" class="start-card">
+        <img
+          src="/assets/about/about-consultation.jpg"
+          alt="Ảnh AI người đang tham khảo thông tin phòng trên điện thoại"
+          appImageFallback
+          loading="lazy"
+          width="1536"
+          height="1024"
+        />
+        <span class="start-card-body">
+          <span class="start-icon"><app-icon name="phone" [size]="21" /></span>
+          <span class="start-title">Liên hệ tư vấn <app-icon name="arrow" [size]="15" /></span>
+          <span class="start-description">Xem trang liên hệ và thông tin hỗ trợ hiện có.</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="about-cta about-container">
+    <img
+      class="cta-image"
+      src="/assets/about/about-neighborhood.jpg"
+      alt="Ảnh AI khu đô thị; không xác nhận vị trí hay dự án cụ thể"
+      appImageFallback
+      loading="lazy"
+      width="2000"
+      height="667"
+    />
+    <div class="cta-copy">
+      <span class="eyebrow">IHOUZZ UNI</span>
+      <h2>Sẵn sàng tìm căn phòng của bạn?</h2>
+      <p>Khám phá danh sách phòng và chọn nơi bạn muốn tìm hiểu tiếp.</p>
+    </div>
+    <a routerLink="/rooms" class="btn cta-button"
+      >Khám phá phòng <app-icon name="arrow" [size]="16"
+    /></a>
+  </section>
+</main>

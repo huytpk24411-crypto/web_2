@@ -1,0 +1,115 @@
+<section
+  class="home-section"
+  appHomeReveal
+  *ngIf="collections().length"
+  aria-labelledby="collections-title"
+>
+  <div class="home-heading">
+    <div>
+      <span class="eyebrow">MỖI NGƯỜI MỘT LỰA CHỌN</span>
+      <h2 id="collections-title">Chọn theo nhu cầu</h2>
+    </div>
+  </div>
+  <div class="collection-grid">
+    <a
+      *ngFor="let collection of collections()"
+      class="collection"
+      routerLink="/rooms"
+      [queryParams]="collection.params"
+    >
+      <img
+        [src]="collection.rooms[0].images[0] || '/assets/placeholders/room-placeholder.svg'"
+        appImageFallback
+        [alt]="collection.rooms[0].name"
+        loading="lazy"
+        width="600"
+        height="600"
+      />
+      <div>
+        <span>{{ collection.rooms.length }} phòng phù hợp</span>
+        <h3>{{ collection.title }}</h3>
+        <span class="collection-arrow" aria-hidden="true">↗</span>
+      </div>
+    </a>
+  </div>
+</section>
+<section class="home-section" appHomeReveal aria-labelledby="steps-title">
+  <div class="home-heading">
+    <div>
+      <span class="eyebrow">CHỦ ĐỘNG TRONG TỪNG BƯỚC</span>
+      <h2 id="steps-title">Từ khám phá đến giữ chỗ</h2>
+    </div>
+  </div>
+  <div class="steps-grid">
+    <article>
+      <span class="step-number">01</span>
+      <h3>Khám phá</h3>
+      <p>Chọn trường, ngân sách; xem ảnh, vị trí và tour 360° nếu có.</p>
+      <a class="home-link" routerLink="/rooms" [queryParams]="search.params()"
+        >Tìm phòng phù hợp →</a
+      >
+    </article>
+    <article>
+      <span class="step-number">02</span>
+      <h3>Xem phòng</h3>
+      <p>Đăng nhập khi cần lưu lựa chọn, đặt lịch và sắp xếp buổi xem phòng.</p>
+      <a class="home-link" routerLink="/viewings/new">Đặt lịch xem →</a>
+    </article>
+    <article>
+      <span class="step-number">03</span>
+      <h3>Giữ chỗ khi đã quyết định</h3>
+      <p>Xem điều kiện, số tiền và hạn hiệu lực theo chính sách hiện hành trước khi thanh toán.</p>
+      <a class="home-link" routerLink="/rooms" [queryParams]="search.params()"
+        >Chọn căn phòng của bạn →</a
+      >
+    </article>
+  </div>
+</section>
+<section class="home-section faq" appHomeReveal aria-labelledby="faq-title">
+  <div class="home-heading">
+    <div>
+      <span class="eyebrow">TRƯỚC KHI BẠN BẮT ĐẦU</span>
+      <h2 id="faq-title">Câu hỏi thường gặp</h2>
+      <p>Thông tin về tìm phòng, giữ chỗ và phòng yêu thích.</p>
+    </div>
+  </div>
+  <details>
+    <summary>Tôi có cần đăng nhập để tìm phòng không?</summary>
+    <p>
+      Không cần. Bạn có thể xem trang chủ, danh sách, chi tiết phòng và bản đồ tự do; chỉ cần tài
+      khoản khách hàng khi lưu yêu thích, đặt lịch xem hoặc giữ chỗ.
+    </p>
+  </details>
+  <details>
+    <summary>Vị trí và ảnh phòng có phải dữ liệu thực tế không?</summary>
+    <p>
+      Bản đồ nền lấy từ OpenStreetMap. Thông tin phòng, tòa nhà và trường được tải từ danh mục hệ
+      thống.
+    </p>
+  </details>
+  <details>
+    <summary>Giữ chỗ có thanh toán thật không?</summary>
+    <p>
+      Bạn tạo yêu cầu giữ chỗ, quét mã QR (Ngân hàng/ZaloPay/MoMo) để chuyển khoản số tiền theo
+      chính sách hiện hành với nội dung là mã giữ chỗ. Sau khi chuyển khoản, bấm “Hoàn tất” để hệ
+      thống ghi nhận và xuất phiếu thu. Bạn có thể xem lại phiếu trong trang phiếu giữ chỗ.
+    </p>
+  </details>
+  <details>
+    <summary>Làm sao xem lại những phòng đã lưu?</summary>
+    <p>
+      Đăng nhập tài khoản khách hàng rồi mở
+      <a routerLink="/favorites" class="link">Phòng yêu thích</a> trong menu.
+    </p>
+  </details>
+</section>
+<section class="home-cta" appHomeReveal aria-labelledby="cta-title">
+  <div>
+    <span class="eyebrow">KHÔNG GIAN MỚI · KHỞI ĐẦU MỚI</span>
+    <h2 id="cta-title">Một khởi đầu mới,<br />từ căn phòng phù hợp.</h2>
+  </div>
+  <div class="cta-actions">
+    <a routerLink="/rooms" class="btn primary">Tìm phòng →</a
+    ><a routerLink="/contact" class="cta-contact">Liên hệ tư vấn →</a>
+  </div>
+</section>

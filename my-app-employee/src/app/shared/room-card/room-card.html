@@ -1,0 +1,64 @@
+<article class="room-card" [class.selected]="search.selectedProperty() === room.propertyId">
+  <div class="photo" (mouseenter)="start()" (mouseleave)="stop()">
+    <a class="photo-link" [routerLink]="['/rooms', room.id]" [queryParams]="{ from: from }"
+      ><img
+        *ngIf="showPreviousPhoto()"
+        class="photo-previous"
+        [class.photo-previous-visible]="previousPhotoVisible()"
+        [src]="room.images[previousIndex()] || '/assets/placeholders/room-placeholder.svg'"
+        appImageFallback
+        [alt]="room.name + ' – ảnh phòng trước'"
+        aria-hidden="true" /><img
+        class="photo-current"
+        [class.photo-current-entering]="photoEntering()"
+        [src]="room.images[index()] || '/assets/placeholders/room-placeholder.svg'"
+        appImageFallback
+        [alt]="room.name + ' – ảnh ' + (index() + 1)"
+        [attr.loading]="room.featured ? 'eager' : 'lazy'" /></a
+    ><span class="room-status" [class.hot]="room.featured && room.status === 'AVAILABLE'">
+      <ng-container *ngIf="room.featured && room.status === 'AVAILABLE'; else roomAvailability">
+        <app-icon name="flame" [size]="14" /> HOT
+      </ng-container>
+      <ng-template #roomAvailability>{{
+        room.status === 'AVAILABLE'
+          ? 'Đang trống'
+          : room.status === 'HELD'
+            ? 'Đã giữ chỗ'
+            : room.status === 'RENTED'
+              ? 'Đã thuê'
+              : 'Bảo trì / Sửa chữa'
+      }}</ng-template> </span
+    ><button
+      class="heart"
+      type="button"
+      (click)="favorite()"
+      [class.liked]="favorites.has(room.id)"
+      [attr.aria-label]="(favorites.has(room.id) ? 'Bỏ yêu thích ' : 'Thêm yêu thích ') + room.name"
+      [attr.aria-pressed]="favorites.has(room.id)"
+    >
+      <app-icon name="heart" [size]="17" /></button
+    ><span class="tour-chip" *ngIf="hasTour" aria-label="Có tour phòng 360 độ">360°</span
+    ><span class="photo-count" *ngIf="room.images.length > 1"
+      >{{ index() + 1 }} / {{ room.images.length }}</span
+    >
+  </div>
+  <div class="card-body">
+    <a [routerLink]="['/rooms', room.id]" [queryParams]="{ from: from }" class="room-title">{{
+      room.name
+    }}</a>
+    <p class="address"><app-icon name="pin" [size]="12" /> {{ room.address }}</p>
+    <div class="room-meta">
+      <span>{{ room.area }} m²</span><span>•</span><span>{{ room.capacity }} người</span
+      ><span>•</span><span>{{ room.type | roomType }}</span>
+    </div>
+    <div class="card-price">
+      {{ room.price | currency: 'VND' : 'symbol' : '1.0-0' : 'vi' }} <small>/ tháng</small>
+    </div>
+    <div class="card-note">
+      <app-status-badge [status]="room.status" />
+    </div>
+    <p class="near-school" *ngIf="school as s" [title]="s.name">
+      {{ s.id.toUpperCase() }} · Gần trường
+    </p>
+  </div>
+</article>

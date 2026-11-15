@@ -1,0 +1,43 @@
+[
+  {
+    "_id": "6838915bdc42cb63fb09c0e4",
+    "id": "dtct-08",
+    "periodId": "luong-08",
+    "revenue": 23800000,
+    "transactionCount": 9,
+    "totalCommission": 6020000,
+    "status": "CLOSED",
+    "closedAt": "2026-09-01T03:00:00.000Z"
+  },
+  {
+    "_id": "2ae80acbd11946c27cb9a501",
+    "id": "dtct-09",
+    "periodId": "luong-09",
+    "revenue": 18950000,
+    "transactionCount": 8,
+    "totalCommission": 3790000,
+    "status": "CLOSED",
+    "closedAt": "2026-10-01T03:00:00.000Z"
+  },
+  {
+    "_id": "55f894ab8d2d3caa745e2365",
+    "id": "dtct-10",
+    "periodId": "luong-10",
+    "revenue": 17550000,
+    "transactionCount": 7,
+    "totalCommission": 3510000,
+    "status": "CLOSED",
+    "closedAt": "2026-11-01T03:00:00.000Z"
+  },
+  {
+    "_id": "7736b2f357d9daa261fb0b5d",
+    "id": "dtct-11",
+    "periodId": "luong-11",
+    "revenue": 3000000,
+    "transactionCount": 1,
+    "totalCommission": 0,
+    "status": "DRAFT",
+    "closedAt": null,
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:61"
+  }
+]

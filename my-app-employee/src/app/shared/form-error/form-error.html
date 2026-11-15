@@ -1,0 +1,13 @@
+<small class="error" *ngIf="control?.invalid && control?.touched">{{
+  control?.hasError('required')
+    ? 'Vui lòng nhập thông tin này.'
+    : control?.hasError('pattern')
+      ? 'Số điện thoại chưa đúng định dạng.'
+      : control?.hasError('min')
+        ? 'Giá trị phải lớn hơn 0.'
+        : control?.hasError('future')
+          ? 'Vui lòng chọn thời gian trong tương lai.'
+          : control?.hasError('minlength')
+            ? 'Thông tin quá ngắn.'
+            : 'Vui lòng kiểm tra lại thông tin.'
+}}</small>

@@ -1,0 +1,137 @@
+<section
+  class="map-section"
+  [class.compact]="compact"
+  [class.map-only]="variant === 'map'"
+  aria-label="Bản đồ tìm phòng"
+>
+  <p *ngIf="search.rooms.loading()" role="status">Đang tải phòng, tòa nhà và trường…</p>
+  <div *ngIf="search.rooms.error()" class="notice error" role="alert">
+    {{ search.rooms.error() }}
+  </div>
+  <div class="hero container" *ngIf="!compact && variant !== 'map'">
+    <div class="hero-copy">
+      <h1>Tìm phòng gần trường,<br /><span>sống đúng chất riêng.</span></h1>
+      <p>Khám phá phòng phù hợp quanh trường bạn.</p>
+      <form class="hero-search" (ngSubmit)="search.search()">
+        <app-icon name="pin" [size]="19" />
+        <input
+          name="hero-query"
+          aria-label="Tìm trường, khu vực hoặc tên tòa nhà"
+          placeholder="Tìm trường, khu vực hoặc tên tòa nhà"
+          [ngModel]="search.filter().query"
+          (ngModelChange)="search.set({ query: $event })"
+          [ngModelOptions]="{ standalone: true }"
+        />
+        <button class="btn primary" type="submit" [disabled]="!!search.error()">
+          <app-icon name="search" [size]="17" /> Tìm phòng
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="search-container container" *ngIf="variant !== 'map'">
+    <app-room-filters [heroSearch]="!compact" />
+  </div>
+  <div class="map-wrap container" id="map-area">
+    <div
+      #mapCanvas
+      class="map-canvas"
+      aria-label="Bản đồ OpenStreetMap, kéo để di chuyển, dùng nút cộng trừ để zoom"
+    ></div>
+    <div class="map-tools">
+      <button class="btn sm" (click)="resetView()">Về khu vực ban đầu</button
+      ><button class="btn sm" (click)="searchBounds()" [disabled]="!ready()">
+        Tìm trong vùng bản đồ này
+      </button>
+    </div>
+    <div class="map-layers">
+      <label
+        ><input
+          type="checkbox"
+          [checked]="showSchools()"
+          (change)="showSchools.set($any($event.target).checked)"
+        />
+        Trường học</label
+      ><label
+        ><input
+          type="checkbox"
+          [checked]="showProperties()"
+          (change)="showProperties.set($any($event.target).checked)"
+        />
+        Tòa nhà</label
+      ><label
+        ><input
+          type="checkbox"
+          [checked]="search.filter().status === 'AVAILABLE'"
+          (change)="search.set({ status: $any($event.target).checked ? 'AVAILABLE' : '' })"
+        />
+        Phòng trống</label
+      >
+    </div>
+    <aside
+      class="map-panel building-panel"
+      *ngIf="property as p"
+      [attr.aria-label]="'Tòa nhà ' + p.name"
+    >
+      <button class="icon-btn close" (click)="closeProperty()" aria-label="Đóng thông tin tòa nhà">
+        ×
+      </button>
+      <h2>{{ p.name }}</h2>
+      <p>{{ p.address }}</p>
+      <p>
+        <strong>{{ propertyRooms.length }} phòng trống</strong>
+      </p>
+      <p *ngIf="!propertyRooms.length" class="muted" role="status">Hiện chưa có phòng trống</p>
+      <a
+        *ngFor="let r of propertyRooms"
+        class="map-room"
+        [routerLink]="['/rooms', r.id]"
+        [queryParams]="{ from: router.url }"
+      >
+        <strong>{{ r.code }} · {{ r.name }}</strong>
+        <span class="map-price">{{ r.price | number }} đ/tháng</span>
+      </a>
+    </aside>
+    <aside
+      class="map-panel school-panel"
+      *ngIf="schoolPanel() && school as s"
+      aria-label="Thông tin trường"
+    >
+      <button
+        class="icon-btn close"
+        (click)="schoolPanel.set(false)"
+        aria-label="Đóng thông tin trường"
+      >
+        ×
+      </button>
+      <img [src]="s.logo" [alt]="s.name" class="panel-logo" />
+      <h2>{{ s.name }}</h2>
+      <p>{{ s.campus }}<br />{{ s.address }}</p>
+      <p>
+        <strong>{{ search.results().length }} phòng phù hợp</strong>
+      </p>
+      <p class="small muted">
+        Danh sách dựa trên quan hệ tòa nhà–trường trong hệ thống. Khoảng cách hiển thị là đường
+        thẳng khi có tọa độ.
+      </p>
+      <a routerLink="/rooms" [queryParams]="search.params()" class="btn primary full"
+        >Xem phòng gần trường</a
+      >
+    </aside>
+    <div *ngIf="mapError()" class="map-error" role="alert">
+      {{ mapError() }} <button class="btn sm" (click)="retry()">Tải lại bản đồ</button>
+      <a *ngIf="variant === 'map'" routerLink="/rooms" [queryParams]="search.params()" class="link"
+        >Xem danh sách phòng →</a
+      >
+    </div>
+  </div>
+  <div class="map-results-caption container">
+    <span
+      >{{ visibleProperties.length }} tòa nhà · {{ search.results().length }} phòng phù hợp</span
+    >
+    <details class="map-note">
+      <summary>Thông tin bản đồ</summary>
+      <p>Vị trí tòa nhà theo tọa độ trong danh mục. Logo trường dùng để định vị cơ sở.</p>
+      <p *ngIf="unmapped">{{ unmapped }} phòng chưa có tọa độ.</p>
+    </details>
+  </div>
+</section>

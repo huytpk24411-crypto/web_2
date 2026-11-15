@@ -1,0 +1,2057 @@
+[
+  {
+    "_id": "95b75e9c8f23fc40a644fa01",
+    "id": "lx-0001-phong-46",
+    "viewingId": "lx-0001",
+    "roomId": "phong-46",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "07346ddc83a08ee17f557046",
+    "id": "lx-0001-phong-37",
+    "viewingId": "lx-0001",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "fbcbbc5b217a8c7be9e6ed9c",
+    "id": "lx-0002-phong-14",
+    "viewingId": "lx-0002",
+    "roomId": "phong-14",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "baf83d329f86d1bf7ac3a87d",
+    "id": "lx-0002-phong-38",
+    "viewingId": "lx-0002",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "f54afa9abbec6e7e390b555e",
+    "id": "lx-0003-phong-16",
+    "viewingId": "lx-0003",
+    "roomId": "phong-16",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "0ca18c025c72aaddbdd1e4e5",
+    "id": "lx-0003-phong-39",
+    "viewingId": "lx-0003",
+    "roomId": "phong-39",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "c5babdf2772a7025ee391a05",
+    "id": "lx-0004-phong-18",
+    "viewingId": "lx-0004",
+    "roomId": "phong-18",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "0f06655db472893af000bd8f",
+    "id": "lx-0004-phong-40",
+    "viewingId": "lx-0004",
+    "roomId": "phong-40",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "b8da9df0595c7e3c38fac672",
+    "id": "lx-0005-phong-01",
+    "viewingId": "lx-0005",
+    "roomId": "phong-01",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "fd56460c09f13c3677f64e8b",
+    "id": "lx-0005-phong-41",
+    "viewingId": "lx-0005",
+    "roomId": "phong-41",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "986ff6df292e765b98ba3bb0",
+    "id": "lx-0006-phong-02",
+    "viewingId": "lx-0006",
+    "roomId": "phong-02",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8fdb794497162f1676614923",
+    "id": "lx-0006-phong-37",
+    "viewingId": "lx-0006",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "6c59fe011a7b4049c0f4dfa9",
+    "id": "lx-0007-phong-03",
+    "viewingId": "lx-0007",
+    "roomId": "phong-03",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8f621f62076b63d9e74eaf70",
+    "id": "lx-0007-phong-38",
+    "viewingId": "lx-0007",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "1c41997e38bf046d3d88e35c",
+    "id": "lx-0008-phong-04",
+    "viewingId": "lx-0008",
+    "roomId": "phong-04",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "f9e370ddb25c61937819036f",
+    "id": "lx-0008-phong-39",
+    "viewingId": "lx-0008",
+    "roomId": "phong-39",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "0dfad5d519cf609ce5f4db1f",
+    "id": "lx-0009-phong-05",
+    "viewingId": "lx-0009",
+    "roomId": "phong-05",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "be197eccfac11bf87d626295",
+    "id": "lx-0009-phong-40",
+    "viewingId": "lx-0009",
+    "roomId": "phong-40",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "6d341b50b35aff6ba5c0588a",
+    "id": "lx-0010-phong-06",
+    "viewingId": "lx-0010",
+    "roomId": "phong-06",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "868d8c8cb5489a725de8e1d2",
+    "id": "lx-0010-phong-37",
+    "viewingId": "lx-0010",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "5215bb23c4f574410e515648",
+    "id": "lx-0011-phong-07",
+    "viewingId": "lx-0011",
+    "roomId": "phong-07",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "35b0d3be0696b9bc5af1ad3e",
+    "id": "lx-0011-phong-38",
+    "viewingId": "lx-0011",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "66476163e257afcac10c2417",
+    "id": "lx-0012-phong-08",
+    "viewingId": "lx-0012",
+    "roomId": "phong-08",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "508e9b70fb3bc4b157e25e22",
+    "id": "lx-0012-phong-39",
+    "viewingId": "lx-0012",
+    "roomId": "phong-39",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "9aeecc685480254cb31c0623",
+    "id": "lx-0013-phong-09",
+    "viewingId": "lx-0013",
+    "roomId": "phong-09",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "6ee0af39e3975d3eb6c30d01",
+    "id": "lx-0013-phong-40",
+    "viewingId": "lx-0013",
+    "roomId": "phong-40",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "28f2ca6d0f456114034eff8f",
+    "id": "lx-0014-phong-10",
+    "viewingId": "lx-0014",
+    "roomId": "phong-10",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "2d40c6d66964b378387159f6",
+    "id": "lx-0014-phong-41",
+    "viewingId": "lx-0014",
+    "roomId": "phong-41",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "121dd9656a73ec44befbd269",
+    "id": "lx-0015-phong-11",
+    "viewingId": "lx-0015",
+    "roomId": "phong-11",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "f0130cab101af080558af241",
+    "id": "lx-0015-phong-37",
+    "viewingId": "lx-0015",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "a2806f6d40fa1aa74a335499",
+    "id": "lx-0016-phong-12",
+    "viewingId": "lx-0016",
+    "roomId": "phong-12",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d02d394e513cd06febe609bd",
+    "id": "lx-0016-phong-38",
+    "viewingId": "lx-0016",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "249a9067b1998677057fb94a",
+    "id": "lx-0017-phong-13",
+    "viewingId": "lx-0017",
+    "roomId": "phong-13",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "57ec57309799925642d6aa29",
+    "id": "lx-0017-phong-39",
+    "viewingId": "lx-0017",
+    "roomId": "phong-39",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "a217dc8f7f99e246609d25b7",
+    "id": "lx-0018-phong-15",
+    "viewingId": "lx-0018",
+    "roomId": "phong-15",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "e02fdbb5b44ba9fff5b893bb",
+    "id": "lx-0018-phong-37",
+    "viewingId": "lx-0018",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "7d03adbea6820528d4edcb2a",
+    "id": "lx-0019-phong-17",
+    "viewingId": "lx-0019",
+    "roomId": "phong-17",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "aef01a03d626c8dbedfd4a76",
+    "id": "lx-0019-phong-38",
+    "viewingId": "lx-0019",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "7e4107c537f1d85bd1e97fe8",
+    "id": "lx-0020-phong-19",
+    "viewingId": "lx-0020",
+    "roomId": "phong-19",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "345c8e2e0128a662656cb667",
+    "id": "lx-0020-phong-39",
+    "viewingId": "lx-0020",
+    "roomId": "phong-39",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "3907bc5875e50287303b0ad2",
+    "id": "lx-0021-phong-20",
+    "viewingId": "lx-0021",
+    "roomId": "phong-20",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "b8b35efc04ea6e2d6de7bb68",
+    "id": "lx-0021-phong-40",
+    "viewingId": "lx-0021",
+    "roomId": "phong-40",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "4140bb3985cbcff111b4060a",
+    "id": "lx-0022-phong-21",
+    "viewingId": "lx-0022",
+    "roomId": "phong-21",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "964a949b34e5d31cc7d4a3cc",
+    "id": "lx-0022-phong-41",
+    "viewingId": "lx-0022",
+    "roomId": "phong-41",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "e0fd8b075062f175c6160492",
+    "id": "lx-0023-phong-22",
+    "viewingId": "lx-0023",
+    "roomId": "phong-22",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "232123025afa68ab36ced821",
+    "id": "lx-0023-phong-37",
+    "viewingId": "lx-0023",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d08e3ac995cc63166bc3b5b9",
+    "id": "lx-0024-phong-47",
+    "viewingId": "lx-0024",
+    "roomId": "phong-47",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "b59e782c5be40a10a519ee31",
+    "id": "lx-0024-phong-38",
+    "viewingId": "lx-0024",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "1de067af1822cdf972720a08",
+    "id": "lx-0025-phong-23",
+    "viewingId": "lx-0025",
+    "roomId": "phong-23",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "90f714d06a330c0281c8a5fd",
+    "id": "lx-0025-phong-37",
+    "viewingId": "lx-0025",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "e9588ad26c675dca4d0ff457",
+    "id": "lx-0026-phong-24",
+    "viewingId": "lx-0026",
+    "roomId": "phong-24",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "e18bf894887bcf45e88e1cf4",
+    "id": "lx-0026-phong-38",
+    "viewingId": "lx-0026",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "186ef75896d86c4be4a05693",
+    "id": "lx-0027-phong-27",
+    "viewingId": "lx-0027",
+    "roomId": "phong-27",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "6e1aa0c80abee3365d565a4d",
+    "id": "lx-0027-phong-37",
+    "viewingId": "lx-0027",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ffebc3c7f18bfe21da5d7acb",
+    "id": "lx-0028-phong-28",
+    "viewingId": "lx-0028",
+    "roomId": "phong-28",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "34bfb08144de02f6f23c7834",
+    "id": "lx-0028-phong-38",
+    "viewingId": "lx-0028",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "451b5f4479f6ee6ce3007667",
+    "id": "lx-0029-phong-29",
+    "viewingId": "lx-0029",
+    "roomId": "phong-29",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "1c467e0ff9e6f6337e41374b",
+    "id": "lx-0029-phong-39",
+    "viewingId": "lx-0029",
+    "roomId": "phong-39",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "468aeaedbb8f5dae6d09d116",
+    "id": "lx-0030-phong-30",
+    "viewingId": "lx-0030",
+    "roomId": "phong-30",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8310b86949d1c1e48b73ffc7",
+    "id": "lx-0030-phong-40",
+    "viewingId": "lx-0030",
+    "roomId": "phong-40",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "30293014d17bd567c653662a",
+    "id": "lx-0031-phong-31",
+    "viewingId": "lx-0031",
+    "roomId": "phong-31",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "282edec216ced35ab882f7dd",
+    "id": "lx-0031-phong-41",
+    "viewingId": "lx-0031",
+    "roomId": "phong-41",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d482f7206e6436b4963a3e69",
+    "id": "lx-0032-phong-32",
+    "viewingId": "lx-0032",
+    "roomId": "phong-32",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "3d36b16b5e1203cc37b97a60",
+    "id": "lx-0032-phong-37",
+    "viewingId": "lx-0032",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "30a019fc9995ca067ebf3008",
+    "id": "lx-0033-phong-33",
+    "viewingId": "lx-0033",
+    "roomId": "phong-33",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "7b5b6b18654a016b612f7254",
+    "id": "lx-0033-phong-38",
+    "viewingId": "lx-0033",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "f94decb91c5abd4373e44e4e",
+    "id": "lx-0034-phong-34",
+    "viewingId": "lx-0034",
+    "roomId": "phong-34",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "0acac4e5323eecaca237df3c",
+    "id": "lx-0034-phong-39",
+    "viewingId": "lx-0034",
+    "roomId": "phong-39",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d0b6e8344485475a8c5e1035",
+    "id": "lx-0035-phong-35",
+    "viewingId": "lx-0035",
+    "roomId": "phong-35",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "38570919e30df1be66d88c9b",
+    "id": "lx-0035-phong-40",
+    "viewingId": "lx-0035",
+    "roomId": "phong-40",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "9fa4159c3fda3d34ed2cf0d6",
+    "id": "lx-0036-phong-36",
+    "viewingId": "lx-0036",
+    "roomId": "phong-36",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "91bc183a6304f228593fa1ec",
+    "id": "lx-0036-phong-41",
+    "viewingId": "lx-0036",
+    "roomId": "phong-41",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "857dfece671cdcbc8709fd29",
+    "id": "lx-0037-phong-01",
+    "viewingId": "lx-0037",
+    "roomId": "phong-01",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d85e94d91cd0ea61cb375702",
+    "id": "lx-0037-phong-02",
+    "viewingId": "lx-0037",
+    "roomId": "phong-02",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "5b977448f628c62d19b0394f",
+    "id": "lx-0038-phong-02",
+    "viewingId": "lx-0038",
+    "roomId": "phong-02",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "210a4ccc8b8f3743921c51cd",
+    "id": "lx-0038-phong-03",
+    "viewingId": "lx-0038",
+    "roomId": "phong-03",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "be1de882f5f5cac194b11423",
+    "id": "lx-0039-phong-04",
+    "viewingId": "lx-0039",
+    "roomId": "phong-04",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ec34aef941df50326c7950cd",
+    "id": "lx-0039-phong-05",
+    "viewingId": "lx-0039",
+    "roomId": "phong-05",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "f74b0f8ab1187be9dd9d06a1",
+    "id": "lx-0040-phong-07",
+    "viewingId": "lx-0040",
+    "roomId": "phong-07",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "1327ddac378111b19170e243",
+    "id": "lx-0040-phong-08",
+    "viewingId": "lx-0040",
+    "roomId": "phong-08",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8c66ca13d73216d3640628a4",
+    "id": "lx-0041-phong-10",
+    "viewingId": "lx-0041",
+    "roomId": "phong-10",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "743970c7f6de50d0c6a9137d",
+    "id": "lx-0041-phong-11",
+    "viewingId": "lx-0041",
+    "roomId": "phong-11",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "a16796039371eca5e1f07a4c",
+    "id": "lx-0042-phong-12",
+    "viewingId": "lx-0042",
+    "roomId": "phong-12",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "612bdb5a80109772ee06a13a",
+    "id": "lx-0042-phong-13",
+    "viewingId": "lx-0042",
+    "roomId": "phong-13",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "309a2c6357757c5ce78677e9",
+    "id": "lx-0043-phong-19",
+    "viewingId": "lx-0043",
+    "roomId": "phong-19",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "e761aafd6ce7fd8673f42388",
+    "id": "lx-0043-phong-20",
+    "viewingId": "lx-0043",
+    "roomId": "phong-20",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "9860ace6b00d5a3227df14fd",
+    "id": "lx-0044-phong-22",
+    "viewingId": "lx-0044",
+    "roomId": "phong-22",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "5041fd22b54f73db5836ff87",
+    "id": "lx-0044-phong-23",
+    "viewingId": "lx-0044",
+    "roomId": "phong-23",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "4f9acce083a650d6ac1ab0cc",
+    "id": "lx-0045-phong-25",
+    "viewingId": "lx-0045",
+    "roomId": "phong-25",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "1205a7c918c4869cfb5740d4",
+    "id": "lx-0045-phong-26",
+    "viewingId": "lx-0045",
+    "roomId": "phong-26",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ee8451b49b09a3e8cae217a3",
+    "id": "lx-0046-phong-27",
+    "viewingId": "lx-0046",
+    "roomId": "phong-27",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "4f58eab458742079c0c2ad35",
+    "id": "lx-0046-phong-28",
+    "viewingId": "lx-0046",
+    "roomId": "phong-28",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "31bfa5636bec1d7177cda5d2",
+    "id": "lx-0047-phong-30",
+    "viewingId": "lx-0047",
+    "roomId": "phong-30",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "1a2de84acfb8637b90ac5eef",
+    "id": "lx-0047-phong-31",
+    "viewingId": "lx-0047",
+    "roomId": "phong-31",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "4838b6a46ef115ee12b89e31",
+    "id": "lx-0048-phong-33",
+    "viewingId": "lx-0048",
+    "roomId": "phong-33",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "68c7b28632d5f1b085247579",
+    "id": "lx-0048-phong-34",
+    "viewingId": "lx-0048",
+    "roomId": "phong-34",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "0e1dae51f3b32032fcbb0e0e",
+    "id": "lx-0049-phong-35",
+    "viewingId": "lx-0049",
+    "roomId": "phong-35",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8aa367c3c74800c05dd9c169",
+    "id": "lx-0049-phong-36",
+    "viewingId": "lx-0049",
+    "roomId": "phong-36",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ece3be991e1a3ee077f57334",
+    "id": "lx-0050-phong-14",
+    "viewingId": "lx-0050",
+    "roomId": "phong-14",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "343aabe773b5d6e85094636c",
+    "id": "lx-0050-phong-15",
+    "viewingId": "lx-0050",
+    "roomId": "phong-15",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "dbb28230f980dc413c7610ad",
+    "id": "lx-0051-phong-17",
+    "viewingId": "lx-0051",
+    "roomId": "phong-17",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "27235acded62e87ce08500ce",
+    "id": "lx-0051-phong-18",
+    "viewingId": "lx-0051",
+    "roomId": "phong-18",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "b442168203dfe9dd13782210",
+    "id": "lx-0052-phong-20",
+    "viewingId": "lx-0052",
+    "roomId": "phong-20",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "c1b8ee0bd793e5ec26a85b0f",
+    "id": "lx-0052-phong-21",
+    "viewingId": "lx-0052",
+    "roomId": "phong-21",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "506a5f3867e5309ed6f66d22",
+    "id": "lx-0053-phong-24",
+    "viewingId": "lx-0053",
+    "roomId": "phong-24",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "bd23aca7f5981347eb71add0",
+    "id": "lx-0053-phong-25",
+    "viewingId": "lx-0053",
+    "roomId": "phong-25",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "7eef5e526d11fd7806ed7fd6",
+    "id": "lx-0054-phong-26",
+    "viewingId": "lx-0054",
+    "roomId": "phong-26",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "153e78fd3e66d5c9e6c92ff7",
+    "id": "lx-0054-phong-27",
+    "viewingId": "lx-0054",
+    "roomId": "phong-27",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "de47b8f714b6a25775a9b31c",
+    "id": "lx-0055-phong-29",
+    "viewingId": "lx-0055",
+    "roomId": "phong-29",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "4e7b6d563357e380a5090ae0",
+    "id": "lx-0055-phong-30",
+    "viewingId": "lx-0055",
+    "roomId": "phong-30",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "aad4f771119f29b01ed04009",
+    "id": "lx-0056-phong-32",
+    "viewingId": "lx-0056",
+    "roomId": "phong-32",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ecdef0af00177a15e5f9f508",
+    "id": "lx-0056-phong-33",
+    "viewingId": "lx-0056",
+    "roomId": "phong-33",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "69333593e344509629897786",
+    "id": "lx-0057-phong-36",
+    "viewingId": "lx-0057",
+    "roomId": "phong-36",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "6736ca39436cd6609767ca9f",
+    "id": "lx-0057-phong-37",
+    "viewingId": "lx-0057",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "aa37f150e3e5fe30b537cb19",
+    "id": "lx-0058-phong-38",
+    "viewingId": "lx-0058",
+    "roomId": "phong-38",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "69e65c869c60d2e235904234",
+    "id": "lx-0058-phong-39",
+    "viewingId": "lx-0058",
+    "roomId": "phong-39",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ec520ba1940bacec7a53cb81",
+    "id": "lx-0059-phong-40",
+    "viewingId": "lx-0059",
+    "roomId": "phong-40",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "a0809d9aef144c9182820f49",
+    "id": "lx-0059-phong-41",
+    "viewingId": "lx-0059",
+    "roomId": "phong-41",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "f623fc692975001a4921c3e7",
+    "id": "lx-0060-phong-48",
+    "viewingId": "lx-0060",
+    "roomId": "phong-48",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8d2c21e2c00594a537971367",
+    "id": "lx-0060-phong-49",
+    "viewingId": "lx-0060",
+    "roomId": "phong-49",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "99ac91dea19bfe8694d3ba76",
+    "id": "lx-0061-phong-23",
+    "viewingId": "lx-0061",
+    "roomId": "phong-23",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "b2b0356cf5d9c70802e00705",
+    "id": "lx-0061-phong-24",
+    "viewingId": "lx-0061",
+    "roomId": "phong-24",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "a47b59ed94f0e968d523c0c4",
+    "id": "lx-0062-phong-25",
+    "viewingId": "lx-0062",
+    "roomId": "phong-25",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "9d558b16cafd5f00d5d940a4",
+    "id": "lx-0062-phong-26",
+    "viewingId": "lx-0062",
+    "roomId": "phong-26",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "2f96db29344ca1e94c9cac6d",
+    "id": "lx-0063-phong-27",
+    "viewingId": "lx-0063",
+    "roomId": "phong-27",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "2f0e2da8bc488dd9122d210b",
+    "id": "lx-0063-phong-28",
+    "viewingId": "lx-0063",
+    "roomId": "phong-28",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "2fb31ef30b481988a48f7f2d",
+    "id": "lx-0064-phong-31",
+    "viewingId": "lx-0064",
+    "roomId": "phong-31",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "2dd563c0ca85e5280cdb999d",
+    "id": "lx-0064-phong-32",
+    "viewingId": "lx-0064",
+    "roomId": "phong-32",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "1cb285275a7aee1225e74cd9",
+    "id": "lx-0065-phong-34",
+    "viewingId": "lx-0065",
+    "roomId": "phong-34",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "482aeabc9c47056433c49f5a",
+    "id": "lx-0065-phong-35",
+    "viewingId": "lx-0065",
+    "roomId": "phong-35",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "5589707f504ccb86e7ab7d58",
+    "id": "lx-0066-phong-37",
+    "viewingId": "lx-0066",
+    "roomId": "phong-37",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8a3d2970194c33497094d19b",
+    "id": "lx-0066-phong-38",
+    "viewingId": "lx-0066",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "2b5121f24232f1eee9cb4a8b",
+    "id": "lx-0067-phong-39",
+    "viewingId": "lx-0067",
+    "roomId": "phong-39",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "cd4f80e6701c11c05a4ba2e4",
+    "id": "lx-0067-phong-40",
+    "viewingId": "lx-0067",
+    "roomId": "phong-40",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "0b6ee98e9ecb8b992844fd28",
+    "id": "lx-0068-phong-47",
+    "viewingId": "lx-0068",
+    "roomId": "phong-47",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "97b1f18187a039bda32667a3",
+    "id": "lx-0068-phong-48",
+    "viewingId": "lx-0068",
+    "roomId": "phong-48",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "3c88b332b4f3f315f5f028ca",
+    "id": "lx-0069-phong-50",
+    "viewingId": "lx-0069",
+    "roomId": "phong-50",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "284b37c1af62b52b8e2c9c03",
+    "id": "lx-0069-phong-11",
+    "viewingId": "lx-0069",
+    "roomId": "phong-11",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "f00fb5b3cf7d46fd22cf2cef",
+    "id": "lx-0070-phong-17",
+    "viewingId": "lx-0070",
+    "roomId": "phong-17",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "887a1f5fed397970baf457b2",
+    "id": "lx-0070-phong-19",
+    "viewingId": "lx-0070",
+    "roomId": "phong-19",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "269f2c7bfe9bc35a06543543",
+    "id": "lx-0071-phong-21",
+    "viewingId": "lx-0071",
+    "roomId": "phong-21",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d9b36f29ed9121c1d21565b7",
+    "id": "lx-0071-phong-22",
+    "viewingId": "lx-0071",
+    "roomId": "phong-22",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "979c80f0267c5297d5c156b1",
+    "id": "lx-0072-phong-26",
+    "viewingId": "lx-0072",
+    "roomId": "phong-26",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "789d6670a357d293dc280373",
+    "id": "lx-0072-phong-27",
+    "viewingId": "lx-0072",
+    "roomId": "phong-27",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "041a72614c7ab97424104cde",
+    "id": "lx-0073-phong-31",
+    "viewingId": "lx-0073",
+    "roomId": "phong-31",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "33c639f40a0fd56f16fd654a",
+    "id": "lx-0073-phong-32",
+    "viewingId": "lx-0073",
+    "roomId": "phong-32",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ccd371410236430f6ada8d97",
+    "id": "lx-0074-phong-37",
+    "viewingId": "lx-0074",
+    "roomId": "phong-37",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "a2fbf69f23674c3db75f3c8c",
+    "id": "lx-0074-phong-38",
+    "viewingId": "lx-0074",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "c218cd07f16688b08368595d",
+    "id": "lx-0075-phong-38",
+    "viewingId": "lx-0075",
+    "roomId": "phong-38",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ccd63221bc4a7697a3c52a0b",
+    "id": "lx-0075-phong-39",
+    "viewingId": "lx-0075",
+    "roomId": "phong-39",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "53d7bfd8580361e164c0f80e",
+    "id": "lx-0076-phong-41",
+    "viewingId": "lx-0076",
+    "roomId": "phong-41",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "73227ff652c7053607f59292",
+    "id": "lx-0076-phong-42",
+    "viewingId": "lx-0076",
+    "roomId": "phong-42",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "4ce942b753d1a9e49f4a3e2a",
+    "id": "lx-0077-phong-48",
+    "viewingId": "lx-0077",
+    "roomId": "phong-48",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d489297831837055da5441fe",
+    "id": "lx-0077-phong-49",
+    "viewingId": "lx-0077",
+    "roomId": "phong-49",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "159d5413405e841a6bcde4d2",
+    "id": "lx-0078-phong-05",
+    "viewingId": "lx-0078",
+    "roomId": "phong-05",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "9c3aa356d10dc9f010c26edd",
+    "id": "lx-0078-phong-06",
+    "viewingId": "lx-0078",
+    "roomId": "phong-06",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "6296257c9f2917eb94364327",
+    "id": "lx-0079-phong-10",
+    "viewingId": "lx-0079",
+    "roomId": "phong-10",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "85dec31405e23f8ce0283d25",
+    "id": "lx-0079-phong-11",
+    "viewingId": "lx-0079",
+    "roomId": "phong-11",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "93ad5c41ba38a105e3d3b07c",
+    "id": "lx-0080-phong-13",
+    "viewingId": "lx-0080",
+    "roomId": "phong-13",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d7d2cae25d7973fc5fb6e7c2",
+    "id": "lx-0080-phong-15",
+    "viewingId": "lx-0080",
+    "roomId": "phong-15",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "30d30e09f18a4fb2b64b71d9",
+    "id": "lx-0081-phong-21",
+    "viewingId": "lx-0081",
+    "roomId": "phong-21",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "417e17ab1b53639a9cc73fdc",
+    "id": "lx-0081-phong-22",
+    "viewingId": "lx-0081",
+    "roomId": "phong-22",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "b2b922fad71d26fb538f7bb6",
+    "id": "lx-0082-phong-28",
+    "viewingId": "lx-0082",
+    "roomId": "phong-28",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "08e7bcb219369d547cc34b10",
+    "id": "lx-0082-phong-29",
+    "viewingId": "lx-0082",
+    "roomId": "phong-29",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "b176a945651426dbd955a30c",
+    "id": "lx-0083-phong-33",
+    "viewingId": "lx-0083",
+    "roomId": "phong-33",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d1d2e2cad3e479295a3143b0",
+    "id": "lx-0083-phong-34",
+    "viewingId": "lx-0083",
+    "roomId": "phong-34",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "c29f60b548866d6da4982d25",
+    "id": "lx-0084-phong-34",
+    "viewingId": "lx-0084",
+    "roomId": "phong-34",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "310f7347267f1755b168a7ce",
+    "id": "lx-0084-phong-35",
+    "viewingId": "lx-0084",
+    "roomId": "phong-35",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "b4fcc3d20d556cdda8edc2f0",
+    "id": "lx-0085-phong-41",
+    "viewingId": "lx-0085",
+    "roomId": "phong-41",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "7aa875ef80960ec55ccdab27",
+    "id": "lx-0085-phong-42",
+    "viewingId": "lx-0085",
+    "roomId": "phong-42",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "3b175bdde3461070332ed72a",
+    "id": "lx-0086-phong-50",
+    "viewingId": "lx-0086",
+    "roomId": "phong-50",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "25733a8001132eeae36aff9e",
+    "id": "lx-0086-phong-22",
+    "viewingId": "lx-0086",
+    "roomId": "phong-22",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "d7f9547d738165f1a212b8a5",
+    "id": "lx-0087-phong-27",
+    "viewingId": "lx-0087",
+    "roomId": "phong-27",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "a83a1b7ff7c2e7898010cc64",
+    "id": "lx-0087-phong-28",
+    "viewingId": "lx-0087",
+    "roomId": "phong-28",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "44416976a7a88233d07b61db",
+    "id": "lx-0088-phong-05",
+    "viewingId": "lx-0088",
+    "roomId": "phong-05",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "6dbb65b8ff4ffd27002c4b86",
+    "id": "lx-0088-phong-06",
+    "viewingId": "lx-0088",
+    "roomId": "phong-06",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "112427e2011ebf8c087a2c89",
+    "id": "lx-0089-phong-09",
+    "viewingId": "lx-0089",
+    "roomId": "phong-09",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "cba1e9b81fe9af62bffdf5cb",
+    "id": "lx-0089-phong-10",
+    "viewingId": "lx-0089",
+    "roomId": "phong-10",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "846575b94328b3d263b6e994",
+    "id": "lx-0090-phong-13",
+    "viewingId": "lx-0090",
+    "roomId": "phong-13",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "dc4b0373e03ea43ed6af1ab6",
+    "id": "lx-0090-phong-15",
+    "viewingId": "lx-0090",
+    "roomId": "phong-15",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "0963f4a9609c8fc05ca83976",
+    "id": "lx-0091-phong-21",
+    "viewingId": "lx-0091",
+    "roomId": "phong-21",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "4a002ad8a7e19e770088715d",
+    "id": "lx-0091-phong-22",
+    "viewingId": "lx-0091",
+    "roomId": "phong-22",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8c6038d3d5917593207d1e07",
+    "id": "lx-0092-phong-26",
+    "viewingId": "lx-0092",
+    "roomId": "phong-26",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "476d719f483708e9523b385e",
+    "id": "lx-0092-phong-27",
+    "viewingId": "lx-0092",
+    "roomId": "phong-27",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "7a0f791c1b22f723b7a19530",
+    "id": "lx-0093-phong-31",
+    "viewingId": "lx-0093",
+    "roomId": "phong-31",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "72b2c625a155581b58a0ccf9",
+    "id": "lx-0093-phong-32",
+    "viewingId": "lx-0093",
+    "roomId": "phong-32",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "3b02883f86bebdf026a3d267",
+    "id": "lx-0094-phong-36",
+    "viewingId": "lx-0094",
+    "roomId": "phong-36",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "2e1a8d0dda443ab2b3861b95",
+    "id": "lx-0094-phong-37",
+    "viewingId": "lx-0094",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "6aee8eef3b51ee2e1c99c7f2",
+    "id": "lx-0095-phong-41",
+    "viewingId": "lx-0095",
+    "roomId": "phong-41",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "4b1d980ef49454a3699a795d",
+    "id": "lx-0095-phong-42",
+    "viewingId": "lx-0095",
+    "roomId": "phong-42",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "512b9312910930969e9ff620",
+    "id": "lx-0096-phong-50",
+    "viewingId": "lx-0096",
+    "roomId": "phong-50",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "098aced0d06ef2f7781a3493",
+    "id": "lx-0096-phong-15",
+    "viewingId": "lx-0096",
+    "roomId": "phong-15",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "34d23822b92b1a024ed4ccac",
+    "id": "lx-0097-phong-20",
+    "viewingId": "lx-0097",
+    "roomId": "phong-20",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ba79372f11c47020aa35a178",
+    "id": "lx-0097-phong-21",
+    "viewingId": "lx-0097",
+    "roomId": "phong-21",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "e2bc367607b8c6dc7ae49f9c",
+    "id": "lx-0098-phong-27",
+    "viewingId": "lx-0098",
+    "roomId": "phong-27",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "14d41bd359af568605975b13",
+    "id": "lx-0098-phong-28",
+    "viewingId": "lx-0098",
+    "roomId": "phong-28",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "78e610691f2cd8212aaf31c0",
+    "id": "lx-0099-phong-37",
+    "viewingId": "lx-0099",
+    "roomId": "phong-37",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "e077ec6816c023a7c6d26053",
+    "id": "lx-0099-phong-38",
+    "viewingId": "lx-0099",
+    "roomId": "phong-38",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "25031f28e605a34fcf808fea",
+    "id": "lx-0100-phong-40",
+    "viewingId": "lx-0100",
+    "roomId": "phong-40",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "06673d909f4e00f718d16e21",
+    "id": "lx-0100-phong-41",
+    "viewingId": "lx-0100",
+    "roomId": "phong-41",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "109c89c383dcc2e5d78abae7",
+    "id": "lx-0101-phong-19",
+    "viewingId": "lx-0101",
+    "roomId": "phong-19",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ffadf941b11c1a50fbcd2fdf",
+    "id": "lx-0101-phong-20",
+    "viewingId": "lx-0101",
+    "roomId": "phong-20",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "690f13a61d3daf0980450262",
+    "id": "lx-0102-phong-24",
+    "viewingId": "lx-0102",
+    "roomId": "phong-24",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "39f20870db9c889b2b5c8ada",
+    "id": "lx-0102-phong-25",
+    "viewingId": "lx-0102",
+    "roomId": "phong-25",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "ad6d0412a5ac47695a22ead8",
+    "id": "lx-0103-phong-31",
+    "viewingId": "lx-0103",
+    "roomId": "phong-31",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "01aed79cbc29cca875330e5c",
+    "id": "lx-0103-phong-32",
+    "viewingId": "lx-0103",
+    "roomId": "phong-32",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8028941883e0e5f80a0010b5",
+    "id": "lx-0104-phong-36",
+    "viewingId": "lx-0104",
+    "roomId": "phong-36",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "63e2c3212c816d5044078916",
+    "id": "lx-0104-phong-37",
+    "viewingId": "lx-0104",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "f302d6f71c73bdd284ebf193",
+    "id": "lx-0105-phong-39",
+    "viewingId": "lx-0105",
+    "roomId": "phong-39",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "c2ee0b1658102f66f1f942da",
+    "id": "lx-0105-phong-40",
+    "viewingId": "lx-0105",
+    "roomId": "phong-40",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "df93d64f383f0e03f4031988",
+    "id": "lx-0106-phong-48",
+    "viewingId": "lx-0106",
+    "roomId": "phong-48",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "e48b165e63f6d43729c577ee",
+    "id": "lx-0106-phong-49",
+    "viewingId": "lx-0106",
+    "roomId": "phong-49",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "de847217f96913c1bb8e5c47",
+    "id": "lx-0107-phong-17",
+    "viewingId": "lx-0107",
+    "roomId": "phong-17",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "70c1db9ff8cec66f2aee7a7d",
+    "id": "lx-0107-phong-19",
+    "viewingId": "lx-0107",
+    "roomId": "phong-19",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "a3c498b4747179b21815bd56",
+    "id": "lx-0108-phong-25",
+    "viewingId": "lx-0108",
+    "roomId": "phong-25",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "376e519f6c433a5000709d50",
+    "id": "lx-0108-phong-26",
+    "viewingId": "lx-0108",
+    "roomId": "phong-26",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "1e1eee97959cbb3d4d89d45e",
+    "id": "lx-0109-phong-29",
+    "viewingId": "lx-0109",
+    "roomId": "phong-29",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8a226fbb5f996bf8a16b5fe2",
+    "id": "lx-0109-phong-30",
+    "viewingId": "lx-0109",
+    "roomId": "phong-30",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "25e0615caf292bb53db4120c",
+    "id": "lx-0110-phong-36",
+    "viewingId": "lx-0110",
+    "roomId": "phong-36",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "887babb23fd84f6ba5084cc9",
+    "id": "lx-0110-phong-37",
+    "viewingId": "lx-0110",
+    "roomId": "phong-37",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "376f7a7e2ec37df96df78e9b",
+    "id": "lx-0111-phong-47",
+    "viewingId": "lx-0111",
+    "roomId": "phong-47",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "1b60e30dfbb3ed84208efe47",
+    "id": "lx-0111-phong-48",
+    "viewingId": "lx-0111",
+    "roomId": "phong-48",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "f2e22f79f7ea335f641ab630",
+    "id": "lx-0112-phong-26",
+    "viewingId": "lx-0112",
+    "roomId": "phong-26",
+    "order": 1,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "8b02d112194f383f55f5d09f",
+    "id": "lx-0112-phong-27",
+    "viewingId": "lx-0112",
+    "roomId": "phong-27",
+    "order": 2,
+    "viewStatus": "DA_XEM",
+    "note": "Đã giới thiệu tiện ích và mức cọc"
+  },
+  {
+    "_id": "6ae9fcd9af0e7548b48362a4",
+    "id": "ctx-6ae9fcd9af0e7548b48362a4",
+    "viewingId": "lx-6ae9fcd9af0e7548b48362a3",
+    "roomId": "phong-49",
+    "order": 1,
+    "viewStatus": "CHUA_XEM",
+    "note": ""
+  },
+  {
+    "_id": "6af9e4a07c0fe08a17bcee25",
+    "id": "ctx-6af9e49f7c0fe08a17bcee11",
+    "viewingId": "lx-6af9e49f7c0fe08a17bcee10",
+    "roomId": "phong-30",
+    "order": 1,
+    "viewStatus": "CHUA_XEM",
+    "note": "",
+    "_p4Token": "p4-op-6af9e4a07c0fe08a17bcee22:1"
+  },
+  {
+    "_id": "6af9e4a07c0fe08a17bcee2c",
+    "id": "ctx-6af9e4a07c0fe08a17bcee17",
+    "viewingId": "lx-6af9e4a07c0fe08a17bcee16",
+    "roomId": "phong-26",
+    "order": 1,
+    "viewStatus": "CHUA_XEM",
+    "note": "",
+    "_p4Token": "p4-op-6af9e4a07c0fe08a17bcee22:12"
+  },
+  {
+    "_id": "6af9e4a07c0fe08a17bcee33",
+    "id": "ctx-6af9e4a07c0fe08a17bcee1d",
+    "viewingId": "lx-6af9e4a07c0fe08a17bcee1c",
+    "roomId": "phong-23",
+    "order": 1,
+    "viewStatus": "CHUA_XEM",
+    "note": "",
+    "_p4Token": "p4-op-6af9e4a07c0fe08a17bcee22:23"
+  }
+]

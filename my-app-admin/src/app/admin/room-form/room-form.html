@@ -1,0 +1,380 @@
+<div class="empty" *ngIf="loading()">Đang tải thông tin phòng...</div>
+<div class="empty" *ngIf="missingRoom && !loading()">
+  <h2>{{ error() }}</h2>
+  <a class="btn primary" routerLink="/admin/rooms">Về danh sách phòng</a>
+</div>
+<form
+  *ngIf="!loading() && !missingRoom"
+  [formGroup]="form"
+  (ngSubmit)="isEdit ? update() : publish()"
+>
+  <div class="notice error duplicate-banner" *ngIf="duplicateFound" role="alert">
+    <app-icon name="info" [size]="34" />
+    <div>
+      <h2>
+        Không thể {{ isEdit ? 'cập nhật' : 'tạo' }} phòng mới!
+        <span class="badge red">TRÙNG LẶP DỮ LIỆU</span>
+      </h2>
+      <p>
+        Mã phòng <b>{{ matchedRoom?.code }}</b> hoặc số căn trong tòa nhà đã tồn tại. Vui lòng kiểm
+        tra lại thông tin định danh.
+      </p>
+    </div>
+    <button type="button" class="btn danger" (click)="preview = matchedRoom">
+      Kiểm tra phòng trùng
+    </button>
+  </div>
+  <div class="room-form-layout" [class.edit-layout]="isEdit">
+    <div class="form-main">
+      <section class="panel">
+        <div class="section-heading">
+          <div class="section-title">
+            <span class="section-icon"><app-icon name="building" /></span>
+            <div>
+              <h3>1. Thông tin cơ bản &amp; Định danh phòng</h3>
+              <p>Tên nhận diện và mã số quản lý duy nhất trong hệ thống.</p>
+            </div>
+          </div>
+          <span class="badge blue">{{ isEdit ? 'Đã định danh' : 'BẮT BUỘC *' }}</span>
+        </div>
+        <div class="identity-grid">
+          <label class="field wide-name"
+            ><span>Tên hiển thị của phòng *</span
+            ><input
+              aria-label="Tên hiển thị của phòng *"
+              formControlName="name"
+              placeholder="Ví dụ: Căn hộ Sage Oak – Phòng 101" /><app-form-error
+              [control]="form.controls.name"
+          /></label>
+          <label class="field"
+            ><span>Mã phòng (Định danh) *</span
+            ><input
+              aria-label="Mã phòng (Định danh) *"
+              formControlName="code"
+              placeholder="VD: PHONG_51"
+              (input)="clearDuplicate()"
+            /><small class="error" *ngIf="form.controls.code.hasError('duplicate')"
+              >Mã phòng đã tồn tại. Vui lòng nhập lại.</small
+            ><small
+              class="error"
+              *ngIf="form.controls.code.touched && form.controls.code.hasError('pattern')"
+              >Mã phòng chỉ dùng chữ, số, dấu gạch ngang và gạch dưới.</small
+            ><app-form-error
+              *ngIf="
+                !form.controls.code.hasError('duplicate') && !form.controls.code.hasError('pattern')
+              "
+              [control]="form.controls.code"
+            /><button type="button" class="text-action" *ngIf="!isEdit" (click)="generateCode()">
+              Tự động sinh mã</button
+            ><small *ngIf="isEdit">Định danh được khóa khi chỉnh sửa.</small></label
+          >
+          <label class="field"
+            ><span>Loại phòng *</span
+            ><select aria-label="Loại phòng *" formControlName="type">
+              <option value="">Chọn phân loại phòng</option>
+              <option *ngFor="let type of types" [value]="type">{{ type | roomType }}</option>
+              <option
+                *ngIf="form.controls.type.value && !types.includes(form.controls.type.value)"
+                [value]="form.controls.type.value"
+              >
+                {{ form.controls.type.value | roomType }}
+              </option></select
+            ><app-form-error [control]="form.controls.type"
+          /></label>
+          <label class="field"
+            ><span>Tòa nhà / Dự án *</span
+            ><select
+              aria-label="Tòa nhà / Dự án *"
+              formControlName="propertyId"
+              (change)="selectProperty()"
+            >
+              <option value="">Chọn tòa nhà trực thuộc</option>
+              <option *ngFor="let property of properties" [value]="property.id">
+                {{ property.name }}
+              </option></select
+            ><app-form-error [control]="form.controls.propertyId"
+          /></label>
+          <label class="field"
+            ><span>Chủ phòng</span
+            ><select formControlName="ownerId" aria-label="Chủ phòng">
+              <option value="">Chưa gắn chủ phòng</option>
+              <option
+                *ngFor="let owner of admin.owners()"
+                [value]="owner.id"
+                [disabled]="owner.active === false"
+              >
+                {{ owner.fullName }}
+              </option>
+            </select></label
+          >
+          <div class="floor-number">
+            <label class="field"
+              ><span>Tầng lầu</span
+              ><input
+                aria-label="Tầng lầu"
+                formControlName="floor"
+                placeholder="VD: Tầng 4" /></label
+            ><label class="field"
+              ><span>Số phòng / Căn số *</span
+              ><input
+                aria-label="Số phòng / Căn số *"
+                formControlName="number"
+                placeholder="VD: 402"
+                (input)="clearDuplicate()" /><small
+                class="error"
+                *ngIf="form.controls.number.hasError('duplicate')"
+                >Số căn đã tồn tại trong tòa nhà.</small
+              ><app-form-error
+                *ngIf="!form.controls.number.hasError('duplicate')"
+                [control]="form.controls.number"
+            /></label>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="section-heading">
+          <div class="section-title">
+            <span class="section-icon"><app-icon name="wallet" /></span>
+            <div>
+              <h3>2. Thông số, Giá thuê &amp; Chi phí sinh hoạt</h3>
+              <p>Minh bạch giá niêm yết và chính sách ký quỹ.</p>
+            </div>
+          </div>
+        </div>
+        <label class="field"
+          ><span>Địa chỉ chính xác *</span
+          ><input
+            aria-label="Địa chỉ chính xác *"
+            formControlName="address"
+            placeholder="Địa chỉ đầy đủ của căn phòng" /><app-form-error
+            [control]="form.controls.address"
+        /></label>
+        <div class="grid three form-row">
+          <label class="field price-field"
+            ><span>Giá thuê / tháng (VND) *</span
+            ><input
+              type="number"
+              min="1"
+              aria-label="Giá thuê / tháng (VND) *"
+              formControlName="price" /><small
+              >{{ form.controls.price.value | number }} đ / tháng</small
+            ><app-form-error [control]="form.controls.price" /></label
+          ><label class="field"
+            ><span>Tiền cọc bảo chứng (VND) *</span
+            ><input
+              type="number"
+              min="1"
+              aria-label="Tiền cọc bảo chứng (VND) *"
+              formControlName="deposit"
+            /><app-form-error [control]="form.controls.deposit" /><button
+              type="button"
+              class="text-action"
+              (click)="form.controls.deposit.setValue(form.controls.price.value)"
+            >
+              Cọc bằng 1 tháng tiền phòng
+            </button></label
+          ><label class="field"
+            ><span>Số người tối đa *</span
+            ><input
+              type="number"
+              min="1"
+              max="20"
+              aria-label="Số người tối đa *"
+              formControlName="capacity" /><app-form-error [control]="form.controls.capacity"
+          /></label>
+        </div>
+        <div class="grid two form-row">
+          <label class="field"
+            ><span>Diện tích sử dụng thực tế (m²) *</span
+            ><input
+              type="number"
+              min="1"
+              step="0.1"
+              aria-label="Diện tích sử dụng thực tế (m²) *"
+              formControlName="area" /><app-form-error [control]="form.controls.area" /></label
+          ><label class="field"
+            ><span>Trạng thái phòng</span
+            ><select aria-label="Trạng thái phòng" formControlName="status">
+              <option value="AVAILABLE">Đang trống / Mở đón khách</option>
+              <option value="MAINTENANCE">Bảo trì / Sửa chữa</option>
+              <option *ngIf="existing?.status === 'HELD'" value="HELD">Đang giữ cọc</option>
+              <option *ngIf="existing?.status === 'RENTED'" value="RENTED">
+                Đã cho thuê
+              </option></select
+            ><small *ngIf="form.controls.status.disabled"
+              >Trạng thái được giữ theo giao dịch hiện có.</small
+            ></label
+          >
+        </div>
+        <div class="fee-box">
+          <h4><app-icon name="building" [size]="15" />Định mức biểu phí sinh hoạt hàng tháng</h4>
+          <div class="fee-grid">
+            <label class="field" *ngFor="let fee of feeFields"
+              ><span>{{ fee.label }}</span
+              ><input type="number" min="0" [formControlName]="fee.key" /><small>{{
+                fee.unit
+              }}</small
+              ><app-form-error [control]="form.get(fee.key)"
+            /></label>
+            <div class="internet-fee">
+              <span>Internet Mesh SV</span><strong>MIỄN PHÍ</strong
+              ><small>Theo gói dịch vụ của tòa nhà</small>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="section-heading">
+          <div class="section-title">
+            <span class="section-icon"><app-icon name="check" /></span>
+            <div>
+              <h3>3. Tiện nghi &amp; Nội thất bàn giao</h3>
+              <p>Chọn các tiện nghi có sẵn trong phòng.</p>
+            </div>
+          </div>
+          <div class="row">
+            <button
+              type="button"
+              class="text-action"
+              (click)="selectedAmenities = amenities.slice()"
+            >
+              Chọn tất cả</button
+            ><button type="button" class="text-action" (click)="selectedAmenities = []">
+              Bỏ chọn
+            </button>
+          </div>
+        </div>
+        <div class="amenity-picker">
+          <label *ngFor="let item of amenities" [class.selected]="selectedAmenities.includes(item)"
+            ><input
+              type="checkbox"
+              [checked]="selectedAmenities.includes(item)"
+              (change)="toggle(item)"
+            />{{ item }}</label
+          >
+        </div>
+        <div class="legacy-amenities" *ngIf="isEdit">
+          <span class="badge" *ngFor="let item of selectedAmenities">{{ item }}</span>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="section-heading">
+          <div class="section-title">
+            <span class="section-icon"><app-icon name="file" /></span>
+            <div>
+              <h3>4. Mô tả chi tiết phòng &amp; Điểm nổi bật</h3>
+              <p>Giới thiệu không gian sống và tiện ích xung quanh.</p>
+            </div>
+          </div>
+        </div>
+        <label class="field"
+          ><span>Nội dung giới thiệu *</span
+          ><textarea
+            aria-label="Nội dung giới thiệu *"
+            formControlName="description"
+            rows="8"
+            placeholder="Mô tả ánh sáng, tiện nghi, khoảng cách đến trường và giao thông..."
+          ></textarea
+          ><app-form-error [control]="form.controls.description"
+        /></label>
+        <div class="description-suggestions">
+          <span>Gợi ý chèn nhanh:</span
+          ><button
+            type="button"
+            class="badge blue"
+            (click)="insertSuggestion('Gần khu đô thị ĐHQG TP.HCM, thuận tiện đi học.')"
+          >
+            + Gần ĐHQG TP.HCM</button
+          ><button
+            type="button"
+            class="badge blue"
+            (click)="insertSuggestion('Giờ giấc tự do, không chung chủ.')"
+          >
+            + Giờ giấc tự do</button
+          ><button
+            type="button"
+            class="badge blue"
+            (click)="insertSuggestion('Có hầm để xe và khóa cửa an toàn.')"
+          >
+            + Tiện ích tòa nhà
+          </button>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="section-heading">
+          <div class="section-title">
+            <span class="section-icon"><app-icon name="image" /></span>
+            <div>
+              <h3>5. Hình ảnh phòng thực tế</h3>
+              <p>Tối thiểu 3 ảnh để đăng · Tải ảnh phòng lên máy chủ.</p>
+            </div>
+          </div>
+          <span class="badge">{{ images().length }} / 15 ảnh</span>
+        </div>
+        <app-admin-room-photo-editor
+          [urls]="images()"
+          [compact]="true"
+          (urlsChange)="images.set($event)"
+          (message)="toast = $event"
+        />
+      </section>
+    </div>
+    <aside class="edit-preview" *ngIf="isEdit">
+      <section class="panel">
+        <div class="section-heading">
+          <h3>Quản lý hình ảnh đính kèm</h3>
+          <app-icon name="image" />
+        </div>
+        <button type="button" class="preview-cover" (click)="preview = roomPreview">
+          <img
+            [src]="images()[0] || '/assets/placeholders/room-placeholder.svg'"
+            alt="Ảnh bìa phòng đang chỉnh sửa"
+            appImageFallback
+          /><span class="badge blue">☆ Ảnh bìa chính</span>
+        </button>
+        <div class="mini-photos">
+          <button
+            type="button"
+            *ngFor="let url of images().slice(1, 5)"
+            (click)="preview = roomPreview"
+          >
+            <img [src]="url" alt="Ảnh phòng đính kèm" appImageFallback />
+          </button>
+        </div>
+        <a class="btn" [routerLink]="['/admin/rooms', roomId, 'images']">Mở thư viện ảnh</a
+        ><small>Các thay đổi chưa lưu trong form sẽ được bỏ khi chuyển trang.</small>
+      </section>
+      <section class="panel">
+        <h3>Vị trí &amp; Khuôn viên</h3>
+        <p>{{ property?.name }}<br />{{ form.controls.address.value }}</p>
+        <p *ngIf="property?.lat != null && property?.lng != null">
+          Tọa độ: {{ property?.lat }}, {{ property?.lng }}
+        </p>
+        <p *ngIf="property?.lat == null || property?.lng == null">Chưa có tọa độ.</p>
+      </section>
+    </aside>
+  </div>
+  <p class="notice error" *ngIf="error()" role="alert">{{ error() }}</p>
+  <footer class="room-footer">
+    <span
+      >* Hoàn thiện các trường bắt buộc trước khi đăng phòng.<br />Dữ liệu được lưu trên máy
+      chủ.</span
+    >
+    <div class="actions">
+      <a class="btn" routerLink="/admin/rooms">Hủy bỏ / Quay lại</a
+      ><button
+        type="button"
+        class="btn"
+        (click)="saveDraft()"
+        *ngIf="!isEdit"
+        [disabled]="saving()"
+      >
+        Lưu bản nháp</button
+      ><button type="submit" class="btn teal" [disabled]="saving()">
+        {{ saving() ? 'Đang lưu...' : isEdit ? 'Cập nhật thay đổi' : 'Lưu & Đăng phòng' }}
+      </button>
+    </div>
+  </footer>
+</form>
+<app-admin-room-preview *ngIf="preview" [room]="preview" (closed)="preview = undefined" />
+<app-toast [message]="toast" (closed)="toast = ''" />

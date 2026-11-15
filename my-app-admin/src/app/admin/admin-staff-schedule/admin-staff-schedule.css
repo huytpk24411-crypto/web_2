@@ -1,0 +1,345 @@
+/* Shared HR theme: ../staff-theme.css. */
+
+.schedule-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border-bottom: 1px solid var(--line);
+}
+.schedule-tabs button {
+  padding: 12px 24px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+}
+.schedule-tabs button.active {
+  color: var(--primary-dark);
+  background: var(--soft);
+}
+.staff-page button:focus-visible,
+.staff-page input:focus-visible,
+.staff-page select:focus-visible,
+.staff-page textarea:focus-visible,
+.matrix-scroll:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+.schedule-tabs button:hover {
+  color: var(--primary-dark);
+}
+.staff-page .staff-schedule-toolbar {
+  justify-content: space-between;
+}
+.staff-page .staff-matrix-panel {
+  padding: 20px;
+}
+.staff-page .staff-matrix {
+  border-spacing: 8px;
+  table-layout: fixed;
+  min-width: 1150px;
+}
+.staff-page .staff-matrix th:first-child {
+  width: 208px;
+  min-width: 208px;
+  background: var(--surface);
+}
+.staff-page .staff-matrix thead th {
+  background: var(--soft);
+  padding: 14px 8px;
+  font-weight: 600;
+}
+.staff-page .staff-matrix thead small {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.staff-page .staff-matrix .staff-person {
+  align-items: flex-start;
+  margin: 8px 0;
+}
+.staff-page .staff-matrix .staff-person small {
+  margin-top: 5px;
+  font-size: 11px;
+}
+.staff-page .staff-matrix .week-count {
+  color: var(--primary-dark);
+}
+.matrix-help {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 10px 0;
+}
+.avatar-initial {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+  border-radius: var(--radius);
+  background: var(--soft);
+  color: var(--primary-dark);
+}
+.matrix-half {
+  min-height: 104px;
+  margin-bottom: 8px;
+}
+.assignment-slot {
+  position: relative;
+}
+.staff-page .matrix-assignment {
+  width: 100%;
+  min-width: 0;
+  min-height: 104px;
+  margin: 0;
+  padding: 12px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--primary-dark);
+  color: var(--surface);
+  font-size: 12px;
+  gap: 5px;
+}
+.staff-page .matrix-assignment.afternoon {
+  background: color-mix(in srgb, var(--primary-dark) 14%, var(--surface));
+  color: var(--primary-dark);
+}
+.staff-page .matrix-assignment:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--primary);
+}
+.staff-page .matrix-assignment small {
+  font-size: 11px;
+  line-height: 1.4;
+}
+.auto-badge {
+  align-self: flex-start;
+  border: 1px solid currentColor;
+  border-radius: var(--radius);
+  padding: 2px 6px;
+  font-size: 10px;
+}
+/* Small delete chip tucked inside the card's top-right corner; fades in on hover/focus. */
+.remove-assignment {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 18%);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
+  z-index: 3;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+.matrix-assignment.afternoon + .remove-assignment,
+.assignment-slot:has(.matrix-assignment.afternoon) .remove-assignment {
+  background: color-mix(in srgb, var(--primary-dark) 10%, transparent);
+  color: var(--primary-dark);
+}
+.assignment-slot:hover .remove-assignment,
+.assignment-slot:focus-within .remove-assignment {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+/* Same specificity as the afternoon rule above and declared later, so hover turns red on every card. */
+.assignment-slot:has(.matrix-assignment) .remove-assignment:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.remove-assignment:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+  box-shadow: 0 0 0 4px var(--accent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .remove-assignment {
+    transition: none;
+  }
+}
+.empty-half-wrapper {
+  display: block;
+}
+.matrix-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 104px;
+  padding: 12px 8px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: var(--soft);
+  color: var(--primary-dark);
+  font-size: 12px;
+}
+.matrix-empty small {
+  color: var(--muted);
+}
+.matrix-empty:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+.matrix-empty:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+.assignment-popover {
+  position: fixed;
+  z-index: 80;
+  width: 340px;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-lg);
+  font-size: 13px;
+}
+.assignment-popover h3 {
+  font-size: 16px;
+}
+.assignment-popover p,
+.assignment-popover h4 {
+  margin: 10px 0;
+}
+.popover-tasks {
+  padding: 0;
+  list-style: none;
+}
+.popover-tasks li {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+.data-chip {
+  color: var(--muted);
+  font-size: 11px;
+  border-radius: 18px;
+  background: var(--soft);
+  padding: 4px 11px;
+  white-space: nowrap;
+}
+
+.period-state,
+.period-manager {
+  padding: 20px;
+}
+.period-state > .row {
+  margin-bottom: 12px;
+}
+.period-table-scroll {
+  overflow-x: auto;
+}
+.period-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.period-table th,
+.period-table td {
+  padding: 10px 8px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--line);
+}
+.period-table tbody tr {
+  height: 60px;
+}
+.period-table th {
+  color: var(--muted);
+  background: var(--soft);
+}
+.period-table .number {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.period-table td:first-child {
+  white-space: nowrap;
+}
+.period-table td:nth-child(2) {
+  min-width: 160px;
+  overflow-wrap: anywhere;
+}
+.period-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 20px;
+}
+.period-row-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 6px;
+  white-space: nowrap;
+}
+.period-row-actions .btn {
+  flex: none;
+}
+.finalized-toggle {
+  margin-bottom: 12px;
+}
+.period-delete-note {
+  margin: 12px 0 0;
+  font-size: 12px;
+}
+.staff-page .btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+.period-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+.period-action {
+  flex: 1;
+  min-width: 80px;
+}
+.action-reason {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.period-rename {
+  display: grid;
+  gap: 10px;
+}
+.field-error {
+  margin: 0;
+  color: var(--accent);
+  font-size: 12px;
+}
+.period-table-scroll:focus-visible,
+.task-editor input:focus-visible,
+.assignee-options input:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

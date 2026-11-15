@@ -1,0 +1,320 @@
+<button
+  class="emp-btn no-print"
+  *ngIf="shifts.api.error()"
+  (click)="reload(true)"
+  [disabled]="busy || tasksLoading() || shifts.api.loading()"
+>
+  Tải lại dữ liệu
+</button>
+<p class="error" role="alert" *ngIf="error || shifts.api.error()">
+  {{ error || shifts.api.error() }}
+</p>
+<p role="status" *ngIf="tasksLoading() || shifts.api.loading()">Đang tải công việc…</p>
+<p class="emp-alert emp-success" role="status" *ngIf="success()">{{ success() }}</p>
+<div class="emp-alert emp-info assignment-notice" *ngIf="assignment?.status === 'REGISTERED'">
+  <p>Chưa check-in — bạn có thể xem trước công việc; đánh dấu hoàn thành sau khi check-in</p>
+  <a class="emp-btn emp-primary" [routerLink]="['/employee/shifts', id, 'check-in']"
+    >Check-in đầu ca</a
+  >
+</div>
+<div
+  class="emp-alert emp-info assignment-notice"
+  *ngIf="assignment?.status === 'COMPLETED' || assignment?.status === 'ABSENT'"
+>
+  Ca đã kết thúc — lịch sử công việc
+</div>
+<ng-container *ngIf="assignment?.status === 'IN_PROGRESS'">
+  <div class="emp-card shift-banner" *ngIf="attendance.get(id) as record">
+    <app-icon name="check" [size]="28" />
+    <div>
+      <span class="emp-badge emp-success"
+        >Check-in thành công {{ record.checkInAt | date: 'HH:mm' }}</span
+      ><small class="muted"> Mã ca: {{ id }}</small>
+      <strong
+        >✓ Chúc {{ auth.account()?.name }} một ca làm việc tràn đầy năng lượng &amp; đạt nhiều doanh
+        số!</strong
+      >
+    </div>
+    <a class="emp-btn emp-primary" [routerLink]="['/employee/shifts', id, 'check-out']"
+      >Check-out nhanh</a
+    >
+  </div>
+  <div class="emp-step-strip">
+    <div class="emp-step emp-done">
+      <b class="emp-step-number">✓</b
+      ><span>Check-in đầu ca<small>Xác nhận ảnh minh chứng</small></span>
+    </div>
+    <div class="emp-step emp-active" aria-current="step">
+      <b class="emp-step-number">2</b
+      ><span>Trong ca & To-do<small>Thực hiện công việc</small></span>
+    </div>
+    <div class="emp-step emp-locked" aria-disabled="true">
+      <b class="emp-step-number">3</b
+      ><span>Check-out cuối ca<small>Bàn giao & kết thúc</small></span>
+    </div>
+  </div>
+</ng-container>
+<div class="emp-grid" *ngIf="assignment as a; else missing">
+  <div class="emp-stack">
+    <section class="emp-card timer-card" *ngIf="a.status === 'IN_PROGRESS' && (clock$ | async)">
+      <span class="eyebrow">BỘ ĐẾM THỜI GIAN LÀM VIỆC</span>
+      <h2>{{ shift?.label }} ({{ shift?.start }} – {{ shift?.end }})</h2>
+      <div class="timer-grid">
+        <div class="soft-box">
+          <small class="muted">Thời gian làm việc ghi nhận</small>
+          <div class="elapsed emp-mono">{{ elapsed }}</div>
+          <small class="muted">Đã check-in lúc</small>
+          <h2 class="blue">
+            {{ attendance.get(id)?.checkInAt | date: 'HH:mm:ss' }}
+          </h2>
+          <small class="muted">{{ shift?.date | date: 'dd/MM/yyyy' }}</small>
+        </div>
+        <div>
+          <div class="row between small">
+            <strong>Tiến độ thời gian ca</strong><strong class="blue">{{ timePercent }}%</strong>
+          </div>
+          <progress
+            class="shift-progress"
+            [value]="timePercent"
+            max="100"
+            aria-label="Tiến độ thời gian ca"
+          ></progress>
+          <p class="tip">{{ shift?.start }} (Bắt đầu) — {{ shift?.end }} (Hết ca)</p>
+        </div>
+      </div>
+    </section>
+    <section class="emp-card">
+      <div class="section-heading">
+        <div>
+          <h3>Công việc của ca</h3>
+          <p class="muted small">Trạng thái cá nhân tách biệt với tiến độ chung của nhóm.</p>
+        </div>
+        <span class="emp-badge emp-info"
+          >Hoàn tất: {{ done }}/{{ allTasks().length }} việc · {{ percent }}%</span
+        >
+      </div>
+      <label class="field"
+        ><span>Tìm nhiệm vụ</span
+        ><input [(ngModel)]="filter" placeholder="Tìm nhanh đầu việc cần xử lý..."
+      /></label>
+
+      <ng-container *ngFor="let task of list; trackBy: trackTask">
+        <article class="emp-card viewing-task" *ngIf="task.kind === 'VIEWING'; else generalTask">
+          <div class="emp-card-head">
+            <div>
+              <span class="emp-badge emp-info">Dẫn khách xem phòng</span>
+              <h3>{{ task.title }}</h3>
+            </div>
+            <span
+              class="emp-badge"
+              [class.emp-success]="task.status === 'DONE'"
+              [class.emp-info]="task.status === 'IN_PROGRESS'"
+              [class.emp-warn]="
+                task.status === 'TODO' ||
+                task.status === 'WAITING_ADMIN' ||
+                task.status === 'PENDING_CONFIRM'
+              "
+              [class.emp-neutral]="task.status === 'CANCELLED'"
+              >{{ taskStatus(task.status) }}</span
+            >
+          </div>
+          <span class="emp-badge emp-neutral" *ngIf="task.mine?.current === false">{{
+            task.returnedToAdmin ? 'Đã chuyển về quản trị viên' : 'Đã chuyển sang ca khác'
+          }}</span>
+          <p class="task-description" *ngIf="task.description">{{ task.description }}</p>
+          <ng-container *ngIf="task.viewing as viewing">
+            <p class="viewing-time">
+              <strong
+                >{{ viewing.startTime | slice: 0 : 5 }}–{{ viewing.endTime | slice: 0 : 5 }}
+                {{ viewing.date | date: 'dd/MM/yyyy' }}</strong
+              >
+            </p>
+            <dl class="viewing-details">
+              <div>
+                <dt>Khách xem</dt>
+                <dd>{{ viewing.viewerName }}</dd>
+              </div>
+              <div>
+                <dt>Số điện thoại</dt>
+                <dd>
+                  <a [href]="'tel:' + viewing.viewerPhone">{{ viewing.viewerPhone }}</a>
+                </dd>
+              </div>
+              <div>
+                <dt>Số người</dt>
+                <dd>{{ viewing.peopleCount }}</dd>
+              </div>
+              <div>
+                <dt>Trạng thái lịch xem</dt>
+                <dd>
+                  <span class="emp-badge emp-info">{{ viewingStatus(viewing.status) }}</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Ghi chú khách</dt>
+                <dd class="task-description">{{ viewing.note || 'Không có ghi chú' }}</dd>
+              </div>
+            </dl>
+            <button
+              type="button"
+              class="emp-btn emp-primary"
+              *ngIf="canConfirm(task)"
+              [disabled]="busy || tasksLoading() || shifts.api.loading()"
+              (click)="confirmViewing(task)"
+            >
+              Xác nhận lịch với khách
+            </button>
+            <section class="viewing-room" *ngFor="let room of viewing.rooms; trackBy: trackRoom">
+              <h4>{{ room.code }} · {{ room.name }}</h4>
+              <p class="muted">{{ room.address }}</p>
+              <p>
+                <span
+                  class="emp-badge"
+                  [class.emp-success]="room.viewStatus === 'DA_XEM'"
+                  [class.emp-neutral]="room.viewStatus !== 'DA_XEM'"
+                  >{{ room.viewStatus === 'DA_XEM' ? 'Đã xem' : 'Chưa xem' }}</span
+                >
+              </p>
+              <label class="field"
+                ><span>Kết quả xem phòng {{ room.code }}</span>
+                <select
+                  [(ngModel)]="draft(room).viewStatus"
+                  [disabled]="busy || !canRecord(task) || shifts.api.loading()"
+                >
+                  <option value="CHUA_XEM">Chưa xem</option>
+                  <option value="DA_XEM">Đã xem</option>
+                </select>
+              </label>
+              <label class="field"
+                ><span>Ghi chú phòng {{ room.code }} (tối đa 1000 ký tự)</span>
+                <textarea
+                  [(ngModel)]="draft(room).note"
+                  maxlength="1000"
+                  rows="2"
+                  [disabled]="busy || !canRecord(task) || shifts.api.loading()"
+                ></textarea>
+              </label>
+              <p class="error" role="alert" *ngIf="draft(room).note.length > 1000">
+                Ghi chú phòng không quá 1000 ký tự.
+              </p>
+              <button
+                type="button"
+                class="emp-btn emp-outline"
+                (click)="saveRoom(task, room)"
+                [disabled]="
+                  busy || !canRecord(task) || shifts.api.loading() || draft(room).note.length > 1000
+                "
+              >
+                Lưu kết quả phòng
+              </button>
+            </section>
+            <p class="muted" *ngIf="!viewing.rooms.length">Không có phòng trong lịch xem.</p>
+            <button
+              type="button"
+              class="emp-btn emp-primary"
+              *ngIf="viewing.status === 'DA_XAC_NHAN'"
+              [disabled]="busy || !canRecord(task) || shifts.api.loading()"
+              (click)="completeViewing(task)"
+            >
+              Hoàn tất dẫn xem
+            </button>
+          </ng-container>
+        </article>
+        <ng-template #generalTask>
+          <div
+            class="task-row"
+            [class.done]="task.mine?.personalStatus === 'DONE'"
+            [class.in-progress]="task.status === 'IN_PROGRESS'"
+          >
+            <label
+              ><input
+                type="checkbox"
+                [checked]="task.mine?.personalStatus === 'DONE'"
+                (change)="toggle(task.id)"
+                [disabled]="busy || tasksLoading() || shifts.api.loading() || !canEdit(task)"
+              /><span
+                ><strong>{{ task.title }}</strong
+                ><small
+                  >{{ task.assigneeIds.length }} người phụ trách • Cá nhân:
+                  {{ task.mine?.personalStatus === 'DONE' ? 'Đã xong' : 'Chưa xong' }}</small
+                ><small *ngIf="task.description" class="task-description">{{
+                  task.description
+                }}</small
+                ><small *ngIf="task.mine?.current === false"
+                  ><span class="emp-badge emp-neutral">{{
+                    task.returnedToAdmin ? 'Đã chuyển về quản trị viên' : 'Đã chuyển sang ca khác'
+                  }}</span></small
+                ><small *ngIf="task.carriedFrom" class="blue"
+                  >Được bàn giao từ ca trước</small
+                ></span
+              ></label
+            ><span
+              class="emp-badge"
+              [class.emp-success]="task.status === 'DONE'"
+              [class.emp-info]="task.status === 'IN_PROGRESS'"
+              [class.emp-warn]="
+                task.status === 'TODO' ||
+                task.status === 'WAITING_ADMIN' ||
+                task.status === 'PENDING_CONFIRM'
+              "
+              [class.emp-neutral]="task.status === 'CANCELLED'"
+              >{{ taskStatus(task.status) }}</span
+            >
+          </div>
+        </ng-template>
+      </ng-container>
+      <div class="empty" *ngIf="!list.length && !tasksLoading() && !shifts.api.loading()">
+        Không có công việc phù hợp.
+      </div>
+      <a
+        *ngIf="a.status === 'IN_PROGRESS'"
+        class="emp-btn emp-primary emp-block"
+        [routerLink]="['/employee/shifts', id, 'check-out']"
+        ><app-icon name="check" [size]="15" /> CHECK-OUT &amp; BÀN GIAO CA</a
+      >
+    </section>
+  </div>
+  <aside class="emp-stack">
+    <section class="emp-card">
+      <h3><app-icon name="calendar" /> Thông tin ca trực</h3>
+      <div class="detail-list">
+        <div>
+          <span>Nhân viên</span><strong>{{ auth.account()?.name }}</strong>
+        </div>
+        <div>
+          <span>Ngày làm việc</span><strong>{{ shift?.date | date: 'dd/MM/yyyy' }}</strong>
+        </div>
+        <div>
+          <span>Ca làm</span><strong>{{ shift?.label }}</strong>
+        </div>
+        <div><span>Trạng thái</span><app-status-badge [status]="a.status" /></div>
+      </div>
+    </section>
+    <div class="emp-alert emp-warn" *ngIf="a.status === 'IN_PROGRESS'">
+      <app-icon name="clock" />
+      <div>
+        <strong>Lưu ý check-out cuối ca</strong>
+        <p>Giờ kết thúc ca: {{ shift?.end }}.</p>
+        Việc chưa xong sẽ chuyển về quản trị viên để giao lại.
+      </div>
+    </div>
+    <section class="emp-card">
+      <div class="emp-card-head">
+        <h3>Lịch sử gần nhất</h3>
+        <a routerLink="/employee/shifts">Xem tất cả</a>
+      </div>
+      <div class="history-item" *ngFor="let item of shifts.mine().slice(-4)">
+        <strong>{{ shifts.shift(item.shiftId)?.date | date: 'dd/MM/yyyy' }}</strong
+        ><small>{{ shifts.shift(item.shiftId)?.label }}</small
+        ><app-status-badge [status]="item.status" />
+      </div>
+    </section>
+  </aside>
+</div>
+<ng-template #missing
+  ><div class="empty">
+    <h2>Không tìm thấy ca làm của bạn</h2>
+    <p>Chọn một lần phân ca đã đăng ký để tiếp tục.</p>
+    <a class="emp-btn emp-primary" routerLink="/employee/shifts">Xem ca làm của tôi</a>
+  </div></ng-template
+>

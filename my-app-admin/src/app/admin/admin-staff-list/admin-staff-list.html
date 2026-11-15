@@ -1,0 +1,352 @@
+<div class="staff-page" data-view="list" [class.has-error]="!!error">
+  <p class="notice" role="status" *ngIf="repository.loading() || repository.shiftApi.loading()">
+    Đang tải dữ liệu từ máy chủ…
+  </p>
+  <div class="staff-tabs">
+    <a
+      routerLink="/admin/staff"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      ><app-icon name="users" [size]="17" /> Danh sách nhân sự
+      <span>{{ employees.length }}</span></a
+    >
+    <a routerLink="/admin/staff/schedule" routerLinkActive="active"
+      ><app-icon name="calendar" [size]="17" /> Lịch làm việc &amp; Ca trực</a
+    >
+    <a routerLink="/admin/staff/performance" routerLinkActive="active"
+      ><app-icon name="chart" [size]="17" /> Theo dõi hiệu suất</a
+    >
+    <div class="staff-tabs-spacer"></div>
+    <span class="data-chip">● Dữ liệu từ máy chủ</span>
+  </div>
+
+  <ng-template #errorBanner
+    ><div class="notice error staff-error-banner" *ngIf="error" role="alert">
+      <span class="error-symbol">!</span>
+      <div>
+        <strong>Chưa thể thực hiện thao tác</strong>
+        <p>{{ error }}</p>
+      </div>
+    </div></ng-template
+  >
+  <ng-container><ng-container *ngTemplateOutlet="errorBanner" /></ng-container>
+  <p class="notice error" *ngIf="repository.catalogApi.error()" role="alert">
+    {{ repository.catalogApi.error() }}
+  </p>
+  <div class="staff-toast" *ngIf="toast" role="status">
+    <span class="toast-check"><app-icon name="check" [size]="22" /></span>
+    <div>
+      <strong>{{
+        toast.startsWith('Xóa thành công') ? 'Xóa thành công!' : 'Thao tác thành công'
+      }}</strong>
+      <p>{{ toast }}</p>
+    </div>
+    <button class="icon-btn" aria-label="Đóng thông báo" (click)="toast = ''">
+      <app-icon name="close" [size]="16" />
+    </button>
+  </div>
+
+  <header class="staff-page-title">
+    <div>
+      <h1>Quản lý Đội ngũ Nhân sự &amp; Ca trực</h1>
+      <span class="badge blue"
+        >● Đang hoạt động: {{ activeCount }}/{{ employees.length }} nhân viên</span
+      >
+      <p>
+        Phân bổ nhân lực quản lý tòa nhà, điểm danh ca trực và giám sát<br />hiệu suất đội ngũ
+        iHOUZZ Uni.
+      </p>
+    </div>
+    <div class="row">
+      <button class="btn" type="button" (click)="exportCsv()">
+        <app-icon name="download" [size]="17" /> Xuất danh sách CSV
+      </button>
+      <button class="btn primary" type="button" (click)="navigate('new')">
+        <app-icon name="plus" [size]="15" /> Thêm nhân sự mới
+      </button>
+    </div>
+  </header>
+  <section class="panel staff-filter-panel">
+    <div class="staff-filters">
+      <input
+        class="control"
+        [(ngModel)]="query"
+        (ngModelChange)="page = 1; selectedIds.clear()"
+        placeholder="Tìm tên, mã, điện thoại hoặc email"
+        aria-label="Tìm nhân sự"
+      />
+      <select
+        class="control"
+        [(ngModel)]="positionFilter"
+        (ngModelChange)="page = 1; selectedIds.clear()"
+        aria-label="Lọc chức vụ"
+      >
+        <option value="">Tất cả chức vụ</option>
+        <option *ngFor="let item of positions" [value]="item">{{ item }}</option>
+      </select>
+      <select
+        class="control"
+        [(ngModel)]="locationFilter"
+        (ngModelChange)="page = 1; selectedIds.clear()"
+        aria-label="Lọc cơ sở"
+      >
+        <option value="">Tất cả cơ sở</option>
+        <option *ngFor="let location of locations" [value]="location.id">
+          {{ location.name }}
+        </option>
+      </select>
+      <select
+        class="control"
+        [(ngModel)]="statusFilter"
+        (ngModelChange)="page = 1; selectedIds.clear()"
+        aria-label="Lọc trạng thái"
+      >
+        <option value="">Tất cả trạng thái</option>
+        <option value="ACTIVE">Đang hoạt động</option>
+        <option value="ON_LEAVE">Tạm nghỉ</option>
+        <option value="INACTIVE">Ngừng hoạt động</option>
+      </select>
+      <button class="btn" type="button" (click)="resetFilters()">Xóa lọc</button>
+    </div>
+  </section>
+  <div class="staff-list-stats">
+    <article>
+      <span class="stat-icon"><app-icon name="shield" [size]="22" /></span>
+      <div>
+        <small>Tỷ lệ đúng giờ · dữ liệu máy chủ</small
+        ><strong>{{
+          performanceTotals.attendanceCount
+            ? ((performanceTotals.onTime / performanceTotals.attendanceCount) * 100
+                | number: '1.0-1') + '%'
+            : 'Chưa có chấm công'
+        }}</strong>
+      </div>
+    </article>
+    <article>
+      <span class="stat-icon red"><app-icon name="users" [size]="22" /></span>
+      <div>
+        <small>Nhân sự đang hoạt động</small
+        ><strong>{{ activeCount }} / {{ employees.length }} nhân viên</strong>
+      </div>
+    </article>
+    <article>
+      <span class="stat-icon lilac"><app-icon name="clock" [size]="22" /></span>
+      <div>
+        <small>Ca trực tiếp theo</small
+        ><strong>{{ nextShift ? nextShift.start + ' – ' + nextShift.label : 'Chưa có ca' }}</strong>
+      </div>
+    </article>
+  </div>
+  <section class="panel staff-list-panel">
+    <div class="staff-table-tools">
+      <span>{{
+        selectedIds.size ? selectedIds.size + ' hồ sơ được chọn' : 'Danh sách nhân sự'
+      }}</span
+      ><button *ngIf="selectedIds.size" class="btn sm" (click)="exportCsv(true)">
+        Xuất hồ sơ đã chọn
+      </button>
+      <select class="control" [(ngModel)]="sortBy" aria-label="Sắp xếp nhân sự">
+        <option value="name">Sắp xếp: Họ tên</option>
+        <option value="code">Sắp xếp: Mã nhân sự</option>
+        <option value="position">Sắp xếp: Chức vụ</option>
+      </select>
+    </div>
+    <div class="table-wrap staff-table-wrap">
+      <table class="data-table staff-table">
+        <thead>
+          <tr>
+            <th class="selection-cell">
+              <input
+                type="checkbox"
+                aria-label="Chọn các hồ sơ trên trang"
+                [checked]="allSelected"
+                (change)="selectPage()"
+              />
+            </th>
+            <th>Mã NV</th>
+            <th>Nhân viên</th>
+            <th>Chức vụ &amp; Địa bàn</th>
+            <th>Số điện thoại</th>
+            <th>Email nội bộ</th>
+            <th>Trạng thái</th>
+            <th>Hiệu suất</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of pagedEmployees">
+            <td class="selection-cell">
+              <input
+                type="checkbox"
+                [attr.aria-label]="'Chọn ' + person.fullName"
+                [checked]="selectedIds.has(person.id)"
+                (change)="toggleSelection(person.id)"
+              />
+            </td>
+            <td>
+              <span class="badge blue">{{ person.employeeCode }}</span>
+            </td>
+            <td>
+              <div class="staff-person">
+                <img appImageFallback [src]="person.avatar" [alt]="person.fullName" />
+                <div>
+                  <strong>{{ person.fullName }}</strong
+                  ><small
+                    >{{
+                      person.gender === 'FEMALE' ? 'Nữ' : person.gender === 'MALE' ? 'Nam' : 'Khác'
+                    }}
+                    · Nhân sự</small
+                  >
+                </div>
+              </div>
+            </td>
+            <td>
+              <strong>{{ person.position }}</strong
+              ><small
+                >{{ repository.contractTypeLabel(person.contractType) }} ·
+                {{ ngLocation(person.workLocationId) }}</small
+              >
+            </td>
+            <td>
+              <a [href]="'tel:' + person.phone">{{ person.phone }}</a>
+            </td>
+            <td class="staff-email">{{ person.email }}</td>
+            <td>
+              <span
+                class="badge"
+                [class.green]="person.status === 'ACTIVE'"
+                [class.amber]="person.status === 'ON_LEAVE'"
+                [class.gray]="person.status === 'INACTIVE'"
+                >{{ statusLabel(person.status) }}</span
+              >
+            </td>
+            <td class="staff-row-performance">
+              <strong>{{
+                repository.metrics(person.id).attendanceCount
+                  ? repository.metrics(person.id).onTimeRate + '%'
+                  : '—'
+              }}</strong
+              ><small>{{ repository.metrics(person.id).completed }} ca hoàn thành</small>
+            </td>
+            <td>
+              <div class="row staff-actions">
+                <button
+                  class="icon-btn"
+                  type="button"
+                  (click)="openDetails(person)"
+                  [attr.aria-label]="'Xem ' + person.fullName"
+                >
+                  <app-icon name="eye" [size]="15" />
+                </button>
+                <button
+                  class="icon-btn"
+                  type="button"
+                  (click)="editEmployee(person)"
+                  [attr.aria-label]="'Sửa ' + person.fullName"
+                >
+                  <app-icon name="edit" [size]="15" />
+                </button>
+                <button
+                  class="icon-btn danger-icon"
+                  type="button"
+                  (click)="openDeactivate(person, true)"
+                  [attr.aria-label]="'Xóa ' + person.fullName"
+                >
+                  <app-icon name="trash" [size]="15" />
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="empty" *ngIf="!filteredEmployees.length">
+        <h3>Không tìm thấy nhân sự</h3>
+        <p>Thử điều chỉnh bộ lọc hoặc thêm hồ sơ mới.</p>
+      </div>
+    </div>
+    <footer class="staff-pagination">
+      <span
+        >Hiển thị {{ filteredEmployees.length ? (page - 1) * pageSize + 1 : 0 }}–{{ pageEnd }} /
+        {{ filteredEmployees.length }} hồ sơ phù hợp</span
+      >
+      <div class="row">
+        <label
+          >Dòng/trang
+          <select
+            class="control"
+            [(ngModel)]="pageSize"
+            (ngModelChange)="page = 1; selectedIds.clear()"
+          >
+            <option [ngValue]="6">6</option>
+            <option [ngValue]="10">10</option>
+            <option [ngValue]="20">20</option>
+          </select></label
+        ><button class="btn sm" [disabled]="page <= 1" (click)="pageTo(page - 1)">Trước</button
+        ><button
+          *ngFor="let number of pageNumbers"
+          class="btn sm page-number"
+          [class.active]="page === number"
+          [attr.aria-label]="'Trang ' + number"
+          [attr.aria-current]="page === number ? 'page' : null"
+          (click)="pageTo(number)"
+        >
+          {{ number }}</button
+        ><button class="btn sm" [disabled]="page >= pages" (click)="pageTo(page + 1)">Tiếp</button>
+      </div>
+    </footer>
+  </section>
+  <footer class="staff-data-footer">
+    <span>● Dữ liệu từ máy chủ</span>
+  </footer>
+</div>
+
+<div
+  class="modal-backdrop"
+  *ngIf="showDeactivate && employee as person"
+  (click)="showDeactivate = false"
+>
+  <section
+    class="modal staff-confirm-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="deactivate-title"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="modal-top">
+      <span class="warning-symbol">!</span
+      ><button class="icon-btn" aria-label="Đóng xác nhận" (click)="showDeactivate = false">
+        <app-icon name="close" />
+      </button>
+    </div>
+    <h2 id="deactivate-title">Ngừng hoạt động nhân sự?</h2>
+    <div class="confirm-question">
+      Bạn có chắc chắn muốn ngừng hoạt động nhân sự
+      <b>{{ person.fullName }}</b> khỏi danh sách vận hành?
+    </div>
+    <div class="modal-person">
+      <img appImageFallback [src]="person.avatar" [alt]="person.fullName" />
+      <div>
+        <strong
+          >{{ person.fullName }} <span class="badge lilac">{{ person.employeeCode }}</span></strong
+        ><small>{{ person.position }} · {{ ngLocation(person.workLocationId) }}</small>
+      </div>
+    </div>
+    <p>Tài khoản sẽ bị khóa; hồ sơ, ca làm và lương được giữ nguyên.</p>
+    <div class="row">
+      <button class="btn" (click)="showDeactivate = false">Quay lại</button
+      ><button
+        class="btn"
+        *ngIf="deleteMode && person.status !== 'INACTIVE'"
+        (click)="deactivate()"
+      >
+        Chỉ ngừng hoạt động</button
+      ><button
+        class="btn danger-button"
+        (click)="deleteMode ? deleteEmployee() : deactivate()"
+        [disabled]="repository.catalogApi.saving()"
+      >
+        Xác nhận ngừng hoạt động
+      </button>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,58 @@
+<section class="receipt-paper">
+  <div class="row between">
+    <app-brand /><small
+      >CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM<br /><strong>Độc lập – Tự do – Hạnh phúc</strong></small
+    >
+  </div>
+  <div class="watermark">BẢN XEM TRƯỚC</div>
+  <h2>{{ title }}</h2>
+  <p class="muted small" style="text-align: center">
+    Mã tham chiếu: {{ reference || 'Chưa phát hành' }}
+  </p>
+  <div class="notice" [class.success]="confirmed">
+    {{
+      confirmed
+        ? 'Giao dịch đã được xác nhận.'
+        : 'Chưa có xác nhận thanh toán. Bản xem trước không có giá trị thu tiền.'
+    }}
+  </div>
+  <dl>
+    <dt>Bên cung cấp dịch vụ</dt>
+    <dd>CÔNG TY CP BĐS IHOUZZ UNI</dd>
+    <dt>Khách hàng</dt>
+    <dd>{{ name }}</dd>
+    <dt>Mã phòng</dt>
+    <dd>{{ roomCode }}</dd>
+    <dt>Số tiền</dt>
+    <dd class="blue">{{ amount | currency: 'VND' : 'symbol' : '1.0-0' : 'vi' }}</dd>
+    <dt>Tham chiếu thanh toán</dt>
+    <dd>{{ paymentId || 'Chưa có' }}</dd>
+    <dt>Thời điểm xác nhận</dt>
+    <dd>{{ date ? (date | date: 'dd/MM/yyyy HH:mm') : '—' }}</dd>
+  </dl>
+  <div class="divider"></div>
+  <h4>Thông tin &amp; điều khoản</h4>
+  <p>
+    Thông tin phòng và số tiền được lấy từ hồ sơ giao dịch. Biên lai chính thức phải có số chứng từ
+    do hệ thống phát hành.
+  </p>
+  <p>
+    Khoản giữ chỗ được khấu trừ một lần khi lập hồ sơ đặt cọc. Thời hạn giữ chỗ là 48 giờ kể từ xác
+    nhận thanh toán.
+  </p>
+  <p class="muted">
+    Cần xác nhận và chứng từ do hệ thống nghiệp vụ phát hành để thực hiện giao dịch thực tế.
+  </p>
+  <div class="signatures">
+    <div>
+      <strong>KHÁCH HÀNG</strong>
+      <p class="muted">(Ký, ghi rõ họ tên)</p>
+      <p class="signature">{{ name }}</p>
+    </div>
+    <div>
+      <strong>ĐẠI DIỆN IHOUZZ UNI</strong>
+      <p class="muted">(Ký, ghi rõ họ tên)</p>
+      <p class="signature">Bản xem trước</p>
+    </div>
+  </div>
+</section>

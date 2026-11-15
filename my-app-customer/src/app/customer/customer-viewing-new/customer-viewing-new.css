@@ -1,0 +1,263 @@
+.room-picker {
+  max-height: 310px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+.pick-room {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pick-room.selected {
+  border-color: var(--primary);
+  background: var(--soft);
+}
+.pick-room img {
+  width: 49px;
+  height: 48px;
+  border-radius: 4px;
+}
+.pick-room strong {
+  display: block;
+  font-size: 11px;
+}
+.pick-room small {
+  font-size: 9px;
+  color: var(--muted);
+}
+.pick-room input {
+  accent-color: var(--primary);
+}
+.selected-photo {
+  height: 230px;
+  width: 100%;
+  border-radius: 7px;
+  margin-bottom: 17px;
+}
+.viewing-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.viewing-row > div {
+  flex: 1;
+}
+.viewing-row > .row-actions {
+  flex: 0 1 auto;
+}
+.viewing-row p {
+  margin: 4px 0 0;
+}
+.scheduled-card {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  min-width: 0;
+}
+.room-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  overflow-wrap: anywhere;
+}
+.room-summary img {
+  width: 72px;
+  height: 64px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.room-summary p,
+.viewing-guide p {
+  margin: 6px 0;
+}
+.slot-group {
+  margin: 12px 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.slot-group legend {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 6px;
+}
+.slot-chip {
+  min-height: 40px;
+  padding: 6px 2px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.slot-chip:hover {
+  border-color: var(--primary);
+}
+.slot-chip.selected {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--surface);
+  font-weight: bold;
+}
+.slot-chip.unavailable {
+  opacity: 0.55;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+.slot-chip.waiting {
+  background: var(--soft);
+  color: var(--muted);
+  cursor: wait;
+}
+.slot-chip:focus-visible,
+.dismiss:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+.choice-error,
+.section-heading,
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.choice-error {
+  justify-content: space-between;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.dismiss {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.section-heading {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.actions {
+  flex-wrap: wrap;
+}
+.tabs {
+  margin: 12px 0;
+}
+.booking-success {
+  max-width: 900px;
+  margin-inline: auto;
+}
+.booking-success > h1,
+.booking-success > p {
+  text-align: center;
+}
+.booking-success h1 {
+  font-size: 26px;
+}
+.success-mark {
+  display: grid;
+  place-items: center;
+  margin: 12px auto 20px;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--surface);
+  font-size: 52px;
+  animation: success-appear var(--dur-slow) var(--ease);
+}
+.date-chip {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: var(--primary);
+  background: var(--soft);
+}
+.viewing-guide {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  background: var(--background);
+}
+.success-actions {
+  justify-content: center;
+  margin-top: 24px;
+}
+.viewing-modal {
+  width: min(680px, 100%);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  overflow-wrap: anywhere;
+}
+.viewing-note {
+  white-space: pre-wrap;
+}
+.split > form,
+.pick-room > span,
+.viewing-row > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@keyframes success-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .success-mark {
+    animation: none;
+  }
+}
+@media (max-width: 1000px) {
+  .slot-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 500px) {
+  .room-picker {
+    grid-template-columns: 1fr;
+  }
+  .viewing-row {
+    flex-wrap: wrap;
+  }
+  .viewing-row > div:first-child {
+    flex-basis: 100%;
+  }
+  .scheduled-card {
+    padding: 12px;
+  }
+  .success-actions {
+    align-items: stretch;
+  }
+  .success-actions > .btn {
+    flex: 1 1 100%;
+  }
+  .viewing-modal {
+    max-height: calc(100dvh - 24px);
+  }
+  .booking-success h1 {
+    font-size: 22px;
+  }
+}

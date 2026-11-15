@@ -1,0 +1,475 @@
+<div class="staff-page" data-view="detail" [class.has-error]="!!error">
+  <p class="notice" role="status" *ngIf="repository.loading() || repository.shiftApi.loading()">
+    Đang tải dữ liệu từ máy chủ…
+  </p>
+  <ng-template #errorBanner
+    ><div class="notice error staff-error-banner" *ngIf="error" role="alert">
+      <span class="error-symbol">!</span>
+      <div>
+        <strong>Chưa thể thực hiện thao tác</strong>
+        <p>{{ error }}</p>
+      </div>
+    </div></ng-template
+  >
+  <ng-container><ng-container *ngTemplateOutlet="errorBanner" /></ng-container>
+  <div class="staff-toast" *ngIf="toast" role="status">
+    <span class="toast-check"><app-icon name="check" [size]="22" /></span>
+    <div>
+      <strong>{{
+        toast.startsWith('Xóa thành công') ? 'Xóa thành công!' : 'Thao tác thành công'
+      }}</strong>
+      <p>{{ toast }}</p>
+    </div>
+    <button class="icon-btn" aria-label="Đóng thông báo" (click)="toast = ''">
+      <app-icon name="close" [size]="16" />
+    </button>
+  </div>
+
+  <div class="breadcrumb">
+    <a routerLink="/admin/staff">Quản lý Nhân sự &amp; Ca trực</a> ›
+    <a routerLink="/admin/staff">Danh sách nhân sự</a> ›
+    {{ selectedEmployee?.employeeCode || 'Không tìm thấy hồ sơ' }}
+  </div>
+  <section
+    class="panel staff-detail-heading"
+    *ngIf="selectedEmployee as person; else missingDetail"
+  >
+    <span class="stat-icon heading-icon"><app-icon name="user" [size]="25" /></span>
+    <div class="staff-detail-name">
+      <span class="badge blue">{{ person.employeeCode }}</span>
+      <h1><span class="profile-title-prefix">Hồ sơ Nhân viên: </span>{{ person.fullName }}</h1>
+      <p>{{ person.position }} · {{ ngLocation(person.workLocationId) }}</p>
+      <span
+        class="badge"
+        [class.green]="person.status === 'ACTIVE'"
+        [class.amber]="person.status === 'ON_LEAVE'"
+        [class.gray]="person.status === 'INACTIVE'"
+        >{{ statusLabel(person.status) }}</span
+      >
+    </div>
+    <div class="row">
+      <button
+        class="btn"
+        (click)="resetPassword()"
+        [disabled]="!repository.catalogApi.online() || repository.catalogApi.saving()"
+      >
+        Đặt lại mật khẩu
+      </button>
+      <button class="btn primary" (click)="editEmployee(person)">Sửa hồ sơ</button
+      ><button class="btn danger-button" (click)="openDeactivate(person, true)">
+        Ngừng hoạt động
+      </button>
+    </div>
+  </section>
+  <section class="panel" *ngIf="repository.temporaryPassword() as credentials" role="status">
+    <p>
+      Điện thoại: {{ credentials.phone }} · Mật khẩu tạm:
+      <strong>{{ credentials.password }}</strong>
+    </p>
+    <button class="btn" (click)="repository.temporaryPassword.set(null)">Ẩn mật khẩu</button>
+  </section>
+  <ng-template #missingDetail
+    ><section class="panel empty">
+      <h2>Không tìm thấy nhân sự này</h2>
+      <button class="btn primary" (click)="navigate('list')">Về danh sách</button>
+    </section></ng-template
+  >
+  <nav class="staff-detail-tabs" *ngIf="selectedEmployee">
+    <button [class.active]="detailTab === 'profile'" (click)="setDetailTab('profile')">
+      <app-icon name="user" [size]="16" /> Hồ sơ
+    </button>
+    <button [class.active]="detailTab === 'schedule'" (click)="setDetailTab('schedule')">
+      <app-icon name="calendar" [size]="16" /> Lịch ca
+    </button>
+    <button [class.active]="detailTab === 'tasks'" (click)="setDetailTab('tasks')">
+      <app-icon name="file" [size]="16" /> Công việc &amp; chấm công
+    </button>
+    <button [class.active]="detailTab === 'performance'" (click)="setDetailTab('performance')">
+      <app-icon name="chart" [size]="16" /> Hiệu suất
+    </button>
+  </nav>
+  <section
+    class="panel staff-detail-panel"
+    [class.profile-layout]="detailTab === 'profile'"
+    *ngIf="selectedEmployee as person"
+  >
+    <ng-container *ngIf="detailTab === 'profile'">
+      <div class="profile-overview">
+        <aside class="profile-identity panel">
+          <div class="identity-cover"></div>
+          <div class="identity-intro">
+            <img appImageFallback [src]="person.avatar" [alt]="person.fullName" />
+            <div>
+              <h2>{{ person.fullName }}</h2>
+              <span class="badge blue">{{ person.employeeCode }}</span
+              ><strong>{{ person.position }}</strong
+              ><small>{{ ngLocation(person.workLocationId) }}</small
+              ><span class="badge blue">● {{ statusLabel(person.status) }}</span>
+            </div>
+          </div>
+          <div class="identity-actions">
+            <a class="btn" [href]="'tel:' + person.phone"
+              ><app-icon name="phone" [size]="16" />Gọi {{ person.phone }}</a
+            ><button class="btn" (click)="copyEmail()">
+              <app-icon name="file" [size]="16" />Sao chép email
+            </button>
+          </div>
+          <div class="identity-field">
+            <span class="field-icon"><app-icon name="phone" /></span>
+            <div>
+              <small>SỐ ĐIỆN THOẠI LIÊN LẠC</small><strong>{{ person.phone }}</strong>
+            </div>
+          </div>
+          <div class="identity-field">
+            <span class="field-icon"><app-icon name="file" /></span>
+            <div>
+              <small>EMAIL</small><strong>{{ person.email }}</strong>
+            </div>
+          </div>
+          <div class="identity-field">
+            <span class="field-icon"><app-icon name="calendar" /></span>
+            <div>
+              <small>NGÀY SINH</small><strong>{{ person.birthDate | date: 'dd/MM/yyyy' }}</strong
+              ><small>{{
+                person.gender === 'FEMALE' ? 'Nữ' : person.gender === 'MALE' ? 'Nam' : 'Không nêu'
+              }}</small>
+            </div>
+          </div>
+          <div class="identity-field">
+            <span class="field-icon"><app-icon name="pin" /></span>
+            <div>
+              <small>CƠ SỞ CÔNG TÁC</small><strong>{{ ngLocation(person.workLocationId) }}</strong>
+              <p>{{ repository.location(person.workLocationId)?.address }}</p>
+            </div>
+          </div>
+          <div class="identity-bottom">
+            <div>
+              <small>NGÀY GIA NHẬP</small
+              ><strong>{{ person.startDate | date: 'dd/MM/yyyy' }}</strong>
+            </div>
+            <div>
+              <small>LOẠI HỢP ĐỒNG</small
+              ><strong>{{ repository.contractTypeLabel(person.contractType) }}</strong>
+            </div>
+          </div>
+        </aside>
+        <div class="profile-dashboard">
+          <div class="profile-metrics">
+            <article class="metric-card">
+              <div class="metric-caption">
+                <span class="stat-icon"><app-icon name="calendar" /></span>Tổng ca trực
+                <span class="badge blue">API</span>
+              </div>
+              <strong
+                >{{ repository.metrics(person.id).completed
+                }}<small> / {{ repository.metrics(person.id).assigned }} ca</small></strong
+              >
+              <p>Ca hoàn thành / tổng số ca đã nhận</p>
+              <div class="progress">
+                <span [style.width.%]="repository.metrics(person.id).completionRate"></span>
+              </div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-caption">
+                <span class="stat-icon red"><app-icon name="check" /></span>Tiến độ công việc
+              </div>
+              <strong class="red-text"
+                >{{ repository.metrics(person.id).taskRate }}<small>%</small></strong
+              >
+              <p>
+                {{ repository.metrics(person.id).tasksDone }} /
+                {{ repository.metrics(person.id).tasksTotal }} lượt giao việc hoàn thành
+              </p>
+              <div class="progress red-progress">
+                <span [style.width.%]="repository.metrics(person.id).taskRate"></span>
+              </div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-caption">
+                <span class="stat-icon"><app-icon name="clock" /></span>Tỷ lệ đúng giờ
+              </div>
+              <strong>{{
+                repository.metrics(person.id).attendanceCount
+                  ? repository.metrics(person.id).onTimeRate + '%'
+                  : '—'
+              }}</strong>
+              <p>Đúng giờ: check-in không sau giờ bắt đầu ca.</p>
+              <div class="progress">
+                <span [style.width.%]="repository.metrics(person.id).onTimeRate"></span>
+              </div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-caption">Phút trễ</div>
+              <strong>{{ repository.metrics(person.id).lateMinutes }}</strong>
+              <p>
+                {{ repository.metrics(person.id).penalizedLate }} lượt thuộc mức phạt PHAT_TRE có
+                tiền phạt.
+              </p>
+            </article>
+          </div>
+          <section class="panel profile-trend">
+            <h2><app-icon name="chart" /> Xu hướng ca trực trong tuần gần nhất</h2>
+            <div class="chart-legend"><span>● Ca được phân</span><span>● Ca hoàn thành</span></div>
+            <div class="vertical-chart">
+              <div class="chart-column" *ngFor="let bar of detailBars">
+                <div class="column-bars">
+                  <i
+                    [style.height.%]="(bar.assigned / detailBarMax) * 100"
+                    [attr.title]="bar.assigned + ' ca được phân'"
+                  ></i
+                  ><i
+                    [style.height.%]="(bar.completed / detailBarMax) * 100"
+                    [attr.title]="bar.completed + ' ca hoàn thành'"
+                  ></i>
+                </div>
+                <small>{{ bar.label }}</small>
+              </div>
+            </div>
+            <p class="tip">Tuần gần nhất có ca của nhân viên; số liệu lấy từ lịch đã lưu.</p>
+          </section>
+        </div>
+      </div>
+      <section class="panel profile-recent">
+        <div class="section-heading">
+          <div>
+            <h2><app-icon name="calendar" /> Lịch trực gần nhất</h2>
+            <p>Thông tin giờ vào / ra từ dữ liệu chấm công</p>
+          </div>
+          <button class="text-button" (click)="setDetailTab('tasks')">
+            Xem công việc &amp; chấm công →
+          </button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Ngày làm việc</th>
+                <th>Ca làm</th>
+                <th>Địa điểm trực</th>
+                <th>Giờ check-in</th>
+                <th>Giờ check-out</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let a of currentEmployeeAssignments.slice(-5).reverse()">
+                <td>
+                  <strong>{{ shiftFor(a.shiftId)?.date | date: 'dd/MM/yyyy' }}</strong>
+                </td>
+                <td>
+                  <span class="shift-label"
+                    >{{ shiftFor(a.shiftId)?.label }}<br />{{ shiftFor(a.shiftId)?.start }} –
+                    {{ shiftFor(a.shiftId)?.end }}</span
+                  >
+                </td>
+                <td>{{ ngLocation(shiftFor(a.shiftId)?.workLocationId || '') }}</td>
+                <td>{{ (repository.attendanceFor(a.id)?.checkInAt | date: 'HH:mm') || '—' }}</td>
+                <td>{{ (repository.attendanceFor(a.id)?.checkOutAt | date: 'HH:mm') || '—' }}</td>
+                <td>
+                  <span class="badge blue">{{
+                    a.status === 'COMPLETED'
+                      ? 'Hoàn thành'
+                      : a.status === 'IN_PROGRESS'
+                        ? 'Đang làm'
+                        : 'Đã nhận ca'
+                  }}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="empty" *ngIf="!currentEmployeeAssignments.length">
+            Chưa có lịch trực. Chọn ca trong lịch để đăng ký.
+          </p>
+        </div>
+      </section>
+    </ng-container>
+    <ng-container *ngIf="detailTab === 'schedule'">
+      <h2>Lịch ca của {{ person.fullName }}</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Ngày</th>
+              <th>Ca / giờ</th>
+              <th>Cơ sở</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let assignment of currentEmployeeAssignments">
+              <td>{{ shiftFor(assignment.shiftId)?.date | date: 'EEE, dd/MM/yyyy' }}</td>
+              <td>
+                {{ shiftFor(assignment.shiftId)?.label }} ·
+                {{ shiftFor(assignment.shiftId)?.start }}–{{ shiftFor(assignment.shiftId)?.end }}
+              </td>
+              <td>{{ ngLocation(shiftFor(assignment.shiftId)?.workLocationId || '') }}</td>
+              <td>
+                {{
+                  assignment.status === 'COMPLETED'
+                    ? 'Hoàn thành'
+                    : assignment.status === 'IN_PROGRESS'
+                      ? 'Đang làm'
+                      : 'Đã đăng ký'
+                }}
+              </td>
+              <td>
+                <button
+                  class="btn sm"
+                  *ngIf="assignment.status === 'REGISTERED'"
+                  (click)="cancelAssignment(assignment.id)"
+                >
+                  Hủy ca
+                </button>
+                <button
+                  class="btn sm"
+                  *ngIf="assignment.status === 'REGISTERED'"
+                  (click)="
+                    adjustmentShiftId = assignment.shiftId; adjustmentAssignmentId = assignment.id
+                  "
+                >
+                  Chuyển ca
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="empty" *ngIf="!currentEmployeeAssignments.length">Chưa có ca đăng ký.</div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="detailTab === 'tasks'">
+      <h2>Công việc &amp; chấm công</h2>
+      <div class="staff-task-list">
+        <article *ngFor="let task of currentEmployeeTasks">
+          <label
+            ><input
+              type="checkbox"
+              [checked]="task.doneBy.includes(person.id)"
+              disabled
+            /><strong>{{ task.title }}</strong></label
+          ><small
+            >Ca gốc: {{ shiftFor(task.originShiftId)?.date | date: 'dd/MM' }} · hiện tại:
+            {{ shiftFor(task.currentShiftId)?.date | date: 'dd/MM' }}</small
+          ><span class="badge amber" *ngIf="task.needsReassignment">Cần phân công lại</span>
+        </article>
+        <div class="empty" *ngIf="!currentEmployeeTasks.length">Chưa có công việc được giao.</div>
+      </div>
+      <h3>Chấm công</h3>
+      <p class="muted">Giờ vào / ra do nhân viên xác nhận trong ca.</p>
+      <div class="table-wrap">
+        <table class="data-table staff-attendance">
+          <thead>
+            <tr>
+              <th>Ngày / Ca</th>
+              <th>Giờ vào</th>
+              <th>Giờ ra</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let assignment of currentEmployeeAssignments">
+              <td>
+                {{ shiftFor(assignment.shiftId)?.date | date: 'dd/MM/yyyy'
+                }}<small>{{ shiftFor(assignment.shiftId)?.label }}</small>
+              </td>
+              <td>
+                {{ (repository.attendanceFor(assignment.id)?.checkInAt | date: 'HH:mm') || '—' }}
+              </td>
+              <td>
+                {{ (repository.attendanceFor(assignment.id)?.checkOutAt | date: 'HH:mm') || '—' }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="empty" *ngIf="!currentEmployeeAssignments.length">
+          Chưa có dữ liệu chấm công.
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="detailTab === 'performance'">
+      <h2>Chỉ số tính từ ca &amp; công việc</h2>
+      <div class="staff-stats">
+        <article class="staff-stat">
+          <span>CA ĐƯỢC PHÂN</span><strong>{{ repository.metrics(person.id).assigned }}</strong>
+        </article>
+        <article class="staff-stat">
+          <span>CA HOÀN THÀNH</span><strong>{{ repository.metrics(person.id).completed }}</strong>
+        </article>
+        <article class="staff-stat">
+          <span>ĐÚNG GIỜ</span><strong>{{ repository.metrics(person.id).onTimeRate }}%</strong
+          ><small>Check-in không sau giờ bắt đầu ca</small>
+        </article>
+        <article class="staff-stat">
+          <span>CÔNG VIỆC HOÀN THÀNH</span
+          ><strong>{{ repository.metrics(person.id).taskRate }}%</strong
+          ><small
+            >{{ repository.metrics(person.id).tasksDone }}/{{
+              repository.metrics(person.id).tasksTotal
+            }}</small
+          >
+        </article>
+      </div>
+    </ng-container>
+  </section>
+  <footer class="staff-data-footer">
+    <span>● Dữ liệu từ máy chủ</span
+    ><button class="text-button" (click)="navigate('list')">← Quay lại danh sách</button>
+  </footer>
+</div>
+
+<div
+  class="modal-backdrop"
+  *ngIf="showDeactivate && employee as person"
+  (click)="showDeactivate = false"
+>
+  <section
+    class="modal staff-confirm-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="deactivate-title"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="modal-top">
+      <span class="warning-symbol">!</span
+      ><button class="icon-btn" aria-label="Đóng xác nhận" (click)="showDeactivate = false">
+        <app-icon name="close" />
+      </button>
+    </div>
+    <h2 id="deactivate-title">Ngừng hoạt động nhân sự?</h2>
+    <div class="confirm-question">
+      Bạn có chắc chắn muốn ngừng hoạt động nhân sự
+      <b>{{ person.fullName }}</b> khỏi danh sách vận hành?
+    </div>
+    <div class="modal-person">
+      <img appImageFallback [src]="person.avatar" [alt]="person.fullName" />
+      <div>
+        <strong
+          >{{ person.fullName }} <span class="badge lilac">{{ person.employeeCode }}</span></strong
+        ><small>{{ person.position }} · {{ ngLocation(person.workLocationId) }}</small>
+      </div>
+    </div>
+    <p>Tài khoản sẽ bị khóa; hồ sơ, ca làm và lương được giữ nguyên.</p>
+    <div class="row">
+      <button class="btn" (click)="showDeactivate = false">Quay lại</button
+      ><button
+        class="btn"
+        *ngIf="deleteMode && person.status !== 'INACTIVE'"
+        (click)="deactivate()"
+      >
+        Chỉ ngừng hoạt động</button
+      ><button
+        class="btn danger-button"
+        (click)="deleteMode ? deleteEmployee() : deactivate()"
+        [disabled]="repository.catalogApi.saving()"
+      >
+        Xác nhận ngừng hoạt động
+      </button>
+    </div>
+  </section>
+</div>
+
+<app-staff-shift-adjustment
+  *ngIf="adjustmentShiftId"
+  [shiftId]="adjustmentShiftId"
+  [preselectedAssignmentId]="adjustmentAssignmentId"
+  (closed)="adjustmentShiftId = ''"
+/>

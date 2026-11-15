@@ -1,0 +1,117 @@
+.approvals-page .finance-heading h1 {
+  font-size: 24px;
+  margin: 0;
+}
+.approval-tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.approval-tabs button {
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding: 14px 0;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+}
+.approval-tabs button.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+.approval-tabs button:hover {
+  color: var(--primary);
+}
+.approval-filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.approval-filters label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+.search-field {
+  flex: 1;
+}
+.approval-filters input,
+.approval-filters select {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  color: var(--text);
+  background: var(--surface);
+}
+.approval-table-wrap {
+  overflow-x: auto;
+}
+.approval-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.approval-table th,
+.approval-table td {
+  padding: 14px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.approval-table th {
+  color: var(--muted);
+  font-size: 12px;
+}
+.approval-table .numeric {
+  text-align: right;
+  white-space: nowrap;
+}
+.record-secondary {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.overdue {
+  display: block;
+  margin-top: 6px;
+  white-space: nowrap;
+}
+.record-actions {
+  justify-content: flex-start;
+}
+.record-actions .finance-btn {
+  font-size: 12px;
+  padding: 9px 10px;
+}
+.approve-control {
+  display: inline-flex;
+}
+.empty-approvals {
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+}
+.finance-modal {
+  width: min(720px, 92vw);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.finance-modal dl {
+  grid-template-columns: 180px minmax(0, 1fr);
+}
+.finance-modal dd {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.finance-modal textarea {
+  display: block;
+  resize: vertical;
+}
+.approval-error,
+.finance-modal p.approval-error {
+  color: var(--accent);
+}

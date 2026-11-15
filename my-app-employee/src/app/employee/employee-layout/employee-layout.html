@@ -1,0 +1,98 @@
+<header class="portal-header employee-header">
+  <a
+    class="employee-brand"
+    routerLink="/employee/shifts/register"
+    aria-label="iHOUZZ Uni – Trang chủ"
+  >
+    <span class="employee-brand-mark brand-symbol"><app-icon name="building" [size]="22" /></span>
+    <span><strong>iHOUZZ Uni</strong><small>QUẢN TRỊ NHÂN SỰ</small></span>
+  </a>
+  <nav aria-label="Điều hướng nhân viên">
+    <a
+      routerLink="/employee/shifts"
+      [class.active]="attendanceActive"
+      [attr.aria-current]="attendanceActive ? 'page' : null"
+      ><app-icon name="clock" [size]="15" /> Chấm công</a
+    ><a
+      routerLink="/employee/shifts/register"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      ><app-icon name="calendar" [size]="15" /> Đăng ký ca</a
+    ><a
+      routerLink="/employee/deposits/new"
+      [class.active]="depositActive"
+      [attr.aria-current]="depositActive ? 'page' : null"
+      ><app-icon name="file" [size]="15" /> Báo cọc</a
+    ><a
+      routerLink="/employee/deals"
+      [class.active]="dealActive"
+      [attr.aria-current]="dealActive ? 'page' : null"
+      ><app-icon name="wallet" [size]="15" /> Giao dịch</a
+    ><a routerLink="/employee/payroll" routerLinkActive="active" ariaCurrentWhenActive="page"
+      ><app-icon name="chart" [size]="15" /> Bảng lương</a
+    >
+  </nav>
+  <div class="portal-profile">
+    <button
+      class="icon-btn employee-notification"
+      (click)="notificationOpen.set(!notificationOpen())"
+      aria-label="Thông báo"
+      [attr.aria-expanded]="notificationOpen()"
+    >
+      <app-icon name="bell" [size]="20" /><span *ngIf="notifications.unread()">{{
+        notifications.unread()
+      }}</span>
+    </button>
+    <img
+      *ngIf="employee?.avatar"
+      class="avatar"
+      [src]="employee?.avatar"
+      alt="Ảnh đại diện nhân viên"
+    />
+    <div class="profile-name">
+      <strong>{{ auth.account()?.name }}</strong
+      ><small>{{ employee?.position || 'Nhân viên' }}</small>
+    </div>
+    <button class="icon-btn" (click)="logout()" aria-label="Đăng xuất">
+      <app-icon name="logout" [size]="15" />
+      <span>Đăng xuất</span>
+    </button>
+  </div>
+</header>
+<main class="employee-main">
+  <p *ngIf="profileLoading()" role="status">Đang tải hồ sơ nhân viên…</p>
+  <p class="error" *ngIf="profileError()" role="alert">{{ profileError() }}</p>
+  <section *ngIf="notificationOpen()" class="emp-card" aria-label="Thông báo của tôi">
+    <h2>Thông báo</h2>
+    <p role="status" *ngIf="notifications.loading()">Đang tải thông báo…</p>
+    <p class="error" role="alert" *ngIf="notifications.error()">{{ notifications.error() }}</p>
+    <button class="emp-btn" (click)="notifications.refresh()" [disabled]="notifications.loading()">
+      Tải lại
+    </button>
+    <button
+      class="emp-btn"
+      (click)="notifications.markRead()"
+      [disabled]="notifications.saving() || !notifications.unread()"
+    >
+      Đánh dấu tất cả đã đọc
+    </button>
+    <p *ngIf="!notifications.loading() && !notifications.items().length">Chưa có thông báo.</p>
+    <article *ngFor="let item of notifications.items()">
+      <strong>{{ item.title }}</strong>
+      <p>{{ item.body }}</p>
+      <small>{{ item.createdAt | date: 'dd/MM/yyyy HH:mm' }}</small>
+      <button
+        class="emp-btn"
+        *ngIf="!item.read"
+        (click)="notifications.markRead(item.id)"
+        [disabled]="notifications.saving()"
+      >
+        Đánh dấu đã đọc
+      </button>
+    </article>
+  </section>
+  <router-outlet />
+</main>
+<footer class="portal-footer employee-footer">
+  <span>© 2026 Houzz Uni (Công ty CP Bất Động Sản Houzz Uni). Bảo lưu mọi quyền.</span>
+</footer>

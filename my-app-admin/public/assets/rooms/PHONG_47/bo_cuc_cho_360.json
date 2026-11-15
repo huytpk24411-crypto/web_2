@@ -1,0 +1,31 @@
+{
+  "ma_phong": "PHONG_47",
+  "ten_y_tuong": "Mediterranean Terracotta",
+  "anh_minh_hoa_ai": true,
+  "loai_nguon_cho_360": "bo_anh_goc_nhin_tham_khao_chua_phai_panorama_360",
+  "bo_cuc_du_kien_khong_co_kich_thuoc_do_dac": "Entry opens to living room with arched opening to kitchen at left, bathroom door beside kitchen. Bedroom reached via right-hand arch from living room. Windows on outer wall of living and bedroom. Terracotta tile continues through common rooms; ivory bathroom tiles.",
+  "vat_lieu_phong_cach": "Premium sunny urban apartment, 52 square meters, soft ivory limewash walls, pale terracotta square floor tiles, muted clay-colored cabinetry, arched door openings, oak and cane furniture, understated Mediterranean style adapted to a Vietnamese city.",
+  "cac_khu_vuc": {
+    "phong_bep": {
+      "mo_ta": "Muted terracotta cabinet fronts, ivory zellige backsplash, open oak shelves, arched opening to living room, bronze faucet, daylight.",
+      "anh_tu_loi_vao": "01_phong_bep.png",
+      "anh_tu_goc_doi_dien": "05_phong_bep_goc_doi_dien.png"
+    },
+    "phong_khach": {
+      "mo_ta": "Ivory textured sofa, travertine coffee table, cane chair and warm clay cushions; left arched kitchen opening, right arch to bedroom and large outer window.",
+      "anh_tu_loi_vao": "02_phong_khach.png",
+      "anh_tu_goc_doi_dien": "06_phong_khach_goc_doi_dien.png"
+    },
+    "nha_ve_sinh": {
+      "mo_ta": "Ivory zellige tiles, terracotta vanity, bronze fittings, rounded mirror, toilet, glass shower, entrance beside vanity.",
+      "anh_tu_loi_vao": "03_nha_ve_sinh.png",
+      "anh_tu_goc_doi_dien": "07_nha_ve_sinh_goc_doi_dien.png"
+    },
+    "phong_ngu": {
+      "mo_ta": "One king bed with low oak bedframe, linen canopy-like drape, terracotta throw, arched doorway behind camera, main window on far wall.",
+      "anh_tu_loi_vao": "04_phong_ngu.png",
+      "anh_tu_goc_doi_dien": "08_phong_ngu_goc_doi_dien.png"
+    }
+  },
+  "luu_y": "Khong co kich thuoc do dac, ma tran camera, depth map, anh panorama equirectangular hoac mesh 3D. Khong noi cac anh nay thanh panorama 360 chinh xac."
+}

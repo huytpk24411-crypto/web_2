@@ -1,0 +1,54 @@
+﻿<div class="modal-backdrop" *ngIf="!preview" (click)="closed.emit()">
+  <section
+    class="modal center completion-modal"
+    appDialogFocus
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="complete-title"
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="closed.emit()"
+  >
+    <button class="icon-btn close" (click)="closed.emit()" aria-label="Đóng thông báo">
+      <app-icon name="close" />
+    </button>
+    <div class="success-icon"><app-icon name="check" [size]="30" /></div>
+    <span class="badge blue">● Dữ liệu đã được lưu</span>
+    <h2 id="complete-title">Cập nhật dữ liệu phòng thành công!</h2>
+    <p>
+      Thông tin, giá thuê và thư viện ảnh của phòng <strong class="red">#{{ room.code }}</strong> đã
+      được lưu trên máy chủ.
+    </p>
+    <div class="inline-room">
+      <img
+        [src]="room.images[0] || '/assets/placeholders/room-placeholder.svg'"
+        [alt]="room.name"
+        appImageFallback
+      />
+      <div>
+        <strong>{{ room.name || room.code }}</strong
+        ><small>{{ room.propertyName }} · {{ room.area }} m²</small
+        ><strong class="completion-price">{{ room.price | number }} đ <small>/tháng</small></strong>
+      </div>
+    </div>
+    <div class="completion-next">
+      <h4>Bạn có muốn tiếp tục thao tác khác không?</h4>
+      <div class="grid two">
+        <a class="btn primary" routerLink="/admin/rooms/new" (click)="closed.emit()"
+          ><app-icon name="plus" [size]="16" />Tiếp tục thêm phòng</a
+        ><button class="btn" (click)="closed.emit()">
+          <app-icon name="file" [size]="16" />Về danh sách phòng
+        </button>
+      </div>
+    </div>
+    <div class="completion-links">
+      <button class="text-action" (click)="preview = true">Xem trước tin phòng</button
+      ><a
+        class="text-action"
+        [routerLink]="['/admin/rooms', room.id, 'images']"
+        (click)="closed.emit()"
+        >Mở thư viện ảnh</a
+      >
+    </div>
+  </section>
+</div>
+<app-admin-room-preview *ngIf="preview" [room]="room" (closed)="preview = false" />

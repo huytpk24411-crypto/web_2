@@ -1,0 +1,215 @@
+<button
+  class="emp-btn no-print"
+  *ngIf="shifts.api.error()"
+  (click)="shifts.api.refresh()"
+  [disabled]="shifts.api.loading()"
+>
+  Tải lại dữ liệu
+</button>
+<div class="emp-page-head">
+  <div>
+    <nav class="emp-breadcrumb" aria-label="Đường dẫn">
+      <a routerLink="/employee/shifts">Hệ thống Chấm công Điểm danh</a><span>›</span
+      ><span aria-current="page">Bước 3: Hoàn tất &amp; Check-out</span>
+    </nav>
+    <h1 class="emp-title">Hoàn tất Ca trực &amp; Kiểm duyệt Điểm danh</h1>
+    <p>Tổng kết ca làm và bàn giao công việc chưa xong cho quản trị viên.</p>
+  </div>
+  <span class="badge green" *ngIf="record?.checkOutAt">● Đã kết thúc ca</span>
+</div>
+<div class="emp-step-strip">
+  <div
+    class="emp-step"
+    [class.emp-done]="!!record?.checkInAt"
+    [class.emp-locked]="!record?.checkInAt"
+  >
+    <b class="emp-step-number">✓</b
+    ><span>Check-in đầu ca<small>Xác nhận ảnh minh chứng</small></span>
+  </div>
+  <div
+    class="emp-step"
+    [class.emp-done]="!!record?.checkOutAt"
+    [class.emp-locked]="!record?.checkOutAt"
+  >
+    <b class="emp-step-number">{{ record?.checkOutAt ? '✓' : '2' }}</b
+    ><span>Trong ca & To-do<small>Thực hiện công việc</small></span>
+  </div>
+  <div
+    class="emp-step"
+    [class.emp-done]="!!record?.checkOutAt"
+    [class.emp-active]="!record?.checkOutAt"
+    aria-current="step"
+  >
+    <b class="emp-step-number">{{ record?.checkOutAt ? '✓' : '3' }}</b
+    ><span>Check-out cuối ca<small>Bàn giao & kết thúc</small></span>
+  </div>
+</div>
+<p class="error" role="alert" *ngIf="shifts.api.error()">{{ shifts.api.error() }}</p>
+<p role="status" *ngIf="shifts.api.loading()">Đang tải ca làm…</p>
+<div *ngIf="assignment as a; else missing">
+  <div class="checkout-banner" *ngIf="a.status === 'COMPLETED'">
+    <app-icon name="check" [size]="35" />
+    <div>
+      <h2>Check-out thành công lúc {{ record?.checkOutAt | date: 'HH:mm' }}!</h2>
+      <p>Ca trực đã kết thúc. Công việc chưa xong đã chuyển về quản trị viên để giao lại.</p>
+    </div>
+    <div class="emp-actions">
+      <a routerLink="/employee/shifts" class="emp-btn"
+        >Ca làm tiếp theo <app-icon name="arrow" [size]="14" /></a
+      ><a routerLink="/employee/payroll" class="emp-btn banner-secondary"
+        >Bảng lương &amp; công ca</a
+      >
+    </div>
+  </div>
+  <div class="emp-grid">
+    <section class="emp-card">
+      <div class="emp-card-head">
+        <h3><app-icon name="file" /> Báo cáo Tổng kết ca trực (Shift Summary Report)</h3>
+        <span class="emp-badge emp-neutral">Mã ca: {{ id }}</span>
+      </div>
+      <div class="summary-stats">
+        <div class="soft-box">
+          <small class="muted">Vào ca thực tế</small>
+          <h2 class="green">{{ record?.checkInAt | date: 'HH:mm:ss' }}</h2>
+        </div>
+        <div class="soft-box">
+          <small class="muted">Tan ca / Check-out</small>
+          <h2 class="blue">
+            {{ record?.checkOutAt ? (record?.checkOutAt | date: 'HH:mm:ss') : 'Chưa check-out' }}
+          </h2>
+        </div>
+        <div class="soft-box">
+          <small class="muted">Tổng tích lũy thực tế</small>
+          <h2>{{ duration }}</h2>
+        </div>
+      </div>
+      <div class="report-grid">
+        <div>
+          <h4>Ảnh minh chứng đầu ca</h4>
+          <img
+            class="evidence"
+            *ngIf="record?.evidence"
+            [src]="record?.evidence"
+            alt="Ảnh minh chứng gắn với ca làm"
+          />
+          <p class="tip">Mã phân ca: {{ id }}</p>
+        </div>
+        <div>
+          <div class="emp-card-head">
+            <h4>Tiến độ công việc</h4>
+            <span class="emp-badge emp-success"
+              >{{ finished }}/{{ tasks.list(id).length }} · {{ percent }}%</span
+            >
+          </div>
+          <progress
+            class="task-progress"
+            [value]="percent"
+            max="100"
+            aria-label="Tiến độ công việc"
+          ></progress>
+          <p class="muted small" *ngIf="!tasks.list(id).length">Chưa có công việc trong ca.</p>
+          <div *ngFor="let task of tasks.list(id)" class="summary-task">
+            <strong>{{ task.title }}</strong
+            ><app-status-badge [status]="task.status" />
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <h4 class="handover-title">Xác nhận cuối ca</h4>
+      <div class="soft-box" *ngIf="a.status === 'COMPLETED'">
+        <p class="handover-text">Đã xác nhận kết thúc ca</p>
+        <img
+          *ngIf="record?.checkOutEvidence"
+          [src]="record?.checkOutEvidence"
+          alt="Ảnh minh chứng cuối ca đã lưu"
+          width="160"
+        />
+      </div>
+      <form *ngIf="a.status === 'IN_PROGRESS'" (ngSubmit)="submit()">
+        <label class="field"
+          ><span>Ảnh minh chứng check-out *</span>
+          <input
+            type="file"
+            accept="image/png,image/jpeg,image/webp"
+            (change)="upload($event)"
+            [disabled]="busy"
+          />
+        </label>
+        <img *ngIf="evidence" [src]="evidence" alt="Ảnh minh chứng cuối ca" width="160" />
+        <label class="field"
+          ><span
+            ><input type="checkbox" [(ngModel)]="confirmed" name="confirmed" [disabled]="busy" />
+            Tôi xác nhận kết thúc ca *</span
+          ></label
+        >
+        <p class="tip">
+          Việc chưa xong sẽ chuyển về quản trị viên để giao lại. Việc đã đánh dấu xong sẽ chờ quản
+          trị viên xác nhận.
+        </p>
+        <p class="error" *ngIf="error" role="alert">{{ error }}</p>
+        <button
+          class="emp-btn emp-primary emp-block"
+          type="submit"
+          [disabled]="busy || !confirmed || !evidence"
+        >
+          Xác nhận check-out
+        </button>
+      </form>
+      <div class="notice warning" *ngIf="a.status === 'REGISTERED'">
+        Bạn cần
+        <a class="link" [routerLink]="['/employee/shifts', id, 'check-in']">check-in đầu ca</a>
+        trước khi kết thúc.
+      </div>
+    </section>
+    <aside class="emp-stack">
+      <section class="emp-card">
+        <div class="emp-card-head">
+          <h3><app-icon name="chart" /> Tích lũy công tháng này</h3>
+          <span class="emp-mono">{{ month }}</span>
+        </div>
+        <h2 class="blue">
+          {{ monthCompleted }}
+          <small class="muted">/ {{ monthAssignments.length }} ca đã đăng ký</small>
+        </h2>
+        <progress
+          class="task-progress"
+          [value]="monthCompleted"
+          [max]="monthAssignments.length || 1"
+          aria-label="Ca hoàn thành trong tháng"
+        ></progress>
+        <p class="tip">Thời gian làm việc được tính theo giờ máy chủ.</p>
+      </section>
+      <section class="emp-card">
+        <h3><app-icon name="calendar" /> Lịch ca tiếp theo</h3>
+        <div class="soft-box" *ngIf="next[0] as item">
+          <strong>{{ shifts.shift(item.shiftId)?.label }}</strong>
+          <p class="muted small">
+            {{ shifts.shift(item.shiftId)?.date | date: 'dd/MM/yyyy' }} •
+            {{ shifts.shift(item.shiftId)?.start }}
+          </p>
+          <a class="emp-btn emp-outline" [routerLink]="['/employee/shifts', item.id, 'check-in']"
+            >Đi đến check-in</a
+          >
+        </div>
+        <p class="muted small" *ngIf="!next.length">Chưa có ca tiếp theo.</p>
+        <a class="emp-btn emp-block" routerLink="/employee/shifts/register"
+          >Xem thời khóa biểu tuần này</a
+        >
+      </section>
+      <section class="emp-card emp-stack">
+        <button class="emp-btn emp-block" (click)="print()" [disabled]="a.status !== 'COMPLETED'">
+          <app-icon name="download" [size]="16" /> In phiếu chấm công (PDF)</button
+        ><a class="emp-btn emp-primary emp-block" routerLink="/employee/shifts"
+          >Về trang chấm công</a
+        >
+      </section>
+    </aside>
+  </div>
+</div>
+<ng-template #missing
+  ><div class="empty">
+    <h2>Không tìm thấy ca làm của bạn</h2>
+    <p>Chọn một lần phân ca đã đăng ký để tiếp tục.</p>
+    <a class="emp-btn emp-primary" routerLink="/employee/shifts">Xem ca làm của tôi</a>
+  </div></ng-template
+>

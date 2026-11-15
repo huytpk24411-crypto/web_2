@@ -1,0 +1,105 @@
+﻿<div class="upload-grid" [class.compact]="compact">
+  <label class="upload" (dragover)="$event.preventDefault()" (drop)="uploadDrop($event)"
+    ><app-icon name="image" [size]="36" /><strong
+      >Kéo thả hình ảnh vào đây hoặc chọn tệp từ máy tính</strong
+    >
+    <p>JPG, PNG, WEBP · Tối đa 15 ảnh, 10 MB mỗi ảnh · Khuyến nghị 1:1 và 16:9</p>
+    <span class="btn">Chọn tệp từ thiết bị</span
+    ><input
+      type="file"
+      multiple
+      accept="image/jpeg,image/png,image/webp"
+      (change)="upload($event)"
+      [disabled]="busy()"
+      aria-label="Chọn ảnh phòng"
+  /></label>
+</div>
+<p class="notice error" *ngIf="error()" role="alert">{{ error() }}</p>
+<div class="photo-heading">
+  <h3>
+    Thứ tự ảnh hiển thị <span class="badge">{{ urls.length }} / 15 ảnh</span>
+  </h3>
+  <span>Kéo thả hoặc dùng mũi tên để đổi vị trí</span>
+</div>
+<div class="photo-grid" [class.compact]="compact">
+  <article
+    *ngFor="let url of urls; let i = index"
+    [class.cover]="i === 0"
+    draggable="true"
+    (dragstart)="dragIndex = i"
+    (dragend)="dragIndex = -1"
+    (dragover)="$event.preventDefault()"
+    (drop)="drop($event, i)"
+  >
+    <button
+      type="button"
+      class="photo-open"
+      (click)="selectedImage = url"
+      [attr.aria-label]="'Xem ảnh ' + (i + 1)"
+    >
+      <img [src]="url" [alt]="'Ảnh phòng ' + (i + 1)" appImageFallback /><span
+        class="cover-badge"
+        *ngIf="i === 0"
+        >☆ Ảnh bìa (Cover)</span
+      ><span class="drag-handle"><app-icon name="area" [size]="16" /></span>
+    </button>
+    <div class="photo-info">
+      <strong>{{ filename(url, i) }}</strong
+      ><span>Vị trí #{{ i + 1 }} · Ảnh đã tải lên máy chủ</span>
+      <div class="photo-actions">
+        <button type="button" class="btn" (click)="move(i, 0)" [disabled]="i === 0">
+          Đặt ảnh bìa</button
+        ><button
+          type="button"
+          class="icon-btn"
+          (click)="move(i, i - 1)"
+          [disabled]="i === 0"
+          [attr.aria-label]="'Chuyển ảnh ' + (i + 1) + ' sang trái'"
+        >
+          ←</button
+        ><button
+          type="button"
+          class="icon-btn"
+          (click)="move(i, i + 1)"
+          [disabled]="i === urls.length - 1"
+          [attr.aria-label]="'Chuyển ảnh ' + (i + 1) + ' sang phải'"
+        >
+          →</button
+        ><button
+          type="button"
+          class="icon-btn red"
+          (click)="remove(i)"
+          [attr.aria-label]="'Xóa ảnh ' + (i + 1)"
+        >
+          <app-icon name="trash" [size]="14" />
+        </button>
+      </div>
+    </div>
+  </article>
+</div>
+<div class="photo-empty" *ngIf="!urls.length">
+  <app-icon name="info" [size]="22" /><span
+    >Chưa có ảnh nào. Thêm ít nhất 3 ảnh để đăng phòng, hoặc lưu bản nháp để hoàn thiện sau.</span
+  >
+</div>
+<div class="modal-backdrop" *ngIf="selectedImage" (click)="selectedImage = ''">
+  <section
+    class="modal photo-lightbox"
+    appDialogFocus
+    role="dialog"
+    aria-modal="true"
+    aria-label="Xem ảnh đã chọn"
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="selectedImage = ''"
+  >
+    <button type="button" class="icon-btn close" (click)="selectedImage = ''" aria-label="Đóng ảnh">
+      <app-icon name="close" /></button
+    ><img [src]="selectedImage" alt="Ảnh phòng đã chọn" appImageFallback /><button
+      type="button"
+      class="btn"
+      (click)="selectedImage = ''"
+    >
+      Đóng ảnh
+    </button>
+  </section>
+</div>

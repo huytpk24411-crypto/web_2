@@ -1,0 +1,155 @@
+<div class="page-title">
+  <div>
+    <h1>Ca làm của tôi</h1>
+    <p>Theo dõi chấm công và công việc theo từng lần phân ca.</p>
+  </div>
+  <a routerLink="/employee/shifts/register" class="btn primary">
+    <app-icon name="plus" [size]="16" /> Đăng ký ca
+  </a>
+</div>
+<p class="error" role="alert" *ngIf="error || shifts.api.error()">
+  {{ error || shifts.api.error() }}
+</p>
+<button
+  class="emp-btn no-print"
+  type="button"
+  *ngIf="shifts.api.error()"
+  (click)="shifts.api.refresh()"
+  [disabled]="shifts.api.loading()"
+>
+  Tải lại dữ liệu
+</button>
+<p role="status" *ngIf="shifts.api.loading()">Đang tải ca làm…</p>
+<section class="panel week-panel" aria-label="Lịch tuần ca làm của tôi">
+  <nav class="week-navigation" aria-label="Chọn tuần">
+    <button class="emp-btn" type="button" (click)="changeWeek(-1)">‹ Tuần trước</button>
+    <button
+      class="emp-btn week-label"
+      type="button"
+      (click)="currentWeek()"
+      aria-label="Về tuần hiện tại"
+      aria-live="polite"
+    >
+      {{ weekLabel() }}
+    </button>
+    <button class="emp-btn" type="button" (click)="currentWeek()">Tuần này</button>
+    <button class="emp-btn" type="button" (click)="changeWeek(1)">Tuần sau ›</button>
+  </nav>
+  <div
+    class="calendar-scroll"
+    tabindex="0"
+    role="region"
+    aria-label="Lịch tuần, cuộn ngang để xem đủ 7 ngày"
+  >
+    <table class="week-calendar">
+      <caption class="calendar-caption">
+        Ca làm tuần
+        {{
+          weekLabel()
+        }}
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col" class="shift-heading">Ca làm</th>
+          <th
+            scope="col"
+            *ngFor="let day of days()"
+            [class.today]="day.date === today()"
+            [attr.aria-current]="day.date === today() ? 'date' : null"
+            [attr.data-date]="day.date"
+          >
+            {{ day.label }}<span class="day-date">{{ day.displayDate }}</span>
+            <small *ngIf="day.date === today()">Hôm nay</small>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="shift-row" *ngFor="let row of rows()">
+          <th scope="row">
+            {{ row.label }}<span class="shift-time">{{ row.time }}</span>
+          </th>
+          <td
+            *ngFor="let cell of row.cells"
+            [class.today]="cell.date === today()"
+            [attr.data-date]="cell.date"
+          >
+            <article
+              class="shift-card"
+              *ngFor="let item of cell.assignments"
+              [class.registered]="item.status === 'REGISTERED'"
+              [class.in-progress]="item.status === 'IN_PROGRESS'"
+              [class.completed]="item.status === 'COMPLETED'"
+              [class.absent]="item.status === 'ABSENT'"
+            >
+              <app-status-badge [status]="shifts.statusLabel(item.status)" />
+              <span class="live-indicator" *ngIf="item.status === 'IN_PROGRESS'"
+                >● Đang diễn ra</span
+              >
+              <h2>{{ shifts.shift(item.shiftId)?.label }}</h2>
+              <p class="card-time">
+                {{ shifts.shift(item.shiftId)?.start }} – {{ shifts.shift(item.shiftId)?.end }}
+              </p>
+              <div class="shift-actions" [ngSwitch]="item.status">
+                <ng-container *ngSwitchCase="'REGISTERED'">
+                  <ng-container *ngIf="!shifts.hasEnded(item)">
+                    <a
+                      *ngIf="shifts.canCheckIn(item); else lockedCheckIn"
+                      class="emp-btn emp-primary check-in"
+                      [routerLink]="['/employee/shifts', item.id, 'check-in']"
+                      >Check-in</a
+                    >
+                    <ng-template #lockedCheckIn>
+                      <button class="emp-btn emp-primary check-in" type="button" disabled>
+                        Check-in
+                      </button>
+                      <small class="opening-time">{{ shifts.checkInOpening(item) }}</small>
+                    </ng-template>
+                  </ng-container>
+                  <a
+                    class="emp-btn emp-outline task-link"
+                    [routerLink]="['/employee/shifts', item.id, 'tasks']"
+                    >Công việc ({{ item.taskCount ?? 0 }})</a
+                  >
+                  <button class="emp-btn" type="button" [disabled]="busy" (click)="cancel(item.id)">
+                    Hủy ca
+                  </button>
+                </ng-container>
+                <ng-container *ngSwitchCase="'IN_PROGRESS'">
+                  <a
+                    class="emp-btn emp-primary task-link"
+                    [routerLink]="['/employee/shifts', item.id, 'tasks']"
+                    >Tiếp tục công việc</a
+                  >
+                  <a
+                    class="emp-btn emp-outline"
+                    [routerLink]="['/employee/shifts', item.id, 'check-out']"
+                    >Check-out</a
+                  >
+                </ng-container>
+                <ng-container *ngSwitchCase="'COMPLETED'">
+                  <a
+                    class="emp-btn emp-outline"
+                    [routerLink]="['/employee/shifts', item.id, 'check-out']"
+                    >Xem bàn giao</a
+                  >
+                  <a
+                    class="emp-btn emp-outline task-link"
+                    [routerLink]="['/employee/shifts', item.id, 'tasks']"
+                    >Công việc</a
+                  >
+                </ng-container>
+                <p *ngSwitchCase="'ABSENT'">Không ghi nhận check-in</p>
+              </div>
+            </article>
+          </td>
+        </tr>
+        <tr *ngIf="!hasShifts() && !shifts.api.loading() && !shifts.api.error()">
+          <td colspan="8" class="week-empty">
+            <p>Không có ca trong tuần này</p>
+            <a class="emp-btn emp-primary" routerLink="/employee/shifts/register">Đăng ký ca</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

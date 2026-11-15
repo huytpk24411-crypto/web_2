@@ -8,11 +8,11 @@
 
 # Node
 /node_modules
+my-server-mongodb/.env
 .env
 .env.*
 !.env.example
 /uploads/
-/server/dist/
 npm-debug.log
 yarn-error.log
 
@@ -49,7 +49,16 @@ __screenshots__/
 Thumbs.db
 
 # Browser test artifacts (screenshots for review are in docs/screenshots)
-/playwright-report/
-/test-results/
-/test-results-*/
+playwright-report/
+test-results/
+test-results-*/
 __pycache__/
+
+# Ba ứng dụng Angular: khách hàng, nhân viên, quản trị
+/my-app-*/node_modules/
+/my-app-*/dist/
+/my-app-*/.angular/
+/my-app-*/out-tsc/
+
+# Original room photos (converted to webp in my-app-*/public/assets/rooms)
+/assets-src/

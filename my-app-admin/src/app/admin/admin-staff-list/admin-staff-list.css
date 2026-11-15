@@ -1,0 +1,19 @@
+/* Shared HR theme: ../staff-theme.css. */
+
+.data-chip {
+  color: var(--muted);
+  font-size: 11px;
+  border-radius: 18px;
+  background: var(--soft);
+  padding: 4px 11px;
+  white-space: nowrap;
+}
+.staff-data-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 10px;
+  padding: 0 5px;
+}

@@ -1,0 +1,617 @@
+[
+  {
+    "_id": "d91afb2c3f67dc43d16cf0b2",
+    "id": "dc-08-nv-01",
+    "periodId": "luong-08",
+    "policyLevelId": null,
+    "totalBonus": 200000,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Hoàn thành trách nhiệm trưởng nhóm\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "b0d4b6bad556ca4312a1385c",
+    "id": "dc-08-nv-02",
+    "periodId": "luong-08",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "e8c8e741da15a2ebd7acbbb3",
+    "id": "dc-08-nv-03",
+    "periodId": "luong-08",
+    "policyLevelId": "PHAT_TRE-2",
+    "totalBonus": 0,
+    "totalDeduction": 50000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-08-31-13-nv-03\", \"lateMinutes\": 22, \"policyLevelId\": \"PHAT_TRE-2\", \"amount\": 50000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "18a1cf3890a80026a31d9e88",
+    "id": "dc-08-nv-04",
+    "periodId": "luong-08",
+    "policyLevelId": "PHAT_TRE-2",
+    "totalBonus": 0,
+    "totalDeduction": 50000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-08-26-13-nv-04\", \"lateMinutes\": 22, \"policyLevelId\": \"PHAT_TRE-2\", \"amount\": 50000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "9af3a7da196718e9dcb4f615",
+    "id": "dc-08-nv-05",
+    "periodId": "luong-08",
+    "policyLevelId": "PHAT_TRE-2",
+    "totalBonus": 0,
+    "totalDeduction": 50000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-08-21-13-nv-05\", \"lateMinutes\": 22, \"policyLevelId\": \"PHAT_TRE-2\", \"amount\": 50000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "0b64fbee864d229352197cea",
+    "id": "dc-08-nv-06",
+    "periodId": "luong-08",
+    "policyLevelId": "PHAT_TRE-2",
+    "totalBonus": 0,
+    "totalDeduction": 50000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-08-16-13-nv-06\", \"lateMinutes\": 22, \"policyLevelId\": \"PHAT_TRE-2\", \"amount\": 50000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "c84d2a2ce5ef90c736821b9f",
+    "id": "dc-08-nv-07",
+    "periodId": "luong-08",
+    "policyLevelId": "PHAT_TRE-2",
+    "totalBonus": 0,
+    "totalDeduction": 50000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-08-04-13-nv-07\", \"lateMinutes\": 22, \"policyLevelId\": \"PHAT_TRE-2\", \"amount\": 50000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "babedf9900b43770efae14aa",
+    "id": "dc-08-nv-08",
+    "periodId": "luong-08",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "c56bae4d2a3e9362d7cbf4d4",
+    "id": "dc-08-nv-09",
+    "periodId": "luong-08",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "422d7a77808ddb8a1795bdbd",
+    "id": "dc-08-nv-10",
+    "periodId": "luong-08",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "ab74ba070eda8367a4cc7f1c",
+    "id": "dc-08-nv-11",
+    "periodId": "luong-08",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-08-30-07-nv-11\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "c32fab243328c436b2396f33",
+    "id": "dc-08-nv-12",
+    "periodId": "luong-08",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-08-18-07-nv-12\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "1ea6b3e8ec594afee3cdb299",
+    "id": "dc-08-nv-13",
+    "periodId": "luong-08",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-08-13-07-nv-13\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "82791be6f9e0bd640dae30ec",
+    "id": "dc-08-nv-14",
+    "periodId": "luong-08",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-08-08-07-nv-14\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "c49b89003005976c90d2e724",
+    "id": "dc-08-nv-15",
+    "periodId": "luong-08",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "949e09cfa7dc6b38d0b2eb5a",
+    "id": "dc-09-nv-01",
+    "periodId": "luong-09",
+    "policyLevelId": "PHAT_TRE-2",
+    "totalBonus": 200000,
+    "totalDeduction": 50000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Hoàn thành trách nhiệm trưởng nhóm\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-09-17-13-nv-01\", \"lateMinutes\": 22, \"policyLevelId\": \"PHAT_TRE-2\", \"amount\": 50000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "51ebd4c10f05dde5389e0053",
+    "id": "dc-09-nv-02",
+    "periodId": "luong-09",
+    "policyLevelId": "PHAT_TRE-2",
+    "totalBonus": 0,
+    "totalDeduction": 50000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-09-12-13-nv-02\", \"lateMinutes\": 22, \"policyLevelId\": \"PHAT_TRE-2\", \"amount\": 50000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "006be35391b52e928c644ce8",
+    "id": "dc-09-nv-03",
+    "periodId": "luong-09",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "4431163992b86e6123635b53",
+    "id": "dc-09-nv-04",
+    "periodId": "luong-09",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "e897d3ea132649659004390b",
+    "id": "dc-09-nv-05",
+    "periodId": "luong-09",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "a3d500f8dae7652362a73108",
+    "id": "dc-09-nv-06",
+    "periodId": "luong-09",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "38e5634eaf7f2c9a128c67da",
+    "id": "dc-09-nv-07",
+    "periodId": "luong-09",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-09-26-07-nv-07\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "6abaf2184dafcfa45a21020f",
+    "id": "dc-09-nv-08",
+    "periodId": "luong-09",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-09-14-07-nv-08\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "e98a8534e2a63d4bf262e7a7",
+    "id": "dc-09-nv-09",
+    "periodId": "luong-09",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-09-09-07-nv-09\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "80a1e4dbe74b1000ec7b06d3",
+    "id": "dc-09-nv-10",
+    "periodId": "luong-09",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-09-04-07-nv-10\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "47e88890919abed3ca4807d2",
+    "id": "dc-09-nv-11",
+    "periodId": "luong-09",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "285ff56678dbbb2caf85d8fe",
+    "id": "dc-09-nv-12",
+    "periodId": "luong-09",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "78a826e41133e3ae403d5776",
+    "id": "dc-09-nv-13",
+    "periodId": "luong-09",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "f10da48902616a9e22109459",
+    "id": "dc-09-nv-14",
+    "periodId": "luong-09",
+    "policyLevelId": "PHAT_TRE-1",
+    "totalBonus": 0,
+    "totalDeduction": 20000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-09-22-13-nv-14\", \"lateMinutes\": 8, \"policyLevelId\": \"PHAT_TRE-1\", \"amount\": 20000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "e32aaa600a538693f1f0a5a8",
+    "id": "dc-09-nv-15",
+    "periodId": "luong-09",
+    "policyLevelId": "PHAT_TRE-1",
+    "totalBonus": 0,
+    "totalDeduction": 20000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-09-17-13-nv-15\", \"lateMinutes\": 8, \"policyLevelId\": \"PHAT_TRE-1\", \"amount\": 20000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "66218e6982a83ad905fb9e5c",
+    "id": "dc-10-nv-01",
+    "periodId": "luong-10",
+    "policyLevelId": null,
+    "totalBonus": 200000,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Hoàn thành trách nhiệm trưởng nhóm\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "624b38249c001768beee6d97",
+    "id": "dc-10-nv-02",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-28-07-nv-02\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "6ee450c913a9296e98f9e558",
+    "id": "dc-10-nv-03",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-23-07-nv-03\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "d41396093c62953884a6959f",
+    "id": "dc-10-nv-04",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-18-07-nv-04\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "d86b2773397ef0db2d0ca01a",
+    "id": "dc-10-nv-05",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-06-07-nv-05\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "aa9ae183f7bab64b52753c99",
+    "id": "dc-10-nv-06",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-01-07-nv-06\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "ba553c94560bd16230dd3f3c",
+    "id": "dc-10-nv-07",
+    "periodId": "luong-10",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "09bd9b18da7ce3149c149b5f",
+    "id": "dc-10-nv-08",
+    "periodId": "luong-10",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "00e2f26a00eb495063ae48b5",
+    "id": "dc-10-nv-09",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-1",
+    "totalBonus": 0,
+    "totalDeduction": 20000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-31-13-nv-09\", \"lateMinutes\": 8, \"policyLevelId\": \"PHAT_TRE-1\", \"amount\": 20000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "29c528a3423868cbc5baa938",
+    "id": "dc-10-nv-10",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-1",
+    "totalBonus": 0,
+    "totalDeduction": 20000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-19-13-nv-10\", \"lateMinutes\": 8, \"policyLevelId\": \"PHAT_TRE-1\", \"amount\": 20000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "6e69ddab5e2b642c77bb7a5b",
+    "id": "dc-10-nv-11",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-1",
+    "totalBonus": 0,
+    "totalDeduction": 20000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-14-13-nv-11\", \"lateMinutes\": 8, \"policyLevelId\": \"PHAT_TRE-1\", \"amount\": 20000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "b9d78b82dc27088b27a0f9fc",
+    "id": "dc-10-nv-12",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-1",
+    "totalBonus": 0,
+    "totalDeduction": 20000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-09-13-nv-12\", \"lateMinutes\": 8, \"policyLevelId\": \"PHAT_TRE-1\", \"amount\": 20000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "c560eff0c749bda219ee8bfc",
+    "id": "dc-10-nv-13",
+    "periodId": "luong-10",
+    "policyLevelId": "PHAT_TRE-1",
+    "totalBonus": 0,
+    "totalDeduction": 20000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-10-04-13-nv-13\", \"lateMinutes\": 8, \"policyLevelId\": \"PHAT_TRE-1\", \"amount\": 20000}]}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "4fb6df9972b791fa43aebde6",
+    "id": "dc-10-nv-14",
+    "periodId": "luong-10",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "9bc56b5189a3aad26c3a2779",
+    "id": "dc-10-nv-15",
+    "periodId": "luong-10",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "CLOSED"
+  },
+  {
+    "_id": "ad7f475cf036e6e08e65cbc2",
+    "id": "dc-11-nv-01",
+    "periodId": "luong-11",
+    "policyLevelId": "PHAT_TRE-3",
+    "totalBonus": 0,
+    "totalDeduction": 100000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-11-02-07-nv-01\", \"lateMinutes\": 37, \"policyLevelId\": \"PHAT_TRE-3\", \"amount\": 100000}]}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:1"
+  },
+  {
+    "_id": "ba6af617e7bf9a26b462d61f",
+    "id": "dc-11-nv-02",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:5"
+  },
+  {
+    "_id": "9ed22879c33bcddbc092cb1e",
+    "id": "dc-11-nv-03",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:9"
+  },
+  {
+    "_id": "c09de54e364dab802eaf7b4d",
+    "id": "dc-11-nv-04",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:13"
+  },
+  {
+    "_id": "9de80161e31d482466c98cb8",
+    "id": "dc-11-nv-05",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:17"
+  },
+  {
+    "_id": "55fac8e57f4e03212b73a59c",
+    "id": "dc-11-nv-06",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:21"
+  },
+  {
+    "_id": "5de2067b72feca7a909b709e",
+    "id": "dc-11-nv-07",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:25"
+  },
+  {
+    "_id": "26369e9f1e8aa119913aa6f3",
+    "id": "dc-11-nv-08",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:29"
+  },
+  {
+    "_id": "79625deb75a196d9b3c1af5a",
+    "id": "dc-11-nv-09",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:33"
+  },
+  {
+    "_id": "df0da57ec07b78b999274dce",
+    "id": "dc-11-nv-10",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:37"
+  },
+  {
+    "_id": "01a487b3f474f5a940f07e6b",
+    "id": "dc-11-nv-11",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:41"
+  },
+  {
+    "_id": "d235877f77f8e06d73ab36a9",
+    "id": "dc-11-nv-12",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:45"
+  },
+  {
+    "_id": "77a1e7a339ddf90e2c903ea0",
+    "id": "dc-11-nv-13",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:49"
+  },
+  {
+    "_id": "49d46ae8669a6f1862e81af1",
+    "id": "dc-11-nv-14",
+    "periodId": "luong-11",
+    "policyLevelId": null,
+    "totalBonus": 0,
+    "totalDeduction": 0,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": []}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:53"
+  },
+  {
+    "_id": "125a30ba3ae08eaec2976253",
+    "id": "dc-11-nv-15",
+    "periodId": "luong-11",
+    "policyLevelId": "PHAT_TRE-2",
+    "totalBonus": 0,
+    "totalDeduction": 50000,
+    "notes": "{\"reason\": \"Thưởng trưởng nhóm và trừ đi trễ theo PHAT_TRE\", \"bonusReason\": \"Không thưởng\", \"lateness\": [{\"attendanceId\": \"cc-ca-2026-11-02-07-nv-15\", \"lateMinutes\": 22, \"policyLevelId\": \"PHAT_TRE-2\", \"amount\": 50000}]}",
+    "status": "DRAFT",
+    "_p5Token": "p5-op-6aee1925f73417d00e429975:57"
+  }
+]

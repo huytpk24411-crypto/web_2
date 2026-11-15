@@ -1,0 +1,284 @@
+<div class="catalog-page">
+  <div class="breadcrumb">
+    <a routerLink="/admin/rooms">Quản trị Phòng &amp; Tòa nhà</a> › Quản lý danh mục
+  </div>
+  <header class="page-title">
+    <div>
+      <h1>{{ title }}</h1>
+      <p>Dữ liệu từ máy chủ</p>
+    </div>
+    <button
+      class="btn primary"
+      *ngIf="section !== 'customers' && section !== 'audit-logs'"
+      (click)="edit()"
+      [disabled]="loading() || busy()"
+    >
+      Thêm {{ title.toLocaleLowerCase('vi') }}
+    </button>
+  </header>
+  <nav class="catalog-tabs" aria-label="Danh mục quản trị">
+    <a
+      *ngFor="let item of sections"
+      [routerLink]="['/admin/catalog', item.key]"
+      [class.active]="section === item.key"
+      [attr.aria-current]="section === item.key ? 'page' : null"
+      >{{ item.label }}</a
+    >
+  </nav>
+  <p class="notice error" *ngIf="error()" role="alert">{{ error() }}</p>
+  <p class="notice" *ngIf="toast()" role="status">
+    {{ toast() }} <button class="text-button" (click)="toast.set('')">Đóng</button>
+  </p>
+  <p *ngIf="loading()" role="status">Đang tải dữ liệu…</p>
+  <section class="panel editor" *ngIf="editing !== undefined">
+    <h2>{{ editing ? 'Chỉnh sửa' : 'Thêm' }} {{ title.toLocaleLowerCase('vi') }}</h2>
+    <p *ngIf="section === 'brokerage-agreements'">
+      Phí môi giới: 50% một tháng thuê. Mỗi phòng có một thỏa thuận hiệu lực; thời gian không được
+      chồng nhau.
+    </p>
+    <p *ngIf="section === 'properties'">
+      Đổi tọa độ sẽ cập nhật các trường trong phạm vi 8 km; khoảng cách là ước lượng.
+    </p>
+    <form [formGroup]="form" (ngSubmit)="save()">
+      <div class="catalog-fields">
+        <label class="field" *ngFor="let field of fields">
+          <span>{{ field.label }}{{ field.required ? ' *' : '' }}</span>
+          <select
+            *ngIf="field.options; else textField"
+            class="control"
+            [formControlName]="field.key"
+          >
+            <option value="" *ngIf="field.required">
+              Chọn {{ field.label.toLocaleLowerCase('vi') }}
+            </option>
+            <option *ngFor="let option of field.options" [value]="option.value">
+              {{ option.label }}
+            </option>
+          </select>
+          <ng-template #textField>
+            <ng-container *ngIf="field.type === 'logo'; else regularField">
+              <img
+                class="school-logo"
+                *ngIf="form.controls[field.key].value"
+                [src]="form.controls[field.key].value"
+                alt="Logo trường"
+              />
+              <input
+                type="file"
+                accept="image/jpeg,image/png,image/webp"
+                (change)="uploadLogo($event)"
+                [disabled]="busy()"
+                aria-label="Tải logo trường"
+              />
+            </ng-container>
+            <ng-template #regularField
+              ><input
+                class="control"
+                [type]="field.type || 'text'"
+                [formControlName]="field.key"
+                [attr.min]="field.min"
+                [attr.max]="field.max"
+                [attr.step]="field.type === 'number' ? 'any' : null"
+            /></ng-template>
+          </ng-template>
+          <app-form-error [control]="form.controls[field.key]" />
+        </label>
+      </div>
+      <div class="catalog-actions">
+        <button type="button" class="btn" (click)="editing = undefined" [disabled]="busy()">
+          Hủy</button
+        ><button class="btn primary" type="submit" [disabled]="busy()">
+          {{ busy() ? 'Đang lưu…' : 'Lưu thay đổi' }}
+        </button>
+      </div>
+    </form>
+  </section>
+  <section class="panel" *ngIf="section !== 'audit-logs'">
+    <label class="catalog-search"
+      >Tìm theo mã, tên, điện thoại<input
+        class="control"
+        [(ngModel)]="query"
+        (ngModelChange)="page = 1"
+    /></label>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Mã</th>
+            <th>{{ section === 'brokerage-agreements' ? 'Phòng' : 'Tên' }}</th>
+            <th>
+              {{ section === 'owners' || section === 'customers' ? 'Điện thoại' : 'Thông tin' }}
+            </th>
+            <th *ngIf="section !== 'customers'">Trạng thái</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of visibleRows">
+            <td>{{ record.id }}</td>
+            <td>{{ name(record) }}</td>
+            <td>{{ secondary(record) }}</td>
+            <td *ngIf="section !== 'customers'"><app-status-badge [status]="status(record)" /></td>
+            <td class="row-actions">
+              <button *ngIf="section === 'customers'" class="btn sm" (click)="showCustomer(record)">
+                Chi tiết
+              </button>
+              <ng-container *ngIf="section !== 'customers'"
+                ><button class="btn sm" (click)="edit(record)" [disabled]="busy()">Sửa</button
+                ><button
+                  class="btn sm"
+                  (click)="confirm('deactivate', record)"
+                  [disabled]="busy() || record.active === false || record.status === 'ENDED'"
+                >
+                  Ngưng hoạt động</button
+                ><button class="btn sm" (click)="confirm('delete', record)" [disabled]="busy()">
+                  Xóa
+                </button></ng-container
+              >
+            </td>
+          </tr>
+          <tr *ngIf="!loading() && !filtered.length">
+            <td colspan="5" class="empty">Không có bản ghi phù hợp.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="catalog-pagination">
+      <span>{{ filtered.length }} bản ghi · Trang {{ page }}/{{ pages }}</span
+      ><button class="btn sm" (click)="page = page - 1" [disabled]="page <= 1">Trước</button
+      ><button class="btn sm" (click)="page = page + 1" [disabled]="page >= pages">Sau</button>
+    </div>
+  </section>
+  <section class="panel" *ngIf="section === 'audit-logs'">
+    <form class="audit-filters" (ngSubmit)="load()">
+      <label
+        >Bảng<input
+          class="control"
+          name="entityType"
+          [(ngModel)]="entityType"
+          placeholder="Ví dụ: Room" /></label
+      ><label
+        >Mã người thực hiện<input class="control" name="actorId" [(ngModel)]="actorId" /></label
+      ><label>Từ ngày<input class="control" type="date" name="from" [(ngModel)]="from" /></label
+      ><label>Đến ngày<input class="control" type="date" name="to" [(ngModel)]="to" /></label
+      ><button class="btn primary" [disabled]="loading()">Lọc nhật ký</button>
+    </form>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Thời gian</th>
+            <th>Bảng / Bản ghi</th>
+            <th>Người thực hiện</th>
+            <th>Hành động</th>
+            <th>Chi tiết</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let log of audit.items">
+            <td>{{ log.at | date: 'dd/MM/yyyy HH:mm' : '+0700' }}</td>
+            <td>{{ log.entityType }} / {{ log.entityId }}</td>
+            <td>{{ log.actorId || 'Khách chưa đăng nhập' }}</td>
+            <td>{{ log.action }}</td>
+            <td><button class="btn sm" (click)="auditDetail.set(log)">Giá trị cũ / mới</button></td>
+          </tr>
+          <tr *ngIf="!loading() && !audit.items.length">
+            <td colspan="5" class="empty">Không có nhật ký phù hợp.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="catalog-pagination">
+      <span>{{ audit.total }} bản ghi · Trang {{ audit.page }}/{{ audit.pages }}</span
+      ><button
+        class="btn sm"
+        (click)="load(audit.page - 1)"
+        [disabled]="loading() || audit.page <= 1"
+      >
+        Trước</button
+      ><button
+        class="btn sm"
+        (click)="load(audit.page + 1)"
+        [disabled]="loading() || audit.page >= audit.pages"
+      >
+        Sau
+      </button>
+    </div>
+  </section>
+  <section class="panel detail" *ngIf="detail() as customer">
+    <h2>Hồ sơ {{ name(customer) }}</h2>
+    <dl class="catalog-fields">
+      <div>
+        <dt>Điện thoại</dt>
+        <dd>{{ customer.phone }}</dd>
+      </div>
+      <div>
+        <dt>Địa chỉ thường trú</dt>
+        <dd>{{ customer['permanentAddress'] || 'Chưa cập nhật' }}</dd>
+      </div>
+    </dl>
+    <ng-container *ngIf="identity(customer) as document"
+      ><h3>Giấy tờ định danh</h3>
+      <p>CCCD: {{ document.number || 'Chưa cập nhật' }}</p>
+      <p>
+        Ngày cấp: {{ document.issuedDate | date: 'dd/MM/yyyy' }} · Nơi cấp:
+        {{ document.issuedPlace || 'Chưa cập nhật' }}
+      </p>
+      <p>
+        <a *ngIf="document.frontImage" [href]="document.frontImage" target="_blank" rel="noopener"
+          >Ảnh mặt trước</a
+        >
+        <a *ngIf="document.backImage" [href]="document.backImage" target="_blank" rel="noopener"
+          >Ảnh mặt sau</a
+        >
+      </p></ng-container
+    >
+    <button class="btn" (click)="detail.set(null)">Đóng chi tiết</button>
+  </section>
+  <section class="panel detail" *ngIf="auditDetail() as log">
+    <h2>{{ log.entityType }} · {{ log.entityId }}</h2>
+    <p>{{ log.reason }}</p>
+    <div class="audit-values">
+      <div>
+        <h3>Giá trị cũ</h3>
+        <pre>{{ log.before | json }}</pre>
+      </div>
+      <div>
+        <h3>Giá trị mới</h3>
+        <pre>{{ log.after | json }}</pre>
+      </div>
+    </div>
+    <button class="btn" (click)="auditDetail.set(null)">Đóng chi tiết</button>
+  </section>
+  <div class="modal-backdrop" *ngIf="action as pending">
+    <section
+      class="modal"
+      appDialogFocus
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="catalog-confirm-title"
+      (keydown.escape)="!busy() && (action = undefined)"
+    >
+      <h2 id="catalog-confirm-title">
+        {{ pending.kind === 'delete' ? 'Xóa' : 'Ngưng hoạt động' }} {{ name(pending.record) }}
+      </h2>
+      <p>
+        {{
+          pending.kind === 'delete'
+            ? 'Chỉ xóa khi không còn bản ghi tham chiếu. Ưu tiên ngưng hoạt động để giữ lịch sử.'
+            : 'Bản ghi và lịch sử vẫn được giữ lại.'
+        }}
+      </p>
+      <label *ngIf="section === 'brokerage-agreements' && pending.kind === 'deactivate'"
+        >Ngày kết thúc<input class="control" type="date" [(ngModel)]="endDate"
+      /></label>
+      <p class="notice error" *ngIf="error()" role="alert">{{ error() }}</p>
+      <div class="catalog-actions">
+        <button class="btn" (click)="action = undefined" [disabled]="busy()">Hủy</button
+        ><button class="btn primary" (click)="performAction()" [disabled]="busy()">
+          {{ busy() ? 'Đang xử lý…' : 'Xác nhận' }}
+        </button>
+      </div>
+    </section>
+  </div>
+</div>

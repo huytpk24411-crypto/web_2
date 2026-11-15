@@ -1,0 +1,145 @@
+:host {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+.week-panel {
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.week-navigation {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px;
+}
+.week-label {
+  margin-right: auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--primary-dark);
+}
+.calendar-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.calendar-scroll:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+.week-calendar {
+  width: 100%;
+  min-width: 1120px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.calendar-caption {
+  padding: 8px 16px;
+  text-align: left;
+  color: var(--muted);
+  font-size: 12px;
+}
+.week-calendar th,
+.week-calendar td {
+  border: 1px solid var(--line);
+  padding: 10px;
+  vertical-align: top;
+  text-align: left;
+}
+.week-calendar th {
+  background: var(--soft);
+  font-size: 13px;
+}
+.week-calendar .shift-heading {
+  width: 120px;
+}
+.day-date,
+.shift-time {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.shift-time {
+  color: var(--muted);
+  font-weight: 400;
+}
+.week-calendar .today {
+  background: color-mix(in srgb, var(--primary) 6%, var(--surface));
+  box-shadow:
+    inset 2px 0 var(--primary),
+    inset -2px 0 var(--primary);
+}
+.today small {
+  display: block;
+  margin-top: 6px;
+  color: var(--primary-dark);
+}
+.shift-row td {
+  height: 180px;
+}
+.shift-card {
+  --shift-color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--shift-color) 35%, var(--line));
+  border-left: 3px solid var(--shift-color);
+  border-radius: var(--radius);
+  padding: 10px;
+  background: color-mix(in srgb, var(--shift-color) 5%, var(--surface));
+  overflow-wrap: anywhere;
+}
+.shift-card + .shift-card {
+  margin-top: 10px;
+}
+.shift-card.in-progress,
+.shift-card.completed {
+  --shift-color: var(--green);
+}
+.shift-card.absent {
+  --shift-color: var(--accent);
+}
+.shift-card h2 {
+  font-size: 14px;
+  margin: 12px 0 6px;
+}
+.card-time {
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.live-indicator {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--green);
+}
+.shift-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.shift-actions .emp-btn {
+  width: 100%;
+  min-width: 0;
+  padding: 8px;
+  font-size: 12px;
+  white-space: normal;
+}
+.opening-time {
+  color: var(--muted);
+  font-size: 11px;
+}
+.week-calendar .week-empty {
+  padding: 24px;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  .week-navigation {
+    padding: 12px;
+  }
+  .week-label {
+    order: -1;
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}

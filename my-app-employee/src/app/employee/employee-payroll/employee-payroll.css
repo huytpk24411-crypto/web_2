@@ -1,0 +1,210 @@
+﻿:host {
+  display: block;
+}
+.emp-page-head {
+  margin-bottom: 24px;
+}
+.period-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.period-label .control {
+  width: auto;
+  color: var(--text);
+}
+.payroll-stats {
+  margin-bottom: 28px;
+  gap: 16px;
+}
+.emp-stat-card {
+  position: relative;
+  padding-right: 60px;
+}
+.emp-stat-label {
+  display: block;
+  font-size: 11px;
+  min-height: 18px;
+}
+.emp-stat-value {
+  margin: 10px 0 18px;
+  font-size: 28px;
+  white-space: nowrap;
+}
+.emp-stat-value small {
+  font-size: 13px;
+  font-weight: 400;
+}
+.stat-icon {
+  position: absolute;
+  right: 18px;
+  top: 20px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius);
+  color: var(--primary-dark);
+  background: var(--soft);
+}
+.stat-foot {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-right: -40px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.deduction .emp-stat-label,
+.deduction .stat-icon {
+  color: var(--accent);
+}
+.deduction .stat-icon {
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+}
+.payroll-grid {
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+}
+.emp-card-head {
+  border: 0;
+  padding-bottom: 0;
+}
+.emp-card-head h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+.emp-card-head h2 app-icon {
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+.pay-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px;
+  margin-top: 10px;
+  background: color-mix(in srgb, var(--soft) 65%, var(--surface));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+.pay-line > strong {
+  white-space: nowrap;
+}
+.pay-line small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+.commission .emp-card-head > div {
+  flex: 1;
+}
+.commission .emp-card-head .emp-badge {
+  max-width: 120px;
+  border-radius: var(--radius);
+}
+.commission-table {
+  font-size: 11px;
+}
+.commission-table :is(th, td) {
+  padding: 12px 8px;
+}
+.commission-table th {
+  font-size: 10px;
+}
+.commission-table tfoot {
+  font-size: 12px;
+}
+.empty-details {
+  height: 240px;
+  text-align: center;
+  color: var(--muted);
+  vertical-align: middle;
+}
+.emp-table .empty-details {
+  text-align: center;
+  vertical-align: middle;
+}
+.empty-details > * {
+  display: block;
+  margin: 8px auto;
+}
+.empty-details strong {
+  color: var(--text);
+}
+.commission .emp-alert {
+  margin-top: 16px;
+  font-size: 12px;
+}
+.time-rules h3 {
+  margin: 20px 0 10px;
+  font-size: 13px;
+}
+.penalty-table {
+  font-size: 12px;
+}
+.penalty-table :is(th, td) {
+  padding: 8px 12px;
+}
+.absence {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 4%, var(--surface));
+  font-weight: 700;
+}
+.deductions .emp-card-head h2 app-icon {
+  color: var(--accent);
+}
+.deduction-empty {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 12px;
+}
+.deduction-empty .emp-subtitle {
+  font-size: 12px;
+}
+.deduction-total {
+  margin-top: 16px;
+  border-bottom: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.deduction-total > :first-child {
+  color: var(--text);
+  font-size: 12px;
+}
+.acknowledgement {
+  display: grid;
+  gap: 16px;
+}
+.acknowledgement > div > strong {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.acknowledgement .emp-actions {
+  justify-content: flex-end;
+}
+@media (max-width: 760px) {
+  .payroll-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .period-label {
+    flex-wrap: wrap;
+  }
+}
+@media print {
+  .emp-page-head .emp-actions,
+  .acknowledgement .emp-actions {
+    display: none;
+  }
+  .emp-card,
+  .emp-stat-card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}

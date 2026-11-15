@@ -1,0 +1,104 @@
+[
+  {
+    "_id": "59917f43761472e64c64c3f0",
+    "id": "HOA_HONG",
+    "type": "HOA_HONG",
+    "name": "Chính sách HOA_HONG 2026",
+    "version": 1,
+    "issuedByAccountId": "admin",
+    "effectiveFrom": "2026-07-31T17:00:00.000Z",
+    "effectiveTo": null,
+    "status": "ACTIVE",
+    "levels": [
+      {
+        "id": "HOA_HONG-1",
+        "from": 0,
+        "to": 10000000,
+        "rateBps": 2000,
+        "amount": null
+      },
+      {
+        "id": "HOA_HONG-2",
+        "from": 10000000,
+        "to": 15000000,
+        "rateBps": 3000,
+        "amount": null
+      },
+      {
+        "id": "HOA_HONG-3",
+        "from": 15000000,
+        "to": 20000000,
+        "rateBps": 3500,
+        "amount": null
+      },
+      {
+        "id": "HOA_HONG-4",
+        "from": 20000000,
+        "to": 30000000,
+        "rateBps": 4000,
+        "amount": null
+      },
+      {
+        "id": "HOA_HONG-5",
+        "from": 30000000,
+        "to": null,
+        "rateBps": 4500,
+        "amount": null
+      }
+    ]
+  },
+  {
+    "_id": "40033ef65b593294477dc3b1",
+    "id": "PHAT_TRE",
+    "type": "PHAT_TRE",
+    "name": "Chính sách PHAT_TRE 2026",
+    "version": 1,
+    "issuedByAccountId": "admin",
+    "effectiveFrom": "2026-07-31T17:00:00.000Z",
+    "effectiveTo": null,
+    "status": "ACTIVE",
+    "levels": [
+      {
+        "id": "PHAT_TRE-1",
+        "from": 1,
+        "to": 16,
+        "rateBps": null,
+        "amount": 20000
+      },
+      {
+        "id": "PHAT_TRE-2",
+        "from": 16,
+        "to": 31,
+        "rateBps": null,
+        "amount": 50000
+      },
+      {
+        "id": "PHAT_TRE-3",
+        "from": 31,
+        "to": null,
+        "rateBps": null,
+        "amount": 100000
+      }
+    ]
+  },
+  {
+    "_id": "92f35346cfab6e431e4a6c88",
+    "id": "GIU_CHO",
+    "type": "GIU_CHO",
+    "name": "Chính sách GIU_CHO 2026",
+    "version": 1,
+    "issuedByAccountId": "admin",
+    "effectiveFrom": "2026-07-31T17:00:00.000Z",
+    "effectiveTo": null,
+    "status": "ACTIVE",
+    "levels": [
+      {
+        "id": "GIU_CHO-1",
+        "from": 0,
+        "to": null,
+        "rateBps": null,
+        "amount": 1000000
+      }
+    ]
+  }
+]

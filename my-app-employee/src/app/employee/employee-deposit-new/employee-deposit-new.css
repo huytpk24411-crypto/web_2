@@ -1,0 +1,189 @@
+:host {
+  display: block;
+}
+.deposit-heading {
+  padding: 20px;
+}
+.document-meta {
+  margin-bottom: 6px;
+}
+.deposit-grid {
+  grid-template-columns: minmax(0, 2.05fr) minmax(300px, 1fr);
+}
+.deposit-section {
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.deposit-section > span {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 6px;
+  background: var(--primary);
+  color: var(--surface);
+}
+.input-icon {
+  display: block;
+  position: relative;
+}
+.input-icon input {
+  width: 100%;
+  padding-right: 38px;
+}
+.input-icon app-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+.document-attachments {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.document-attachments .emp-card-head {
+  border: 0;
+  padding: 0;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+.document-attachments .emp-card-head strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.attachment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+.attachment-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 140px;
+  padding: 14px 8px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: var(--soft);
+  text-align: center;
+  font-size: 12px;
+}
+.attachment-placeholder app-icon {
+  color: var(--primary-dark);
+}
+.attachment-placeholder small {
+  color: var(--muted);
+}
+.room-address {
+  margin: 4px 0;
+}
+.inline-room {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--background);
+}
+.payment-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 18px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 12px;
+}
+.payment-method.selected {
+  border-color: var(--primary-dark);
+  box-shadow: inset 0 0 0 1px var(--primary-dark);
+  background: var(--background);
+}
+.payment-method input {
+  accent-color: var(--primary);
+  margin-top: 4px;
+}
+.payment-method:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.payment-method small {
+  display: block;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.receiving-account {
+  margin-top: 16px;
+}
+.receiving-account p,
+.summary-policy p {
+  margin: 6px 0 0;
+}
+.summary-title {
+  margin: 4px 0 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 20px;
+}
+.deposit-summary {
+  top: 100px;
+}
+.deposit-summary > .emp-card {
+  border-color: color-mix(in srgb, var(--primary-dark) 25%, var(--line));
+}
+.summary-details > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+.summary-details span {
+  color: var(--muted);
+}
+.summary-details strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.summary-amount {
+  margin: 18px 0;
+  padding: 18px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--background);
+}
+.summary-amount small {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.summary-amount .emp-stat-value {
+  font-size: clamp(24px, 2.3vw, 32px);
+}
+.summary-policy {
+  margin-bottom: 22px;
+}
+.summary-secondary {
+  margin-top: 10px;
+  font-size: 13px;
+}
+@media (max-width: 760px) {
+  .deposit-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .deposit-summary {
+    position: static;
+  }
+  .attachment-grid {
+    gap: 6px;
+  }
+}

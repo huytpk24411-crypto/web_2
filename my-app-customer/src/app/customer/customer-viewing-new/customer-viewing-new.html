@@ -1,0 +1,469 @@
+<div class="container">
+  <div class="breadcrumb">
+    <a routerLink="/">Trang chủ</a> › <a routerLink="/rooms">Tất cả phòng</a> › Đặt lịch xem phòng
+  </div>
+  <div class="step-strip">
+    <div [class.current]="!success()" [class.done]="success()">
+      <b>1</b><span>Chọn phòng &amp; thông tin liên hệ</span>
+    </div>
+    <div [class.done]="success()">
+      <b>{{ success() ? '✓' : '2' }}</b
+      ><span>Xác nhận lịch hẹn miễn phí</span>
+    </div>
+  </div>
+
+  <section class="panel booking-success" *ngIf="success() as result; else bookingForm">
+    <div class="success-mark" aria-hidden="true">✓</div>
+    <h1 tabindex="-1">Đặt lịch xem phòng thành công!</h1>
+    <p role="status">Lịch đã được xác nhận. Nhân viên hướng dẫn sẽ đón bạn đúng giờ hẹn.</p>
+    <article class="scheduled-card" *ngFor="let v of result.viewings">
+      <div class="room-summary" *ngFor="let r of roomInfo(v)">
+        <img *ngIf="r.image" [src]="r.image" [alt]="r.name" />
+        <div>
+          <strong>{{ r.code }} · {{ r.name }}</strong>
+          <p class="muted small">{{ r.address }}</p>
+        </div>
+      </div>
+      <span class="date-chip">{{ formatAt(v.at) }}</span>
+      <ng-container *ngTemplateOutlet="guideBlock; context: { $implicit: v }" />
+    </article>
+    <div class="actions success-actions">
+      <button class="btn primary" type="button" (click)="continueBooking()">
+        Tiếp tục đặt lịch xem
+      </button>
+      <a class="btn" routerLink="/rooms">Quay về trang tìm phòng</a>
+    </div>
+  </section>
+
+  <ng-template #bookingForm>
+    <div class="split">
+      <form
+        [formGroup]="form"
+        (ngSubmit)="submit()"
+        [attr.aria-invalid]="formTouched() && formInvalid()"
+      >
+        <section class="panel">
+          <h3><app-icon name="user" /> Thông tin người hẹn xem phòng</h3>
+          <div class="grid two">
+            <label class="field"
+              ><span>Họ và tên người xem *</span
+              ><input
+                formControlName="name"
+                autocomplete="name"
+                [readonly]="submitting()" /><app-form-error [control]="form.controls.name"
+            /></label>
+            <label class="field"
+              ><span>Số điện thoại di động *</span
+              ><input
+                formControlName="phone"
+                type="tel"
+                autocomplete="tel"
+                [readonly]="submitting()" /><app-form-error [control]="form.controls.phone"
+            /></label>
+          </div>
+          <h3><app-icon name="home" /> Chọn phòng muốn xem</h3>
+          <p class="muted small">Mỗi phòng bạn chọn một ngày và giờ xem riêng.</p>
+          <div class="room-picker">
+            <label
+              class="pick-room"
+              *ngFor="let r of available()"
+              [class.selected]="selected().includes(r.id)"
+            >
+              <input
+                type="checkbox"
+                [checked]="selected().includes(r.id)"
+                [disabled]="loadingCart() || submitting()"
+                (change)="toggle(r.id)"
+              />
+              <img [src]="r.images[0]" [alt]="r.name" />
+              <span
+                ><strong>{{ r.code }} · {{ r.name }}</strong
+                ><small>{{ r.price | number }} đ/tháng • {{ r.area }} m²</small></span
+              >
+            </label>
+          </div>
+          <div class="notice">Đã chọn {{ selected().length }} phòng</div>
+          <p class="muted small" role="status" *ngIf="loadingCart()">Đang tải danh sách xem...</p>
+          <p class="muted small" *ngIf="!loadingCart() && !available().length">
+            Hiện chưa có phòng trống để đặt lịch xem.
+          </p>
+          <button
+            *ngIf="!loadingCart() && error()"
+            class="btn sm"
+            type="button"
+            (click)="loadCart()"
+          >
+            Tải lại danh sách xem
+          </button>
+        </section>
+        <section class="panel">
+          <h3><app-icon name="calendar" /> Thời gian xem từng phòng</h3>
+          <p class="muted small" *ngIf="!selected().length">
+            Chọn phòng muốn xem để đặt ngày và giờ.
+          </p>
+          <article
+            class="scheduled-card"
+            *ngFor="let r of selectedRooms()"
+            [attr.data-room-id]="r.id"
+          >
+            <div class="room-summary">
+              <img [src]="r.images[0]" [alt]="r.name" /><strong>{{ r.code }} · {{ r.name }}</strong>
+            </div>
+            <label class="field"
+              ><span>Ngày xem *</span
+              ><input
+                type="date"
+                [min]="today"
+                [value]="choice(r.id).date"
+                [disabled]="submitting()"
+                (change)="changeDate(r.id, $any($event.target).value)"
+                [attr.aria-describedby]="'choice-error-' + r.id"
+            /></label>
+            <ng-container
+              *ngTemplateOutlet="
+                slotGrid;
+                context: { choice: choice(r.id), roomId: r.id, exclude: '', edit: false }
+              "
+            />
+            <div
+              class="notice choice-error"
+              role="alert"
+              *ngIf="choice(r.id).error"
+              [id]="'choice-error-' + r.id"
+            >
+              <span>{{ choice(r.id).error }}</span
+              ><button
+                type="button"
+                class="dismiss"
+                aria-label="Đóng thông báo"
+                (click)="clearChoiceError(r.id)"
+              >
+                ×
+              </button>
+            </div>
+          </article>
+          <p class="tip">
+            Khung giờ xem phòng: 07:00–11:00 và 13:00–17:00, mỗi lượt khoảng 30 phút.
+          </p>
+          <label class="field"
+            ><span>Ghi chú nhu cầu</span
+            ><textarea
+              formControlName="note"
+              maxlength="1000"
+              [readonly]="submitting()"
+              placeholder="Số người ở, thời gian chuyển vào, ngân sách dự kiến..."
+            ></textarea
+            ><app-form-error [control]="form.controls.note"
+          /></label>
+          <p class="error" role="alert" *ngIf="error()">{{ error() }}</p>
+          <button class="btn danger full" type="submit" [disabled]="loadingCart() || submitting()">
+            <app-icon name="calendar" [size]="16" />{{
+              submitting()
+                ? 'Đang gửi lịch xem...'
+                : selected().length
+                  ? 'XÁC NHẬN ĐẶT ' + selected().length + ' LỊCH XEM PHÒNG'
+                  : 'XÁC NHẬN ĐẶT LỊCH XEM PHÒNG'
+            }}
+          </button>
+        </section>
+      </form>
+      <aside class="sticky">
+        <div class="panel" *ngIf="firstRoom() as r">
+          <img class="selected-photo" [src]="r.images[0]" [alt]="r.name" /><span class="badge green"
+            >Đang trống • {{ r.code }}</span
+          >
+          <h3>{{ r.name }}</h3>
+          <p class="muted small">{{ r.address }}</p>
+          <p class="price">{{ r.price | number }} đ<small> / tháng</small></p>
+        </div>
+        <div class="notice success">
+          <strong>✓ Cam kết từ iHOUZZ Uni</strong>
+          <p>Xem phòng miễn phí, hỗ trợ tìm phòng phù hợp với nhu cầu và ngân sách của bạn.</p>
+        </div>
+      </aside>
+    </div>
+  </ng-template>
+
+  <section class="panel viewing-history">
+    <div class="section-heading">
+      <h3>Lịch xem phòng của bạn</h3>
+      <button
+        class="btn sm"
+        type="button"
+        (click)="loadMine()"
+        [disabled]="loadingMine() || saving()"
+      >
+        Tải lại lịch xem
+      </button>
+    </div>
+    <div class="actions tabs" role="tablist" aria-label="Lịch xem phòng">
+      <button
+        class="btn"
+        id="upcoming-tab"
+        role="tab"
+        type="button"
+        [class.primary]="tab() === 'upcoming'"
+        [attr.aria-selected]="tab() === 'upcoming'"
+        aria-controls="viewing-list"
+        (click)="tab.set('upcoming')"
+      >
+        Sắp tới
+      </button>
+      <button
+        class="btn"
+        id="past-tab"
+        role="tab"
+        type="button"
+        [class.primary]="tab() === 'past'"
+        [attr.aria-selected]="tab() === 'past'"
+        aria-controls="viewing-list"
+        (click)="tab.set('past')"
+      >
+        Đã qua
+      </button>
+    </div>
+    <p class="muted small" role="status" *ngIf="loadingMine()">Đang tải lịch xem...</p>
+    <p class="error" role="alert" *ngIf="historyError()">{{ historyError() }}</p>
+    <p class="notice success" role="status" *ngIf="message()">{{ message() }}</p>
+    <div
+      id="viewing-list"
+      role="tabpanel"
+      [attr.aria-labelledby]="tab() === 'upcoming' ? 'upcoming-tab' : 'past-tab'"
+    >
+      <p class="muted small" *ngIf="!loadingMine() && !historyError() && !visibleViewings().length">
+        Không có lịch xem trong mục này.
+      </p>
+      <article class="viewing-row" *ngFor="let v of visibleViewings()">
+        <div>
+          <strong>{{ formatAt(v.at) }}</strong>
+          <p *ngFor="let r of roomInfo(v)">{{ r.code }} · {{ r.name }}</p>
+          <p class="muted small" *ngIf="v.guide as guide; else pendingRow">
+            {{ guide.fullName }} · <a [href]="'tel:' + guide.phone">{{ guide.phone }}</a>
+          </p>
+          <ng-template #pendingRow><p class="muted small">Đang đợi người hỗ trợ</p></ng-template>
+        </div>
+        <span *ngIf="v.serverStatus === 'DA_XEM'; else badge">Đã xem</span
+        ><ng-template #badge><app-status-badge [status]="statusBadge(v)" /></ng-template>
+        <div class="actions row-actions">
+          <button class="btn sm" type="button" (click)="openDialog('detail', v)">Chi tiết</button
+          ><button class="btn sm" type="button" *ngIf="v.canEdit" (click)="openDialog('edit', v)">
+            Sửa</button
+          ><button class="btn sm" type="button" *ngIf="v.canEdit" (click)="openDialog('delete', v)">
+            Xóa
+          </button>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<ng-template #guideBlock let-v>
+  <div class="viewing-guide">
+    <strong>Nhân viên hướng dẫn</strong>
+    <ng-container *ngIf="v.guide as employee; else pendingGuide"
+      ><p>Họ tên: {{ employee.fullName }}</p>
+      <p>Mã NV: {{ employee.employeeCode }}</p>
+      <p>
+        SĐT: <a [href]="'tel:' + employee.phone">{{ employee.phone }}</a>
+      </p></ng-container
+    >
+    <ng-template #pendingGuide
+      ><p class="pending-guide">
+        Đang đợi người hỗ trợ. Nhân viên hướng dẫn sẽ hiện ở đây khi lịch trực tuần này được chốt.
+      </p></ng-template
+    >
+  </div>
+</ng-template>
+
+<ng-template
+  #slotGrid
+  let-choice="choice"
+  let-roomId="roomId"
+  let-exclude="exclude"
+  let-edit="edit"
+>
+  <div class="slot-picker" [attr.aria-busy]="!!availabilityState(choice.date, exclude)?.loading">
+    <p class="muted small" role="status" *ngIf="availabilityState(choice.date, exclude)?.loading">
+      Đang tải khung giờ...
+    </p>
+    <div
+      class="notice choice-error"
+      role="alert"
+      *ngIf="availabilityState(choice.date, exclude)?.error as loadError"
+    >
+      <span>{{ loadError }}</span
+      ><button class="btn sm" type="button" (click)="loadAvailability(choice.date, exclude, true)">
+        Thử lại
+      </button>
+    </div>
+    <fieldset class="slot-group" *ngFor="let group of timeGroups">
+      <legend>{{ group.label }} *</legend>
+      <div class="slot-grid">
+        <button
+          class="slot-chip"
+          type="button"
+          *ngFor="let time of group.times"
+          [class.selected]="choice.startTime === time"
+          [class.unavailable]="!!slotReason(choice.date, time, roomId, exclude)"
+          [class.waiting]="!availabilityState(choice.date, exclude)?.data"
+          [attr.aria-disabled]="
+            slotUnavailable(choice.date, time, roomId, exclude) ? 'true' : 'false'
+          "
+          [attr.aria-pressed]="choice.startTime === time"
+          [attr.aria-label]="
+            time + (slotReason(choice.date, time, roomId, exclude) ? ' – không khả dụng' : '')
+          "
+          (click)="selectTime(roomId, time, edit)"
+        >
+          {{ time }}
+        </button>
+      </div>
+    </fieldset>
+    <p
+      class="tip pending-guide-hint"
+      role="note"
+      *ngIf="choice.startTime && slotPendingGuide(choice.date, choice.startTime, exclude)"
+    >
+      Tuần này chưa chốt lịch trực. Lịch xem vẫn được xác nhận; người hỗ trợ sẽ hiện sau khi lịch
+      trực được chốt.
+    </p>
+  </div>
+</ng-template>
+
+<div
+  class="modal-backdrop"
+  *ngIf="dialog() as modal"
+  (click)="closeDialog()"
+  (keydown.escape)="closeDialog()"
+>
+  <section
+    class="modal viewing-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="viewing-dialog-title"
+    appDialogFocus
+    (click)="$event.stopPropagation()"
+    [attr.aria-busy]="saving()"
+  >
+    <button
+      class="close dismiss"
+      type="button"
+      aria-label="Đóng hộp thoại"
+      [disabled]="saving()"
+      (click)="closeDialog()"
+    >
+      ×
+    </button>
+    <h2 id="viewing-dialog-title">
+      {{
+        modal.kind === 'detail'
+          ? 'Chi tiết lịch xem phòng'
+          : modal.kind === 'edit'
+            ? 'Sửa lịch xem phòng'
+            : 'Xóa lịch xem phòng'
+      }}
+    </h2>
+    <ng-container *ngIf="modal.kind === 'detail'">
+      <p><strong>Mã lịch:</strong> {{ modal.viewing.id }}</p>
+      <p>
+        <strong>Trạng thái:</strong>
+        <span *ngIf="modal.viewing.serverStatus === 'DA_XEM'; else detailStatus">Đã xem</span
+        ><ng-template #detailStatus
+          ><app-status-badge [status]="statusBadge(modal.viewing)"
+        /></ng-template>
+      </p>
+      <p><strong>Ngày giờ:</strong> {{ formatAt(modal.viewing.at) }}</p>
+      <article class="scheduled-card" *ngFor="let r of roomInfo(modal.viewing)">
+        <div class="room-summary">
+          <img *ngIf="r.image" [src]="r.image" [alt]="r.name" />
+          <div>
+            <strong>{{ r.code }} · {{ r.name }}</strong>
+            <p>{{ r.address }}</p>
+            <p *ngIf="r.price !== null; else missingPrice">{{ r.price | number }} đ/tháng</p>
+            <ng-template #missingPrice><p>Chưa có thông tin giá.</p></ng-template>
+            <a
+              *ngIf="rooms.get(r.roomId)"
+              [routerLink]="['/rooms', r.roomId]"
+              (click)="closeDialog()"
+              >Xem phòng</a
+            >
+          </div>
+        </div>
+      </article>
+      <p><strong>Người xem:</strong> {{ modal.viewing.name }}</p>
+      <p>
+        <strong>SĐT:</strong>&nbsp;<a [href]="'tel:' + modal.viewing.phone">{{
+          modal.viewing.phone
+        }}</a>
+      </p>
+      <p class="viewing-note">
+        <strong>Ghi chú:</strong> {{ modal.viewing.note || 'Không có ghi chú.' }}
+      </p>
+      <ng-container *ngTemplateOutlet="guideBlock; context: { $implicit: modal.viewing }" />
+    </ng-container>
+    <form *ngIf="modal.kind === 'edit'" (ngSubmit)="saveEdit()">
+      <p *ngFor="let r of roomInfo(modal.viewing)">{{ r.code }} · {{ r.name }}</p>
+      <label class="field"
+        ><span>Ngày xem *</span
+        ><input
+          type="date"
+          [min]="today"
+          [value]="editChoice().date"
+          [disabled]="saving()"
+          (change)="changeEditDate($any($event.target).value)"
+      /></label>
+      <ng-container
+        *ngTemplateOutlet="
+          slotGrid;
+          context: { choice: editChoice(), roomId: '', exclude: modal.viewing.id, edit: true }
+        "
+      />
+      <div class="notice choice-error" role="alert" *ngIf="editChoice().error">
+        <span>{{ editChoice().error }}</span
+        ><button
+          class="dismiss"
+          type="button"
+          aria-label="Đóng thông báo"
+          (click)="clearEditError()"
+        >
+          ×
+        </button>
+      </div>
+      <label class="field"
+        ><span>Ghi chú nhu cầu</span
+        ><textarea
+          maxlength="1000"
+          [value]="editNote()"
+          [disabled]="saving()"
+          (input)="editNote.set($any($event.target).value)"
+        ></textarea>
+      </label>
+      <p class="error" role="alert" *ngIf="modalError()">{{ modalError() }}</p>
+      <div class="actions">
+        <button class="btn primary" type="submit" [disabled]="saving()">
+          {{ saving() ? 'Đang lưu...' : 'Lưu thay đổi' }}</button
+        ><button class="btn" type="button" [disabled]="saving()" (click)="closeDialog()">
+          Hủy
+        </button>
+      </div>
+    </form>
+    <ng-container *ngIf="modal.kind === 'delete'">
+      <p>
+        Xóa lịch xem
+        <ng-container *ngFor="let r of roomInfo(modal.viewing); let last = last"
+          >{{ r.code }}{{ last ? '' : ', ' }}</ng-container
+        >
+        lúc {{ formatAt(modal.viewing.at) }}? Lịch sẽ bị xóa hẳn và nhân viên hướng dẫn sẽ được
+        thông báo.
+      </p>
+      <p class="error" role="alert" *ngIf="modalError()">{{ modalError() }}</p>
+      <div class="actions">
+        <button class="btn danger" type="button" [disabled]="saving()" (click)="deleteViewing()">
+          {{ saving() ? 'Đang xóa...' : 'Xóa lịch' }}</button
+        ><button class="btn" type="button" [disabled]="saving()" (click)="closeDialog()">
+          Không
+        </button>
+      </div>
+    </ng-container>
+  </section>
+</div>

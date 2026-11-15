@@ -1,0 +1,8 @@
+<span
+  class="badge"
+  [class.green]="['AVAILABLE', 'CONFIRMED', 'COMPLETED', 'DONE', 'SCHEDULED'].includes(status)"
+  [class.red]="['FORFEITED', 'EXPIRED'].includes(status)"
+  [class.gray]="['HIDDEN', 'CANCELLED'].includes(status)"
+  [class.amber]="['PENDING', 'HELD', 'TODO'].includes(status)"
+  >● {{ labels[status] || status }}</span
+>

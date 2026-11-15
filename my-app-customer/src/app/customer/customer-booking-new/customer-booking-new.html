@@ -1,0 +1,217 @@
+﻿<div class="container">
+  <div class="breadcrumb">
+    <a routerLink="/">Trang chủ</a> › <a routerLink="/rooms">Tất cả phòng</a> › Giữ chỗ
+  </div>
+  <div class="step-strip" aria-label="Tiến trình giữ chỗ">
+    <div [class.current]="!pendingId()" [class.done]="!!pendingId()">
+      <b>1</b><span>Thông tin</span>
+    </div>
+    <div [class.current]="!!pendingId()"><b>2</b><span>Thanh toán</span></div>
+    <div><b>3</b><span>Hoàn tất</span></div>
+  </div>
+  <p class="error" *ngIf="error()" role="alert">{{ error() }}</p>
+  <p *ngIf="booking.loading()" role="status">Đang tải giữ chỗ…</p>
+  <ng-container *ngIf="room as r; else chooseRoom">
+    <div class="notice">
+      <app-icon name="shield" [size]="16" /> <strong>Giữ chỗ độc quyền 48 giờ</strong>
+      <p>
+        Hoàn tất thanh toán trong 15 phút. Phòng được giữ 48 giờ kể từ khi thanh toán thành công.
+      </p>
+    </div>
+    <div class="split">
+      <div>
+        <section class="panel">
+          <div class="inline-room">
+            <img
+              [src]="r.images[0] || '/assets/placeholders/room-placeholder.svg'"
+              [alt]="r.name"
+            />
+            <div>
+              <span class="badge">{{ r.code }}</span>
+              <h3>{{ r.name }}</h3>
+              <span class="muted small">{{ r.address }}</span>
+            </div>
+          </div>
+          <div class="detail-list room-amount">
+            <div>
+              <span>Giá thuê</span><strong>{{ r.price | number }} đ/tháng</strong>
+            </div>
+            <div>
+              <span>Tiền giữ chỗ</span
+              ><strong>{{
+                amount !== undefined ? (amount | number) + ' đ' : 'Theo chính sách hiệu lực'
+              }}</strong>
+            </div>
+          </div>
+        </section>
+        <form
+          *ngIf="!pendingId(); else contactSummary"
+          (ngSubmit)="submit()"
+          [formGroup]="form"
+          [attr.aria-busy]="busy()"
+        >
+          <section class="panel">
+            <h3><app-icon name="user" /> Thông tin khách thuê</h3>
+            <div class="grid two">
+              <label class="field"
+                ><span>Họ và tên khách hàng *</span
+                ><input formControlName="name" autocomplete="name" /><app-form-error
+                  [control]="form.controls.name"
+              /></label>
+              <label class="field"
+                ><span>Số điện thoại liên hệ *</span
+                ><input formControlName="phone" type="tel" autocomplete="tel" /><app-form-error
+                  [control]="form.controls.phone"
+              /></label>
+              <label class="field"
+                ><span>Ngày dự kiến nhận phòng *</span
+                ><input formControlName="moveIn" type="date" /><app-form-error
+                  [control]="form.controls.moveIn"
+              /></label>
+              <label class="field"
+                ><span>Ghi chú</span
+                ><input formControlName="note" placeholder="Nhu cầu, thời gian liên hệ..."
+              /></label>
+            </div>
+            <label class="check"
+              ><input type="checkbox" formControlName="terms" /><span
+                >Tôi đã đọc thông tin và đồng ý điều kiện giữ chỗ trong 48 giờ.</span
+              ></label
+            >
+            <app-form-error [control]="form.controls.terms" />
+            <button
+              class="btn primary full next-button"
+              type="submit"
+              [disabled]="busy() || booking.loading()"
+            >
+              {{ busy() ? 'Đang tạo yêu cầu…' : 'Tiếp tục thanh toán' }}
+            </button>
+          </section>
+        </form>
+        <ng-template #contactSummary>
+          <section class="panel" *ngIf="pendingHold as hold">
+            <h3>Thông tin khách thuê</h3>
+            <div class="detail-list">
+              <div>
+                <span>Khách hàng</span><strong>{{ hold.name }}</strong>
+              </div>
+              <div>
+                <span>Số điện thoại</span><strong>{{ hold.phone }}</strong>
+              </div>
+              <div>
+                <span>Ngày dự kiến nhận phòng</span
+                ><strong>{{ hold.moveIn | date: 'dd/MM/yyyy' }}</strong>
+              </div>
+              <div *ngIf="hold.note">
+                <span>Ghi chú</span><strong>{{ hold.note }}</strong>
+              </div>
+            </div>
+          </section>
+        </ng-template>
+      </div>
+      <aside class="sticky">
+        <section class="panel" *ngIf="pendingId(); else paymentIntro" [attr.aria-busy]="busy()">
+          <h3><app-icon name="wallet" /> Thanh toán giữ chỗ</h3>
+          <div class="detail-list">
+            <div>
+              <span>Số tiền giữ chỗ</span><strong>{{ amount | number }} đ</strong>
+            </div>
+            <div class="transfer-reference">
+              <span>Nội dung chuyển khoản</span
+              ><strong>{{ paymentReference || 'Chưa có nội dung chuyển khoản' }}</strong>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn sm copy-button"
+            (click)="copyReference()"
+            [disabled]="busy() || !paymentReference"
+          >
+            Sao chép nội dung
+          </button>
+          <p *ngIf="copied()" role="status">Đã sao chép nội dung chuyển khoản.</p>
+          <p class="countdown" role="timer" aria-label="Thời gian thanh toán còn lại">
+            Thời gian còn lại: <strong>{{ countdown }}</strong>
+          </p>
+          <p class="notice warning" *ngIf="!canPay">
+            Đã hết thời gian chuyển khoản. Kiểm tra trạng thái để xem phiếu hoặc tạo yêu cầu mới.
+          </p>
+          <p class="small muted">
+            Phòng được giữ 48 giờ kể từ khi thanh toán thành công. Quá 48 giờ chưa làm hồ sơ cọc,
+            tiền giữ chỗ không được hoàn lại.
+          </p>
+          <button
+            type="button"
+            class="btn primary full"
+            (click)="pay()"
+            [disabled]="busy() || !canPay || gatewayUnavailable()"
+          >
+            {{ busy() ? 'Đang kết nối ngân hàng…' : 'Thanh toán qua ngân hàng (payOS)' }}
+          </button>
+          <button
+            type="button"
+            class="btn full status-button"
+            (click)="refreshPending()"
+            [disabled]="busy() || booking.loading()"
+          >
+            Kiểm tra trạng thái
+          </button>
+          <button
+            type="button"
+            class="cancel-link"
+            (click)="cancelHold(pendingId())"
+            [disabled]="busy() || !canPay"
+          >
+            Hủy yêu cầu
+          </button>
+        </section>
+        <ng-template #paymentIntro>
+          <section class="panel">
+            <h3>Thanh toán qua ngân hàng (payOS)</h3>
+            <p>
+              Điền thông tin và chọn Tiếp tục thanh toán để tạo giữ chỗ, sau đó thanh toán qua cổng
+              ngân hàng payOS.
+            </p>
+          </section>
+        </ng-template>
+        <div class="soft-box small">
+          <strong>Khoản giữ chỗ và khoản cọc</strong>
+          <p class="muted">
+            Tiền giữ chỗ được khấu trừ đúng một lần khi nhân viên lập hồ sơ cọc từ booking này.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </ng-container>
+  <ng-template #chooseRoom
+    ><div class="empty">
+      <h2>Chọn phòng để bắt đầu giữ chỗ</h2>
+      <a routerLink="/rooms" class="btn primary">Tìm phòng</a>
+    </div></ng-template
+  >
+  <section class="panel" *ngIf="holds.length">
+    <h3>Yêu cầu giữ chỗ của bạn</h3>
+    <div *ngFor="let hold of holds" class="history-row">
+      <div>
+        <strong
+          >{{ rooms.forRecord(hold)?.code }} ·
+          {{ rooms.forRecord(hold)?.name || hold.roomId }}</strong
+        ><small class="muted"
+          >{{ hold.number || hold.id }} · {{ rooms.forRecord(hold)?.address }}</small
+        >
+      </div>
+      <app-status-badge [status]="hold.apiStatus ? booking.label(hold.apiStatus) : hold.status" />
+      <button
+        class="btn sm"
+        *ngIf="hold.apiStatus === 'PAYMENT_PENDING'"
+        (click)="resume(hold.id)"
+        [disabled]="busy()"
+      >
+        Tiếp tục thanh toán
+      </button>
+      <a class="btn sm" *ngIf="hold.paymentId" [routerLink]="['/bookings', hold.id, 'receipt']"
+        >Xem phiếu</a
+      >
+    </div>
+  </section>
+</div>

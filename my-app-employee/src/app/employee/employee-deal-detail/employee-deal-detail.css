@@ -1,0 +1,334 @@
+.emp-page-head {
+  border: 0;
+  margin-bottom: 18px;
+  padding: 0;
+}
+.emp-title {
+  font-size: 20px;
+  color: var(--primary-dark);
+}
+.emp-page-head > div {
+  flex: 1;
+}
+.emp-page-head .emp-actions {
+  gap: 8px;
+}
+.deal-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.emp-stat-card {
+  padding: 16px;
+}
+.emp-stat-value {
+  display: block;
+  font-size: 24px;
+  margin: 12px 0 2px;
+}
+.emp-stat-card small {
+  font-size: 11px;
+  color: var(--muted);
+}
+.waiting {
+  background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--line));
+}
+.waiting :is(.emp-stat-label, .emp-stat-value) {
+  color: var(--primary-dark);
+}
+.deal-filters {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 24px;
+  padding: 12px;
+}
+.deal-filters label {
+  display: grid;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--muted);
+  min-width: 0;
+  flex: 1;
+}
+.deal-filters .search-field {
+  flex: 3;
+}
+.deal-filters :is(input, select) {
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.deal-filters :is(input, select):focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--focus-ring);
+}
+.deal-filters .emp-btn {
+  height: 38px;
+}
+.deal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 20px;
+  align-items: start;
+}
+.list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.list-heading h2 {
+  margin: 0;
+  font-size: 14px;
+}
+.list-heading small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.deal-card {
+  position: relative;
+  display: block;
+  margin-bottom: 12px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--text);
+}
+.deal-card.active {
+  border: 2px solid var(--primary-dark);
+  padding: 15px;
+  box-shadow: var(--shadow-sm);
+}
+.selection-label {
+  position: absolute;
+  right: 14px;
+  top: -10px;
+  background: var(--primary-dark);
+  color: var(--surface);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+}
+.contract-id {
+  color: var(--primary-dark);
+}
+.deal-card .emp-actions {
+  gap: 8px;
+}
+.deal-card h3 {
+  font-size: 14px;
+  margin: 8px 0 0;
+  text-transform: uppercase;
+}
+.contact {
+  font-size: 10px;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.contract-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.contract-facts > div {
+  display: grid;
+  align-content: start;
+  background: var(--background);
+  border-radius: 5px;
+  padding: 9px;
+  font-size: 12px;
+}
+.contract-facts small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.contract-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+  margin-top: 12px;
+}
+.handover-rule p {
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+.dossier-head {
+  background: var(--background);
+  margin: -20px -20px 20px;
+  padding: 16px 20px;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.dossier-head h2 {
+  display: inline;
+  font-size: 16px;
+  margin-left: 6px;
+}
+.step-label {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 8px 0 28px;
+}
+.choice {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+  font-size: 12px;
+  color: var(--text);
+  text-decoration: none;
+}
+.choice p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+.choice.selected {
+  border: 2px solid var(--primary-dark);
+  padding: 13px;
+  background: var(--background);
+  color: var(--primary-dark);
+}
+.choice.danger.selected {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 3%, var(--surface));
+}
+.choice .emp-badge {
+  float: right;
+  margin-bottom: 6px;
+}
+.settlement {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--background);
+  margin-bottom: 16px;
+}
+.settlement :is(h3, h4) {
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+.settlement-details {
+  background: var(--surface);
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.settlement-details .emp-info-row:last-child {
+  border: 0;
+}
+.confirm-action {
+  margin-top: 20px;
+  font-size: 14px !important;
+}
+.violation-alert {
+  display: block;
+  margin-bottom: 16px;
+}
+.violation-alert p {
+  margin: 6px 0 0;
+}
+.preview .emp-card-head h3 {
+  font-size: 14px;
+}
+.a4-stage {
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--soft);
+}
+.a4-stage > :is(app-receipt-preview, .receipt-paper) {
+  display: block;
+  min-height: 680px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.a4-stage > .receipt-paper {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 28px;
+  aspect-ratio: 210 / 297;
+}
+.receipt-paper h2 {
+  font-size: 17px;
+}
+.deal-card:hover,
+a.choice:hover {
+  border-color: var(--primary);
+}
+.deal-card:focus-visible,
+.choice:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+@media (max-width: 850px) {
+  .deal-layout {
+    grid-template-columns: 1fr;
+  }
+  .deal-layout > aside {
+    max-height: 350px;
+    overflow: auto;
+  }
+}
+@media print {
+  .emp-page-head,
+  .deal-stats,
+  .deal-filters,
+  .dossier,
+  .preview .emp-card-head {
+    display: none;
+  }
+  .deal-layout {
+    display: block;
+  }
+  .preview,
+  .a4-stage {
+    padding: 0;
+    border: 0;
+    background: var(--surface);
+    box-shadow: none;
+  }
+  .a4-stage > :is(app-receipt-preview, .receipt-paper) {
+    min-height: 0;
+    box-shadow: none;
+  }
+}
+
+.deposit-workspace {
+  margin-bottom: 16px;
+}
+.deposit-workspace h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+.deposit-group {
+  border-top: 1px solid var(--line);
+  padding: 10px 0;
+}
+.deposit-group summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+.deposit-group summary:focus-visible {
+  box-shadow: var(--focus-ring);
+}
+.deposit-row {
+  padding-top: 10px;
+  font-size: 12px;
+}

@@ -1,0 +1,87 @@
+<form
+  class="auth-form"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  [attr.aria-busy]="submitting()"
+  novalidate
+>
+  <header class="auth-heading staff-heading">
+    <div class="staff-title">
+      <svg class="staff-shield" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2.5 19.5 5.6v5.6c0 4.7-3.2 8.4-7.5 10.3-4.3-1.9-7.5-5.6-7.5-10.3V5.6z" />
+        <circle cx="14.2" cy="9.4" r="2.4" />
+        <path d="m12.5 11.1-4.3 4.3m1.4-1.4 1.5 1.5m-2.9-.1 1.3 1.3" />
+      </svg>
+      <h1>Đăng nhập quản trị</h1>
+    </div>
+    <p>Truy cập hệ thống quản lý iHOUZZ Uni</p>
+  </header>
+
+  <label class="auth-field" for="login-identifier">
+    <span>Tên đăng nhập hoặc số điện thoại</span>
+    <span class="auth-input-wrap">
+      <app-icon name="user" [size]="23" />
+      <input
+        id="login-identifier"
+        type="text"
+        formControlName="username"
+        autocomplete="username"
+        [attr.aria-invalid]="form.controls.username.invalid && form.controls.username.touched"
+      />
+    </span>
+    <small
+      class="auth-error-inline"
+      *ngIf="form.controls.username.touched && form.controls.username.hasError('required')"
+      >Vui lòng nhập tên đăng nhập hoặc số điện thoại.</small
+    >
+    <small
+      class="auth-error-inline"
+      *ngIf="form.controls.username.touched && form.controls.username.hasError('pattern')"
+      >Nhập số điện thoại hợp lệ hoặc tên đăng nhập gồm 3–30 ký tự, bắt đầu bằng chữ.</small
+    >
+  </label>
+
+  <label class="auth-field" for="login-password">
+    <span>Mật khẩu</span>
+    <span class="auth-input-wrap">
+      <app-icon name="lock" [size]="23" />
+      <input
+        #passwordInput
+        id="login-password"
+        formControlName="password"
+        [type]="showPassword ? 'text' : 'password'"
+        autocomplete="current-password"
+        [attr.aria-invalid]="form.controls.password.invalid && form.controls.password.touched"
+      />
+      <button
+        class="auth-password-toggle"
+        type="button"
+        [attr.aria-label]="showPassword ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'"
+        [attr.aria-pressed]="showPassword"
+        (pointerdown)="$event.preventDefault()"
+        (click)="togglePassword(passwordInput)"
+      >
+        <app-icon [name]="showPassword ? 'eye-off' : 'eye'" [size]="23" />
+      </button>
+    </span>
+    <app-form-error [control]="form.controls.password" />
+  </label>
+
+  <label class="remember-phone staff-remember" for="login-remember">
+    <input id="login-remember" type="checkbox" formControlName="rememberMe" />
+    <span>Ghi nhớ tên đăng nhập</span>
+  </label>
+
+  <p class="auth-error" *ngIf="error()" role="alert">{{ error() }}</p>
+
+  <button
+    class="btn primary full auth-submit"
+    type="submit"
+    [disabled]="submitting()"
+    [attr.aria-busy]="submitting()"
+  >
+    <span class="auth-spinner" *ngIf="submitting()" aria-hidden="true"></span>
+    {{ submitting() ? 'Đang đăng nhập…' : 'Đăng nhập' }}
+    <app-icon *ngIf="!submitting()" name="arrow" [size]="23" />
+  </button>
+</form>

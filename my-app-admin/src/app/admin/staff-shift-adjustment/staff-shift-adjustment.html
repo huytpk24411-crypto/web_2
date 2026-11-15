@@ -1,0 +1,185 @@
+<div class="adjust-backdrop" (click)="closed.emit()">
+  <section
+    class="adjust-dialog"
+    [class.success-dialog]="success"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="adjust-title"
+    (click)="$event.stopPropagation()"
+  >
+    <header>
+      <span class="heading-icon" *ngIf="!success"><app-icon name="calendar" [size]="26" /></span>
+      <div *ngIf="!success">
+        <h2 id="adjust-title">
+          Điều chỉnh Ca trực Nhân viên
+          <span class="pill">{{ employee?.employeeCode || 'Chọn nhân viên' }}</span>
+        </h2>
+        <p>
+          {{ employee?.fullName || 'Chưa có nhân viên đăng ký ca này' }} <span>•</span>
+          {{ employee?.position }} <span>•</span>
+          <b>{{ repository.location(source?.workLocationId || '')?.name }}</b>
+        </p>
+      </div>
+      <button class="close-button" aria-label="Đóng điều chỉnh lịch" (click)="closed.emit()">
+        <app-icon name="close" />
+      </button>
+    </header>
+    <ng-container *ngIf="!success; else completed">
+      <div class="adjust-body">
+        <div class="current-shift">
+          <span class="source-icon"><app-icon name="calendar" [size]="24" /></span>
+          <div>
+            <small>CA HIỆN TẠI CẦN ĐỔI</small>
+            <h3>
+              {{ source?.label }}
+              <span
+                >{{ source?.date | date: 'dd/MM/yyyy' }} • {{ source?.start }} –
+                {{ source?.end }}</span
+              >
+            </h3>
+          </div>
+          <label
+            >Nhân viên điều chỉnh<select
+              [ngModel]="assignmentId"
+              (ngModelChange)="assignmentId = $event; changeEmployee()"
+              aria-label="Nhân viên điều chỉnh"
+            >
+              <option value="">Chọn nhân viên</option>
+              <option *ngFor="let a of assignments" [value]="a.id">
+                {{ repository.employee(a.employeeId)?.fullName }}
+              </option>
+            </select></label
+          >
+        </div>
+        <div class="board-heading">
+          <h3>Bảng chọn ca trực thay thế <small>Nhấp vào ca còn chỗ để chọn</small></h3>
+          <div class="legend">
+            <span class="red">● Ca gốc</span><span class="blue">● Ca mới đã chọn</span
+            ><span>● Chưa đủ người trực</span>
+          </div>
+        </div>
+        <div class="replacement-board">
+          <table>
+            <thead>
+              <tr>
+                <th>KHUNG GIỜ</th>
+                <th *ngFor="let date of dates">
+                  <div>{{ date | date: 'EEE' : '' : 'vi' }} • {{ date | date: 'dd/MM' }}</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let slot of slots">
+                <th><app-icon [name]="slot.icon" [size]="16" /> {{ slot.name }}</th>
+                <td *ngFor="let date of dates">
+                  <button
+                    *ngFor="let shift of cells(date, slot.from, slot.to)"
+                    class="replacement-cell"
+                    [class.original]="shift.id === shiftId"
+                    [class.selected]="targetId === shift.id"
+                    [disabled]="!!reason(shift)"
+                    [attr.aria-pressed]="targetId === shift.id"
+                    [attr.aria-label]="shift.label + ' ' + shift.date + ' ' + shift.start"
+                    [title]="reason(shift) || 'Chọn ca này'"
+                    (click)="select(shift)"
+                  >
+                    <span class="cell-badge">{{
+                      shift.id === shiftId
+                        ? 'CA HIỆN TẠI'
+                        : targetId === shift.id
+                          ? 'CA MỚI ĐÃ CHỌN'
+                          : repository.remaining(shift)
+                            ? 'Còn chỗ'
+                            : 'Đã kín'
+                    }}</span
+                    ><strong>{{
+                      shift.id === shiftId
+                        ? employee?.fullName || 'Ca gốc'
+                        : targetId === shift.id
+                          ? 'Chuyển sang ca này'
+                          : repository.remaining(shift)
+                            ? 'Chưa đủ người trực'
+                            : 'Đã đủ người trực'
+                    }}</strong
+                    ><span>{{ shift.start }} – {{ shift.end }}</span
+                    ><small>{{
+                      reason(shift) || 'Còn ' + repository.remaining(shift) + ' vị trí trống'
+                    }}</small>
+                  </button>
+                  <div class="no-slot" *ngIf="!cells(date, slot.from, slot.to).length">
+                    Chưa tạo ca
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="adjust-summary">
+          <article>
+            <h3><app-icon name="calendar" /> Tóm tắt kế hoạch điều chỉnh</h3>
+            <p>
+              <b>{{ employee?.fullName || 'Chưa chọn nhân viên' }}</b>
+            </p>
+            <div class="summary-route">
+              <span>{{ source?.date | date: 'dd/MM' }} · {{ source?.start }}</span
+              ><app-icon name="arrow" /><b>{{
+                target ? (target.date | date: 'dd/MM') + ' · ' + target.start : 'Chọn ca mới'
+              }}</b>
+            </div>
+            <p>
+              Địa điểm mới: {{ repository.location(target?.workLocationId || '')?.name || '—' }}
+            </p>
+          </article>
+          <article>
+            <h3><app-icon name="shield" /> Kiểm tra xung đột</h3>
+            <p [class.valid]="!validation">
+              {{ validation || '✓ Hợp lệ: còn chỗ, không trùng ca hoặc khung giờ.' }}
+            </p>
+            <p>
+              {{ pendingTasks }} phần việc chưa xong giữ ở ca gốc và được đánh dấu cần phân công
+              lại. Lịch sử đăng ký được giữ nguyên.
+            </p>
+            <small>Đã lưu điều chỉnh qua API quản trị</small>
+          </article>
+        </div>
+        <div *ngIf="error" class="adjust-error" role="alert">{{ error }}</div>
+      </div>
+      <footer>
+        <span>Điều chỉnh được lưu trên máy chủ.</span
+        ><button class="secondary" (click)="closed.emit()">Hủy bỏ</button
+        ><button class="primary" [disabled]="busy() || !!validation" (click)="save()">
+          Lưu điều chỉnh
+        </button>
+      </footer>
+    </ng-container>
+    <ng-template #completed
+      ><div class="success-content">
+        <span class="success-icon"><app-icon name="check" [size]="44" /></span>
+        <h2 id="adjust-title">Cập nhật Lịch trực thành công!</h2>
+        <p>
+          Đã chuyển ca cho <b>{{ employee?.fullName }}</b> và lưu trên máy chủ.
+        </p>
+        <div class="success-receipt">
+          <span
+            >Ca trước
+            <b
+              >{{ source?.date | date: 'dd/MM/yyyy' }} · {{ source?.start }} – {{ source?.end }}</b
+            ></span
+          ><app-icon name="arrow" /><span
+            >Ca mới
+            <b
+              >{{ target?.date | date: 'dd/MM/yyyy' }} · {{ target?.start }} – {{ target?.end }}</b
+            ></span
+          >
+        </div>
+      </div>
+      <footer>
+        <button class="secondary" (click)="download()">
+          <app-icon name="download" [size]="16" /> Tải phiếu điều chỉnh (CSV)</button
+        ><button class="primary finish-button" (click)="closed.emit()">
+          Hoàn tất &amp; Về bảng Lịch trực
+        </button>
+      </footer></ng-template
+    >
+  </section>
+</div>

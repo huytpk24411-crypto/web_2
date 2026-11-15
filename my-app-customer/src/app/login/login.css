@@ -1,0 +1,19 @@
+/* Page styling also uses src/styles.css. */
+.remember-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  cursor: pointer;
+}
+.remember-phone input {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--primary);
+}
+.remember-phone input:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}

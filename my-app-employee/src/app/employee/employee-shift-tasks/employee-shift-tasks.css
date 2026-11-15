@@ -1,0 +1,192 @@
+:host {
+  display: block;
+}
+.shift-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-left: 5px solid var(--green);
+  margin-bottom: 16px;
+}
+.shift-banner > app-icon {
+  color: var(--green);
+}
+.shift-banner strong {
+  display: block;
+  margin-top: 5px;
+}
+.shift-banner > .emp-btn {
+  margin-left: auto;
+  white-space: nowrap;
+}
+.timer-card h2 {
+  margin: 4px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 17px;
+}
+.timer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.2fr);
+  gap: 20px;
+  align-items: center;
+}
+.timer-grid .soft-box h2 {
+  display: inline;
+  padding: 0;
+  margin: 0 8px;
+  border: 0;
+  font-size: 13px;
+}
+.elapsed {
+  font-size: 28px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+.shift-progress {
+  width: 100%;
+  height: 10px;
+  margin-top: 14px;
+  accent-color: var(--primary);
+}
+.quick-add {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.quick-add .field {
+  flex: 1;
+  margin: 0;
+}
+.quick-add input:disabled {
+  background: var(--background);
+  cursor: not-allowed;
+}
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 12px;
+  margin-bottom: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+.task-row label {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  flex: 1;
+  cursor: pointer;
+}
+.task-row input {
+  accent-color: var(--green);
+  margin-top: 4px;
+}
+.task-row input:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+.task-row small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.task-row.done {
+  background: color-mix(in srgb, var(--green) 4%, var(--surface));
+  border-color: color-mix(in srgb, var(--green) 35%, var(--line));
+}
+.task-row.done strong {
+  text-decoration: line-through;
+  color: var(--green);
+}
+.task-row.in-progress {
+  border-color: var(--primary-dark);
+}
+.emp-card > .emp-block {
+  margin-top: 24px;
+}
+.emp-alert p {
+  margin: 5px 0;
+}
+.history-item {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  font-size: 12px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.history-item small {
+  color: var(--muted);
+}
+.assignment-notice {
+  margin-bottom: 16px;
+}
+.assignment-notice p {
+  margin-top: 0;
+}
+.viewing-task {
+  margin-bottom: 16px;
+  border-left: 5px solid var(--primary);
+}
+.viewing-task h3 {
+  margin-top: 8px;
+}
+.viewing-time {
+  color: var(--primary-dark);
+}
+.viewing-details {
+  font-size: 13px;
+}
+.viewing-details > div {
+  display: flex;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+.viewing-details dt {
+  flex: 0 0 140px;
+  color: var(--muted);
+}
+.viewing-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.viewing-room {
+  padding: 16px 0;
+  margin: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.viewing-room h4 {
+  margin: 0;
+}
+.viewing-room :is(select, textarea):disabled {
+  background: var(--background);
+  color: var(--muted);
+  cursor: not-allowed;
+}
+.viewing-room :is(select, textarea):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.task-description {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 760px) {
+  .shift-banner {
+    flex-wrap: wrap;
+  }
+  .timer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .task-row {
+    flex-wrap: wrap;
+  }
+}

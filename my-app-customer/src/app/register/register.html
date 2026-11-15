@@ -1,0 +1,190 @@
+<form
+  *ngIf="!completed(); else registrationComplete"
+  class="auth-form"
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  [attr.aria-busy]="submitting()"
+  novalidate
+>
+  <header class="auth-heading">
+    <h1>Tạo tài khoản</h1>
+    <p>Lưu phòng yêu thích và chủ động đặt lịch xem</p>
+    <p class="auth-customer-note">Dành cho khách thuê phòng.</p>
+  </header>
+
+  <div class="auth-field-row">
+    <label class="auth-field" for="register-name">
+      <span>Họ và tên <b>*</b></span>
+      <span class="auth-input-wrap">
+        <app-icon name="user" [size]="19" />
+        <input
+          id="register-name"
+          formControlName="name"
+          autocomplete="name"
+          placeholder="Nhập họ và tên của bạn"
+          [attr.aria-invalid]="form.controls.name.invalid && form.controls.name.touched"
+        />
+      </span>
+      <app-form-error [control]="form.controls.name" />
+    </label>
+
+    <label class="auth-field" for="register-phone">
+      <span>Số điện thoại <b>*</b></span>
+      <span class="auth-input-wrap">
+        <app-icon name="phone" [size]="19" />
+        <input
+          id="register-phone"
+          type="tel"
+          formControlName="phone"
+          (input)="error.set('')"
+          autocomplete="tel"
+          inputmode="tel"
+          placeholder="Nhập số điện thoại"
+          [attr.aria-invalid]="form.controls.phone.invalid && form.controls.phone.touched"
+        />
+      </span>
+      <app-form-error
+        *ngIf="!form.controls.phone.hasError('phoneTaken')"
+        [control]="form.controls.phone"
+      />
+      <small class="auth-error-inline" *ngIf="form.controls.phone.hasError('phoneTaken')"
+        >Số điện thoại đã được sử dụng. Vui lòng đăng nhập hoặc chọn số khác.</small
+      >
+    </label>
+  </div>
+
+  <div class="auth-password-row">
+    <label class="auth-field" for="register-password">
+      <span>Mật khẩu <b>*</b></span>
+      <span class="auth-input-wrap">
+        <app-icon name="lock" [size]="19" />
+        <input
+          #passwordInput
+          id="register-password"
+          aria-describedby="register-password-hint"
+          formControlName="password"
+          [type]="showPassword ? 'text' : 'password'"
+          autocomplete="new-password"
+          placeholder="Tạo mật khẩu"
+          [attr.aria-invalid]="form.controls.password.invalid && form.controls.password.touched"
+        />
+        <button
+          class="auth-password-toggle"
+          type="button"
+          [attr.aria-label]="showPassword ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'"
+          [attr.aria-pressed]="showPassword"
+          (pointerdown)="$event.preventDefault()"
+          (click)="togglePassword(passwordInput)"
+        >
+          <app-icon [name]="showPassword ? 'eye-off' : 'eye'" [size]="19" />
+        </button>
+      </span>
+      <app-form-error [control]="form.controls.password" />
+      <span
+        class="auth-strength"
+        role="meter"
+        aria-label="Độ mạnh mật khẩu"
+        aria-valuemin="0"
+        aria-valuemax="3"
+        [attr.aria-valuenow]="passwordStrength"
+        [attr.aria-valuetext]="passwordStrengthLabel"
+      >
+        <span [class.auth-strength-active]="passwordStrength >= 1"></span>
+        <span [class.auth-strength-active]="passwordStrength >= 2"></span>
+        <span [class.auth-strength-active]="passwordStrength >= 3"></span>
+      </span>
+      <small class="auth-hint">{{ passwordStrengthLabel }}</small>
+      <ul class="auth-password-conditions" id="register-password-hint">
+        <li
+          *ngFor="let rule of passwordRules; let i = index"
+          [class.auth-condition-met]="passwordConditions[i]"
+        >
+          <app-icon name="check" [size]="12" /><span
+            >{{ rule
+            }}<span class="sr-only">{{
+              passwordConditions[i] ? ' (đã đạt)' : ' (chưa đạt)'
+            }}</span></span
+          >
+        </li>
+      </ul>
+    </label>
+
+    <label class="auth-field" for="register-confirm">
+      <span>Xác nhận mật khẩu <b>*</b></span>
+      <span class="auth-input-wrap">
+        <app-icon name="lock" [size]="19" />
+        <input
+          #confirmInput
+          id="register-confirm"
+          formControlName="confirm"
+          [type]="showConfirmPassword ? 'text' : 'password'"
+          autocomplete="new-password"
+          placeholder="Nhập lại"
+          [attr.aria-invalid]="
+            (form.controls.confirm.invalid || form.hasError('passwordMismatch')) &&
+            (form.controls.confirm.touched || submitted())
+          "
+        />
+        <button
+          class="auth-password-toggle"
+          type="button"
+          [attr.aria-label]="
+            showConfirmPassword ? 'Ẩn xác nhận mật khẩu' : 'Hiện xác nhận mật khẩu'
+          "
+          [attr.aria-pressed]="showConfirmPassword"
+          (pointerdown)="$event.preventDefault()"
+          (click)="togglePassword(confirmInput, true)"
+        >
+          <app-icon [name]="showConfirmPassword ? 'eye-off' : 'eye'" [size]="19" />
+        </button>
+      </span>
+      <app-form-error [control]="form.controls.confirm" />
+      <small
+        class="auth-error-inline"
+        *ngIf="form.hasError('passwordMismatch') && (form.controls.confirm.touched || submitted())"
+        >Mật khẩu chưa khớp</small
+      >
+    </label>
+  </div>
+
+  <p class="auth-error" *ngIf="error() && !form.controls.phone.hasError('phoneTaken')" role="alert">
+    {{ error() }}
+  </p>
+
+  <button
+    class="btn primary full auth-submit"
+    type="submit"
+    [disabled]="submitting()"
+    [attr.aria-busy]="submitting()"
+  >
+    <span class="auth-spinner" *ngIf="submitting()" aria-hidden="true"></span>
+    {{ submitting() ? 'Đang tạo tài khoản…' : 'Tạo tài khoản' }}
+    <app-icon *ngIf="!submitting()" name="arrow" [size]="19" />
+  </button>
+
+  <p class="auth-switch">
+    Đã có tài khoản?
+    <a routerLink="/login" [queryParams]="params">Đăng nhập</a>
+  </p>
+</form>
+<ng-template #registrationComplete>
+  <section class="auth-form auth-complete" aria-labelledby="register-complete-title">
+    <header class="auth-heading">
+      <h1 id="register-complete-title" tabindex="-1">Tạo tài khoản thành công</h1>
+      <p>{{ auth.account()?.name }}, bạn đã đăng nhập.</p>
+    </header>
+    <p *ngIf="favoriteSaved()" role="status">Đã lưu phòng vào yêu thích</p>
+    <p
+      class="auth-error"
+      *ngIf="params.action === 'favorite' && params.roomId && !favoriteSaved()"
+      role="status"
+    >
+      Chưa lưu được phòng vào yêu thích. Bạn có thể thử lại tại trang phòng.
+    </p>
+    <button class="btn primary full auth-submit" type="button" (click)="continue()">
+      {{ params.returnUrl ? 'Tiếp tục' : 'Khám phá phòng' }}
+      <app-icon name="arrow" [size]="19" />
+    </button>
+    <a class="auth-next-link" routerLink="/rooms">Đặt lịch xem phòng</a>
+  </section>
+</ng-template>

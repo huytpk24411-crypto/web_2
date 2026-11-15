@@ -1,0 +1,44 @@
+<section class="dashboard-panel shift-panel">
+  <div class="panel-heading">
+    <div>
+      <h2>Giám sát Ca trực</h2>
+      <p>GPS &amp; Kỷ luật · Dữ liệu máy chủ</p>
+    </div>
+    <span class="status-pill" *ngIf="api.loading()">Đang tải…</span>
+  </div>
+  <p class="error" *ngIf="api.error()" role="alert">{{ api.error() }}</p>
+  <p *ngIf="!api.loading() && !api.error() && !visibleShifts.length">
+    Chưa có lượt phân ca hôm nay.
+  </p>
+  <div class="shift-card" *ngFor="let shift of visibleShifts" [ngClass]="shift.tone">
+    <div class="shift-top">
+      <span class="shift-avatar">{{ shift.initials }}</span>
+      <div>
+        <h3>{{ shift.name }}</h3>
+        <p>{{ shift.detail }}</p>
+      </div>
+      <span class="shift-status">{{ shift.status }}</span>
+    </div>
+    <div class="shift-location">
+      <app-icon [name]="shift.tone === 'late' ? 'info' : 'pin'" [size]="13" /><span>{{
+        shift.location
+      }}</span
+      ><time>{{ shift.time }}</time>
+    </div>
+  </div>
+  <div class="shift-footer">
+    <a class="discipline-link" routerLink="/admin/staff/schedule">
+      <app-icon name="chart" [size]="15" />Xem lịch ca và chấm công
+    </a>
+    <div class="late-policy" *ngIf="latePolicy as policy">
+      <strong *ngIf="policy.version">{{ 'PHAT_TRE' | policyType }} (v{{ policy.version }})</strong>
+      <p *ngFor="let level of policy.levels">{{ level | policyLevel: 'PHAT_TRE' }}</p>
+      <p *ngIf="!api.loading() && !api.error() && !policy.version">
+        Chưa có chính sách phạt đi trễ hiệu lực.
+      </p>
+    </div>
+  </div>
+  <a class="text-button schedule-link" routerLink="/admin/staff/schedule"
+    >Mở lịch ca trực <app-icon name="arrow" [size]="14"
+  /></a>
+</section>

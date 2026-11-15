@@ -1,0 +1,124 @@
+<div class="staff-page" data-view="success" [class.has-error]="!!error">
+  <p class="notice" role="status" *ngIf="repository.loading() || repository.shiftApi.loading()">
+    Đang tải dữ liệu từ máy chủ…
+  </p>
+  <ng-template #errorBanner
+    ><div class="notice error staff-error-banner" *ngIf="error" role="alert">
+      <span class="error-symbol">!</span>
+      <div>
+        <strong>Chưa thể thực hiện thao tác</strong>
+        <p>{{ error }}</p>
+      </div>
+    </div></ng-template
+  >
+  <ng-container><ng-container *ngTemplateOutlet="errorBanner" /></ng-container>
+  <div class="staff-toast" *ngIf="toast" role="status">
+    <span class="toast-check"><app-icon name="check" [size]="22" /></span>
+    <div>
+      <strong>{{
+        toast.startsWith('Xóa thành công') ? 'Xóa thành công!' : 'Thao tác thành công'
+      }}</strong>
+      <p>{{ toast }}</p>
+    </div>
+    <button class="icon-btn" aria-label="Đóng thông báo" (click)="toast = ''">
+      <app-icon name="close" [size]="16" />
+    </button>
+  </div>
+
+  <div class="breadcrumb">
+    <a routerLink="/admin/staff">Quản lý Nhân sự &amp; Ca trực</a> › Hồ sơ đã tạo
+  </div>
+  <section class="panel staff-success" *ngIf="selectedEmployee as person; else missingSuccess">
+    <div class="success-mark"><app-icon name="check" [size]="28" /></div>
+    <div>
+      <h1>Thêm nhân sự mới thành công!</h1>
+      <p>
+        Hồ sơ <strong>{{ person.employeeCode }} · {{ person.fullName }}</strong>
+        đã được lưu trên máy chủ.
+      </p>
+    </div>
+    <span class="badge blue">● Đã lưu trên máy chủ</span>
+  </section>
+  <ng-template #missingSuccess
+    ><section class="panel empty">
+      <h2>Không tìm thấy hồ sơ vừa tạo</h2>
+      <button class="btn primary" (click)="navigate('list')">Về danh sách</button>
+    </section></ng-template
+  >
+  <section class="panel" *ngIf="repository.temporaryPassword() as credentials" role="status">
+    <h2>Tài khoản nhân viên</h2>
+    <p>Điện thoại: {{ credentials.phone }}</p>
+    <p>
+      Mật khẩu tạm: <strong>{{ credentials.password }}</strong>
+    </p>
+    <button class="btn" (click)="repository.temporaryPassword.set(null)">Ẩn mật khẩu</button>
+  </section>
+  <section class="panel staff-success-summary" *ngIf="selectedEmployee as person">
+    <img appImageFallback [src]="person.avatar" [alt]="person.fullName" />
+    <div>
+      <h2>{{ person.fullName }}</h2>
+      <p>{{ person.position }} · {{ ngLocation(person.workLocationId) }}</p>
+      <div class="detail-grid">
+        <div>
+          <small>Email</small><strong>{{ person.email }}</strong>
+        </div>
+        <div>
+          <small>Điện thoại</small><strong>{{ person.phone }}</strong>
+        </div>
+        <div>
+          <small>Bắt đầu làm việc</small
+          ><strong>{{ person.startDate | date: 'dd/MM/yyyy' }}</strong>
+        </div>
+        <div>
+          <small>Loại hợp đồng</small
+          ><strong>{{ repository.contractTypeLabel(person.contractType) }}</strong>
+        </div>
+        <div class="success-wide-field">
+          <small>Địa bàn phân công làm việc</small
+          ><strong>{{ ngLocation(person.workLocationId) }}</strong>
+          <p>{{ repository.location(person.workLocationId)?.address }}</p>
+        </div>
+        <div class="success-wide-field">
+          <small>Trạng thái hồ sơ</small
+          ><strong>{{ statusLabel(person.status) }} · {{ person.employeeCode }}</strong>
+          <p>Thông tin có thể chỉnh sửa trong hồ sơ nhân sự.</p>
+        </div>
+        <div class="success-wide-field success-note">
+          <app-icon name="shield" [size]="22" />
+          <div>
+            <strong>Hồ sơ đã sẵn sàng</strong>
+            <p>Chọn lịch làm việc để nhận ca và giao công việc cho nhân sự này.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <h3><app-icon name="arrow" /> Hành động tiếp theo</h3>
+      <span class="badge lilac">3 bước gợi ý</span>
+      <div class="next-step">
+        <span>1</span><strong>Phân ca làm việc tuần đầu tiên</strong>
+        <p>Chọn ca phù hợp rồi đăng ký cho nhân sự vừa tạo.</p>
+        <button class="btn primary" (click)="navigate('schedule')">Mở lịch ca trực</button>
+      </div>
+      <div class="next-step">
+        <span>2</span><strong>Kiểm tra hồ sơ vừa tạo</strong>
+        <p>Xem lại liên hệ, cơ sở và thông tin hợp đồng.</p>
+        <button class="btn" (click)="openDetails(person)">Mở hồ sơ nhân sự</button>
+      </div>
+      <div class="next-step">
+        <span>3</span><strong>Theo dõi tiến độ công việc</strong>
+        <p>Chỉ số cập nhật từ ca và công việc.</p>
+        <button class="btn" (click)="openDetails(person, 'performance')">Xem hiệu suất</button>
+      </div>
+    </aside>
+  </section>
+  <div class="staff-success-actions" *ngIf="selectedEmployee as person">
+    <button class="btn" (click)="navigate('list')">Xem danh sách</button
+    ><button class="btn" (click)="openDetails(person)">Xem chi tiết</button
+    ><button class="btn primary" (click)="navigate('new')">Tiếp tục thêm nhân sự</button>
+  </div>
+  <footer class="staff-data-footer">
+    <span>● Dữ liệu từ máy chủ</span
+    ><button class="text-button" (click)="navigate('list')">← Quay lại danh sách</button>
+  </footer>
+</div>

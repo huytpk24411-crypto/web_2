@@ -1,0 +1,145 @@
+<section class="contact-page about-container">
+  <div class="contact-layout">
+    <div class="contact-form-panel">
+      <span class="eyebrow contact-eyebrow">LIÊN HỆ TRỰC TIẾP</span>
+      <h1>Gửi yêu cầu tư vấn</h1>
+      <p>
+        Để nhận tư vấn chi tiết về căn hộ phù hợp, đội ngũ iHOUZZ Uni sẽ liên hệ bạn trong thời gian
+        sớm nhất.
+      </p>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div class="field-row">
+          <div class="field-group">
+            <label for="contact-name">Họ và tên <span aria-label="bắt buộc">*</span></label>
+            <input
+              id="contact-name"
+              type="text"
+              formControlName="name"
+              [class.invalid]="form.controls.name.touched && form.controls.name.invalid"
+              placeholder="Họ và tên của bạn"
+            />
+            <small
+              class="field-error"
+              *ngIf="form.controls.name.touched && form.controls.name.errors?.['required']"
+              >Vui lòng nhập họ và tên.</small
+            >
+          </div>
+
+          <div class="field-group">
+            <label for="contact-phone">Số điện thoại <span aria-label="bắt buộc">*</span></label>
+            <input
+              id="contact-phone"
+              type="tel"
+              formControlName="phone"
+              [class.invalid]="form.controls.phone.touched && form.controls.phone.invalid"
+              placeholder="Nhập số điện thoại"
+            />
+            <small
+              class="field-error"
+              *ngIf="form.controls.phone.touched && form.controls.phone.errors?.['required']"
+              >Vui lòng nhập số điện thoại.</small
+            >
+            <small
+              class="field-error"
+              *ngIf="form.controls.phone.touched && form.controls.phone.errors?.['pattern']"
+              >Số điện thoại không hợp lệ.</small
+            >
+          </div>
+        </div>
+
+        <div class="field-group single-field">
+          <label for="contact-email">Địa chỉ Email</label>
+          <input
+            id="contact-email"
+            type="email"
+            formControlName="email"
+            [class.invalid]="form.controls.email.touched && form.controls.email.invalid"
+            placeholder="you@example.com"
+          />
+          <small
+            class="field-error"
+            *ngIf="form.controls.email.touched && form.controls.email.errors?.['required']"
+            >Vui lòng nhập email.</small
+          >
+          <small
+            class="field-error"
+            *ngIf="form.controls.email.touched && form.controls.email.errors?.['email']"
+            >Email không hợp lệ.</small
+          >
+        </div>
+
+        <div class="field-group single-field">
+          <label for="contact-message"
+            >Lời nhắn / Yêu cầu <span aria-label="bắt buộc">*</span></label
+          >
+          <textarea
+            id="contact-message"
+            formControlName="message"
+            [class.invalid]="form.controls.message.touched && form.controls.message.invalid"
+            rows="5"
+            placeholder="Mô tả nhu cầu của bạn..."
+          ></textarea>
+          <small
+            class="field-error"
+            *ngIf="form.controls.message.touched && form.controls.message.errors?.['required']"
+            >Vui lòng nhập lời nhắn.</small
+          >
+          <small
+            class="field-error"
+            *ngIf="form.controls.message.touched && form.controls.message.errors?.['minlength']"
+            >Lời nhắn phải có ít nhất 10 ký tự.</small
+          >
+        </div>
+
+        <div
+          class="form-status"
+          *ngIf="error() || success()"
+          [class.error-status]="error()"
+          [class.success-status]="success()"
+          role="status"
+        >
+          {{ error() || success() }}
+        </div>
+
+        <button class="submit-button" type="submit" [disabled]="submitting()">
+          <span>{{ submitting() ? 'Đang gửi...' : 'Gửi lời nhắn' }}</span>
+          <app-icon name="arrow" [size]="14" />
+        </button>
+      </form>
+    </div>
+
+    <aside class="contact-side">
+      <h2>Kết nối với Houzz Uni</h2>
+      <p>
+        Chỗ ở bạn đang tìm kiếm mới trở nên dễ dàng hơn khi đội ngũ iHOUZZ Uni luôn sẵn sàng hỗ trợ
+        bạn từng bước, từ khảo sát khu vực đến lựa chọn căn hộ phù hợp với nhu cầu.
+      </p>
+
+      <figure class="contact-figure">
+        <img
+          src="/assets/contact/company-signing.png"
+          alt="Đội ngũ doanh nghiệp iHOUZZ Uni ký kết và chào đón khách hàng"
+          appImageFallback
+          loading="eager"
+          width="1200"
+          height="700"
+        />
+      </figure>
+
+      <div class="company-card">
+        <div class="company-card-row">
+          <span class="company-icon"><app-icon name="pin" [size]="18" /></span>
+          <div>
+            <h3>CÔNG TY CỔ PHẦN BẤT ĐỘNG SẢN IHOUZZ UNI</h3>
+            <p>
+              22A/39 Khu nhà ở Phát Hưng, Đường Thống Nhất, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình
+              Dương
+            </p>
+            <p><strong>MST:</strong> 3703361326</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>

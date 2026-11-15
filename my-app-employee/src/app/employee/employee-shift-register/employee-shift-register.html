@@ -1,0 +1,176 @@
+<button
+  class="emp-btn no-print"
+  *ngIf="shifts.api.error()"
+  (click)="shifts.api.refresh()"
+  [disabled]="shifts.api.loading()"
+>
+  Tải lại dữ liệu
+</button>
+﻿
+<div class="emp-card quote-banner">
+  <span class="quote-mark" aria-hidden="true">❞</span>
+  <div>
+    <strong>“Gieo hành vi sẽ gặt thói quen, gieo thói quen sẽ gặt tính cách.”</strong
+    ><small>Thiết lập lịch làm việc và chủ động chuẩn bị cho ca trực của bạn.</small>
+  </div>
+  <span class="clock emp-mono"
+    ><app-icon name="clock" [size]="15" /> {{ clock }} <small>TP. Hồ Chí Minh (GMT+7)</small></span
+  >
+</div>
+<div class="emp-grid intro">
+  <section class="emp-card welcome">
+    <span class="emp-badge emp-info">● Cổng đăng ký ca trực tuyến</span>
+    <h1>
+      Xin chào, <span>{{ auth.account()?.name }}</span
+      >.
+    </h1>
+    <p class="emp-subtitle">
+      Thiết lập lịch làm việc của bạn cho tuần tới để hệ thống tự động chuẩn bị ca trực và nhiệm vụ.
+    </p>
+    <div class="rules">
+      <div>
+        <app-icon name="calendar" />
+        <div><strong>Định mức đăng ký</strong><small>5–8 ca / tuần</small></div>
+      </div>
+      <div>
+        <app-icon name="clock" />
+        <div><strong>Nhận ca tức thì</strong><small>Đăng ký trước nhận chỗ trước</small></div>
+      </div>
+      <div>
+        <app-icon name="shield" />
+        <div>
+          <strong>Ca nhiều nhân viên</strong
+          ><small>Tối đa {{ shifts.registrationShifts[0]?.capacity }} nhân viên / ca</small>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="emp-card hours">
+    <div class="emp-card-head">
+      <h2>Quy định giờ giấc</h2>
+      <span class="emp-badge emp-info">Ca trực</span>
+    </div>
+    <div class="hour-box" *ngFor="let shift of shifts.registrationShifts.slice(0, 2)">
+      <div class="row between">
+        <strong>{{ shift.label }}</strong
+        ><strong class="blue emp-mono">{{ shift.start }} – {{ shift.end }}</strong>
+      </div>
+      <small>Check-in đầu ca • Kết thúc lúc {{ shift.end }}</small>
+    </div>
+    <a class="hours-link" routerLink="/employee/payroll">Xem bảng phí phạt đi trễ →</a>
+  </section>
+</div>
+<section class="emp-card week-bar">
+  <div class="emp-card-head">
+    <div class="emp-actions">
+      <div class="week-navigation">
+        <button class="emp-btn" disabled aria-label="Tuần trước" title="Đợt đăng ký hiện tại">
+          ‹</button
+        ><span
+          ><app-icon name="calendar" [size]="16" /> Tuần
+          {{ shifts.registrationShifts[0]?.date | date: 'dd/MM' }} –
+          {{ shifts.registrationShifts[13]?.date | date: 'dd/MM/yyyy' }}</span
+        ><button class="emp-btn" disabled aria-label="Tuần sau" title="Đợt đăng ký hiện tại">
+          ›
+        </button>
+      </div>
+      <span class="emp-badge emp-success">{{
+        !shifts.period.id ? 'Chưa có đợt đang mở' : '● Đang mở đăng ký'
+      }}</span>
+    </div>
+    <div class="emp-actions">
+      <a class="emp-btn emp-outline" routerLink="/employee/shifts">Lịch làm của tôi</a
+      ><button
+        class="emp-btn emp-primary"
+        (click)="submit()"
+        [disabled]="busy || shifts.api.loading() || !shifts.period.id"
+      >
+        Xác nhận đăng ký {{ selected.length ? '(' + selected.length + ')' : '' }}
+      </button>
+    </div>
+  </div>
+  <div class="row between small">
+    <strong
+      >Tiến độ lựa chọn:
+      <span class="green"
+        >{{ count + selected.length }} / {{ shifts.period.maxPerEmployee }} ca</span
+      ></strong
+    ><span class="muted">Đã nhận {{ count }} ca • Đang chọn {{ selected.length }} ca</span>
+  </div>
+  <progress
+    class="selection-progress"
+    [value]="count + selected.length"
+    [max]="shifts.period.maxPerEmployee"
+    aria-label="Tiến độ lựa chọn ca"
+  ></progress>
+  <div class="emp-alert emp-danger" *ngIf="error" role="alert">{{ error }}</div>
+</section>
+<p class="error" role="alert" *ngIf="shifts.api.error()">{{ shifts.api.error() }}</p>
+<p role="status" *ngIf="shifts.api.loading()">Đang tải lịch ca…</p>
+<section class="emp-card matrix">
+  <div class="emp-card-head">
+    <div>
+      <h2>Ma trận xếp ca tuần mới</h2>
+      <p class="emp-subtitle">Chọn các ca còn chỗ, sau đó xác nhận đăng ký lịch làm việc.</p>
+    </div>
+  </div>
+  <div class="shift-grid">
+    <div class="shift-row" *ngFor="let day of days">
+      <div class="day-label">
+        <strong>{{ dayNames[day] }}</strong
+        ><small>{{ shifts.registrationShifts[day * 2]?.date | date: 'dd/MM/yyyy' }}</small>
+      </div>
+      <label
+        *ngFor="let shift of shifts.registrationShifts.slice(day * 2, day * 2 + 2)"
+        class="shift-card"
+        [class.selected]="selected.includes(shift.id) || isMine(shift.id)"
+        [class.full]="shifts.remaining(shift.id) === 0 && !isMine(shift.id)"
+      >
+        <input
+          type="checkbox"
+          [checked]="selected.includes(shift.id) || isMine(shift.id)"
+          [disabled]="isMine(shift.id) || shifts.remaining(shift.id) === 0"
+          (change)="toggle(shift.id)"
+          [attr.aria-label]="dayNames[day] + ' ' + shift.label + ' ' + shift.date"
+        />
+        <span class="choice-mark" aria-hidden="true">{{
+          selected.includes(shift.id) || isMine(shift.id) ? '✓' : '+'
+        }}</span>
+        <span class="shift-description"
+          ><strong>{{ shift.label }}</strong
+          ><small class="emp-mono">{{ shift.start }} – {{ shift.end }}</small
+          ><small>{{
+            isMine(shift.id) ? 'Đã nhận ca' : 'Còn ' + shifts.remaining(shift.id) + ' chỗ'
+          }}</small></span
+        >
+        <span class="emp-badge">{{
+          isMine(shift.id)
+            ? 'Đã nhận'
+            : selected.includes(shift.id)
+              ? 'ĐÃ CHỌN'
+              : shifts.remaining(shift.id)
+                ? 'Chọn ca'
+                : 'Đã đủ'
+        }}</span>
+      </label>
+    </div>
+  </div>
+</section>
+<section class="emp-card registered">
+  <div class="emp-card-head">
+    <h2><app-icon name="calendar" /> Lịch đã đăng ký</h2>
+    <span class="emp-badge emp-neutral">{{ shifts.period.label }}</span>
+  </div>
+  <div class="schedule-chips">
+    <div class="schedule-chip" *ngFor="let shift of registeredShifts">
+      <small>{{ shift.date | date: 'dd/MM' }}</small
+      ><strong>{{ shift.label }}</strong
+      ><small>{{ shift.start }} – {{ shift.end }}</small>
+      <button class="emp-btn" type="button" [disabled]="busy" (click)="cancel(shift.id)">
+        Hủy ca
+      </button>
+    </div>
+  </div>
+  <p class="emp-subtitle" *ngIf="!registeredShifts.length">Bạn chưa đăng ký ca nào trong kỳ này.</p>
+</section>
+<app-toast [message]="toast" (closed)="toast = ''" />

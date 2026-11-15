@@ -1,0 +1,228 @@
+.task-manager {
+  padding: 20px;
+}
+.pending-confirm {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.pending-confirm h3 {
+  margin: 0 0 16px;
+}
+.pending-confirm-table {
+  min-width: 940px;
+  table-layout: fixed;
+}
+.pending-confirm-table th:first-child {
+  width: 24%;
+}
+.pending-confirm-table th:nth-child(2),
+.pending-confirm-table th:nth-child(4) {
+  width: 15%;
+}
+.pending-confirm-table th:nth-child(3),
+.pending-confirm-table th:nth-child(5) {
+  width: 23%;
+}
+.pending-confirm-table td {
+  vertical-align: top;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.pending-description {
+  margin: 6px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+.task-rejection .wizard-actions {
+  flex-wrap: wrap;
+}
+.task-filters {
+  display: grid;
+  grid-template-columns: 220px minmax(220px, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+.task-table {
+  min-width: 940px;
+  table-layout: fixed;
+}
+.task-table th:nth-child(1) {
+  width: 25%;
+}
+.task-table th:nth-child(2) {
+  width: 14%;
+}
+.task-table th:nth-child(3) {
+  width: 15%;
+}
+.task-table th:nth-child(4) {
+  width: 17%;
+}
+.task-table th:nth-child(5) {
+  width: 12%;
+}
+.task-table th:nth-child(6) {
+  width: 17%;
+}
+.task-table td {
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.task-table td:first-child {
+  white-space: normal;
+}
+.task-table td:nth-child(2) {
+  min-width: 0;
+}
+.task-table td small {
+  display: block;
+  margin-top: 4px;
+}
+.task-table .task-description {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 6px 0 0;
+}
+.task-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.task-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.task-status.unassigned {
+  color: var(--muted);
+  background: var(--background);
+}
+.task-status.assigned {
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+}
+.task-status.done {
+  color: var(--green);
+  background: color-mix(in srgb, var(--green) 10%, var(--surface));
+}
+.task-status.waiting {
+  color: color-mix(in srgb, var(--brand-orange) 65%, var(--text));
+  background: color-mix(in srgb, var(--brand-orange) 12%, var(--surface));
+}
+.task-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.staff-page .task-wizard {
+  width: 640px;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  padding: 24px;
+}
+.wizard-steps {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+.wizard-steps [aria-current='step'] {
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+.wizard-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+.shift-options {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px;
+  max-height: 320px;
+  overflow: auto;
+}
+.shift-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--line);
+}
+.shift-options small {
+  display: block;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.shift-options .disabled {
+  color: var(--muted);
+}
+.staff-page .staff-confirm-modal {
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+}
+
+.task-description {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.task-description.collapsed {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.task-editor {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.task-editor textarea {
+  resize: vertical;
+}
+.task-editor .field {
+  display: grid;
+  gap: 6px;
+  align-items: start;
+}
+.assignee-options {
+  margin: 0;
+  padding: 10px;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.assignee-options legend {
+  padding: 0 4px;
+  font-size: 13px;
+}
+.assignee-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+.assignee-options small {
+  display: block;
+  color: var(--muted);
+}

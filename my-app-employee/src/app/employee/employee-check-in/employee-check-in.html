@@ -1,0 +1,137 @@
+<button
+  class="emp-btn no-print"
+  *ngIf="shifts.api.error()"
+  (click)="shifts.api.refresh()"
+  [disabled]="shifts.api.loading()"
+>
+  Tải lại dữ liệu
+</button>
+<div class="emp-page-head welcome-card emp-card">
+  <div>
+    <div class="emp-actions">
+      <h1 class="emp-title">Xin chào, {{ auth.account()?.name }}.</h1>
+      <span class="emp-badge emp-info">Mã NV: {{ auth.account()?.id }}</span>
+    </div>
+    <p>Hãy hoàn thành check-in để bắt đầu ca làm việc của bạn.</p>
+  </div>
+  <div class="day-status">
+    <small>TRẠNG THÁI NGÀY</small><app-status-badge [status]="assignment?.status || 'REGISTERED'" />
+  </div>
+</div>
+<div class="emp-step-strip">
+  <div class="emp-step emp-active" aria-current="step">
+    <b class="emp-step-number">1</b
+    ><span>Check-in đầu ca<small>Xác nhận ảnh minh chứng</small></span>
+  </div>
+  <div class="emp-step emp-locked" aria-disabled="true">
+    <b class="emp-step-number">2</b><span>Trong ca & To-do<small>Thực hiện công việc</small></span>
+  </div>
+  <div class="emp-step emp-locked" aria-disabled="true">
+    <b class="emp-step-number">3</b><span>Check-out cuối ca<small>Bàn giao & kết thúc</small></span>
+  </div>
+</div>
+<p class="error" role="alert" *ngIf="shifts.api.error()">{{ shifts.api.error() }}</p>
+<p role="status" *ngIf="shifts.api.loading()">Đang tải ca làm…</p>
+<div class="emp-grid" *ngIf="assignment as a; else missing">
+  <section class="emp-card checkin-form">
+    <div class="emp-card-head">
+      <h3><app-icon name="shield" /> Biểu mẫu Chấm Công Đầu Ca</h3>
+      <span class="emp-badge emp-neutral">ID: {{ id }}</span>
+    </div>
+    <p class="muted small">Thông tin gắn với lần phân ca {{ id }}.</p>
+    <h4>1. Ca làm việc hôm nay</h4>
+    <label class="shift-option"
+      ><input
+        type="radio"
+        name="assignedShift"
+        [value]="id"
+        checked
+        aria-label="Ca làm việc đã đăng ký"
+      />
+      <div class="shift-option-body">
+        <div>
+          <strong>{{ shift?.label }}</strong>
+          <p class="muted small">
+            {{ shift?.date | date: 'dd/MM/yyyy' }} • {{ shift?.start }} – {{ shift?.end }}
+          </p>
+        </div>
+        <span class="emp-badge emp-info">Đã đăng ký</span>
+      </div></label
+    >
+    <h4>2. Địa điểm làm việc</h4>
+    <div class="emp-alert emp-info location-box">
+      <app-icon name="pin" /> Địa điểm làm việc của ca trực<small class="tip"
+        >Cho phép GPS khi xác nhận. Vị trí phải trong bán kính trụ sở.</small
+      >
+    </div>
+    <h4>3. Ảnh minh chứng khuôn mặt và góc làm việc *</h4>
+    <div class="evidence-preview">
+      <img *ngIf="evidence()" [src]="evidence()" alt="Ảnh minh chứng chấm công" /><span>{{
+        evidence() ? 'Ảnh minh chứng đã chọn' : 'Chưa chọn ảnh minh chứng'
+      }}</span>
+    </div>
+    <div class="emp-actions evidence-actions">
+      <label class="emp-btn"
+        >Tải ảnh từ máy<input
+          class="file-input"
+          type="file"
+          accept="image/png,image/jpeg,image/webp"
+          (change)="upload($event)"
+          aria-label="Tải ảnh minh chứng"
+      /></label>
+    </div>
+    <label class="field"
+      ><span>4. Ghi chú / Mục tiêu công việc đầu ca</span
+      ><textarea [(ngModel)]="note" placeholder="Tư vấn khách, cập nhật phòng trống..."></textarea>
+    </label>
+    <p *ngIf="error()" class="error" role="alert">{{ error() }}</p>
+    <p *ngIf="windowMessage()" class="emp-alert emp-warn check-in-window" role="status">
+      {{ windowMessage() }}
+    </p>
+    <button class="emp-btn emp-primary emp-block" [disabled]="!canSubmit()" (click)="submit()">
+      <app-icon name="check" [size]="16" /> XÁC NHẬN CHECK-IN BẮT ĐẦU CA</button
+    ><a
+      *ngIf="a.status === 'IN_PROGRESS'"
+      class="emp-btn emp-outline emp-block"
+      [routerLink]="['/employee/shifts', id, 'tasks']"
+      >Tiếp tục ca đang làm</a
+    >
+    <p class="tip">Chỉ check-in trong giờ ca, kèm GPS và ảnh minh chứng.</p>
+  </section>
+  <aside class="emp-stack">
+    <section class="emp-card system-clock" *ngIf="currentTime() as now">
+      <span class="emp-stat-label"><app-icon name="clock" /> ĐỒNG HỒ CHẤM CÔNG HỆ THỐNG</span>
+      <div class="emp-mono clock-value">{{ now | date: 'HH:mm:ss' : '+0700' }}</div>
+      <p>{{ now | date: 'dd/MM/yyyy' : '+0700' }}</p>
+      <small class="muted">Giờ Việt Nam trên thiết bị</small>
+    </section>
+    <section class="emp-card">
+      <h3><app-icon name="clock" /> Quy định về thời gian</h3>
+      <div class="time-rules">
+        <div>
+          <span>Ngày làm việc</span><strong>{{ shift?.date | date: 'dd/MM/yyyy' }}</strong>
+        </div>
+        <div>
+          <span>Giờ ca đã đăng ký</span
+          ><strong class="blue">{{ shift?.start }} – {{ shift?.end }}</strong>
+        </div>
+      </div>
+      <p class="tip">
+        Phạt trễ theo chính sách PHAT_TRE đang hiệu lực; phút trễ và mức phạt được ghi trong kỳ
+        lương.
+      </p>
+    </section>
+    <section class="emp-card">
+      <h3 class="penalty-title">Bảng phí phạt đi trễ</h3>
+
+      <p>Mức phạt được máy chủ tra từ PHAT_TRE theo số phút trễ thực tế.</p>
+    </section>
+  </aside>
+</div>
+<ng-template #missing
+  ><div class="empty">
+    <h2>Không tìm thấy ca làm của bạn</h2>
+    <p>Chọn một lần phân ca đã đăng ký để tiếp tục.</p>
+    <a class="emp-btn emp-primary" routerLink="/employee/shifts">Xem ca làm của tôi</a>
+  </div></ng-template
+>

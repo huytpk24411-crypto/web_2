@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "7b3710e27075a530e086867c",
+    "id": "ADMIN",
+    "name": "Quản trị viên"
+  },
+  {
+    "_id": "9500a69af796867e6ed4bce1",
+    "id": "EMPLOYEE",
+    "name": "Nhân viên"
+  },
+  {
+    "_id": "2e4aa80941bc2d35133d0abc",
+    "id": "CUSTOMER",
+    "name": "Khách hàng"
+  }
+]

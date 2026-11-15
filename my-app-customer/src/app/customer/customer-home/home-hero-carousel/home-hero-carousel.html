@@ -1,0 +1,138 @@
+<section
+  class="home-hero"
+  role="region"
+  aria-roledescription="carousel"
+  aria-label="Phòng nổi bật"
+  [attr.aria-busy]="loading"
+  [class.reduced]="reduced()"
+  (mouseenter)="hover(true)"
+  (mouseleave)="hover(false)"
+  (focusin)="focus()"
+>
+  <div class="hero-content hero-container">
+    <div class="carousel-controls" *ngIf="rooms.length">
+      <button
+        class="play-control"
+        type="button"
+        (click)="toggle()"
+        [attr.aria-label]="
+          stopped() || reduced() || rooms.length < 2 ? 'Phát trình chiếu' : 'Dừng trình chiếu'
+        "
+        [attr.aria-disabled]="reduced() || rooms.length < 2"
+      >
+        {{ stopped() || reduced() || rooms.length < 2 ? '▷ Phát' : 'Ⅱ Dừng' }}
+      </button>
+      <div class="slide-selectors" role="group" aria-label="Chọn slide">
+        <button
+          *ngFor="let room of rooms; let i = index"
+          type="button"
+          (click)="select(i)"
+          [class.current]="active() === i"
+          [attr.aria-label]="'Slide ' + (i + 1) + ': ' + room.name"
+          [attr.aria-current]="active() === i ? 'true' : null"
+        >
+          <span class="slide-dot" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        @for (key of running() ? [cycle()] : []; track key) {
+          <span></span>
+        }
+      </div>
+    </div>
+    <p class="hero-eyebrow">KHÔNG GIAN MỚI · KHỞI ĐẦU MỚI</p>
+    <h1>
+      <span class="hero-title-line">Gần trường hơn.</span
+      ><span class="hero-title-line">Gần cuộc sống bạn muốn.</span>
+    </h1>
+    <div class="slide-info-stack" aria-live="off">
+      <div
+        *ngFor="let room of rooms; let i = index"
+        class="slide-caption"
+        [class.active]="active() === i"
+        [attr.aria-hidden]="active() !== i"
+        [attr.inert]="active() !== i ? '' : null"
+      >
+        <span class="slide-label">KHÔNG GIAN ĐANG CHỜ BẠN</span>
+        <h2 [title]="room.name">{{ room.name }}</h2>
+        <p
+          [title]="room.propertyName || locations.property(room.propertyId)?.name || room.district"
+        >
+          {{ room.propertyName || locations.property(room.propertyId)?.name || room.district }}
+        </p>
+        <div class="slide-meta">
+          <strong
+            >{{ room.price | currency: 'VND' : 'symbol' : '1.0-0' : 'vi' }}
+            <small>/ tháng</small></strong
+          ><span>{{ room.area }} m² · {{ room.capacity }} người</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a
+        *ngIf="rooms[active()] as room"
+        class="room-cta btn primary"
+        [routerLink]="['/rooms', room.id]"
+        >Xem phòng →</a
+      >
+      <button type="button" class="map-cta" (click)="scrollToMap()">
+        Khám phá bản đồ <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+  </div>
+  <div class="edge-navigation" *ngIf="rooms.length">
+    <button
+      class="edge-arrow edge-previous"
+      type="button"
+      aria-label="Slide trước"
+      (click)="step(-1)"
+      [disabled]="rooms.length < 2"
+    >
+      ←
+    </button>
+    <button
+      class="edge-arrow edge-next"
+      type="button"
+      aria-label="Slide sau"
+      (click)="step(1)"
+      [disabled]="rooms.length < 2"
+    >
+      →
+    </button>
+  </div>
+  <div class="slides" [class.reverse]="direction() === 'previous'" aria-live="off">
+    <div
+      *ngFor="let room of rooms; let i = index"
+      class="hero-slide"
+      role="group"
+      aria-roledescription="slide"
+      [attr.aria-label]="i + 1 + ' trên ' + rooms.length"
+      [class.active]="active() === i"
+      [class.entering]="moving() && active() === i"
+      [class.leaving]="moving() && previous() === i"
+      [attr.aria-hidden]="active() !== i"
+      [attr.inert]="active() !== i ? '' : null"
+    >
+      <a
+        class="slide-link"
+        [routerLink]="['/rooms', room.id]"
+        [attr.tabindex]="active() === i ? 0 : -1"
+        [attr.aria-label]="'Xem phòng ' + room.name"
+      >
+        <img
+          *ngIf="i === 0 || loaded().has(0)"
+          [src]="room.images[0] || '/assets/placeholders/room-placeholder.svg'"
+          [alt]="room.name"
+          width="1920"
+          height="1080"
+          [attr.fetchpriority]="i === 0 ? 'high' : 'low'"
+          (load)="imageLoaded(i)"
+          (error)="imageFailed($event, i)"
+          [class.zoom]="zoom() && !reduced()"
+        />
+      </a>
+    </div>
+  </div>
+  <p class="sr-only" aria-live="polite" aria-atomic="true">{{ announcement() }}</p>
+  <p class="sr-only" *ngIf="loading" role="status">Đang tải phòng nổi bật…</p>
+</section>

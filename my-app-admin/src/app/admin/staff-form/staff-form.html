@@ -1,0 +1,278 @@
+<div class="staff-page" data-view="form" [class.has-error]="!!error">
+  <ng-template #errorBanner
+    ><div class="notice error staff-error-banner" *ngIf="error" role="alert">
+      <span class="error-symbol">!</span>
+      <div>
+        <strong>Không thể lưu thông tin!</strong>
+        <p>{{ error }}</p>
+      </div>
+      <button class="btn" (click)="focusInvalid()">↓ Sửa lỗi ngay</button>
+    </div></ng-template
+  >
+  <div class="staff-toast" *ngIf="toast" role="status">
+    <span class="toast-check"><app-icon name="check" [size]="22" /></span>
+    <div>
+      <strong>{{
+        toast.startsWith('Xóa thành công') ? 'Xóa thành công!' : 'Thao tác thành công'
+      }}</strong>
+      <p>{{ toast }}</p>
+    </div>
+    <button class="icon-btn" aria-label="Đóng thông báo" (click)="toast = ''">
+      <app-icon name="close" [size]="16" />
+    </button>
+  </div>
+
+  <div class="breadcrumb">
+    <a routerLink="/admin/staff">Quản lý Nhân sự &amp; Ca trực</a> ›
+    {{ employeeId ? 'Chỉnh sửa hồ sơ' : 'Thêm nhân sự mới' }}
+  </div>
+  <header class="staff-page-title">
+    <div>
+      <h1>{{ employeeId ? 'Chỉnh sửa thông tin nhân sự' : 'Thêm nhân sự mới' }}</h1>
+      <p>Hồ sơ và tài khoản nhân viên được tạo trên máy chủ.</p>
+    </div>
+    <span class="badge blue">{{
+      employeeId ? employee?.employeeCode || 'Hồ sơ' : 'Tạo hồ sơ'
+    }}</span>
+  </header>
+  <ng-container *ngTemplateOutlet="errorBanner" />
+  <ng-template #missingForm
+    ><section class="panel empty">
+      <h2>Không tìm thấy hồ sơ</h2>
+      <a routerLink="/admin/staff">Về danh sách nhân sự</a>
+    </section></ng-template
+  >
+  <form
+    class="staff-form-grid"
+    *ngIf="!employeeId || selectedEmployee; else missingForm"
+    (ngSubmit)="saveEmployee()"
+    (input)="error = ''"
+    (change)="error = ''"
+    novalidate
+  >
+    <aside class="staff-form-sidebar">
+      <section class="staff-profile-card panel">
+        <img
+          appImageFallback
+          *ngIf="form.avatar; else emptyAvatar"
+          class="staff-avatar-preview"
+          [src]="form.avatar"
+          alt="Ảnh đại diện "
+        />
+        <ng-template #emptyAvatar><app-icon name="user" [size]="48" /></ng-template>
+        <h2>{{ form.fullName || 'Nhân sự mới' }}</h2>
+        <strong class="blue-text">{{ form.position || 'Chưa chọn chức vụ' }}</strong>
+        <p>
+          {{ form.workLocationId ? ngLocation(form.workLocationId) : 'Chưa chọn cơ sở làm việc' }}
+        </p>
+        <label class="btn full avatar-upload"
+          >Chọn ảnh đại diện<input
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            (change)="readAvatar($event)"
+            [disabled]="uploading() || saving"
+        /></label>
+        <small class="muted">JPG, PNG hoặc WebP · tối đa 2 MB. Ảnh được tải lên máy chủ.</small>
+      </section>
+      <section class="panel side-note">
+        <h3><app-icon name="calendar" /> Lịch ca tuần này</h3>
+        <div class="side-week">
+          <div>
+            <small>Ca đã nhận</small
+            ><strong>{{ employeeId ? employeeWeekCount(employeeId) : 0 }} buổi</strong>
+          </div>
+          <div>
+            <small>Ca hoàn thành</small
+            ><strong>{{ employeeId ? employeeCompletedWeekCount(employeeId) : 0 }} ca</strong>
+          </div>
+        </div>
+        <button type="button" class="text-button" (click)="navigate('schedule')">
+          Xem lịch làm việc →
+        </button>
+      </section>
+      <section class="panel side-note">
+        <h3><app-icon name="shield" /> Thông tin lưu trữ</h3>
+        <p>Thông tin nhân sự được lưu qua API quản trị.</p>
+        <span class="badge blue">Dữ liệu máy chủ</span>
+      </section>
+    </aside>
+    <div class="staff-form-content">
+      <section class="panel staff-form-section">
+        <div class="form-section-heading">
+          <span>1</span>
+          <div>
+            <h2>Thông tin Định danh Cá nhân</h2>
+            <p>Thông tin cơ bản của hồ sơ nhân sự</p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <label class="field"
+            ><span>Họ và tên *</span
+            ><input
+              class="control"
+              name="fullName"
+              [(ngModel)]="form.fullName"
+              placeholder="Nguyễn Văn A"
+            /><small class="field-error" *ngIf="attempted && !form.fullName.trim()"
+              >Vui lòng nhập họ tên.</small
+            ></label
+          >
+          <label class="field"
+            ><span>Ngày sinh *</span
+            ><input
+              class="control"
+              type="date"
+              name="birthDate"
+              [(ngModel)]="form.birthDate"
+              [max]="dateNow"
+            /><small
+              class="field-error"
+              *ngIf="attempted && (!form.birthDate || form.birthDate >= dateNow)"
+              >Ngày sinh cần là ngày hợp lệ trong quá khứ.</small
+            ></label
+          >
+          <fieldset class="field gender-field">
+            <legend>Giới tính</legend>
+            <div class="gender-options">
+              <label
+                *ngFor="
+                  let option of [
+                    { value: 'MALE', label: 'Nam' },
+                    { value: 'FEMALE', label: 'Nữ' },
+                    { value: 'OTHER', label: 'Khác' },
+                  ]
+                "
+                [class.selected]="form.gender === option.value"
+                ><input
+                  type="radio"
+                  name="gender"
+                  [value]="option.value"
+                  [(ngModel)]="form.gender"
+                />{{ option.label }}</label
+              >
+            </div>
+          </fieldset>
+        </div>
+      </section>
+      <section class="panel staff-form-section">
+        <div class="form-section-heading">
+          <span>2</span>
+          <div>
+            <h2>Thông tin Liên hệ &amp; Tài khoản</h2>
+            <p>Kênh liên lạc của nhân sự</p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <label class="field"
+            ><span>Số điện thoại *</span
+            ><input
+              class="control"
+              name="phone"
+              [(ngModel)]="form.phone"
+              placeholder="0000000000"
+            /><small class="field-error" *ngIf="attempted && !validPhone()"
+              >Số điện thoại không hợp lệ.</small
+            ><small class="field-error" *ngIf="attempted && duplicatePhone"
+              >Số điện thoại đã tồn tại.</small
+            ></label
+          >
+          <label class="field"
+            ><span>Email *</span
+            ><input
+              class="control"
+              type="email"
+              name="email"
+              [(ngModel)]="form.email"
+              placeholder="ten@example.test"
+            /><small class="field-error" *ngIf="attempted && !validEmail()"
+              >Email không hợp lệ.</small
+            ><small class="field-error" *ngIf="attempted && duplicateEmail"
+              >Email đã tồn tại.</small
+            ></label
+          >
+        </div>
+      </section>
+      <section class="panel staff-form-section">
+        <div class="form-section-heading">
+          <span>3</span>
+          <div>
+            <h2>Công việc, Chi nhánh &amp; Hợp đồng</h2>
+            <p>Chức vụ, cơ sở phụ trách và thời hạn công tác</p>
+          </div>
+        </div>
+        <div class="form-grid">
+          <label class="field"
+            ><span>Chức vụ *</span
+            ><select class="control" name="position" [(ngModel)]="form.position">
+              <option value="">Chọn chức vụ</option>
+              <option *ngFor="let item of positions" [value]="item">{{ item }}</option></select
+            ><small class="field-error" *ngIf="attempted && !form.position"
+              >Vui lòng chọn chức vụ.</small
+            ></label
+          >
+          <p class="muted">Địa điểm làm việc được chọn khi phân ca.</p>
+
+          <label class="field"
+            ><span>Ngày vào làm *</span
+            ><input
+              class="control"
+              type="date"
+              name="startDate"
+              [(ngModel)]="form.startDate"
+              [max]="dateNow"
+            /><small
+              class="field-error"
+              *ngIf="
+                attempted &&
+                (!form.startDate || form.startDate > dateNow || form.startDate < form.birthDate)
+              "
+              >Ngày vào làm phải sau ngày sinh và không vượt quá hôm nay.</small
+            ></label
+          >
+          <label class="field"
+            ><span>Loại hợp đồng *</span
+            ><select class="control" name="contractType" [(ngModel)]="form.contractType" required>
+              <option value="" disabled>Chọn loại hợp đồng</option>
+              <option *ngFor="let type of contractTypes" [value]="type.value">
+                {{ type.label }}
+              </option>
+            </select>
+            <small class="field-error" *ngIf="attempted && !validContractType"
+              >Chọn loại hợp đồng.</small
+            >
+          </label>
+        </div>
+      </section>
+      <label class="field"
+        ><span>Lương cơ bản (VND)</span
+        ><input
+          class="control"
+          type="number"
+          name="baseSalary"
+          min="0"
+          step="1"
+          [(ngModel)]="form.baseSalary"
+        /><small>Để trống nếu chưa thiết lập lương cơ bản.</small></label
+      >
+      <div class="staff-form-actions">
+        <div class="save-hint">
+          <span class="stat-icon"><app-icon [name]="error ? 'info' : 'check'" /></span>
+          <div>
+            <strong>{{
+              error ? 'Vui lòng chỉnh sửa các trường báo đỏ' : 'Lưu thông tin nhân sự'
+            }}</strong
+            ><small>Các trường có dấu (*) là thông tin bắt buộc.</small>
+          </div>
+        </div>
+        <button class="btn" type="button" (click)="navigate('list')">Hủy</button
+        ><button class="btn primary" type="submit" [disabled]="saving || uploading()">
+          {{ saving ? 'Đang lưu…' : uploading() ? 'Đang tải ảnh…' : 'Lưu hồ sơ' }}
+        </button>
+      </div>
+    </div>
+  </form>
+  <footer class="staff-data-footer">
+    <span>● Dữ liệu từ máy chủ</span
+    ><button class="text-button" (click)="navigate('list')">← Quay lại danh sách</button>
+  </footer>
+</div>

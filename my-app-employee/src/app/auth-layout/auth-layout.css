@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+/* Ảnh gốc nằm ngang: chọn đoạn ảnh đưa vào cột trái theo ảnh mẫu. */
+.auth-page {
+  grid-template-columns: minmax(0, 56fr) minmax(0, 44fr);
+}
+.auth-room-image {
+  object-position: 30% center;
+}
+.staff-area {
+  position: absolute;
+  right: 36px;
+  bottom: 28px;
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+}

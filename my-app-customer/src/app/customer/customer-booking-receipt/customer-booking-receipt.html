@@ -1,0 +1,143 @@
+﻿<p *ngIf="booking.loading()" role="status">Đang tải phiếu giữ chỗ…</p>
+<p class="error" *ngIf="error()" role="alert">{{ error() }}</p>
+<div class="container section" *ngIf="hold as b; else missing">
+  <div class="step-strip no-print" aria-label="Tiến trình giữ chỗ">
+    <div class="done"><b>✓</b><span>Thông tin</span></div>
+    <div [class.done]="confirmed" [class.current]="!confirmed"><b>2</b><span>Thanh toán</span></div>
+    <div [class.current]="confirmed"><b>3</b><span>Hoàn tất</span></div>
+  </div>
+  <div class="notice no-print" [class.success]="confirmed" role="status" aria-live="polite">
+    <h1>{{ heading }}</h1>
+    <p>{{ message }}</p>
+    <div class="receipt-actions" *ngIf="!confirmed">
+      <button
+        class="btn primary"
+        *ngIf="canRetry()"
+        (click)="retryPayment()"
+        [disabled]="busy() || gatewayUnavailable()"
+      >
+        {{ busy() ? 'Đang kết nối ngân hàng…' : 'Thanh toán lại' }}
+      </button>
+      <a class="btn" routerLink="/rooms">Chọn phòng khác</a>
+    </div>
+  </div>
+  <div class="split equal">
+    <div class="print-hide">
+      <section class="panel">
+        <h3><app-icon name="home" /> Thông tin giữ chỗ</h3>
+        <div class="inline-room" *ngIf="room as r">
+          <img [src]="r.images[0] || '/assets/placeholders/room-placeholder.svg'" [alt]="r.name" />
+          <div>
+            <span class="badge">{{ r.code }}</span>
+            <h3>{{ r.name }}</h3>
+            <p class="muted">{{ r.address }}</p>
+          </div>
+        </div>
+        <div class="detail-list booking-details">
+          <div>
+            <span>Mã giữ chỗ</span><strong>{{ b.number || b.id }}</strong>
+          </div>
+          <div>
+            <span>Tiền giữ chỗ</span><strong>{{ b.amount | number }} đ</strong>
+          </div>
+          <div>
+            <span>Trạng thái</span
+            ><app-status-badge [status]="booking.label(holdStatus() || b.status)" />
+          </div>
+          <div *ngIf="b.expiresAt">
+            <span>{{
+              b.apiStatus === 'PAYMENT_PENDING' ? 'Hạn thanh toán' : 'Giữ chỗ hiệu lực đến'
+            }}</span
+            ><strong>{{ b.expiresAt | date: 'dd/MM/yyyy HH:mm' }}</strong>
+          </div>
+        </div>
+      </section>
+      <section class="panel" *ngIf="confirmed">
+        <h3>Các bước tiếp theo</h3>
+        <p>Khoản giữ chỗ được khấu trừ đúng một lần khi lập hồ sơ đặt cọc.</p>
+        <p class="muted small">
+          Lưu biên lai và liên hệ nhân viên để hoàn tất hồ sơ cọc, chuẩn bị giấy tờ nhận phòng trước
+          hạn giữ chỗ.
+        </p>
+        <div class="receipt-actions">
+          <button class="btn no-print" (click)="print()" [disabled]="!receipt">
+            <app-icon name="download" [size]="15" /> In phiếu
+          </button>
+          <a routerLink="/" class="btn primary">Về trang chủ</a>
+        </div>
+      </section>
+    </div>
+    <section class="panel receipt-document">
+      <ng-container *ngIf="receipt as r; else waitingReceipt">
+        <app-brand />
+        <h2>{{ r.snapshot.title }}</h2>
+        <div class="detail-list">
+          <div>
+            <span>Số phiếu</span><strong>{{ r.number }}</strong>
+          </div>
+          <div>
+            <span>Mã giữ chỗ</span
+            ><strong>{{ r.snapshot.holdNumber || b.number || r.snapshot.holdId || b.id }}</strong>
+          </div>
+          <div>
+            <span>Khách hàng</span><strong>{{ r.snapshot.payerName }}</strong>
+          </div>
+          <div *ngIf="r.snapshot.payerPhone">
+            <span>Số điện thoại</span><strong>{{ r.snapshot.payerPhone }}</strong>
+          </div>
+          <div>
+            <span>Phòng</span
+            ><strong
+              >{{ r.snapshot.roomCode
+              }}<ng-container *ngIf="r.snapshot.roomName">
+                • {{ r.snapshot.roomName }}</ng-container
+              ></strong
+            >
+          </div>
+          <div>
+            <span>Địa chỉ</span
+            ><strong>{{ r.snapshot.roomAddress || 'Chưa có địa chỉ trong phiếu lưu trữ' }}</strong>
+          </div>
+          <div>
+            <span>Số tiền</span><strong>{{ r.snapshot.amount | number }} đ</strong>
+          </div>
+          <div>
+            <span>Kênh thanh toán</span
+            ><strong>{{ booking.methodLabel(r.snapshot.method || payment?.method) }}</strong>
+          </div>
+          <div>
+            <span>Thời điểm thanh toán</span
+            ><strong>{{ r.snapshot.paidAt || payment?.paidAt | date: 'dd/MM/yyyy HH:mm' }}</strong>
+          </div>
+          <div>
+            <span>Giữ chỗ hiệu lực đến</span
+            ><strong>{{ r.snapshot.expiresAt || b.expiresAt | date: 'dd/MM/yyyy HH:mm' }}</strong>
+          </div>
+          <div>
+            <span>Phát hành</span><strong>{{ r.issuedAt | date: 'dd/MM/yyyy HH:mm' }}</strong>
+          </div>
+          <div>
+            <span>Mã thanh toán</span><strong>{{ r.paymentId }}</strong>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #waitingReceipt>
+        <p>Chưa có biên lai thanh toán.</p>
+      </ng-template>
+      <button
+        class="btn no-print reload-button"
+        (click)="refresh()"
+        [disabled]="booking.loading() || busy()"
+      >
+        Tải lại trạng thái
+      </button>
+    </section>
+  </div>
+</div>
+<ng-template #missing>
+  <div class="not-found" *ngIf="!booking.loading() && !error()">
+    <h1>Không tìm thấy phiếu của bạn</h1>
+    <p>Phiếu chỉ hiển thị cho khách hàng sở hữu yêu cầu giữ chỗ.</p>
+    <a routerLink="/rooms" class="btn primary">Tìm phòng</a>
+  </div>
+</ng-template>

@@ -1,0 +1,134 @@
+:host {
+  display: block;
+  min-width: 0;
+  position: relative;
+}
+.field-label {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin: 0 0 5px 10px;
+}
+.select-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  align-items: center;
+  border: 1px solid var(--line);
+  padding: 11px 12px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  min-height: 45px;
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+.select-trigger:hover {
+  border-color: var(--primary);
+}
+.select-trigger:focus-visible {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--focus-ring);
+}
+.select-trigger > .selected-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.select-trigger app-icon {
+  color: #66758b;
+  transform: rotate(90deg);
+}
+.select-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  width: min(330px, 80vw);
+  z-index: 1000;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 30px #203b5225;
+  border-radius: 9px;
+  padding: 9px;
+}
+.select-menu input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px;
+}
+.options {
+  max-height: 230px;
+  overflow: auto;
+}
+.options button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: #fff;
+  padding: 11px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: normal;
+}
+.options button:hover,
+.options button.active {
+  background: #edf4ff;
+  color: var(--primary);
+}
+.options p {
+  font-size: 12px;
+  padding: 10px;
+}
+.select-menu input {
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+.select-menu input:hover {
+  border-color: var(--primary);
+}
+.options button {
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
+}
+.options button:active {
+  background: var(--soft);
+  color: var(--primary-dark);
+  transform: scale(0.98);
+}
+.select-menu :is(input, button):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+  box-shadow: var(--focus-ring);
+}
+@media (prefers-reduced-motion: reduce) {
+  .select-trigger,
+  .select-menu input,
+  .options button {
+    transition: none;
+    animation: none;
+  }
+  .options button:active {
+    transform: none;
+  }
+}
+:host-context(.hero-filter-layout) .field-label {
+  display: none;
+}
+:host-context(.hero-filter-layout) .select-trigger {
+  min-height: 45px;
+}

@@ -1,0 +1,50 @@
+﻿<div class="modal-backdrop" (click)="closed.emit()">
+  <section
+    class="modal room-preview"
+    appDialogFocus
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="room-preview-title"
+    (click)="$event.stopPropagation()"
+    (keydown.escape)="closed.emit()"
+    (keydown.arrowright)="next(1)"
+    (keydown.arrowleft)="next(-1)"
+  >
+    <button class="icon-btn close" (click)="closed.emit()" aria-label="Đóng xem trước">
+      <app-icon name="close" />
+    </button>
+    <span class="badge blue">Xem trước tin phòng</span>
+    <h2 id="room-preview-title">{{ room.name || room.code }}</h2>
+    <img
+      class="preview-large"
+      [src]="images[initial] || images[0]"
+      [alt]="'Ảnh phòng ' + (initial + 1)"
+      appImageFallback
+    />
+    <div class="preview-nav">
+      <button class="btn" (click)="next(-1)" [disabled]="images.length < 2" aria-label="Ảnh trước">
+        ‹</button
+      ><span>{{ initial + 1 }} / {{ images.length }}</span
+      ><button class="btn" (click)="next(1)" [disabled]="images.length < 2" aria-label="Ảnh sau">
+        ›
+      </button>
+    </div>
+    <div class="preview-thumbs">
+      <button
+        *ngFor="let image of images; let i = index"
+        (click)="initial = i"
+        [class.active]="initial === i"
+        [attr.aria-label]="'Chọn ảnh ' + (i + 1)"
+      >
+        <img [src]="image" [alt]="'Ảnh thu nhỏ ' + (i + 1)" appImageFallback />
+      </button>
+    </div>
+    <div class="preview-summary">
+      <strong>{{ room.price | number }} đ/tháng</strong
+      ><span>{{ room.area }} m² · {{ room.capacity }} người · {{ room.type | roomType }}</span>
+    </div>
+    <p>{{ room.address }}</p>
+    <p class="preview-description">{{ room.description }}</p>
+    <button class="btn primary" (click)="closed.emit()">Đóng xem trước</button>
+  </section>
+</div>

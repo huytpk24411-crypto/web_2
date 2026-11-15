@@ -1,0 +1,130 @@
+<app-home-hero-carousel [rooms]="hot()" [loading]="rooms.loading()" [formActive]="formActive()" />
+<app-home-search (interacting)="formActive.set($event)" />
+<div class="home-container">
+  <div class="home-benefits" aria-label="Tiện ích tìm phòng">
+    <span><app-icon name="home" [size]="25" />Xem phòng tự do</span>
+    <span><app-icon name="calendar" [size]="25" />Đặt lịch thuận tiện</span>
+    <span><app-icon name="heart" [size]="25" />Lưu lựa chọn yêu thích</span>
+  </div>
+  <section class="home-section" appHomeReveal aria-labelledby="discover-title">
+    <div class="home-heading">
+      <div>
+        <span class="eyebrow">DÀNH CHO NHỮNG KHỞI ĐẦU</span>
+        <h2 id="discover-title">Một nơi ở, nhiều điều hợp gu.</h2>
+      </div>
+      <a class="home-link" routerLink="/rooms" [queryParams]="search.params()"
+        >Xem tất cả phòng →</a
+      >
+    </div>
+    <div
+      *ngIf="rooms.loading()"
+      class="home-room-grid"
+      role="status"
+      aria-label="Đang tải danh mục phòng"
+    >
+      <div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="room-skeleton" aria-hidden="true">
+        <div></div>
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div *ngIf="rooms.error()" class="home-notice" role="alert">
+      {{ rooms.error() }}
+      <button class="btn primary" type="button" (click)="rooms.refresh()">Thử lại</button>
+    </div>
+    <ng-container *ngIf="!rooms.loading() && !rooms.error()">
+      <div class="home-room-grid">
+        <app-room-card *ngFor="let room of discovered()" [room]="room" variant="home" />
+      </div>
+      <div class="home-empty" *ngIf="!discovered().length">
+        <h3>Chưa có phòng phù hợp với lựa chọn của bạn.</h3>
+        <p>Thử bớt điều kiện để khám phá thêm không gian sống.</p>
+        <button class="btn primary" type="button" (click)="search.clear()">Xóa bộ lọc</button>
+      </div>
+    </ng-container>
+  </section>
+  <section class="home-section" appHomeReveal aria-labelledby="schools-title">
+    <div class="home-heading">
+      <div>
+        <span class="eyebrow">BẮT ĐẦU TỪ NƠI BẠN HỌC</span>
+        <h2 id="schools-title">Tìm phòng gần trường bạn</h2>
+      </div>
+      <button
+        class="home-link"
+        type="button"
+        *ngIf="locations.schools.length > 6"
+        (click)="allSchools.set(!allSchools()); schoolQuery.set('')"
+        [attr.aria-expanded]="allSchools()"
+        aria-controls="home-schools"
+      >
+        {{ allSchools() ? 'Thu gọn danh sách' : 'Xem tất cả trường' }}
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>
+    <div class="school-search" *ngIf="allSchools()">
+      <label for="home-school-query">Tìm trường hoặc cơ sở</label
+      ><input
+        id="home-school-query"
+        type="search"
+        [ngModel]="schoolQuery()"
+        (ngModelChange)="schoolQuery.set($event)"
+      />
+    </div>
+    <div class="school-grid" id="home-schools">
+      <a
+        *ngFor="let school of schools()"
+        class="school-tile"
+        routerLink="/rooms"
+        [queryParams]="{ school: school.id }"
+      >
+        <img
+          [src]="school.logo"
+          appImageFallback
+          [alt]="school.name"
+          loading="lazy"
+          width="56"
+          height="56"
+        />
+        <div>
+          <h3>{{ school.name }}</h3>
+          <p>{{ school.campus }}</p>
+          <span *ngIf="!rooms.loading() && !rooms.error()"
+            >{{ schoolCount(school.id) }} phòng phù hợp</span
+          >
+        </div>
+        <span class="school-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+    <p *ngIf="!rooms.loading() && !rooms.error() && !schools().length" class="home-empty">
+      Không tìm thấy trường phù hợp.
+    </p>
+  </section>
+  <section
+    id="home-map"
+    class="home-section map-discovery"
+    appHomeReveal
+    aria-labelledby="map-title"
+  >
+    <div class="map-copy">
+      <span class="eyebrow">KHÁM PHÁ TRÊN BẢN ĐỒ</span>
+      <h2 id="map-title">Ở gần những điều quan trọng với bạn</h2>
+      <p>
+        Từ giảng đường đến góc quen mỗi ngày. Khám phá tòa nhà và phòng trống quanh nơi bạn học.
+      </p>
+      <div class="school-chips">
+        <button
+          *ngFor="let school of locations.schools.slice(0, 3)"
+          type="button"
+          (click)="search.school(school.id)"
+          [attr.aria-pressed]="search.filter().schoolId === school.id"
+        >
+          {{ school.name }}
+        </button>
+      </div>
+      <a routerLink="/rooms" [queryParams]="search.params()" class="home-link"
+        >Xem danh sách phòng →</a
+      >
+    </div>
+    <app-map-search variant="map" />
+  </section>
+  <app-home-bottom />
+</div>

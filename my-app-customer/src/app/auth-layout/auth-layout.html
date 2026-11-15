@@ -1,0 +1,30 @@
+<section class="auth-page">
+  <aside class="auth-visual">
+    <img
+      class="auth-room-image"
+      src="/assets/auth/auth-room.png"
+      alt="Căn phòng sáng với giường ngủ, bàn học và cửa sổ"
+      appImageFallback
+      fetchpriority="high"
+      width="768"
+      height="960"
+    />
+    <div class="auth-brand">
+      <img
+        src="/assets/brand/ihouzz-uni-logo-draft.png"
+        alt="iHOUZZ Uni — Công ty cổ phần bất động sản Houzz Uni"
+        width="232"
+        height="77"
+      />
+    </div>
+    <div class="auth-visual-copy">
+      <p>TÌM NƠI Ở PHÙ HỢP</p>
+      <h2>Một nơi ở tốt.<br />Một khởi đầu mới.</h2>
+      <span class="auth-accent" aria-hidden="true"></span>
+    </div>
+  </aside>
+  <div class="auth-panel">
+    <a class="auth-explore" routerLink="/">Khám phá phòng <app-icon name="arrow" [size]="20" /></a>
+    <div class="auth-form-stage"><router-outlet (activate)="onActivate($event)" /></div>
+  </div>
+</section>
