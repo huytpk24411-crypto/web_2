@@ -1,0 +1,2 @@
+# Seed data is verified by SHA-256 in seed.js: keep the exact bytes (no CRLF conversion).
+my-server-mongodb/data/*.json -text
