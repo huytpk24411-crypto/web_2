@@ -4,7 +4,7 @@ Ba ứng dụng Angular riêng cho khách hàng, nhân viên và quản trị; b
 
 ## Chạy sau khi clone
 
-1. Cài Node.js **24.15 trở lên trong nhánh 24.x** (hoặc 22.22.3+ trong nhánh 22.x, hoặc 26+) và MongoDB Community Server **8.x**. Bật dịch vụ MongoDB ở `127.0.0.1:27017`.
+1. Cài Node.js **24.15 trở lên trong nhánh 24.x** (hoặc 22.22.3+ trong nhánh 22.x, hoặc 26+) và MongoDB Community Server (phiên bản đã kiểm thử: **9.0.4**). Bật dịch vụ MongoDB ở `127.0.0.1:27017`.
 2. Tại thư mục repository chạy `npm run setup`. Lệnh này cài bằng lockfile cho cả năm thư mục, tạo `.env` riêng trên máy, chuẩn bị ảnh minh họa và nạp dữ liệu nếu database còn trống. Database đã có dữ liệu được giữ nguyên.
 3. Chạy `npm start`. Mở customer http://127.0.0.1:4200, employee http://127.0.0.1:4201, admin http://127.0.0.1:4202. Ctrl+C dừng các tiến trình do lệnh này tạo. Nếu cổng đang được dùng, chương trình báo lỗi và giữ nguyên tiến trình đó.
 
