@@ -85,7 +85,7 @@
 </aside>
 <main class="portal-main">
   <p class="notice warning" role="alert" *ngIf="summaryApi.error()">{{ summaryApi.error() }}</p>
-  <router-outlet />
+  <app-back-navigation /><router-outlet />
 </main>
 <div class="modal-backdrop" *ngIf="notificationsOpen" (click)="notificationsOpen = false">
   <section

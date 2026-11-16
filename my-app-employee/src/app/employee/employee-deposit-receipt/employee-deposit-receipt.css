@@ -1,0 +1,414 @@
+﻿:host {
+  display: block;
+}
+.receipt-heading {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 20px;
+}
+.receipt-heading .emp-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+.receipt-heading .emp-title {
+  font-size: 21px;
+  line-height: 1.35;
+}
+.receipt-heading .emp-badge {
+  flex-shrink: 0;
+}
+.receipt-heading .emp-page-head {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.receipt-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 0 24px;
+  padding: 16px;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.receipt-steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--soft);
+  font-size: 12px;
+}
+.receipt-steps small,
+.receipt-steps strong,
+.receipt-steps div > span {
+  display: block;
+}
+.receipt-steps small {
+  color: var(--muted);
+  font-size: 10px;
+  margin-bottom: 3px;
+}
+.receipt-steps strong {
+  line-height: 1.4;
+}
+.receipt-steps div > span {
+  color: var(--green);
+  margin-top: 3px;
+}
+.step-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: var(--green);
+  background: color-mix(in srgb, var(--green) 15%, var(--surface));
+  border-radius: 50%;
+}
+.receipt-steps .current-step {
+  color: var(--primary-dark);
+  border-color: color-mix(in srgb, var(--primary) 45%, var(--line));
+  background: color-mix(in srgb, var(--primary) 6%, var(--surface));
+}
+.current-step .step-icon {
+  color: var(--surface);
+  background: var(--primary-dark);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 12%, transparent);
+}
+.receipt-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 24px;
+}
+.receipt-info {
+  gap: 20px;
+  min-width: 0;
+}
+.receipt-info .emp-card {
+  padding: 18px;
+}
+.invoice-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.invoice-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--green);
+  color: var(--surface);
+}
+.invoice-heading small {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green);
+}
+.invoice-heading h2 {
+  margin: 4px 0 0;
+  font-size: 17px;
+}
+.invoice-heading .emp-badge {
+  margin-left: auto;
+  font-size: 10px;
+}
+.invoice-subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  padding-bottom: 16px;
+  margin: 10px 0 14px;
+  border-bottom: 1px solid var(--line);
+}
+.invoice-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.invoice-detail {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--soft);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.invoice-detail > * {
+  display: block;
+}
+.invoice-detail span,
+.invoice-detail small {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.invoice-detail strong {
+  margin: 4px 0;
+}
+.room-detail strong {
+  color: var(--primary-dark);
+}
+.receipt-amount {
+  margin-top: 16px;
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, var(--line));
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--primary) 4%, var(--surface));
+  text-align: center;
+}
+.receipt-amount > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.receipt-amount h2 {
+  color: var(--primary-dark);
+  margin: 6px 0;
+  font-size: clamp(22px, 2.2vw, 29px);
+}
+.receipt-amount p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.receipt-amount .amount-confirmation {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--green);
+  margin-top: 10px;
+  font-size: 11px;
+}
+.collection-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.collection-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  margin: 0;
+}
+.collection-heading app-icon {
+  color: var(--primary-dark);
+}
+.collection-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 5px;
+  margin: 18px 0;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.collection-methods > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 11px 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.collection-methods .selected {
+  background: var(--surface);
+  color: var(--primary-dark);
+  border-color: var(--line);
+  font-weight: 700;
+}
+.collection-notice {
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.collection-notice app-icon {
+  flex-shrink: 0;
+  color: var(--primary-dark);
+  margin-top: 2px;
+}
+.collection-notice p {
+  margin: 0;
+}
+.collection-record {
+  margin: 16px 0;
+  padding: 12px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: 11px;
+}
+.collection-record > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 5px 0;
+}
+.collection-record dt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+}
+.collection-record dd {
+  text-align: right;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.contract-link {
+  min-height: 44px;
+  justify-content: center;
+}
+.receipt-preview {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.preview-heading,
+.preview-toolbar,
+.preview-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 16px;
+}
+.preview-heading {
+  font-size: 11px;
+  border-bottom: 1px solid var(--line);
+}
+.preview-heading strong,
+.preview-footer > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.preview-heading app-icon {
+  color: var(--primary-dark);
+}
+.preview-toolbar {
+  background: var(--surface);
+}
+.preview-toolbar .emp-btn {
+  min-height: 36px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+.pdf-hint {
+  padding: 0 16px 12px;
+  margin: 0;
+  font-size: 10px;
+  color: var(--muted);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.sheet-stage {
+  padding: 24px 16px;
+}
+.preview-footer {
+  font-size: 10px;
+  color: var(--muted);
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+.preview-footer app-icon {
+  color: var(--green);
+}
+@media (max-width: 900px) {
+  .receipt-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .receipt-steps {
+    gap: 8px;
+    padding: 10px;
+  }
+  .receipt-steps li {
+    padding: 10px;
+    gap: 8px;
+  }
+  .step-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .receipt-preview {
+    max-width: 850px;
+  }
+}
+@media (max-width: 560px) {
+  .receipt-steps {
+    grid-template-columns: 1fr;
+  }
+  .invoice-details {
+    grid-template-columns: 1fr;
+  }
+  .receipt-heading .emp-title {
+    font-size: 18px;
+  }
+  .collection-record > div {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .collection-record dd {
+    text-align: left;
+  }
+  .sheet-stage {
+    padding: 14px 8px;
+  }
+}
+@media print {
+  :host {
+    display: block;
+  }
+  .receipt-grid,
+  .receipt-preview,
+  .sheet-stage {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: var(--surface);
+    box-shadow: none;
+    overflow: visible;
+  }
+  .no-print {
+    display: none !important;
+  }
+  ::ng-deep .employee-main:has(app-employee-deposit-receipt) {
+    min-height: 0;
+    max-width: none;
+  }
+  ::ng-deep .employee-main:has(app-employee-deposit-receipt) > :not(app-employee-deposit-receipt) {
+    display: none !important;
+  }
+}

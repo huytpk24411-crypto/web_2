@@ -108,10 +108,11 @@ export class RoomSearchService {
                 ? this.rooms.locations.property(value)?.name
                 : key === 'status'
                   ? (
-                      { AVAILABLE: 'Đang trống', HELD: 'Đã giữ chỗ', RENTED: 'Đã thuê' } as Record<
-                        string,
-                        string
-                      >
+                      {
+                        AVAILABLE: 'Đang trống',
+                        HELD: 'Đang giữ chỗ',
+                        RENTED: 'Đã thuê',
+                      } as Record<string, string>
                     )[value]
                   : key === 'bounds'
                     ? 'đã chọn'

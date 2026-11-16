@@ -85,6 +85,7 @@ describe('CustomerBookingNewComponent with HTTP holds', () => {
   async function load(holds: MoneyHold[] = []) {
     const fixture = TestBed.createComponent(CustomerBookingNewComponent);
     fixture.detectChanges();
+    fixture.componentInstance.acceptPolicy();
     (await request('/data/me/holds')).flush(JSON.stringify({ items: holds }));
     if (holds.length)
       (await request('/data/me/holds/' + holds[0].id + '/payos-link', 'POST')).flush(
@@ -98,6 +99,27 @@ describe('CustomerBookingNewComponent with HTTP holds', () => {
     await fixture.whenStable();
     return fixture;
   }
+  it('requires policy consent before loading or creating a payment', async () => {
+    const fixture = TestBed.createComponent(CustomerBookingNewComponent);
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('[role="dialog"]').textContent).toContain('48 giờ');
+    expect(fixture.nativeElement.querySelector('.step-strip')).toBeNull();
+    const agree = Array.from(
+      fixture.nativeElement.querySelectorAll('button') as NodeListOf<HTMLButtonElement>,
+    ).find((button) => button.textContent?.includes('Đồng ý và tiếp tục'))!;
+    expect(agree.disabled).toBe(true);
+    await fixture.componentInstance.submit();
+    http.expectNone((request) => request.url.startsWith('/data/'));
+    fixture.nativeElement.querySelector('input[type="checkbox"]').click();
+    await fixture.whenStable();
+    expect(agree.disabled).toBe(false);
+    agree.click();
+    (await request('/data/me/holds')).flush(JSON.stringify({ items: [] }));
+    await fixture.whenStable();
+    expect(fixture.nativeElement.querySelector('[role="dialog"]')).toBeNull();
+    expect(fixture.componentInstance.form.controls.terms.value).toBe(true);
+    http.expectNone((request) => request.method === 'POST');
+  });
   it('shows the policy amount and payOS description after creating the pending hold', async () => {
     const fixture = await load();
     const component = fixture.componentInstance;

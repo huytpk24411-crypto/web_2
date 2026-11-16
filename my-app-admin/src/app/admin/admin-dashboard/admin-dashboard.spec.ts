@@ -3,7 +3,7 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 import { TestBed } from '@angular/core/testing';
 import { signal } from '@angular/core';
 import { AuthService } from '../../services/auth-service';
-import { AdminDashboardAPI, AdminSummary } from './admin-dashboard-api';
+import { AdminDashboardAPI, AdminSummary } from '../../services/admin-dashboard-apiservice';
 
 const report: AdminSummary = {
   month: '2026-11',

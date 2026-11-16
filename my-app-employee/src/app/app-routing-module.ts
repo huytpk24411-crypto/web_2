@@ -1,3 +1,4 @@
+import { ForgotPasswordComponent } from './forgot-password/forgot-password';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccessDeniedComponent } from './access-denied/access-denied';
@@ -9,6 +10,18 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found';
 import { AuthLayoutComponent } from './auth-layout/auth-layout';
 // Cổng nhân viên: chỉ có trang đăng nhập và khu vực /employee; tài khoản do công ty cấp nên không có đăng ký.
 const routes: Routes = [
+  {
+    path: 'forgot-password',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: ForgotPasswordComponent,
+        canActivate: [GuestGuard],
+        title: 'Quên mật khẩu | iHOUZZ Uni',
+      },
+    ],
+  },
   {
     path: 'login',
     component: AuthLayoutComponent,

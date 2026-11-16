@@ -11,6 +11,7 @@
       <nav aria-label="Điều hướng chính">
         <a
           routerLink="/"
+          data-tooltip="Trang chủ"
           routerLinkActive="active"
           ariaCurrentWhenActive="page"
           [routerLinkActiveOptions]="{
@@ -20,27 +21,63 @@
             matrixParams: 'ignored',
           }"
           >Trang chủ</a
-        ><a routerLink="/rooms" routerLinkActive="active" ariaCurrentWhenActive="page">Tìm phòng</a
-        ><a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">Giới thiệu</a
-        ><a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page">Liên hệ</a>
+        ><a
+          routerLink="/rooms"
+          data-tooltip="Tìm phòng"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Tìm phòng</a
+        ><a
+          routerLink="/about"
+          data-tooltip="Giới thiệu"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Giới thiệu</a
+        ><a
+          routerLink="/contact"
+          data-tooltip="Liên hệ"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Liên hệ</a
+        >
       </nav>
       <div class="header-actions">
-        <a class="favorite-link" routerLink="/favorites" aria-label="Phòng yêu thích"
+        <a
+          class="favorite-link"
+          routerLink="/favorites"
+          aria-label="Phòng yêu thích"
+          data-tooltip="Phòng yêu thích"
           ><app-icon name="heart" /><span *ngIf="favorites.ids().length">{{
             favorites.ids().length
           }}</span></a
         ><ng-container *ngIf="!auth.account(); else signed"
-          ><a class="login" routerLink="/login" [queryParams]="{ returnUrl: currentUrl }"
+          ><a
+            class="login"
+            routerLink="/login"
+            data-tooltip="Đăng nhập"
+            [queryParams]="{ returnUrl: currentUrl }"
             >Đăng nhập</a
           ><a
             class="btn primary sm"
             routerLink="/register"
+            data-tooltip="Đăng ký"
             [queryParams]="{ returnUrl: currentUrl }"
             >Đăng ký <span class="cta-arrow" aria-hidden="true">→</span></a
           ></ng-container
         ><ng-template #signed
-          ><a routerLink="/viewings/new" class="icon-btn" aria-label="Lịch xem của tôi"
+          ><a
+            routerLink="/my-viewings"
+            class="icon-btn"
+            aria-label="Lịch xem của tôi"
+            data-tooltip="Lịch xem của tôi"
             ><app-icon name="calendar"
+          /></a>
+          <a
+            routerLink="/bookings"
+            class="icon-btn hold-link"
+            aria-label="Phòng đã giữ"
+            data-tooltip="Phòng đã giữ"
+            ><app-icon name="home"
           /></a>
           <div class="notifications">
             <button
@@ -49,6 +86,7 @@
               class="icon-btn notification-bell"
               (click)="toggleNotifications()"
               aria-label="Thông báo"
+              data-tooltip="Thông báo"
               [attr.aria-expanded]="notificationsOpen()"
               aria-controls="customer-notifications"
             >
@@ -119,6 +157,7 @@
               class="icon-btn account-toggle"
               (click)="toggleAccount()"
               aria-label="Menu tài khoản"
+              data-tooltip="Tài khoản"
               [attr.aria-expanded]="accountOpen()"
               aria-controls="customer-account-menu"
             >
@@ -138,7 +177,8 @@
             >
               <strong class="account-name">{{ auth.account()?.name }}</strong>
               <a routerLink="/favorites" (click)="closeAccount()">Phòng yêu thích</a>
-              <a routerLink="/viewings/new" (click)="closeAccount()">Lịch xem của tôi</a>
+              <a routerLink="/my-viewings" (click)="closeAccount()">Lịch xem của tôi</a>
+              <a routerLink="/bookings" (click)="closeAccount()">Phòng đã giữ</a>
               <button type="button" (click)="closeAccount(); logout()">
                 <app-icon name="logout" [size]="16" />Đăng xuất
               </button>
@@ -153,30 +193,8 @@
   {{ favorites.error() }}
 </div>
 <div *ngIf="auth.error()" class="notice warning container" role="alert">{{ auth.error() }}</div>
-<main class="customer-page" [class.customer-page--home]="isHome()"><router-outlet /></main>
-<footer class="customer-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <app-brand />
-        <p>
-          Hệ sinh thái dịch vụ phòng trọ, căn hộ dành cho sinh viên. An tâm chọn phòng, vững bước
-          tương lai.
-        </p>
-      </div>
-
-      <div class="footer-links">
-        <h4>Liên kết nhanh</h4>
-        <a routerLink="/">Trang chủ</a>
-        <a routerLink="/rooms">Tìm phòng</a>
-        <a routerLink="/about">Giới thiệu</a>
-        <a routerLink="/contact">Liên hệ</a>
-        <a routerLink="/favorites">Phòng yêu thích</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 iHOUZZ Uni. All rights reserved.</span>
-    </div>
-  </div>
-</footer>
+<main class="customer-page" [class.customer-page--home]="isHome()">
+  <div class="container"><app-back-navigation /></div>
+  <router-outlet />
+</main>
+<app-customer-footer />

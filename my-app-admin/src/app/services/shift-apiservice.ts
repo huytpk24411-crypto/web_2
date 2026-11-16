@@ -83,6 +83,10 @@ export class ShiftAPIService {
       PERIOD_ENDED: 'Tuần của đợt này đã kết thúc, không thể xếp bù ca.',
       TASK_LOCKED: 'Công việc đã hoàn thành hoặc đã hủy, không thể thay đổi.',
       TASK_NOT_PENDING_CONFIRM: 'Công việc không ở trạng thái chờ xác nhận.',
+      EMPLOYEE_BUSY:
+        'Nhân viên đã có lịch dẫn khách khác vào giờ này. Vui lòng chọn nhân viên hoặc giờ khác.',
+      VIEWING_TIME_CONFLICT: 'Khách đã có lịch xem khác vào giờ này. Vui lòng chọn giờ khác.',
+      VIEWING_PAST: 'Chọn giờ xem trong ca tương lai đã chọn.',
       TASK_PENDING_CONFIRM:
         'Công việc đang chờ xác nhận hoàn thành, hãy xác nhận hoặc trả lại trước.',
       SHIFT_STARTED: 'Ca đã bắt đầu, hãy chọn ca khác.',

@@ -12,6 +12,7 @@ import { CustomerLayoutComponent } from './customer-layout/customer-layout';
 import { CustomerRoomDetailComponent } from './customer-room-detail/customer-room-detail';
 import { CustomerRoomListComponent } from './customer-room-list/customer-room-list';
 import { CustomerViewingNewComponent } from './customer-viewing-new/customer-viewing-new';
+import { CustomerBookingListComponent } from './customer-booking-list/customer-booking-list';
 const routes: Routes = [
   { path: '', component: CustomerHomeComponent, title: 'Trang chủ | iHOUZZ Uni' },
   { path: 'rooms', component: CustomerRoomListComponent, title: 'Tất cả phòng | iHOUZZ Uni' },
@@ -28,6 +29,13 @@ const routes: Routes = [
     data: { roles: ['CUSTOMER'] },
   },
   {
+    path: 'bookings',
+    component: CustomerBookingListComponent,
+    title: 'Phòng đã giữ | iHOUZZ Uni',
+    canActivate: [AuthGuard, RoleGuard],
+    data: { roles: ['CUSTOMER'] },
+  },
+  {
     path: 'bookings/new',
     component: CustomerBookingNewComponent,
     title: 'Giữ chỗ trực tuyến | iHOUZZ Uni',
@@ -40,6 +48,13 @@ const routes: Routes = [
     title: 'Phiếu giữ chỗ | iHOUZZ Uni',
     canActivate: [AuthGuard, RoleGuard],
     data: { roles: ['CUSTOMER'] },
+  },
+  {
+    path: 'my-viewings',
+    component: CustomerViewingNewComponent,
+    title: 'Lịch xem phòng của bạn | iHOUZZ Uni',
+    canActivate: [AuthGuard, RoleGuard],
+    data: { roles: ['CUSTOMER'], historyOnly: true },
   },
   {
     path: 'viewings/new',

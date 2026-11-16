@@ -77,7 +77,7 @@ describe('EmployeeShiftTasksComponent with HTTP data', () => {
     ['TODO', 'Đã giao'],
     ['IN_PROGRESS', 'Đã giao'],
     ['PENDING_CONFIRM', 'Chờ xác nhận'],
-    ['DONE', 'Hoàn thành'],
+    ['DONE', 'Đã Xác nhận'],
     ['WAITING_ADMIN', 'Chờ giao lại'],
   ] as const)('renders task status %s as %s', async (status, label) => {
     const general = { ...task('GENERAL'), status };
@@ -108,13 +108,13 @@ describe('EmployeeShiftTasksComponent with HTTP data', () => {
         'Đã chuyển về quản trị viên',
       );
       expect(root.textContent).not.toContain('Đã chuyển sang ca khác');
-      expect(root.querySelector<HTMLInputElement>('input[type="checkbox"]')?.disabled).toBe(true);
+      expect(root.querySelector('input[type="checkbox"]')).toBeNull();
       expect(root.querySelector<HTMLSelectElement>('.viewing-task select')?.disabled).toBe(true);
       expect(root.querySelector<HTMLTextAreaElement>('.viewing-task textarea')?.disabled).toBe(
         true,
       );
       expect(root.textContent).not.toContain('Xác nhận lịch với khách');
-      await fixture.componentInstance.toggle('GENERAL');
+      await fixture.componentInstance.completeTask(fixture.componentInstance.list[0]);
       await fixture.componentInstance.confirmViewing(fixture.componentInstance.list[1]);
       http.expectNone((request) => request.method !== 'GET');
       http.verify();
@@ -129,11 +129,11 @@ describe('EmployeeShiftTasksComponent with HTTP data', () => {
     const { fixture, http } = await renderTasks('IN_PROGRESS', [pending]);
     const root: HTMLElement = fixture.nativeElement;
     expect(root.querySelector('.task-row > .emp-badge')?.textContent?.trim()).toBe('Chờ xác nhận');
-    expect(root.querySelector<HTMLInputElement>('.task-row input')?.checked).toBe(true);
-    expect(root.querySelector<HTMLInputElement>('.task-row input')?.disabled).toBe(true);
-    await fixture.componentInstance.toggle(pending.id);
+    expect(root.querySelector('.task-row input')).toBeNull();
+
+    await fixture.componentInstance.completeTask(fixture.componentInstance.list[0]);
     await expect(
-      fixture.componentInstance.tasks.toggleRequest(pending.id, 'record-a'),
+      fixture.componentInstance.tasks.completeRequest(pending.id, 'record-a'),
     ).rejects.toThrow();
     http.expectNone((request) => request.method !== 'GET');
     http.verify();
@@ -166,13 +166,11 @@ describe('EmployeeShiftTasksComponent with HTTP data', () => {
     const { fixture, http } = await renderTasks('REGISTERED', [task('GENERAL'), task('VIEWING')]);
     const root: HTMLElement = fixture.nativeElement;
     expect(root.textContent).toContain('Chưa check-in — bạn có thể xem trước công việc');
-    expect(root.querySelector('.assignment-notice a')?.getAttribute('href')).toBe(
-      '/employee/shifts/record-a/check-in',
-    );
+    expect(root.querySelector('a[href$="/check-in"]')).toBeNull();
     expect(root.querySelector('.timer-card')).toBeNull();
     expect(root.querySelector('.shift-banner')).toBeNull();
     expect(root.querySelector('.emp-step-strip')).toBeNull();
-    expect(root.querySelector<HTMLInputElement>('input[type="checkbox"]')?.disabled).toBe(true);
+    expect(root.querySelector('input[type="checkbox"]')).toBeNull();
     expect(root.querySelector('.viewing-task input[type="checkbox"]')).toBeNull();
     expect(root.querySelector<HTMLSelectElement>('.viewing-task select')?.disabled).toBe(true);
     expect(root.querySelector<HTMLTextAreaElement>('.viewing-task textarea')?.disabled).toBe(true);
@@ -212,7 +210,7 @@ describe('EmployeeShiftTasksComponent with HTTP data', () => {
       const root: HTMLElement = fixture.nativeElement;
       expect(root.textContent).toContain('Ca đã kết thúc — lịch sử công việc');
       expect(root.textContent).toContain('Đã chuyển sang ca khác');
-      expect(root.querySelector<HTMLInputElement>('input[type="checkbox"]')?.disabled).toBe(true);
+      expect(root.querySelector('input[type="checkbox"]')).toBeNull();
       expect(root.querySelector('.timer-card')).toBeNull();
       expect(root.querySelector('.emp-step-strip')).toBeNull();
       expect(
@@ -230,21 +228,9 @@ describe('EmployeeShiftTasksComponent with HTTP data', () => {
       task('VIEWING', true),
     ]);
     const root: HTMLElement = fixture.nativeElement;
-    expect(root.querySelector<HTMLInputElement>('input[type="checkbox"]')?.disabled).toBe(true);
+    expect(root.querySelector('input[type="checkbox"]')).toBeNull();
     expect(root.querySelector('.viewing-task input[type="checkbox"]')).toBeNull();
     expect(root.querySelector('.emp-step-strip')).not.toBeNull();
-    http.verify();
-    fixture.destroy();
-  });
-  it('requires confirmation before completing a viewing', async () => {
-    const viewing = task('VIEWING', true);
-    viewing.viewing!.status = 'DA_XAC_NHAN';
-    const { fixture, http } = await renderTasks('IN_PROGRESS', [viewing]);
-    const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false);
-    await fixture.componentInstance.completeViewing(fixture.componentInstance.list[0]);
-    expect(confirm).toHaveBeenCalledOnce();
-    http.expectNone('/viewings/viewing-a/status');
-    confirm.mockRestore();
     http.verify();
     fixture.destroy();
   });
@@ -282,43 +268,30 @@ describe('EmployeeShiftTasksComponent with HTTP data', () => {
     http.verify();
     fixture.destroy();
   });
-  it('saves room results, completes the task and reloads task counts from the API', async () => {
+  it('submits viewing results and task completion together, then shows pending admin confirmation', async () => {
     const viewing = task('VIEWING', true);
     viewing.viewing!.status = 'DA_XAC_NHAN';
     const { fixture, http } = await renderTasks('IN_PROGRESS', [viewing]);
-    const component = fixture.componentInstance;
-    const item = component.list[0],
+    const component = fixture.componentInstance,
+      item = component.list[0],
       room = item.viewing!.rooms[0];
     component.draft(room).note = 'a'.repeat(1001);
-    await component.saveRoom(item, room);
-    http.expectNone('/viewing-details/detail-a');
+    await component.completeTask(item);
+    http.expectNone((r) => r.method === 'PUT');
     expect(component.error).toContain('không quá 1000 ký tự');
-
     component.draft(room).viewStatus = 'DA_XEM';
     component.draft(room).note = 'Khách đã xem phòng.';
-    const save = component.saveRoom(item, room);
-    const detail = http.expectOne('/viewing-details/detail-a');
-    expect(detail.request.body).toEqual({ viewStatus: 'DA_XEM', note: 'Khách đã xem phòng.' });
-    detail.flush('{}');
-    viewing.viewing!.rooms[0] = { ...room, viewStatus: 'DA_XEM', note: 'Khách đã xem phòng.' };
-    await flushEmployeeReads(http, {
-      '/data/me/shift-assignments': [
-        { ...assignment, status: 'IN_PROGRESS', taskCount: 1, openTaskCount: 1 },
-      ],
-      '/data/me/shift-assignments/record-a/tasks': [viewing],
+    const complete = component.completeTask(item);
+    const request = http.expectOne('/data/tasks/VIEWING/my-status');
+    expect(request.request.body).toEqual({
+      assignmentId: 'record-a',
+      personalStatus: 'DONE',
+      viewingDetails: [{ detailId: 'detail-a', viewStatus: 'DA_XEM', note: 'Khách đã xem phòng.' }],
     });
-    await save;
-    expect(component.list[0].viewing!.rooms[0].viewStatus).toBe('DA_XEM');
-
-    const confirm = vi.spyOn(window, 'confirm').mockReturnValue(true);
-    const complete = component.completeViewing(component.list[0]);
-    const status = http.expectOne('/viewings/viewing-a/status');
-    expect(status.request.body).toEqual({ status: 'DA_XEM' });
-    status.flush('{}');
-    viewing.status = 'DONE';
-    viewing.editable = false;
+    request.flush({ id: 'VIEWING' });
+    viewing.status = 'PENDING_CONFIRM';
     viewing.mine!.personalStatus = 'DONE';
-    viewing.viewing!.status = 'DA_XEM';
+    viewing.editable = false;
     await flushEmployeeReads(http, {
       '/data/me/shift-assignments': [
         { ...assignment, status: 'IN_PROGRESS', taskCount: 1, openTaskCount: 0 },
@@ -327,11 +300,9 @@ describe('EmployeeShiftTasksComponent with HTTP data', () => {
     });
     await complete;
     fixture.detectChanges();
-    expect(component.assignment?.openTaskCount).toBe(0);
-    expect(component.done).toBe(1);
-    expect(fixture.nativeElement.textContent).toContain('Hoàn thành');
-    expect(fixture.nativeElement.querySelector('.viewing-task input[type="checkbox"]')).toBeNull();
-    confirm.mockRestore();
+    expect(fixture.nativeElement.textContent).toContain('Chờ xác nhận');
+    expect(fixture.nativeElement.textContent).not.toContain('Hoàn tất dẫn xem');
+    expect(fixture.nativeElement.textContent).not.toContain('Lưu kết quả phòng');
     http.verify();
     fixture.destroy();
   });

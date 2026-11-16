@@ -1,0 +1,171 @@
+[
+  {
+    "_id": {
+      "$oid": "73f65bc550fe559fe720b64d"
+    },
+    "id": "luong-08",
+    "code": "2026-08",
+    "name": "Lương tháng 8/2026",
+    "month": {
+      "$numberInt": "8"
+    },
+    "year": {
+      "$numberInt": "2026"
+    },
+    "fromDate": "2026-08-01",
+    "toDate": "2026-08-31",
+    "status": "PAID",
+    "displayStatus": "DA_TRA",
+    "closedAt": {
+      "$date": {
+        "$numberLong": "1788231600000"
+      }
+    },
+    "closedBy": "admin",
+    "policyVersionIds": [
+      "HOA_HONG",
+      "PHAT_TRE"
+    ],
+    "totals": {
+      "revenue": {
+        "$numberInt": "23800000"
+      },
+      "commission": {
+        "$numberInt": "6020000"
+      },
+      "netPay": {
+        "$numberInt": "94170000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5296dcd059d4df006dfe9798"
+    },
+    "id": "luong-09",
+    "code": "2026-09",
+    "name": "Lương tháng 9/2026",
+    "month": {
+      "$numberInt": "9"
+    },
+    "year": {
+      "$numberInt": "2026"
+    },
+    "fromDate": "2026-09-01",
+    "toDate": "2026-09-30",
+    "status": "PAID",
+    "displayStatus": "DA_TRA",
+    "closedAt": {
+      "$date": {
+        "$numberLong": "1790823600000"
+      }
+    },
+    "closedBy": "admin",
+    "policyVersionIds": [
+      "HOA_HONG",
+      "PHAT_TRE"
+    ],
+    "totals": {
+      "revenue": {
+        "$numberInt": "18950000"
+      },
+      "commission": {
+        "$numberInt": "3790000"
+      },
+      "netPay": {
+        "$numberInt": "92050000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b0a1043c1409adfc997f7920"
+    },
+    "id": "luong-10",
+    "code": "2026-10",
+    "name": "Lương tháng 10/2026",
+    "month": {
+      "$numberInt": "10"
+    },
+    "year": {
+      "$numberInt": "2026"
+    },
+    "fromDate": "2026-10-01",
+    "toDate": "2026-10-31",
+    "status": "CLOSED",
+    "displayStatus": "DA_CHOT",
+    "closedAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "closedBy": "admin",
+    "policyVersionIds": [
+      "HOA_HONG",
+      "PHAT_TRE"
+    ],
+    "totals": {
+      "revenue": {
+        "$numberInt": "17550000"
+      },
+      "commission": {
+        "$numberInt": "3510000"
+      },
+      "netPay": {
+        "$numberInt": "91710000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9b1d436aeb886abaaa8f7edf"
+    },
+    "id": "luong-11",
+    "code": "2026-11",
+    "name": "Lương tháng 11/2026",
+    "month": {
+      "$numberInt": "11"
+    },
+    "year": {
+      "$numberInt": "2026"
+    },
+    "fromDate": "2026-11-01",
+    "toDate": "2026-11-30",
+    "status": "CALCULATED",
+    "displayStatus": "DA_TINH",
+    "closedAt": null,
+    "closedBy": null,
+    "policyVersionIds": [
+      "HOA_HONG",
+      "PHAT_TRE"
+    ],
+    "totals": {
+      "revenue": {
+        "$numberInt": "3000000"
+      },
+      "commission": {
+        "$numberInt": "600000"
+      },
+      "netPay": {
+        "$numberInt": "89050000"
+      },
+      "contractCount": {
+        "$numberInt": "1"
+      }
+    },
+    "version": {
+      "$numberInt": "3"
+    },
+    "calculatedAt": {
+      "$date": {
+        "$numberLong": "1793988900928"
+      }
+    },
+    "p3Pending": false,
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794840787050"
+      }
+    }
+  }
+]

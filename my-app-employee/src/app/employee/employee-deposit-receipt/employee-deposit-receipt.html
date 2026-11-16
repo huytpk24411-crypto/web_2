@@ -1,0 +1,184 @@
+﻿<p *ngIf="loading()" role="status" class="no-print">Đang tải phiếu thu cọc…</p>
+<div *ngIf="error()" role="alert" class="emp-alert emp-danger no-print">
+  {{ error() }} <button class="emp-btn" type="button" (click)="load()">Tải lại phiếu</button>
+</div>
+<ng-container *ngIf="sheet() as s">
+  <div class="receipt-heading no-print">
+    <div class="emp-breadcrumb">
+      <a routerLink="/employee/deposits/new">Báo cọc</a> <span>›</span> Mã đơn:
+      <b class="emp-mono">{{ s.deposit.number }}</b> <span>›</span>
+      {{ s.deposit.collected.method === 'CASH' ? 'Tiền mặt trực tiếp' : 'Chuyển khoản đã nhận' }}
+    </div>
+    <div class="emp-page-head">
+      <h1 class="emp-title">XÁC NHẬN CỌC THÀNH CÔNG &amp; PHIẾU THU CỌC ĐIỆN TỬ</h1>
+      <span class="emp-badge emp-success"
+        ><app-icon name="check" [size]="14" /> Đã thu cọc &amp; giữ phòng</span
+      >
+    </div>
+  </div>
+  <ol class="receipt-steps no-print" aria-label="Tiến độ hồ sơ cọc">
+    <li>
+      <span class="step-icon"><app-icon name="check" [size]="20" /></span>
+      <div>
+        <small>BƯỚC 1 · ĐÃ HOÀN TẤT</small><strong>Thông tin khách &amp; CCCD</strong
+        ><span>Đã lưu hồ sơ khách hàng</span>
+      </div>
+    </li>
+    <li>
+      <span class="step-icon"><app-icon name="wallet" [size]="20" /></span>
+      <div>
+        <small>BƯỚC 2 · ĐÃ HOÀN TẤT</small><strong>Ghi nhận tiền nhân viên đã thu</strong
+        ><span>Đã lập phiếu &amp; giữ phòng</span>
+      </div>
+    </li>
+    <li class="current-step" aria-current="step">
+      <span class="step-icon"><app-icon name="file" [size]="20" /></span>
+      <div>
+        <small>BƯỚC 3 · HIỆN TẠI</small><strong>Xuất phiếu thu &amp; bàn giao</strong
+        ><span>Sẵn sàng in hoặc lưu PDF</span>
+      </div>
+    </li>
+  </ol>
+  <div class="receipt-grid">
+    <div class="emp-stack receipt-info no-print">
+      <section class="emp-card receipt-invoice">
+        <div class="invoice-heading">
+          <span class="invoice-icon"><app-icon name="check" [size]="25" /></span>
+          <div>
+            <small>HÓA ĐƠN ĐẶT CỌC</small>
+            <h2>Hồ sơ cọc đã hoàn tất</h2>
+          </div>
+          <span class="emp-badge emp-info emp-mono">#{{ s.deposit.number }}</span>
+        </div>
+        <p class="invoice-subtitle">Đã ghi nhận tiền cọc và giữ phòng cho khách hàng.</p>
+        <div class="invoice-details">
+          <div class="invoice-detail">
+            <span>Khách thuê phòng</span><strong>{{ s.customer.fullName }}</strong
+            ><small>CCCD: {{ s.customer.identity?.number || '—' }}</small>
+          </div>
+          <div class="invoice-detail room-detail">
+            <span>Căn hộ &amp; vị trí phòng</span
+            ><strong>{{ s.room.code }} · {{ s.room.name }}</strong
+            ><small>{{ s.room.propertyName }} · Tầng {{ s.room.floor ?? '—' }}</small>
+          </div>
+          <div class="invoice-detail">
+            <span>Thời hạn thỏa thuận</span
+            ><strong>{{ s.deposit.proposedLease.months ?? '—' }} tháng</strong
+            ><small
+              >{{
+                s.deposit.proposedLease.startDate
+                  ? (s.deposit.proposedLease.startDate | date: 'dd/MM/yyyy')
+                  : '—'
+              }}
+              –
+              {{
+                s.deposit.proposedLease.endDate
+                  ? (s.deposit.proposedLease.endDate | date: 'dd/MM/yyyy')
+                  : '—'
+              }}</small
+            >
+          </div>
+          <div class="invoice-detail">
+            <span>Tiền thuê / tháng</span
+            ><strong class="emp-mono">{{
+              s.deposit.proposedLease.monthlyRent == null
+                ? s.room.monthlyRent == null
+                  ? '—'
+                  : (s.room.monthlyRent | number) + ' đ'
+                : (s.deposit.proposedLease.monthlyRent | number) + ' đ'
+            }}</strong
+            ><small>Giá thuê theo hồ sơ cọc</small>
+          </div>
+        </div>
+        <div class="receipt-amount">
+          <span>Số tiền cọc đã thu</span>
+          <h2 class="emp-mono">{{ s.deposit.collected.amount | number }} VNĐ</h2>
+          <p>{{ amountWords() }}</p>
+          <span class="amount-confirmation"
+            ><app-icon name="check" [size]="14" /> Đã ghi nhận đủ tiền cọc đợt này</span
+          >
+        </div>
+      </section>
+      <section class="emp-card collection-card">
+        <div class="collection-heading">
+          <h2><app-icon name="wallet" [size]="20" /> Hình thức đã thu</h2>
+          <span class="emp-badge emp-success">Đã nhận tiền</span>
+        </div>
+        <div class="collection-methods" aria-label="Hình thức nhân viên đã nhận tiền">
+          <div [class.selected]="s.deposit.collected.method === 'BANK_TRANSFER'">
+            <app-icon name="wallet" [size]="18" /> Chuyển khoản
+            <app-icon
+              *ngIf="s.deposit.collected.method === 'BANK_TRANSFER'"
+              name="check"
+              [size]="15"
+            />
+          </div>
+          <div [class.selected]="s.deposit.collected.method === 'CASH'">
+            <app-icon name="wallet" [size]="18" /> Tiền mặt
+            <app-icon *ngIf="s.deposit.collected.method === 'CASH'" name="check" [size]="15" />
+          </div>
+        </div>
+        <div class="collection-notice">
+          <app-icon name="info" [size]="18" />
+          <p>
+            Nhân viên đã nhận
+            {{
+              s.deposit.collected.method === 'CASH' ? 'tiền mặt trực tiếp' : 'tiền chuyển khoản'
+            }}
+            từ khách hàng. Khoản tiền được ghi nhận khi lập hồ sơ cọc.
+          </p>
+        </div>
+        <dl class="collection-record">
+          <div>
+            <dt><app-icon name="user" [size]="14" /> Nhân viên thực hiện</dt>
+            <dd>{{ s.employee.fullName }} · {{ s.employee.employeeCode }}</dd>
+          </div>
+          <div>
+            <dt><app-icon name="clock" [size]="14" /> Thời gian ghi nhận</dt>
+            <dd>
+              {{
+                s.deposit.collected.at ? (s.deposit.collected.at | date: 'HH:mm · dd/MM/yyyy') : '—'
+              }}
+            </dd>
+          </div>
+          <div *ngIf="s.deposit.collected.note">
+            <dt>Ghi chú</dt>
+            <dd>{{ s.deposit.collected.note }}</dd>
+          </div>
+        </dl>
+        <a
+          class="emp-btn emp-primary emp-block contract-link"
+          [routerLink]="['/employee/deals', s.deposit.id]"
+          ><app-icon name="file" [size]="17" /> {{ s.contract ? 'Xem giao dịch' : 'Lập hợp đồng' }}
+          <app-icon name="arrow" [size]="17"
+        /></a>
+      </section>
+    </div>
+    <section class="receipt-preview" aria-label="Bản xem trước phiếu thu">
+      <div class="preview-heading no-print">
+        <strong><app-icon name="file" [size]="17" /> Bản xem trước Phiếu thu cọc (A4)</strong
+        ><span class="emp-badge emp-success">Sẵn sàng xuất file</span>
+      </div>
+      <div class="preview-toolbar no-print">
+        <div class="emp-actions">
+          <button type="button" class="emp-btn emp-primary" (click)="print()">
+            <app-icon name="download" [size]="17" /> Tải PDF</button
+          ><button type="button" class="emp-btn" (click)="print()">
+            <app-icon name="file" [size]="17" /> In
+          </button>
+        </div>
+        <a class="emp-btn" routerLink="/employee/deposits/new"
+          ><app-icon name="plus" [size]="17" /> Tạo đơn cọc mới</a
+        >
+      </div>
+      <p class="pdf-hint no-print">
+        Để tải PDF, chọn “Lưu dưới dạng PDF” trong hộp in của trình duyệt.
+      </p>
+      <div class="sheet-stage"><app-deposit-sheet [sheet]="s" /></div>
+      <div class="preview-footer no-print">
+        <span><app-icon name="lock" [size]="13" /> Phiếu thu điện tử iHOUZZ Uni</span
+        ><span class="emp-mono">{{ s.deposit.number }}</span>
+      </div>
+    </section>
+  </div>
+</ng-container>

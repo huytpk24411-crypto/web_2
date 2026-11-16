@@ -1,0 +1,14 @@
+{
+  "name": "ihouzz-uni-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": "^22.22.3 || ^24.15.0 || >=26.0.0" },
+  "scripts": {
+    "setup": "node scripts/setup.cjs",
+    "start": "node scripts/start.cjs",
+    "build": "node scripts/check.cjs build",
+    "test": "node scripts/check.cjs test",
+    "data:check": "node my-server-mongodb/scripts/check-data.cjs",
+    "data:restore": "node my-server-mongodb/scripts/restore-data.cjs"
+  }
+}

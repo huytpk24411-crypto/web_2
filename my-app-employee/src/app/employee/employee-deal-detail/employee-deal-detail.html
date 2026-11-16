@@ -17,89 +17,73 @@
   Tải lại dữ liệu
 </button>
 
-<section class="emp-card deposit-workspace" aria-label="Hồ sơ cọc">
-  <h2>Hồ sơ cọc</h2>
-  <p *ngIf="deals.money.loading()" role="status">Đang tải hồ sơ…</p>
-  <p *ngIf="error" class="error" role="alert">{{ error }}</p>
-  <details class="deposit-group" [open]="paidDeposits.length > 0">
-    <summary>Đã thu cọc – chờ lập hợp đồng ({{ paidDeposits.length }})</summary>
-    <div class="deposit-entry" *ngFor="let d of paidDeposits">
-      <div class="emp-actions deposit-row">
-        <a [routerLink]="['/employee/deals', d.id]"
-          >{{ d.number }} • {{ d.customerName || 'Chưa có tên khách hàng' }}</a
-        >
-        <span>{{ d.totalRequired | number }} đ</span
-        ><app-status-badge [status]="deals.money.label(d.status)" />
-        <button
-          *ngIf="!d.contractId"
-          class="emp-btn emp-primary"
-          (click)="chooseDeposit(d.id)"
-          [disabled]="busy"
-        >
-          Lập hợp đồng
-        </button>
-      </div>
-    </div>
-    <p *ngIf="!paidDeposits.length && !deals.money.loading()">
-      Không có hồ sơ cọc chờ lập hợp đồng.
-    </p>
-  </details>
-  <details class="deposit-group">
-    <summary>Đã bỏ cọc ({{ abandonedDeposits.length }})</summary>
-    <div class="emp-actions deposit-row" *ngFor="let d of abandonedDeposits">
-      <a [routerLink]="['/employee/deals', d.contractId || d.id]"
-        >{{ d.number }} • {{ d.customerName || 'Chưa có tên khách hàng' }}</a
-      >
-      <span>{{ d.abandonment?.reason }}</span
-      ><app-status-badge [status]="deals.money.label(d.status)" />
-    </div>
-    <p *ngIf="!abandonedDeposits.length && !deals.money.loading()">Không có hồ sơ đã bỏ cọc.</p>
-  </details>
-  <form *ngIf="contractDepositId" (ngSubmit)="createContract()" class="grid two">
-    <label class="field"
-      ><span>Ngày bắt đầu *</span
-      ><input type="date" name="contractStart" [(ngModel)]="contractStart" required
-    /></label>
-    <label class="field"
-      ><span>Ngày kết thúc *</span
-      ><input type="date" name="contractEnd" [(ngModel)]="contractEnd" required
-    /></label>
-    <label class="field"
-      ><span>Tiền thuê tháng (đ) *</span
-      ><input type="number" name="contractRent" [(ngModel)]="contractRent" min="1" required
-    /></label>
-    <button class="emp-btn emp-primary" type="submit" [disabled]="busy">
-      Tạo hợp đồng dự thảo
-    </button>
-  </form>
-</section>
+<div class="emp-actions contract-tabs" role="group" aria-label="Danh sách giao dịch">
+  <button
+    type="button"
+    class="emp-btn"
+    [class.emp-primary]="listScope === 'contracts'"
+    [attr.aria-pressed]="listScope === 'contracts'"
+    (click)="selectScope('contracts')"
+  >
+    Hợp đồng
+  </button>
+  <button
+    type="button"
+    class="emp-btn"
+    [class.emp-primary]="listScope === 'deposits'"
+    [attr.aria-pressed]="listScope === 'deposits'"
+    (click)="selectScope('deposits')"
+  >
+    Hồ sơ cọc
+  </button>
+</div>
 
-<div class="deal-stats">
+<div class="deal-stats" *ngIf="listScope === 'contracts'; else depositStats">
   <div class="emp-stat-card">
-    <span class="emp-stat-label">Tất cả đơn cọc</span
-    ><strong class="emp-stat-value">{{ deals.list().length }}</strong
-    ><small>Toàn bộ hồ sơ hiện có</small>
+    <span class="emp-stat-label">Tổng hợp đồng đã lập</span
+    ><strong class="emp-stat-value">{{ contractSummary.total }}</strong>
+  </div>
+  <div class="emp-stat-card">
+    <span class="emp-stat-label">Hợp đồng đã duyệt</span
+    ><strong class="emp-stat-value green">{{ contractSummary.approved }}</strong>
   </div>
   <div class="emp-stat-card waiting">
-    <span class="emp-stat-label">Chờ lập, ký hoặc admin xác nhận</span
-    ><strong class="emp-stat-value">{{ pending }}</strong
-    ><small>Hợp đồng chưa có kết quả</small>
+    <span class="emp-stat-label">Hợp đồng chờ admin duyệt</span
+    ><strong class="emp-stat-value">{{ contractSummary.pending }}</strong>
   </div>
   <div class="emp-stat-card">
-    <span class="emp-stat-label">Đã nhận nhà thành công</span
-    ><strong class="emp-stat-value green">{{ completed }}</strong
-    ><small>Bàn giao thành công</small>
-  </div>
-  <div class="emp-stat-card">
-    <span class="emp-stat-label">Khách bỏ cọc</span
-    ><strong class="emp-stat-value red">{{ forfeited }}</strong
-    ><small>Đã xử lý nghiệp vụ</small>
+    <span class="emp-stat-label">Hợp đồng khách hàng đã bỏ cọc</span
+    ><strong class="emp-stat-value red">{{ contractSummary.abandoned }}</strong>
   </div>
 </div>
-<div class="emp-card deal-filters" role="search" aria-label="Lọc hợp đồng cọc">
+<ng-template #depositStats
+  ><div class="deal-stats deposit-stats">
+    <div class="emp-stat-card">
+      <span class="emp-stat-label">Tổng hồ sơ cọc đã lập</span
+      ><strong class="emp-stat-value">{{ depositSummary.total }}</strong>
+    </div>
+    <div class="emp-stat-card">
+      <span class="emp-stat-label">Hồ sơ cọc đã lập hợp đồng</span
+      ><strong class="emp-stat-value green">{{ depositSummary.contracted }}</strong>
+    </div>
+    <div class="emp-stat-card waiting">
+      <span class="emp-stat-label">Hồ sơ cọc chưa lập hợp đồng</span
+      ><strong class="emp-stat-value">{{ depositSummary.uncontracted }}</strong>
+    </div>
+  </div></ng-template
+>
+<p *ngIf="deals.money.loading()" role="status">Đang tải danh sách…</p>
+<div class="emp-card deal-filters" role="search" aria-label="Lọc danh sách giao dịch">
   <label class="search-field"
-    ><span>Tìm hợp đồng cọc</span
-    ><input type="search" [(ngModel)]="search" placeholder="Mã hợp đồng, khách hàng, phòng, SĐT"
+    ><span>{{ listScope === 'contracts' ? 'Tìm hợp đồng' : 'Tìm hồ sơ cọc' }}</span
+    ><input
+      type="search"
+      [(ngModel)]="search"
+      [placeholder]="
+        listScope === 'contracts'
+          ? 'Mã hợp đồng, khách hàng, phòng, SĐT'
+          : 'Mã hồ sơ cọc, khách hàng, phòng, SĐT'
+      "
   /></label>
   <label
     ><span>Dự án</span
@@ -123,10 +107,10 @@
     <div>
       <div class="list-heading">
         <h2>
-          Danh sách hợp đồng cọc
-          <span class="emp-badge emp-info">{{ visibleCards.length }} đơn</span>
+          {{ listScope === 'contracts' ? 'Hợp đồng tôi đã lập' : 'Danh sách hồ sơ cọc' }}
+          <span class="emp-badge emp-info">{{ visibleCards.length }}</span>
         </h2>
-        <small>Chọn đơn để xử lý</small>
+        <small>Chọn để xem chi tiết</small>
       </div>
       <a
         class="deal-card emp-card"
@@ -135,7 +119,7 @@
         [class.active]="card.deal.id === id"
         [attr.aria-current]="card.deal.id === id ? 'true' : null"
       >
-        <span class="selection-label" *ngIf="card.deal.id === id">ĐANG THAO TÁC XỬ LÝ</span>
+        <span class="selection-label" *ngIf="card.deal.id === id">ĐANG XEM</span>
         <div class="emp-actions">
           <strong class="emp-mono contract-id">{{ card.deal.number }}</strong
           ><app-status-badge [status]="card.deal.statusLabel" />
@@ -144,8 +128,7 @@
         <p class="contact">SĐT: {{ card.deal.phone || 'Chưa có dữ liệu' }}</p>
         <div class="contract-facts">
           <div>
-            <small>Vị trí phòng / giường</small
-            ><strong>{{ card.room?.code || card.deal.roomId }}</strong
+            <small>Phòng / Căn hộ</small><strong>{{ card.room?.code || card.deal.roomId }}</strong
             ><span>{{ card.room?.name }} · {{ card.room?.address }}</span>
           </div>
           <div>
@@ -162,7 +145,13 @@
           ><span class="contract-id">Chi tiết nghiệp vụ ›</span>
         </div>
       </a>
-      <div class="emp-card empty" *ngIf="!visibleCards.length">Không có hợp đồng cọc phù hợp.</div>
+      <div class="emp-card empty" *ngIf="!visibleCards.length">
+        {{
+          listScope === 'contracts'
+            ? 'Chưa có hợp đồng phù hợp trong danh sách của bạn.'
+            : 'Không có hồ sơ cọc phù hợp.'
+        }}
+      </div>
     </div>
     <div class="emp-alert emp-info handover-rule">
       <div>
@@ -240,6 +229,35 @@
       >
         Lập hợp đồng
       </button>
+      <form
+        *ngIf="contractDepositId"
+        #contractForm="ngForm"
+        #contractEntry
+        (ngSubmit)="createContract()"
+        class="grid two"
+      >
+        <label class="field"
+          ><span>Ngày bắt đầu *</span
+          ><input type="date" name="contractStart" [(ngModel)]="contractStart" required
+        /></label>
+        <label class="field"
+          ><span>Ngày kết thúc *</span
+          ><input type="date" name="contractEnd" [(ngModel)]="contractEnd" required
+        /></label>
+        <label class="field"
+          ><span>Tiền thuê tháng (đ) *</span
+          ><input type="number" name="contractRent" [(ngModel)]="contractRent" min="1" required
+        /></label>
+        <button class="emp-btn emp-primary" type="submit" [disabled]="busy || contractForm.invalid">
+          Tạo hợp đồng dự thảo
+        </button>
+      </form>
+      <a
+        *ngIf="listScope === 'deposits' && contract"
+        class="emp-btn"
+        [routerLink]="['/employee/deals', contract!.id]"
+        >Xem hợp đồng {{ contract!.number }}</a
+      >
       <p class="error" *ngIf="error" role="alert">{{ error }}</p>
       <button
         *ngIf="d.apiStatus === 'DRAFT'"

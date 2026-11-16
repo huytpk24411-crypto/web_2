@@ -1,0 +1,49 @@
+.hold-policy {
+  width: min(620px, 100%);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+}
+.policy-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 32px;
+  color: var(--primary);
+}
+.policy-heading h2 {
+  margin: 0;
+  color: var(--text);
+}
+.hold-policy .close {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--muted);
+  font-size: 24px;
+  cursor: pointer;
+}
+.hold-policy .close:hover {
+  background: var(--soft);
+  color: var(--text);
+}
+.hold-policy ul {
+  padding-left: 22px;
+  line-height: 1.65;
+}
+.hold-policy li {
+  margin: 12px 0;
+}
+.policy-consent {
+  padding: 16px;
+  background: var(--soft);
+  border-radius: var(--radius);
+}
+.policy-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}

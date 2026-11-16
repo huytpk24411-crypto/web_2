@@ -6,6 +6,7 @@ import { hasCoordinates, LocationService, straightLineKm } from './location-serv
 import { parseRoomFilter, roomFilterParams, RoomSearchService } from './room-search-service';
 import { RoomService } from './room-service';
 import { API_ROOMS, API_PROPERTIES, API_SCHOOLS, API_RELATIONS } from '../testing/api-fixtures';
+import { canScheduleViewing } from '../classes/Room';
 describe('API catalog, map and URL contracts', () => {
   let http: HttpTestingController;
   beforeEach(() => {
@@ -64,6 +65,23 @@ describe('API catalog, map and URL contracts', () => {
     });
     expect(result.map((room) => room.id)).toEqual(['phong-48', 'phong-49', 'phong-50']);
     expect(rooms.filter({ bounds: [0, 0, 1, 1] })).toEqual([]);
+  });
+  it('keeps published held rooms visible and allows viewing only for hold locks', async () => {
+    const held = { ...API_ROOMS[2], status: 'HELD' as const, lock: { kind: 'HOLD' as const } };
+    const rooms = TestBed.inject(RoomService);
+    const pending = rooms.refresh();
+    http.expectOne('/data/rooms').flush(JSON.stringify([held]));
+    http.expectOne('/data/properties').flush(JSON.stringify(API_PROPERTIES));
+    http.expectOne('/data/schools').flush(JSON.stringify(API_SCHOOLS));
+    http.expectOne('/data/property-schools').flush(JSON.stringify(API_RELATIONS));
+    await pending;
+    expect(rooms.filter({ status: 'HELD' })).toHaveLength(1);
+    const detail = rooms.getFromApi(held.id);
+    http.expectOne('/data/rooms/' + held.id).flush(JSON.stringify(held));
+    expect((await detail).status).toBe('HELD');
+    expect(canScheduleViewing(held)).toBe(true);
+    expect(canScheduleViewing({ ...held, lock: { kind: 'DEPOSIT' } })).toBe(false);
+    expect(canScheduleViewing({ ...held, publicationStatus: 'HIDDEN' })).toBe(false);
   });
   it('shows straight-line distances only with sourced coordinates', () => {
     const locations = TestBed.inject(LocationService);

@@ -1,3 +1,4 @@
+import { BackNavigationService } from './shared/back-navigation/back-navigation-service';
 import { registerLocaleData } from '@angular/common';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import localeVi from '@angular/common/locales/vi';
@@ -26,6 +27,9 @@ registerLocaleData(localeVi);
   declarations: [App, AccessDeniedComponent, PageNotFoundComponent],
   imports: [BrowserModule, SharedModule, AuthModule, AppRoutingModule],
   providers: [
+    provideAppInitializer(() => {
+      inject(BackNavigationService);
+    }),
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withInterceptors([sessionInterceptor])),
     provideAppInitializer(() => {

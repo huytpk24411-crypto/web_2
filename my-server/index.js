@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+try { process.loadEnvFile(require('path').resolve(__dirname, '../my-server-mongodb/.env')); }
+catch (error) { if (error.code !== 'ENOENT') throw error; }
+const port = Number(process.env.UPLOAD_PORT || 3000);
+if (!Number.isInteger(port) || port < 0 || port > 65535) throw new Error('Invalid UPLOAD_PORT');
 
 const morgan = require('morgan');
 app.use(morgan('combined'));
@@ -117,6 +120,8 @@ app.post('/api/upload/:folder', cors(), async (req, res) => {
     }
 });
 
-app.listen(port, () => {
+function start() { return app.listen(port, () => {
     console.log(`My Server listening on port ${port}`);
-});
+}); }
+module.exports = { app, start };
+if (require.main === module) start();

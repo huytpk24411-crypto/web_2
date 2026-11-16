@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
-import { AdminDashboardAPI } from '../admin-dashboard/admin-dashboard-api';
+import { AdminDashboardAPI } from '../../services/admin-dashboard-apiservice';
 import { NotificationService } from '../../services/notification-service';
 import { AuthService } from '../../services/auth-service';
 

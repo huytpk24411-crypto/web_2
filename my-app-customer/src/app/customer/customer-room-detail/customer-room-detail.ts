@@ -1,13 +1,14 @@
 import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Room } from '../../classes/Room';
+import { Room, canScheduleViewing } from '../../classes/Room';
 import { RoomTour } from '../../classes/RoomTour';
 import { AuthService } from '../../services/auth-service';
 import { FavoriteService } from '../../services/favorite-service';
 import { RoomService } from '../../services/room-service';
 import { ViewingService } from '../../services/viewing-service';
 import { apiMessage } from '../../services/api-message';
+import { HoldPolicyService } from '../../services/hold-policy-service';
 @Component({
   selector: 'app-customer-room-detail',
   standalone: false,
@@ -21,6 +22,9 @@ export class CustomerRoomDetailComponent {
   viewings = inject(ViewingService);
   readonly addingToCart = signal(false);
   readonly cartError = signal('');
+  readonly policyOpen = signal(false);
+  readonly canView = canScheduleViewing;
+  private holdPolicy = inject(HoldPolicyService);
   private cdr = inject(ChangeDetectorRef);
   route = inject(ActivatedRoute);
   router = inject(Router);
@@ -68,6 +72,7 @@ export class CustomerRoomDetailComponent {
       this.roomId = id;
       this.loadError.set('');
       this.tourOpen = false;
+      this.policyOpen.set(false);
       this.room = undefined;
       this.activeImage = 0;
       this.loading = true;
@@ -127,7 +132,15 @@ export class CustomerRoomDetailComponent {
       });
   }
   go(action: 'booking' | 'viewing') {
-    if (!this.room) return;
+    if (
+      !this.room ||
+      (action === 'booking' ? this.room.status !== 'AVAILABLE' : !canScheduleViewing(this.room))
+    )
+      return;
+    if (action === 'booking' && this.auth.account()?.role === 'CUSTOMER') {
+      this.policyOpen.set(true);
+      return;
+    }
     const target = action === 'booking' ? '/bookings/new' : '/viewings/new';
     if (this.auth.account()?.role === 'CUSTOMER')
       this.router.navigate([target], { queryParams: { roomId: this.room.id } });
@@ -139,6 +152,12 @@ export class CustomerRoomDetailComponent {
           action,
         },
       });
+  }
+  acceptHoldPolicy() {
+    if (!this.room || this.room.status !== 'AVAILABLE') return;
+    this.holdPolicy.accept(this.room.id);
+    this.policyOpen.set(false);
+    void this.router.navigate(['/bookings/new'], { queryParams: { roomId: this.room.id } });
   }
   async addToViewingCart() {
     if (!this.room || this.addingToCart()) return;

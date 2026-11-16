@@ -45,8 +45,9 @@ export class NotificationService {
           owner: account.id,
           items: items.map((item) => ({
             ...item,
+            ...this.display(item),
             body: [
-              item.body,
+              this.display(item).body,
               ...(item.roomSnapshots || []).map((room) =>
                 [room.code, room.name, room.address].filter(Boolean).join(' · '),
               ),
@@ -61,6 +62,42 @@ export class NotificationService {
     } finally {
       if (version === this.refreshVersion) this.loading.set(false);
     }
+  }
+  private display(item: Notification): { title: string; body: string } {
+    if (!/^P3_/.test(item.type) || !/^[A-Za-z]+: [A-Z_]+$/.test(item.title))
+      return { title: item.title, body: item.body };
+    const entities: Record<string, string> = {
+      Hold: 'Giữ chỗ phòng',
+      Payment: 'Thanh toán',
+      Receipt: 'Phiếu thu',
+      Deposit: 'Hồ sơ cọc',
+      Contract: 'Hợp đồng',
+      Room: 'Phòng',
+      BrokerageTransaction: 'Giao dịch môi giới',
+      EmployeeRevenue: 'Doanh thu nhân viên',
+      CompanyRevenue: 'Doanh thu công ty',
+      PayrollPeriod: 'Kỳ lương',
+    };
+    const states: Record<string, string> = {
+      CREATE: 'Đã tạo mới',
+      UPDATE: 'Đã cập nhật',
+      ACTIVE: 'Đang có hiệu lực',
+      CONFIRMED: 'Đã xác nhận',
+      PAID: 'Đã ghi nhận tiền',
+      SIGNED: 'Đã ký',
+      COMPLETED: 'Đã hoàn tất',
+      CANCELLED: 'Đã hủy',
+      EXPIRED: 'Đã hết hạn',
+      FORFEITED: 'Đã hết hạn giữ chỗ',
+      ABANDONED: 'Khách đã bỏ cọc',
+      CONTRACTED: 'Đã lập hợp đồng',
+      REJECTED: 'Không được chấp thuận',
+      FAILED: 'Không thành công',
+      PAYMENT_PENDING: 'Chờ thanh toán',
+    };
+    const action = item.title.split(': ')[1];
+    const title = entities[item.entityType] || 'Cập nhật hồ sơ';
+    return { title, body: states[action] || 'Thông tin hồ sơ vừa được cập nhật.' };
   }
   async markRead(id?: string): Promise<void> {
     const account = this.auth.account();

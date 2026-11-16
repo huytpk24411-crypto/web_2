@@ -57,7 +57,7 @@ export class RoomTourComponent implements AfterViewInit, OnDestroy {
   unavailable = signal('');
   transitioning = signal(false);
   dragged = signal(false);
-  fov = signal(75);
+  fov = signal(60);
 
   get simulated() {
     return this.tour.pitchLimit !== undefined;
@@ -84,7 +84,6 @@ export class RoomTourComponent implements AfterViewInit, OnDestroy {
   private motion?: MediaQueryList;
   private reducedMotion = false;
   private destroyed = false;
-  private interacted = false;
   private frame = 0;
   private lastFrame = 0;
   private request = 0;
@@ -126,7 +125,7 @@ export class RoomTourComponent implements AfterViewInit, OnDestroy {
       this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
       this.renderer.outputColorSpace = three.SRGBColorSpace;
       this.world = new three.Scene();
-      this.camera = new three.PerspectiveCamera(75, 1, 0.1, 1100);
+      this.camera = new three.PerspectiveCamera(this.fov(), 1, 0.1, 1100);
       this.geometry = new three.SphereGeometry(500, 64, 40);
       this.geometry.scale(-1, 1, 1);
       this.material = new three.MeshBasicMaterial();
@@ -186,6 +185,9 @@ export class RoomTourComponent implements AfterViewInit, OnDestroy {
             return;
           }
           texture.colorSpace = three.SRGBColorSpace;
+          // Sample continuously across longitude 180° instead of clamping each edge.
+          texture.wrapS = three.RepeatWrapping;
+          texture.anisotropy = Math.min(8, this.renderer?.capabilities.getMaxAnisotropy() ?? 1);
           resolve(texture);
         },
         undefined,
@@ -272,8 +274,7 @@ export class RoomTourComponent implements AfterViewInit, OnDestroy {
       }
     }
     if (this.activeScene() && !this.reducedMotion && !this.loading() && !this.transitioning()) {
-      if (!this.interacted) this.yaw += dt * 3;
-      else if (!this.pointer) {
+      if (!this.pointer) {
         this.yaw += this.velocityYaw * dt;
         this.pitch += this.velocityPitch * dt;
         this.velocityYaw *= Math.exp(-6 * dt);
@@ -322,7 +323,6 @@ export class RoomTourComponent implements AfterViewInit, OnDestroy {
   }
 
   interact() {
-    this.interacted = true;
     this.stopInertia();
   }
 
@@ -390,7 +390,7 @@ export class RoomTourComponent implements AfterViewInit, OnDestroy {
     this.interact();
     this.yaw = this.activeScene()?.initialYaw ?? 0;
     this.pitch = 0;
-    this.zoom(75 - this.fov());
+    this.zoom(60 - this.fov());
   }
 
   keydown(event: KeyboardEvent) {

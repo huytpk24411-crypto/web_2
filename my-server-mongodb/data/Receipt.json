@@ -1,0 +1,1007 @@
+[
+  {
+    "_id": {
+      "$oid": "ccbc487e985e6ecb808168fa"
+    },
+    "id": "bl-0001",
+    "paymentId": "ttien-0001",
+    "number": "BL-2026-000001",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1785742020000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 1",
+      "roomCode": "PHONG_46",
+      "amount": {
+        "$numberInt": "8600000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "08ec537710f99a4d6b15268c"
+    },
+    "id": "bl-0002",
+    "paymentId": "ttien-0002",
+    "number": "BL-2026-000002",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1786001220000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 2",
+      "roomCode": "PHONG_14",
+      "amount": {
+        "$numberInt": "5500000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ff2bbe19afb6c4988a52da4e"
+    },
+    "id": "bl-0003",
+    "paymentId": "ttien-0003",
+    "number": "BL-2026-000003",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1786260420000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 3",
+      "roomCode": "PHONG_16",
+      "amount": {
+        "$numberInt": "5300000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3e8e8921558cc12d4606887a"
+    },
+    "id": "bl-0004",
+    "paymentId": "ttien-0004",
+    "number": "BL-2026-000004",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1786519620000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 4",
+      "roomCode": "PHONG_18",
+      "amount": {
+        "$numberInt": "5800000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cb41f8c2b41872db60f4fd13"
+    },
+    "id": "bl-0005",
+    "paymentId": "ttien-0005",
+    "number": "BL-2026-000005",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1786763520000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 5",
+      "roomCode": "PHONG_01",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d47326489943016663a37792"
+    },
+    "id": "bl-0006",
+    "paymentId": "ttien-0006",
+    "number": "BL-2026-000006",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1786778820000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 5",
+      "roomCode": "PHONG_01",
+      "amount": {
+        "$numberInt": "3200000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8a30e118d50f71438271151b"
+    },
+    "id": "bl-0007",
+    "paymentId": "ttien-0007",
+    "number": "BL-2026-000007",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1787038020000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 6",
+      "roomCode": "PHONG_02",
+      "amount": {
+        "$numberInt": "4500000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3448830a25fa65d0299e2a61"
+    },
+    "id": "bl-0008",
+    "paymentId": "ttien-0008",
+    "number": "BL-2026-000008",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1787281920000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 7",
+      "roomCode": "PHONG_03",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f9181f32834cf9490a5d454a"
+    },
+    "id": "bl-0009",
+    "paymentId": "ttien-0009",
+    "number": "BL-2026-000009",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1787297220000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 7",
+      "roomCode": "PHONG_03",
+      "amount": {
+        "$numberInt": "4200000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1464cb79ae51918eda7da7a2"
+    },
+    "id": "bl-0010",
+    "paymentId": "ttien-0010",
+    "number": "BL-2026-000010",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1787556420000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 8",
+      "roomCode": "PHONG_04",
+      "amount": {
+        "$numberInt": "4600000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d6911cee2b69689aa8c9ed9d"
+    },
+    "id": "bl-0011",
+    "paymentId": "ttien-0011",
+    "number": "BL-2026-000011",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1787800320000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 9",
+      "roomCode": "PHONG_05",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2e4b6e9093feac18ebe10bf2"
+    },
+    "id": "bl-0012",
+    "paymentId": "ttien-0012",
+    "number": "BL-2026-000012",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1787815620000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 9",
+      "roomCode": "PHONG_05",
+      "amount": {
+        "$numberInt": "2900000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9513288de41fbb288a965631"
+    },
+    "id": "bl-0013",
+    "paymentId": "ttien-0013",
+    "number": "BL-2026-000013",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1788420420000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 10",
+      "roomCode": "PHONG_06",
+      "amount": {
+        "$numberInt": "4300000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "30f403e5fc75eebd5ad80de0"
+    },
+    "id": "bl-0014",
+    "paymentId": "ttien-0014",
+    "number": "BL-2026-000014",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1788664320000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 11",
+      "roomCode": "PHONG_07",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a14761f82b4c7fea5b9fb96f"
+    },
+    "id": "bl-0015",
+    "paymentId": "ttien-0015",
+    "number": "BL-2026-000015",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1788679620000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 11",
+      "roomCode": "PHONG_07",
+      "amount": {
+        "$numberInt": "3400000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2b4d36767a5b74c00b1e4206"
+    },
+    "id": "bl-0016",
+    "paymentId": "ttien-0016",
+    "number": "BL-2026-000016",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1788938820000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 12",
+      "roomCode": "PHONG_08",
+      "amount": {
+        "$numberInt": "4700000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f5018c279d8123d53b979094"
+    },
+    "id": "bl-0017",
+    "paymentId": "ttien-0017",
+    "number": "BL-2026-000017",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1789182720000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 13",
+      "roomCode": "PHONG_09",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "dcea6cd665488e2d664b8769"
+    },
+    "id": "bl-0018",
+    "paymentId": "ttien-0018",
+    "number": "BL-2026-000018",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1789198020000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 13",
+      "roomCode": "PHONG_09",
+      "amount": {
+        "$numberInt": "3400000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b1c8769bec7d3795256015ac"
+    },
+    "id": "bl-0019",
+    "paymentId": "ttien-0019",
+    "number": "BL-2026-000019",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1789457220000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 14",
+      "roomCode": "PHONG_10",
+      "amount": {
+        "$numberInt": "4200000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "bbc684a36d5d1de9f7d79578"
+    },
+    "id": "bl-0020",
+    "paymentId": "ttien-0020",
+    "number": "BL-2026-000020",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1789701120000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 15",
+      "roomCode": "PHONG_11",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4b4cb60bc81fe04d0b7bc578"
+    },
+    "id": "bl-0021",
+    "paymentId": "ttien-0021",
+    "number": "BL-2026-000021",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1789716420000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 15",
+      "roomCode": "PHONG_11",
+      "amount": {
+        "$numberInt": "5200000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "184202986ba865bae825b1f1"
+    },
+    "id": "bl-0022",
+    "paymentId": "ttien-0022",
+    "number": "BL-2026-000022",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1789975620000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 16",
+      "roomCode": "PHONG_12",
+      "amount": {
+        "$numberInt": "4800000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "84f16ce2d4b14e877f80e025"
+    },
+    "id": "bl-0023",
+    "paymentId": "ttien-0023",
+    "number": "BL-2026-000023",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1790219520000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 17",
+      "roomCode": "PHONG_13",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e239409245176554d5f42cdc"
+    },
+    "id": "bl-0024",
+    "paymentId": "ttien-0024",
+    "number": "BL-2026-000024",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1790234820000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 17",
+      "roomCode": "PHONG_13",
+      "amount": {
+        "$numberInt": "3900000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c4c1f9d3f983e588f63a7237"
+    },
+    "id": "bl-0025",
+    "paymentId": "ttien-0025",
+    "number": "BL-2026-000025",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1790997120000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 18",
+      "roomCode": "PHONG_15",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e141722edcf090372bb76fb1"
+    },
+    "id": "bl-0026",
+    "paymentId": "ttien-0026",
+    "number": "BL-2026-000026",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1791012420000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 18",
+      "roomCode": "PHONG_15",
+      "amount": {
+        "$numberInt": "2600000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1ab5d53eff4499e169faaf02"
+    },
+    "id": "bl-0027",
+    "paymentId": "ttien-0027",
+    "number": "BL-2026-000027",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1791256320000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 19",
+      "roomCode": "PHONG_17",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "bf085b87f4f6e66e19eea3b0"
+    },
+    "id": "bl-0028",
+    "paymentId": "ttien-0028",
+    "number": "BL-2026-000028",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1791271620000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 19",
+      "roomCode": "PHONG_17",
+      "amount": {
+        "$numberInt": "3300000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ba2394f4141763e9aa07415c"
+    },
+    "id": "bl-0029",
+    "paymentId": "ttien-0029",
+    "number": "BL-2026-000029",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1791515520000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 20",
+      "roomCode": "PHONG_19",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a8d1b61f7567b3ba637ed6bf"
+    },
+    "id": "bl-0030",
+    "paymentId": "ttien-0030",
+    "number": "BL-2026-000030",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1791530820000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 20",
+      "roomCode": "PHONG_19",
+      "amount": {
+        "$numberInt": "4600000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f1ae73b8c6633c5fa97cdb64"
+    },
+    "id": "bl-0031",
+    "paymentId": "ttien-0031",
+    "number": "BL-2026-000031",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1791790020000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 21",
+      "roomCode": "PHONG_20",
+      "amount": {
+        "$numberInt": "4600000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4d865348b5c1862ba623feb2"
+    },
+    "id": "bl-0032",
+    "paymentId": "ttien-0032",
+    "number": "BL-2026-000032",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1792033920000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 22",
+      "roomCode": "PHONG_21",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e6ccb107503e974ca9880d0f"
+    },
+    "id": "bl-0033",
+    "paymentId": "ttien-0033",
+    "number": "BL-2026-000033",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1792049220000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 22",
+      "roomCode": "PHONG_21",
+      "amount": {
+        "$numberInt": "2800000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3d31e455f5619ee0df04e2bd"
+    },
+    "id": "bl-0034",
+    "paymentId": "ttien-0034",
+    "number": "BL-2026-000034",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1792308420000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 23",
+      "roomCode": "PHONG_22",
+      "amount": {
+        "$numberInt": "4300000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d37c8f2cc86a8e6020eb1a59"
+    },
+    "id": "bl-0035",
+    "paymentId": "ttien-0035",
+    "number": "BL-2026-000035",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1792552320000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 24",
+      "roomCode": "PHONG_47",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "99906fa817d843330ad3255a"
+    },
+    "id": "bl-0036",
+    "paymentId": "ttien-0036",
+    "number": "BL-2026-000036",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1792567620000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách liên hệ 24",
+      "roomCode": "PHONG_47",
+      "amount": {
+        "$numberInt": "7900000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e5b445def33f1f14f47d6f45"
+    },
+    "id": "bl-0037",
+    "paymentId": "ttien-0037",
+    "number": "BL-2026-000037",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793502720000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 25",
+      "roomCode": "PHONG_23",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a04b03249997242437e4c021"
+    },
+    "id": "bl-0038",
+    "paymentId": "ttien-0038",
+    "number": "BL-2026-000038",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793518020000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 25",
+      "roomCode": "PHONG_23",
+      "amount": {
+        "$numberInt": "3000000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f21e32943088ffd9d32d9bf"
+    },
+    "id": "bl-0039",
+    "paymentId": "ttien-0039",
+    "number": "BL-2026-000039",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793518020000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 26",
+      "roomCode": "PHONG_24",
+      "amount": {
+        "$numberInt": "6000000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8cc0ff08da620f8b319b78ea"
+    },
+    "id": "bl-0040",
+    "paymentId": "ttien-0041",
+    "number": "BL-2026-000040",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793502720000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 28",
+      "roomCode": "PHONG_28",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "21ca7c63ccdb8d7b79c0f451"
+    },
+    "id": "bl-0041",
+    "paymentId": "ttien-0042",
+    "number": "BL-2026-000041",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793502720000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 29",
+      "roomCode": "PHONG_29",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "be8c84aca9f250ef14dbf19c"
+    },
+    "id": "bl-0042",
+    "paymentId": "ttien-0043",
+    "number": "BL-2026-000042",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793243520000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 31",
+      "roomCode": "PHONG_31",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ad2247fb63b6619dc59e96fd"
+    },
+    "id": "bl-0043",
+    "paymentId": "ttien-0045",
+    "number": "BL-2026-000043",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793589120000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 33",
+      "roomCode": "PHONG_33",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7994ce6a11875387c47fc85b"
+    },
+    "id": "bl-0044",
+    "paymentId": "ttien-0046",
+    "number": "BL-2026-000044",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793604420000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 33",
+      "roomCode": "PHONG_33",
+      "amount": {
+        "$numberInt": "4500000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "045ddc339c03bdceecda6436"
+    },
+    "id": "bl-0045",
+    "paymentId": "ttien-0047",
+    "number": "BL-2026-000045",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793589120000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 34",
+      "roomCode": "PHONG_34",
+      "amount": {
+        "$numberInt": "1000000"
+      },
+      "title": "Thu tiền giữ chỗ"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4df8bc3d48d6d30c136278c6"
+    },
+    "id": "bl-0046",
+    "paymentId": "ttien-0049",
+    "number": "BL-2026-000046",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1793431620000"
+      }
+    },
+    "snapshot": {
+      "payerName": "Khách hàng 35",
+      "roomCode": "PHONG_35",
+      "amount": {
+        "$numberInt": "4300000"
+      },
+      "title": "Thu tiền cọc thuộc chủ phòng"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afb443c540231e55f2d368f"
+    },
+    "id": "bl-ttien-fca04a3d-6ac8-426c-9c76-cc0a143086d2",
+    "customerId": "kh-6af9b41ded3fe4f1d80b464b",
+    "issuedAt": {
+      "$date": {
+        "$numberLong": "1794851899994"
+      }
+    },
+    "number": "BL-202611-0001",
+    "paymentId": "ttien-fca04a3d-6ac8-426c-9c76-cc0a143086d2",
+    "roomId": "phong-30",
+    "snapshot": {
+      "title": "Biên lai giữ chỗ",
+      "holdId": "gc-75c3db33-2644-4a28-8dc4-f83ebbcd4d81",
+      "holdNumber": "GC-202611-0003",
+      "payerName": "Khách hàng 43",
+      "payerPhone": "0900000059",
+      "roomCode": "PHONG_30",
+      "roomName": "Căn hộ Rattan Tropical",
+      "roomAddress": "Đường Lê Văn Việt, Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh",
+      "amount": {
+        "$numberInt": "10000"
+      },
+      "method": "BANK_TRANSFER",
+      "paidAt": {
+        "$date": {
+          "$numberLong": "1794851899994"
+        }
+      },
+      "expiresAt": {
+        "$date": {
+          "$numberLong": "1795024699994"
+        }
+      }
+    }
+  }
+]

@@ -1,3 +1,4 @@
+import { ForgotPasswordComponent } from './forgot-password/forgot-password';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, UrlMatcher } from '@angular/router';
 import { AccessDeniedComponent } from './access-denied/access-denied';
@@ -11,12 +12,18 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout';
 // Khung chung chỉ khớp /login và /register (không nuốt trang chủ '/'); con vẫn dùng chung
 // một AuthLayoutComponent nên ảnh bên trái không render lại khi chuyển qua lại.
 const authPages: UrlMatcher = (segments) =>
-  ['login', 'register'].includes(segments[0]?.path) ? { consumed: [] } : null;
+  ['login', 'register', 'forgot-password'].includes(segments[0]?.path) ? { consumed: [] } : null;
 const routes: Routes = [
   {
     matcher: authPages,
     component: AuthLayoutComponent,
     children: [
+      {
+        path: 'forgot-password',
+        component: ForgotPasswordComponent,
+        canActivate: [GuestGuard],
+        title: 'Quên mật khẩu | iHOUZZ Uni',
+      },
       {
         path: 'login',
         component: LoginComponent,

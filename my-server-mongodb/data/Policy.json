@@ -1,0 +1,215 @@
+[
+  {
+    "_id": {
+      "$oid": "59917f43761472e64c64c3f0"
+    },
+    "id": "HOA_HONG",
+    "type": "HOA_HONG",
+    "name": "Chính sách HOA_HONG 2026",
+    "version": {
+      "$numberInt": "1"
+    },
+    "issuedByAccountId": "admin",
+    "effectiveFrom": {
+      "$date": {
+        "$numberLong": "1785517200000"
+      }
+    },
+    "effectiveTo": null,
+    "status": "ACTIVE",
+    "levels": [
+      {
+        "id": "HOA_HONG-1",
+        "from": {
+          "$numberInt": "0"
+        },
+        "to": {
+          "$numberInt": "10000000"
+        },
+        "rateBps": {
+          "$numberInt": "2000"
+        },
+        "amount": null
+      },
+      {
+        "id": "HOA_HONG-2",
+        "from": {
+          "$numberInt": "10000000"
+        },
+        "to": {
+          "$numberInt": "15000000"
+        },
+        "rateBps": {
+          "$numberInt": "3000"
+        },
+        "amount": null
+      },
+      {
+        "id": "HOA_HONG-3",
+        "from": {
+          "$numberInt": "15000000"
+        },
+        "to": {
+          "$numberInt": "20000000"
+        },
+        "rateBps": {
+          "$numberInt": "3500"
+        },
+        "amount": null
+      },
+      {
+        "id": "HOA_HONG-4",
+        "from": {
+          "$numberInt": "20000000"
+        },
+        "to": {
+          "$numberInt": "30000000"
+        },
+        "rateBps": {
+          "$numberInt": "4000"
+        },
+        "amount": null
+      },
+      {
+        "id": "HOA_HONG-5",
+        "from": {
+          "$numberInt": "30000000"
+        },
+        "to": null,
+        "rateBps": {
+          "$numberInt": "4500"
+        },
+        "amount": null
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "40033ef65b593294477dc3b1"
+    },
+    "id": "PHAT_TRE",
+    "type": "PHAT_TRE",
+    "name": "Chính sách PHAT_TRE 2026",
+    "version": {
+      "$numberInt": "1"
+    },
+    "issuedByAccountId": "admin",
+    "effectiveFrom": {
+      "$date": {
+        "$numberLong": "1785517200000"
+      }
+    },
+    "effectiveTo": null,
+    "status": "ACTIVE",
+    "levels": [
+      {
+        "id": "PHAT_TRE-1",
+        "from": {
+          "$numberInt": "1"
+        },
+        "to": {
+          "$numberInt": "16"
+        },
+        "rateBps": null,
+        "amount": {
+          "$numberInt": "20000"
+        }
+      },
+      {
+        "id": "PHAT_TRE-2",
+        "from": {
+          "$numberInt": "16"
+        },
+        "to": {
+          "$numberInt": "31"
+        },
+        "rateBps": null,
+        "amount": {
+          "$numberInt": "50000"
+        }
+      },
+      {
+        "id": "PHAT_TRE-3",
+        "from": {
+          "$numberInt": "31"
+        },
+        "to": null,
+        "rateBps": null,
+        "amount": {
+          "$numberInt": "100000"
+        }
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "92f35346cfab6e431e4a6c88"
+    },
+    "id": "GIU_CHO",
+    "type": "GIU_CHO",
+    "name": "Chính sách GIU_CHO 2026",
+    "version": {
+      "$numberInt": "1"
+    },
+    "issuedByAccountId": "admin",
+    "effectiveFrom": {
+      "$date": {
+        "$numberLong": "1785517200000"
+      }
+    },
+    "effectiveTo": {
+      "$date": {
+        "$numberLong": "1794851786701"
+      }
+    },
+    "status": "RETIRED",
+    "levels": [
+      {
+        "id": "GIU_CHO-1",
+        "from": {
+          "$numberInt": "0"
+        },
+        "to": null,
+        "rateBps": null,
+        "amount": {
+          "$numberInt": "1000000"
+        }
+      }
+    ],
+    "displayStatus": "HET_HIEU_LUC"
+  },
+  {
+    "_id": {
+      "$oid": "6afb43cba422453fccf52264"
+    },
+    "type": "GIU_CHO",
+    "name": "Giữ chỗ thử nghiệm 10.000 đồng",
+    "version": {
+      "$numberInt": "2"
+    },
+    "effectiveFrom": {
+      "$date": {
+        "$numberLong": "1794851786701"
+      }
+    },
+    "effectiveTo": null,
+    "issuedByAccountId": "admin",
+    "status": "ACTIVE",
+    "id": "p5-6afb43cba422453fccf52260",
+    "levels": [
+      {
+        "policyId": "p5-6afb43cba422453fccf52260",
+        "from": {
+          "$numberInt": "0"
+        },
+        "to": null,
+        "rateBps": null,
+        "amount": {
+          "$numberInt": "10000"
+        },
+        "id": "p5-6afb43cba422453fccf52261"
+      }
+    ],
+    "displayStatus": "DANG_HIEU_LUC"
+  }
+]

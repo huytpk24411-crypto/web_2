@@ -1,0 +1,64 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="company">
+        <a class="footer-brand" routerLink="/"
+          ><app-icon name="home" [size]="22" /> <strong>Houzz Uni</strong></a
+        >
+        <h2>CÔNG TY CỔ PHẦN BẤT ĐỘNG SẢN HOUZZ UNI</h2>
+        <address>
+          <p>
+            <app-icon name="pin" [size]="15" /><span
+              >22A/39 Khu nhà ở Phát Khang, đường Thống Nhất, Phường Đông Hòa, TP. Dĩ An (giáp TP.
+              Hồ Chí Minh), Việt Nam</span
+            >
+          </p>
+          <p><app-icon name="building" [size]="15" /><span>MST: 3703361326</span></p>
+          <p><app-icon name="phone" [size]="15" /><a href="tel:0395870236">SĐT: 0395870236</a></p>
+          <p>
+            <app-icon name="mail" [size]="15" /><span
+              >Email: <a href="mailto:khangtn@ihouzz.com">khangtn&#64;ihouzz.com</a></span
+            >
+          </p>
+        </address>
+      </div>
+      <nav aria-label="Liên kết nhanh ở chân trang">
+        <h2>Liên kết nhanh</h2>
+        <a routerLink="/">Trang Chủ</a><a routerLink="/rooms">Tất Cả Các Phòng</a
+        ><a routerLink="/about">Giới Thiệu</a><a routerLink="/contact">Liên Hệ</a>
+      </nav>
+      <div class="social">
+        <h2>Mạng xã hội</h2>
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/khaai.tang.3"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook (mở tab mới)"
+            ><b aria-hidden="true">f</b></a
+          >
+          <a
+            href="https://www.tiktok.com/@banana120506?_r=1&amp;_t=ZS-9BSghstm0LE"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok (mở tab mới)"
+            ><svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M14 3v12a4 4 0 1 1-4-4v3a1 1 0 1 0 1 1V3h3c0 3 2 5 5 5v3a8 8 0 0 1-5-2"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {{ year }} Houzz Uni. All rights reserved.</span>
+      <div>
+        <button type="button" disabled title="Chưa có nội dung chính sách">
+          Chính sách bảo mật</button
+        ><button type="button" disabled title="Chưa có nội dung điều khoản">
+          Điều khoản dịch vụ
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>

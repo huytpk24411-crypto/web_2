@@ -4,6 +4,7 @@ import { EmployeeCheckInComponent } from './employee-check-in/employee-check-in'
 import { EmployeeCheckOutComponent } from './employee-check-out/employee-check-out';
 import { EmployeeDealDetailComponent } from './employee-deal-detail/employee-deal-detail';
 import { EmployeeDepositNewComponent } from './employee-deposit-new/employee-deposit-new';
+import { EmployeeDepositReceiptComponent } from './employee-deposit-receipt/employee-deposit-receipt';
 import { EmployeeLayoutComponent } from './employee-layout/employee-layout';
 import { EmployeePayrollComponent } from './employee-payroll/employee-payroll';
 import { EmployeeShiftListComponent } from './employee-shift-list/employee-shift-list';
@@ -37,6 +38,11 @@ const routes: Routes = [
     path: 'deposits/new',
     component: EmployeeDepositNewComponent,
     title: 'Hồ sơ cọc | iHOUZZ Uni',
+  },
+  {
+    path: 'deposits/:id/receipt',
+    component: EmployeeDepositReceiptComponent,
+    title: 'Phiếu thu cọc | iHOUZZ Uni',
   },
   {
     path: 'deals/:id',

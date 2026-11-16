@@ -1,0 +1,1471 @@
+[
+  {
+    "_id": {
+      "$oid": "cb902adc64c9d66c8fadaed0"
+    },
+    "id": "coc-0001",
+    "number": "PC-2026-000001",
+    "customerId": "kh-01",
+    "employeeId": "nv-01",
+    "roomId": "phong-46",
+    "ownerId": "chu-06",
+    "totalRequired": {
+      "$numberInt": "8600000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "8600000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0001"
+    ],
+    "expectedMoveIn": "2026-08-04",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-08-04",
+      "monthlyRent": {
+        "$numberInt": "8600000"
+      },
+      "endDate": "2027-08-04"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785740400000"
+      }
+    },
+    "contractId": "hd-08-046",
+    "adminReview": {
+      "status": "APPROVED",
+      "reason": "",
+      "at": {
+        "$date": {
+          "$numberLong": "1794742701579"
+        }
+      },
+      "by": "admin"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794742701579"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "16d73f746a9be10a3a366de7"
+    },
+    "id": "coc-0002",
+    "number": "PC-2026-000002",
+    "customerId": "kh-02",
+    "employeeId": "nv-01",
+    "roomId": "phong-14",
+    "ownerId": "chu-04",
+    "totalRequired": {
+      "$numberInt": "5500000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "5500000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0002"
+    ],
+    "expectedMoveIn": "2026-08-07",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-08-07",
+      "monthlyRent": {
+        "$numberInt": "5500000"
+      },
+      "endDate": "2027-08-07"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785999600000"
+      }
+    },
+    "contractId": "hd-08-014",
+    "adminReview": {
+      "status": "APPROVED",
+      "reason": "",
+      "at": {
+        "$date": {
+          "$numberLong": "1794742704384"
+        }
+      },
+      "by": "admin"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794841573407"
+      }
+    },
+    "version": {
+      "$numberInt": "2"
+    },
+    "roomSnapshot": {
+      "id": "phong-14",
+      "code": "PHONG_14",
+      "name": "Căn hộ Botanical",
+      "type": "Căn hộ",
+      "address": "Đường Võ Văn Ngân, Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh",
+      "propertyId": "b3",
+      "propertyName": "An Phú Home Võ Văn Ngân",
+      "ownerId": "chu-04",
+      "monthlyRent": {
+        "$numberInt": "5500000"
+      },
+      "area": {
+        "$numberInt": "38"
+      },
+      "capacity": {
+        "$numberInt": "3"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1ee76415f352af57c60d540d"
+    },
+    "id": "coc-0003",
+    "number": "PC-2026-000003",
+    "customerId": "kh-03",
+    "employeeId": "nv-01",
+    "roomId": "phong-16",
+    "ownerId": "chu-06",
+    "totalRequired": {
+      "$numberInt": "5300000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "5300000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0003"
+    ],
+    "expectedMoveIn": "2026-08-10",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-08-10",
+      "monthlyRent": {
+        "$numberInt": "5300000"
+      },
+      "endDate": "2027-08-10"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786258800000"
+      }
+    },
+    "contractId": "hd-08-016",
+    "adminReview": {
+      "status": "APPROVED",
+      "reason": "",
+      "at": {
+        "$date": {
+          "$numberLong": "1794742707326"
+        }
+      },
+      "by": "admin"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794742707326"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7b7b64604d9fbf86bf74bcde"
+    },
+    "id": "coc-0004",
+    "number": "PC-2026-000004",
+    "customerId": "kh-04",
+    "employeeId": "nv-01",
+    "roomId": "phong-18",
+    "ownerId": "chu-08",
+    "totalRequired": {
+      "$numberInt": "5800000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "5800000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0004"
+    ],
+    "expectedMoveIn": "2026-08-13",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-08-13",
+      "monthlyRent": {
+        "$numberInt": "5800000"
+      },
+      "endDate": "2027-08-13"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786518000000"
+      }
+    },
+    "contractId": "hd-08-018"
+  },
+  {
+    "_id": {
+      "$oid": "7dac48c44e24ee4c4cd7d061"
+    },
+    "id": "coc-0005",
+    "number": "PC-2026-000005",
+    "customerId": "kh-05",
+    "employeeId": "nv-06",
+    "roomId": "phong-01",
+    "ownerId": "chu-01",
+    "totalRequired": {
+      "$numberInt": "4200000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "3200000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0006"
+    ],
+    "expectedMoveIn": "2026-08-16",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-08-16",
+      "monthlyRent": {
+        "$numberInt": "4200000"
+      },
+      "endDate": "2027-02-16"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786777200000"
+      }
+    },
+    "holdId": "gc-0001",
+    "contractId": "hd-08-001"
+  },
+  {
+    "_id": {
+      "$oid": "f9eb7a63f7b07ace07f54bdc"
+    },
+    "id": "coc-0006",
+    "number": "PC-2026-000006",
+    "customerId": "kh-06",
+    "employeeId": "nv-07",
+    "roomId": "phong-02",
+    "ownerId": "chu-02",
+    "totalRequired": {
+      "$numberInt": "4500000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "4500000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0007"
+    ],
+    "expectedMoveIn": "2026-08-19",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-08-19",
+      "monthlyRent": {
+        "$numberInt": "4500000"
+      },
+      "endDate": "2027-08-19"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787036400000"
+      }
+    },
+    "contractId": "hd-08-002"
+  },
+  {
+    "_id": {
+      "$oid": "530ba21b4700160c1ca1b5a4"
+    },
+    "id": "coc-0007",
+    "number": "PC-2026-000007",
+    "customerId": "kh-07",
+    "employeeId": "nv-08",
+    "roomId": "phong-03",
+    "ownerId": "chu-03",
+    "totalRequired": {
+      "$numberInt": "5200000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "4200000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0009"
+    ],
+    "expectedMoveIn": "2026-08-22",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-08-22",
+      "monthlyRent": {
+        "$numberInt": "5200000"
+      },
+      "endDate": "2027-02-22"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787295600000"
+      }
+    },
+    "holdId": "gc-0002",
+    "contractId": "hd-08-003"
+  },
+  {
+    "_id": {
+      "$oid": "2445b6949d2ebcd05c322321"
+    },
+    "id": "coc-0008",
+    "number": "PC-2026-000008",
+    "customerId": "kh-08",
+    "employeeId": "nv-09",
+    "roomId": "phong-04",
+    "ownerId": "chu-04",
+    "totalRequired": {
+      "$numberInt": "4600000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "4600000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0010"
+    ],
+    "expectedMoveIn": "2026-08-25",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-08-25",
+      "monthlyRent": {
+        "$numberInt": "4600000"
+      },
+      "endDate": "2027-08-25"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787554800000"
+      }
+    },
+    "contractId": "hd-08-004"
+  },
+  {
+    "_id": {
+      "$oid": "36389138b91af496cf18b3ce"
+    },
+    "id": "coc-0009",
+    "number": "PC-2026-000009",
+    "customerId": "kh-09",
+    "employeeId": "nv-10",
+    "roomId": "phong-05",
+    "ownerId": "chu-05",
+    "totalRequired": {
+      "$numberInt": "3900000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "2900000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0012"
+    ],
+    "expectedMoveIn": "2026-08-28",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-08-28",
+      "monthlyRent": {
+        "$numberInt": "3900000"
+      },
+      "endDate": "2027-02-28"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787814000000"
+      }
+    },
+    "holdId": "gc-0003",
+    "contractId": "hd-08-005"
+  },
+  {
+    "_id": {
+      "$oid": "f8b9a9b53afb2d78ac22b055"
+    },
+    "id": "coc-0010",
+    "number": "PC-2026-000010",
+    "customerId": "kh-10",
+    "employeeId": "nv-02",
+    "roomId": "phong-06",
+    "ownerId": "chu-06",
+    "totalRequired": {
+      "$numberInt": "4300000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "4300000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0013"
+    ],
+    "expectedMoveIn": "2026-09-04",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-09-04",
+      "monthlyRent": {
+        "$numberInt": "4300000"
+      },
+      "endDate": "2027-09-04"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788418800000"
+      }
+    },
+    "contractId": "hd-09-006"
+  },
+  {
+    "_id": {
+      "$oid": "3e9bcbc629b34c12d868838f"
+    },
+    "id": "coc-0011",
+    "number": "PC-2026-000011",
+    "customerId": "kh-11",
+    "employeeId": "nv-03",
+    "roomId": "phong-07",
+    "ownerId": "chu-07",
+    "totalRequired": {
+      "$numberInt": "4400000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "3400000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0015"
+    ],
+    "expectedMoveIn": "2026-09-07",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-09-07",
+      "monthlyRent": {
+        "$numberInt": "4400000"
+      },
+      "endDate": "2027-03-07"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788678000000"
+      }
+    },
+    "holdId": "gc-0004",
+    "contractId": "hd-09-007"
+  },
+  {
+    "_id": {
+      "$oid": "8b3f235e8f826aaf532012ed"
+    },
+    "id": "coc-0012",
+    "number": "PC-2026-000012",
+    "customerId": "kh-12",
+    "employeeId": "nv-04",
+    "roomId": "phong-08",
+    "ownerId": "chu-08",
+    "totalRequired": {
+      "$numberInt": "4700000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "4700000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0016"
+    ],
+    "expectedMoveIn": "2026-09-10",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-09-10",
+      "monthlyRent": {
+        "$numberInt": "4700000"
+      },
+      "endDate": "2027-09-10"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788937200000"
+      }
+    },
+    "contractId": "hd-09-008"
+  },
+  {
+    "_id": {
+      "$oid": "aee3292f5dd498e4f7622071"
+    },
+    "id": "coc-0013",
+    "number": "PC-2026-000013",
+    "customerId": "kh-13",
+    "employeeId": "nv-05",
+    "roomId": "phong-09",
+    "ownerId": "chu-09",
+    "totalRequired": {
+      "$numberInt": "4400000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "3400000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0018"
+    ],
+    "expectedMoveIn": "2026-09-13",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-09-13",
+      "monthlyRent": {
+        "$numberInt": "4400000"
+      },
+      "endDate": "2027-03-13"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789196400000"
+      }
+    },
+    "holdId": "gc-0005",
+    "contractId": "hd-09-009"
+  },
+  {
+    "_id": {
+      "$oid": "c588d4ebd3b3b7209bcd076c"
+    },
+    "id": "coc-0014",
+    "number": "PC-2026-000014",
+    "customerId": "kh-14",
+    "employeeId": "nv-06",
+    "roomId": "phong-10",
+    "ownerId": "chu-10",
+    "totalRequired": {
+      "$numberInt": "4200000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "4200000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0019"
+    ],
+    "expectedMoveIn": "2026-09-16",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-09-16",
+      "monthlyRent": {
+        "$numberInt": "4200000"
+      },
+      "endDate": "2027-09-16"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789455600000"
+      }
+    },
+    "contractId": "hd-09-010"
+  },
+  {
+    "_id": {
+      "$oid": "ac8b2dbfbebfaecb0f53bfd7"
+    },
+    "id": "coc-0015",
+    "number": "PC-2026-000015",
+    "customerId": "kh-15",
+    "employeeId": "nv-07",
+    "roomId": "phong-11",
+    "ownerId": "chu-01",
+    "totalRequired": {
+      "$numberInt": "6200000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "5200000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0021"
+    ],
+    "expectedMoveIn": "2026-09-19",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-09-19",
+      "monthlyRent": {
+        "$numberInt": "6200000"
+      },
+      "endDate": "2027-03-19"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789714800000"
+      }
+    },
+    "holdId": "gc-0006",
+    "contractId": "hd-09-011"
+  },
+  {
+    "_id": {
+      "$oid": "6fef0a0a5a5896ce24aabced"
+    },
+    "id": "coc-0016",
+    "number": "PC-2026-000016",
+    "customerId": "kh-16",
+    "employeeId": "nv-08",
+    "roomId": "phong-12",
+    "ownerId": "chu-02",
+    "totalRequired": {
+      "$numberInt": "4800000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "4800000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0022"
+    ],
+    "expectedMoveIn": "2026-09-22",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-09-22",
+      "monthlyRent": {
+        "$numberInt": "4800000"
+      },
+      "endDate": "2027-09-22"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789974000000"
+      }
+    },
+    "contractId": "hd-09-012"
+  },
+  {
+    "_id": {
+      "$oid": "ea0950607880294fa1f59c31"
+    },
+    "id": "coc-0017",
+    "number": "PC-2026-000017",
+    "customerId": "kh-17",
+    "employeeId": "nv-09",
+    "roomId": "phong-13",
+    "ownerId": "chu-03",
+    "totalRequired": {
+      "$numberInt": "4900000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "3900000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0024"
+    ],
+    "expectedMoveIn": "2026-09-25",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-09-25",
+      "monthlyRent": {
+        "$numberInt": "4900000"
+      },
+      "endDate": "2027-03-25"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790233200000"
+      }
+    },
+    "holdId": "gc-0007",
+    "contractId": "hd-09-013"
+  },
+  {
+    "_id": {
+      "$oid": "c4bfe9f8f1440ab165b093cb"
+    },
+    "id": "coc-0018",
+    "number": "PC-2026-000018",
+    "customerId": "kh-18",
+    "employeeId": "nv-02",
+    "roomId": "phong-15",
+    "ownerId": "chu-05",
+    "totalRequired": {
+      "$numberInt": "3600000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "2600000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0026"
+    ],
+    "expectedMoveIn": "2026-10-04",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-10-04",
+      "monthlyRent": {
+        "$numberInt": "3600000"
+      },
+      "endDate": "2027-04-04"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791010800000"
+      }
+    },
+    "holdId": "gc-0008",
+    "contractId": "hd-10-015"
+  },
+  {
+    "_id": {
+      "$oid": "ed60a0b8771e167879ee607f"
+    },
+    "id": "coc-0019",
+    "number": "PC-2026-000019",
+    "customerId": "kh-19",
+    "employeeId": "nv-03",
+    "roomId": "phong-17",
+    "ownerId": "chu-07",
+    "totalRequired": {
+      "$numberInt": "4300000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "3300000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0028"
+    ],
+    "expectedMoveIn": "2026-10-07",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-10-07",
+      "monthlyRent": {
+        "$numberInt": "4300000"
+      },
+      "endDate": "2027-04-07"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791270000000"
+      }
+    },
+    "holdId": "gc-0009",
+    "contractId": "hd-10-017"
+  },
+  {
+    "_id": {
+      "$oid": "7caa658ec0a929ebdae99fa7"
+    },
+    "id": "coc-0020",
+    "number": "PC-2026-000020",
+    "customerId": "kh-20",
+    "employeeId": "nv-04",
+    "roomId": "phong-19",
+    "ownerId": "chu-09",
+    "totalRequired": {
+      "$numberInt": "5600000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "4600000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0030"
+    ],
+    "expectedMoveIn": "2026-10-10",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-10-10",
+      "monthlyRent": {
+        "$numberInt": "5600000"
+      },
+      "endDate": "2027-04-10"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791529200000"
+      }
+    },
+    "holdId": "gc-0010",
+    "contractId": "hd-10-019"
+  },
+  {
+    "_id": {
+      "$oid": "bee0f1ae5e5f83d43328b022"
+    },
+    "id": "coc-0021",
+    "number": "PC-2026-000021",
+    "customerId": "kh-21",
+    "employeeId": "nv-05",
+    "roomId": "phong-20",
+    "ownerId": "chu-10",
+    "totalRequired": {
+      "$numberInt": "4600000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "4600000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0031"
+    ],
+    "expectedMoveIn": "2026-10-13",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-10-13",
+      "monthlyRent": {
+        "$numberInt": "4600000"
+      },
+      "endDate": "2027-10-13"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791788400000"
+      }
+    },
+    "contractId": "hd-10-020"
+  },
+  {
+    "_id": {
+      "$oid": "3f1d44ae2c58261e0e29b3ac"
+    },
+    "id": "coc-0022",
+    "number": "PC-2026-000022",
+    "customerId": "kh-22",
+    "employeeId": "nv-06",
+    "roomId": "phong-21",
+    "ownerId": "chu-01",
+    "totalRequired": {
+      "$numberInt": "3800000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "2800000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0033"
+    ],
+    "expectedMoveIn": "2026-10-16",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-10-16",
+      "monthlyRent": {
+        "$numberInt": "3800000"
+      },
+      "endDate": "2027-04-16"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792047600000"
+      }
+    },
+    "holdId": "gc-0011",
+    "contractId": "hd-10-021"
+  },
+  {
+    "_id": {
+      "$oid": "477e9aeaefe5ee8a68c19453"
+    },
+    "id": "coc-0023",
+    "number": "PC-2026-000023",
+    "customerId": "kh-23",
+    "employeeId": "nv-07",
+    "roomId": "phong-22",
+    "ownerId": "chu-02",
+    "totalRequired": {
+      "$numberInt": "4300000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "4300000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0034"
+    ],
+    "expectedMoveIn": "2026-10-19",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-10-19",
+      "monthlyRent": {
+        "$numberInt": "4300000"
+      },
+      "endDate": "2027-10-19"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792306800000"
+      }
+    },
+    "contractId": "hd-10-022"
+  },
+  {
+    "_id": {
+      "$oid": "9eafb49f6fff02183356cdd0"
+    },
+    "id": "coc-0024",
+    "number": "PC-2026-000024",
+    "customerId": "kh-24",
+    "employeeId": "nv-08",
+    "roomId": "phong-47",
+    "ownerId": "chu-07",
+    "totalRequired": {
+      "$numberInt": "8900000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "7900000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0036"
+    ],
+    "expectedMoveIn": "2026-10-22",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-10-22",
+      "monthlyRent": {
+        "$numberInt": "8900000"
+      },
+      "endDate": "2027-04-22"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792566000000"
+      }
+    },
+    "holdId": "gc-0012",
+    "contractId": "hd-10-047"
+  },
+  {
+    "_id": {
+      "$oid": "df198c5eae1ac4319a240703"
+    },
+    "id": "coc-0025",
+    "number": "PC-2026-000025",
+    "customerId": "kh-25",
+    "employeeId": "nv-02",
+    "roomId": "phong-23",
+    "ownerId": "chu-03",
+    "totalRequired": {
+      "$numberInt": "4000000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "3000000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0038"
+    ],
+    "expectedMoveIn": "2026-11-02",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "6"
+      },
+      "startDate": "2026-11-02",
+      "monthlyRent": {
+        "$numberInt": "4000000"
+      },
+      "endDate": "2027-05-02"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793516400000"
+      }
+    },
+    "holdId": "gc-0013",
+    "contractId": "hd-11-023"
+  },
+  {
+    "_id": {
+      "$oid": "50fc883b8ef281671a1850f5"
+    },
+    "id": "coc-0026",
+    "number": "PC-2026-000026",
+    "customerId": "kh-26",
+    "employeeId": "nv-03",
+    "roomId": "phong-24",
+    "ownerId": "chu-04",
+    "totalRequired": {
+      "$numberInt": "6000000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "6000000"
+    },
+    "status": "CONTRACTED",
+    "paymentIds": [
+      "ttien-0039"
+    ],
+    "expectedMoveIn": "2026-11-02",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-11-02",
+      "monthlyRent": {
+        "$numberInt": "6000000"
+      },
+      "endDate": "2027-11-02"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793516400000"
+      }
+    },
+    "contractId": "hd-11-024"
+  },
+  {
+    "_id": {
+      "$oid": "0d4a7132e793b4a0f6f6463a"
+    },
+    "id": "coc-0027",
+    "number": "PC-2026-000027",
+    "customerId": "kh-33",
+    "employeeId": "nv-07",
+    "roomId": "phong-33",
+    "ownerId": "chu-03",
+    "totalRequired": {
+      "$numberInt": "5500000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "4500000"
+    },
+    "status": "CANCELLED",
+    "paymentIds": [
+      "ttien-0046"
+    ],
+    "expectedMoveIn": "2026-11-03",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-11-03",
+      "monthlyRent": {
+        "$numberInt": "5500000"
+      }
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793602800000"
+      }
+    },
+    "holdId": "gc-0020",
+    "cancellation": {
+      "reason": "Nội dung minh họa đã được ẩn danh.",
+      "at": {
+        "$date": {
+          "$numberLong": "1794157200000"
+        }
+      },
+      "by": "admin"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3afea4579133aa47a8c5a66f"
+    },
+    "id": "coc-0028",
+    "number": "PC-2026-000028",
+    "customerId": "kh-34",
+    "employeeId": "nv-08",
+    "roomId": "phong-34",
+    "ownerId": "chu-04",
+    "totalRequired": {
+      "$numberInt": "4600000"
+    },
+    "holdCredit": {
+      "$numberInt": "1000000"
+    },
+    "amountDue": {
+      "$numberInt": "3600000"
+    },
+    "status": "CANCELLED",
+    "paymentIds": [
+      "ttien-0048"
+    ],
+    "expectedMoveIn": "2026-11-03",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-11-03",
+      "monthlyRent": {
+        "$numberInt": "4600000"
+      }
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793602800000"
+      }
+    },
+    "holdId": "gc-0021",
+    "cancellation": {
+      "reason": "Nội dung minh họa đã được ẩn danh.",
+      "at": {
+        "$date": {
+          "$numberLong": "1794157200000"
+        }
+      },
+      "by": "admin"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "91f91c5779a5cdcf62df2851"
+    },
+    "id": "coc-0029",
+    "number": "PC-2026-000029",
+    "customerId": "kh-35",
+    "employeeId": "nv-09",
+    "roomId": "phong-35",
+    "ownerId": "chu-05",
+    "totalRequired": {
+      "$numberInt": "4300000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "4300000"
+    },
+    "status": "ABANDONED",
+    "paymentIds": [
+      "ttien-0049"
+    ],
+    "expectedMoveIn": "2026-11-01",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-11-01",
+      "monthlyRent": {
+        "$numberInt": "4300000"
+      }
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793430000000"
+      }
+    },
+    "abandonment": {
+      "recordedAt": {
+        "$date": {
+          "$numberLong": "1793602800000"
+        }
+      },
+      "recordedBy": "nv-09",
+      "reason": "Nội dung minh họa đã được ẩn danh.",
+      "ownerDecision": "PENDING",
+      "ownerDecisionNote": "Nội dung minh họa đã được ẩn danh.",
+      "evidence": []
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f78d036df7ac7e7ce447f27c"
+    },
+    "id": "coc-0030",
+    "number": "PC-2026-000030",
+    "customerId": "kh-36",
+    "employeeId": "nv-10",
+    "roomId": "phong-36",
+    "ownerId": "chu-06",
+    "totalRequired": {
+      "$numberInt": "5900000"
+    },
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "amountDue": {
+      "$numberInt": "5900000"
+    },
+    "status": "CANCELLED",
+    "paymentIds": [],
+    "expectedMoveIn": "2026-11-01",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-11-01",
+      "monthlyRent": {
+        "$numberInt": "5900000"
+      }
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793430000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afb18d3540231e55f2d3350"
+    },
+    "id": "coc-2c7fbacb-4984-49c8-aae1-c0b5dd791804",
+    "amountDue": {
+      "$numberInt": "4200000"
+    },
+    "collected": {
+      "method": "BANK_TRANSFER",
+      "amount": {
+        "$numberInt": "4200000"
+      },
+      "note": "",
+      "at": {
+        "$date": {
+          "$numberLong": "1794840787050"
+        }
+      },
+      "by": "tk-nv-13"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794840787050"
+      }
+    },
+    "customerId": "kh-6af83dd4256b9a6c7b9bade4",
+    "customerName": "Khách hàng 42",
+    "employeeId": "nv-13",
+    "holdCredit": {
+      "$numberInt": "0"
+    },
+    "number": "PC-202611-0001",
+    "ownerId": "chu-04",
+    "paymentIds": [],
+    "phone": "0900000058",
+    "proposedLease": {
+      "months": {
+        "$numberInt": "12"
+      },
+      "startDate": "2026-11-16",
+      "monthlyRent": {
+        "$numberInt": "5500000"
+      }
+    },
+    "roomId": "phong-14",
+    "sheetRoomSnapshot": {
+      "code": "PHONG_14",
+      "name": "Căn hộ Botanical",
+      "propertyName": "An Phú Home Võ Văn Ngân",
+      "floor": "2",
+      "address": "Đường Võ Văn Ngân, Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh",
+      "type": "Căn hộ",
+      "monthlyRent": {
+        "$numberInt": "5500000"
+      },
+      "electricityPrice": {
+        "$numberInt": "3500"
+      },
+      "waterPrice": {
+        "$numberInt": "100000"
+      },
+      "fees": [
+        {
+          "name": "Dịch vụ",
+          "amount": {
+            "$numberInt": "150000"
+          }
+        }
+      ]
+    },
+    "status": "COMPLETED",
+    "totalRequired": {
+      "$numberInt": "4200000"
+    },
+    "agreementSnapshot": {
+      "id": "tt-14",
+      "roomId": "phong-14",
+      "ownerId": "chu-04",
+      "effectiveFrom": "2026-08-01",
+      "effectiveTo": null,
+      "feeMethod": "PERCENT_OF_MONTHLY_RENT",
+      "feeValue": {
+        "$numberInt": "5000"
+      },
+      "status": "ACTIVE"
+    },
+    "brokerageTransactionId": "gd-c9b5f2c5-e518-4707-8e59-ba2ed8849607",
+    "companyShare": {
+      "$numberInt": "2100000"
+    },
+    "ownerShare": {
+      "$numberInt": "2100000"
+    },
+    "roomSnapshot": {
+      "id": "phong-14",
+      "code": "PHONG_14",
+      "name": "Căn hộ Botanical",
+      "type": "Căn hộ",
+      "address": "Đường Võ Văn Ngân, Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh",
+      "propertyId": "b3",
+      "propertyName": "An Phú Home Võ Văn Ngân",
+      "ownerId": "chu-04",
+      "monthlyRent": {
+        "$numberInt": "5500000"
+      },
+      "area": {
+        "$numberInt": "38"
+      },
+      "capacity": {
+        "$numberInt": "3"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794841573407"
+      }
+    },
+    "version": {
+      "$numberInt": "5"
+    },
+    "contractId": "hd-984a7b12-ad14-467d-ade9-07d17b8786ce",
+    "decidedAt": {
+      "$date": {
+        "$numberLong": "1794841573407"
+      }
+    },
+    "decidedBy": "admin",
+    "note": "",
+    "outcome": "SUCCESS"
+  }
+]

@@ -77,9 +77,6 @@ export class ShiftService {
       submit: true,
     });
   }
-  async cancelRequest(id: string) {
-    await this.api.write(`me/shift-assignments/${id}`, {}, 'DELETE');
-  }
   mine() {
     return this.api.state().assignments.filter((a) => a.status !== 'CANCELLED');
   }

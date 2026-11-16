@@ -260,6 +260,6 @@ describe('Employee money workflows through HTTP', () => {
     expect(req.request.body).toEqual({ customerPhone: '0901234567', roomId: 'room-a' });
     expect(req.request.withCredentials).toBe(true);
     req.flush(JSON.stringify({ id: 'customer-a', phone: '0901234567' }));
-    expect((await pending).id).toBe('customer-a');
+    expect((await pending)?.id).toBe('customer-a');
   });
 });

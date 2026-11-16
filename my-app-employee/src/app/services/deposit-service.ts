@@ -43,7 +43,7 @@ export class DepositService {
     data: Pick<
       DepositDossier,
       'roomId' | 'customerName' | 'phone' | 'total' | 'address' | 'duration' | 'startDate'
-    > & { collectedMethod: 'CASH' | 'BANK_TRANSFER'; note?: string },
+    > & { collectedMethod: 'CASH' | 'BANK_TRANSFER'; note?: string; draftId?: string },
     bookingId?: string,
   ) {
     const hold = this.money.holds().find((b) => b.id === bookingId);
@@ -54,11 +54,17 @@ export class DepositService {
       totalRequired: data.total,
       collectedMethod: data.collectedMethod,
       note: data.note?.trim() || undefined,
+      ...(data.draftId ? { draftId: data.draftId } : {}),
       proposedLease: { months: data.duration, startDate: data.startDate },
     };
     const value = await this.money.write<MoneyDeposit>('deposits', body);
-    await this.money.refresh();
     this.money.finishDraft('deposits', body);
+    // A6 has succeeded. A failed list refresh must not invite a second deposit submission.
+    try {
+      await this.money.refresh();
+    } catch {
+      /* MoneyService exposes the refresh error. */
+    }
     return this.fromApi(value);
   }
   list() {

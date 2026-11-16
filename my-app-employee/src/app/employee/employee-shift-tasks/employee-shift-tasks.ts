@@ -1,4 +1,5 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { firstValueFrom, map, timer } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { AttendanceService } from '../../services/attendance-service';
@@ -46,25 +47,40 @@ export class EmployeeShiftTasksComponent {
   ngOnInit() {
     void this.reload();
   }
+  constructor() {
+    timer(10000, 10000)
+      .pipe(takeUntilDestroyed())
+      .subscribe(() => {
+        if (
+          !this.busy &&
+          !this.tasksLoading() &&
+          !this.shifts.api.loading() &&
+          this.allTasks().some(
+            (task) =>
+              task.mine?.current && task.mine.personalStatus === 'DONE' && task.status !== 'DONE',
+          )
+        ) {
+          void this.reload();
+        }
+      });
+  }
   async reload(refresh = false) {
     if (this.busy || this.tasksLoading()) return;
     this.tasksLoading.set(true);
     try {
       await this.shifts.api.loadTasks(this.id);
       if (refresh) await this.shifts.api.refresh();
-      this.drafts = {};
     } finally {
       this.tasksLoading.set(false);
     }
   }
-  async toggle(taskId: string) {
-    const task = this.tasks.list(this.id).find((item) => item.id === taskId);
-    if (!task || task.kind === 'VIEWING' || !this.canEdit(task)) return;
-    await this.perform(() => this.tasks.toggleRequest(taskId, this.id));
-  }
   canEdit(task: Task) {
     return (
-      task.status !== 'PENDING_CONFIRM' && task.editable === true && task.mine?.current === true
+      task.status !== 'PENDING_CONFIRM' &&
+      task.status !== 'DONE' &&
+      task.mine?.personalStatus !== 'DONE' &&
+      task.editable === true &&
+      task.mine?.current === true
     );
   }
   canConfirm(task: Task) {
@@ -100,11 +116,16 @@ export class EmployeeShiftTasksComponent {
         TODO: 'Đã giao',
         IN_PROGRESS: 'Đã giao',
         PENDING_CONFIRM: 'Chờ xác nhận',
-        DONE: 'Hoàn thành',
+        DONE: 'Đã Xác nhận',
         WAITING_ADMIN: 'Chờ giao lại',
         CANCELLED: 'Đã hủy',
       }[status] || 'Chưa xác định'
     );
+  }
+  completionStatus(task: Task) {
+    return task.status !== 'DONE' && task.mine?.personalStatus === 'DONE'
+      ? 'Chờ xác nhận'
+      : this.taskStatus(task.status);
   }
   async confirmViewing(task: Task) {
     if (!this.canConfirm(task) || !task.viewing) return;
@@ -113,28 +134,22 @@ export class EmployeeShiftTasksComponent {
       await this.shifts.api.refresh();
     }, 'Đã xác nhận lịch với khách.');
   }
-  async saveRoom(task: Task, room: ApiViewingRoom) {
-    if (!this.canRecord(task)) return;
-    const draft = this.draft(room);
-    if (draft.note.length > 1000) {
+  async completeTask(task: Task) {
+    if (this.busy || !this.canEdit(task)) return;
+    if (task.kind === 'VIEWING' && !this.canRecord(task)) return;
+    const details =
+      task.kind === 'VIEWING'
+        ? task.viewing?.rooms.map((room) => ({ detailId: room.detailId, ...this.draft(room) }))
+        : undefined;
+    if (details?.some((room) => room.note.length > 1000)) {
       this.error = 'Ghi chú phòng không quá 1000 ký tự. Vui lòng rút ngắn ghi chú.';
       return;
     }
     await this.perform(async () => {
-      await firstValueFrom(
-        this.viewingApi.updateDetail(room.detailId, draft.viewStatus, draft.note),
-      );
+      await this.tasks.completeRequest(task.id, this.id, details);
       await this.shifts.api.refresh();
-    }, 'Đã lưu kết quả xem phòng.');
-  }
-  async completeViewing(task: Task) {
-    if (this.busy || !this.canRecord(task) || !task.viewing) return;
-    if (!window.confirm('Hoàn tất dẫn khách xem phòng? Công việc sẽ được đánh dấu hoàn thành.'))
-      return;
-    await this.perform(async () => {
-      await firstValueFrom(this.viewingApi.updateStatus(task.viewing!.id, 'DA_XEM'));
-      await this.shifts.api.refresh();
-    }, 'Đã hoàn tất dẫn xem.');
+      for (const room of details || []) delete this.drafts[room.detailId];
+    }, 'Đã báo hoàn thành công việc. Chờ admin xác nhận sau khi tất cả nhân viên hoàn thành.');
   }
   private async perform(action: () => Promise<unknown>, message = 'Đã cập nhật công việc.') {
     if (this.busy || this.tasksLoading() || this.shifts.api.loading()) return;
@@ -143,7 +158,6 @@ export class EmployeeShiftTasksComponent {
     this.success.set('');
     try {
       await action();
-      this.drafts = {};
       if (!this.shifts.api.error()) this.success.set(message);
     } catch (e) {
       this.error = (e as Error).message;

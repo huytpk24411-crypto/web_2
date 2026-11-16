@@ -73,20 +73,17 @@
   border-radius: var(--radius);
   font-size: 13px;
 }
-.task-row label {
-  display: flex;
-  gap: 13px;
-  align-items: flex-start;
+.task-row > div {
+  display: grid;
+  gap: 8px;
   flex: 1;
-  cursor: pointer;
+  min-width: 0;
 }
-.task-row input {
-  accent-color: var(--green);
-  margin-top: 4px;
+.task-row > div > .emp-btn {
+  justify-self: start;
 }
-.task-row input:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 3px;
+.task-row p {
+  margin: 0;
 }
 .task-row small {
   display: block;

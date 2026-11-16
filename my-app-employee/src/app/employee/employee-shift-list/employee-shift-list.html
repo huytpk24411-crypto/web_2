@@ -7,8 +7,8 @@
     <app-icon name="plus" [size]="16" /> Đăng ký ca
   </a>
 </div>
-<p class="error" role="alert" *ngIf="error || shifts.api.error()">
-  {{ error || shifts.api.error() }}
+<p class="error" role="alert" *ngIf="shifts.api.error()">
+  {{ shifts.api.error() }}
 </p>
 <button
   class="emp-btn no-print"
@@ -110,9 +110,6 @@
                     [routerLink]="['/employee/shifts', item.id, 'tasks']"
                     >Công việc ({{ item.taskCount ?? 0 }})</a
                   >
-                  <button class="emp-btn" type="button" [disabled]="busy" (click)="cancel(item.id)">
-                    Hủy ca
-                  </button>
                 </ng-container>
                 <ng-container *ngSwitchCase="'IN_PROGRESS'">
                   <a

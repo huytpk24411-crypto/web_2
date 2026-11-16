@@ -1,4 +1,10 @@
-﻿<div class="container">
+﻿<app-customer-hold-policy
+  *ngIf="policyOpen()"
+  [roomName]="room?.name || ''"
+  (accepted)="acceptPolicy()"
+  (declined)="declinePolicy()"
+/>
+<div class="container" *ngIf="policyAccepted()">
   <div class="breadcrumb">
     <a routerLink="/">Trang chủ</a> › <a routerLink="/rooms">Tất cả phòng</a> › Giữ chỗ
   </div>
@@ -11,6 +17,14 @@
   </div>
   <p class="error" *ngIf="error()" role="alert">{{ error() }}</p>
   <p *ngIf="booking.loading()" role="status">Đang tải giữ chỗ…</p>
+  <p
+    class="notice warning"
+    role="status"
+    *ngIf="room && !booking.loading() && !pendingId() && !canCreate"
+  >
+    Phòng hiện không thể tạo thêm giữ chỗ.
+    <a [routerLink]="['/rooms', room.id]">Xem trạng thái phòng</a>
+  </p>
   <ng-container *ngIf="room as r; else chooseRoom">
     <div class="notice">
       <app-icon name="shield" [size]="16" /> <strong>Giữ chỗ độc quyền 48 giờ</strong>
@@ -73,16 +87,16 @@
                 ><input formControlName="note" placeholder="Nhu cầu, thời gian liên hệ..."
               /></label>
             </div>
-            <label class="check"
-              ><input type="checkbox" formControlName="terms" /><span
-                >Tôi đã đọc thông tin và đồng ý điều kiện giữ chỗ trong 48 giờ.</span
-              ></label
-            >
-            <app-form-error [control]="form.controls.terms" />
+            <p class="small">
+              Bạn đã đồng ý chính sách giữ chỗ.
+              <button class="policy-link" type="button" (click)="policyOpen.set(true)">
+                Xem lại chính sách
+              </button>
+            </p>
             <button
               class="btn primary full next-button"
               type="submit"
-              [disabled]="busy() || booking.loading()"
+              [disabled]="busy() || booking.loading() || !canCreate"
             >
               {{ busy() ? 'Đang tạo yêu cầu…' : 'Tiếp tục thanh toán' }}
             </button>
@@ -190,6 +204,7 @@
     </div></ng-template
   >
   <section class="panel" *ngIf="holds.length">
+    <a class="btn sm" routerLink="/bookings">Xem tất cả phòng đã giữ</a>
     <h3>Yêu cầu giữ chỗ của bạn</h3>
     <div *ngFor="let hold of holds" class="history-row">
       <div>

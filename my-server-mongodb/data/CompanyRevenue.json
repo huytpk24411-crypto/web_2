@@ -1,0 +1,101 @@
+[
+  {
+    "_id": {
+      "$oid": "6838915bdc42cb63fb09c0e4"
+    },
+    "id": "dtct-08",
+    "periodId": "luong-08",
+    "revenue": {
+      "$numberInt": "23800000"
+    },
+    "transactionCount": {
+      "$numberInt": "9"
+    },
+    "totalCommission": {
+      "$numberInt": "6020000"
+    },
+    "status": "CLOSED",
+    "closedAt": {
+      "$date": {
+        "$numberLong": "1788231600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2ae80acbd11946c27cb9a501"
+    },
+    "id": "dtct-09",
+    "periodId": "luong-09",
+    "revenue": {
+      "$numberInt": "18950000"
+    },
+    "transactionCount": {
+      "$numberInt": "8"
+    },
+    "totalCommission": {
+      "$numberInt": "3790000"
+    },
+    "status": "CLOSED",
+    "closedAt": {
+      "$date": {
+        "$numberLong": "1790823600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "55f894ab8d2d3caa745e2365"
+    },
+    "id": "dtct-10",
+    "periodId": "luong-10",
+    "revenue": {
+      "$numberInt": "17550000"
+    },
+    "transactionCount": {
+      "$numberInt": "7"
+    },
+    "totalCommission": {
+      "$numberInt": "3510000"
+    },
+    "status": "CLOSED",
+    "closedAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7736b2f357d9daa261fb0b5d"
+    },
+    "id": "dtct-11",
+    "periodId": "luong-11",
+    "revenue": {
+      "$numberInt": "5100000"
+    },
+    "transactionCount": {
+      "$numberInt": "2"
+    },
+    "totalCommission": {
+      "$numberInt": "0"
+    },
+    "status": "DRAFT",
+    "closedAt": null,
+    "forfeitedHoldCount": {
+      "$numberInt": "0"
+    },
+    "forfeitedHoldRevenue": {
+      "$numberInt": "0"
+    },
+    "latePaidCount": {
+      "$numberInt": "0"
+    },
+    "latePaidRevenue": {
+      "$numberInt": "0"
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  }
+]

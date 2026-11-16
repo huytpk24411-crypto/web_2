@@ -1,3 +1,4 @@
+import { BackNavigationComponent } from './back-navigation/back-navigation';
 import { CommonModule, registerLocaleData } from '@angular/common';
 import localeVi from '@angular/common/locales/vi';
 import { NgModule } from '@angular/core';
@@ -21,6 +22,7 @@ import { RoomTypePipe, PolicyTypePipe, PolicyLevelPipe } from './display-pipes';
 registerLocaleData(localeVi);
 @NgModule({
   declarations: [
+    BackNavigationComponent,
     RoomTypePipe,
     PolicyTypePipe,
     PolicyLevelPipe,
@@ -41,6 +43,7 @@ registerLocaleData(localeVi);
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [
+    BackNavigationComponent,
     RoomTypePipe,
     PolicyTypePipe,
     PolicyLevelPipe,

@@ -746,6 +746,30 @@ describe('SHIFT-06 schedule matrix, task wizard and registration periods', () =>
     expect(page.toast).toBe('Đã trả lại công việc và giao cho Nhân viên thứ hai.');
     expect(root().querySelector('.task-rejection')).toBeNull();
   });
+  it('requires a new viewing time and exactly one employee when rejecting a viewing task', async () => {
+    data.Task = [{ ...makePendingTask(), kind: 'VIEWING' }];
+    await openTasks();
+    page.openTaskRejection(data.Task[0]);
+    page.rejectReason.set('Cần dẫn khách xem lại');
+    page.changeRejectShift('afternoon');
+    page.setRejectAssignee('target-chosen', true);
+    expect(page.canRejectAndAssign).toBe(false);
+    page.rejectViewingTime.set('13:30');
+    expect(page.canRejectAndAssign).toBe(true);
+    await page.submitTaskRejection(false);
+    http.expectNone('/data/admin/tasks/task/reject');
+    const submit = page.submitTaskRejection(true);
+    const request = http.expectOne('/data/admin/tasks/task/reject');
+    expect(request.request.body).toEqual({
+      reason: 'Cần dẫn khách xem lại',
+      shiftId: 'afternoon',
+      assigneeAssignmentIds: ['target-chosen'],
+      viewingStartTime: '13:30',
+    });
+    data.Task = [makeTask({ pendingConfirm: null })];
+    request.flush(data.Task[0]);
+    await finishWrite(submit, true);
+  });
   it('offers only future staffed active shifts and resets recipients when changing shifts', async () => {
     data.Shift.push(
       { ...data.Shift[0], id: 'empty' },

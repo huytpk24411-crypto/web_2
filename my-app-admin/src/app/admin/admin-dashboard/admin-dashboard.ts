@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { AdminDashboardAPI } from './admin-dashboard-api';
+import { AdminDashboardAPI } from '../../services/admin-dashboard-apiservice';
 import { downloadFile, csv } from '../admin-finance-export';
 
 @Component({

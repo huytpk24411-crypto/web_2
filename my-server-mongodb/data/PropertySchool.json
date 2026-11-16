@@ -1,0 +1,1115 @@
+[
+  {
+    "_id": {
+      "$oid": "77467aecb49eb9918056cf83"
+    },
+    "id": "b1-fpt",
+    "propertyId": "b1",
+    "schoolId": "fpt",
+    "distanceKm": {
+      "$numberDouble": "4.6"
+    },
+    "distanceM": {
+      "$numberInt": "4600"
+    },
+    "travelMinutes": {
+      "$numberInt": "11"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "2efa41a53126b9d06924d279"
+    },
+    "id": "b1-hcmiu",
+    "propertyId": "b1",
+    "schoolId": "hcmiu",
+    "distanceKm": {
+      "$numberDouble": "0.8"
+    },
+    "distanceM": {
+      "$numberInt": "800"
+    },
+    "travelMinutes": {
+      "$numberDouble": "1.9"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "012bf8ca881b5a2e9bdebf0f"
+    },
+    "id": "b1-hcmuaf",
+    "propertyId": "b1",
+    "schoolId": "hcmuaf",
+    "distanceKm": {
+      "$numberDouble": "1.7"
+    },
+    "distanceM": {
+      "$numberInt": "1700"
+    },
+    "travelMinutes": {
+      "$numberDouble": "4.1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "9d283a350b15d59ca391a606"
+    },
+    "id": "b1-hcmus",
+    "propertyId": "b1",
+    "schoolId": "hcmus",
+    "distanceKm": {
+      "$numberDouble": "0.9"
+    },
+    "distanceM": {
+      "$numberInt": "900"
+    },
+    "travelMinutes": {
+      "$numberDouble": "2.2"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "4c76bf1badc0a236d95efdea"
+    },
+    "id": "b1-hcmussh",
+    "propertyId": "b1",
+    "schoolId": "hcmussh",
+    "distanceKm": {
+      "$numberDouble": "0.3"
+    },
+    "distanceM": {
+      "$numberInt": "300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "0.7"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "de012e881a6ce2ad5c557740"
+    },
+    "id": "b1-hcmut",
+    "propertyId": "b1",
+    "schoolId": "hcmut",
+    "distanceKm": {
+      "$numberDouble": "1.3"
+    },
+    "distanceM": {
+      "$numberInt": "1300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "3.1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "c38359c19478361abf56a90b"
+    },
+    "id": "b1-hcmute",
+    "propertyId": "b1",
+    "schoolId": "hcmute",
+    "distanceKm": {
+      "$numberDouble": "5.2"
+    },
+    "distanceM": {
+      "$numberInt": "5200"
+    },
+    "travelMinutes": {
+      "$numberDouble": "12.5"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "56834d0485d15268b28dec10"
+    },
+    "id": "b1-hub",
+    "propertyId": "b1",
+    "schoolId": "hub",
+    "distanceKm": {
+      "$numberDouble": "6.2"
+    },
+    "distanceM": {
+      "$numberInt": "6200"
+    },
+    "travelMinutes": {
+      "$numberDouble": "14.9"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "425222d2552b766be9568566"
+    },
+    "id": "b1-uel",
+    "propertyId": "b1",
+    "schoolId": "uel",
+    "distanceKm": {
+      "$numberDouble": "3.4"
+    },
+    "distanceM": {
+      "$numberInt": "3400"
+    },
+    "travelMinutes": {
+      "$numberDouble": "8.2"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "ac6d0be2d0a6ba4544944d3a"
+    },
+    "id": "b1-uit",
+    "propertyId": "b1",
+    "schoolId": "uit",
+    "distanceKm": {
+      "$numberDouble": "0.4"
+    },
+    "distanceM": {
+      "$numberInt": "400"
+    },
+    "travelMinutes": {
+      "$numberInt": "1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "310bdd111ffb26e9dd243ba1"
+    },
+    "id": "b1-ush",
+    "propertyId": "b1",
+    "schoolId": "ush",
+    "distanceKm": {
+      "$numberDouble": "0.9"
+    },
+    "distanceM": {
+      "$numberInt": "900"
+    },
+    "travelMinutes": {
+      "$numberDouble": "2.2"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "e5c0fa6dce9a0f9402bdc754"
+    },
+    "id": "b2-fpt",
+    "propertyId": "b2",
+    "schoolId": "fpt",
+    "distanceKm": {
+      "$numberDouble": "5.8"
+    },
+    "distanceM": {
+      "$numberInt": "5800"
+    },
+    "travelMinutes": {
+      "$numberDouble": "13.9"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "e9ebec7f72d5e464212f56f1"
+    },
+    "id": "b2-hcmiu",
+    "propertyId": "b2",
+    "schoolId": "hcmiu",
+    "distanceKm": {
+      "$numberDouble": "0.7"
+    },
+    "distanceM": {
+      "$numberInt": "700"
+    },
+    "travelMinutes": {
+      "$numberDouble": "1.7"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "ff12a37239f212c507e3fcba"
+    },
+    "id": "b2-hcmuaf",
+    "propertyId": "b2",
+    "schoolId": "hcmuaf",
+    "distanceKm": {
+      "$numberDouble": "1.4"
+    },
+    "distanceM": {
+      "$numberInt": "1400"
+    },
+    "travelMinutes": {
+      "$numberDouble": "3.4"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "f1cf68615acd4f5d4358cb11"
+    },
+    "id": "b2-hcmus",
+    "propertyId": "b2",
+    "schoolId": "hcmus",
+    "distanceKm": {
+      "$numberDouble": "0.4"
+    },
+    "distanceM": {
+      "$numberInt": "400"
+    },
+    "travelMinutes": {
+      "$numberInt": "1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "86d38087809838db328db8ac"
+    },
+    "id": "b2-hcmussh",
+    "propertyId": "b2",
+    "schoolId": "hcmussh",
+    "distanceKm": {
+      "$numberDouble": "1.3"
+    },
+    "distanceM": {
+      "$numberInt": "1300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "3.1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "bbec10ee41a91952f3c4901d"
+    },
+    "id": "b2-hcmut",
+    "propertyId": "b2",
+    "schoolId": "hcmut",
+    "distanceKm": {
+      "$numberDouble": "1.3"
+    },
+    "distanceM": {
+      "$numberInt": "1300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "3.1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "d1f1aed333e8777822323cb0"
+    },
+    "id": "b2-hcmute",
+    "propertyId": "b2",
+    "schoolId": "hcmute",
+    "distanceKm": {
+      "$numberDouble": "5.3"
+    },
+    "distanceM": {
+      "$numberInt": "5300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "12.7"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "1f2affa773ea0ae9835eff04"
+    },
+    "id": "b2-hub",
+    "propertyId": "b2",
+    "schoolId": "hub",
+    "distanceKm": {
+      "$numberInt": "6"
+    },
+    "distanceM": {
+      "$numberInt": "6000"
+    },
+    "travelMinutes": {
+      "$numberDouble": "14.4"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "0f0a67f5e40bff554b21b621"
+    },
+    "id": "b2-uel",
+    "propertyId": "b2",
+    "schoolId": "uel",
+    "distanceKm": {
+      "$numberDouble": "2.9"
+    },
+    "distanceM": {
+      "$numberInt": "2900"
+    },
+    "travelMinutes": {
+      "$numberInt": "7"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "cad91e82ee0779a5c5087554"
+    },
+    "id": "b2-uit",
+    "propertyId": "b2",
+    "schoolId": "uit",
+    "distanceKm": {
+      "$numberDouble": "1.7"
+    },
+    "distanceM": {
+      "$numberInt": "1700"
+    },
+    "travelMinutes": {
+      "$numberDouble": "4.1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "d0f88ce60f5f0a3ecf45ea13"
+    },
+    "id": "b2-ush",
+    "propertyId": "b2",
+    "schoolId": "ush",
+    "distanceKm": {
+      "$numberInt": "1"
+    },
+    "distanceM": {
+      "$numberInt": "1000"
+    },
+    "travelMinutes": {
+      "$numberDouble": "2.4"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "a31b20f84bd4074fa92ea8aa"
+    },
+    "id": "b3-fpt",
+    "propertyId": "b3",
+    "schoolId": "fpt",
+    "distanceKm": {
+      "$numberInt": "6"
+    },
+    "distanceM": {
+      "$numberInt": "6000"
+    },
+    "travelMinutes": {
+      "$numberDouble": "14.4"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "a019375b79c28acaa62009bc"
+    },
+    "id": "b3-hcmiu",
+    "propertyId": "b3",
+    "schoolId": "hcmiu",
+    "distanceKm": {
+      "$numberInt": "6"
+    },
+    "distanceM": {
+      "$numberInt": "6000"
+    },
+    "travelMinutes": {
+      "$numberDouble": "14.4"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "90e50d321360a7050d3e2451"
+    },
+    "id": "b3-hcmuaf",
+    "propertyId": "b3",
+    "schoolId": "hcmuaf",
+    "distanceKm": {
+      "$numberDouble": "4.3"
+    },
+    "distanceM": {
+      "$numberInt": "4300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "10.3"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "3736fe2c8cc24a1ddea8cb8a"
+    },
+    "id": "b3-hcmus",
+    "propertyId": "b3",
+    "schoolId": "hcmus",
+    "distanceKm": {
+      "$numberDouble": "5.4"
+    },
+    "distanceM": {
+      "$numberInt": "5400"
+    },
+    "travelMinutes": {
+      "$numberInt": "13"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "51c0bf7e1bdd7918b6faa456"
+    },
+    "id": "b3-hcmussh",
+    "propertyId": "b3",
+    "schoolId": "hcmussh",
+    "distanceKm": {
+      "$numberDouble": "5.3"
+    },
+    "distanceM": {
+      "$numberInt": "5300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "12.7"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "278735f4b5d1cbf138de9d63"
+    },
+    "id": "b3-hcmut",
+    "propertyId": "b3",
+    "schoolId": "hcmut",
+    "distanceKm": {
+      "$numberDouble": "6.8"
+    },
+    "distanceM": {
+      "$numberInt": "6800"
+    },
+    "travelMinutes": {
+      "$numberDouble": "16.3"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "4ac36ab94d29b81949881762"
+    },
+    "id": "b3-hcmute",
+    "propertyId": "b3",
+    "schoolId": "hcmute",
+    "distanceKm": {
+      "$numberDouble": "0.4"
+    },
+    "distanceM": {
+      "$numberInt": "400"
+    },
+    "travelMinutes": {
+      "$numberInt": "1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "cb35ee242484a85266e36ee7"
+    },
+    "id": "b3-hub",
+    "propertyId": "b3",
+    "schoolId": "hub",
+    "distanceKm": {
+      "$numberDouble": "1.5"
+    },
+    "distanceM": {
+      "$numberInt": "1500"
+    },
+    "travelMinutes": {
+      "$numberDouble": "3.6"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "9a06d7873a6325f1ea52db31"
+    },
+    "id": "b3-uel",
+    "propertyId": "b3",
+    "schoolId": "uel",
+    "distanceKm": {
+      "$numberDouble": "3.1"
+    },
+    "distanceM": {
+      "$numberInt": "3100"
+    },
+    "travelMinutes": {
+      "$numberDouble": "7.4"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "2a463e1db94bbffe339f5656"
+    },
+    "id": "b3-ufm",
+    "propertyId": "b3",
+    "schoolId": "ufm",
+    "distanceKm": {
+      "$numberDouble": "7.7"
+    },
+    "distanceM": {
+      "$numberInt": "7700"
+    },
+    "travelMinutes": {
+      "$numberDouble": "18.5"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "ba48dba9f5fec2a710fc2409"
+    },
+    "id": "b3-uit",
+    "propertyId": "b3",
+    "schoolId": "uit",
+    "distanceKm": {
+      "$numberDouble": "5.6"
+    },
+    "distanceM": {
+      "$numberInt": "5600"
+    },
+    "travelMinutes": {
+      "$numberDouble": "13.4"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "7cffc0abbc6c09a77661736d"
+    },
+    "id": "b3-ush",
+    "propertyId": "b3",
+    "schoolId": "ush",
+    "distanceKm": {
+      "$numberDouble": "4.9"
+    },
+    "distanceM": {
+      "$numberInt": "4900"
+    },
+    "travelMinutes": {
+      "$numberDouble": "11.8"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "578a5819e4ef9bf67d6f3af5"
+    },
+    "id": "b4-fpt",
+    "propertyId": "b4",
+    "schoolId": "fpt",
+    "distanceKm": {
+      "$numberInt": "5"
+    },
+    "distanceM": {
+      "$numberInt": "5000"
+    },
+    "travelMinutes": {
+      "$numberInt": "12"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "5b539c7f600df88d6561e386"
+    },
+    "id": "b4-hcmiu",
+    "propertyId": "b4",
+    "schoolId": "hcmiu",
+    "distanceKm": {
+      "$numberDouble": "2.2"
+    },
+    "distanceM": {
+      "$numberInt": "2200"
+    },
+    "travelMinutes": {
+      "$numberDouble": "5.3"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "a33153c335ae236bb4a80f60"
+    },
+    "id": "b4-hcmuaf",
+    "propertyId": "b4",
+    "schoolId": "hcmuaf",
+    "distanceKm": {
+      "$numberDouble": "0.5"
+    },
+    "distanceM": {
+      "$numberInt": "500"
+    },
+    "travelMinutes": {
+      "$numberDouble": "1.2"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "b0b7a8391715ac9ba0328eb1"
+    },
+    "id": "b4-hcmus",
+    "propertyId": "b4",
+    "schoolId": "hcmus",
+    "distanceKm": {
+      "$numberDouble": "1.6"
+    },
+    "distanceM": {
+      "$numberInt": "1600"
+    },
+    "travelMinutes": {
+      "$numberDouble": "3.8"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "d446308fb200cbf20d277db5"
+    },
+    "id": "b4-hcmussh",
+    "propertyId": "b4",
+    "schoolId": "hcmussh",
+    "distanceKm": {
+      "$numberDouble": "1.7"
+    },
+    "distanceM": {
+      "$numberInt": "1700"
+    },
+    "travelMinutes": {
+      "$numberDouble": "4.1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "d8f055b2fd1a027b92ba6694"
+    },
+    "id": "b4-hcmut",
+    "propertyId": "b4",
+    "schoolId": "hcmut",
+    "distanceKm": {
+      "$numberDouble": "2.9"
+    },
+    "distanceM": {
+      "$numberInt": "2900"
+    },
+    "travelMinutes": {
+      "$numberInt": "7"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "b3162cf2f27ab8cb7a1a7693"
+    },
+    "id": "b4-hcmute",
+    "propertyId": "b4",
+    "schoolId": "hcmute",
+    "distanceKm": {
+      "$numberDouble": "3.4"
+    },
+    "distanceM": {
+      "$numberInt": "3400"
+    },
+    "travelMinutes": {
+      "$numberDouble": "8.2"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "79e3bd05e0011c9c423aaa22"
+    },
+    "id": "b4-hub",
+    "propertyId": "b4",
+    "schoolId": "hub",
+    "distanceKm": {
+      "$numberDouble": "4.3"
+    },
+    "distanceM": {
+      "$numberInt": "4300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "10.3"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "9c0c0ed56561e274bfc036ec"
+    },
+    "id": "b4-uel",
+    "propertyId": "b4",
+    "schoolId": "uel",
+    "distanceKm": {
+      "$numberDouble": "1.5"
+    },
+    "distanceM": {
+      "$numberInt": "1500"
+    },
+    "travelMinutes": {
+      "$numberDouble": "3.6"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "e9624a18eeb1d60001402a3e"
+    },
+    "id": "b4-uit",
+    "propertyId": "b4",
+    "schoolId": "uit",
+    "distanceKm": {
+      "$numberDouble": "2.1"
+    },
+    "distanceM": {
+      "$numberInt": "2100"
+    },
+    "travelMinutes": {
+      "$numberInt": "5"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "f8761057bf1c3bd7b40df3de"
+    },
+    "id": "b4-ush",
+    "propertyId": "b4",
+    "schoolId": "ush",
+    "distanceKm": {
+      "$numberDouble": "1.1"
+    },
+    "distanceM": {
+      "$numberInt": "1100"
+    },
+    "travelMinutes": {
+      "$numberDouble": "2.6"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "f09b05d4834b49d8c13ab2a4"
+    },
+    "id": "b5-fpt",
+    "propertyId": "b5",
+    "schoolId": "fpt",
+    "distanceKm": {
+      "$numberDouble": "1.3"
+    },
+    "distanceM": {
+      "$numberInt": "1300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "3.1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "d722e4fdf307ef5030bb37bb"
+    },
+    "id": "b5-hcmiu",
+    "propertyId": "b5",
+    "schoolId": "hcmiu",
+    "distanceKm": {
+      "$numberDouble": "4.8"
+    },
+    "distanceM": {
+      "$numberInt": "4800"
+    },
+    "travelMinutes": {
+      "$numberDouble": "11.5"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "05059534c0f8170ce611998e"
+    },
+    "id": "b5-hcmuaf",
+    "propertyId": "b5",
+    "schoolId": "hcmuaf",
+    "distanceKm": {
+      "$numberDouble": "4.4"
+    },
+    "distanceM": {
+      "$numberInt": "4400"
+    },
+    "travelMinutes": {
+      "$numberDouble": "10.6"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "54297911b3bd9c3be8b19322"
+    },
+    "id": "b5-hcmus",
+    "propertyId": "b5",
+    "schoolId": "hcmus",
+    "distanceKm": {
+      "$numberDouble": "4.6"
+    },
+    "distanceM": {
+      "$numberInt": "4600"
+    },
+    "travelMinutes": {
+      "$numberInt": "11"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "431895e5e0298c60e17b0dc7"
+    },
+    "id": "b5-hcmussh",
+    "propertyId": "b5",
+    "schoolId": "hcmussh",
+    "distanceKm": {
+      "$numberDouble": "3.8"
+    },
+    "distanceM": {
+      "$numberInt": "3800"
+    },
+    "travelMinutes": {
+      "$numberDouble": "9.1"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "0f76538b6981106900ebde7f"
+    },
+    "id": "b5-hcmut",
+    "propertyId": "b5",
+    "schoolId": "hcmut",
+    "distanceKm": {
+      "$numberDouble": "5.2"
+    },
+    "distanceM": {
+      "$numberInt": "5200"
+    },
+    "travelMinutes": {
+      "$numberDouble": "12.5"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "fd946af1f0d0b91249389941"
+    },
+    "id": "b5-hcmute",
+    "propertyId": "b5",
+    "schoolId": "hcmute",
+    "distanceKm": {
+      "$numberDouble": "4.4"
+    },
+    "distanceM": {
+      "$numberInt": "4400"
+    },
+    "travelMinutes": {
+      "$numberDouble": "10.6"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "00cefefb90756108363a207e"
+    },
+    "id": "b5-hub",
+    "propertyId": "b5",
+    "schoolId": "hub",
+    "distanceKm": {
+      "$numberDouble": "6.1"
+    },
+    "distanceM": {
+      "$numberInt": "6100"
+    },
+    "travelMinutes": {
+      "$numberDouble": "14.6"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "58c110167dea41824e4edb87"
+    },
+    "id": "b5-uel",
+    "propertyId": "b5",
+    "schoolId": "uel",
+    "distanceKm": {
+      "$numberInt": "5"
+    },
+    "distanceM": {
+      "$numberInt": "5000"
+    },
+    "travelMinutes": {
+      "$numberInt": "12"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "0390859ff911b42d10ce448b"
+    },
+    "id": "b5-ufm",
+    "propertyId": "b5",
+    "schoolId": "ufm",
+    "distanceKm": {
+      "$numberDouble": "4.5"
+    },
+    "distanceM": {
+      "$numberInt": "4500"
+    },
+    "travelMinutes": {
+      "$numberDouble": "10.8"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "ae0d9a6cc73cb8a24330c602"
+    },
+    "id": "b5-uit",
+    "propertyId": "b5",
+    "schoolId": "uit",
+    "distanceKm": {
+      "$numberDouble": "3.7"
+    },
+    "distanceM": {
+      "$numberInt": "3700"
+    },
+    "travelMinutes": {
+      "$numberDouble": "8.9"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "6ba607a49829bdb481b7fc5c"
+    },
+    "id": "b5-ush",
+    "propertyId": "b5",
+    "schoolId": "ush",
+    "distanceKm": {
+      "$numberDouble": "4.1"
+    },
+    "distanceM": {
+      "$numberInt": "4100"
+    },
+    "travelMinutes": {
+      "$numberDouble": "9.8"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "3bef30b016b9eabb95cf30e8"
+    },
+    "id": "b7-uth",
+    "propertyId": "b7",
+    "schoolId": "uth",
+    "distanceKm": {
+      "$numberDouble": "0.3"
+    },
+    "distanceM": {
+      "$numberInt": "300"
+    },
+    "travelMinutes": {
+      "$numberDouble": "0.7"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+  },
+  {
+    "_id": {
+      "$oid": "6af85eceada168a7c34c0d99"
+    },
+    "id": "b1-ufm",
+    "propertyId": "b1",
+    "schoolId": "ufm",
+    "distanceKm": {
+      "$numberDouble": "8.4"
+    },
+    "distanceM": {
+      "$numberInt": "8400"
+    },
+    "travelMinutes": {
+      "$numberDouble": "20.2"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794662094484"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6af85eceada168a7c34c0d9a"
+    },
+    "id": "b4-ufm",
+    "propertyId": "b4",
+    "schoolId": "ufm",
+    "distanceKm": {
+      "$numberDouble": "8.4"
+    },
+    "distanceM": {
+      "$numberInt": "8400"
+    },
+    "travelMinutes": {
+      "$numberDouble": "20.2"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794662094484"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6af85eceada168a7c34c0d9b"
+    },
+    "id": "b6-uth",
+    "propertyId": "b6",
+    "schoolId": "uth",
+    "distanceKm": {
+      "$numberDouble": "9.1"
+    },
+    "distanceM": {
+      "$numberInt": "9100"
+    },
+    "travelMinutes": {
+      "$numberDouble": "21.8"
+    },
+    "source": "haversine × 1.3; xe máy 25 km/h; ước lượng",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794662094484"
+      }
+    }
+  }
+]

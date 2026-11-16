@@ -69,6 +69,12 @@ export async function flushEmployeeReads(
     '/data/brokerage-transactions': [],
     '/data/me/shift-assignments/record-a/tasks': [],
     '/notifications': [],
+    '/data/company': {
+      name: 'Công ty CP Bất Động Sản Houzz Uni',
+      taxCode: '3703361326',
+      address: '669 Do Muoi, Quarter 3, Linh Xuan Ward, Ho Chi Minh City, Vietnam.',
+      hotline: '19001080',
+    },
     '/data/me/employee': {
       id: 'employee-a',
       position: 'Tư vấn',

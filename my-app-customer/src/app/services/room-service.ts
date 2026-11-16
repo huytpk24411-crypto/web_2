@@ -38,14 +38,16 @@ export class RoomService {
   private catalogReady?: Promise<void>;
   readonly publishedRooms = computed(() =>
     this.catalog()
-      .filter((r) => r.publicationStatus === 'PUBLISHED' && r.status === 'AVAILABLE')
+      .filter(
+        (r) => r.publicationStatus === 'PUBLISHED' && ['AVAILABLE', 'HELD'].includes(r.status),
+      )
       .map((room) =>
         room.images.length
           ? room
           : { ...room, images: ['/assets/placeholders/room-placeholder.svg'] },
       ),
   );
-  readonly rooms = computed(() => this.publishedRooms().filter((r) => r.status === 'AVAILABLE'));
+  readonly rooms = computed(() => this.publishedRooms());
 
   initializeCatalog(
     roomApi: RoomAPIService,
@@ -125,7 +127,7 @@ export class RoomService {
   }
   async getFromApi(id: string): Promise<Room> {
     const room = await firstValueFrom(this.roomApi.getRoom(id));
-    if (room.status !== 'AVAILABLE' || room.publicationStatus !== 'PUBLISHED')
+    if (!['AVAILABLE', 'HELD'].includes(room.status) || room.publicationStatus !== 'PUBLISHED')
       throw new Error('Phòng hiện không còn trống hoặc tin đã ngừng đăng.');
     return room;
   }

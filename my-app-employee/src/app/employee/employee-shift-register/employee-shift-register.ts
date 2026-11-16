@@ -43,19 +43,6 @@ export class EmployeeShiftRegisterComponent {
       .mine()
       .filter((a) => this.shifts.registrationShifts.some((s) => s.id === a.shiftId)).length;
   }
-  async cancel(shiftId: string) {
-    const assignment = this.shifts.mine().find((a) => a.shiftId === shiftId);
-    if (!assignment || this.busy) return;
-    this.busy = true;
-    try {
-      await this.shifts.cancelRequest(assignment.id);
-      this.toast = 'Đã hủy ca.';
-    } catch (e) {
-      this.error = (e as Error).message;
-    } finally {
-      this.busy = false;
-    }
-  }
   days = Array.from({ length: 7 }, (_, i) => i);
   dayNames = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật'];
   get clock() {

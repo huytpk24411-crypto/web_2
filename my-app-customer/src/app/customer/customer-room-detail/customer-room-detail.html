@@ -11,7 +11,6 @@
       <app-icon name="heart" [size]="14" /> {{ favorites.has(r.id) ? 'Đã yêu thích' : 'Yêu thích' }}
     </button>
   </div>
-  <a class="btn back-link" [routerLink]="router.parseUrl(backUrl)">← Quay lại</a>
   <div class="detail-gallery">
     <app-room-gallery [room]="r" />
     <button
@@ -104,18 +103,24 @@
           (click)="go('booking')"
           [disabled]="r.status !== 'AVAILABLE'"
         >
-          <app-icon name="shield" [size]="16" /> GIỮ CHỖ NGAY
+          <app-icon name="shield" [size]="16" />
+          {{ r.status === 'HELD' ? 'PHÒNG ĐANG GIỮ CHỖ' : 'GIỮ CHỖ NGAY' }}
         </button>
-        <button class="btn soft full" (click)="go('viewing')" [disabled]="r.status !== 'AVAILABLE'">
+        <button class="btn soft full" (click)="go('viewing')" [disabled]="!canView(r)">
           <app-icon name="calendar" [size]="16" /> ĐẶT LỊCH XEM PHÒNG
         </button>
         <p class="tip" style="text-align: center">Miễn phí • Lựa chọn nhiều phòng cùng lịch</p>
+        <p class="notice warning" *ngIf="r.status === 'HELD'" role="status">
+          Phòng đang được giữ chỗ.<ng-container *ngIf="canView(r)">
+            Bạn vẫn có thể đặt lịch xem phòng.</ng-container
+          >
+        </p>
         <button
           *ngIf="auth.account()?.role === 'CUSTOMER'"
           class="btn full"
           type="button"
           (click)="addToViewingCart()"
-          [disabled]="r.status !== 'AVAILABLE' || addingToCart()"
+          [disabled]="!canView(r) || addingToCart()"
         >
           {{ addingToCart() ? 'Đang thêm phòng...' : 'Thêm vào danh sách xem' }}
         </button>
@@ -158,6 +163,12 @@
     </div>
   </section>
 </div>
+<app-customer-hold-policy
+  *ngIf="policyOpen()"
+  [roomName]="room?.name || ''"
+  (accepted)="acceptHoldPolicy()"
+  (declined)="policyOpen.set(false)"
+/>
 <div class="empty" *ngIf="loading">Đang tải tin phòng...</div>
 <div *ngIf="loadError()" class="not-found" role="alert">
   <h1>Phòng hiện không còn trống hoặc không thể tải tin</h1>

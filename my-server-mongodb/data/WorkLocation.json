@@ -1,0 +1,30 @@
+[
+  {
+    "_id": {
+      "$oid": "236fc560440b8dcd1ecfd98e"
+    },
+    "id": "tru-so",
+    "name": "Trụ sở iHOUZZ Uni",
+    "address": "669 QL1A, khu phố 3, Linh Xuân, TP. Thủ Đức, TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.8712"
+    },
+    "lng": {
+      "$numberDouble": "106.7795"
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7795"
+        },
+        {
+          "$numberDouble": "10.8712"
+        }
+      ]
+    },
+    "allowedRadiusM": {
+      "$numberInt": "100"
+    }
+  }
+]

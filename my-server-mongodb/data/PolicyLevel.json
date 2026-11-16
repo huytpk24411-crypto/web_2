@@ -1,0 +1,164 @@
+[
+  {
+    "_id": {
+      "$oid": "7b6ff0e273a6d913a27b610a"
+    },
+    "id": "HOA_HONG-1",
+    "policyId": "HOA_HONG",
+    "from": {
+      "$numberInt": "0"
+    },
+    "to": {
+      "$numberInt": "10000000"
+    },
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": null
+  },
+  {
+    "_id": {
+      "$oid": "8e290aa5a477b1a0bcc0169c"
+    },
+    "id": "HOA_HONG-2",
+    "policyId": "HOA_HONG",
+    "from": {
+      "$numberInt": "10000000"
+    },
+    "to": {
+      "$numberInt": "15000000"
+    },
+    "rateBps": {
+      "$numberInt": "3000"
+    },
+    "amount": null
+  },
+  {
+    "_id": {
+      "$oid": "ca31026baa8da9b81c7981f4"
+    },
+    "id": "HOA_HONG-3",
+    "policyId": "HOA_HONG",
+    "from": {
+      "$numberInt": "15000000"
+    },
+    "to": {
+      "$numberInt": "20000000"
+    },
+    "rateBps": {
+      "$numberInt": "3500"
+    },
+    "amount": null
+  },
+  {
+    "_id": {
+      "$oid": "881358223ca7ea8147c33bbf"
+    },
+    "id": "HOA_HONG-4",
+    "policyId": "HOA_HONG",
+    "from": {
+      "$numberInt": "20000000"
+    },
+    "to": {
+      "$numberInt": "30000000"
+    },
+    "rateBps": {
+      "$numberInt": "4000"
+    },
+    "amount": null
+  },
+  {
+    "_id": {
+      "$oid": "e95d0641a9b8c43758e73f88"
+    },
+    "id": "HOA_HONG-5",
+    "policyId": "HOA_HONG",
+    "from": {
+      "$numberInt": "30000000"
+    },
+    "to": null,
+    "rateBps": {
+      "$numberInt": "4500"
+    },
+    "amount": null
+  },
+  {
+    "_id": {
+      "$oid": "6011059f81ca38420cf56d6a"
+    },
+    "id": "PHAT_TRE-1",
+    "policyId": "PHAT_TRE",
+    "from": {
+      "$numberInt": "1"
+    },
+    "to": {
+      "$numberInt": "16"
+    },
+    "rateBps": null,
+    "amount": {
+      "$numberInt": "20000"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9bf96cff18c2f9c3a9b3d5b6"
+    },
+    "id": "PHAT_TRE-2",
+    "policyId": "PHAT_TRE",
+    "from": {
+      "$numberInt": "16"
+    },
+    "to": {
+      "$numberInt": "31"
+    },
+    "rateBps": null,
+    "amount": {
+      "$numberInt": "50000"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3b96cabfe4c175ae0781a9d0"
+    },
+    "id": "PHAT_TRE-3",
+    "policyId": "PHAT_TRE",
+    "from": {
+      "$numberInt": "31"
+    },
+    "to": null,
+    "rateBps": null,
+    "amount": {
+      "$numberInt": "100000"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3c7b640852dfa544739ae8ff"
+    },
+    "id": "GIU_CHO-1",
+    "policyId": "GIU_CHO",
+    "from": {
+      "$numberInt": "0"
+    },
+    "to": null,
+    "rateBps": null,
+    "amount": {
+      "$numberInt": "1000000"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afb43cba422453fccf52265"
+    },
+    "policyId": "p5-6afb43cba422453fccf52260",
+    "from": {
+      "$numberInt": "0"
+    },
+    "to": null,
+    "rateBps": null,
+    "amount": {
+      "$numberInt": "10000"
+    },
+    "id": "p5-6afb43cba422453fccf52261"
+  }
+]

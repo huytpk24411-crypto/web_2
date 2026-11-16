@@ -31,6 +31,7 @@ export interface Room {
   type: string;
   status: 'AVAILABLE' | 'HELD' | 'RENTED' | 'MAINTENANCE';
   businessStatus?: 'AVAILABLE' | 'HELD' | 'RENTED' | 'MAINTENANCE';
+  lock?: { kind: 'HOLD' | 'DEPOSIT' | 'CONTRACT'; expiresAt?: string | null } | null;
   publicationStatus: 'DRAFT' | 'PUBLISHED' | 'HIDDEN';
   images: string[];
   featured: boolean;
@@ -46,4 +47,13 @@ export interface Room {
   updatedAt?: string;
   version?: number;
   mediaStatus?: 'design-reference' | 'illustrative' | 'confirmed';
+}
+
+export function canScheduleViewing(
+  room?: Pick<Room, 'status' | 'publicationStatus' | 'lock'>,
+): boolean {
+  return (
+    room?.publicationStatus === 'PUBLISHED' &&
+    (room.status === 'AVAILABLE' || (room.status === 'HELD' && room.lock?.kind === 'HOLD'))
+  );
 }

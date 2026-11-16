@@ -1,9 +1,18 @@
-import { Component, inject, signal } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Injector,
+  ViewChild,
+  afterNextRender,
+  inject,
+  signal,
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DealService } from '../../services/deal-service';
+import { DealService, EmployeeDeal } from '../../services/deal-service';
 import { DepositService } from '../../services/deposit-service';
 import { RoomService } from '../../services/room-service';
+import { depositLeaseEnd } from '../../shared/vietnamese-money';
 @Component({
   selector: 'app-employee-direct-deal-frame',
   standalone: false,
@@ -11,6 +20,9 @@ import { RoomService } from '../../services/room-service';
   styleUrls: ['./employee-deal-detail.css'],
 })
 export class EmployeeDealDetailComponent {
+  private readonly injector = inject(Injector);
+  @ViewChild('contractEntry', { read: ElementRef })
+  private contractEntry?: ElementRef<HTMLFormElement>;
   deals = inject(DealService);
   deposits = inject(DepositService);
   rooms = inject(RoomService);
@@ -54,8 +66,38 @@ export class EmployeeDealDetailComponent {
   contractStart = '';
   contractEnd = '';
   contractRent = 0;
-  get abandonedDeposits() {
-    return this.deposits.money.deposits().filter((d) => d.status === 'ABANDONED');
+  listScope: 'contracts' | 'deposits' = 'contracts';
+  selectScope(scope: 'contracts' | 'deposits') {
+    if (scope !== this.listScope) {
+      this.search = '';
+      this.project = '';
+      this.month = '';
+    }
+    this.listScope = scope;
+  }
+  get ownContractIds() {
+    return new Set(this.deals.money.contracts().map((contract) => contract.id));
+  }
+  get contractSummary() {
+    const contracts = this.deals.money.contracts();
+    return {
+      total: contracts.length,
+      approved: contracts.filter((c) => c.status === 'COMPLETED').length,
+      pending: contracts.filter((c) => c.status === 'SIGNED').length,
+      abandoned: contracts.filter((c) => c.status === 'VOID').length,
+    };
+  }
+  get depositSummary() {
+    const deposits = this.deals.money.deposits();
+    const linked = new Set(this.deals.money.contracts().map((c) => c.depositId));
+    const contracted = deposits.filter((d) => linked.has(d.id)).length;
+    return { total: deposits.length, contracted, uncontracted: deposits.length - contracted };
+  }
+  private restoreSelection() {
+    if (this.deals.money.deposits().some((d) => d.id === this.id)) {
+      this.selectScope('deposits');
+      if (this.paidDeposits.some((d) => d.id === this.id)) this.chooseDeposit(this.id);
+    }
   }
   get paidDeposits() {
     const contracted = new Set(this.deals.money.contracts().map((c) => c.depositId));
@@ -66,7 +108,7 @@ export class EmployeeDealDetailComponent {
   async refresh() {
     try {
       await this.deals.money.refresh();
-      if (this.paidDeposits.some((d) => d.id === this.id)) this.chooseDeposit(this.id);
+      this.restoreSelection();
     } catch (e) {
       this.error = (e as Error).message;
     }
@@ -75,13 +117,32 @@ export class EmployeeDealDetailComponent {
     const deposit = this.paidDeposits.find((d) => d.id === id);
     if (!deposit || this.busy) return;
     this.contractDepositId = id;
+    this.selectScope('deposits');
     this.contractStart = deposit?.proposedLease?.startDate || '';
     this.contractRent =
       deposit?.proposedLease?.monthlyRent || this.rooms.get(deposit?.roomId || '')?.price || 0;
-    this.contractEnd = '';
+    this.contractEnd = depositLeaseEnd(this.contractStart, deposit.proposedLease?.months ?? 0);
+    this.error = '';
+    afterNextRender(
+      () => {
+        const form = this.contractEntry?.nativeElement;
+        form?.scrollIntoView?.({ block: 'center' });
+        form?.querySelector('input')?.focus({ preventScroll: true });
+      },
+      { injector: this.injector },
+    );
   }
   async createContract() {
     if (this.busy || !this.paidDeposits.some((d) => d.id === this.contractDepositId)) return;
+    if (
+      !depositLeaseEnd(this.contractStart, 1) ||
+      !depositLeaseEnd(this.contractEnd, 1) ||
+      this.contractEnd <= this.contractStart
+    ) {
+      this.error =
+        'Vui lòng nhập ngày bắt đầu và ngày kết thúc hợp đồng hợp lệ. Ngày kết thúc phải sau ngày bắt đầu.';
+      return;
+    }
     this.busy = true;
     try {
       const contract = await this.deals.createContract(
@@ -103,7 +164,7 @@ export class EmployeeDealDetailComponent {
     if (this.busy || this.contract?.status !== 'DRAFT') return;
     this.busy = true;
     try {
-      await this.deals.sign(this.id);
+      await this.deals.sign(this.contract.id);
       await this.rooms.refresh();
       this.error = '';
       this.toast = 'Đã ký – chờ admin xác nhận';
@@ -117,16 +178,19 @@ export class EmployeeDealDetailComponent {
     void this.refresh();
     this.route.params.pipe(takeUntilDestroyed()).subscribe((p) => {
       this.id = p['id'] || '';
+      this.selectScope(
+        this.deals.money.deposits().some((d) => d.id === this.id) ? 'deposits' : 'contracts',
+      );
       this.contractDepositId = '';
-      if (this.paidDeposits.some((d) => d.id === this.id)) this.chooseDeposit(this.id);
+      this.restoreSelection();
       this.error = '';
     });
   }
   get deal() {
-    return this.deals.get(this.id);
+    return this.currentCards.find((card) => card.deal.id === this.id)?.deal;
   }
   get contract() {
-    return this.deals.money.contracts().find((c) => c.id === this.id);
+    return this.deals.money.contracts().find((c) => c.id === this.id || c.depositId === this.id);
   }
   get room() {
     return this.rooms.forRecord(this.deal);
@@ -134,29 +198,58 @@ export class EmployeeDealDetailComponent {
   get deposit() {
     return this.deposits.get(this.deal?.depositId || '');
   }
-  get pending() {
-    return this.deals.list().filter((d) => d.status === 'PENDING').length;
-  }
-  get completed() {
-    return this.deals.list().filter((d) => d.status === 'COMPLETED').length;
-  }
-  get forfeited() {
-    return this.deals.list().filter((d) => d.status === 'FORFEITED').length;
-  }
   search = '';
   project = '';
   month = '';
   get contractCards() {
-    return this.deals.list().map((deal) => ({
-      deal,
-      room: this.rooms.forRecord(deal),
-      deposit: this.deposits.get(deal.depositId || ''),
-    }));
+    const ids = this.ownContractIds;
+    return this.deals
+      .list()
+      .filter((deal) => ids.has(deal.id))
+      .map((deal) => ({
+        deal,
+        room: this.rooms.forRecord(deal),
+        deposit: this.deposits.get(deal.depositId || ''),
+      }));
+  }
+  get depositCards() {
+    const contracted = new Set(this.deals.money.contracts().map((c) => c.depositId));
+    return this.deposits.money.deposits().map((record) => {
+      const deal: EmployeeDeal = {
+        id: record.id,
+        depositId: record.id,
+        roomId: record.roomId,
+        roomSnapshot: record.roomSnapshot,
+        number: record.number,
+        customerName: record.customerName || 'Chưa có tên khách hàng',
+        phone: record.phone || '',
+        brokerageFee: 0,
+        apiStatus: record.status,
+        statusLabel:
+          record.status === 'PAID' && !contracted.has(record.id)
+            ? 'Chưa lập hợp đồng'
+            : this.deals.money.label(record.status),
+        status:
+          record.status === 'COMPLETED'
+            ? 'COMPLETED'
+            : record.status === 'ABANDONED'
+              ? 'FORFEITED'
+              : record.status === 'CANCELLED'
+                ? 'CANCELLED'
+                : 'PENDING',
+        forfeitureReason: record.abandonment?.reason,
+        forfeitedAt: record.abandonment?.recordedAt,
+      };
+      return { deal, room: this.rooms.forRecord(deal), deposit: this.deposits.get(record.id) };
+    });
+  }
+  get currentCards() {
+    return this.listScope === 'contracts' ? this.contractCards : this.depositCards;
   }
   get projects() {
     return [
       ...new Set(
-        this.contractCards
+        this.currentCards
           .map((card) => card.room?.propertyName)
           .filter((name): name is string => !!name),
       ),
@@ -164,7 +257,7 @@ export class EmployeeDealDetailComponent {
   }
   get visibleCards() {
     const query = this.search.trim().toLocaleLowerCase('vi');
-    return this.contractCards.filter(
+    return this.currentCards.filter(
       ({ deal, room, deposit }) =>
         (!query ||
           [deal.number, deal.customerName, room?.code, room?.name, deal.phone]

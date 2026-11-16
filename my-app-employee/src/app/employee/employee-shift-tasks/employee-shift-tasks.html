@@ -13,9 +13,6 @@
 <p class="emp-alert emp-success" role="status" *ngIf="success()">{{ success() }}</p>
 <div class="emp-alert emp-info assignment-notice" *ngIf="assignment?.status === 'REGISTERED'">
   <p>Chưa check-in — bạn có thể xem trước công việc; đánh dấu hoàn thành sau khi check-in</p>
-  <a class="emp-btn emp-primary" [routerLink]="['/employee/shifts', id, 'check-in']"
-    >Check-in đầu ca</a
-  >
 </div>
 <div
   class="emp-alert emp-info assignment-notice"
@@ -115,7 +112,7 @@
                 task.status === 'PENDING_CONFIRM'
               "
               [class.emp-neutral]="task.status === 'CANCELLED'"
-              >{{ taskStatus(task.status) }}</span
+              >{{ completionStatus(task) }}</span
             >
           </div>
           <span class="emp-badge emp-neutral" *ngIf="task.mine?.current === false">{{
@@ -197,26 +194,20 @@
               <p class="error" role="alert" *ngIf="draft(room).note.length > 1000">
                 Ghi chú phòng không quá 1000 ký tự.
               </p>
-              <button
-                type="button"
-                class="emp-btn emp-outline"
-                (click)="saveRoom(task, room)"
-                [disabled]="
-                  busy || !canRecord(task) || shifts.api.loading() || draft(room).note.length > 1000
-                "
-              >
-                Lưu kết quả phòng
-              </button>
             </section>
             <p class="muted" *ngIf="!viewing.rooms.length">Không có phòng trong lịch xem.</p>
             <button
               type="button"
               class="emp-btn emp-primary"
-              *ngIf="viewing.status === 'DA_XAC_NHAN'"
-              [disabled]="busy || !canRecord(task) || shifts.api.loading()"
-              (click)="completeViewing(task)"
+              *ngIf="
+                task.status !== 'DONE' &&
+                task.status !== 'PENDING_CONFIRM' &&
+                task.mine?.personalStatus !== 'DONE'
+              "
+              [disabled]="busy || tasksLoading() || !canRecord(task) || shifts.api.loading()"
+              (click)="completeTask(task)"
             >
-              Hoàn tất dẫn xem
+              Đã hoàn thành công việc
             </button>
           </ng-container>
         </article>
@@ -226,29 +217,28 @@
             [class.done]="task.mine?.personalStatus === 'DONE'"
             [class.in-progress]="task.status === 'IN_PROGRESS'"
           >
-            <label
-              ><input
-                type="checkbox"
-                [checked]="task.mine?.personalStatus === 'DONE'"
-                (change)="toggle(task.id)"
+            <div>
+              <strong>{{ task.title }}</strong>
+              <p class="task-description" *ngIf="task.description">{{ task.description }}</p>
+              <small>{{ task.assigneeIds.length }} người phụ trách</small>
+              <p *ngIf="task.mine?.current === false">
+                {{ task.returnedToAdmin ? 'Đã chuyển về quản trị viên' : 'Đã chuyển sang ca khác' }}
+              </p>
+              <button
+                type="button"
+                class="emp-btn emp-primary"
+                *ngIf="
+                  task.status !== 'DONE' &&
+                  task.status !== 'PENDING_CONFIRM' &&
+                  task.mine?.personalStatus !== 'DONE'
+                "
                 [disabled]="busy || tasksLoading() || shifts.api.loading() || !canEdit(task)"
-              /><span
-                ><strong>{{ task.title }}</strong
-                ><small
-                  >{{ task.assigneeIds.length }} người phụ trách • Cá nhân:
-                  {{ task.mine?.personalStatus === 'DONE' ? 'Đã xong' : 'Chưa xong' }}</small
-                ><small *ngIf="task.description" class="task-description">{{
-                  task.description
-                }}</small
-                ><small *ngIf="task.mine?.current === false"
-                  ><span class="emp-badge emp-neutral">{{
-                    task.returnedToAdmin ? 'Đã chuyển về quản trị viên' : 'Đã chuyển sang ca khác'
-                  }}</span></small
-                ><small *ngIf="task.carriedFrom" class="blue"
-                  >Được bàn giao từ ca trước</small
-                ></span
-              ></label
-            ><span
+                (click)="completeTask(task)"
+              >
+                Đã hoàn thành công việc
+              </button>
+            </div>
+            <span
               class="emp-badge"
               [class.emp-success]="task.status === 'DONE'"
               [class.emp-info]="task.status === 'IN_PROGRESS'"
@@ -258,7 +248,7 @@
                 task.status === 'PENDING_CONFIRM'
               "
               [class.emp-neutral]="task.status === 'CANCELLED'"
-              >{{ taskStatus(task.status) }}</span
+              >{{ completionStatus(task) }}</span
             >
           </div>
         </ng-template>

@@ -133,6 +133,21 @@ describe('VIEW-02: đặt và quản lý lịch xem (zoneless)', () => {
     vi.restoreAllMocks();
   });
 
+  it('renders only the viewing list on the history route without loading the cart', async () => {
+    fixture.destroy();
+    TestBed.inject(ActivatedRoute).snapshot.data = { historyOnly: true };
+    api.getCart.mockClear();
+    mine.set([viewing()]);
+    fixture = TestBed.createComponent(CustomerViewingNewComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+    await fixture.whenStable();
+    expect(root().querySelector('h1')?.textContent).toBe('Lịch xem phòng của bạn');
+    expect(root().querySelector('.step-strip')).toBeNull();
+    expect(root().querySelector('.room-picker')).toBeNull();
+    expect(root().querySelector('.viewing-row')?.textContent).toContain('PHONG_48');
+    expect(api.getCart).not.toHaveBeenCalled();
+  });
   it.each([
     ['NO_STAFF', 'Hiện tại chưa có nhân viên trực cho ca này, vui lòng chọn khung giờ khác.'],
     ['MINE', 'Bạn đã có lịch xem khác vào giờ này, vui lòng chọn giờ khác.'],

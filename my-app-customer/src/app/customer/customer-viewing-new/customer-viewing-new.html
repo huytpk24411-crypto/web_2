@@ -1,192 +1,207 @@
-<div class="container">
-  <div class="breadcrumb">
-    <a routerLink="/">Trang chủ</a> › <a routerLink="/rooms">Tất cả phòng</a> › Đặt lịch xem phòng
-  </div>
-  <div class="step-strip">
-    <div [class.current]="!success()" [class.done]="success()">
-      <b>1</b><span>Chọn phòng &amp; thông tin liên hệ</span>
+<div class="container" [class.history-page]="historyOnly">
+  <ng-container *ngIf="!historyOnly">
+    <div class="breadcrumb">
+      <a routerLink="/">Trang chủ</a> › <a routerLink="/rooms">Tất cả phòng</a> › Đặt lịch xem phòng
     </div>
-    <div [class.done]="success()">
-      <b>{{ success() ? '✓' : '2' }}</b
-      ><span>Xác nhận lịch hẹn miễn phí</span>
-    </div>
-  </div>
-
-  <section class="panel booking-success" *ngIf="success() as result; else bookingForm">
-    <div class="success-mark" aria-hidden="true">✓</div>
-    <h1 tabindex="-1">Đặt lịch xem phòng thành công!</h1>
-    <p role="status">Lịch đã được xác nhận. Nhân viên hướng dẫn sẽ đón bạn đúng giờ hẹn.</p>
-    <article class="scheduled-card" *ngFor="let v of result.viewings">
-      <div class="room-summary" *ngFor="let r of roomInfo(v)">
-        <img *ngIf="r.image" [src]="r.image" [alt]="r.name" />
-        <div>
-          <strong>{{ r.code }} · {{ r.name }}</strong>
-          <p class="muted small">{{ r.address }}</p>
-        </div>
+    <div class="step-strip">
+      <div [class.current]="!success()" [class.done]="success()">
+        <b>1</b><span>Chọn phòng &amp; thông tin liên hệ</span>
       </div>
-      <span class="date-chip">{{ formatAt(v.at) }}</span>
-      <ng-container *ngTemplateOutlet="guideBlock; context: { $implicit: v }" />
-    </article>
-    <div class="actions success-actions">
-      <button class="btn primary" type="button" (click)="continueBooking()">
-        Tiếp tục đặt lịch xem
-      </button>
-      <a class="btn" routerLink="/rooms">Quay về trang tìm phòng</a>
+      <div [class.done]="success()">
+        <b>{{ success() ? '✓' : '2' }}</b
+        ><span>Xác nhận lịch hẹn miễn phí</span>
+      </div>
     </div>
-  </section>
 
-  <ng-template #bookingForm>
-    <div class="split">
-      <form
-        [formGroup]="form"
-        (ngSubmit)="submit()"
-        [attr.aria-invalid]="formTouched() && formInvalid()"
-      >
-        <section class="panel">
-          <h3><app-icon name="user" /> Thông tin người hẹn xem phòng</h3>
-          <div class="grid two">
-            <label class="field"
-              ><span>Họ và tên người xem *</span
-              ><input
-                formControlName="name"
-                autocomplete="name"
-                [readonly]="submitting()" /><app-form-error [control]="form.controls.name"
-            /></label>
-            <label class="field"
-              ><span>Số điện thoại di động *</span
-              ><input
-                formControlName="phone"
-                type="tel"
-                autocomplete="tel"
-                [readonly]="submitting()" /><app-form-error [control]="form.controls.phone"
-            /></label>
+    <section class="panel booking-success" *ngIf="success() as result; else bookingForm">
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <h1 tabindex="-1">Đặt lịch xem phòng thành công!</h1>
+      <p role="status">Lịch đã được xác nhận. Nhân viên hướng dẫn sẽ đón bạn đúng giờ hẹn.</p>
+      <article class="scheduled-card" *ngFor="let v of result.viewings">
+        <div class="room-summary" *ngFor="let r of roomInfo(v)">
+          <img *ngIf="r.image" [src]="r.image" [alt]="r.name" />
+          <div>
+            <strong>{{ r.code }} · {{ r.name }}</strong>
+            <p class="muted small">{{ r.address }}</p>
           </div>
-          <h3><app-icon name="home" /> Chọn phòng muốn xem</h3>
-          <p class="muted small">Mỗi phòng bạn chọn một ngày và giờ xem riêng.</p>
-          <div class="room-picker">
-            <label
-              class="pick-room"
-              *ngFor="let r of available()"
-              [class.selected]="selected().includes(r.id)"
+        </div>
+        <span class="date-chip">{{ formatAt(v.at) }}</span>
+        <ng-container *ngTemplateOutlet="guideBlock; context: { $implicit: v }" />
+      </article>
+      <div class="actions success-actions">
+        <button class="btn primary" type="button" (click)="continueBooking()">
+          Tiếp tục đặt lịch xem
+        </button>
+        <a class="btn" routerLink="/rooms">Quay về trang tìm phòng</a>
+      </div>
+    </section>
+
+    <ng-template #bookingForm>
+      <div class="split">
+        <form
+          [formGroup]="form"
+          (ngSubmit)="submit()"
+          [attr.aria-invalid]="formTouched() && formInvalid()"
+        >
+          <section class="panel">
+            <h3><app-icon name="user" /> Thông tin người hẹn xem phòng</h3>
+            <div class="grid two">
+              <label class="field"
+                ><span>Họ và tên người xem *</span
+                ><input
+                  formControlName="name"
+                  autocomplete="name"
+                  [readonly]="submitting()" /><app-form-error [control]="form.controls.name"
+              /></label>
+              <label class="field"
+                ><span>Số điện thoại di động *</span
+                ><input
+                  formControlName="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  [readonly]="submitting()" /><app-form-error [control]="form.controls.phone"
+              /></label>
+            </div>
+            <h3><app-icon name="home" /> Chọn phòng muốn xem</h3>
+            <p class="muted small">Mỗi phòng bạn chọn một ngày và giờ xem riêng.</p>
+            <div class="room-picker">
+              <label
+                class="pick-room"
+                *ngFor="let r of available()"
+                [class.selected]="selected().includes(r.id)"
+              >
+                <input
+                  type="checkbox"
+                  [checked]="selected().includes(r.id)"
+                  [disabled]="loadingCart() || submitting()"
+                  (change)="toggle(r.id)"
+                />
+                <img [src]="r.images[0]" [alt]="r.name" />
+                <span
+                  ><strong>{{ r.code }} · {{ r.name }}</strong
+                  ><small
+                    >{{ r.price | number }} đ/tháng • {{ r.area }} m²<ng-container
+                      *ngIf="r.status === 'HELD'"
+                    >
+                      · Đang giữ chỗ</ng-container
+                    ></small
+                  ></span
+                >
+              </label>
+            </div>
+            <div class="notice">Đã chọn {{ selected().length }} phòng</div>
+            <p class="muted small" role="status" *ngIf="loadingCart()">Đang tải danh sách xem...</p>
+            <p class="muted small" *ngIf="!loadingCart() && !available().length">
+              Hiện chưa có phòng để đặt lịch xem.
+            </p>
+            <button
+              *ngIf="!loadingCart() && error()"
+              class="btn sm"
+              type="button"
+              (click)="loadCart()"
             >
-              <input
-                type="checkbox"
-                [checked]="selected().includes(r.id)"
-                [disabled]="loadingCart() || submitting()"
-                (change)="toggle(r.id)"
+              Tải lại danh sách xem
+            </button>
+          </section>
+          <section class="panel">
+            <h3><app-icon name="calendar" /> Thời gian xem từng phòng</h3>
+            <p class="muted small" *ngIf="!selected().length">
+              Chọn phòng muốn xem để đặt ngày và giờ.
+            </p>
+            <article
+              class="scheduled-card"
+              *ngFor="let r of selectedRooms()"
+              [attr.data-room-id]="r.id"
+            >
+              <div class="room-summary">
+                <img [src]="r.images[0]" [alt]="r.name" /><strong
+                  >{{ r.code }} · {{ r.name }}</strong
+                >
+              </div>
+              <label class="field"
+                ><span>Ngày xem *</span
+                ><input
+                  type="date"
+                  [min]="today"
+                  [value]="choice(r.id).date"
+                  [disabled]="submitting()"
+                  (change)="changeDate(r.id, $any($event.target).value)"
+                  [attr.aria-describedby]="'choice-error-' + r.id"
+              /></label>
+              <ng-container
+                *ngTemplateOutlet="
+                  slotGrid;
+                  context: { choice: choice(r.id), roomId: r.id, exclude: '', edit: false }
+                "
               />
-              <img [src]="r.images[0]" [alt]="r.name" />
-              <span
-                ><strong>{{ r.code }} · {{ r.name }}</strong
-                ><small>{{ r.price | number }} đ/tháng • {{ r.area }} m²</small></span
+              <div
+                class="notice choice-error"
+                role="alert"
+                *ngIf="choice(r.id).error"
+                [id]="'choice-error-' + r.id"
               >
-            </label>
-          </div>
-          <div class="notice">Đã chọn {{ selected().length }} phòng</div>
-          <p class="muted small" role="status" *ngIf="loadingCart()">Đang tải danh sách xem...</p>
-          <p class="muted small" *ngIf="!loadingCart() && !available().length">
-            Hiện chưa có phòng trống để đặt lịch xem.
-          </p>
-          <button
-            *ngIf="!loadingCart() && error()"
-            class="btn sm"
-            type="button"
-            (click)="loadCart()"
-          >
-            Tải lại danh sách xem
-          </button>
-        </section>
-        <section class="panel">
-          <h3><app-icon name="calendar" /> Thời gian xem từng phòng</h3>
-          <p class="muted small" *ngIf="!selected().length">
-            Chọn phòng muốn xem để đặt ngày và giờ.
-          </p>
-          <article
-            class="scheduled-card"
-            *ngFor="let r of selectedRooms()"
-            [attr.data-room-id]="r.id"
-          >
-            <div class="room-summary">
-              <img [src]="r.images[0]" [alt]="r.name" /><strong>{{ r.code }} · {{ r.name }}</strong>
-            </div>
+                <span>{{ choice(r.id).error }}</span
+                ><button
+                  type="button"
+                  class="dismiss"
+                  aria-label="Đóng thông báo"
+                  (click)="clearChoiceError(r.id)"
+                >
+                  ×
+                </button>
+              </div>
+            </article>
+            <p class="tip">
+              Khung giờ xem phòng: 07:00–11:00 và 13:00–17:00, mỗi lượt khoảng 30 phút.
+            </p>
             <label class="field"
-              ><span>Ngày xem *</span
-              ><input
-                type="date"
-                [min]="today"
-                [value]="choice(r.id).date"
-                [disabled]="submitting()"
-                (change)="changeDate(r.id, $any($event.target).value)"
-                [attr.aria-describedby]="'choice-error-' + r.id"
+              ><span>Ghi chú nhu cầu</span
+              ><textarea
+                formControlName="note"
+                maxlength="1000"
+                [readonly]="submitting()"
+                placeholder="Số người ở, thời gian chuyển vào, ngân sách dự kiến..."
+              ></textarea
+              ><app-form-error [control]="form.controls.note"
             /></label>
-            <ng-container
-              *ngTemplateOutlet="
-                slotGrid;
-                context: { choice: choice(r.id), roomId: r.id, exclude: '', edit: false }
-              "
-            />
-            <div
-              class="notice choice-error"
-              role="alert"
-              *ngIf="choice(r.id).error"
-              [id]="'choice-error-' + r.id"
+            <p class="error" role="alert" *ngIf="error()">{{ error() }}</p>
+            <button
+              class="btn danger full"
+              type="submit"
+              [disabled]="loadingCart() || submitting()"
             >
-              <span>{{ choice(r.id).error }}</span
-              ><button
-                type="button"
-                class="dismiss"
-                aria-label="Đóng thông báo"
-                (click)="clearChoiceError(r.id)"
-              >
-                ×
-              </button>
-            </div>
-          </article>
-          <p class="tip">
-            Khung giờ xem phòng: 07:00–11:00 và 13:00–17:00, mỗi lượt khoảng 30 phút.
-          </p>
-          <label class="field"
-            ><span>Ghi chú nhu cầu</span
-            ><textarea
-              formControlName="note"
-              maxlength="1000"
-              [readonly]="submitting()"
-              placeholder="Số người ở, thời gian chuyển vào, ngân sách dự kiến..."
-            ></textarea
-            ><app-form-error [control]="form.controls.note"
-          /></label>
-          <p class="error" role="alert" *ngIf="error()">{{ error() }}</p>
-          <button class="btn danger full" type="submit" [disabled]="loadingCart() || submitting()">
-            <app-icon name="calendar" [size]="16" />{{
-              submitting()
-                ? 'Đang gửi lịch xem...'
-                : selected().length
-                  ? 'XÁC NHẬN ĐẶT ' + selected().length + ' LỊCH XEM PHÒNG'
-                  : 'XÁC NHẬN ĐẶT LỊCH XEM PHÒNG'
-            }}
-          </button>
-        </section>
-      </form>
-      <aside class="sticky">
-        <div class="panel" *ngIf="firstRoom() as r">
-          <img class="selected-photo" [src]="r.images[0]" [alt]="r.name" /><span class="badge green"
-            >Đang trống • {{ r.code }}</span
-          >
-          <h3>{{ r.name }}</h3>
-          <p class="muted small">{{ r.address }}</p>
-          <p class="price">{{ r.price | number }} đ<small> / tháng</small></p>
-        </div>
-        <div class="notice success">
-          <strong>✓ Cam kết từ iHOUZZ Uni</strong>
-          <p>Xem phòng miễn phí, hỗ trợ tìm phòng phù hợp với nhu cầu và ngân sách của bạn.</p>
-        </div>
-      </aside>
-    </div>
-  </ng-template>
-
+              <app-icon name="calendar" [size]="16" />{{
+                submitting()
+                  ? 'Đang gửi lịch xem...'
+                  : selected().length
+                    ? 'XÁC NHẬN ĐẶT ' + selected().length + ' LỊCH XEM PHÒNG'
+                    : 'XÁC NHẬN ĐẶT LỊCH XEM PHÒNG'
+              }}
+            </button>
+          </section>
+        </form>
+        <aside class="sticky">
+          <div class="panel" *ngIf="firstRoom() as r">
+            <img class="selected-photo" [src]="r.images[0]" [alt]="r.name" /><span
+              class="badge green"
+              >{{ r.status === 'HELD' ? 'Đang giữ chỗ' : 'Đang trống' }} • {{ r.code }}</span
+            >
+            <h3>{{ r.name }}</h3>
+            <p class="muted small">{{ r.address }}</p>
+            <p class="price">{{ r.price | number }} đ<small> / tháng</small></p>
+          </div>
+          <div class="notice success">
+            <strong>✓ Cam kết từ iHOUZZ Uni</strong>
+            <p>Xem phòng miễn phí, hỗ trợ tìm phòng phù hợp với nhu cầu và ngân sách của bạn.</p>
+          </div>
+        </aside>
+      </div>
+    </ng-template>
+  </ng-container>
   <section class="panel viewing-history">
     <div class="section-heading">
-      <h3>Lịch xem phòng của bạn</h3>
+      <h1 *ngIf="historyOnly; else embeddedHeading">Lịch xem phòng của bạn</h1>
+      <ng-template #embeddedHeading><h3>Lịch xem phòng của bạn</h3></ng-template>
       <button
         class="btn sm"
         type="button"

@@ -234,7 +234,7 @@ export class MoneyService {
   }
   async customerForDeposit(customerPhone: string, roomId: string) {
     const body = { customerPhone, roomId };
-    const value = await this.write<EmployeeCustomer>('customers/identity-context', body);
+    const value = await this.write<EmployeeCustomer | null>('customers/identity-context', body);
     this.finishDraft('customers/identity-context', body);
     return value;
   }
@@ -242,6 +242,14 @@ export class MoneyService {
     const path = 'customers/' + encodeURIComponent(id) + '/identity';
     const value = await this.write<EmployeeCustomer>(path, body, 'PUT');
     this.finishDraft(path, body, 'PUT');
+    return value;
+  }
+  async saveDepositCustomer(
+    body: CustomerIdentity & { customerName: string; customerPhone: string; roomId: string },
+  ) {
+    const path = 'customers/deposit-profile';
+    const value = await this.write<EmployeeCustomer>(path, body);
+    this.finishDraft(path, body);
     return value;
   }
   async uploadIdentity(file: File) {

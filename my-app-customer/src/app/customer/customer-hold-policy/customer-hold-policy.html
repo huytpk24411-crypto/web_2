@@ -1,0 +1,57 @@
+<div class="modal-backdrop" (click)="declined.emit()" (keydown.escape)="declined.emit()">
+  <section
+    class="modal hold-policy"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="hold-policy-title"
+    aria-describedby="hold-policy-content"
+    appDialogFocus
+    (click)="$event.stopPropagation()"
+  >
+    <button
+      class="close"
+      type="button"
+      aria-label="Đóng chính sách giữ chỗ"
+      (click)="declined.emit()"
+    >
+      ×
+    </button>
+    <div class="policy-heading">
+      <app-icon name="shield" [size]="24" />
+      <h2 id="hold-policy-title">Chính sách giữ chỗ</h2>
+    </div>
+    <p class="muted" *ngIf="roomName">{{ roomName }}</p>
+    <ul id="hold-policy-content">
+      <li>
+        Hoàn tất thanh toán trong <strong>15 phút</strong> kể từ khi tạo yêu cầu. Số tiền theo chính
+        sách đang có hiệu lực được hiển thị ở bước thanh toán.
+      </li>
+      <li>
+        Khi thanh toán thành công, phòng được giữ độc quyền trong <strong>48 giờ</strong>. Khách
+        khác vẫn có thể đặt lịch xem nhưng không được tạo thêm giữ chỗ cho phòng.
+      </li>
+      <li>
+        Liên hệ nhân viên để lập hồ sơ cọc trong thời gian giữ chỗ. Tiền giữ chỗ được khấu trừ một
+        lần vào tiền cọc.
+      </li>
+      <li>
+        Hết 48 giờ mà chưa lập hồ sơ cọc, phòng được mở lại. Tiền giữ chỗ không được hoàn lại.
+      </li>
+      <li>
+        Không chuyển tiền khi yêu cầu đã hết hạn. Khoản chuyển đến sau hạn không tạo giữ chỗ và
+        không được hoàn lại.
+      </li>
+    </ul>
+    <label class="check policy-consent"
+      ><input type="checkbox" [(ngModel)]="agreed" /><span
+        >Tôi đã đọc và đồng ý chính sách giữ chỗ.</span
+      ></label
+    >
+    <div class="policy-actions">
+      <button class="btn" type="button" (click)="declined.emit()">Quay lại</button>
+      <button class="btn primary" type="button" [disabled]="!agreed" (click)="accepted.emit()">
+        Đồng ý và tiếp tục
+      </button>
+    </div>
+  </section>
+</div>

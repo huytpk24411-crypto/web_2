@@ -68,9 +68,7 @@
       <input id="login-remember" type="checkbox" formControlName="rememberMe" />
       <span>Ghi nhớ số điện thoại</span>
     </label>
-    <a routerLink="/contact" title="Liên hệ để được quản trị viên hỗ trợ đặt lại mật khẩu."
-      >Quên mật khẩu?</a
-    >
+    <a routerLink="/forgot-password">Quên mật khẩu?</a>
   </div>
 
   <p class="auth-error" *ngIf="error()" role="alert">{{ error() }}</p>

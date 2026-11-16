@@ -56,6 +56,7 @@ export class AdminStaffScheduleComponent extends SchedulePeriods {
   readonly rejectingTask = signal<ApiTask | null>(null);
   readonly rejectReason = signal('');
   readonly rejectShiftId = signal('');
+  readonly rejectViewingTime = signal('');
   readonly rejectAssigneeIds = signal<string[]>([]);
   readonly rejectError = signal('');
   readonly rejectSubmitted = signal(false);
@@ -274,7 +275,7 @@ export class AdminStaffScheduleComponent extends SchedulePeriods {
         TODO: 'Đã giao',
         IN_PROGRESS: 'Đã giao',
         PENDING_CONFIRM: 'Chờ xác nhận',
-        DONE: 'Hoàn thành',
+        DONE: 'Đã Xác nhận',
         WAITING_ADMIN: 'Chờ giao lại',
         CANCELLED: 'Đã hủy',
       }[task.status] || 'Chưa xác định'
@@ -384,6 +385,7 @@ export class AdminStaffScheduleComponent extends SchedulePeriods {
     if (this.busy || task.status !== 'PENDING_CONFIRM') return;
     this.rejectReason.set('');
     this.rejectShiftId.set('');
+    this.rejectViewingTime.set('');
     this.rejectAssigneeIds.set([]);
     this.rejectError.set('');
     this.rejectSubmitted.set(false);
@@ -408,11 +410,20 @@ export class AdminStaffScheduleComponent extends SchedulePeriods {
       ? this.eligibleAssignments(this.rejectShiftId())
       : [];
   }
+  get rejectViewingTimes() {
+    const shift = this.repository.state().shifts.find((s) => s.id === this.rejectShiftId());
+    if (!shift) return [];
+    return [7, 8, 9, 10, 13, 14, 15, 16]
+      .flatMap((hour) => ['00', '30'].map((minute) => `${String(hour).padStart(2, '0')}:${minute}`))
+      .filter((time) => time >= shift.start && time < shift.end);
+  }
   get canRejectAndAssign() {
     const ids = this.rejectAssigneeIds();
     const assignments = this.rejectAssignments;
     return (
       this.rejectReasonValid() &&
+      (this.rejectingTask()?.kind !== 'VIEWING' ||
+        (ids.length === 1 && this.rejectViewingTimes.includes(this.rejectViewingTime()))) &&
       ids.length > 0 &&
       ids.every((id) => assignments.some((assignment) => assignment.id === id))
     );
@@ -420,13 +431,18 @@ export class AdminStaffScheduleComponent extends SchedulePeriods {
   changeRejectShift(id: string) {
     if (this.busy) return;
     this.rejectShiftId.set(id);
+    this.rejectViewingTime.set('');
     this.rejectAssigneeIds.set([]);
     this.rejectError.set('');
   }
   setRejectAssignee(id: string, checked: boolean) {
     if (this.busy || !this.rejectAssignments.some((assignment) => assignment.id === id)) return;
     this.rejectAssigneeIds.update((ids) =>
-      checked ? [...new Set([...ids, id])] : ids.filter((item) => item !== id),
+      checked
+        ? this.rejectingTask()?.kind === 'VIEWING'
+          ? [id]
+          : [...new Set([...ids, id])]
+        : ids.filter((item) => item !== id),
     );
   }
   async submitTaskRejection(reassign: boolean) {
@@ -435,8 +451,16 @@ export class AdminStaffScheduleComponent extends SchedulePeriods {
     this.rejectSubmitted.set(true);
     this.rejectError.set('');
     if (!this.rejectReasonValid()) return;
+    if (task.kind === 'VIEWING' && !reassign) {
+      this.rejectError.set('Chọn lịch xem lại và một nhân viên phụ trách.');
+      return;
+    }
     if (reassign && !this.canRejectAndAssign) {
-      this.rejectError.set('Chọn ca chưa bắt đầu và ít nhất một nhân viên trong ca.');
+      this.rejectError.set(
+        task.kind === 'VIEWING'
+          ? 'Chọn ca chưa bắt đầu, giờ xem lại và đúng một nhân viên phụ trách.'
+          : 'Chọn ca chưa bắt đầu và ít nhất một nhân viên trong ca.',
+      );
       return;
     }
     const body: TaskReject = { reason: this.rejectReason().trim() };
@@ -450,6 +474,7 @@ export class AdminStaffScheduleComponent extends SchedulePeriods {
     if (reassign) {
       body.shiftId = this.rejectShiftId();
       body.assigneeAssignmentIds = [...this.rejectAssigneeIds()];
+      if (task.kind === 'VIEWING') body.viewingStartTime = this.rejectViewingTime();
     }
     this.busy = true;
     try {

@@ -555,7 +555,7 @@
               <th>Công việc</th>
               <th>Ca</th>
               <th>Nhân viên đã làm</th>
-              <th>Giờ check-out</th>
+              <th>Giờ báo hoàn thành</th>
               <th>Thao tác</th>
             </tr>
           </thead>
@@ -576,8 +576,8 @@
               <td>
                 <div *ngFor="let employee of task.pendingConfirm?.employees">
                   {{
-                    employee.checkOutAt
-                      ? (employee.checkOutAt | date: 'HH:mm dd/MM' : '+0700')
+                    employee.doneAt || employee.checkOutAt
+                      ? (employee.doneAt || employee.checkOutAt | date: 'HH:mm dd/MM' : '+0700')
                       : '—'
                   }}
                 </div>
@@ -615,7 +615,7 @@
           <option value="ASSIGNED">Đã giao</option>
           <option value="PENDING_CONFIRM">Chờ xác nhận</option>
           <option value="WAITING_ADMIN">Chờ giao lại</option>
-          <option value="DONE">Hoàn thành</option>
+          <option value="DONE">Đã Xác nhận</option>
         </select></label
       >
       <label class="field"
@@ -845,8 +845,24 @@
           </select>
         </label>
         <p class="muted" *ngIf="!rejectShifts.length">
-          Không có ca chưa bắt đầu có nhân viên trực. Bạn có thể trả lại, giao sau.
+          {{
+            task.kind === 'VIEWING'
+              ? 'Chưa có ca tương lai có nhân viên trực. Vui lòng bố trí ca trực để sắp lịch xem lại.'
+              : 'Không có ca chưa bắt đầu có nhân viên trực. Bạn có thể trả lại, giao sau.'
+          }}
         </p>
+        <label class="field" *ngIf="task.kind === 'VIEWING' && rejectShiftId()"
+          ><span>Giờ xem lại trong ca đã chọn *</span
+          ><select
+            name="rejectViewingTime"
+            [ngModel]="rejectViewingTime()"
+            (ngModelChange)="rejectViewingTime.set($event)"
+            [disabled]="busy"
+          >
+            <option value="">Chọn giờ xem lại</option>
+            <option *ngFor="let time of rejectViewingTimes" [value]="time">{{ time }}</option>
+          </select></label
+        >
         <fieldset class="assignee-options" *ngIf="rejectShiftId()">
           <legend>Nhân viên đảm nhận *</legend>
           <label *ngFor="let assignment of rejectAssignments">
@@ -862,7 +878,11 @@
             >
           </label>
           <p *ngIf="!rejectAssignments.length">
-            Ca không còn phù hợp. Vui lòng chọn ca khác hoặc giao sau.
+            {{
+              task.kind === 'VIEWING'
+                ? 'Ca không còn phù hợp. Vui lòng chọn ca khác để sắp lịch xem lại.'
+                : 'Ca không còn phù hợp. Vui lòng chọn ca khác hoặc giao sau.'
+            }}
           </p>
         </fieldset>
         <p class="notice error" role="alert" *ngIf="rejectError()">{{ rejectError() }}</p>
@@ -873,6 +893,7 @@
           <button
             class="btn"
             type="button"
+            *ngIf="task.kind !== 'VIEWING'"
             [disabled]="busy || !rejectReasonValid()"
             (click)="submitTaskRejection(false)"
           >

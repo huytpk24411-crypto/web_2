@@ -1,265 +1,1273 @@
 {
-  "version": 1,
-  "randomSeed": 20261103,
-  "asOf": "2026-11-15T20:56:40.096Z",
+  "version": 2,
+  "exportedAt": "2026-11-16T22:23:32.081Z",
+  "format": "MongoDB Extended JSON",
+  "source": "current database with personal data redacted",
   "collections": [
     {
-      "name": "Role",
-      "file": "roles.json",
-      "count": 3,
-      "sha256": "9f0c4ac5dacf80b4e44be89ee309763488659bcafa2f5fc605959307a149186c"
+      "name": "Account",
+      "file": "Account.json",
+      "count": 59,
+      "sha256": "79b3465c9c39c21c0c4099d3a8235ed6586e0d6c4b216ea80fc7e8eb239682d6",
+      "indexes": [
+        {
+          "key": {
+            "phone": 1
+          },
+          "name": "phone_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "username": 1
+          },
+          "name": "username_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "username": {
+              "$type": "string"
+            }
+          }
+        }
+      ]
     },
     {
       "name": "AccountRole",
-      "file": "account-roles.json",
+      "file": "AccountRole.json",
       "count": 59,
-      "sha256": "5e6ed4e54bd951cc9fb0fd2397d89cc48d1b97f02f2b6869aa29b176a9c09f43"
-    },
-    {
-      "name": "Account",
-      "file": "accounts.json",
-      "count": 59,
-      "sha256": "a9c0641d757c4776a2a5ce4a08e28064bdd785d498a2994f2896b2ba91027b70"
-    },
-    {
-      "name": "AuditLog",
-      "file": "audit-logs.json",
-      "count": 977,
-      "sha256": "fd83118ea6b2bfc6ac093859a98247b27b03de4634faa78c8cbadab625c36d8e"
-    },
-    {
-      "name": "Policy",
-      "file": "policies.json",
-      "count": 3,
-      "sha256": "67b05bb034b5bb5ef36ad0bc8de5297450c3d9f94c7e46c9b4c261e723df8e83"
-    },
-    {
-      "name": "PolicyLevel",
-      "file": "policy-levels.json",
-      "count": 9,
-      "sha256": "8ed6b9a1124fa68c0a0d15b04898f2b33c4ae472011b358f918f7dee86992257"
-    },
-    {
-      "name": "Customer",
-      "file": "customers.json",
-      "count": 43,
-      "sha256": "cc79fd89514a1ae81611165b5b1218647f1c5ab751da65400e5776fcf16fe1d6"
-    },
-    {
-      "name": "Employee",
-      "file": "employees.json",
-      "count": 15,
-      "sha256": "03727e2b9a060fd340be331a3f178fcfb5cedc14c5d2f6e43c85b12879c1c4ee"
-    },
-    {
-      "name": "ContactRequest",
-      "file": "contact-requests.json",
-      "count": 26,
-      "sha256": "d647ae1b4b33c7a79097a9e07a037fc10eb316441f2a4901d09752b0fa87e9b2"
-    },
-    {
-      "name": "Notification",
-      "file": "notifications.json",
-      "count": 166,
-      "sha256": "e56534c5ac52eee38cd4fbbc1383dc5bdcc1d905d788f252180fcb6ea4a166e1"
-    },
-    {
-      "name": "Favorite",
-      "file": "favorites.json",
-      "count": 81,
-      "sha256": "bf48b333fff050bbe3b4da7fe648460a624caba20d0e449f9ad4aa1c4147a891"
-    },
-    {
-      "name": "Viewing",
-      "file": "viewings.json",
-      "count": 116,
-      "sha256": "cf91651d2a116574b53d68df9632fc4fbd9f73ef4dc50c644b15a933f90fe71b"
-    },
-    {
-      "name": "ViewingDetail",
-      "file": "viewing-details.json",
-      "count": 228,
-      "sha256": "e41816cc70ba8c6ba61ce9f2027bf0ddcbd6c9c91808a9ca6bd66c9545085b60"
-    },
-    {
-      "name": "Owner",
-      "file": "owners.json",
-      "count": 10,
-      "sha256": "fa54f9a11683783fd6caf67bb93d341ced16866aff0e1aaa041b7134b4e95569"
-    },
-    {
-      "name": "Room",
-      "file": "rooms.json",
-      "count": 51,
-      "sha256": "56e37835a0bbad671b3e3adf3277b039488ffd33ae847d07173faeb95f878a4d"
-    },
-    {
-      "name": "RoomImage",
-      "file": "room-images.json",
-      "count": 224,
-      "sha256": "6a0570e2a2d0429b97d4dcb77f3b4a49bb51c66d9a76fae8ca097ae6563022aa"
-    },
-    {
-      "name": "RoomPriceHistory",
-      "file": "room-price-history.json",
-      "count": 50,
-      "sha256": "557f0cd13e5d75e361d9bcfce30606e14ce410c1029d482a1a2e0e64860cd216"
-    },
-    {
-      "name": "Property",
-      "file": "properties.json",
-      "count": 8,
-      "sha256": "b346f9faedcf00c19a5592ab2c39c49e46ded02584d1d17669678e02c8f2e43e"
-    },
-    {
-      "name": "PropertySchool",
-      "file": "property-schools.json",
-      "count": 61,
-      "sha256": "42c879a779d35a64571b97da734c75ab2d045ddb051ba54858e2eb77eeb14d2e"
-    },
-    {
-      "name": "School",
-      "file": "schools.json",
-      "count": 13,
-      "sha256": "e3109837aa44283b66b554ddfe4cfccec0c6124d9d065b44cca959944e927962"
-    },
-    {
-      "name": "Hold",
-      "file": "holds.json",
-      "count": 22,
-      "sha256": "c37d339958aa313947fa35eee98fdad22105df37aece07344df3e584579fcb77"
-    },
-    {
-      "name": "Payment",
-      "file": "payments.json",
-      "count": 49,
-      "sha256": "2563f8836ec7c2d40fd1416bc9c4fd170fd0e2ac3484a6cbce2a52a319574c37"
-    },
-    {
-      "name": "Receipt",
-      "file": "receipts.json",
-      "count": 46,
-      "sha256": "af949ec235839f75db14aa3db8cd2c9bb7a934776021310ae38997358a46d70a"
-    },
-    {
-      "name": "Deposit",
-      "file": "deposits.json",
-      "count": 30,
-      "sha256": "400caa9fadf4826f0302f8600b4c2d57a1b9a03fa8dcf79113177f232928a948"
-    },
-    {
-      "name": "Contract",
-      "file": "contracts.json",
-      "count": 26,
-      "sha256": "4610f7a07ba887635f7e26331405da5f1b6daadc6374e1ecac8ff9ce3828dcbc"
-    },
-    {
-      "name": "BrokerageAgreement",
-      "file": "brokerage-agreements.json",
-      "count": 50,
-      "sha256": "83518cbb3d9f821dda5407ea6e7c672b30ce78cabbe0f433224e86f99807f809"
-    },
-    {
-      "name": "BrokerageTransaction",
-      "file": "brokerage-transactions.json",
-      "count": 25,
-      "sha256": "41765f8165c2cf38053fe928495a23b93a0e1f5682e1963c262339248afe0b89"
-    },
-    {
-      "name": "EmployeeRevenue",
-      "file": "employee-revenues.json",
-      "count": 60,
-      "sha256": "2ed6ecfe5afb377a8042d9fbe5bff91175c6ae49c2e1a0e9e8263f39adf3a753"
-    },
-    {
-      "name": "CompanyRevenue",
-      "file": "company-revenues.json",
-      "count": 4,
-      "sha256": "f9f9735724934a77be70e651d9b270f82753e3633e48015b028a5a9cec599820"
-    },
-    {
-      "name": "Commission",
-      "file": "commissions.json",
-      "count": 60,
-      "sha256": "466439f5095da353f5c30fb3a006077c1b17384e5166e5c49e44b7b59132b412"
-    },
-    {
-      "name": "PayrollPeriod",
-      "file": "payroll-periods.json",
-      "count": 4,
-      "sha256": "4a005a8925deb39fd2fdc98a0812f4cdfa2c76038ecd6597afe85c568594ae48"
-    },
-    {
-      "name": "Payslip",
-      "file": "payslips.json",
-      "count": 60,
-      "sha256": "cef472734940c0887b63234ce0c603857ce2268f1643acdfc21aa314a2beaf18"
-    },
-    {
-      "name": "PayrollAdjustment",
-      "file": "payroll-adjustments.json",
-      "count": 60,
-      "sha256": "215f25b250436f56e4131d9143a03f31204d6213eddf42f328bdbcab50dc5e93"
-    },
-    {
-      "name": "WorkLocation",
-      "file": "work-locations.json",
-      "count": 1,
-      "sha256": "a41b252deab49bcb1555e73e95593099e19f31e42ff62ed891393047c4a63bf8"
-    },
-    {
-      "name": "RegistrationPeriod",
-      "file": "registration-periods.json",
-      "count": 16,
-      "sha256": "f178ee03a51cb8e85524d5d7eb30dd0fc9ee0f16bb463e50b61d64a1ee61099a"
-    },
-    {
-      "name": "PeriodRegistration",
-      "file": "period-registrations.json",
-      "count": 240,
-      "sha256": "ecea2d9206c45a29891257b542c9ff3a04fa6b76a7f101b6c1875fcc184c3ef6"
-    },
-    {
-      "name": "Shift",
-      "file": "shifts.json",
-      "count": 224,
-      "sha256": "28322bc59f2ba670db36c210c143ef8815613de3eee4d6b5b2ec7af5ea567c56"
-    },
-    {
-      "name": "ShiftAssignment",
-      "file": "shift-assignments.json",
-      "count": 1205,
-      "sha256": "a1f3841b9e8549913da7f9b612c00f616b97bb60c34f5f79d6d0df71bfedd787"
+      "sha256": "4e162be8b6ba0c010b5a7367d65a1a40db623ff30b183f9907d08cbc84a86559",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "accountId": 1,
+            "roleId": 1
+          },
+          "name": "accountId_1_roleId_1",
+          "unique": true
+        }
+      ]
     },
     {
       "name": "Attendance",
-      "file": "attendance.json",
+      "file": "Attendance.json",
       "count": 1007,
-      "sha256": "fb3d922edc709eb593d46b4da86ca56f34ed661303d9654963ea18c8d244ff53"
+      "sha256": "e74227f251b79c161d0d456050c35766c103b4ddb3cc1f63f8d82e010e61b563",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "assignmentId": 1
+          },
+          "name": "assignmentId_1",
+          "unique": true
+        }
+      ]
     },
     {
       "name": "AttendanceEvidence",
-      "file": "attendance-evidence.json",
+      "file": "AttendanceEvidence.json",
       "count": 2014,
-      "sha256": "77d0e8acd6274caff516f8b4a2cf68fd4ad95cc97647c5947802e3e54145a6c5"
+      "sha256": "9332624153d846797de8d21fc0637a5152c940c972c933c8bb9eac822d6f7b5b",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "attendanceId": 1,
+            "kind": 1
+          },
+          "name": "attendanceId_1_kind_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "AuditLog",
+      "file": "AuditLog.json",
+      "count": 1104,
+      "sha256": "b1539f40468cc3f4d5257f7dde73d97da2b63815658d9fe5243ddc9706a2a12f",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "p3Key": 1
+          },
+          "name": "p3Key_1",
+          "unique": true,
+          "sparse": true
+        },
+        {
+          "key": {
+            "p4Key": 1
+          },
+          "name": "p4Key_1",
+          "unique": true,
+          "sparse": true
+        },
+        {
+          "key": {
+            "p5Key": 1
+          },
+          "name": "p5Key_1",
+          "unique": true,
+          "sparse": true
+        },
+        {
+          "key": {
+            "p6Key": 1
+          },
+          "name": "p6Key_1",
+          "unique": true,
+          "sparse": true
+        },
+        {
+          "key": {
+            "entityType": 1,
+            "actorId": 1,
+            "at": -1
+          },
+          "name": "entityType_1_actorId_1_at_-1"
+        }
+      ]
+    },
+    {
+      "name": "BrokerageAgreement",
+      "file": "BrokerageAgreement.json",
+      "count": 49,
+      "sha256": "224d5a929006f8f0450ad0e17142bdf475519092881122afd787cff6148672f1",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "roomId": 1,
+            "effectiveFrom": 1,
+            "effectiveTo": 1
+          },
+          "name": "roomId_1_effectiveFrom_1_effectiveTo_1"
+        }
+      ]
+    },
+    {
+      "name": "BrokerageTransaction",
+      "file": "BrokerageTransaction.json",
+      "count": 26,
+      "sha256": "3a9029aac192f5c788616ac2a1b91367d2cd041f7eee4d1401cf159d2d22f301",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "contractId": 1
+          },
+          "name": "contractId_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "status": 1,
+            "recognizedAt": 1
+          },
+          "name": "status_1_recognizedAt_1"
+        }
+      ]
+    },
+    {
+      "name": "Commission",
+      "file": "Commission.json",
+      "count": 60,
+      "sha256": "7e6c44ee13d2ec78a2f044d777022dfe3d182ec3639dd365bbdfa3fadf2df1cf",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "employeeId": 1,
+            "periodId": 1
+          },
+          "name": "employeeId_1_periodId_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "CompanyRevenue",
+      "file": "CompanyRevenue.json",
+      "count": 4,
+      "sha256": "315200b79b32cde915bc4e39b0bfee3ea63d57b85dcd207ba096cad3440aecd9",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "periodId": 1
+          },
+          "name": "periodId_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "ContactRequest",
+      "file": "ContactRequest.json",
+      "count": 26,
+      "sha256": "ccf766a82654b1dd0c6b1b8db539d025b1cafa6cf58226691bd4db113c891917",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "dedupeHash": 1
+          },
+          "name": "dedupeHash_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "phone": 1,
+            "createdAt": -1
+          },
+          "name": "phone_1_createdAt_-1"
+        }
+      ]
+    },
+    {
+      "name": "Contract",
+      "file": "Contract.json",
+      "count": 27,
+      "sha256": "d61159ee9df22198ccccda67d2f3367adb0858bd2ef4cbac4f63c0b7849ab9d6",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "number": 1
+          },
+          "name": "number_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "depositId": 1
+          },
+          "name": "depositId_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Counter",
+      "file": "Counter.json",
+      "count": 5,
+      "sha256": "a3e6dc55494610e4b7db0ce8b2253c1525872966b6da27f08135268521d398cd",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true,
+          "sparse": true
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "file": "Customer.json",
+      "count": 43,
+      "sha256": "3ef5002a743975e7f71a8f6a1105dbb9bf7b3b68b6c1c7b79a725eb85211d2ef",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "identity.number": 1
+          },
+          "name": "identity.number_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "identity.number": {
+              "$type": "string"
+            }
+          }
+        },
+        {
+          "key": {
+            "accountId": 1
+          },
+          "name": "linked_customer_account",
+          "unique": true,
+          "partialFilterExpression": {
+            "accountId": {
+              "$type": "string"
+            }
+          }
+        },
+        {
+          "key": {
+            "phone": 1
+          },
+          "name": "phone_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "phone": {
+              "$type": "string"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Deposit",
+      "file": "Deposit.json",
+      "count": 31,
+      "sha256": "a1d21d35978400d61bd34f801a544aed5a5cd8dfc37be3ad10c257e4f09c11f7",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "number": 1
+          },
+          "name": "number_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "holdId": 1
+          },
+          "name": "holdId_1",
+          "unique": true,
+          "sparse": true
+        }
+      ]
+    },
+    {
+      "name": "DepositDraft",
+      "file": "DepositDraft.json",
+      "count": 0,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "employeeId": 1,
+            "updatedAt": -1
+          },
+          "name": "employeeId_1_updatedAt_-1"
+        }
+      ]
+    },
+    {
+      "name": "Employee",
+      "file": "Employee.json",
+      "count": 15,
+      "sha256": "ef8ac338ced0afe5ac6150af823afc1202c17ee28629ea79686db3bffed732cb",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "accountId": 1
+          },
+          "name": "accountId_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "employeeCode": 1
+          },
+          "name": "employeeCode_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "email": 1
+          },
+          "name": "email_1",
+          "unique": true,
+          "sparse": true
+        }
+      ]
+    },
+    {
+      "name": "EmployeeRevenue",
+      "file": "EmployeeRevenue.json",
+      "count": 60,
+      "sha256": "ee60f4eb494fc1b78b590819d451f61545fa85ab7ddfc388024f4ebb089284e1",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "employeeId": 1,
+            "periodId": 1
+          },
+          "name": "employeeId_1_periodId_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "commissionId": 1
+          },
+          "name": "commissionId_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "commissionId": {
+              "$type": "string"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Favorite",
+      "file": "Favorite.json",
+      "count": 79,
+      "sha256": "5fa06403c90d49972a449c2c56a50424742f736294113bfaec46b148be930292",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "customerId": 1,
+            "roomId": 1
+          },
+          "name": "customerId_1_roomId_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Hold",
+      "file": "Hold.json",
+      "count": 25,
+      "sha256": "ccb521124280965ec969cf1096cbb27624365389fa1c5b943d00b5163322a7e4",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "roomId": 1
+          },
+          "name": "roomId_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "isActive": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notification",
+      "file": "Notification.json",
+      "count": 508,
+      "sha256": "7d11ee4b590ecb4abf77f9261ce7b8556f662bb0b2a8784ad830383c6c412cdb",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "dedupeKey": 1
+          },
+          "name": "dedupeKey_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "accountId": 1,
+            "createdAt": -1
+          },
+          "name": "accountId_1_createdAt_-1"
+        }
+      ]
+    },
+    {
+      "name": "Owner",
+      "file": "Owner.json",
+      "count": 10,
+      "sha256": "037509dd99cba8f8920436c7eea84a4f52e19e4064a7cbd57bb28ee87c343f6c",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "PasswordReset",
+      "file": "PasswordReset.json",
+      "count": 0,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "indexes": [
+        {
+          "key": {
+            "expiresAt": 1
+          },
+          "name": "expiresAt_1",
+          "expireAfterSeconds": 0
+        },
+        {
+          "key": {
+            "phoneHash": 1,
+            "role": 1,
+            "state": 1
+          },
+          "name": "phoneHash_1_role_1_state_1"
+        }
+      ]
+    },
+    {
+      "name": "PasswordResetLimit",
+      "file": "PasswordResetLimit.json",
+      "count": 0,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "indexes": [
+        {
+          "key": {
+            "expiresAt": 1
+          },
+          "name": "expiresAt_1",
+          "expireAfterSeconds": 0
+        }
+      ]
+    },
+    {
+      "name": "Payment",
+      "file": "Payment.json",
+      "count": 52,
+      "sha256": "ff9b01fa87419536d5260c77aa8b555dd843cd6dac67eca52fdfcd70625ee857",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "idempotencyKey": 1
+          },
+          "name": "idempotencyKey_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "bankTransactionRef": 1
+          },
+          "name": "bankTransactionRef_1",
+          "unique": true,
+          "sparse": true
+        },
+        {
+          "key": {
+            "receipt.number": 1
+          },
+          "name": "receipt.number_1",
+          "unique": true,
+          "sparse": true
+        },
+        {
+          "key": {
+            "orderCode": 1
+          },
+          "name": "orderCode_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "provider": "PAYOS"
+          }
+        },
+        {
+          "key": {
+            "holdId": 1,
+            "provider": 1
+          },
+          "name": "holdId_1_provider_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "provider": "PAYOS"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PayrollAdjustment",
+      "file": "PayrollAdjustment.json",
+      "count": 60,
+      "sha256": "bebf6e794c8cf986f77f6f54192e76ba990e8c0cfb38ce8e8f8a1380f66948d5",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "PayrollPeriod",
+      "file": "PayrollPeriod.json",
+      "count": 4,
+      "sha256": "f5e4362f0736f3bdeb5361a25a374881faba130420025ae9595e454ee16b88c2",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "code": 1
+          },
+          "name": "code_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "year": 1,
+            "month": 1
+          },
+          "name": "year_1_month_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Payslip",
+      "file": "Payslip.json",
+      "count": 60,
+      "sha256": "15e8625d90146e91680b777849d28ba2fa1fb9991f097d8c529c89f03e175367",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "employeeId": 1,
+            "periodId": 1
+          },
+          "name": "employeeId_1_periodId_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "adjustmentId": 1
+          },
+          "name": "adjustmentId_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "commissionId": 1
+          },
+          "name": "commissionId_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "commissionId": {
+              "$type": "string"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PeriodRegistration",
+      "file": "PeriodRegistration.json",
+      "count": 240,
+      "sha256": "abc0c5dfb48fc1c3561b7fb229cba1e0be9c8b2a7ee94dbcc9461994d8439260",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "periodId": 1,
+            "employeeId": 1
+          },
+          "name": "periodId_1_employeeId_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Policy",
+      "file": "Policy.json",
+      "count": 4,
+      "sha256": "501bc25a90f436500da97862f0bed35b7b45c84483d22c985d152828a0f6cd6b",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "type": 1,
+            "version": 1
+          },
+          "name": "type_1_version_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "PolicyLevel",
+      "file": "PolicyLevel.json",
+      "count": 10,
+      "sha256": "e422736eb44add6ac5c16d578b98d1d7b29aa1290b11e8b64f3265dc9f5ceeb5",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Property",
+      "file": "Property.json",
+      "count": 8,
+      "sha256": "80cf2cce6b3b3d36b0ec9a38561277ef63ebd8421e4be0abdbaa2f2730940c3c",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "PropertySchool",
+      "file": "PropertySchool.json",
+      "count": 61,
+      "sha256": "f0509bd436277c6bb2c190bbdb6d4c20c926085bc698b9078916f942c7bd81d0",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "propertyId": 1,
+            "schoolId": 1
+          },
+          "name": "propertyId_1_schoolId_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Receipt",
+      "file": "Receipt.json",
+      "count": 47,
+      "sha256": "6e478f4dad5ce49caca1c3665f5cdeb17a635d556e2a902f08f16991fd505b43",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "number": 1
+          },
+          "name": "number_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "paymentId": 1
+          },
+          "name": "paymentId_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "RegistrationPeriod",
+      "file": "RegistrationPeriod.json",
+      "count": 16,
+      "sha256": "b83c5c784e1e4e3daf9e64db6077d6dfceb27da14663bdae5a3dc8d713c598b7",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "weekStart": 1
+          },
+          "name": "weekStart_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Role",
+      "file": "Role.json",
+      "count": 3,
+      "sha256": "398e2128c7969c648af3463dbe53b1ba40a34dd08b711fc9290e60a2dfde71c5",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Room",
+      "file": "Room.json",
+      "count": 50,
+      "sha256": "4e966e3a776dbcb3ddf96d5ac8a628b1c6b9aa7b10e740fb8a11678d71332888",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "code": 1
+          },
+          "name": "code_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "slug": 1
+          },
+          "name": "slug_1",
+          "unique": true,
+          "sparse": true
+        },
+        {
+          "key": {
+            "codeNormalized": 1
+          },
+          "name": "codeNormalized_1",
+          "unique": true,
+          "sparse": true
+        },
+        {
+          "key": {
+            "propertyId": 1,
+            "numberNormalized": 1
+          },
+          "name": "propertyId_1_numberNormalized_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "numberNormalized": {
+              "$type": "string"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "RoomImage",
+      "file": "RoomImage.json",
+      "count": 220,
+      "sha256": "c42a3f923d2939904133c7675a5632ecc6f4e5d71071b7edf3d30837804a4c26",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "roomId": 1,
+            "order": 1
+          },
+          "name": "roomId_1_order_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "roomId": 1,
+            "url": 1
+          },
+          "name": "roomId_1_url_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "RoomPriceHistory",
+      "file": "RoomPriceHistory.json",
+      "count": 49,
+      "sha256": "5dd25ae4c1a7deec2244cefd6f21b11dba31002f2238e6b457df89d1edabd22e",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "roomId": 1,
+            "effectiveFrom": -1
+          },
+          "name": "roomId_1_effectiveFrom_-1"
+        }
+      ]
+    },
+    {
+      "name": "School",
+      "file": "School.json",
+      "count": 13,
+      "sha256": "ed7eb0dbef7bf5c12a0c88073d9ffc01492845373bea0155927abf2f022f2c52",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Shift",
+      "file": "Shift.json",
+      "count": 224,
+      "sha256": "80ddd663542f1afd9d41fa6e2363b395bffe46a1d8cb3d409b3123423c46ac0f",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "workLocationId": 1,
+            "startsAt": 1
+          },
+          "name": "workLocationId_1_startsAt_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "periodId": 1,
+            "date": 1,
+            "startTime": 1
+          },
+          "name": "periodId_1_date_1_startTime_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "ShiftAssignment",
+      "file": "ShiftAssignment.json",
+      "count": 1205,
+      "sha256": "bc5d1e658a77b158b42b49496c6c41a581d274f4ed32c3481761033ba2e2b078",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "shiftId": 1,
+            "employeeId": 1
+          },
+          "name": "shiftId_1_employeeId_1",
+          "unique": true,
+          "partialFilterExpression": {
+            "isActive": true
+          }
+        }
+      ]
     },
     {
       "name": "Task",
-      "file": "tasks.json",
-      "count": 50,
-      "sha256": "f1cabfdeba4dbdb1b11c2a8bc8654bb6b433c7ed0eb2fce53a5dd4ebdf3b07a6"
-    },
-    {
-      "name": "TaskShift",
-      "file": "task-shifts.json",
-      "count": 97,
-      "sha256": "6cf7ab2094facf7aa95fe31bef823162d8ce6bf3c7a8bd2d2b41b1716341eaf8"
+      "file": "Task.json",
+      "count": 53,
+      "sha256": "b95f75e202448fec9333793ad67d7d880692a0ceecd2685af8663faafa77e10d",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        }
+      ]
     },
     {
       "name": "TaskAssignment",
-      "file": "task-assignments.json",
-      "count": 98,
-      "sha256": "4ea3a94e01851feeed88adf155f51e9c15873a4d39da04c851402dc314f35d62"
+      "file": "TaskAssignment.json",
+      "count": 101,
+      "sha256": "4eb05bdfa74bbda5e7818052d6a9712a8faa0458b2ffccd136c351b18d3bd86e",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "fromTaskAssignmentId": 1
+          },
+          "name": "fromTaskAssignmentId_1",
+          "unique": true,
+          "sparse": true
+        }
+      ]
+    },
+    {
+      "name": "TaskShift",
+      "file": "TaskShift.json",
+      "count": 100,
+      "sha256": "b2671be8fcf4e0ddc1d89eb2d2c27a9f84148c2c15274f9f3c1998e33b7db86d",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "Viewing",
+      "file": "Viewing.json",
+      "count": 118,
+      "sha256": "3d3ae94e03964ed2828e6576ff818b802f1bc95ed94f497d4440031ec8f77016",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "customerId": 1,
+            "startAt": -1
+          },
+          "name": "customerId_1_startAt_-1"
+        }
+      ]
+    },
+    {
+      "name": "ViewingDetail",
+      "file": "ViewingDetail.json",
+      "count": 230,
+      "sha256": "a2a3012527b3dcff11f1c0aa97d86d53d372981a1b0d1208947a0e99b8d59f3c",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "viewingId": 1,
+            "roomId": 1
+          },
+          "name": "viewingId_1_roomId_1",
+          "unique": true
+        },
+        {
+          "key": {
+            "viewingId": 1,
+            "order": 1
+          },
+          "name": "viewingId_1_order_1",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "WorkLocation",
+      "file": "WorkLocation.json",
+      "count": 1,
+      "sha256": "55726b4e90c722ebfa551bc350c94a78e8f62f5d85327ad6c3ef6b5f588d160d",
+      "indexes": [
+        {
+          "key": {
+            "id": 1
+          },
+          "name": "id_1",
+          "unique": true
+        }
+      ]
     }
-  ]
+  ],
+  "demoAccounts": [
+    {
+      "role": "ADMIN",
+      "phone": "0900000001",
+      "username": "demo_admin_01"
+    },
+    {
+      "role": "EMPLOYEE",
+      "phone": "0900000002",
+      "username": "demo_employee_01"
+    },
+    {
+      "role": "CUSTOMER",
+      "phone": "0900000017",
+      "username": "demo_customer_01"
+    }
+  ],
+  "privacy": {
+    "credentials": "Generated locally during restore; source passwords and hashes removed",
+    "identityImages": "Synthetic placeholders",
+    "operationJournals": "Only completed operations; recovery payloads removed",
+    "resetRequests": "Excluded"
+  }
 }

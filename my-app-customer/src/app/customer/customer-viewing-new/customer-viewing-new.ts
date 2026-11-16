@@ -7,6 +7,7 @@ import { RoomService } from '../../services/room-service';
 import { isViewingShiftTime, ViewingService } from '../../services/viewing-service';
 import { PHONE_PATTERN } from '../../shared/validators';
 import { apiMessage } from '../../services/api-message';
+import { canScheduleViewing } from '../../classes/Room';
 import {
   Viewing,
   ViewingAvailability,
@@ -41,6 +42,7 @@ export class CustomerViewingNewComponent {
   readonly viewings = inject(ViewingService);
   readonly auth = inject(AuthService);
   private route = inject(ActivatedRoute);
+  readonly historyOnly = this.route.snapshot.data?.['historyOnly'] === true;
   private fb = inject(FormBuilder);
   readonly selected = signal<string[]>([]);
   readonly choices = signal<Record<string, TimeChoice>>({});
@@ -73,7 +75,7 @@ export class CustomerViewingNewComponent {
     this.formValue();
     return this.form.invalid;
   });
-  readonly available = computed(() => this.rooms.rooms().filter((r) => r.status === 'AVAILABLE'));
+  readonly available = computed(() => this.rooms.rooms().filter(canScheduleViewing));
   readonly selectedRooms = computed(() =>
     this.selected()
       .map((id) => this.rooms.get(id))
@@ -112,8 +114,9 @@ export class CustomerViewingNewComponent {
       .pipe(takeUntilDestroyed())
       .subscribe(() => this.formValue.set(this.form.getRawValue()));
     const id = this.route.snapshot.queryParamMap.get('roomId');
-    if (id && this.rooms.get(id)?.status === 'AVAILABLE') this.selected.set([id]);
-    void this.loadCart();
+    if (id && canScheduleViewing(this.rooms.get(id))) this.selected.set([id]);
+    if (this.historyOnly) this.loadingCart.set(false);
+    else void this.loadCart();
     void this.loadMine();
   }
   async loadMine() {
@@ -133,7 +136,7 @@ export class CustomerViewingNewComponent {
     try {
       const cart = await this.viewings.getCart();
       this.selected.update((selected) =>
-        [...new Set([...selected, ...cart])].filter((id) => !!this.rooms.get(id)),
+        [...new Set([...selected, ...cart])].filter((id) => canScheduleViewing(this.rooms.get(id))),
       );
     } catch (error) {
       this.error.set(apiMessage(error, 'Không tải được danh sách xem. Vui lòng thử lại.'));

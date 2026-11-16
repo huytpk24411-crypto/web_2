@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+﻿import { Component, computed, inject, signal } from '@angular/core';
 import { ShiftService } from '../../services/shift-service';
 import {
   addCalendarDays,
@@ -53,31 +53,5 @@ export class EmployeeShiftListComponent {
   }
   currentWeek() {
     this.selectedWeek.set(mondayOfWeek(this.today()));
-  }
-  private _busy = signal(false);
-  get busy() {
-    return this._busy();
-  }
-  set busy(value: ReturnType<typeof this._busy>) {
-    this._busy.set(value);
-  }
-  private _error = signal('');
-  get error() {
-    return this._error();
-  }
-  set error(value: ReturnType<typeof this._error>) {
-    this._error.set(value);
-  }
-  async cancel(id: string) {
-    if (this.busy) return;
-    this.busy = true;
-    try {
-      await this.shifts.cancelRequest(id);
-      this.error = '';
-    } catch (e) {
-      this.error = (e as Error).message;
-    } finally {
-      this.busy = false;
-    }
   }
 }

@@ -54,6 +54,7 @@ describe('CustomerBookingReceiptComponent', () => {
           useValue: {
             get: (id: string) => API_ROOMS.find((room) => room.id === id),
             forRecord: RoomService.prototype.forRecord,
+            refresh: vi.fn().mockResolvedValue(undefined),
           },
         },
         {

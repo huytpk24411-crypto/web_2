@@ -1,0 +1,947 @@
+[
+  {
+    "_id": {
+      "$oid": "2727f69c2c5c819ea49b60f5"
+    },
+    "id": "b1",
+    "name": "Sora House Linh Trung",
+    "address": "Đường số 9, Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh",
+    "addressLine": "Đường số 9",
+    "ward": "Linh Trung",
+    "district": "TP. Thủ Đức",
+    "province": "TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.8722"
+    },
+    "lng": {
+      "$numberDouble": "106.802"
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.802"
+        },
+        {
+          "$numberDouble": "10.8722"
+        }
+      ]
+    },
+    "images": [
+      "/assets/rooms/PHONG_01/01_phong_bep.webp"
+    ],
+    "nearbySchools": [
+      {
+        "schoolId": "fpt",
+        "distanceM": {
+          "$numberInt": "4600"
+        },
+        "travelMinutes": {
+          "$numberInt": "11"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmiu",
+        "distanceM": {
+          "$numberInt": "800"
+        },
+        "travelMinutes": {
+          "$numberDouble": "1.9"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmuaf",
+        "distanceM": {
+          "$numberInt": "1700"
+        },
+        "travelMinutes": {
+          "$numberDouble": "4.1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmus",
+        "distanceM": {
+          "$numberInt": "900"
+        },
+        "travelMinutes": {
+          "$numberDouble": "2.2"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmussh",
+        "distanceM": {
+          "$numberInt": "300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "0.7"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmut",
+        "distanceM": {
+          "$numberInt": "1300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "3.1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmute",
+        "distanceM": {
+          "$numberInt": "5200"
+        },
+        "travelMinutes": {
+          "$numberDouble": "12.5"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hub",
+        "distanceM": {
+          "$numberInt": "6200"
+        },
+        "travelMinutes": {
+          "$numberDouble": "14.9"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uel",
+        "distanceM": {
+          "$numberInt": "3400"
+        },
+        "travelMinutes": {
+          "$numberDouble": "8.2"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "ufm",
+        "distanceM": {
+          "$numberInt": "8400"
+        },
+        "travelMinutes": {
+          "$numberDouble": "20.2"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uit",
+        "distanceM": {
+          "$numberInt": "400"
+        },
+        "travelMinutes": {
+          "$numberInt": "1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "ush",
+        "distanceM": {
+          "$numberInt": "900"
+        },
+        "travelMinutes": {
+          "$numberDouble": "2.2"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      }
+    ],
+    "active": true,
+    "locationStatus": "estimated",
+    "locationSource": "Tọa độ tham chiếu theo địa chỉ tòa nhà",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794662094495"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c60a9c5ec91e746a9758e6e0"
+    },
+    "id": "b2",
+    "name": "Lumi Residence Đông Hòa",
+    "address": "Đường Tô Vĩnh Diện, Đông Hòa, TP. Dĩ An, Bình Dương",
+    "addressLine": "Đường Tô Vĩnh Diện",
+    "ward": "Đông Hòa",
+    "district": "TP. Dĩ An",
+    "province": "Bình Dương",
+    "lat": {
+      "$numberDouble": "10.8792"
+    },
+    "lng": {
+      "$numberDouble": "106.7965"
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7965"
+        },
+        {
+          "$numberDouble": "10.8792"
+        }
+      ]
+    },
+    "images": [
+      "/assets/rooms/PHONG_07/01_phong_bep.webp"
+    ],
+    "nearbySchools": [
+      {
+        "schoolId": "fpt",
+        "distanceM": {
+          "$numberInt": "5800"
+        },
+        "travelMinutes": {
+          "$numberDouble": "13.9"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmiu",
+        "distanceM": {
+          "$numberInt": "700"
+        },
+        "travelMinutes": {
+          "$numberDouble": "1.7"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmuaf",
+        "distanceM": {
+          "$numberInt": "1400"
+        },
+        "travelMinutes": {
+          "$numberDouble": "3.4"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmus",
+        "distanceM": {
+          "$numberInt": "400"
+        },
+        "travelMinutes": {
+          "$numberInt": "1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmussh",
+        "distanceM": {
+          "$numberInt": "1300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "3.1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmut",
+        "distanceM": {
+          "$numberInt": "1300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "3.1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmute",
+        "distanceM": {
+          "$numberInt": "5300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "12.7"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hub",
+        "distanceM": {
+          "$numberInt": "6000"
+        },
+        "travelMinutes": {
+          "$numberDouble": "14.4"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uel",
+        "distanceM": {
+          "$numberInt": "2900"
+        },
+        "travelMinutes": {
+          "$numberInt": "7"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uit",
+        "distanceM": {
+          "$numberInt": "1700"
+        },
+        "travelMinutes": {
+          "$numberDouble": "4.1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "ush",
+        "distanceM": {
+          "$numberInt": "1000"
+        },
+        "travelMinutes": {
+          "$numberDouble": "2.4"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      }
+    ],
+    "active": true,
+    "locationStatus": "estimated",
+    "locationSource": "Tọa độ tham chiếu theo địa chỉ tòa nhà",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794662094498"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b75ce8061dd56162058746cc"
+    },
+    "id": "b3",
+    "name": "An Phú Home Võ Văn Ngân",
+    "address": "Đường Võ Văn Ngân, Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh",
+    "addressLine": "Đường Võ Văn Ngân",
+    "ward": "Linh Chiểu",
+    "district": "TP. Thủ Đức",
+    "province": "TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.8505"
+    },
+    "lng": {
+      "$numberDouble": "106.769"
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.769"
+        },
+        {
+          "$numberDouble": "10.8505"
+        }
+      ]
+    },
+    "images": [
+      "/assets/rooms/PHONG_14/01_phong_bep.webp"
+    ],
+    "nearbySchools": [
+      {
+        "schoolId": "fpt",
+        "distanceM": {
+          "$numberInt": "6000"
+        },
+        "travelMinutes": {
+          "$numberDouble": "14.4"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmiu",
+        "distanceM": {
+          "$numberInt": "6000"
+        },
+        "travelMinutes": {
+          "$numberDouble": "14.4"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmuaf",
+        "distanceM": {
+          "$numberInt": "4300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "10.3"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmus",
+        "distanceM": {
+          "$numberInt": "5400"
+        },
+        "travelMinutes": {
+          "$numberInt": "13"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmussh",
+        "distanceM": {
+          "$numberInt": "5300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "12.7"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmut",
+        "distanceM": {
+          "$numberInt": "6800"
+        },
+        "travelMinutes": {
+          "$numberDouble": "16.3"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmute",
+        "distanceM": {
+          "$numberInt": "400"
+        },
+        "travelMinutes": {
+          "$numberInt": "1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hub",
+        "distanceM": {
+          "$numberInt": "1500"
+        },
+        "travelMinutes": {
+          "$numberDouble": "3.6"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uel",
+        "distanceM": {
+          "$numberInt": "3100"
+        },
+        "travelMinutes": {
+          "$numberDouble": "7.4"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "ufm",
+        "distanceM": {
+          "$numberInt": "7700"
+        },
+        "travelMinutes": {
+          "$numberDouble": "18.5"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uit",
+        "distanceM": {
+          "$numberInt": "5600"
+        },
+        "travelMinutes": {
+          "$numberDouble": "13.4"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "ush",
+        "distanceM": {
+          "$numberInt": "4900"
+        },
+        "travelMinutes": {
+          "$numberDouble": "11.8"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      }
+    ],
+    "active": true,
+    "locationStatus": "estimated",
+    "locationSource": "Tọa độ tham chiếu theo địa chỉ tòa nhà",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794662094499"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60d0e8f52f7c0b56b126a4c7"
+    },
+    "id": "b4",
+    "name": "Green Nest Nông Lâm",
+    "address": "Đường số 6, Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh",
+    "addressLine": "Đường số 6",
+    "ward": "Linh Trung",
+    "district": "TP. Thủ Đức",
+    "province": "TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.8688"
+    },
+    "lng": {
+      "$numberDouble": "106.7885"
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7885"
+        },
+        {
+          "$numberDouble": "10.8688"
+        }
+      ]
+    },
+    "images": [
+      "/assets/rooms/PHONG_20/01_phong_bep.webp"
+    ],
+    "nearbySchools": [
+      {
+        "schoolId": "fpt",
+        "distanceM": {
+          "$numberInt": "5000"
+        },
+        "travelMinutes": {
+          "$numberInt": "12"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmiu",
+        "distanceM": {
+          "$numberInt": "2200"
+        },
+        "travelMinutes": {
+          "$numberDouble": "5.3"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmuaf",
+        "distanceM": {
+          "$numberInt": "500"
+        },
+        "travelMinutes": {
+          "$numberDouble": "1.2"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmus",
+        "distanceM": {
+          "$numberInt": "1600"
+        },
+        "travelMinutes": {
+          "$numberDouble": "3.8"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmussh",
+        "distanceM": {
+          "$numberInt": "1700"
+        },
+        "travelMinutes": {
+          "$numberDouble": "4.1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmut",
+        "distanceM": {
+          "$numberInt": "2900"
+        },
+        "travelMinutes": {
+          "$numberInt": "7"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmute",
+        "distanceM": {
+          "$numberInt": "3400"
+        },
+        "travelMinutes": {
+          "$numberDouble": "8.2"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hub",
+        "distanceM": {
+          "$numberInt": "4300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "10.3"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uel",
+        "distanceM": {
+          "$numberInt": "1500"
+        },
+        "travelMinutes": {
+          "$numberDouble": "3.6"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "ufm",
+        "distanceM": {
+          "$numberInt": "8400"
+        },
+        "travelMinutes": {
+          "$numberDouble": "20.2"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uit",
+        "distanceM": {
+          "$numberInt": "2100"
+        },
+        "travelMinutes": {
+          "$numberInt": "5"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "ush",
+        "distanceM": {
+          "$numberInt": "1100"
+        },
+        "travelMinutes": {
+          "$numberDouble": "2.6"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      }
+    ],
+    "active": true,
+    "locationStatus": "estimated",
+    "locationSource": "Tọa độ tham chiếu theo địa chỉ tòa nhà",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794662094499"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9c0a6f3612a9ff949584c67a"
+    },
+    "id": "b5",
+    "name": "Hi-Tech Home Tăng Nhơn Phú",
+    "address": "Đường Lê Văn Việt, Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh",
+    "addressLine": "Đường Lê Văn Việt",
+    "ward": "Tăng Nhơn Phú A",
+    "district": "TP. Thủ Đức",
+    "province": "TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.8445"
+    },
+    "lng": {
+      "$numberDouble": "106.8015"
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.8015"
+        },
+        {
+          "$numberDouble": "10.8445"
+        }
+      ]
+    },
+    "images": [
+      "/assets/rooms/PHONG_26/01_phong_bep.webp"
+    ],
+    "nearbySchools": [
+      {
+        "schoolId": "fpt",
+        "distanceM": {
+          "$numberInt": "1300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "3.1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmiu",
+        "distanceM": {
+          "$numberInt": "4800"
+        },
+        "travelMinutes": {
+          "$numberDouble": "11.5"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmuaf",
+        "distanceM": {
+          "$numberInt": "4400"
+        },
+        "travelMinutes": {
+          "$numberDouble": "10.6"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmus",
+        "distanceM": {
+          "$numberInt": "4600"
+        },
+        "travelMinutes": {
+          "$numberInt": "11"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmussh",
+        "distanceM": {
+          "$numberInt": "3800"
+        },
+        "travelMinutes": {
+          "$numberDouble": "9.1"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmut",
+        "distanceM": {
+          "$numberInt": "5200"
+        },
+        "travelMinutes": {
+          "$numberDouble": "12.5"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hcmute",
+        "distanceM": {
+          "$numberInt": "4400"
+        },
+        "travelMinutes": {
+          "$numberDouble": "10.6"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "hub",
+        "distanceM": {
+          "$numberInt": "6100"
+        },
+        "travelMinutes": {
+          "$numberDouble": "14.6"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uel",
+        "distanceM": {
+          "$numberInt": "5000"
+        },
+        "travelMinutes": {
+          "$numberInt": "12"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "ufm",
+        "distanceM": {
+          "$numberInt": "4500"
+        },
+        "travelMinutes": {
+          "$numberDouble": "10.8"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "uit",
+        "distanceM": {
+          "$numberInt": "3700"
+        },
+        "travelMinutes": {
+          "$numberDouble": "8.9"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      },
+      {
+        "schoolId": "ush",
+        "distanceM": {
+          "$numberInt": "4100"
+        },
+        "travelMinutes": {
+          "$numberDouble": "9.8"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      }
+    ],
+    "active": true,
+    "locationStatus": "estimated",
+    "locationSource": "Tọa độ tham chiếu theo địa chỉ tòa nhà",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794662094501"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2e3ef90ce558d1808338e0e1"
+    },
+    "id": "b6",
+    "name": "Bách Khoa Garden",
+    "address": "Đường Tô Hiến Thành, Phường 14, Quận 10, TP. Hồ Chí Minh",
+    "addressLine": "Đường Tô Hiến Thành",
+    "ward": "Phường 14",
+    "district": "Quận 10",
+    "province": "TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.7742"
+    },
+    "lng": {
+      "$numberDouble": "106.6612"
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.6612"
+        },
+        {
+          "$numberDouble": "10.7742"
+        }
+      ]
+    },
+    "images": [
+      "/assets/rooms/PHONG_32/01_phong_bep.webp"
+    ],
+    "nearbySchools": [
+      {
+        "schoolId": "uth",
+        "distanceM": {
+          "$numberInt": "9100"
+        },
+        "travelMinutes": {
+          "$numberDouble": "21.8"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      }
+    ],
+    "active": true,
+    "locationStatus": "estimated",
+    "locationSource": "Tọa độ tham chiếu theo địa chỉ tòa nhà",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794662094502"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "543305827af3ec5a6fc7670b"
+    },
+    "id": "b7",
+    "name": "Saigon Campus Bình Thạnh",
+    "address": "Đường D2, Phường 25, Quận Bình Thạnh, TP. Hồ Chí Minh",
+    "addressLine": "Đường D2",
+    "ward": "Phường 25",
+    "district": "Quận Bình Thạnh",
+    "province": "TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.8032"
+    },
+    "lng": {
+      "$numberDouble": "106.7158"
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7158"
+        },
+        {
+          "$numberDouble": "10.8032"
+        }
+      ]
+    },
+    "images": [
+      "/assets/rooms/PHONG_38/01_phong_bep.webp"
+    ],
+    "nearbySchools": [
+      {
+        "schoolId": "uth",
+        "distanceM": {
+          "$numberInt": "300"
+        },
+        "travelMinutes": {
+          "$numberDouble": "0.7"
+        },
+        "source": "haversine × 1.3; xe máy 25 km/h; ước lượng"
+      }
+    ],
+    "active": true,
+    "locationStatus": "estimated",
+    "locationSource": "Tọa độ tham chiếu theo địa chỉ tòa nhà",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794662094502"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f2b93f91aeee35888c925b16"
+    },
+    "id": "b8",
+    "name": "Mint House Tân Phong",
+    "address": "Đường Nguyễn Thị Thập, Tân Phong, Quận 7, TP. Hồ Chí Minh",
+    "addressLine": "Đường Nguyễn Thị Thập",
+    "ward": "Tân Phong",
+    "district": "Quận 7",
+    "province": "TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.738"
+    },
+    "lng": {
+      "$numberDouble": "106.709"
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.709"
+        },
+        {
+          "$numberDouble": "10.738"
+        }
+      ]
+    },
+    "images": [
+      "/assets/rooms/PHONG_43/01_phong_bep.webp"
+    ],
+    "nearbySchools": [],
+    "active": true,
+    "locationStatus": "estimated",
+    "locationSource": "Tọa độ tham chiếu theo địa chỉ tòa nhà",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794662094503"
+      }
+    }
+  }
+]

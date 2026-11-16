@@ -166,9 +166,6 @@
       <small>{{ shift.date | date: 'dd/MM' }}</small
       ><strong>{{ shift.label }}</strong
       ><small>{{ shift.start }} – {{ shift.end }}</small>
-      <button class="emp-btn" type="button" [disabled]="busy" (click)="cancel(shift.id)">
-        Hủy ca
-      </button>
     </div>
   </div>
   <p class="emp-subtitle" *ngIf="!registeredShifts.length">Bạn chưa đăng ký ca nào trong kỳ này.</p>

@@ -4,7 +4,7 @@ import { PayrollAPIService } from '../../services/payroll-apiservice';
 import { AdminCatalogAPIService } from '../../services/admin-catalog-apiservice';
 import { AuthService } from '../../services/auth-service';
 import { ApiPolicy, ApiPolicyLevel } from '../../classes/PayrollApi';
-import { OccupancyReport } from '../admin-dashboard/admin-dashboard-api';
+import { OccupancyReport } from '../../services/admin-dashboard-apiservice';
 import { csv, downloadFile } from '../admin-finance-export';
 
 interface WorkLocation {

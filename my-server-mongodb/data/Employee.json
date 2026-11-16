@@ -1,0 +1,347 @@
+[
+  {
+    "_id": {
+      "$oid": "6bfc40c64ad9d9bbd48beaa0"
+    },
+    "id": "nv-01",
+    "accountId": "tk-nv-01",
+    "employeeCode": "NV001",
+    "fullName": "Nhân viên 01",
+    "name": "Nhân viên 01",
+    "phone": "0900000002",
+    "email": "employee1@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "FEMALE",
+    "position": "Trưởng nhóm",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-02-01",
+    "baseSalary": {
+      "$numberInt": "7000000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "efebbef7ec9c981a851c8bc3"
+    },
+    "id": "nv-02",
+    "accountId": "tk-nv-02",
+    "employeeCode": "NV002",
+    "fullName": "Nhân viên 02",
+    "name": "Nhân viên 02",
+    "phone": "0900000003",
+    "email": "employee2@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "MALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-03-01",
+    "baseSalary": {
+      "$numberInt": "5800000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "1f3db3e0fb9a05570c116615"
+    },
+    "id": "nv-03",
+    "accountId": "tk-nv-03",
+    "employeeCode": "NV003",
+    "fullName": "Nhân viên 03",
+    "name": "Nhân viên 03",
+    "phone": "0900000004",
+    "email": "employee3@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "FEMALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-04-01",
+    "baseSalary": {
+      "$numberInt": "6200000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "7c3fec3334273486e4b6a96d"
+    },
+    "id": "nv-04",
+    "accountId": "tk-nv-04",
+    "employeeCode": "NV004",
+    "fullName": "Nhân viên 04",
+    "name": "Nhân viên 04",
+    "phone": "0900000005",
+    "email": "employee4@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "MALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-05-01",
+    "baseSalary": {
+      "$numberInt": "6600000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "c10bc5c033b93ad2590a0399"
+    },
+    "id": "nv-05",
+    "accountId": "tk-nv-05",
+    "employeeCode": "NV005",
+    "fullName": "Nhân viên 05",
+    "name": "Nhân viên 05",
+    "phone": "0900000006",
+    "email": "employee5@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "FEMALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-06-01",
+    "baseSalary": {
+      "$numberInt": "5000000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "dc4180cf3b8eb0d413ab551c"
+    },
+    "id": "nv-06",
+    "accountId": "tk-nv-06",
+    "employeeCode": "NV006",
+    "fullName": "Nhân viên 06",
+    "name": "Nhân viên 06",
+    "phone": "0900000007",
+    "email": "employee6@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "MALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-07-01",
+    "baseSalary": {
+      "$numberInt": "5400000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "2963a3792ddee8b26b46963e"
+    },
+    "id": "nv-07",
+    "accountId": "tk-nv-07",
+    "employeeCode": "NV007",
+    "fullName": "Nhân viên 07",
+    "name": "Nhân viên 07",
+    "phone": "0900000008",
+    "email": "employee7@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "FEMALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-08-01",
+    "baseSalary": {
+      "$numberInt": "5800000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "dda4aac259191fb64f8d7477"
+    },
+    "id": "nv-08",
+    "accountId": "tk-nv-08",
+    "employeeCode": "NV008",
+    "fullName": "Nhân viên 08",
+    "name": "Nhân viên 08",
+    "phone": "0900000009",
+    "email": "employee8@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "MALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-09-01",
+    "baseSalary": {
+      "$numberInt": "6200000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "9148f7f8cf434f2f425264c9"
+    },
+    "id": "nv-09",
+    "accountId": "tk-nv-09",
+    "employeeCode": "NV009",
+    "fullName": "Nhân viên 09",
+    "name": "Nhân viên 09",
+    "phone": "0900000010",
+    "email": "employee9@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "FEMALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-10-01",
+    "baseSalary": {
+      "$numberInt": "6600000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "fd89542733e3b9f6fe7ec306"
+    },
+    "id": "nv-10",
+    "accountId": "tk-nv-10",
+    "employeeCode": "NV010",
+    "fullName": "Nhân viên 10",
+    "name": "Nhân viên 10",
+    "phone": "0900000011",
+    "email": "employee10@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "FEMALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-11-01",
+    "baseSalary": {
+      "$numberInt": "5000000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "94895a877c79a1db123d0608"
+    },
+    "id": "nv-11",
+    "accountId": "tk-nv-11",
+    "employeeCode": "NV011",
+    "fullName": "Nhân viên 11",
+    "name": "Nhân viên 11",
+    "phone": "0900000012",
+    "email": "employee11@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "MALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-12-01",
+    "baseSalary": {
+      "$numberInt": "5400000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "0443db9800677792764f514b"
+    },
+    "id": "nv-12",
+    "accountId": "tk-nv-12",
+    "employeeCode": "NV012",
+    "fullName": "Nhân viên 12",
+    "name": "Nhân viên 12",
+    "phone": "0900000013",
+    "email": "employee12@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "FEMALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-01-01",
+    "baseSalary": {
+      "$numberInt": "5800000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "b232693180156c5cee6da331"
+    },
+    "id": "nv-13",
+    "accountId": "tk-nv-13",
+    "employeeCode": "NV013",
+    "fullName": "Nhân viên 13",
+    "name": "Nhân viên 13",
+    "phone": "0900000014",
+    "email": "employee13@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "MALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-02-01",
+    "baseSalary": {
+      "$numberInt": "6200000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "64815c0d7ab8b26db0b1b0d7"
+    },
+    "id": "nv-14",
+    "accountId": "tk-nv-14",
+    "employeeCode": "NV014",
+    "fullName": "Nhân viên 14",
+    "name": "Nhân viên 14",
+    "phone": "0900000015",
+    "email": "employee14@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "FEMALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-03-01",
+    "baseSalary": {
+      "$numberInt": "6600000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  },
+  {
+    "_id": {
+      "$oid": "fcaee125291c30aef309565d"
+    },
+    "id": "nv-15",
+    "accountId": "tk-nv-15",
+    "employeeCode": "NV015",
+    "fullName": "Nhân viên 15",
+    "name": "Nhân viên 15",
+    "phone": "0900000016",
+    "email": "employee15@example.invalid",
+    "birthDate": "2000-01-01",
+    "gender": "MALE",
+    "position": "Môi giới",
+    "contractType": "FULL_TIME",
+    "startDate": "2025-04-01",
+    "baseSalary": {
+      "$numberInt": "5000000"
+    },
+    "status": "ACTIVE",
+    "avatar": "/assets/demo/avatar.svg",
+    "avatarUrl": "/assets/demo/avatar.svg"
+  }
+]

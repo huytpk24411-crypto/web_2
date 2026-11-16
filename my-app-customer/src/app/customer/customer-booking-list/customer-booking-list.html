@@ -1,0 +1,127 @@
+<div class="container holds-page">
+  <div class="breadcrumb"><a routerLink="/">Trang chủ</a> › Phòng đã giữ</div>
+  <div class="page-heading">
+    <h1>Phòng đã giữ</h1>
+    <div class="heading-actions">
+      <button class="btn" type="button" (click)="refresh()" [disabled]="booking.loading()">
+        Tải lại
+      </button>
+      <a class="btn primary" routerLink="/rooms"><app-icon name="search" [size]="16" />Tìm phòng</a>
+    </div>
+  </div>
+  <section class="panel holds-panel">
+    <div class="holds-toolbar">
+      <div class="hold-tabs" role="tablist" aria-label="Yêu cầu giữ chỗ">
+        <button
+          *ngFor="let item of tabs"
+          class="hold-tab"
+          type="button"
+          role="tab"
+          [id]="'hold-tab-' + item.id"
+          [class.selected]="tab() === item.id"
+          [attr.aria-selected]="tab() === item.id"
+          aria-controls="hold-list"
+          (click)="tab.set(item.id)"
+        >
+          {{ item.label }}<span>{{ grouped()[item.id].length }}</span>
+        </button>
+      </div>
+      <label class="hold-search"
+        ><span class="sr-only">Tìm phòng hoặc mã giữ chỗ</span
+        ><app-icon name="search" [size]="17" /><input
+          type="search"
+          placeholder="Tên phòng, mã giữ chỗ…"
+          [ngModel]="query()"
+          (ngModelChange)="query.set($event)"
+      /></label>
+    </div>
+    <p role="status" class="muted" *ngIf="booking.loading()">Đang tải danh sách giữ chỗ…</p>
+    <div class="notice warning" role="alert" *ngIf="booking.error()">{{ booking.error() }}</div>
+    <div id="hold-list" role="tabpanel" [attr.aria-labelledby]="'hold-tab-' + tab()">
+      <div class="hold-empty" *ngIf="!booking.loading() && !booking.error() && !visible().length">
+        <app-icon name="home" [size]="36" />
+        <h2>
+          {{
+            query()
+              ? 'Không tìm thấy yêu cầu phù hợp'
+              : tab() === 'active'
+                ? 'Bạn chưa có phòng đang giữ chỗ'
+                : tab() === 'pending'
+                  ? 'Không có yêu cầu chờ thanh toán'
+                  : 'Chưa có lịch sử giữ chỗ'
+          }}
+        </h2>
+        <a class="btn" routerLink="/rooms" *ngIf="!query()">Khám phá phòng</a>
+      </div>
+      <article class="hold-card" *ngFor="let hold of visible()" [attr.data-hold-id]="hold.id">
+        <ng-container *ngIf="rooms.forRecord(hold) as room">
+          <a class="hold-photo" [routerLink]="['/rooms', room.id]"
+            ><img
+              [src]="room.images[0] || '/assets/placeholders/room-placeholder.svg'"
+              appImageFallback
+              [alt]="room.name"
+              loading="lazy"
+          /></a>
+          <div class="hold-body">
+            <div class="hold-card-heading">
+              <span class="hold-number">{{ hold.number || hold.id }}</span
+              ><app-status-badge [status]="status(hold)" />
+            </div>
+            <h2>
+              <a [routerLink]="['/rooms', room.id]">{{ room.code }} · {{ room.name }}</a>
+            </h2>
+            <p class="hold-address"><app-icon name="pin" [size]="14" />{{ room.address }}</p>
+            <dl class="hold-details">
+              <div>
+                <dt>Tiền giữ chỗ</dt>
+                <dd class="hold-amount">{{ hold.amount | number }} đ</dd>
+              </div>
+              <div>
+                <dt>{{ hold.paidAt ? 'Thanh toán lúc' : 'Tạo yêu cầu lúc' }}</dt>
+                <dd>{{ hold.paidAt || hold.createdAt | date: 'dd/MM/yyyy HH:mm' : '+0700' }}</dd>
+              </div>
+              <div *ngIf="hold.expiresAt">
+                <dt>
+                  {{
+                    ['PAYMENT_PENDING', 'EXPIRED', 'CANCELLED'].includes(hold.apiStatus || '')
+                      ? 'Hạn thanh toán'
+                      : 'Hạn giữ chỗ'
+                  }}
+                </dt>
+                <dd>{{ hold.expiresAt | date: 'dd/MM/yyyy HH:mm' : '+0700' }}</dd>
+              </div>
+              <div *ngIf="hold.moveIn">
+                <dt>Ngày dự kiến nhận phòng</dt>
+                <dd>{{ hold.moveIn | date: 'dd/MM/yyyy' }}</dd>
+              </div>
+            </dl>
+            <div class="hold-card-footer">
+              <span class="hold-countdown" *ngIf="group(hold) !== 'history'"
+                ><app-icon name="clock" [size]="16" />Còn {{ remaining(hold) }}</span
+              >
+              <span class="hold-expired" *ngIf="hold.apiStatus === 'FORFEITED'"
+                >Đã hết thời hạn giữ chỗ theo chính sách.</span
+              >
+              <div class="hold-actions">
+                <a
+                  class="btn primary sm"
+                  *ngIf="group(hold) === 'pending'"
+                  routerLink="/bookings/new"
+                  [queryParams]="{ roomId: hold.roomId }"
+                  >Tiếp tục thanh toán</a
+                >
+                <a class="btn sm" [routerLink]="['/bookings', hold.id, 'receipt']">Xem chi tiết</a>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <div *ngIf="!rooms.forRecord(hold)" class="hold-body">
+          <strong>{{ hold.number || hold.id }}</strong>
+          <p>{{ hold.roomId }} · {{ status(hold) }}</p>
+          <p>{{ hold.amount | number }} đ</p>
+          <a class="btn sm" [routerLink]="['/bookings', hold.id, 'receipt']">Xem chi tiết</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>

@@ -44,9 +44,11 @@ export class DealService {
         status:
           c.status === 'COMPLETED'
             ? 'COMPLETED'
-            : c.status === 'VOID' || c.status === 'CANCELLED'
-              ? 'FORFEITED'
-              : 'PENDING',
+            : c.status === 'CANCELLED'
+              ? 'CANCELLED'
+              : c.status === 'VOID'
+                ? 'FORFEITED'
+                : 'PENDING',
         forfeitureReason: this.money.deposits().find((d) => d.id === c.depositId)?.abandonment
           ?.reason,
         forfeitedAt: this.money.deposits().find((d) => d.id === c.depositId)?.abandonment

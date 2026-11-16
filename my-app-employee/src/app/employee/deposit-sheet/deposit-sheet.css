@@ -1,0 +1,197 @@
+﻿:host {
+  display: block;
+  min-width: 0;
+  container-type: inline-size;
+}
+.deposit-a4 {
+  box-sizing: border-box;
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  padding: 6.2%;
+  margin: 0 auto;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  box-shadow: var(--shadow-sm);
+  font:
+    clamp(7px, 1.42cqi, 11px)/1.45 Arial,
+    Helvetica,
+    sans-serif;
+  overflow-wrap: anywhere;
+}
+.sheet-letterhead {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.8em;
+  line-height: 1.6;
+}
+.sheet-letterhead strong {
+  font-size: 1em;
+}
+.sheet-brand {
+  font-size: 2.25em;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  color: var(--primary-dark);
+  margin-bottom: 0.3em;
+}
+.sheet-brand span {
+  font-size: 0.7em;
+  letter-spacing: -0.03em;
+}
+.sheet-reference {
+  text-align: right;
+}
+.sheet-national {
+  text-align: center;
+  margin-bottom: 1.2em;
+  font-size: 1em;
+}
+.sheet-national > div {
+  display: inline-block;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--muted);
+}
+.sheet-national strong {
+  display: block;
+}
+.sheet-intro {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 1.5em;
+}
+.deposit-a4 > h1 {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.45;
+  margin: 1.8em 0 1em;
+}
+.deposit-a4 h2 {
+  font-size: 1em;
+  margin: 0 0 0.7em;
+  color: var(--primary-dark);
+}
+section {
+  margin-bottom: 1.5em;
+}
+p {
+  margin: 0.35em 0;
+}
+.sheet-party {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1em 1.2em;
+  background: color-mix(in srgb, var(--soft) 65%, var(--surface));
+  break-inside: avoid;
+}
+.sheet-totals {
+  padding: 1em 1.2em;
+  margin: 1em 0;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.sheet-totals p:nth-last-child(2) {
+  color: var(--primary-dark);
+  font-size: 1.15em;
+}
+.sheet-terms {
+  border-top: 1px solid var(--line);
+  padding-top: 1.1em;
+}
+.sheet-terms ol {
+  padding-left: 1.7em;
+  margin: 0.5em 0;
+}
+.sheet-terms li {
+  padding-bottom: 0.5em;
+}
+.sheet-signatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 0.9em;
+  break-inside: avoid;
+}
+.sheet-signatures small {
+  display: block;
+  margin-top: 0.7em;
+  color: var(--muted);
+  font-style: italic;
+}
+.signature-space {
+  height: 9em;
+}
+.sheet-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.75em;
+}
+@supports (container-type: inline-size) {
+  .deposit-a4 {
+    min-height: 141.43cqi;
+  }
+}
+@page {
+  size: A4;
+  margin: 10mm;
+}
+@media print {
+  :host {
+    container-type: normal;
+  }
+  .deposit-a4 {
+    width: 190mm;
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    font-size: 8.5pt;
+    line-height: 1.35;
+    color: var(--text);
+  }
+  .sheet-letterhead {
+    font-size: 7pt;
+    padding-bottom: 1em;
+  }
+  .deposit-a4 > h1 {
+    font-size: 12pt;
+    margin-top: 1.4em;
+  }
+  section {
+    margin-bottom: 0.8em;
+  }
+  .sheet-party {
+    padding: 0.8em 1em;
+  }
+  .sheet-intro {
+    margin-bottom: 1em;
+  }
+  .sheet-signatures {
+    padding-top: 1em;
+  }
+  .sheet-totals {
+    break-inside: avoid;
+  }
+  .signature-space {
+    height: 24mm;
+  }
+  .sheet-footer {
+    margin-top: 2em;
+  }
+}

@@ -27,7 +27,7 @@
         room.status === 'AVAILABLE'
           ? 'Đang trống'
           : room.status === 'HELD'
-            ? 'Đã giữ chỗ'
+            ? 'Đang giữ chỗ'
             : room.status === 'RENTED'
               ? 'Đã thuê'
               : 'Bảo trì / Sửa chữa'
@@ -84,6 +84,7 @@
         />
       </a>
       <span class="home-tour" *ngIf="hasTour">Có tour 360°</span>
+      <span class="home-held" *ngIf="room.status === 'HELD'">Đang giữ chỗ</span>
       <button
         type="button"
         class="home-heart"

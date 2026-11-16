@@ -1,0 +1,3678 @@
+[
+  {
+    "_id": {
+      "$oid": "6b7d1749346fc232f3ba3428"
+    },
+    "id": "cv-01-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-01",
+    "currentShiftId": "ca-2026-08-04-07",
+    "shiftLinks": [
+      {
+        "id": "cv-01-1-1",
+        "shiftId": "ca-2026-08-03-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785736800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-01"
+      },
+      {
+        "id": "cv-01-1-2",
+        "shiftId": "ca-2026-08-04-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785801600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-03-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785751200000"
+          }
+        },
+        "by": "tk-nv-01"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-01-1-1",
+        "taskShiftId": "cv-01-1-1",
+        "shiftLinkId": "cv-01-1-1",
+        "assignmentId": "ca-2026-08-03-13-nv-01",
+        "employeeId": "nv-01",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-01-1-2",
+        "taskShiftId": "cv-01-1-2",
+        "shiftLinkId": "cv-01-1-2",
+        "assignmentId": "ca-2026-08-04-07-nv-01",
+        "employeeId": "nv-01",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785816000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785736800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "266044584d5cc6e05b9fa4a6"
+    },
+    "id": "cv-01-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-01",
+    "currentShiftId": "ca-2026-08-18-13",
+    "shiftLinks": [
+      {
+        "id": "cv-01-2-1",
+        "shiftId": "ca-2026-08-13-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786579200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-01"
+      },
+      {
+        "id": "cv-01-2-2",
+        "shiftId": "ca-2026-08-18-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787032800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-13-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786593600000"
+          }
+        },
+        "by": "tk-nv-01"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-01-2-1",
+        "taskShiftId": "cv-01-2-1",
+        "shiftLinkId": "cv-01-2-1",
+        "assignmentId": "ca-2026-08-13-07-nv-01",
+        "employeeId": "nv-01",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-01-2-2",
+        "taskShiftId": "cv-01-2-2",
+        "shiftLinkId": "cv-01-2-2",
+        "assignmentId": "ca-2026-08-18-13-nv-01",
+        "employeeId": "nv-01",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787047200000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786579200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9d9a338484a0b65106bbcd7f"
+    },
+    "id": "cv-01-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-01",
+    "currentShiftId": "ca-2026-08-28-07",
+    "shiftLinks": [
+      {
+        "id": "cv-01-3-1",
+        "shiftId": "ca-2026-08-27-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787810400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-01"
+      },
+      {
+        "id": "cv-01-3-2",
+        "shiftId": "ca-2026-08-28-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787875200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-27-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787824800000"
+          }
+        },
+        "by": "tk-nv-01"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-01-3-1",
+        "taskShiftId": "cv-01-3-1",
+        "shiftLinkId": "cv-01-3-1",
+        "assignmentId": "ca-2026-08-27-13-nv-01",
+        "employeeId": "nv-01",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-01-3-2",
+        "taskShiftId": "cv-01-3-2",
+        "shiftLinkId": "cv-01-3-2",
+        "assignmentId": "ca-2026-08-28-07-nv-01",
+        "employeeId": "nv-01",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787889600000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787810400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "99fd7bc7ce024a2ea9beb1f9"
+    },
+    "id": "cv-02-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-02",
+    "currentShiftId": "ca-2026-08-06-13",
+    "shiftLinks": [
+      {
+        "id": "cv-02-1-1",
+        "shiftId": "ca-2026-08-06-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785974400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-02"
+      },
+      {
+        "id": "cv-02-1-2",
+        "shiftId": "ca-2026-08-06-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785996000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-06-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785988800000"
+          }
+        },
+        "by": "tk-nv-02"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-02-1-1",
+        "taskShiftId": "cv-02-1-1",
+        "shiftLinkId": "cv-02-1-1",
+        "assignmentId": "ca-2026-08-06-07-nv-02",
+        "employeeId": "nv-02",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-02-1-2",
+        "taskShiftId": "cv-02-1-2",
+        "shiftLinkId": "cv-02-1-2",
+        "assignmentId": "ca-2026-08-06-13-nv-02",
+        "employeeId": "nv-02",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786010400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785974400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e52b34463e48f47f986b11d1"
+    },
+    "id": "cv-02-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-02",
+    "currentShiftId": "ca-2026-08-21-07",
+    "shiftLinks": [
+      {
+        "id": "cv-02-2-1",
+        "shiftId": "ca-2026-08-15-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786773600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-02"
+      },
+      {
+        "id": "cv-02-2-2",
+        "shiftId": "ca-2026-08-21-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787270400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-15-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786788000000"
+          }
+        },
+        "by": "tk-nv-02"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-02-2-1",
+        "taskShiftId": "cv-02-2-1",
+        "shiftLinkId": "cv-02-2-1",
+        "assignmentId": "ca-2026-08-15-13-nv-02",
+        "employeeId": "nv-02",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-02-2-2",
+        "taskShiftId": "cv-02-2-2",
+        "shiftLinkId": "cv-02-2-2",
+        "assignmentId": "ca-2026-08-21-07-nv-02",
+        "employeeId": "nv-02",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787284800000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786773600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "31ad5f595529a6b191cedf43"
+    },
+    "id": "cv-02-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-02",
+    "currentShiftId": "ca-2026-08-30-13",
+    "shiftLinks": [
+      {
+        "id": "cv-02-3-1",
+        "shiftId": "ca-2026-08-30-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1788048000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-02"
+      },
+      {
+        "id": "cv-02-3-2",
+        "shiftId": "ca-2026-08-30-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1788069600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-30-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1788062400000"
+          }
+        },
+        "by": "tk-nv-02"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-02-3-1",
+        "taskShiftId": "cv-02-3-1",
+        "shiftLinkId": "cv-02-3-1",
+        "assignmentId": "ca-2026-08-30-07-nv-02",
+        "employeeId": "nv-02",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-02-3-2",
+        "taskShiftId": "cv-02-3-2",
+        "shiftLinkId": "cv-02-3-2",
+        "assignmentId": "ca-2026-08-30-13-nv-02",
+        "employeeId": "nv-02",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1788084000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788048000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e08e6a7a86a68f48ca40fcb0"
+    },
+    "id": "cv-03-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-03",
+    "currentShiftId": "ca-2026-08-01-13",
+    "shiftLinks": [
+      {
+        "id": "cv-03-1-1",
+        "shiftId": "ca-2026-08-01-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785542400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-03"
+      },
+      {
+        "id": "cv-03-1-2",
+        "shiftId": "ca-2026-08-01-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785564000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-01-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785556800000"
+          }
+        },
+        "by": "tk-nv-03"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-03-1-1",
+        "taskShiftId": "cv-03-1-1",
+        "shiftLinkId": "cv-03-1-1",
+        "assignmentId": "ca-2026-08-01-07-nv-03",
+        "employeeId": "nv-03",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-03-1-2",
+        "taskShiftId": "cv-03-1-2",
+        "shiftLinkId": "cv-03-1-2",
+        "assignmentId": "ca-2026-08-01-13-nv-03",
+        "employeeId": "nv-03",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785578400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "405863ffd4217eb53417e010"
+    },
+    "id": "cv-03-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-03",
+    "currentShiftId": "ca-2026-08-10-13",
+    "shiftLinks": [
+      {
+        "id": "cv-03-2-1",
+        "shiftId": "ca-2026-08-10-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786320000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-03"
+      },
+      {
+        "id": "cv-03-2-2",
+        "shiftId": "ca-2026-08-10-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786341600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-10-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786334400000"
+          }
+        },
+        "by": "tk-nv-03"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-03-2-1",
+        "taskShiftId": "cv-03-2-1",
+        "shiftLinkId": "cv-03-2-1",
+        "assignmentId": "ca-2026-08-10-07-nv-03",
+        "employeeId": "nv-03",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-03-2-2",
+        "taskShiftId": "cv-03-2-2",
+        "shiftLinkId": "cv-03-2-2",
+        "assignmentId": "ca-2026-08-10-13-nv-03",
+        "employeeId": "nv-03",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786356000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786320000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b5edbf42d4b00039d8682970"
+    },
+    "id": "cv-03-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-03",
+    "currentShiftId": "ca-2026-08-24-07",
+    "shiftLinks": [
+      {
+        "id": "cv-03-3-1",
+        "shiftId": "ca-2026-08-23-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787464800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-03"
+      },
+      {
+        "id": "cv-03-3-2",
+        "shiftId": "ca-2026-08-24-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787529600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-23-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787479200000"
+          }
+        },
+        "by": "tk-nv-03"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-03-3-1",
+        "taskShiftId": "cv-03-3-1",
+        "shiftLinkId": "cv-03-3-1",
+        "assignmentId": "ca-2026-08-23-13-nv-03",
+        "employeeId": "nv-03",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-03-3-2",
+        "taskShiftId": "cv-03-3-2",
+        "shiftLinkId": "cv-03-3-2",
+        "assignmentId": "ca-2026-08-24-07-nv-03",
+        "employeeId": "nv-03",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787544000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787464800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9593aa8985c270b4387830b0"
+    },
+    "id": "cv-04-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-04",
+    "currentShiftId": "ca-2026-08-04-13",
+    "shiftLinks": [
+      {
+        "id": "cv-04-1-1",
+        "shiftId": "ca-2026-08-04-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785801600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-04"
+      },
+      {
+        "id": "cv-04-1-2",
+        "shiftId": "ca-2026-08-04-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785823200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-04-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785816000000"
+          }
+        },
+        "by": "tk-nv-04"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-04-1-1",
+        "taskShiftId": "cv-04-1-1",
+        "shiftLinkId": "cv-04-1-1",
+        "assignmentId": "ca-2026-08-04-07-nv-04",
+        "employeeId": "nv-04",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-04-1-2",
+        "taskShiftId": "cv-04-1-2",
+        "shiftLinkId": "cv-04-1-2",
+        "assignmentId": "ca-2026-08-04-13-nv-04",
+        "employeeId": "nv-04",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785837600000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785801600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8ff6c2e2caedc051a7ce45d5"
+    },
+    "id": "cv-04-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-04",
+    "currentShiftId": "ca-2026-08-19-07",
+    "shiftLinks": [
+      {
+        "id": "cv-04-2-1",
+        "shiftId": "ca-2026-08-13-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786600800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-04"
+      },
+      {
+        "id": "cv-04-2-2",
+        "shiftId": "ca-2026-08-19-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787097600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-13-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786615200000"
+          }
+        },
+        "by": "tk-nv-04"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-04-2-1",
+        "taskShiftId": "cv-04-2-1",
+        "shiftLinkId": "cv-04-2-1",
+        "assignmentId": "ca-2026-08-13-13-nv-04",
+        "employeeId": "nv-04",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-04-2-2",
+        "taskShiftId": "cv-04-2-2",
+        "shiftLinkId": "cv-04-2-2",
+        "assignmentId": "ca-2026-08-19-07-nv-04",
+        "employeeId": "nv-04",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787112000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786600800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5d7f9bc721626bd3f604e190"
+    },
+    "id": "cv-04-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-04",
+    "currentShiftId": "ca-2026-08-28-13",
+    "shiftLinks": [
+      {
+        "id": "cv-04-3-1",
+        "shiftId": "ca-2026-08-28-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787875200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-04"
+      },
+      {
+        "id": "cv-04-3-2",
+        "shiftId": "ca-2026-08-28-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787896800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-28-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787889600000"
+          }
+        },
+        "by": "tk-nv-04"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-04-3-1",
+        "taskShiftId": "cv-04-3-1",
+        "shiftLinkId": "cv-04-3-1",
+        "assignmentId": "ca-2026-08-28-07-nv-04",
+        "employeeId": "nv-04",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-04-3-2",
+        "taskShiftId": "cv-04-3-2",
+        "shiftLinkId": "cv-04-3-2",
+        "assignmentId": "ca-2026-08-28-13-nv-04",
+        "employeeId": "nv-04",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787911200000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787875200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8035f5c894c3295ceee99ecc"
+    },
+    "id": "cv-05-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-05",
+    "currentShiftId": "ca-2026-08-06-13",
+    "shiftLinks": [
+      {
+        "id": "cv-05-1-1",
+        "shiftId": "ca-2026-08-01-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785542400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-05"
+      },
+      {
+        "id": "cv-05-1-2",
+        "shiftId": "ca-2026-08-06-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785996000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-01-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785556800000"
+          }
+        },
+        "by": "tk-nv-05"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-05-1-1",
+        "taskShiftId": "cv-05-1-1",
+        "shiftLinkId": "cv-05-1-1",
+        "assignmentId": "ca-2026-08-01-07-nv-05",
+        "employeeId": "nv-05",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-05-1-2",
+        "taskShiftId": "cv-05-1-2",
+        "shiftLinkId": "cv-05-1-2",
+        "assignmentId": "ca-2026-08-06-13-nv-05",
+        "employeeId": "nv-05",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786010400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d969d8fd84c4d5495782c9df"
+    },
+    "id": "cv-05-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-05",
+    "currentShiftId": "ca-2026-08-16-07",
+    "shiftLinks": [
+      {
+        "id": "cv-05-2-1",
+        "shiftId": "ca-2026-08-15-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786773600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-05"
+      },
+      {
+        "id": "cv-05-2-2",
+        "shiftId": "ca-2026-08-16-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786838400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-15-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786788000000"
+          }
+        },
+        "by": "tk-nv-05"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-05-2-1",
+        "taskShiftId": "cv-05-2-1",
+        "shiftLinkId": "cv-05-2-1",
+        "assignmentId": "ca-2026-08-15-13-nv-05",
+        "employeeId": "nv-05",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-05-2-2",
+        "taskShiftId": "cv-05-2-2",
+        "shiftLinkId": "cv-05-2-2",
+        "assignmentId": "ca-2026-08-16-07-nv-05",
+        "employeeId": "nv-05",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786852800000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786773600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b9e75530fa12253a58466e47"
+    },
+    "id": "cv-05-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-05",
+    "currentShiftId": "ca-2026-08-30-07",
+    "shiftLinks": [
+      {
+        "id": "cv-05-3-1",
+        "shiftId": "ca-2026-08-29-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787983200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-05"
+      },
+      {
+        "id": "cv-05-3-2",
+        "shiftId": "ca-2026-08-30-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1788048000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-29-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787997600000"
+          }
+        },
+        "by": "tk-nv-05"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-05-3-1",
+        "taskShiftId": "cv-05-3-1",
+        "shiftLinkId": "cv-05-3-1",
+        "assignmentId": "ca-2026-08-29-13-nv-05",
+        "employeeId": "nv-05",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-05-3-2",
+        "taskShiftId": "cv-05-3-2",
+        "shiftLinkId": "cv-05-3-2",
+        "assignmentId": "ca-2026-08-30-07-nv-05",
+        "employeeId": "nv-05",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1788062400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787983200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cebd1fb27bd1cf6559654fef"
+    },
+    "id": "cv-06-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-06",
+    "currentShiftId": "ca-2026-08-02-07",
+    "shiftLinks": [
+      {
+        "id": "cv-06-1-1",
+        "shiftId": "ca-2026-08-01-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785564000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-06"
+      },
+      {
+        "id": "cv-06-1-2",
+        "shiftId": "ca-2026-08-02-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785628800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-01-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785578400000"
+          }
+        },
+        "by": "tk-nv-06"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-06-1-1",
+        "taskShiftId": "cv-06-1-1",
+        "shiftLinkId": "cv-06-1-1",
+        "assignmentId": "ca-2026-08-01-13-nv-06",
+        "employeeId": "nv-06",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-06-1-2",
+        "taskShiftId": "cv-06-1-2",
+        "shiftLinkId": "cv-06-1-2",
+        "assignmentId": "ca-2026-08-02-07-nv-06",
+        "employeeId": "nv-06",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785643200000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785564000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "918ecd314cfcf3b5ecdf039c"
+    },
+    "id": "cv-06-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-06",
+    "currentShiftId": "ca-2026-08-11-07",
+    "shiftLinks": [
+      {
+        "id": "cv-06-2-1",
+        "shiftId": "ca-2026-08-10-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786341600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-06"
+      },
+      {
+        "id": "cv-06-2-2",
+        "shiftId": "ca-2026-08-11-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786406400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-10-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786356000000"
+          }
+        },
+        "by": "tk-nv-06"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-06-2-1",
+        "taskShiftId": "cv-06-2-1",
+        "shiftLinkId": "cv-06-2-1",
+        "assignmentId": "ca-2026-08-10-13-nv-06",
+        "employeeId": "nv-06",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-06-2-2",
+        "taskShiftId": "cv-06-2-2",
+        "shiftLinkId": "cv-06-2-2",
+        "assignmentId": "ca-2026-08-11-07-nv-06",
+        "employeeId": "nv-06",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786420800000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786341600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "fbf5c23207cc2e3c55800f37"
+    },
+    "id": "cv-06-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-06",
+    "currentShiftId": "ca-2026-08-25-07",
+    "shiftLinks": [
+      {
+        "id": "cv-06-3-1",
+        "shiftId": "ca-2026-08-24-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787551200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-06"
+      },
+      {
+        "id": "cv-06-3-2",
+        "shiftId": "ca-2026-08-25-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787616000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-24-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787565600000"
+          }
+        },
+        "by": "tk-nv-06"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-06-3-1",
+        "taskShiftId": "cv-06-3-1",
+        "shiftLinkId": "cv-06-3-1",
+        "assignmentId": "ca-2026-08-24-13-nv-06",
+        "employeeId": "nv-06",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-06-3-2",
+        "taskShiftId": "cv-06-3-2",
+        "shiftLinkId": "cv-06-3-2",
+        "assignmentId": "ca-2026-08-25-07-nv-06",
+        "employeeId": "nv-06",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787630400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787551200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cad48ceee67b60d876425895"
+    },
+    "id": "cv-07-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-07",
+    "currentShiftId": "ca-2026-08-05-07",
+    "shiftLinks": [
+      {
+        "id": "cv-07-1-1",
+        "shiftId": "ca-2026-08-04-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785823200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-07"
+      },
+      {
+        "id": "cv-07-1-2",
+        "shiftId": "ca-2026-08-05-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785888000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-04-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785837600000"
+          }
+        },
+        "by": "tk-nv-07"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-07-1-1",
+        "taskShiftId": "cv-07-1-1",
+        "shiftLinkId": "cv-07-1-1",
+        "assignmentId": "ca-2026-08-04-13-nv-07",
+        "employeeId": "nv-07",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-07-1-2",
+        "taskShiftId": "cv-07-1-2",
+        "shiftLinkId": "cv-07-1-2",
+        "assignmentId": "ca-2026-08-05-07-nv-07",
+        "employeeId": "nv-07",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785902400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785823200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b84d60ef9e43fe9d8ce8e4fb"
+    },
+    "id": "cv-07-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-07",
+    "currentShiftId": "ca-2026-08-19-13",
+    "shiftLinks": [
+      {
+        "id": "cv-07-2-1",
+        "shiftId": "ca-2026-08-14-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786665600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-07"
+      },
+      {
+        "id": "cv-07-2-2",
+        "shiftId": "ca-2026-08-19-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787119200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-14-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786680000000"
+          }
+        },
+        "by": "tk-nv-07"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-07-2-1",
+        "taskShiftId": "cv-07-2-1",
+        "shiftLinkId": "cv-07-2-1",
+        "assignmentId": "ca-2026-08-14-07-nv-07",
+        "employeeId": "nv-07",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-07-2-2",
+        "taskShiftId": "cv-07-2-2",
+        "shiftLinkId": "cv-07-2-2",
+        "assignmentId": "ca-2026-08-19-13-nv-07",
+        "employeeId": "nv-07",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787133600000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786665600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7560e2927eb5426af78d019f"
+    },
+    "id": "cv-07-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-07",
+    "currentShiftId": "ca-2026-08-29-07",
+    "shiftLinks": [
+      {
+        "id": "cv-07-3-1",
+        "shiftId": "ca-2026-08-28-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787896800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-07"
+      },
+      {
+        "id": "cv-07-3-2",
+        "shiftId": "ca-2026-08-29-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787961600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-28-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787911200000"
+          }
+        },
+        "by": "tk-nv-07"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-07-3-1",
+        "taskShiftId": "cv-07-3-1",
+        "shiftLinkId": "cv-07-3-1",
+        "assignmentId": "ca-2026-08-28-13-nv-07",
+        "employeeId": "nv-07",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-07-3-2",
+        "taskShiftId": "cv-07-3-2",
+        "shiftLinkId": "cv-07-3-2",
+        "assignmentId": "ca-2026-08-29-07-nv-07",
+        "employeeId": "nv-07",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787976000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787896800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "fa3c1dd191b1c9cf88f776d0"
+    },
+    "id": "cv-08-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-08",
+    "currentShiftId": "ca-2026-08-01-13",
+    "shiftLinks": [
+      {
+        "id": "cv-08-1-1",
+        "shiftId": "ca-2026-08-01-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785542400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-08"
+      },
+      {
+        "id": "cv-08-1-2",
+        "shiftId": "ca-2026-08-01-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785564000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-01-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785556800000"
+          }
+        },
+        "by": "tk-nv-08"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-08-1-1",
+        "taskShiftId": "cv-08-1-1",
+        "shiftLinkId": "cv-08-1-1",
+        "assignmentId": "ca-2026-08-01-07-nv-08",
+        "employeeId": "nv-08",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-08-1-2",
+        "taskShiftId": "cv-08-1-2",
+        "shiftLinkId": "cv-08-1-2",
+        "assignmentId": "ca-2026-08-01-13-nv-08",
+        "employeeId": "nv-08",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785578400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d6ee16460997a2ac0aedd030"
+    },
+    "id": "cv-08-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-08",
+    "currentShiftId": "ca-2026-08-16-07",
+    "shiftLinks": [
+      {
+        "id": "cv-08-2-1",
+        "shiftId": "ca-2026-08-15-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786773600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-08"
+      },
+      {
+        "id": "cv-08-2-2",
+        "shiftId": "ca-2026-08-16-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786838400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-15-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786788000000"
+          }
+        },
+        "by": "tk-nv-08"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-08-2-1",
+        "taskShiftId": "cv-08-2-1",
+        "shiftLinkId": "cv-08-2-1",
+        "assignmentId": "ca-2026-08-15-13-nv-08",
+        "employeeId": "nv-08",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-08-2-2",
+        "taskShiftId": "cv-08-2-2",
+        "shiftLinkId": "cv-08-2-2",
+        "assignmentId": "ca-2026-08-16-07-nv-08",
+        "employeeId": "nv-08",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786852800000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786773600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9f4f9666b26fd235db68f7d2"
+    },
+    "id": "cv-08-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-08",
+    "currentShiftId": "ca-2026-08-29-13",
+    "shiftLinks": [
+      {
+        "id": "cv-08-3-1",
+        "shiftId": "ca-2026-08-24-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787551200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-08"
+      },
+      {
+        "id": "cv-08-3-2",
+        "shiftId": "ca-2026-08-29-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787983200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-24-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787565600000"
+          }
+        },
+        "by": "tk-nv-08"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-08-3-1",
+        "taskShiftId": "cv-08-3-1",
+        "shiftLinkId": "cv-08-3-1",
+        "assignmentId": "ca-2026-08-24-13-nv-08",
+        "employeeId": "nv-08",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-08-3-2",
+        "taskShiftId": "cv-08-3-2",
+        "shiftLinkId": "cv-08-3-2",
+        "assignmentId": "ca-2026-08-29-13-nv-08",
+        "employeeId": "nv-08",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787997600000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787551200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "697e95c410ffc1e89ed376b6"
+    },
+    "id": "cv-09-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-09",
+    "currentShiftId": "ca-2026-08-02-13",
+    "shiftLinks": [
+      {
+        "id": "cv-09-1-1",
+        "shiftId": "ca-2026-08-02-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785628800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-09"
+      },
+      {
+        "id": "cv-09-1-2",
+        "shiftId": "ca-2026-08-02-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785650400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-02-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785643200000"
+          }
+        },
+        "by": "tk-nv-09"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-09-1-1",
+        "taskShiftId": "cv-09-1-1",
+        "shiftLinkId": "cv-09-1-1",
+        "assignmentId": "ca-2026-08-02-07-nv-09",
+        "employeeId": "nv-09",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-09-1-2",
+        "taskShiftId": "cv-09-1-2",
+        "shiftLinkId": "cv-09-1-2",
+        "assignmentId": "ca-2026-08-02-13-nv-09",
+        "employeeId": "nv-09",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785664800000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785628800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9d0ca31f98cdf0b13f609479"
+    },
+    "id": "cv-09-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-09",
+    "currentShiftId": "ca-2026-08-11-13",
+    "shiftLinks": [
+      {
+        "id": "cv-09-2-1",
+        "shiftId": "ca-2026-08-11-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786406400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-09"
+      },
+      {
+        "id": "cv-09-2-2",
+        "shiftId": "ca-2026-08-11-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786428000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-11-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786420800000"
+          }
+        },
+        "by": "tk-nv-09"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-09-2-1",
+        "taskShiftId": "cv-09-2-1",
+        "shiftLinkId": "cv-09-2-1",
+        "assignmentId": "ca-2026-08-11-07-nv-09",
+        "employeeId": "nv-09",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-09-2-2",
+        "taskShiftId": "cv-09-2-2",
+        "shiftLinkId": "cv-09-2-2",
+        "assignmentId": "ca-2026-08-11-13-nv-09",
+        "employeeId": "nv-09",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786442400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786406400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "350b145ed47b203a85ad5971"
+    },
+    "id": "cv-09-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-09",
+    "currentShiftId": "ca-2026-08-26-07",
+    "shiftLinks": [
+      {
+        "id": "cv-09-3-1",
+        "shiftId": "ca-2026-08-25-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787637600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-09"
+      },
+      {
+        "id": "cv-09-3-2",
+        "shiftId": "ca-2026-08-26-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787702400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-25-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787652000000"
+          }
+        },
+        "by": "tk-nv-09"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-09-3-1",
+        "taskShiftId": "cv-09-3-1",
+        "shiftLinkId": "cv-09-3-1",
+        "assignmentId": "ca-2026-08-25-13-nv-09",
+        "employeeId": "nv-09",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-09-3-2",
+        "taskShiftId": "cv-09-3-2",
+        "shiftLinkId": "cv-09-3-2",
+        "assignmentId": "ca-2026-08-26-07-nv-09",
+        "employeeId": "nv-09",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787716800000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787637600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8582f4ab7d0c12ae1a70f192"
+    },
+    "id": "cv-10-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-10",
+    "currentShiftId": "ca-2026-08-05-13",
+    "shiftLinks": [
+      {
+        "id": "cv-10-1-1",
+        "shiftId": "ca-2026-08-05-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785888000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-10"
+      },
+      {
+        "id": "cv-10-1-2",
+        "shiftId": "ca-2026-08-05-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785909600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-05-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785902400000"
+          }
+        },
+        "by": "tk-nv-10"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-10-1-1",
+        "taskShiftId": "cv-10-1-1",
+        "shiftLinkId": "cv-10-1-1",
+        "assignmentId": "ca-2026-08-05-07-nv-10",
+        "employeeId": "nv-10",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-10-1-2",
+        "taskShiftId": "cv-10-1-2",
+        "shiftLinkId": "cv-10-1-2",
+        "assignmentId": "ca-2026-08-05-13-nv-10",
+        "employeeId": "nv-10",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785924000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785888000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ee85a7fd688a8ab0d247c72f"
+    },
+    "id": "cv-10-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-10",
+    "currentShiftId": "ca-2026-08-20-07",
+    "shiftLinks": [
+      {
+        "id": "cv-10-2-1",
+        "shiftId": "ca-2026-08-14-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786687200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-10"
+      },
+      {
+        "id": "cv-10-2-2",
+        "shiftId": "ca-2026-08-20-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787184000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-14-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786701600000"
+          }
+        },
+        "by": "tk-nv-10"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-10-2-1",
+        "taskShiftId": "cv-10-2-1",
+        "shiftLinkId": "cv-10-2-1",
+        "assignmentId": "ca-2026-08-14-13-nv-10",
+        "employeeId": "nv-10",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-10-2-2",
+        "taskShiftId": "cv-10-2-2",
+        "shiftLinkId": "cv-10-2-2",
+        "assignmentId": "ca-2026-08-20-07-nv-10",
+        "employeeId": "nv-10",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787198400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786687200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4ddd314abfbcccae61bf01ff"
+    },
+    "id": "cv-10-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-10",
+    "currentShiftId": "ca-2026-08-29-13",
+    "shiftLinks": [
+      {
+        "id": "cv-10-3-1",
+        "shiftId": "ca-2026-08-29-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787961600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-10"
+      },
+      {
+        "id": "cv-10-3-2",
+        "shiftId": "ca-2026-08-29-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787983200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-29-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787976000000"
+          }
+        },
+        "by": "tk-nv-10"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-10-3-1",
+        "taskShiftId": "cv-10-3-1",
+        "shiftLinkId": "cv-10-3-1",
+        "assignmentId": "ca-2026-08-29-07-nv-10",
+        "employeeId": "nv-10",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-10-3-2",
+        "taskShiftId": "cv-10-3-2",
+        "shiftLinkId": "cv-10-3-2",
+        "assignmentId": "ca-2026-08-29-13-nv-10",
+        "employeeId": "nv-10",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787997600000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787961600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "195d96692b1761848d68dad2"
+    },
+    "id": "cv-11-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-11",
+    "currentShiftId": "ca-2026-08-01-13",
+    "shiftLinks": [
+      {
+        "id": "cv-11-1-1",
+        "shiftId": "ca-2026-08-01-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785542400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-11"
+      },
+      {
+        "id": "cv-11-1-2",
+        "shiftId": "ca-2026-08-01-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785564000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-01-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785556800000"
+          }
+        },
+        "by": "tk-nv-11"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-11-1-1",
+        "taskShiftId": "cv-11-1-1",
+        "shiftLinkId": "cv-11-1-1",
+        "assignmentId": "ca-2026-08-01-07-nv-11",
+        "employeeId": "nv-11",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-11-1-2",
+        "taskShiftId": "cv-11-1-2",
+        "shiftLinkId": "cv-11-1-2",
+        "assignmentId": "ca-2026-08-01-13-nv-11",
+        "employeeId": "nv-11",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785578400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8132bd7169feeb2ebf00b2b2"
+    },
+    "id": "cv-11-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-11",
+    "currentShiftId": "ca-2026-08-15-13",
+    "shiftLinks": [
+      {
+        "id": "cv-11-2-1",
+        "shiftId": "ca-2026-08-15-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786752000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-11"
+      },
+      {
+        "id": "cv-11-2-2",
+        "shiftId": "ca-2026-08-15-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786773600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-15-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786766400000"
+          }
+        },
+        "by": "tk-nv-11"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-11-2-1",
+        "taskShiftId": "cv-11-2-1",
+        "shiftLinkId": "cv-11-2-1",
+        "assignmentId": "ca-2026-08-15-07-nv-11",
+        "employeeId": "nv-11",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-11-2-2",
+        "taskShiftId": "cv-11-2-2",
+        "shiftLinkId": "cv-11-2-2",
+        "assignmentId": "ca-2026-08-15-13-nv-11",
+        "employeeId": "nv-11",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786788000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786752000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1726a407f14dd0d1c4b9fdcf"
+    },
+    "id": "cv-11-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-11",
+    "currentShiftId": "ca-2026-08-24-13",
+    "shiftLinks": [
+      {
+        "id": "cv-11-3-1",
+        "shiftId": "ca-2026-08-24-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787529600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-11"
+      },
+      {
+        "id": "cv-11-3-2",
+        "shiftId": "ca-2026-08-24-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787551200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-24-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787544000000"
+          }
+        },
+        "by": "tk-nv-11"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-11-3-1",
+        "taskShiftId": "cv-11-3-1",
+        "shiftLinkId": "cv-11-3-1",
+        "assignmentId": "ca-2026-08-24-07-nv-11",
+        "employeeId": "nv-11",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-11-3-2",
+        "taskShiftId": "cv-11-3-2",
+        "shiftLinkId": "cv-11-3-2",
+        "assignmentId": "ca-2026-08-24-13-nv-11",
+        "employeeId": "nv-11",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787565600000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787529600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "44e1fac865c386a26c45cd48"
+    },
+    "id": "cv-12-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-12",
+    "currentShiftId": "ca-2026-08-03-07",
+    "shiftLinks": [
+      {
+        "id": "cv-12-1-1",
+        "shiftId": "ca-2026-08-02-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785650400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-12"
+      },
+      {
+        "id": "cv-12-1-2",
+        "shiftId": "ca-2026-08-03-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785715200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-02-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785664800000"
+          }
+        },
+        "by": "tk-nv-12"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-12-1-1",
+        "taskShiftId": "cv-12-1-1",
+        "shiftLinkId": "cv-12-1-1",
+        "assignmentId": "ca-2026-08-02-13-nv-12",
+        "employeeId": "nv-12",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-12-1-2",
+        "taskShiftId": "cv-12-1-2",
+        "shiftLinkId": "cv-12-1-2",
+        "assignmentId": "ca-2026-08-03-07-nv-12",
+        "employeeId": "nv-12",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785729600000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785650400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6de7be2300e5069bd7b1ad02"
+    },
+    "id": "cv-12-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-12",
+    "currentShiftId": "ca-2026-08-12-13",
+    "shiftLinks": [
+      {
+        "id": "cv-12-2-1",
+        "shiftId": "ca-2026-08-12-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786492800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-12"
+      },
+      {
+        "id": "cv-12-2-2",
+        "shiftId": "ca-2026-08-12-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786514400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-12-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786507200000"
+          }
+        },
+        "by": "tk-nv-12"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-12-2-1",
+        "taskShiftId": "cv-12-2-1",
+        "shiftLinkId": "cv-12-2-1",
+        "assignmentId": "ca-2026-08-12-07-nv-12",
+        "employeeId": "nv-12",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-12-2-2",
+        "taskShiftId": "cv-12-2-2",
+        "shiftLinkId": "cv-12-2-2",
+        "assignmentId": "ca-2026-08-12-13-nv-12",
+        "employeeId": "nv-12",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786528800000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786492800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "957716d2204fb552c15f44c6"
+    },
+    "id": "cv-12-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-12",
+    "currentShiftId": "ca-2026-08-27-07",
+    "shiftLinks": [
+      {
+        "id": "cv-12-3-1",
+        "shiftId": "ca-2026-08-26-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787724000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-12"
+      },
+      {
+        "id": "cv-12-3-2",
+        "shiftId": "ca-2026-08-27-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787788800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-26-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787738400000"
+          }
+        },
+        "by": "tk-nv-12"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-12-3-1",
+        "taskShiftId": "cv-12-3-1",
+        "shiftLinkId": "cv-12-3-1",
+        "assignmentId": "ca-2026-08-26-13-nv-12",
+        "employeeId": "nv-12",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-12-3-2",
+        "taskShiftId": "cv-12-3-2",
+        "shiftLinkId": "cv-12-3-2",
+        "assignmentId": "ca-2026-08-27-07-nv-12",
+        "employeeId": "nv-12",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787803200000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787724000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1653d04e704ee5fbe1ac762f"
+    },
+    "id": "cv-13-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-13",
+    "currentShiftId": "ca-2026-08-06-07",
+    "shiftLinks": [
+      {
+        "id": "cv-13-1-1",
+        "shiftId": "ca-2026-08-05-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785909600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-13"
+      },
+      {
+        "id": "cv-13-1-2",
+        "shiftId": "ca-2026-08-06-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785974400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-05-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785924000000"
+          }
+        },
+        "by": "tk-nv-13"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-13-1-1",
+        "taskShiftId": "cv-13-1-1",
+        "shiftLinkId": "cv-13-1-1",
+        "assignmentId": "ca-2026-08-05-13-nv-13",
+        "employeeId": "nv-13",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-13-1-2",
+        "taskShiftId": "cv-13-1-2",
+        "shiftLinkId": "cv-13-1-2",
+        "assignmentId": "ca-2026-08-06-07-nv-13",
+        "employeeId": "nv-13",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785988800000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785909600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "377cf4f56afd2d9ef9ee3d1e"
+    },
+    "id": "cv-13-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-13",
+    "currentShiftId": "ca-2026-08-20-13",
+    "shiftLinks": [
+      {
+        "id": "cv-13-2-1",
+        "shiftId": "ca-2026-08-15-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786752000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-13"
+      },
+      {
+        "id": "cv-13-2-2",
+        "shiftId": "ca-2026-08-20-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787205600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-15-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786766400000"
+          }
+        },
+        "by": "tk-nv-13"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-13-2-1",
+        "taskShiftId": "cv-13-2-1",
+        "shiftLinkId": "cv-13-2-1",
+        "assignmentId": "ca-2026-08-15-07-nv-13",
+        "employeeId": "nv-13",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-13-2-2",
+        "taskShiftId": "cv-13-2-2",
+        "shiftLinkId": "cv-13-2-2",
+        "assignmentId": "ca-2026-08-20-13-nv-13",
+        "employeeId": "nv-13",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787220000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786752000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "17170d023410e92a29c6c363"
+    },
+    "id": "cv-13-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-13",
+    "currentShiftId": "ca-2026-08-30-07",
+    "shiftLinks": [
+      {
+        "id": "cv-13-3-1",
+        "shiftId": "ca-2026-08-29-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787983200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-13"
+      },
+      {
+        "id": "cv-13-3-2",
+        "shiftId": "ca-2026-08-30-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1788048000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-29-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787997600000"
+          }
+        },
+        "by": "tk-nv-13"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-13-3-1",
+        "taskShiftId": "cv-13-3-1",
+        "shiftLinkId": "cv-13-3-1",
+        "assignmentId": "ca-2026-08-29-13-nv-13",
+        "employeeId": "nv-13",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-13-3-2",
+        "taskShiftId": "cv-13-3-2",
+        "shiftLinkId": "cv-13-3-2",
+        "assignmentId": "ca-2026-08-30-07-nv-13",
+        "employeeId": "nv-13",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1788062400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787983200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "749698aa51288996ede4b0ac"
+    },
+    "id": "cv-14-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-14",
+    "currentShiftId": "ca-2026-08-01-13",
+    "shiftLinks": [
+      {
+        "id": "cv-14-1-1",
+        "shiftId": "ca-2026-08-01-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785542400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-14"
+      },
+      {
+        "id": "cv-14-1-2",
+        "shiftId": "ca-2026-08-01-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785564000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-01-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785556800000"
+          }
+        },
+        "by": "tk-nv-14"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-14-1-1",
+        "taskShiftId": "cv-14-1-1",
+        "shiftLinkId": "cv-14-1-1",
+        "assignmentId": "ca-2026-08-01-07-nv-14",
+        "employeeId": "nv-14",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-14-1-2",
+        "taskShiftId": "cv-14-1-2",
+        "shiftLinkId": "cv-14-1-2",
+        "assignmentId": "ca-2026-08-01-13-nv-14",
+        "employeeId": "nv-14",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785578400000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "87aeb78bf91c64f8aad31eba"
+    },
+    "id": "cv-14-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-14",
+    "currentShiftId": "ca-2026-08-10-13",
+    "shiftLinks": [
+      {
+        "id": "cv-14-2-1",
+        "shiftId": "ca-2026-08-10-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786320000000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-14"
+      },
+      {
+        "id": "cv-14-2-2",
+        "shiftId": "ca-2026-08-10-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786341600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-10-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786334400000"
+          }
+        },
+        "by": "tk-nv-14"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-14-2-1",
+        "taskShiftId": "cv-14-2-1",
+        "shiftLinkId": "cv-14-2-1",
+        "assignmentId": "ca-2026-08-10-07-nv-14",
+        "employeeId": "nv-14",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-14-2-2",
+        "taskShiftId": "cv-14-2-2",
+        "shiftLinkId": "cv-14-2-2",
+        "assignmentId": "ca-2026-08-10-13-nv-14",
+        "employeeId": "nv-14",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1786356000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786320000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a117d97ba90a4ffdc5bc36bd"
+    },
+    "id": "cv-14-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-14",
+    "currentShiftId": "ca-2026-08-24-07",
+    "shiftLinks": [
+      {
+        "id": "cv-14-3-1",
+        "shiftId": "ca-2026-08-23-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787464800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-14"
+      },
+      {
+        "id": "cv-14-3-2",
+        "shiftId": "ca-2026-08-24-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787529600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-23-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787479200000"
+          }
+        },
+        "by": "tk-nv-14"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-14-3-1",
+        "taskShiftId": "cv-14-3-1",
+        "shiftLinkId": "cv-14-3-1",
+        "assignmentId": "ca-2026-08-23-13-nv-14",
+        "employeeId": "nv-14",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-14-3-2",
+        "taskShiftId": "cv-14-3-2",
+        "shiftLinkId": "cv-14-3-2",
+        "assignmentId": "ca-2026-08-24-07-nv-14",
+        "employeeId": "nv-14",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787544000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787464800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d2c1e49fd422d67195b10279"
+    },
+    "id": "cv-15-1",
+    "title": "Kiểm tra hồ sơ cọc",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-15",
+    "currentShiftId": "ca-2026-08-04-07",
+    "shiftLinks": [
+      {
+        "id": "cv-15-1-1",
+        "shiftId": "ca-2026-08-03-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785736800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-15"
+      },
+      {
+        "id": "cv-15-1-2",
+        "shiftId": "ca-2026-08-04-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785801600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-03-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1785751200000"
+          }
+        },
+        "by": "tk-nv-15"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-15-1-1",
+        "taskShiftId": "cv-15-1-1",
+        "shiftLinkId": "cv-15-1-1",
+        "assignmentId": "ca-2026-08-03-13-nv-15",
+        "employeeId": "nv-15",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-15-1-2",
+        "taskShiftId": "cv-15-1-2",
+        "shiftLinkId": "cv-15-1-2",
+        "assignmentId": "ca-2026-08-04-07-nv-15",
+        "employeeId": "nv-15",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1785816000000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785736800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7693b67ea9e00fafb908db71"
+    },
+    "id": "cv-15-2",
+    "title": "Cập nhật tiện ích phòng",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-15",
+    "currentShiftId": "ca-2026-08-18-13",
+    "shiftLinks": [
+      {
+        "id": "cv-15-2-1",
+        "shiftId": "ca-2026-08-13-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1786579200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-15"
+      },
+      {
+        "id": "cv-15-2-2",
+        "shiftId": "ca-2026-08-18-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787032800000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-13-07",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1786593600000"
+          }
+        },
+        "by": "tk-nv-15"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-15-2-1",
+        "taskShiftId": "cv-15-2-1",
+        "shiftLinkId": "cv-15-2-1",
+        "assignmentId": "ca-2026-08-13-07-nv-15",
+        "employeeId": "nv-15",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-15-2-2",
+        "taskShiftId": "cv-15-2-2",
+        "shiftLinkId": "cv-15-2-2",
+        "assignmentId": "ca-2026-08-18-13-nv-15",
+        "employeeId": "nv-15",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787047200000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786579200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4a0f33504bc8828d15fb3310"
+    },
+    "id": "cv-15-3",
+    "title": "Gọi xác nhận lịch xem",
+    "description": "Theo dõi phần việc xuyên ca, giữ nguyên danh tính công việc",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "tk-nv-15",
+    "currentShiftId": "ca-2026-08-28-07",
+    "shiftLinks": [
+      {
+        "id": "cv-15-3-1",
+        "shiftId": "ca-2026-08-27-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787810400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": null,
+        "transferredAt": null,
+        "by": "tk-nv-15"
+      },
+      {
+        "id": "cv-15-3-2",
+        "shiftId": "ca-2026-08-28-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1787875200000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "fromShiftId": "ca-2026-08-27-13",
+        "transferredAt": {
+          "$date": {
+            "$numberLong": "1787824800000"
+          }
+        },
+        "by": "tk-nv-15"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cv-15-3-1",
+        "taskShiftId": "cv-15-3-1",
+        "shiftLinkId": "cv-15-3-1",
+        "assignmentId": "ca-2026-08-27-13-nv-15",
+        "employeeId": "nv-15",
+        "personalStatus": "TODO",
+        "doneAt": null,
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "id": "pc-cv-15-3-2",
+        "taskShiftId": "cv-15-3-2",
+        "shiftLinkId": "cv-15-3-2",
+        "assignmentId": "ca-2026-08-28-07-nv-15",
+        "employeeId": "nv-15",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1787889600000"
+          }
+        },
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787810400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d93044d1229fc9e0476816db"
+    },
+    "id": "cv-chung",
+    "title": "Rà soát phòng và lịch xem",
+    "description": "Hai nhân viên phối hợp",
+    "status": "DONE",
+    "createdBy": "admin",
+    "confirmedBy": "admin",
+    "currentShiftId": "ca-2026-09-15-07",
+    "shiftLinks": [
+      {
+        "id": "cv-chung-1",
+        "shiftId": "ca-2026-09-15-07",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1789430400000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "by": "admin"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-chung-nv-02",
+        "taskShiftId": "cv-chung-1",
+        "shiftLinkId": "cv-chung-1",
+        "assignmentId": "ca-2026-09-15-07-nv-02",
+        "employeeId": "nv-02",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1789444800000"
+          }
+        }
+      },
+      {
+        "id": "pc-chung-nv-05",
+        "taskShiftId": "cv-chung-1",
+        "shiftLinkId": "cv-chung-1",
+        "assignmentId": "ca-2026-09-15-07-nv-05",
+        "employeeId": "nv-05",
+        "personalStatus": "DONE",
+        "doneAt": {
+          "$date": {
+            "$numberLong": "1789444800000"
+          }
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789430400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "fad1ee0f5a1b944c3fdb6e4c"
+    },
+    "id": "cv-cho-admin",
+    "title": "Sắp xếp kiểm tra hồ sơ bổ sung",
+    "description": "Chưa có ca kế tiếp tại thời điểm bàn giao",
+    "status": "WAITING_ADMIN",
+    "createdBy": "admin",
+    "confirmedBy": null,
+    "currentShiftId": "p4-6af98f5eb2dd08da90cd41b9",
+    "shiftLinks": [
+      {
+        "id": "cv-cho-admin-1",
+        "shiftId": "ca-2026-08-05-13",
+        "linkedAt": {
+          "$date": {
+            "$numberLong": "1785909600000"
+          }
+        },
+        "reason": "Nội dung minh họa đã được ẩn danh.",
+        "by": "tk-nv-01"
+      }
+    ],
+    "assignees": [
+      {
+        "id": "pc-cho-admin",
+        "taskShiftId": "cv-cho-admin-1",
+        "shiftLinkId": "cv-cho-admin-1",
+        "assignmentId": "ca-2026-08-05-13-nv-01",
+        "employeeId": "nv-01",
+        "personalStatus": "TODO",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "waitingEmployeeIds": [
+      "nv-01"
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785924000000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794749942350"
+      }
+    },
+    "updatedBy": "admin"
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee26"
+    },
+    "id": "p4-viewing-lx-6af9e49f7c0fe08a17bcee10",
+    "kind": "VIEWING",
+    "title": "Dẫn khách xem phòng – Khách hàng 43",
+    "description": "Giờ xem: 07:30 19/11/2026. Mã phòng: PHONG_30.",
+    "viewingId": "lx-6af9e49f7c0fe08a17bcee10",
+    "scheduledAt": {
+      "$date": {
+        "$numberLong": "1795048200000"
+      }
+    },
+    "scheduledEndAt": {
+      "$date": {
+        "$numberLong": "1795050000000"
+      }
+    },
+    "status": "TODO",
+    "currentShiftId": "p4-6af98f5eb2dd08da90cd41bf",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "createdBy": "tk-kh-6af9b41ded3fe4f1d80b4649",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "updatedBy": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee2d"
+    },
+    "id": "p4-viewing-lx-6af9e4a07c0fe08a17bcee16",
+    "kind": "VIEWING",
+    "title": "Dẫn khách xem phòng – Khách hàng 43",
+    "description": "Giờ xem: 08:00 19/11/2026. Mã phòng: PHONG_26.",
+    "viewingId": "lx-6af9e4a07c0fe08a17bcee16",
+    "scheduledAt": {
+      "$date": {
+        "$numberLong": "1795050000000"
+      }
+    },
+    "scheduledEndAt": {
+      "$date": {
+        "$numberLong": "1795051800000"
+      }
+    },
+    "status": "TODO",
+    "currentShiftId": "p4-6af98f5eb2dd08da90cd41bf",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "createdBy": "tk-kh-6af9b41ded3fe4f1d80b4649",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "updatedBy": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee34"
+    },
+    "id": "p4-viewing-lx-6af9e4a07c0fe08a17bcee1c",
+    "kind": "VIEWING",
+    "title": "Dẫn khách xem phòng – Khách hàng 43",
+    "description": "Giờ xem: 09:00 20/11/2026. Mã phòng: PHONG_23.",
+    "viewingId": "lx-6af9e4a07c0fe08a17bcee1c",
+    "scheduledAt": {
+      "$date": {
+        "$numberLong": "1795140000000"
+      }
+    },
+    "scheduledEndAt": {
+      "$date": {
+        "$numberLong": "1795141800000"
+      }
+    },
+    "status": "TODO",
+    "currentShiftId": "p4-6af98f5eb2dd08da90cd41c1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "createdBy": "tk-kh-6af9b41ded3fe4f1d80b4649",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "updatedBy": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  },
+  {
+    "_id": {
+      "$oid": "6afb25f429b799683b594ae6"
+    },
+    "id": "p4-6afb25f429b799683b594ae0",
+    "kind": "GENERAL",
+    "title": "đi nhậu với sếp",
+    "description": "đi nhậu gặp đối tác với sếp",
+    "status": "TODO",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794844148303"
+      }
+    },
+    "createdBy": "admin",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794844148303"
+      }
+    },
+    "updatedBy": "admin",
+    "currentShiftId": "p4-6af98f5eb2dd08da90cd41bf"
+  },
+  {
+    "_id": {
+      "$oid": "6afb59f3ee9c8c05f08f3194"
+    },
+    "id": "p4-viewing-lx-6afb59f2ee9c8c05f08f3184",
+    "kind": "VIEWING",
+    "title": "Dẫn khách xem phòng – Khách hàng 43",
+    "description": "Giờ xem: 16:00 22/11/2026. Mã phòng: PHONG_03.",
+    "viewingId": "lx-6afb59f2ee9c8c05f08f3184",
+    "scheduledAt": {
+      "$date": {
+        "$numberLong": "1795338000000"
+      }
+    },
+    "scheduledEndAt": {
+      "$date": {
+        "$numberLong": "1795339800000"
+      }
+    },
+    "status": "TODO",
+    "currentShiftId": "p4-6af98f5eb2dd08da90cd41c6",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    },
+    "createdBy": "tk-kh-6af9b41ded3fe4f1d80b4649",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    },
+    "updatedBy": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  },
+  {
+    "_id": {
+      "$oid": "6afb59f3ee9c8c05f08f319b"
+    },
+    "id": "p4-viewing-lx-6afb59f2ee9c8c05f08f318a",
+    "kind": "VIEWING",
+    "title": "Dẫn khách xem phòng – Khách hàng 43",
+    "description": "Giờ xem: 15:00 20/11/2026. Mã phòng: PHONG_15.",
+    "viewingId": "lx-6afb59f2ee9c8c05f08f318a",
+    "scheduledAt": {
+      "$date": {
+        "$numberLong": "1795161600000"
+      }
+    },
+    "scheduledEndAt": {
+      "$date": {
+        "$numberLong": "1795163400000"
+      }
+    },
+    "status": "TODO",
+    "currentShiftId": "p4-6af98f5eb2dd08da90cd41c2",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    },
+    "createdBy": "tk-kh-6af9b41ded3fe4f1d80b4649",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    },
+    "updatedBy": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  }
+]

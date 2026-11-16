@@ -148,7 +148,7 @@ describe('Employee attendance and tasks over HTTP', () => {
     const loaded = shifts.api.loadTasks(assignment.id);
     http.expectOne('/data/me/shift-assignments/assignment-a/tasks').flush([task]);
     await loaded;
-    const toggled = tasks.toggleRequest(task.id, assignment.id);
+    const toggled = tasks.completeRequest(task.id, assignment.id);
     const req = http.expectOne('/data/tasks/task-a/my-status');
     expect(req.request.method).toBe('PUT');
     expect(req.request.body).toEqual({ assignmentId: assignment.id, personalStatus: 'DONE' });

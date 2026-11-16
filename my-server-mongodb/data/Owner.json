@@ -1,0 +1,92 @@
+[
+  {
+    "_id": {
+      "$oid": "8c4db6a8b24bd6477f1a0b4f"
+    },
+    "id": "chu-01",
+    "fullName": "Chủ nhà 01",
+    "phone": "0900000060",
+    "note": null
+  },
+  {
+    "_id": {
+      "$oid": "5be155853efe93eb05c99af1"
+    },
+    "id": "chu-02",
+    "fullName": "Chủ nhà 02",
+    "phone": "0900000061",
+    "note": null
+  },
+  {
+    "_id": {
+      "$oid": "3db49d7a1070c4a2e88cc1e4"
+    },
+    "id": "chu-03",
+    "fullName": "Chủ nhà 03",
+    "phone": "0900000062",
+    "note": null
+  },
+  {
+    "_id": {
+      "$oid": "9f0c6d8346a93ad5e5393547"
+    },
+    "id": "chu-04",
+    "fullName": "Chủ nhà 04",
+    "phone": "0900000063",
+    "note": null
+  },
+  {
+    "_id": {
+      "$oid": "5572769c35e8353379b028f4"
+    },
+    "id": "chu-05",
+    "fullName": "Chủ nhà 05",
+    "phone": "0900000064",
+    "note": null
+  },
+  {
+    "_id": {
+      "$oid": "e3d1c1267dae33b72404712b"
+    },
+    "id": "chu-06",
+    "fullName": "Chủ nhà 06",
+    "phone": "0900000065",
+    "note": null
+  },
+  {
+    "_id": {
+      "$oid": "cedef2b00a0aea79a9959d7c"
+    },
+    "id": "chu-07",
+    "fullName": "Chủ nhà 07",
+    "phone": "0900000066",
+    "note": null
+  },
+  {
+    "_id": {
+      "$oid": "dbf16ed656b85d8513a8c555"
+    },
+    "id": "chu-08",
+    "fullName": "Chủ nhà 08",
+    "phone": "0900000067",
+    "note": null
+  },
+  {
+    "_id": {
+      "$oid": "1a1116db2eb20386c5987f4f"
+    },
+    "id": "chu-09",
+    "fullName": "Chủ nhà 09",
+    "phone": "0900000068",
+    "note": null
+  },
+  {
+    "_id": {
+      "$oid": "b48f44eca5773e6e6bebd08e"
+    },
+    "id": "chu-10",
+    "fullName": "Chủ nhà 10",
+    "phone": "0900000069",
+    "note": null
+  }
+]

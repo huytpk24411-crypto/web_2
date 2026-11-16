@@ -10,6 +10,7 @@ export class IconComponent {
   @Input() name = 'home';
   @Input() size = 18;
   paths: Record<string, string> = {
+    mail: 'M3 5h18v14H3zM3 5l9 7 9-7',
     home: 'M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z',
     lock: 'M5 10h14v11H5zM8 10V7a4 4 0 0 1 8 0v3',
     eye: 'M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Zm10 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z',

@@ -13,7 +13,10 @@
   <header class="tour-header">
     <div>
       <h2 id="room-tour-title">Xem phòng 360°</h2>
-      <small id="room-tour-description">Ảnh toàn cảnh 360°</small>
+      <small id="room-tour-description"
+        >{{ activeScene()?.label || 'Ảnh toàn cảnh 360°' }} · Kéo để nhìn quanh, chọn điểm để di
+        chuyển</small
+      >
     </div>
     <button
       type="button"
@@ -83,7 +86,7 @@
     </div>
     <div class="tour-status" *ngIf="unavailable()" role="alert">{{ unavailable() }}</div>
     <small *ngIf="simulated" id="room-tour-note" class="tour-note">
-      Ảnh mô phỏng 360° dựng từ ảnh góc chụp
+      Không gian mô phỏng từ ảnh phòng · Có bổ sung góc khuất
     </small>
   </div>
 

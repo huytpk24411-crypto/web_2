@@ -108,8 +108,10 @@ export class BookingService {
           .filter((h) => h.paymentId)
           .map((h) => this.getApi<MoneyPayment>('payments/' + encodeURIComponent(h.paymentId!))),
       );
-      if (this.auth.account()?.id === owner && version === this.version)
+      if (this.auth.account()?.id === owner && version === this.version) {
         this.state.set({ owner, holds, payments });
+        await this.rooms.refresh();
+      }
     } catch (error) {
       if (this.auth.account()?.id === owner && version === this.version)
         this.error.set(apiMessage(error, 'Không tải được giữ chỗ. Vui lòng thử lại.'));
@@ -203,6 +205,7 @@ export class BookingService {
       payments: this.payments(),
     });
     this.finish(storageKey);
+    await this.rooms.refresh();
     return this.fromApi(hold);
   }
   async createPayosLink(id: string): Promise<HoldPayosLink> {
@@ -235,6 +238,5 @@ export class BookingService {
     );
     await this.refresh();
     this.finish(storageKey);
-    await this.rooms.refresh();
   }
 }

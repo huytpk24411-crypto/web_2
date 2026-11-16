@@ -82,6 +82,7 @@ describe('Customer P3 holds, payments and receipts', () => {
     expect(hold.amount).toBe(725000);
     expect(Date.parse(hold.expiresAt!) - Date.parse(hold.createdAt)).toBe(15 * 60000);
     expect(hold.apiStatus).toBe('PAYMENT_PENDING');
+    expect(TestBed.inject(RoomService).refresh).toHaveBeenCalledOnce();
     expect(booking.receipt()).toBeUndefined();
   });
   it('creates a payOS link with an idempotency key, keeping the hold unpaid', async () => {
@@ -199,6 +200,7 @@ describe('Customer P3 holds, payments and receipts', () => {
     const loaded = booking.refresh();
     await flushHolds({ ...API_HOLD, status: 'PAYMENT_PENDING', paymentId: undefined });
     await loaded;
+    vi.mocked(TestBed.inject(RoomService).refresh).mockClear();
     const cancelled = booking.cancel(API_HOLD.id);
     (await request('/data/me/holds/' + API_HOLD.id + '/cancel')).flush(
       JSON.stringify({ ...API_HOLD, status: 'CANCELLED', paymentId: undefined }),

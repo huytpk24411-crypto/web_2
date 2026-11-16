@@ -2,6 +2,88 @@ import { EmployeeDealDetailComponent } from './employee-deal-detail';
 import { employeeHttpTest, flushEmployeeReads } from '../employee-http-testing';
 
 describe('EmployeeDealDetailComponent with HTTP data', () => {
+  it('counts signed contracts waiting for admin separately from drafts and abandoned contracts', async () => {
+    const { fixture, http } = await employeeHttpTest(EmployeeDealDetailComponent);
+    const component = fixture.componentInstance;
+    const pending = component.refresh();
+    await flushEmployeeReads(http, {
+      '/data/contracts': {
+        items: ['DRAFT', 'SIGNED', 'COMPLETED', 'VOID', 'CANCELLED'].map((status, index) => ({
+          id: 'contract-' + index,
+          number: 'HD-' + index,
+          depositId: 'deposit-' + index,
+          roomId: 'room-' + index,
+          status,
+        })),
+      },
+    });
+    await pending;
+    expect(component.contractSummary).toEqual({ total: 5, approved: 1, pending: 1, abandoned: 1 });
+    http.verify();
+    fixture.destroy();
+  });
+  it('opens contract history by default and lists every deposit including those with contracts', async () => {
+    const { fixture, http } = await employeeHttpTest(EmployeeDealDetailComponent);
+    const component = fixture.componentInstance;
+    const pending = component.refresh();
+    await flushEmployeeReads(http, {
+      '/data/deposits': {
+        items: [
+          {
+            id: 'deposit-old',
+            number: 'PC-OLD',
+            roomId: 'room-old',
+            status: 'COMPLETED',
+            totalRequired: 2000000,
+            holdCredit: 0,
+            amountDue: 2000000,
+          },
+          {
+            id: 'deposit-new',
+            number: 'PC-NEW',
+            roomId: 'room-new',
+            status: 'PAID',
+            totalRequired: 3000000,
+            holdCredit: 0,
+            amountDue: 3000000,
+          },
+        ],
+      },
+      '/data/contracts': {
+        items: [
+          {
+            id: 'contract-old',
+            number: 'HD-OLD',
+            depositId: 'deposit-old',
+            roomId: 'room-old',
+            status: 'COMPLETED',
+            customerName: 'Khách đã thuê',
+          },
+        ],
+      },
+    });
+    await pending;
+    expect(component.listScope).toBe('contracts');
+    expect(component.visibleCards.map((card) => card.deal.id)).toEqual(['contract-old']);
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.deal-card').getAttribute('href')).toBe(
+      '/employee/deals/contract-old',
+    );
+    component.listScope = 'deposits';
+    expect(component.visibleCards.map((card) => card.deal.id)).toEqual([
+      'deposit-old',
+      'deposit-new',
+    ]);
+    expect(component.contractSummary).toEqual({ total: 1, approved: 1, pending: 0, abandoned: 0 });
+    expect(component.depositSummary).toEqual({ total: 2, contracted: 1, uncontracted: 1 });
+    component.id = 'deposit-old';
+    expect(component.deal?.number).toBe('PC-OLD');
+    expect(component.contract?.number).toBe('HD-OLD');
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.dossier').textContent).toContain('PC-OLD');
+    http.verify();
+    fixture.destroy();
+  });
   it('renders an empty API response without inventing business records', async () => {
     const { fixture, http } = await employeeHttpTest(EmployeeDealDetailComponent);
     expect(fixture.componentInstance).toBeTruthy();
@@ -146,11 +228,48 @@ describe('EmployeeDealDetailComponent with HTTP data', () => {
     fixture.detectChanges();
     expect(component.contractDepositId).toBe('record-a');
     expect(component.contractStart).toBe('2099-01-01');
+    expect(component.contractEnd).toBe('2100-01-01');
     expect(component.contractRent).toBe(4000000);
+    await fixture.whenStable();
+    fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('input[name="contractStart"]')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('input[name="contractEnd"]').value).toBe(
+      '2100-01-01',
+    );
     expect(fixture.nativeElement.querySelector('.deal-card').textContent).toContain(
       'Chưa lập hợp đồng',
     );
+    http.verify();
+    fixture.destroy();
+  });
+
+  it('blocks missing or reversed dates before requesting contract creation', async () => {
+    const { fixture, http } = await employeeHttpTest(EmployeeDealDetailComponent);
+    const component = fixture.componentInstance;
+    const pending = component.refresh();
+    await flushEmployeeReads(http, {
+      '/data/deposits': {
+        items: [
+          {
+            id: 'record-a',
+            roomId: 'room-a',
+            status: 'PAID',
+            totalRequired: 2000000,
+            holdCredit: 0,
+            amountDue: 2000000,
+            proposedLease: { startDate: '2026-11-16', months: 12, monthlyRent: 4000000 },
+          },
+        ],
+      },
+    });
+    await pending;
+    component.contractEnd = '';
+    await component.createContract();
+    expect(component.error).toContain('Ngày kết thúc phải sau ngày bắt đầu');
+    component.contractEnd = '2026-11-15';
+    await component.createContract();
+    http.expectNone((request) => request.method === 'POST');
+    expect(component.busy).toBe(false);
     http.verify();
     fixture.destroy();
   });

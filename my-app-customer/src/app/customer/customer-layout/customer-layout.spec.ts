@@ -5,8 +5,7 @@ import { provideRouter, Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth-service';
 import { FavoriteService } from '../../services/favorite-service';
 import { NotificationService } from '../../services/notification-service';
-import { BrandComponent } from '../../shared/brand/brand';
-import { IconComponent } from '../../shared/icon/icon';
+import { CustomerModule } from '../customer-module';
 import { CustomerLayoutComponent } from './customer-layout';
 
 describe('CustomerLayoutComponent header', () => {
@@ -39,8 +38,7 @@ describe('CustomerLayoutComponent header', () => {
       })),
     );
     await TestBed.configureTestingModule({
-      imports: [CommonModule, RouterModule],
-      declarations: [CustomerLayoutComponent, BrandComponent, IconComponent],
+      imports: [CommonModule, RouterModule, CustomerModule],
       providers: [
         provideRouter([]),
         { provide: AuthService, useValue: { account, logout, error: signal('') } },
@@ -107,6 +105,22 @@ describe('CustomerLayoutComponent header', () => {
     expect(brand.classList.contains('brand--hero')).toBe(true);
   });
 
+  it('links the header to the viewing list and held rooms, with icon tooltips', () => {
+    render(true);
+    const calendar = fixture.nativeElement.querySelector('header a[aria-label="Lịch xem của tôi"]');
+    expect(calendar.getAttribute('href')).toBe('/my-viewings');
+    expect(calendar.getAttribute('data-tooltip')).toBe('Lịch xem của tôi');
+    expect(
+      fixture.nativeElement
+        .querySelector('header a[aria-label="Phòng đã giữ"]')
+        .getAttribute('href'),
+    ).toBe('/bookings');
+    for (const selector of ['.favorite-link', '.notification-bell', '.account-toggle'])
+      expect(
+        fixture.nativeElement.querySelector(selector).getAttribute('data-tooltip'),
+      ).toBeTruthy();
+    expect(fixture.nativeElement.querySelector('header a[href="/viewings/new"]')).toBeNull();
+  });
   it('starts other routes with a light sticky header and preserves login/register returnUrl', () => {
     url = '/rooms?school=university';
     const component = render();

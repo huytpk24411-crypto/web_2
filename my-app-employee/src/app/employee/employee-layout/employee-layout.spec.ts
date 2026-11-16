@@ -34,4 +34,43 @@ describe('EmployeeLayoutComponent profile and notifications', () => {
     http.verify();
     fixture.destroy();
   });
+  it('opens notification cards under the bell and closes on Escape or outside click', async () => {
+    const { fixture, http } = await employeeHttpTest(EmployeeLayoutComponent);
+    const bell = fixture.nativeElement.querySelector('.employee-notification') as HTMLButtonElement;
+    bell.click();
+    fixture.detectChanges();
+    http.expectOne('/notifications').flush(
+      JSON.stringify([
+        {
+          id: 'notice-a',
+          type: 'P3_ACTIVE',
+          entityType: 'Hold',
+          title: 'Hold: ACTIVE',
+          body: 'Hold internal-id: ACTIVE',
+          read: false,
+          createdAt: '2026-11-17T01:00:00Z',
+        },
+      ]),
+    );
+    await Promise.resolve();
+    await Promise.resolve();
+    fixture.detectChanges();
+    const panel = fixture.nativeElement.querySelector(
+      '.employee-notifications .notification-panel',
+    );
+    expect(panel).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('main .notification-panel')).toBeNull();
+    expect(panel.textContent).toContain('Giữ chỗ phòng');
+    expect(panel.textContent).not.toContain('internal-id');
+    document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    fixture.detectChanges();
+    expect(fixture.componentInstance.notificationOpen()).toBe(false);
+    bell.click();
+    http.expectOne('/notifications').flush('[]');
+    document.body.click();
+    fixture.detectChanges();
+    expect(fixture.componentInstance.notificationOpen()).toBe(false);
+    http.verify();
+    fixture.destroy();
+  });
 });

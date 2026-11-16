@@ -1,0 +1,1876 @@
+[
+  {
+    "_id": {
+      "$oid": "7486a2b27e6e5290a3772155"
+    },
+    "id": "cv-01-1-1",
+    "taskId": "cv-01-1",
+    "shiftId": "ca-2026-08-03-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785736800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-01"
+  },
+  {
+    "_id": {
+      "$oid": "a254b62e5b74f25bf31c92e6"
+    },
+    "id": "cv-01-1-2",
+    "taskId": "cv-01-1",
+    "shiftId": "ca-2026-08-04-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785801600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-03-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785751200000"
+      }
+    },
+    "by": "tk-nv-01"
+  },
+  {
+    "_id": {
+      "$oid": "06bf8cbe4f1468989026f892"
+    },
+    "id": "cv-01-2-1",
+    "taskId": "cv-01-2",
+    "shiftId": "ca-2026-08-13-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786579200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-01"
+  },
+  {
+    "_id": {
+      "$oid": "8a2f1ae278f40da6926e5b87"
+    },
+    "id": "cv-01-2-2",
+    "taskId": "cv-01-2",
+    "shiftId": "ca-2026-08-18-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787032800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-13-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786593600000"
+      }
+    },
+    "by": "tk-nv-01"
+  },
+  {
+    "_id": {
+      "$oid": "8d154d025fa1a08da26ce09b"
+    },
+    "id": "cv-01-3-1",
+    "taskId": "cv-01-3",
+    "shiftId": "ca-2026-08-27-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787810400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-01"
+  },
+  {
+    "_id": {
+      "$oid": "e05faf3be3aac4044385cc2a"
+    },
+    "id": "cv-01-3-2",
+    "taskId": "cv-01-3",
+    "shiftId": "ca-2026-08-28-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787875200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-27-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787824800000"
+      }
+    },
+    "by": "tk-nv-01"
+  },
+  {
+    "_id": {
+      "$oid": "22b69e66bea3dc886ca6b2ef"
+    },
+    "id": "cv-02-1-1",
+    "taskId": "cv-02-1",
+    "shiftId": "ca-2026-08-06-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785974400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-02"
+  },
+  {
+    "_id": {
+      "$oid": "9f6e65aa0d8f64d5d6a59242"
+    },
+    "id": "cv-02-1-2",
+    "taskId": "cv-02-1",
+    "shiftId": "ca-2026-08-06-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785996000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-06-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785988800000"
+      }
+    },
+    "by": "tk-nv-02"
+  },
+  {
+    "_id": {
+      "$oid": "07fba7530a3c7039907a66c0"
+    },
+    "id": "cv-02-2-1",
+    "taskId": "cv-02-2",
+    "shiftId": "ca-2026-08-15-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786773600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-02"
+  },
+  {
+    "_id": {
+      "$oid": "a6db59a109196adac86a8955"
+    },
+    "id": "cv-02-2-2",
+    "taskId": "cv-02-2",
+    "shiftId": "ca-2026-08-21-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787270400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-15-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786788000000"
+      }
+    },
+    "by": "tk-nv-02"
+  },
+  {
+    "_id": {
+      "$oid": "a84317c93ebec415e5dfc5c4"
+    },
+    "id": "cv-02-3-1",
+    "taskId": "cv-02-3",
+    "shiftId": "ca-2026-08-30-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1788048000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-02"
+  },
+  {
+    "_id": {
+      "$oid": "4a55607cd202cc46eeae467b"
+    },
+    "id": "cv-02-3-2",
+    "taskId": "cv-02-3",
+    "shiftId": "ca-2026-08-30-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1788069600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-30-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1788062400000"
+      }
+    },
+    "by": "tk-nv-02"
+  },
+  {
+    "_id": {
+      "$oid": "9ce9eea4d0bd416a55022baf"
+    },
+    "id": "cv-03-1-1",
+    "taskId": "cv-03-1",
+    "shiftId": "ca-2026-08-01-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-03"
+  },
+  {
+    "_id": {
+      "$oid": "fe6ade9d2eb57b79bb8b4154"
+    },
+    "id": "cv-03-1-2",
+    "taskId": "cv-03-1",
+    "shiftId": "ca-2026-08-01-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785564000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-01-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785556800000"
+      }
+    },
+    "by": "tk-nv-03"
+  },
+  {
+    "_id": {
+      "$oid": "4fe00acdd6f28730b86ea795"
+    },
+    "id": "cv-03-2-1",
+    "taskId": "cv-03-2",
+    "shiftId": "ca-2026-08-10-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786320000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-03"
+  },
+  {
+    "_id": {
+      "$oid": "c5d1302733164129dd471966"
+    },
+    "id": "cv-03-2-2",
+    "taskId": "cv-03-2",
+    "shiftId": "ca-2026-08-10-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786341600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-10-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786334400000"
+      }
+    },
+    "by": "tk-nv-03"
+  },
+  {
+    "_id": {
+      "$oid": "9c324e336f1a0149bac839f6"
+    },
+    "id": "cv-03-3-1",
+    "taskId": "cv-03-3",
+    "shiftId": "ca-2026-08-23-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787464800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-03"
+  },
+  {
+    "_id": {
+      "$oid": "fc851b5aba639cea2980b36f"
+    },
+    "id": "cv-03-3-2",
+    "taskId": "cv-03-3",
+    "shiftId": "ca-2026-08-24-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787529600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-23-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787479200000"
+      }
+    },
+    "by": "tk-nv-03"
+  },
+  {
+    "_id": {
+      "$oid": "b6a8f1396f88ca70ffb4a079"
+    },
+    "id": "cv-04-1-1",
+    "taskId": "cv-04-1",
+    "shiftId": "ca-2026-08-04-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785801600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-04"
+  },
+  {
+    "_id": {
+      "$oid": "15718612f2fbe3931fbe96fc"
+    },
+    "id": "cv-04-1-2",
+    "taskId": "cv-04-1",
+    "shiftId": "ca-2026-08-04-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785823200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-04-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785816000000"
+      }
+    },
+    "by": "tk-nv-04"
+  },
+  {
+    "_id": {
+      "$oid": "12c0b306119423f97b07c95f"
+    },
+    "id": "cv-04-2-1",
+    "taskId": "cv-04-2",
+    "shiftId": "ca-2026-08-13-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786600800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-04"
+  },
+  {
+    "_id": {
+      "$oid": "5ca2bd930d8ec68846cf94c6"
+    },
+    "id": "cv-04-2-2",
+    "taskId": "cv-04-2",
+    "shiftId": "ca-2026-08-19-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787097600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-13-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786615200000"
+      }
+    },
+    "by": "tk-nv-04"
+  },
+  {
+    "_id": {
+      "$oid": "762a3a7248bb158b5a0d2c68"
+    },
+    "id": "cv-04-3-1",
+    "taskId": "cv-04-3",
+    "shiftId": "ca-2026-08-28-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787875200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-04"
+  },
+  {
+    "_id": {
+      "$oid": "8c8714e2d96b85132c48f4e9"
+    },
+    "id": "cv-04-3-2",
+    "taskId": "cv-04-3",
+    "shiftId": "ca-2026-08-28-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787896800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-28-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787889600000"
+      }
+    },
+    "by": "tk-nv-04"
+  },
+  {
+    "_id": {
+      "$oid": "3292d414eae0df788be31626"
+    },
+    "id": "cv-05-1-1",
+    "taskId": "cv-05-1",
+    "shiftId": "ca-2026-08-01-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-05"
+  },
+  {
+    "_id": {
+      "$oid": "a9e13edaaf9431efaf3eb56c"
+    },
+    "id": "cv-05-1-2",
+    "taskId": "cv-05-1",
+    "shiftId": "ca-2026-08-06-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785996000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-01-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785556800000"
+      }
+    },
+    "by": "tk-nv-05"
+  },
+  {
+    "_id": {
+      "$oid": "96e00237cad4fb93a2c8bbad"
+    },
+    "id": "cv-05-2-1",
+    "taskId": "cv-05-2",
+    "shiftId": "ca-2026-08-15-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786773600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-05"
+  },
+  {
+    "_id": {
+      "$oid": "80c2907e096f438a4f8b6fce"
+    },
+    "id": "cv-05-2-2",
+    "taskId": "cv-05-2",
+    "shiftId": "ca-2026-08-16-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786838400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-15-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786788000000"
+      }
+    },
+    "by": "tk-nv-05"
+  },
+  {
+    "_id": {
+      "$oid": "7c8d356d8ae2cfc87d0c7dda"
+    },
+    "id": "cv-05-3-1",
+    "taskId": "cv-05-3",
+    "shiftId": "ca-2026-08-29-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787983200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-05"
+  },
+  {
+    "_id": {
+      "$oid": "98011dee4dbe7a9420924a3a"
+    },
+    "id": "cv-05-3-2",
+    "taskId": "cv-05-3",
+    "shiftId": "ca-2026-08-30-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1788048000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-29-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787997600000"
+      }
+    },
+    "by": "tk-nv-05"
+  },
+  {
+    "_id": {
+      "$oid": "8aba4e94faa45f3a26773d9c"
+    },
+    "id": "cv-06-1-1",
+    "taskId": "cv-06-1",
+    "shiftId": "ca-2026-08-01-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785564000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-06"
+  },
+  {
+    "_id": {
+      "$oid": "a265ac4dc90b32bfba48b1df"
+    },
+    "id": "cv-06-1-2",
+    "taskId": "cv-06-1",
+    "shiftId": "ca-2026-08-02-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785628800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-01-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785578400000"
+      }
+    },
+    "by": "tk-nv-06"
+  },
+  {
+    "_id": {
+      "$oid": "c82bd969c38f80621f23dad1"
+    },
+    "id": "cv-06-2-1",
+    "taskId": "cv-06-2",
+    "shiftId": "ca-2026-08-10-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786341600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-06"
+  },
+  {
+    "_id": {
+      "$oid": "8c7db6db2abedc683806c64c"
+    },
+    "id": "cv-06-2-2",
+    "taskId": "cv-06-2",
+    "shiftId": "ca-2026-08-11-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786406400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-10-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786356000000"
+      }
+    },
+    "by": "tk-nv-06"
+  },
+  {
+    "_id": {
+      "$oid": "23dee0f66db89d6af83eafa2"
+    },
+    "id": "cv-06-3-1",
+    "taskId": "cv-06-3",
+    "shiftId": "ca-2026-08-24-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787551200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-06"
+  },
+  {
+    "_id": {
+      "$oid": "e8aa83d420a18722306010f8"
+    },
+    "id": "cv-06-3-2",
+    "taskId": "cv-06-3",
+    "shiftId": "ca-2026-08-25-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787616000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-24-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787565600000"
+      }
+    },
+    "by": "tk-nv-06"
+  },
+  {
+    "_id": {
+      "$oid": "55a056e9f3bd61afc6c5c2fd"
+    },
+    "id": "cv-07-1-1",
+    "taskId": "cv-07-1",
+    "shiftId": "ca-2026-08-04-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785823200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-07"
+  },
+  {
+    "_id": {
+      "$oid": "4430f12f95b5d333a6eb6e62"
+    },
+    "id": "cv-07-1-2",
+    "taskId": "cv-07-1",
+    "shiftId": "ca-2026-08-05-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785888000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-04-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785837600000"
+      }
+    },
+    "by": "tk-nv-07"
+  },
+  {
+    "_id": {
+      "$oid": "7bee7b9973fc1611ff407e5b"
+    },
+    "id": "cv-07-2-1",
+    "taskId": "cv-07-2",
+    "shiftId": "ca-2026-08-14-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786665600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-07"
+  },
+  {
+    "_id": {
+      "$oid": "6a795bed112c8c6f8171edfd"
+    },
+    "id": "cv-07-2-2",
+    "taskId": "cv-07-2",
+    "shiftId": "ca-2026-08-19-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787119200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-14-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786680000000"
+      }
+    },
+    "by": "tk-nv-07"
+  },
+  {
+    "_id": {
+      "$oid": "0feb4302076abf4f2122ef19"
+    },
+    "id": "cv-07-3-1",
+    "taskId": "cv-07-3",
+    "shiftId": "ca-2026-08-28-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787896800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-07"
+  },
+  {
+    "_id": {
+      "$oid": "4fe72e7733dd7e2e6f790186"
+    },
+    "id": "cv-07-3-2",
+    "taskId": "cv-07-3",
+    "shiftId": "ca-2026-08-29-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787961600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-28-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787911200000"
+      }
+    },
+    "by": "tk-nv-07"
+  },
+  {
+    "_id": {
+      "$oid": "ae4381c50c8588c37886ef3a"
+    },
+    "id": "cv-08-1-1",
+    "taskId": "cv-08-1",
+    "shiftId": "ca-2026-08-01-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-08"
+  },
+  {
+    "_id": {
+      "$oid": "bca8fff8b1695653a56b3271"
+    },
+    "id": "cv-08-1-2",
+    "taskId": "cv-08-1",
+    "shiftId": "ca-2026-08-01-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785564000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-01-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785556800000"
+      }
+    },
+    "by": "tk-nv-08"
+  },
+  {
+    "_id": {
+      "$oid": "70b4e24fb461cf35224e83d2"
+    },
+    "id": "cv-08-2-1",
+    "taskId": "cv-08-2",
+    "shiftId": "ca-2026-08-15-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786773600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-08"
+  },
+  {
+    "_id": {
+      "$oid": "8514bcba48708ea66e1fe133"
+    },
+    "id": "cv-08-2-2",
+    "taskId": "cv-08-2",
+    "shiftId": "ca-2026-08-16-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786838400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-15-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786788000000"
+      }
+    },
+    "by": "tk-nv-08"
+  },
+  {
+    "_id": {
+      "$oid": "3f7d749ea48c3a7bbdb056c2"
+    },
+    "id": "cv-08-3-1",
+    "taskId": "cv-08-3",
+    "shiftId": "ca-2026-08-24-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787551200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-08"
+  },
+  {
+    "_id": {
+      "$oid": "ed0261307eb84c33bcb6d38b"
+    },
+    "id": "cv-08-3-2",
+    "taskId": "cv-08-3",
+    "shiftId": "ca-2026-08-29-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787983200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-24-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787565600000"
+      }
+    },
+    "by": "tk-nv-08"
+  },
+  {
+    "_id": {
+      "$oid": "0b31c63908b910457e743e26"
+    },
+    "id": "cv-09-1-1",
+    "taskId": "cv-09-1",
+    "shiftId": "ca-2026-08-02-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785628800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-09"
+  },
+  {
+    "_id": {
+      "$oid": "cb96fcc4687f7310bc79dcf5"
+    },
+    "id": "cv-09-1-2",
+    "taskId": "cv-09-1",
+    "shiftId": "ca-2026-08-02-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785650400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-02-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785643200000"
+      }
+    },
+    "by": "tk-nv-09"
+  },
+  {
+    "_id": {
+      "$oid": "496a88ec98653f83e95d0917"
+    },
+    "id": "cv-09-2-1",
+    "taskId": "cv-09-2",
+    "shiftId": "ca-2026-08-11-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786406400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-09"
+  },
+  {
+    "_id": {
+      "$oid": "1d62a7ea10f4a87f903c1e0a"
+    },
+    "id": "cv-09-2-2",
+    "taskId": "cv-09-2",
+    "shiftId": "ca-2026-08-11-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786428000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-11-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786420800000"
+      }
+    },
+    "by": "tk-nv-09"
+  },
+  {
+    "_id": {
+      "$oid": "1bffb4c28d310ebdb8bf3c81"
+    },
+    "id": "cv-09-3-1",
+    "taskId": "cv-09-3",
+    "shiftId": "ca-2026-08-25-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787637600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-09"
+  },
+  {
+    "_id": {
+      "$oid": "e5b0f88fe04858ef9eafdf34"
+    },
+    "id": "cv-09-3-2",
+    "taskId": "cv-09-3",
+    "shiftId": "ca-2026-08-26-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787702400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-25-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787652000000"
+      }
+    },
+    "by": "tk-nv-09"
+  },
+  {
+    "_id": {
+      "$oid": "732635cb37999985a665b639"
+    },
+    "id": "cv-10-1-1",
+    "taskId": "cv-10-1",
+    "shiftId": "ca-2026-08-05-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785888000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-10"
+  },
+  {
+    "_id": {
+      "$oid": "3315c89bbcb13e4abb5c5b3c"
+    },
+    "id": "cv-10-1-2",
+    "taskId": "cv-10-1",
+    "shiftId": "ca-2026-08-05-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785909600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-05-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785902400000"
+      }
+    },
+    "by": "tk-nv-10"
+  },
+  {
+    "_id": {
+      "$oid": "7c6b29a1154c6242f74b7457"
+    },
+    "id": "cv-10-2-1",
+    "taskId": "cv-10-2",
+    "shiftId": "ca-2026-08-14-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786687200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-10"
+  },
+  {
+    "_id": {
+      "$oid": "684ba3a73cbfa7be3203ab35"
+    },
+    "id": "cv-10-2-2",
+    "taskId": "cv-10-2",
+    "shiftId": "ca-2026-08-20-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787184000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-14-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786701600000"
+      }
+    },
+    "by": "tk-nv-10"
+  },
+  {
+    "_id": {
+      "$oid": "e87b58e31e07e9a6cb946bd4"
+    },
+    "id": "cv-10-3-1",
+    "taskId": "cv-10-3",
+    "shiftId": "ca-2026-08-29-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787961600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-10"
+  },
+  {
+    "_id": {
+      "$oid": "25be7bb8e41830eac031bbaf"
+    },
+    "id": "cv-10-3-2",
+    "taskId": "cv-10-3",
+    "shiftId": "ca-2026-08-29-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787983200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-29-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787976000000"
+      }
+    },
+    "by": "tk-nv-10"
+  },
+  {
+    "_id": {
+      "$oid": "b62975aa96f073aa8b1ae0a5"
+    },
+    "id": "cv-11-1-1",
+    "taskId": "cv-11-1",
+    "shiftId": "ca-2026-08-01-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-11"
+  },
+  {
+    "_id": {
+      "$oid": "4cd09e4157f2856c7fc239ca"
+    },
+    "id": "cv-11-1-2",
+    "taskId": "cv-11-1",
+    "shiftId": "ca-2026-08-01-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785564000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-01-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785556800000"
+      }
+    },
+    "by": "tk-nv-11"
+  },
+  {
+    "_id": {
+      "$oid": "aa191ecefd696b6b699c1fb5"
+    },
+    "id": "cv-11-2-1",
+    "taskId": "cv-11-2",
+    "shiftId": "ca-2026-08-15-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786752000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-11"
+  },
+  {
+    "_id": {
+      "$oid": "a67f243c16a9f35086455ec1"
+    },
+    "id": "cv-11-2-2",
+    "taskId": "cv-11-2",
+    "shiftId": "ca-2026-08-15-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786773600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-15-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786766400000"
+      }
+    },
+    "by": "tk-nv-11"
+  },
+  {
+    "_id": {
+      "$oid": "fae59929dcb127f415a7c84b"
+    },
+    "id": "cv-11-3-1",
+    "taskId": "cv-11-3",
+    "shiftId": "ca-2026-08-24-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787529600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-11"
+  },
+  {
+    "_id": {
+      "$oid": "2ab2ca29833befc619376e28"
+    },
+    "id": "cv-11-3-2",
+    "taskId": "cv-11-3",
+    "shiftId": "ca-2026-08-24-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787551200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-24-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787544000000"
+      }
+    },
+    "by": "tk-nv-11"
+  },
+  {
+    "_id": {
+      "$oid": "04c297f8fb89f49f6328fcf9"
+    },
+    "id": "cv-12-1-1",
+    "taskId": "cv-12-1",
+    "shiftId": "ca-2026-08-02-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785650400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-12"
+  },
+  {
+    "_id": {
+      "$oid": "e663fc6df606404ec33ddf7e"
+    },
+    "id": "cv-12-1-2",
+    "taskId": "cv-12-1",
+    "shiftId": "ca-2026-08-03-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785715200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-02-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785664800000"
+      }
+    },
+    "by": "tk-nv-12"
+  },
+  {
+    "_id": {
+      "$oid": "0dae0ff49293265892ca6bcb"
+    },
+    "id": "cv-12-2-1",
+    "taskId": "cv-12-2",
+    "shiftId": "ca-2026-08-12-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786492800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-12"
+  },
+  {
+    "_id": {
+      "$oid": "04947d83e4474090014337ee"
+    },
+    "id": "cv-12-2-2",
+    "taskId": "cv-12-2",
+    "shiftId": "ca-2026-08-12-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786514400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-12-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786507200000"
+      }
+    },
+    "by": "tk-nv-12"
+  },
+  {
+    "_id": {
+      "$oid": "00e62934667ea129b33e90d7"
+    },
+    "id": "cv-12-3-1",
+    "taskId": "cv-12-3",
+    "shiftId": "ca-2026-08-26-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787724000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-12"
+  },
+  {
+    "_id": {
+      "$oid": "9d9e864535817a5a622cb555"
+    },
+    "id": "cv-12-3-2",
+    "taskId": "cv-12-3",
+    "shiftId": "ca-2026-08-27-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787788800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-26-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787738400000"
+      }
+    },
+    "by": "tk-nv-12"
+  },
+  {
+    "_id": {
+      "$oid": "07704d8fdc7b5467db8deffe"
+    },
+    "id": "cv-13-1-1",
+    "taskId": "cv-13-1",
+    "shiftId": "ca-2026-08-05-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785909600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-13"
+  },
+  {
+    "_id": {
+      "$oid": "1f339b41a4c3d5f9cc4c22cd"
+    },
+    "id": "cv-13-1-2",
+    "taskId": "cv-13-1",
+    "shiftId": "ca-2026-08-06-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785974400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-05-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785924000000"
+      }
+    },
+    "by": "tk-nv-13"
+  },
+  {
+    "_id": {
+      "$oid": "0ce9453cdad25ea7bce0d8e4"
+    },
+    "id": "cv-13-2-1",
+    "taskId": "cv-13-2",
+    "shiftId": "ca-2026-08-15-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786752000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-13"
+  },
+  {
+    "_id": {
+      "$oid": "545c12b1fdf66680303b47a0"
+    },
+    "id": "cv-13-2-2",
+    "taskId": "cv-13-2",
+    "shiftId": "ca-2026-08-20-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787205600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-15-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786766400000"
+      }
+    },
+    "by": "tk-nv-13"
+  },
+  {
+    "_id": {
+      "$oid": "0f17181050b530454e4f00ee"
+    },
+    "id": "cv-13-3-1",
+    "taskId": "cv-13-3",
+    "shiftId": "ca-2026-08-29-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787983200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-13"
+  },
+  {
+    "_id": {
+      "$oid": "fa0ead38e007573902548671"
+    },
+    "id": "cv-13-3-2",
+    "taskId": "cv-13-3",
+    "shiftId": "ca-2026-08-30-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1788048000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-29-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787997600000"
+      }
+    },
+    "by": "tk-nv-13"
+  },
+  {
+    "_id": {
+      "$oid": "07ab7e166dff0a0e606eaf88"
+    },
+    "id": "cv-14-1-1",
+    "taskId": "cv-14-1",
+    "shiftId": "ca-2026-08-01-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785542400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-14"
+  },
+  {
+    "_id": {
+      "$oid": "4f108b5ba61907c8432d8624"
+    },
+    "id": "cv-14-1-2",
+    "taskId": "cv-14-1",
+    "shiftId": "ca-2026-08-01-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785564000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-01-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785556800000"
+      }
+    },
+    "by": "tk-nv-14"
+  },
+  {
+    "_id": {
+      "$oid": "0b8bda4567b1a49ca8d97624"
+    },
+    "id": "cv-14-2-1",
+    "taskId": "cv-14-2",
+    "shiftId": "ca-2026-08-10-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786320000000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-14"
+  },
+  {
+    "_id": {
+      "$oid": "720377ee7ed67cc5dbba7c4e"
+    },
+    "id": "cv-14-2-2",
+    "taskId": "cv-14-2",
+    "shiftId": "ca-2026-08-10-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786341600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-10-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786334400000"
+      }
+    },
+    "by": "tk-nv-14"
+  },
+  {
+    "_id": {
+      "$oid": "e40120999c91a4bd03de5017"
+    },
+    "id": "cv-14-3-1",
+    "taskId": "cv-14-3",
+    "shiftId": "ca-2026-08-23-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787464800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-14"
+  },
+  {
+    "_id": {
+      "$oid": "170e70676ffaecac20d41282"
+    },
+    "id": "cv-14-3-2",
+    "taskId": "cv-14-3",
+    "shiftId": "ca-2026-08-24-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787529600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-23-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787479200000"
+      }
+    },
+    "by": "tk-nv-14"
+  },
+  {
+    "_id": {
+      "$oid": "d27f447f67be561c06d1acce"
+    },
+    "id": "cv-15-1-1",
+    "taskId": "cv-15-1",
+    "shiftId": "ca-2026-08-03-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785736800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-15"
+  },
+  {
+    "_id": {
+      "$oid": "84fd0b20ad76852778f84ef5"
+    },
+    "id": "cv-15-1-2",
+    "taskId": "cv-15-1",
+    "shiftId": "ca-2026-08-04-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785801600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-03-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1785751200000"
+      }
+    },
+    "by": "tk-nv-15"
+  },
+  {
+    "_id": {
+      "$oid": "d600190229d0c044f6b9443e"
+    },
+    "id": "cv-15-2-1",
+    "taskId": "cv-15-2",
+    "shiftId": "ca-2026-08-13-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1786579200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-15"
+  },
+  {
+    "_id": {
+      "$oid": "1f7b09a6739f620cb270f1ad"
+    },
+    "id": "cv-15-2-2",
+    "taskId": "cv-15-2",
+    "shiftId": "ca-2026-08-18-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787032800000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-13-07",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1786593600000"
+      }
+    },
+    "by": "tk-nv-15"
+  },
+  {
+    "_id": {
+      "$oid": "a5140238a9fc9e9dd035baee"
+    },
+    "id": "cv-15-3-1",
+    "taskId": "cv-15-3",
+    "shiftId": "ca-2026-08-27-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787810400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": null,
+    "transferredAt": null,
+    "by": "tk-nv-15"
+  },
+  {
+    "_id": {
+      "$oid": "f4fbaecf1babfaea21a6c81f"
+    },
+    "id": "cv-15-3-2",
+    "taskId": "cv-15-3",
+    "shiftId": "ca-2026-08-28-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1787875200000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "fromShiftId": "ca-2026-08-27-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1787824800000"
+      }
+    },
+    "by": "tk-nv-15"
+  },
+  {
+    "_id": {
+      "$oid": "2c4cb76541eae0f9e00189e3"
+    },
+    "id": "cv-chung-1",
+    "taskId": "cv-chung",
+    "shiftId": "ca-2026-09-15-07",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1789430400000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "admin"
+  },
+  {
+    "_id": {
+      "$oid": "354b8845f6f6b95c71c71481"
+    },
+    "id": "cv-cho-admin-1",
+    "taskId": "cv-cho-admin",
+    "shiftId": "ca-2026-08-05-13",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1785909600000"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "tk-nv-01"
+  },
+  {
+    "_id": {
+      "$oid": "6af9b04d6c3831118cd07715"
+    },
+    "id": "p4-6af9b04d6c3831118cd07711",
+    "taskId": "cv-cho-admin",
+    "shiftId": "p4-6af98f5eb2dd08da90cd41b9",
+    "fromAssignmentId": "ca-2026-08-05-13-nv-01",
+    "fromShiftId": "ca-2026-08-05-13",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1794748493391"
+      }
+    },
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1794748493391"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "admin"
+  },
+  {
+    "_id": {
+      "$oid": "6af9b5f5ed3fe4f1d80b4653"
+    },
+    "id": "p4-6af9b5f4ed3fe4f1d80b464f",
+    "taskId": "cv-cho-admin",
+    "shiftId": "p4-6af98f5eb2dd08da90cd41b9",
+    "fromAssignmentId": "p4-6af992b1b2dd08da90cd41fb",
+    "fromShiftId": "p4-6af98f5eb2dd08da90cd41b9",
+    "transferredAt": {
+      "$date": {
+        "$numberLong": "1794749940966"
+      }
+    },
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1794749940966"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "admin"
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee27"
+    },
+    "id": "p4-6af9e49f7c0fe08a17bcee12",
+    "taskId": "p4-viewing-lx-6af9e49f7c0fe08a17bcee10",
+    "shiftId": "p4-6af98f5eb2dd08da90cd41bf",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee2e"
+    },
+    "id": "p4-6af9e4a07c0fe08a17bcee18",
+    "taskId": "p4-viewing-lx-6af9e4a07c0fe08a17bcee16",
+    "shiftId": "p4-6af98f5eb2dd08da90cd41bf",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee35"
+    },
+    "id": "p4-6af9e4a07c0fe08a17bcee1e",
+    "taskId": "p4-viewing-lx-6af9e4a07c0fe08a17bcee1c",
+    "shiftId": "p4-6af98f5eb2dd08da90cd41c1",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  },
+  {
+    "_id": {
+      "$oid": "6afb25f429b799683b594ae7"
+    },
+    "id": "p4-6afb25f429b799683b594ae1",
+    "taskId": "p4-6afb25f429b799683b594ae0",
+    "shiftId": "p4-6af98f5eb2dd08da90cd41bf",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1794844148303"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "admin"
+  },
+  {
+    "_id": {
+      "$oid": "6afb59f3ee9c8c05f08f3195"
+    },
+    "id": "p4-6afb59f2ee9c8c05f08f3186",
+    "taskId": "p4-viewing-lx-6afb59f2ee9c8c05f08f3184",
+    "shiftId": "p4-6af98f5eb2dd08da90cd41c6",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  },
+  {
+    "_id": {
+      "$oid": "6afb59f3ee9c8c05f08f319c"
+    },
+    "id": "p4-6afb59f2ee9c8c05f08f318c",
+    "taskId": "p4-viewing-lx-6afb59f2ee9c8c05f08f318a",
+    "shiftId": "p4-6af98f5eb2dd08da90cd41c2",
+    "linkedAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    },
+    "reason": "Nội dung minh họa đã được ẩn danh.",
+    "by": "tk-kh-6af9b41ded3fe4f1d80b4649"
+  }
+]

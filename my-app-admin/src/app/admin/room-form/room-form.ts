@@ -1,5 +1,5 @@
 import { ROOM_TYPE_LABELS } from '../../classes/display-labels';
-import { HttpClient } from '@angular/common/http';
+import { AmenityAPIService } from '../../services/amenity-apiservice';
 import { firstValueFrom } from 'rxjs';
 import { apiMessage } from '../../services/api-message';
 import { Component, Input, OnInit, inject, signal } from '@angular/core';
@@ -20,7 +20,7 @@ export class RoomFormComponent implements OnInit {
   @Input() duplicateMode = false;
   admin = inject(AdminRoomService);
   router = inject(Router);
-  private http = inject(HttpClient);
+  private amenitiesApi = inject(AmenityAPIService);
   private fb = inject(FormBuilder);
   images = signal<string[]>([]);
   error = signal('');
@@ -95,7 +95,7 @@ export class RoomFormComponent implements OnInit {
     try {
       await Promise.all([this.admin.loadProperties(), this.admin.refresh()]);
       try {
-        const amenities = await firstValueFrom(this.http.get<{ name: string }[]>('/api/amenities'));
+        const amenities = await firstValueFrom(this.amenitiesApi.getAmenities());
         this.amenities = amenities.map((item) => item.name);
       } catch (error) {
         throw new Error(apiMessage(error, 'Không tải được tiện ích.'));

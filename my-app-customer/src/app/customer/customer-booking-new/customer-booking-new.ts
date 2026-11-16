@@ -7,6 +7,7 @@ import { HoldPayosLink } from '../../classes/Money';
 import { RoomService } from '../../services/room-service';
 import { apiMessage } from '../../services/api-message';
 import { PHONE_PATTERN } from '../../shared/validators';
+import { HoldPolicyService } from '../../services/hold-policy-service';
 @Component({
   selector: 'app-customer-hold-payment-frame',
   standalone: false,
@@ -32,12 +33,23 @@ export class CustomerBookingNewComponent {
   readonly copied = signal(false);
   readonly now = signal(Date.now());
   private destroyed = false;
+  private holdPolicy = inject(HoldPolicyService);
+  readonly policyAccepted = signal(false);
+  readonly policyOpen = signal(false);
   constructor() {
     const timer = setInterval(() => this.now.set(Date.now()), 1000);
     inject(DestroyRef).onDestroy(() => {
       this.destroyed = true;
       clearInterval(timer);
     });
+    const roomId = this.route.snapshot.queryParamMap.get('roomId') || '';
+    if (this.holdPolicy.consume(roomId)) {
+      this.policyAccepted.set(true);
+      this.form.controls.terms.setValue(true);
+      this.initialize();
+    } else this.policyOpen.set(true);
+  }
+  private initialize() {
     void this.booking
       .refresh()
       .then(async () => {
@@ -51,8 +63,26 @@ export class CustomerBookingNewComponent {
       })
       .catch((e) => this.error.set(apiMessage(e, 'Không tải được giữ chỗ.')));
   }
+  acceptPolicy() {
+    const wasAccepted = this.policyAccepted();
+    this.policyAccepted.set(true);
+    this.form.controls.terms.setValue(true);
+    this.policyOpen.set(false);
+    if (!wasAccepted) this.initialize();
+  }
+  declinePolicy() {
+    this.policyOpen.set(false);
+    if (!this.policyAccepted()) {
+      const roomId = this.route.snapshot.queryParamMap.get('roomId');
+      void this.router.navigate(roomId ? ['/rooms', roomId] : ['/bookings']);
+    }
+  }
   get amount() {
     return this.booking.get(this.pendingId())?.amount;
+  }
+  get canCreate() {
+    const id = this.route.snapshot.queryParamMap.get('roomId') || '';
+    return this.rooms.get(id)?.status === 'AVAILABLE';
   }
   get pendingHold() {
     return this.booking.get(this.pendingId());
@@ -86,7 +116,7 @@ export class CustomerBookingNewComponent {
     }
   }
   async resume(id: string) {
-    if (this.busy()) return;
+    if (!this.policyAccepted() || this.busy()) return;
     const hold = this.booking.get(id);
     if (hold?.apiStatus === 'PAYMENT_PENDING') {
       this.busy.set(true);
@@ -148,7 +178,7 @@ export class CustomerBookingNewComponent {
     terms: [false, Validators.requiredTrue],
   });
   async submit() {
-    if (this.busy() || this.pendingId()) return;
+    if (!this.policyAccepted() || !this.canCreate || this.busy() || this.pendingId()) return;
     this.form.markAllAsTouched();
     if (this.form.invalid || !this.room) return;
     this.busy.set(true);
@@ -192,7 +222,7 @@ export class CustomerBookingNewComponent {
       this.gatewayUnavailable.set(true);
   }
   async pay() {
-    if (this.busy() || this.gatewayUnavailable()) return;
+    if (!this.policyAccepted() || this.busy() || this.gatewayUnavailable()) return;
     if (!this.canPay) {
       this.error.set('Đã hết thời gian thanh toán. Vui lòng tạo yêu cầu giữ chỗ mới.');
       return;

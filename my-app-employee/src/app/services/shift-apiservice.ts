@@ -16,6 +16,8 @@ export function shiftApiMessage(error: unknown): string {
     }
   }
   const labels: Record<string, string> = {
+    INVALID_VIEWING_DETAILS: 'Kiểm tra kết quả xem và ghi chú của từng phòng.',
+    SHIFT_CANCELLATION_NOT_ALLOWED: 'Nhân viên không được hủy ca đã đăng ký.',
     WEEK_EXISTS: 'Tuần này đã có đợt đăng ký.',
     MONDAY_REQUIRED: 'Ngày bắt đầu đợt phải là thứ Hai.',
     NAME_REQUIRED: 'Vui lòng nhập tên.',

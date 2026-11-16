@@ -6,6 +6,7 @@ import { AuthService } from './auth-service';
 import { RoomService } from './room-service';
 import { ViewingCartAPIService, ViewingCheckout } from './viewing-cart-apiservice';
 import { apiMessage } from './api-message';
+import { canScheduleViewing } from '../classes/Room';
 
 export const VIEWING_SHIFT_ERROR = 'Giờ xem phải bắt đầu trong 07:00–10:30 hoặc 13:00–16:30.';
 export function isViewingShiftTime(time: string): boolean {
@@ -42,7 +43,7 @@ export class ViewingService {
   private remote = signal<{ owner: string; items: Viewing[] } | null>(null);
   private roomAvailable(id: string): boolean {
     const room = this.rooms.get(id);
-    return room?.status === 'AVAILABLE' && room.publicationStatus === 'PUBLISHED';
+    return canScheduleViewing(room);
   }
   private owner(): string {
     if (!this.auth.hasRole(['CUSTOMER']))

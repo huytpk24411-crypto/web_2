@@ -1,0 +1,7028 @@
+[
+  {
+    "_id": {
+      "$oid": "eaf5bf2024ec67f4db274374"
+    },
+    "id": "lx-0001",
+    "customerId": {
+      "$oid": "c5366025f37b55162604d782"
+    },
+    "customerProfileId": "kh-01",
+    "employeeId": "nv-01",
+    "date": "2026-08-03",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1785722400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1785726000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 1",
+    "visitorPhone": "0900000017",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 1",
+    "viewerPhone": "0900000017",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-46",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785718800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "75cbb15fb567409ec9b2a33d"
+    },
+    "id": "lx-0002",
+    "customerId": {
+      "$oid": "20b683021dfc53c2b98fcfad"
+    },
+    "customerProfileId": "kh-02",
+    "employeeId": "nv-01",
+    "date": "2026-08-06",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1785981600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1785985200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 2",
+    "visitorPhone": "0900000018",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 2",
+    "viewerPhone": "0900000018",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-14",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh.",
+        "roomSnapshot": {
+          "id": "phong-14",
+          "code": "PHONG_14",
+          "name": "Căn hộ Botanical",
+          "type": "Căn hộ",
+          "address": "Đường Võ Văn Ngân, Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh",
+          "propertyId": "b3",
+          "propertyName": "An Phú Home Võ Văn Ngân",
+          "ownerId": "chu-04",
+          "monthlyRent": {
+            "$numberInt": "5500000"
+          },
+          "area": {
+            "$numberInt": "38"
+          },
+          "capacity": {
+            "$numberInt": "3"
+          }
+        }
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785978000000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794841573407"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1b4552077a60c95b3749a20d"
+    },
+    "id": "lx-0003",
+    "customerId": {
+      "$oid": "d5ce9ace7adfcaa806fd8cc5"
+    },
+    "customerProfileId": "kh-03",
+    "employeeId": "nv-01",
+    "date": "2026-08-09",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786240800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786244400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 3",
+    "visitorPhone": "0900000019",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 3",
+    "viewerPhone": "0900000019",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-16",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786237200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "bb1f00754f3009df1bb29e9c"
+    },
+    "id": "lx-0004",
+    "customerId": {
+      "$oid": "192eec43b56779fb100831cb"
+    },
+    "customerProfileId": "kh-04",
+    "employeeId": "nv-01",
+    "date": "2026-08-12",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786500000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786503600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 4",
+    "visitorPhone": "0900000020",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 4",
+    "viewerPhone": "0900000020",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-18",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786496400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "23c5d1752a765f26396a5304"
+    },
+    "id": "lx-0005",
+    "customerId": {
+      "$oid": "9d5f1d391d47715a429e33d0"
+    },
+    "customerProfileId": "kh-05",
+    "employeeId": "nv-06",
+    "date": "2026-08-15",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786759200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786762800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 5",
+    "visitorPhone": "0900000021",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 5",
+    "viewerPhone": "0900000021",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-01",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786755600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "870e0418a5f892020a1074b1"
+    },
+    "id": "lx-0006",
+    "customerId": {
+      "$oid": "0e4ad4deff5acae6e24c717f"
+    },
+    "customerProfileId": "kh-06",
+    "employeeId": "nv-07",
+    "date": "2026-08-18",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787018400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787022000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 6",
+    "visitorPhone": "0900000022",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 6",
+    "viewerPhone": "0900000022",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-02",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787014800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "700ca32f4104d3b70d9663ee"
+    },
+    "id": "lx-0007",
+    "customerId": {
+      "$oid": "4b3a2f50c5b6109d99149f76"
+    },
+    "customerProfileId": "kh-07",
+    "employeeId": "nv-08",
+    "date": "2026-08-21",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787277600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787281200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 7",
+    "visitorPhone": "0900000023",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 7",
+    "viewerPhone": "0900000023",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-03",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787274000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9f6ddc4b83d0e9824a42d0dd"
+    },
+    "id": "lx-0008",
+    "customerId": {
+      "$oid": "c52b51d83cf0afc36e5be48a"
+    },
+    "customerProfileId": "kh-08",
+    "employeeId": "nv-09",
+    "date": "2026-08-24",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787536800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787540400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 8",
+    "visitorPhone": "0900000024",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 8",
+    "viewerPhone": "0900000024",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-04",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787533200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "dae54f1502aa5200f54d8150"
+    },
+    "id": "lx-0009",
+    "customerId": {
+      "$oid": "9da93936ac5637bf47f26533"
+    },
+    "customerProfileId": "kh-09",
+    "employeeId": "nv-10",
+    "date": "2026-08-27",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787796000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787799600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 9",
+    "visitorPhone": "0900000025",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 9",
+    "viewerPhone": "0900000025",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-05",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787792400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "25da3999f8686862a97a603a"
+    },
+    "id": "lx-0010",
+    "customerId": {
+      "$oid": "9f1df7c73d3266f54383f2f8"
+    },
+    "customerProfileId": "kh-10",
+    "employeeId": "nv-02",
+    "date": "2026-09-03",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788400800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788404400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 10",
+    "visitorPhone": "0900000026",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 10",
+    "viewerPhone": "0900000026",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-06",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788397200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9700cd432912232c5d63ce77"
+    },
+    "id": "lx-0011",
+    "customerId": {
+      "$oid": "a4715eeaff0c90cc119aa5e3"
+    },
+    "customerProfileId": "kh-11",
+    "employeeId": "nv-03",
+    "date": "2026-09-06",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788660000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788663600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 11",
+    "visitorPhone": "0900000027",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 11",
+    "viewerPhone": "0900000027",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-07",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788656400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ff367fb4fcdb18328e52868a"
+    },
+    "id": "lx-0012",
+    "customerId": {
+      "$oid": "d7b71ff5a9a1666902635b4c"
+    },
+    "customerProfileId": "kh-12",
+    "employeeId": "nv-04",
+    "date": "2026-09-09",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788919200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788922800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 12",
+    "visitorPhone": "0900000028",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 12",
+    "viewerPhone": "0900000028",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-08",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788915600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "40e2213c0549c3c25a2a88a6"
+    },
+    "id": "lx-0013",
+    "customerId": {
+      "$oid": "295d838d8a30b08d4e9e0ee5"
+    },
+    "customerProfileId": "kh-13",
+    "employeeId": "nv-05",
+    "date": "2026-09-12",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789178400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789182000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 13",
+    "visitorPhone": "0900000029",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 13",
+    "viewerPhone": "0900000029",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-09",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789174800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f8ee90a984c65e3bdcde4a5d"
+    },
+    "id": "lx-0014",
+    "customerId": {
+      "$oid": "38dddafd1fb680987354ba09"
+    },
+    "customerProfileId": "kh-14",
+    "employeeId": "nv-06",
+    "date": "2026-09-15",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789437600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789441200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 14",
+    "visitorPhone": "0900000030",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 14",
+    "viewerPhone": "0900000030",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-10",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789434000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "eb25e93d6f7792824e6dc829"
+    },
+    "id": "lx-0015",
+    "customerId": {
+      "$oid": "3baf342d2d012fae4fbe060f"
+    },
+    "customerProfileId": "kh-15",
+    "employeeId": "nv-07",
+    "date": "2026-09-18",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789696800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789700400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 15",
+    "visitorPhone": "0900000031",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 15",
+    "viewerPhone": "0900000031",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-11",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789693200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a92347cf22859f03f8c57c3"
+    },
+    "id": "lx-0016",
+    "customerId": {
+      "$oid": "baf818b614e033dfcb26353e"
+    },
+    "customerProfileId": "kh-16",
+    "employeeId": "nv-08",
+    "date": "2026-09-21",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789956000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789959600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 16",
+    "visitorPhone": "0900000032",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 16",
+    "viewerPhone": "0900000032",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-12",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789952400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "98166ceb7c27159617265730"
+    },
+    "id": "lx-0017",
+    "customerId": {
+      "$oid": "bcfa1ba1ddbd32f23c63dcbd"
+    },
+    "customerProfileId": "kh-17",
+    "employeeId": "nv-09",
+    "date": "2026-09-24",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790215200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790218800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 17",
+    "visitorPhone": "0900000033",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 17",
+    "viewerPhone": "0900000033",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-13",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790211600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "16d64d2bd57a20f848da4d06"
+    },
+    "id": "lx-0018",
+    "customerId": {
+      "$oid": "7ed7a9bf4b154a13dc17a5ba"
+    },
+    "customerProfileId": "kh-18",
+    "employeeId": "nv-02",
+    "date": "2026-10-03",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790992800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790996400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 18",
+    "visitorPhone": "0900000034",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 18",
+    "viewerPhone": "0900000034",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-15",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790989200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2ad9f48c3817ac817d69b6c3"
+    },
+    "id": "lx-0019",
+    "customerId": {
+      "$oid": "2ddc0593bcf9f22b0829f9e9"
+    },
+    "customerProfileId": "kh-19",
+    "employeeId": "nv-03",
+    "date": "2026-10-06",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791252000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791255600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 19",
+    "visitorPhone": "0900000035",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 19",
+    "viewerPhone": "0900000035",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-17",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791248400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "febe3f5db9705e8a1b3e64f9"
+    },
+    "id": "lx-0020",
+    "customerId": {
+      "$oid": "c7644ed2664127670c3c6a96"
+    },
+    "customerProfileId": "kh-20",
+    "employeeId": "nv-04",
+    "date": "2026-10-09",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791511200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791514800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 20",
+    "visitorPhone": "0900000036",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 20",
+    "viewerPhone": "0900000036",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-19",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791507600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "24893c4c2d216d969a4d7fa2"
+    },
+    "id": "lx-0021",
+    "customerId": {
+      "$oid": "c81a81778e1c228b7c9c08ee"
+    },
+    "customerProfileId": "kh-21",
+    "employeeId": "nv-05",
+    "date": "2026-10-12",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791770400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791774000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 21",
+    "visitorPhone": "0900000037",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 21",
+    "viewerPhone": "0900000037",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-20",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791766800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "849afa5fe5d304b939f3cd73"
+    },
+    "id": "lx-0022",
+    "customerId": {
+      "$oid": "e92bd498bb5bb5fd4854ad81"
+    },
+    "customerProfileId": "kh-22",
+    "employeeId": "nv-06",
+    "date": "2026-10-15",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792029600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792033200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 22",
+    "visitorPhone": "0900000038",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 22",
+    "viewerPhone": "0900000038",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-21",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792026000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1ec214d72518b2b3714f59ad"
+    },
+    "id": "lx-0023",
+    "customerId": {
+      "$oid": "8e9d520a4237fb758dfa12f4"
+    },
+    "customerProfileId": "kh-23",
+    "employeeId": "nv-07",
+    "date": "2026-10-18",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792288800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792292400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 23",
+    "visitorPhone": "0900000039",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 23",
+    "viewerPhone": "0900000039",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-22",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792285200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3d4b6a96a20e643281a11bc9"
+    },
+    "id": "lx-0024",
+    "customerId": {
+      "$oid": "a62d0ebe93632b11538a530f"
+    },
+    "customerProfileId": "kh-24",
+    "employeeId": "nv-08",
+    "date": "2026-10-21",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792548000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792551600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 24",
+    "visitorPhone": "0900000040",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 24",
+    "viewerPhone": "0900000040",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-47",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792544400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9f1a1266b8c6738eb1ec05ae"
+    },
+    "id": "lx-0025",
+    "customerId": {
+      "$oid": "2dcafa511921071010d7d987"
+    },
+    "customerProfileId": "kh-25",
+    "employeeId": "nv-02",
+    "date": "2026-11-01",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793498400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "visitorName": "Khách hàng 25",
+    "visitorPhone": "0900000041",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 25",
+    "viewerPhone": "0900000041",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-23",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793494800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3f81598e4bd52e6e48060203"
+    },
+    "id": "lx-0026",
+    "customerId": {
+      "$oid": "5229090a79f55cf1c8b4a9af"
+    },
+    "customerProfileId": "kh-26",
+    "employeeId": "nv-03",
+    "date": "2026-11-01",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793498400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "visitorName": "Khách hàng 26",
+    "visitorPhone": "0900000042",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 26",
+    "viewerPhone": "0900000042",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-24",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793494800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cdfca7cca82ca4f6861695f4"
+    },
+    "id": "lx-0027",
+    "customerId": {
+      "$oid": "618f9c04ea18b3256719733f"
+    },
+    "customerProfileId": "kh-27",
+    "employeeId": "nv-01",
+    "date": "2026-11-01",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793498400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "visitorName": "Khách hàng 27",
+    "visitorPhone": "0900000043",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 27",
+    "viewerPhone": "0900000043",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-27",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793494800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d7e38e02bfcbca8b40f310e0"
+    },
+    "id": "lx-0028",
+    "customerId": {
+      "$oid": "5b9928268b6e4a3f170a5c51"
+    },
+    "customerProfileId": "kh-28",
+    "employeeId": "nv-02",
+    "date": "2026-11-01",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793498400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "visitorName": "Khách hàng 28",
+    "visitorPhone": "0900000044",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 28",
+    "viewerPhone": "0900000044",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-28",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793494800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d75ffba820e5b0d8f3f19d7e"
+    },
+    "id": "lx-0029",
+    "customerId": {
+      "$oid": "66c63425e1ca34c457f6f984"
+    },
+    "customerProfileId": "kh-29",
+    "employeeId": "nv-03",
+    "date": "2026-11-01",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793498400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "visitorName": "Khách hàng 29",
+    "visitorPhone": "0900000045",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 29",
+    "viewerPhone": "0900000045",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-29",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793494800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "de13a359fac671723bf2fbcd"
+    },
+    "id": "lx-0030",
+    "customerId": {
+      "$oid": "4e5897c8841d029e01c778a1"
+    },
+    "customerProfileId": "kh-30",
+    "employeeId": "nv-04",
+    "date": "2026-11-01",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793498400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "visitorName": "Khách hàng 30",
+    "visitorPhone": "0900000046",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 30",
+    "viewerPhone": "0900000046",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-30",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793494800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "233b7457ba16a0d4c5093ba9"
+    },
+    "id": "lx-0031",
+    "customerId": {
+      "$oid": "307655185842cd2b0f097379"
+    },
+    "customerProfileId": "kh-31",
+    "employeeId": "nv-05",
+    "date": "2026-11-01",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793498400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "visitorName": "Khách hàng 31",
+    "visitorPhone": "0900000047",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 31",
+    "viewerPhone": "0900000047",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-31",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793494800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "329367dd4a3e4af1a69fb9ed"
+    },
+    "id": "lx-0032",
+    "customerId": {
+      "$oid": "b645b397ea86926a4c2d6acb"
+    },
+    "customerProfileId": "kh-32",
+    "employeeId": "nv-06",
+    "date": "2026-11-02",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793584800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "visitorName": "Khách hàng 32",
+    "visitorPhone": "0900000048",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 32",
+    "viewerPhone": "0900000048",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-32",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793581200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "56320156b50ec6061a09f47c"
+    },
+    "id": "lx-0033",
+    "customerId": {
+      "$oid": "3dd190f67cd4ac71bb80e536"
+    },
+    "customerProfileId": "kh-33",
+    "employeeId": "nv-07",
+    "date": "2026-11-02",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793584800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "visitorName": "Khách hàng 33",
+    "visitorPhone": "0900000049",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 33",
+    "viewerPhone": "0900000049",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-33",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793581200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3358bda562253d91319b5e92"
+    },
+    "id": "lx-0034",
+    "customerId": {
+      "$oid": "cf4f3d5ebce580ebba39dcd8"
+    },
+    "customerProfileId": "kh-34",
+    "employeeId": "nv-08",
+    "date": "2026-11-02",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793584800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "visitorName": "Khách hàng 34",
+    "visitorPhone": "0900000050",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 34",
+    "viewerPhone": "0900000050",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-34",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793581200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e0995945a18bf27c5361ee61"
+    },
+    "id": "lx-0035",
+    "customerId": {
+      "$oid": "df27aa58266d23c6c10a8bd6"
+    },
+    "customerProfileId": "kh-35",
+    "employeeId": "nv-09",
+    "date": "2026-11-02",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793584800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "visitorName": "Khách hàng 35",
+    "visitorPhone": "0900000051",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 35",
+    "viewerPhone": "0900000051",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-35",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793581200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ba855d1d2386bde6d16ccfaa"
+    },
+    "id": "lx-0036",
+    "customerId": {
+      "$oid": "95ff6d03e40ca2058ec3480b"
+    },
+    "customerProfileId": "kh-36",
+    "employeeId": "nv-10",
+    "date": "2026-11-02",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793584800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "visitorName": "Khách hàng 36",
+    "visitorPhone": "0900000052",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 36",
+    "viewerPhone": "0900000052",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-36",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793581200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "88f59076428b8d3072820027"
+    },
+    "id": "lx-0037",
+    "customerId": {
+      "$oid": "c52b51d83cf0afc36e5be48a"
+    },
+    "customerProfileId": "kh-08",
+    "employeeId": "nv-01",
+    "date": "2026-08-01",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1785553200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 8",
+    "visitorPhone": "0900000024",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 8",
+    "viewerPhone": "0900000024",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-01",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-02",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785546000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6310282359ecfd2e04a8379b"
+    },
+    "id": "lx-0038",
+    "customerId": {
+      "$oid": "9da93936ac5637bf47f26533"
+    },
+    "customerProfileId": "kh-09",
+    "employeeId": "nv-02",
+    "date": "2026-08-08",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786158000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786161600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 9",
+    "visitorPhone": "0900000025",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 9",
+    "viewerPhone": "0900000025",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-02",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-03",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786150800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0de25fb5e4c5ae2d68e170af"
+    },
+    "id": "lx-0039",
+    "customerId": {
+      "$oid": "9f1df7c73d3266f54383f2f8"
+    },
+    "customerProfileId": "kh-10",
+    "employeeId": "nv-03",
+    "date": "2026-08-15",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786766400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786770000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 10",
+    "visitorPhone": "0900000026",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 10",
+    "viewerPhone": "0900000026",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-04",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-05",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786755600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0c592de5b4c01f8c0cb1f174"
+    },
+    "id": "lx-0040",
+    "customerId": {
+      "$oid": "a4715eeaff0c90cc119aa5e3"
+    },
+    "customerProfileId": "kh-11",
+    "employeeId": "nv-04",
+    "date": "2026-08-22",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787364000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787367600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 11",
+    "visitorPhone": "0900000027",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 11",
+    "viewerPhone": "0900000027",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-07",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-08",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787360400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8e1119469e50dfe37f3792ca"
+    },
+    "id": "lx-0041",
+    "customerId": {
+      "$oid": "d7b71ff5a9a1666902635b4c"
+    },
+    "customerProfileId": "kh-12",
+    "employeeId": "nv-05",
+    "date": "2026-08-29",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787972400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787976000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 12",
+    "visitorPhone": "0900000028",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 12",
+    "viewerPhone": "0900000028",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-10",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-11",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787965200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "39e0d2316945ece38cf92eb9"
+    },
+    "id": "lx-0042",
+    "customerId": {
+      "$oid": "295d838d8a30b08d4e9e0ee5"
+    },
+    "customerProfileId": "kh-13",
+    "employeeId": "nv-06",
+    "date": "2026-09-05",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788580800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788584400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 13",
+    "visitorPhone": "0900000029",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 13",
+    "viewerPhone": "0900000029",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-12",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-13",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788570000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "320dd7d8aa4be3a653e084b9"
+    },
+    "id": "lx-0043",
+    "customerId": {
+      "$oid": "38dddafd1fb680987354ba09"
+    },
+    "customerProfileId": "kh-14",
+    "employeeId": "nv-07",
+    "date": "2026-09-12",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789178400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789182000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 14",
+    "visitorPhone": "0900000030",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 14",
+    "viewerPhone": "0900000030",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-19",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-20",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789174800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "879f93fccec1bb1c34f14a16"
+    },
+    "id": "lx-0044",
+    "customerId": {
+      "$oid": "3baf342d2d012fae4fbe060f"
+    },
+    "customerProfileId": "kh-15",
+    "employeeId": "nv-08",
+    "date": "2026-09-19",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789786800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789790400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 15",
+    "visitorPhone": "0900000031",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 15",
+    "viewerPhone": "0900000031",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-22",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-23",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789779600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7f4c8da274875ee1cae556c0"
+    },
+    "id": "lx-0045",
+    "customerId": {
+      "$oid": "baf818b614e033dfcb26353e"
+    },
+    "customerProfileId": "kh-16",
+    "employeeId": "nv-09",
+    "date": "2026-09-26",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790395200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790398800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 16",
+    "visitorPhone": "0900000032",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 16",
+    "viewerPhone": "0900000032",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-25",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-26",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790384400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "450c5d4d6d302c7ef1107c71"
+    },
+    "id": "lx-0046",
+    "customerId": {
+      "$oid": "bcfa1ba1ddbd32f23c63dcbd"
+    },
+    "customerProfileId": "kh-17",
+    "employeeId": "nv-10",
+    "date": "2026-10-03",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790992800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790996400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 17",
+    "visitorPhone": "0900000033",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 17",
+    "viewerPhone": "0900000033",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-27",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-28",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790989200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "27607e60d923e1e59109671b"
+    },
+    "id": "lx-0047",
+    "customerId": {
+      "$oid": "7ed7a9bf4b154a13dc17a5ba"
+    },
+    "customerProfileId": "kh-18",
+    "employeeId": "nv-11",
+    "date": "2026-10-10",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791601200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791604800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 18",
+    "visitorPhone": "0900000034",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 18",
+    "viewerPhone": "0900000034",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-30",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-31",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791594000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "541ab8a68303dc7455953fab"
+    },
+    "id": "lx-0048",
+    "customerId": {
+      "$oid": "2ddc0593bcf9f22b0829f9e9"
+    },
+    "customerProfileId": "kh-19",
+    "employeeId": "nv-12",
+    "date": "2026-10-17",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792209600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792213200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 19",
+    "visitorPhone": "0900000035",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 19",
+    "viewerPhone": "0900000035",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-33",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-34",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792198800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e6b88c057a30bb76e4c5b39a"
+    },
+    "id": "lx-0049",
+    "customerId": {
+      "$oid": "c7644ed2664127670c3c6a96"
+    },
+    "customerProfileId": "kh-20",
+    "employeeId": "nv-13",
+    "date": "2026-10-24",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792807200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792810800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 20",
+    "visitorPhone": "0900000036",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 20",
+    "viewerPhone": "0900000036",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-35",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-36",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792803600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "09909176c24a5c3e3ce2b33d"
+    },
+    "id": "lx-0050",
+    "customerId": {
+      "$oid": "c81a81778e1c228b7c9c08ee"
+    },
+    "customerProfileId": "kh-21",
+    "employeeId": "nv-14",
+    "date": "2026-08-03",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1785726000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1785729600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 21",
+    "visitorPhone": "0900000037",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 21",
+    "viewerPhone": "0900000037",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-14",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh.",
+        "roomSnapshot": {
+          "id": "phong-14",
+          "code": "PHONG_14",
+          "name": "Căn hộ Botanical",
+          "type": "Căn hộ",
+          "address": "Đường Võ Văn Ngân, Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh",
+          "propertyId": "b3",
+          "propertyName": "An Phú Home Võ Văn Ngân",
+          "ownerId": "chu-04",
+          "monthlyRent": {
+            "$numberInt": "5500000"
+          },
+          "area": {
+            "$numberInt": "38"
+          },
+          "capacity": {
+            "$numberInt": "3"
+          }
+        }
+      },
+      {
+        "roomId": "phong-15",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785718800000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794841573407"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "fd9077d435f98edf7c21e6f8"
+    },
+    "id": "lx-0051",
+    "customerId": {
+      "$oid": "e92bd498bb5bb5fd4854ad81"
+    },
+    "customerProfileId": "kh-22",
+    "employeeId": "nv-15",
+    "date": "2026-08-10",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786334400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786338000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 22",
+    "visitorPhone": "0900000038",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 22",
+    "viewerPhone": "0900000038",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-17",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-18",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786323600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "26a7e3bf73404908c34d4a49"
+    },
+    "id": "lx-0052",
+    "customerId": {
+      "$oid": "8e9d520a4237fb758dfa12f4"
+    },
+    "customerProfileId": "kh-23",
+    "employeeId": "nv-01",
+    "date": "2026-08-17",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786932000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786935600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 23",
+    "visitorPhone": "0900000039",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 23",
+    "viewerPhone": "0900000039",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-20",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-21",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786928400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "daa76a210ba114c58c73f58d"
+    },
+    "id": "lx-0053",
+    "customerId": {
+      "$oid": "a62d0ebe93632b11538a530f"
+    },
+    "customerProfileId": "kh-24",
+    "employeeId": "nv-02",
+    "date": "2026-08-24",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787540400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787544000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 24",
+    "visitorPhone": "0900000040",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 24",
+    "viewerPhone": "0900000040",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-24",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-25",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787533200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "946e6dc215fa97bbc4e2e514"
+    },
+    "id": "lx-0054",
+    "customerId": {
+      "$oid": "2dcafa511921071010d7d987"
+    },
+    "customerProfileId": "kh-25",
+    "employeeId": "nv-03",
+    "date": "2026-08-31",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788148800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788152400000"
+      }
+    },
+    "visitorName": "Khách hàng 25",
+    "visitorPhone": "0900000041",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 25",
+    "viewerPhone": "0900000041",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-26",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-27",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788138000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5da942b4f1bda7cd2e92c546"
+    },
+    "id": "lx-0055",
+    "customerId": {
+      "$oid": "5229090a79f55cf1c8b4a9af"
+    },
+    "customerProfileId": "kh-26",
+    "employeeId": "nv-04",
+    "date": "2026-09-07",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788746400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788750000000"
+      }
+    },
+    "visitorName": "Khách hàng 26",
+    "visitorPhone": "0900000042",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 26",
+    "viewerPhone": "0900000042",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-29",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-30",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788742800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a89de53ce6d5f36a1434efce"
+    },
+    "id": "lx-0056",
+    "customerId": {
+      "$oid": "618f9c04ea18b3256719733f"
+    },
+    "customerProfileId": "kh-27",
+    "employeeId": "nv-05",
+    "date": "2026-09-14",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789354800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789358400000"
+      }
+    },
+    "visitorName": "Khách hàng 27",
+    "visitorPhone": "0900000043",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 27",
+    "viewerPhone": "0900000043",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-32",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-33",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789347600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5701662d04816d58312c20a6"
+    },
+    "id": "lx-0057",
+    "customerId": {
+      "$oid": "5b9928268b6e4a3f170a5c51"
+    },
+    "customerProfileId": "kh-28",
+    "employeeId": "nv-06",
+    "date": "2026-09-21",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789963200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789966800000"
+      }
+    },
+    "visitorName": "Khách hàng 28",
+    "visitorPhone": "0900000044",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 28",
+    "viewerPhone": "0900000044",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-36",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789952400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b080e79cd70f70116e944e44"
+    },
+    "id": "lx-0058",
+    "customerId": {
+      "$oid": "66c63425e1ca34c457f6f984"
+    },
+    "customerProfileId": "kh-29",
+    "employeeId": "nv-07",
+    "date": "2026-09-28",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790560800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790564400000"
+      }
+    },
+    "visitorName": "Khách hàng 29",
+    "visitorPhone": "0900000045",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 29",
+    "viewerPhone": "0900000045",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790557200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f9f8e58e71a2447d65ab9747"
+    },
+    "id": "lx-0059",
+    "customerId": {
+      "$oid": "4e5897c8841d029e01c778a1"
+    },
+    "customerProfileId": "kh-30",
+    "employeeId": "nv-08",
+    "date": "2026-10-05",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791169200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791172800000"
+      }
+    },
+    "visitorName": "Khách hàng 30",
+    "visitorPhone": "0900000046",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 30",
+    "viewerPhone": "0900000046",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791162000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e2976c55538253df0a15b225"
+    },
+    "id": "lx-0060",
+    "customerId": {
+      "$oid": "307655185842cd2b0f097379"
+    },
+    "customerProfileId": "kh-31",
+    "employeeId": "nv-09",
+    "date": "2026-10-12",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791777600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791781200000"
+      }
+    },
+    "visitorName": "Khách hàng 31",
+    "visitorPhone": "0900000047",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 31",
+    "viewerPhone": "0900000047",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-48",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-49",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791766800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0fd13f9494251aa818bf92e5"
+    },
+    "id": "lx-0061",
+    "customerId": {
+      "$oid": "b645b397ea86926a4c2d6acb"
+    },
+    "customerProfileId": "kh-32",
+    "employeeId": "nv-10",
+    "date": "2026-10-19",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792375200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792378800000"
+      }
+    },
+    "visitorName": "Khách hàng 32",
+    "visitorPhone": "0900000048",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 32",
+    "viewerPhone": "0900000048",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-23",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-24",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792371600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9df26f56310a2b694af1c5c3"
+    },
+    "id": "lx-0062",
+    "customerId": {
+      "$oid": "3dd190f67cd4ac71bb80e536"
+    },
+    "customerProfileId": "kh-33",
+    "employeeId": "nv-11",
+    "date": "2026-10-26",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792983600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792987200000"
+      }
+    },
+    "visitorName": "Khách hàng 33",
+    "visitorPhone": "0900000049",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 33",
+    "viewerPhone": "0900000049",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-25",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-26",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792976400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "71bff5e28f2ff7fcb68c5dec"
+    },
+    "id": "lx-0063",
+    "customerId": {
+      "$oid": "cf4f3d5ebce580ebba39dcd8"
+    },
+    "customerProfileId": "kh-34",
+    "employeeId": "nv-12",
+    "date": "2026-08-05",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1785902400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1785906000000"
+      }
+    },
+    "visitorName": "Khách hàng 34",
+    "visitorPhone": "0900000050",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 34",
+    "viewerPhone": "0900000050",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-27",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-28",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785891600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "fff148ee95a35855d689d7d1"
+    },
+    "id": "lx-0064",
+    "customerId": {
+      "$oid": "df27aa58266d23c6c10a8bd6"
+    },
+    "customerProfileId": "kh-35",
+    "employeeId": "nv-13",
+    "date": "2026-08-12",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786500000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786503600000"
+      }
+    },
+    "visitorName": "Khách hàng 35",
+    "visitorPhone": "0900000051",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 35",
+    "viewerPhone": "0900000051",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-31",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-32",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786496400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "adce0dbb2402deec005e0426"
+    },
+    "id": "lx-0065",
+    "customerId": {
+      "$oid": "95ff6d03e40ca2058ec3480b"
+    },
+    "customerProfileId": "kh-36",
+    "employeeId": "nv-14",
+    "date": "2026-08-19",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787108400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787112000000"
+      }
+    },
+    "visitorName": "Khách hàng 36",
+    "visitorPhone": "0900000052",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 36",
+    "viewerPhone": "0900000052",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-34",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-35",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787101200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "319d91acc379c8438b70e826"
+    },
+    "id": "lx-0066",
+    "customerId": {
+      "$oid": "d6efc4803093312ecb816d09"
+    },
+    "customerProfileId": "kh-37",
+    "employeeId": "nv-15",
+    "date": "2026-08-26",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787716800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787720400000"
+      }
+    },
+    "visitorName": "Khách hàng 37",
+    "visitorPhone": "0900000053",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 37",
+    "viewerPhone": "0900000053",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787706000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7e870546acf7dcc5a0f8ffce"
+    },
+    "id": "lx-0067",
+    "customerId": {
+      "$oid": "a77fd204cdc82e28ec19a02e"
+    },
+    "customerProfileId": "kh-38",
+    "employeeId": "nv-01",
+    "date": "2026-09-02",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788314400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788318000000"
+      }
+    },
+    "visitorName": "Khách hàng 38",
+    "visitorPhone": "0900000054",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 38",
+    "viewerPhone": "0900000054",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788310800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "fcf60eefa5680f5f5667a259"
+    },
+    "id": "lx-0068",
+    "customerId": {
+      "$oid": "8ca822a6ecf767b2a51bcc2f"
+    },
+    "customerProfileId": "kh-39",
+    "employeeId": "nv-02",
+    "date": "2026-09-09",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788922800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788926400000"
+      }
+    },
+    "visitorName": "Khách hàng 39",
+    "visitorPhone": "0900000055",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 39",
+    "viewerPhone": "0900000055",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-47",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-48",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788915600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "49e34a347a8a43e273752ecc"
+    },
+    "id": "lx-0069",
+    "customerId": {
+      "$oid": "37dcd3145921e0fd2e390581"
+    },
+    "customerProfileId": "kh-40",
+    "employeeId": "nv-03",
+    "date": "2026-09-16",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789531200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789534800000"
+      }
+    },
+    "visitorName": "Khách hàng 40",
+    "visitorPhone": "0900000056",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 40",
+    "viewerPhone": "0900000056",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-50",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-11",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789520400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "eca7f6bd2f72674b8b8499d3"
+    },
+    "id": "lx-0070",
+    "customerId": {
+      "$oid": "c5366025f37b55162604d782"
+    },
+    "customerProfileId": "kh-01",
+    "employeeId": "nv-04",
+    "date": "2026-09-23",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790128800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790132400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 1",
+    "visitorPhone": "0900000017",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 1",
+    "viewerPhone": "0900000017",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-17",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-19",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790125200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ec0f7527cb3323ea0bcc8443"
+    },
+    "id": "lx-0071",
+    "customerId": {
+      "$oid": "20b683021dfc53c2b98fcfad"
+    },
+    "customerProfileId": "kh-02",
+    "employeeId": "nv-05",
+    "date": "2026-09-30",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790737200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790740800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 2",
+    "visitorPhone": "0900000018",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 2",
+    "viewerPhone": "0900000018",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-21",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-22",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790730000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "18ac9f06a8b9228f3871cf4f"
+    },
+    "id": "lx-0072",
+    "customerId": {
+      "$oid": "d5ce9ace7adfcaa806fd8cc5"
+    },
+    "customerProfileId": "kh-03",
+    "employeeId": "nv-06",
+    "date": "2026-10-07",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791345600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791349200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 3",
+    "visitorPhone": "0900000019",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 3",
+    "viewerPhone": "0900000019",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-26",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-27",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791334800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6d8caf3a38b9e3e7e898c071"
+    },
+    "id": "lx-0073",
+    "customerId": {
+      "$oid": "192eec43b56779fb100831cb"
+    },
+    "customerProfileId": "kh-04",
+    "employeeId": "nv-07",
+    "date": "2026-10-14",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791943200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791946800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 4",
+    "visitorPhone": "0900000020",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 4",
+    "viewerPhone": "0900000020",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-31",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-32",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791939600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2c22457fecc1891facbfff46"
+    },
+    "id": "lx-0074",
+    "customerId": {
+      "$oid": "9d5f1d391d47715a429e33d0"
+    },
+    "customerProfileId": "kh-05",
+    "employeeId": "nv-08",
+    "date": "2026-10-21",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792551600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792555200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 5",
+    "visitorPhone": "0900000021",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 5",
+    "viewerPhone": "0900000021",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792544400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1a2d39469a21d8c993ab1f4c"
+    },
+    "id": "lx-0075",
+    "customerId": {
+      "$oid": "0e4ad4deff5acae6e24c717f"
+    },
+    "customerProfileId": "kh-06",
+    "employeeId": "nv-09",
+    "date": "2026-10-28",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1793160000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1793163600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 6",
+    "visitorPhone": "0900000022",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 6",
+    "viewerPhone": "0900000022",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793149200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9bd09c4cadeb10fff576e62c"
+    },
+    "id": "lx-0076",
+    "customerId": {
+      "$oid": "4b3a2f50c5b6109d99149f76"
+    },
+    "customerProfileId": "kh-07",
+    "employeeId": "nv-10",
+    "date": "2026-08-07",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786068000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786071600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 7",
+    "visitorPhone": "0900000023",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 7",
+    "viewerPhone": "0900000023",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-42",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786064400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "77bd1f28bab622e7e546ee7b"
+    },
+    "id": "lx-0077",
+    "customerId": {
+      "$oid": "c52b51d83cf0afc36e5be48a"
+    },
+    "customerProfileId": "kh-08",
+    "employeeId": "nv-11",
+    "date": "2026-08-14",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786676400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786680000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 8",
+    "visitorPhone": "0900000024",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 8",
+    "viewerPhone": "0900000024",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-48",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-49",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786669200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "df603a49e9767afa597f9275"
+    },
+    "id": "lx-0078",
+    "customerId": {
+      "$oid": "9da93936ac5637bf47f26533"
+    },
+    "customerProfileId": "kh-09",
+    "employeeId": "nv-12",
+    "date": "2026-08-21",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787284800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787288400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 9",
+    "visitorPhone": "0900000025",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 9",
+    "viewerPhone": "0900000025",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-05",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-06",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787274000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "56bcc2f0f29ef3baaaedef3e"
+    },
+    "id": "lx-0079",
+    "customerId": {
+      "$oid": "9f1df7c73d3266f54383f2f8"
+    },
+    "customerProfileId": "kh-10",
+    "employeeId": "nv-13",
+    "date": "2026-08-28",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787882400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787886000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 10",
+    "visitorPhone": "0900000026",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 10",
+    "viewerPhone": "0900000026",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-10",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-11",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787878800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d5cd253eb4d622bcab89edfd"
+    },
+    "id": "lx-0080",
+    "customerId": {
+      "$oid": "a4715eeaff0c90cc119aa5e3"
+    },
+    "customerProfileId": "kh-11",
+    "employeeId": "nv-14",
+    "date": "2026-09-04",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788490800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788494400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 11",
+    "visitorPhone": "0900000027",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 11",
+    "viewerPhone": "0900000027",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-13",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-15",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788483600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b07ecbe186b2cfa67ecf5f46"
+    },
+    "id": "lx-0081",
+    "customerId": {
+      "$oid": "d7b71ff5a9a1666902635b4c"
+    },
+    "customerProfileId": "kh-12",
+    "employeeId": "nv-15",
+    "date": "2026-09-11",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789099200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789102800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 12",
+    "visitorPhone": "0900000028",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 12",
+    "viewerPhone": "0900000028",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-21",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-22",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789088400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "91fb85d98444ebcb76708831"
+    },
+    "id": "lx-0082",
+    "customerId": {
+      "$oid": "295d838d8a30b08d4e9e0ee5"
+    },
+    "customerProfileId": "kh-13",
+    "employeeId": "nv-01",
+    "date": "2026-09-18",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789696800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789700400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 13",
+    "visitorPhone": "0900000029",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 13",
+    "viewerPhone": "0900000029",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-28",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-29",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789693200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "dee75e1c56cd627e3429cb46"
+    },
+    "id": "lx-0083",
+    "customerId": {
+      "$oid": "38dddafd1fb680987354ba09"
+    },
+    "customerProfileId": "kh-14",
+    "employeeId": "nv-02",
+    "date": "2026-09-25",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790305200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790308800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 14",
+    "visitorPhone": "0900000030",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 14",
+    "viewerPhone": "0900000030",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-33",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-34",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790298000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c481b096bb365539d52414fa"
+    },
+    "id": "lx-0084",
+    "customerId": {
+      "$oid": "3baf342d2d012fae4fbe060f"
+    },
+    "customerProfileId": "kh-15",
+    "employeeId": "nv-03",
+    "date": "2026-10-02",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790913600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790917200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 15",
+    "visitorPhone": "0900000031",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 15",
+    "viewerPhone": "0900000031",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-34",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-35",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790902800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "370ee1d0b0a88200d093afcb"
+    },
+    "id": "lx-0085",
+    "customerId": {
+      "$oid": "baf818b614e033dfcb26353e"
+    },
+    "customerProfileId": "kh-16",
+    "employeeId": "nv-04",
+    "date": "2026-10-09",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791511200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791514800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 16",
+    "visitorPhone": "0900000032",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 16",
+    "viewerPhone": "0900000032",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-42",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791507600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "56298c3a57af80416c67fb04"
+    },
+    "id": "lx-0086",
+    "customerId": {
+      "$oid": "bcfa1ba1ddbd32f23c63dcbd"
+    },
+    "customerProfileId": "kh-17",
+    "employeeId": "nv-05",
+    "date": "2026-10-16",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792119600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792123200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 17",
+    "visitorPhone": "0900000033",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 17",
+    "viewerPhone": "0900000033",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-50",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-22",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792112400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "34dfb9d44fef4d23a44497a5"
+    },
+    "id": "lx-0087",
+    "customerId": {
+      "$oid": "7ed7a9bf4b154a13dc17a5ba"
+    },
+    "customerProfileId": "kh-18",
+    "employeeId": "nv-06",
+    "date": "2026-10-23",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792728000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792731600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 18",
+    "visitorPhone": "0900000034",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 18",
+    "viewerPhone": "0900000034",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-27",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-28",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792717200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "96d49adae2eaf27b56d947f7"
+    },
+    "id": "lx-0088",
+    "customerId": {
+      "$oid": "2ddc0593bcf9f22b0829f9e9"
+    },
+    "customerProfileId": "kh-19",
+    "employeeId": "nv-07",
+    "date": "2026-08-02",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1785636000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1785639600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 19",
+    "visitorPhone": "0900000035",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 19",
+    "viewerPhone": "0900000035",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-05",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-06",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785632400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d6fb31a5f729c25e297434e1"
+    },
+    "id": "lx-0089",
+    "customerId": {
+      "$oid": "c7644ed2664127670c3c6a96"
+    },
+    "customerProfileId": "kh-20",
+    "employeeId": "nv-08",
+    "date": "2026-08-09",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786244400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786248000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 20",
+    "visitorPhone": "0900000036",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 20",
+    "viewerPhone": "0900000036",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-09",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-10",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786237200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "72dfd8ec0a63f7bddf131696"
+    },
+    "id": "lx-0090",
+    "customerId": {
+      "$oid": "c81a81778e1c228b7c9c08ee"
+    },
+    "customerProfileId": "kh-21",
+    "employeeId": "nv-09",
+    "date": "2026-08-16",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786852800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786856400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 21",
+    "visitorPhone": "0900000037",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 21",
+    "viewerPhone": "0900000037",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-13",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-15",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786842000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b4a667a1def43fcc8c144bd"
+    },
+    "id": "lx-0091",
+    "customerId": {
+      "$oid": "e92bd498bb5bb5fd4854ad81"
+    },
+    "customerProfileId": "kh-22",
+    "employeeId": "nv-10",
+    "date": "2026-08-23",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787450400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787454000000"
+      }
+    },
+    "visitorName": "Khách liên hệ 22",
+    "visitorPhone": "0900000038",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 22",
+    "viewerPhone": "0900000038",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-21",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-22",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787446800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "275f993ecabc547c4d16184e"
+    },
+    "id": "lx-0092",
+    "customerId": {
+      "$oid": "8e9d520a4237fb758dfa12f4"
+    },
+    "customerProfileId": "kh-23",
+    "employeeId": "nv-11",
+    "date": "2026-08-30",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788058800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788062400000"
+      }
+    },
+    "visitorName": "Khách liên hệ 23",
+    "visitorPhone": "0900000039",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 23",
+    "viewerPhone": "0900000039",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-26",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-27",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788051600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9d9fced114aaa7af23386016"
+    },
+    "id": "lx-0093",
+    "customerId": {
+      "$oid": "a62d0ebe93632b11538a530f"
+    },
+    "customerProfileId": "kh-24",
+    "employeeId": "nv-12",
+    "date": "2026-09-06",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788667200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788670800000"
+      }
+    },
+    "visitorName": "Khách liên hệ 24",
+    "visitorPhone": "0900000040",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 24",
+    "viewerPhone": "0900000040",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-31",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-32",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788656400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b343e79d71c705d66bfc8409"
+    },
+    "id": "lx-0094",
+    "customerId": {
+      "$oid": "2dcafa511921071010d7d987"
+    },
+    "customerProfileId": "kh-25",
+    "employeeId": "nv-13",
+    "date": "2026-09-13",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789264800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789268400000"
+      }
+    },
+    "visitorName": "Khách hàng 25",
+    "visitorPhone": "0900000041",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 25",
+    "viewerPhone": "0900000041",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-36",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789261200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "75bae1f57914b63f703a10fd"
+    },
+    "id": "lx-0095",
+    "customerId": {
+      "$oid": "5229090a79f55cf1c8b4a9af"
+    },
+    "customerProfileId": "kh-26",
+    "employeeId": "nv-14",
+    "date": "2026-09-20",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789873200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789876800000"
+      }
+    },
+    "visitorName": "Khách hàng 26",
+    "visitorPhone": "0900000042",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 26",
+    "viewerPhone": "0900000042",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-42",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789866000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9bcc74273905ffe90f4e5138"
+    },
+    "id": "lx-0096",
+    "customerId": {
+      "$oid": "618f9c04ea18b3256719733f"
+    },
+    "customerProfileId": "kh-27",
+    "employeeId": "nv-15",
+    "date": "2026-09-27",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790481600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790485200000"
+      }
+    },
+    "visitorName": "Khách hàng 27",
+    "visitorPhone": "0900000043",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 27",
+    "viewerPhone": "0900000043",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-50",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-15",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790470800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c8b13462f235ca1faf59adb9"
+    },
+    "id": "lx-0097",
+    "customerId": {
+      "$oid": "5b9928268b6e4a3f170a5c51"
+    },
+    "customerProfileId": "kh-28",
+    "employeeId": "nv-01",
+    "date": "2026-10-04",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791079200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791082800000"
+      }
+    },
+    "visitorName": "Khách hàng 28",
+    "visitorPhone": "0900000044",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 28",
+    "viewerPhone": "0900000044",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-20",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-21",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791075600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "667aea8b146d9494c022cb3c"
+    },
+    "id": "lx-0098",
+    "customerId": {
+      "$oid": "66c63425e1ca34c457f6f984"
+    },
+    "customerProfileId": "kh-29",
+    "employeeId": "nv-02",
+    "date": "2026-10-11",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791687600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791691200000"
+      }
+    },
+    "visitorName": "Khách hàng 29",
+    "visitorPhone": "0900000045",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 29",
+    "viewerPhone": "0900000045",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-27",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-28",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791680400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "089082b76d87b653b0fd7e1d"
+    },
+    "id": "lx-0099",
+    "customerId": {
+      "$oid": "4e5897c8841d029e01c778a1"
+    },
+    "customerProfileId": "kh-30",
+    "employeeId": "nv-03",
+    "date": "2026-10-18",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792296000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792299600000"
+      }
+    },
+    "visitorName": "Khách hàng 30",
+    "visitorPhone": "0900000046",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 30",
+    "viewerPhone": "0900000046",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-38",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792285200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "93aefac44ca124cf8a96c958"
+    },
+    "id": "lx-0100",
+    "customerId": {
+      "$oid": "307655185842cd2b0f097379"
+    },
+    "customerProfileId": "kh-31",
+    "employeeId": "nv-04",
+    "date": "2026-10-25",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792893600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792897200000"
+      }
+    },
+    "visitorName": "Khách hàng 31",
+    "visitorPhone": "0900000047",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 31",
+    "viewerPhone": "0900000047",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-41",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792890000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "513d942a9529c2da91120409"
+    },
+    "id": "lx-0101",
+    "customerId": {
+      "$oid": "b645b397ea86926a4c2d6acb"
+    },
+    "customerProfileId": "kh-32",
+    "employeeId": "nv-05",
+    "date": "2026-08-04",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1785812400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1785816000000"
+      }
+    },
+    "visitorName": "Khách hàng 32",
+    "visitorPhone": "0900000048",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 32",
+    "viewerPhone": "0900000048",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-19",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-20",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785805200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8a80a208e8652c49062c671a"
+    },
+    "id": "lx-0102",
+    "customerId": {
+      "$oid": "3dd190f67cd4ac71bb80e536"
+    },
+    "customerProfileId": "kh-33",
+    "employeeId": "nv-06",
+    "date": "2026-08-11",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1786420800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1786424400000"
+      }
+    },
+    "visitorName": "Khách hàng 33",
+    "visitorPhone": "0900000049",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 33",
+    "viewerPhone": "0900000049",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-24",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-25",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786410000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c8c3644d856c64dd07ebb954"
+    },
+    "id": "lx-0103",
+    "customerId": {
+      "$oid": "cf4f3d5ebce580ebba39dcd8"
+    },
+    "customerProfileId": "kh-34",
+    "employeeId": "nv-07",
+    "date": "2026-08-18",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787018400000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787022000000"
+      }
+    },
+    "visitorName": "Khách hàng 34",
+    "visitorPhone": "0900000050",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 34",
+    "viewerPhone": "0900000050",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-31",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-32",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787014800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1d6b2b482f4dbcd602480449"
+    },
+    "id": "lx-0104",
+    "customerId": {
+      "$oid": "df27aa58266d23c6c10a8bd6"
+    },
+    "customerProfileId": "kh-35",
+    "employeeId": "nv-08",
+    "date": "2026-08-25",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1787626800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1787630400000"
+      }
+    },
+    "visitorName": "Khách hàng 35",
+    "visitorPhone": "0900000051",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 35",
+    "viewerPhone": "0900000051",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-36",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787619600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cee6801fc3489ea63e74168f"
+    },
+    "id": "lx-0105",
+    "customerId": {
+      "$oid": "95ff6d03e40ca2058ec3480b"
+    },
+    "customerProfileId": "kh-36",
+    "employeeId": "nv-09",
+    "date": "2026-09-01",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788235200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788238800000"
+      }
+    },
+    "visitorName": "Khách hàng 36",
+    "visitorPhone": "0900000052",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 36",
+    "viewerPhone": "0900000052",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-39",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-40",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788224400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d7b26c1e03a0a85d50d38dc6"
+    },
+    "id": "lx-0106",
+    "customerId": {
+      "$oid": "d6efc4803093312ecb816d09"
+    },
+    "customerProfileId": "kh-37",
+    "employeeId": "nv-10",
+    "date": "2026-09-08",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1788832800000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1788836400000"
+      }
+    },
+    "visitorName": "Khách hàng 37",
+    "visitorPhone": "0900000053",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 37",
+    "viewerPhone": "0900000053",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-48",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-49",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788829200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d2bd2e95ecc764ab248a28a6"
+    },
+    "id": "lx-0107",
+    "customerId": {
+      "$oid": "a77fd204cdc82e28ec19a02e"
+    },
+    "customerProfileId": "kh-38",
+    "employeeId": "nv-11",
+    "date": "2026-09-15",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1789441200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1789444800000"
+      }
+    },
+    "visitorName": "Khách hàng 38",
+    "visitorPhone": "0900000054",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 38",
+    "viewerPhone": "0900000054",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-17",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-19",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789434000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e1931bf4b6cf2df3e897e329"
+    },
+    "id": "lx-0108",
+    "customerId": {
+      "$oid": "8ca822a6ecf767b2a51bcc2f"
+    },
+    "customerProfileId": "kh-39",
+    "employeeId": "nv-12",
+    "date": "2026-09-22",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790049600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790053200000"
+      }
+    },
+    "visitorName": "Khách hàng 39",
+    "visitorPhone": "0900000055",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 39",
+    "viewerPhone": "0900000055",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-25",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-26",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790038800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8e89b9c2d56fc3208991bb4e"
+    },
+    "id": "lx-0109",
+    "customerId": {
+      "$oid": "37dcd3145921e0fd2e390581"
+    },
+    "customerProfileId": "kh-40",
+    "employeeId": "nv-13",
+    "date": "2026-09-29",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1790647200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1790650800000"
+      }
+    },
+    "visitorName": "Khách hàng 40",
+    "visitorPhone": "0900000056",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách hàng 40",
+    "viewerPhone": "0900000056",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-29",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-30",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790643600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4de0c12beb870d88b8317e19"
+    },
+    "id": "lx-0110",
+    "customerId": {
+      "$oid": "c5366025f37b55162604d782"
+    },
+    "customerProfileId": "kh-01",
+    "employeeId": "nv-14",
+    "date": "2026-10-06",
+    "startTime": "10:00",
+    "endTime": "11:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791255600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791259200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 1",
+    "visitorPhone": "0900000017",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 1",
+    "viewerPhone": "0900000017",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-36",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-37",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791248400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "24b7a474bff2c9471cd59fa0"
+    },
+    "id": "lx-0111",
+    "customerId": {
+      "$oid": "20b683021dfc53c2b98fcfad"
+    },
+    "customerProfileId": "kh-02",
+    "employeeId": "nv-15",
+    "date": "2026-10-13",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1791864000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1791867600000"
+      }
+    },
+    "visitorName": "Khách liên hệ 2",
+    "visitorPhone": "0900000018",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 2",
+    "viewerPhone": "0900000018",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-47",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-48",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791853200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "fb4fb6a5acb8833131f0a182"
+    },
+    "id": "lx-0112",
+    "customerId": {
+      "$oid": "d5ce9ace7adfcaa806fd8cc5"
+    },
+    "customerProfileId": "kh-03",
+    "employeeId": "nv-01",
+    "date": "2026-10-20",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1792461600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1792465200000"
+      }
+    },
+    "visitorName": "Khách liên hệ 3",
+    "visitorPhone": "0900000019",
+    "visitorCount": {
+      "$numberInt": "2"
+    },
+    "viewerName": "Khách liên hệ 3",
+    "viewerPhone": "0900000019",
+    "peopleCount": {
+      "$numberInt": "2"
+    },
+    "status": "DA_XEM",
+    "rooms": [
+      {
+        "roomId": "phong-26",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      },
+      {
+        "roomId": "phong-27",
+        "order": {
+          "$numberInt": "2"
+        },
+        "viewStatus": "DA_XEM",
+        "note": "Nội dung minh họa đã được ẩn danh."
+      }
+    ],
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792458000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ae9fcd9af0e7548b48362a3"
+    },
+    "id": "lx-6ae9fcd9af0e7548b48362a3",
+    "customerId": {
+      "$oid": "c5366025f37b55162604d782"
+    },
+    "customerProfileId": "kh-01",
+    "employeeId": "nv-01",
+    "status": "DA_HUY",
+    "rooms": [
+      {
+        "roomId": "phong-49",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "CHUA_XEM",
+        "note": ""
+      }
+    ],
+    "date": "2026-11-20",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1795140000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1795143600000"
+      }
+    },
+    "viewerName": "T�",
+    "viewerPhone": "0900000017",
+    "visitorName": "T�",
+    "visitorPhone": "0900000017",
+    "visitorCount": {
+      "$numberInt": "1"
+    },
+    "peopleCount": {
+      "$numberInt": "1"
+    },
+    "note": "",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793719513127"
+      }
+    },
+    "version": {
+      "$numberInt": "3"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1793719516729"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee24"
+    },
+    "id": "lx-6af9e49f7c0fe08a17bcee10",
+    "bookingId": "dl-6af9e49f7c0fe08a17bcee0f",
+    "customerId": {
+      "$oid": "6af9b41ded3fe4f1d80b4649"
+    },
+    "customerProfileId": "kh-6af9b41ded3fe4f1d80b464b",
+    "employeeId": "nv-13",
+    "taskId": "p4-viewing-lx-6af9e49f7c0fe08a17bcee10",
+    "status": "DA_XAC_NHAN",
+    "rooms": [
+      {
+        "roomId": "phong-30",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "CHUA_XEM",
+        "note": ""
+      }
+    ],
+    "date": "2026-11-19",
+    "startTime": "07:30",
+    "endTime": "08:00",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1795048200000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1795050000000"
+      }
+    },
+    "viewerName": "Khách hàng 43",
+    "viewerPhone": "0900000059",
+    "visitorName": "Khách hàng 43",
+    "visitorPhone": "0900000059",
+    "visitorCount": {
+      "$numberInt": "1"
+    },
+    "peopleCount": {
+      "$numberInt": "1"
+    },
+    "note": "",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "version": {
+      "$numberInt": "2"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee2b"
+    },
+    "id": "lx-6af9e4a07c0fe08a17bcee16",
+    "bookingId": "dl-6af9e49f7c0fe08a17bcee0f",
+    "customerId": {
+      "$oid": "6af9b41ded3fe4f1d80b4649"
+    },
+    "customerProfileId": "kh-6af9b41ded3fe4f1d80b464b",
+    "employeeId": "nv-13",
+    "taskId": "p4-viewing-lx-6af9e4a07c0fe08a17bcee16",
+    "status": "DA_XAC_NHAN",
+    "rooms": [
+      {
+        "roomId": "phong-26",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "CHUA_XEM",
+        "note": ""
+      }
+    ],
+    "date": "2026-11-19",
+    "startTime": "08:00",
+    "endTime": "08:30",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1795050000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1795051800000"
+      }
+    },
+    "viewerName": "Khách hàng 43",
+    "viewerPhone": "0900000059",
+    "visitorName": "Khách hàng 43",
+    "visitorPhone": "0900000059",
+    "visitorCount": {
+      "$numberInt": "1"
+    },
+    "peopleCount": {
+      "$numberInt": "1"
+    },
+    "note": "",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "version": {
+      "$numberInt": "2"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee32"
+    },
+    "id": "lx-6af9e4a07c0fe08a17bcee1c",
+    "bookingId": "dl-6af9e49f7c0fe08a17bcee0f",
+    "customerId": {
+      "$oid": "6af9b41ded3fe4f1d80b4649"
+    },
+    "customerProfileId": "kh-6af9b41ded3fe4f1d80b464b",
+    "employeeId": "nv-15",
+    "taskId": "p4-viewing-lx-6af9e4a07c0fe08a17bcee1c",
+    "status": "DA_XAC_NHAN",
+    "rooms": [
+      {
+        "roomId": "phong-23",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "CHUA_XEM",
+        "note": ""
+      }
+    ],
+    "date": "2026-11-20",
+    "startTime": "09:00",
+    "endTime": "09:30",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1795140000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1795141800000"
+      }
+    },
+    "viewerName": "Khách hàng 43",
+    "viewerPhone": "0900000059",
+    "visitorName": "Khách hàng 43",
+    "visitorPhone": "0900000059",
+    "visitorCount": {
+      "$numberInt": "1"
+    },
+    "peopleCount": {
+      "$numberInt": "1"
+    },
+    "note": "",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    },
+    "version": {
+      "$numberInt": "2"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794761887557"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afb59f3ee9c8c05f08f3192"
+    },
+    "id": "lx-6afb59f2ee9c8c05f08f3184",
+    "bookingId": "dl-6afb59f2ee9c8c05f08f3183",
+    "customerId": {
+      "$oid": "6af9b41ded3fe4f1d80b4649"
+    },
+    "customerProfileId": "kh-6af9b41ded3fe4f1d80b464b",
+    "employeeId": "nv-08",
+    "taskId": "p4-viewing-lx-6afb59f2ee9c8c05f08f3184",
+    "status": "DA_XAC_NHAN",
+    "rooms": [
+      {
+        "roomId": "phong-03",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "CHUA_XEM",
+        "note": ""
+      }
+    ],
+    "date": "2026-11-22",
+    "startTime": "16:00",
+    "endTime": "16:30",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1795338000000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1795339800000"
+      }
+    },
+    "viewerName": "Khách hàng 43",
+    "viewerPhone": "0900000059",
+    "visitorName": "Khách hàng 43",
+    "visitorPhone": "0900000059",
+    "visitorCount": {
+      "$numberInt": "1"
+    },
+    "peopleCount": {
+      "$numberInt": "1"
+    },
+    "note": "",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    },
+    "version": {
+      "$numberInt": "2"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afb59f3ee9c8c05f08f3199"
+    },
+    "id": "lx-6afb59f2ee9c8c05f08f318a",
+    "bookingId": "dl-6afb59f2ee9c8c05f08f3183",
+    "customerId": {
+      "$oid": "6af9b41ded3fe4f1d80b4649"
+    },
+    "customerProfileId": "kh-6af9b41ded3fe4f1d80b464b",
+    "employeeId": "nv-12",
+    "taskId": "p4-viewing-lx-6afb59f2ee9c8c05f08f318a",
+    "status": "DA_XAC_NHAN",
+    "rooms": [
+      {
+        "roomId": "phong-15",
+        "order": {
+          "$numberInt": "1"
+        },
+        "viewStatus": "CHUA_XEM",
+        "note": ""
+      }
+    ],
+    "date": "2026-11-20",
+    "startTime": "15:00",
+    "endTime": "15:30",
+    "startAt": {
+      "$date": {
+        "$numberLong": "1795161600000"
+      }
+    },
+    "endAt": {
+      "$date": {
+        "$numberLong": "1795163400000"
+      }
+    },
+    "viewerName": "Khách hàng 43",
+    "viewerPhone": "0900000059",
+    "visitorName": "Khách hàng 43",
+    "visitorPhone": "0900000059",
+    "visitorCount": {
+      "$numberInt": "1"
+    },
+    "peopleCount": {
+      "$numberInt": "1"
+    },
+    "note": "",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    },
+    "version": {
+      "$numberInt": "2"
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794857458037"
+      }
+    }
+  }
+]

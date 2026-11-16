@@ -1,0 +1,1507 @@
+[
+  {
+    "_id": {
+      "$oid": "406e338f1952cb8e7231338f"
+    },
+    "id": "pc-cv-01-1-1",
+    "taskShiftId": "cv-01-1-1",
+    "shiftLinkId": "cv-01-1-1",
+    "assignmentId": "ca-2026-08-03-13-nv-01",
+    "employeeId": "nv-01",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "a8fc4bf53d1cad3aa14d034c"
+    },
+    "id": "pc-cv-01-1-2",
+    "taskShiftId": "cv-01-1-2",
+    "shiftLinkId": "cv-01-1-2",
+    "assignmentId": "ca-2026-08-04-07-nv-01",
+    "employeeId": "nv-01",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785816000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "21535d31981575bed2d83f4a"
+    },
+    "id": "pc-cv-01-2-1",
+    "taskShiftId": "cv-01-2-1",
+    "shiftLinkId": "cv-01-2-1",
+    "assignmentId": "ca-2026-08-13-07-nv-01",
+    "employeeId": "nv-01",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "14086cf475d0787741793cbc"
+    },
+    "id": "pc-cv-01-2-2",
+    "taskShiftId": "cv-01-2-2",
+    "shiftLinkId": "cv-01-2-2",
+    "assignmentId": "ca-2026-08-18-13-nv-01",
+    "employeeId": "nv-01",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787047200000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "c9be262eb0cd4def90a53441"
+    },
+    "id": "pc-cv-01-3-1",
+    "taskShiftId": "cv-01-3-1",
+    "shiftLinkId": "cv-01-3-1",
+    "assignmentId": "ca-2026-08-27-13-nv-01",
+    "employeeId": "nv-01",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "846b2c52925ad1e54bb3baae"
+    },
+    "id": "pc-cv-01-3-2",
+    "taskShiftId": "cv-01-3-2",
+    "shiftLinkId": "cv-01-3-2",
+    "assignmentId": "ca-2026-08-28-07-nv-01",
+    "employeeId": "nv-01",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787889600000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "6b4f0780f2a977c902168aa1"
+    },
+    "id": "pc-cv-02-1-1",
+    "taskShiftId": "cv-02-1-1",
+    "shiftLinkId": "cv-02-1-1",
+    "assignmentId": "ca-2026-08-06-07-nv-02",
+    "employeeId": "nv-02",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "64789ed8f764a99258ab3cc8"
+    },
+    "id": "pc-cv-02-1-2",
+    "taskShiftId": "cv-02-1-2",
+    "shiftLinkId": "cv-02-1-2",
+    "assignmentId": "ca-2026-08-06-13-nv-02",
+    "employeeId": "nv-02",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786010400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "1151631ff5189b88cbb87102"
+    },
+    "id": "pc-cv-02-2-1",
+    "taskShiftId": "cv-02-2-1",
+    "shiftLinkId": "cv-02-2-1",
+    "assignmentId": "ca-2026-08-15-13-nv-02",
+    "employeeId": "nv-02",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "2d8765b6181000349f0a7389"
+    },
+    "id": "pc-cv-02-2-2",
+    "taskShiftId": "cv-02-2-2",
+    "shiftLinkId": "cv-02-2-2",
+    "assignmentId": "ca-2026-08-21-07-nv-02",
+    "employeeId": "nv-02",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787284800000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "09defa24a43cddc7b6267e53"
+    },
+    "id": "pc-cv-02-3-1",
+    "taskShiftId": "cv-02-3-1",
+    "shiftLinkId": "cv-02-3-1",
+    "assignmentId": "ca-2026-08-30-07-nv-02",
+    "employeeId": "nv-02",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "314555eec8e382778c53dffe"
+    },
+    "id": "pc-cv-02-3-2",
+    "taskShiftId": "cv-02-3-2",
+    "shiftLinkId": "cv-02-3-2",
+    "assignmentId": "ca-2026-08-30-13-nv-02",
+    "employeeId": "nv-02",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1788084000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "a7320edc1aa0a521230b7787"
+    },
+    "id": "pc-cv-03-1-1",
+    "taskShiftId": "cv-03-1-1",
+    "shiftLinkId": "cv-03-1-1",
+    "assignmentId": "ca-2026-08-01-07-nv-03",
+    "employeeId": "nv-03",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "e3ba96f8021ff79da4508bd6"
+    },
+    "id": "pc-cv-03-1-2",
+    "taskShiftId": "cv-03-1-2",
+    "shiftLinkId": "cv-03-1-2",
+    "assignmentId": "ca-2026-08-01-13-nv-03",
+    "employeeId": "nv-03",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785578400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "3e60b15316ae9418ec73cada"
+    },
+    "id": "pc-cv-03-2-1",
+    "taskShiftId": "cv-03-2-1",
+    "shiftLinkId": "cv-03-2-1",
+    "assignmentId": "ca-2026-08-10-07-nv-03",
+    "employeeId": "nv-03",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "bd56ad71aa186d2bab63c4bb"
+    },
+    "id": "pc-cv-03-2-2",
+    "taskShiftId": "cv-03-2-2",
+    "shiftLinkId": "cv-03-2-2",
+    "assignmentId": "ca-2026-08-10-13-nv-03",
+    "employeeId": "nv-03",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786356000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "d823a61fa83a2d74be7f9be2"
+    },
+    "id": "pc-cv-03-3-1",
+    "taskShiftId": "cv-03-3-1",
+    "shiftLinkId": "cv-03-3-1",
+    "assignmentId": "ca-2026-08-23-13-nv-03",
+    "employeeId": "nv-03",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "51127964257370037e40f470"
+    },
+    "id": "pc-cv-03-3-2",
+    "taskShiftId": "cv-03-3-2",
+    "shiftLinkId": "cv-03-3-2",
+    "assignmentId": "ca-2026-08-24-07-nv-03",
+    "employeeId": "nv-03",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787544000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "7c4ecf1119b016027c51403f"
+    },
+    "id": "pc-cv-04-1-1",
+    "taskShiftId": "cv-04-1-1",
+    "shiftLinkId": "cv-04-1-1",
+    "assignmentId": "ca-2026-08-04-07-nv-04",
+    "employeeId": "nv-04",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "4e170d578aa2b831b0e75c3f"
+    },
+    "id": "pc-cv-04-1-2",
+    "taskShiftId": "cv-04-1-2",
+    "shiftLinkId": "cv-04-1-2",
+    "assignmentId": "ca-2026-08-04-13-nv-04",
+    "employeeId": "nv-04",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785837600000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "5e3fbc67c139c658f2f4d1a4"
+    },
+    "id": "pc-cv-04-2-1",
+    "taskShiftId": "cv-04-2-1",
+    "shiftLinkId": "cv-04-2-1",
+    "assignmentId": "ca-2026-08-13-13-nv-04",
+    "employeeId": "nv-04",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "4489ec2f5aea129adc579bf0"
+    },
+    "id": "pc-cv-04-2-2",
+    "taskShiftId": "cv-04-2-2",
+    "shiftLinkId": "cv-04-2-2",
+    "assignmentId": "ca-2026-08-19-07-nv-04",
+    "employeeId": "nv-04",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787112000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "35c02e7f641b3970fde0e86a"
+    },
+    "id": "pc-cv-04-3-1",
+    "taskShiftId": "cv-04-3-1",
+    "shiftLinkId": "cv-04-3-1",
+    "assignmentId": "ca-2026-08-28-07-nv-04",
+    "employeeId": "nv-04",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "e5e81db05e6ca4e325e47e5d"
+    },
+    "id": "pc-cv-04-3-2",
+    "taskShiftId": "cv-04-3-2",
+    "shiftLinkId": "cv-04-3-2",
+    "assignmentId": "ca-2026-08-28-13-nv-04",
+    "employeeId": "nv-04",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787911200000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "9742be6cfb083c8aa648cdd3"
+    },
+    "id": "pc-cv-05-1-1",
+    "taskShiftId": "cv-05-1-1",
+    "shiftLinkId": "cv-05-1-1",
+    "assignmentId": "ca-2026-08-01-07-nv-05",
+    "employeeId": "nv-05",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "5156b3d10ccc7067cf0c1951"
+    },
+    "id": "pc-cv-05-1-2",
+    "taskShiftId": "cv-05-1-2",
+    "shiftLinkId": "cv-05-1-2",
+    "assignmentId": "ca-2026-08-06-13-nv-05",
+    "employeeId": "nv-05",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786010400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "db7b89e418284403b69f016b"
+    },
+    "id": "pc-cv-05-2-1",
+    "taskShiftId": "cv-05-2-1",
+    "shiftLinkId": "cv-05-2-1",
+    "assignmentId": "ca-2026-08-15-13-nv-05",
+    "employeeId": "nv-05",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "b104e096a746c0921e2f81e7"
+    },
+    "id": "pc-cv-05-2-2",
+    "taskShiftId": "cv-05-2-2",
+    "shiftLinkId": "cv-05-2-2",
+    "assignmentId": "ca-2026-08-16-07-nv-05",
+    "employeeId": "nv-05",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786852800000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "4a74d20210fce9897cc23230"
+    },
+    "id": "pc-cv-05-3-1",
+    "taskShiftId": "cv-05-3-1",
+    "shiftLinkId": "cv-05-3-1",
+    "assignmentId": "ca-2026-08-29-13-nv-05",
+    "employeeId": "nv-05",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "42e8a023e5192c7b3e2b008c"
+    },
+    "id": "pc-cv-05-3-2",
+    "taskShiftId": "cv-05-3-2",
+    "shiftLinkId": "cv-05-3-2",
+    "assignmentId": "ca-2026-08-30-07-nv-05",
+    "employeeId": "nv-05",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1788062400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "03368c6328687e6a388d55d0"
+    },
+    "id": "pc-cv-06-1-1",
+    "taskShiftId": "cv-06-1-1",
+    "shiftLinkId": "cv-06-1-1",
+    "assignmentId": "ca-2026-08-01-13-nv-06",
+    "employeeId": "nv-06",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "315026f11641f404567fd7a7"
+    },
+    "id": "pc-cv-06-1-2",
+    "taskShiftId": "cv-06-1-2",
+    "shiftLinkId": "cv-06-1-2",
+    "assignmentId": "ca-2026-08-02-07-nv-06",
+    "employeeId": "nv-06",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785643200000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "c8d0c1fe213fd2e85bfd0b3b"
+    },
+    "id": "pc-cv-06-2-1",
+    "taskShiftId": "cv-06-2-1",
+    "shiftLinkId": "cv-06-2-1",
+    "assignmentId": "ca-2026-08-10-13-nv-06",
+    "employeeId": "nv-06",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "73e9d225e9fe191411a21d89"
+    },
+    "id": "pc-cv-06-2-2",
+    "taskShiftId": "cv-06-2-2",
+    "shiftLinkId": "cv-06-2-2",
+    "assignmentId": "ca-2026-08-11-07-nv-06",
+    "employeeId": "nv-06",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786420800000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "2e2cb3694f17b128fe3fec01"
+    },
+    "id": "pc-cv-06-3-1",
+    "taskShiftId": "cv-06-3-1",
+    "shiftLinkId": "cv-06-3-1",
+    "assignmentId": "ca-2026-08-24-13-nv-06",
+    "employeeId": "nv-06",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "e0d566e9cf4bd389ccd9e504"
+    },
+    "id": "pc-cv-06-3-2",
+    "taskShiftId": "cv-06-3-2",
+    "shiftLinkId": "cv-06-3-2",
+    "assignmentId": "ca-2026-08-25-07-nv-06",
+    "employeeId": "nv-06",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787630400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "2ba5d2d299aea6391d91c060"
+    },
+    "id": "pc-cv-07-1-1",
+    "taskShiftId": "cv-07-1-1",
+    "shiftLinkId": "cv-07-1-1",
+    "assignmentId": "ca-2026-08-04-13-nv-07",
+    "employeeId": "nv-07",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "1116902cd86351acae97c8c8"
+    },
+    "id": "pc-cv-07-1-2",
+    "taskShiftId": "cv-07-1-2",
+    "shiftLinkId": "cv-07-1-2",
+    "assignmentId": "ca-2026-08-05-07-nv-07",
+    "employeeId": "nv-07",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785902400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "925bdf9295d73783840b946b"
+    },
+    "id": "pc-cv-07-2-1",
+    "taskShiftId": "cv-07-2-1",
+    "shiftLinkId": "cv-07-2-1",
+    "assignmentId": "ca-2026-08-14-07-nv-07",
+    "employeeId": "nv-07",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "6896a5552af76b78db594598"
+    },
+    "id": "pc-cv-07-2-2",
+    "taskShiftId": "cv-07-2-2",
+    "shiftLinkId": "cv-07-2-2",
+    "assignmentId": "ca-2026-08-19-13-nv-07",
+    "employeeId": "nv-07",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787133600000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "6711c194dd731fff33ca392c"
+    },
+    "id": "pc-cv-07-3-1",
+    "taskShiftId": "cv-07-3-1",
+    "shiftLinkId": "cv-07-3-1",
+    "assignmentId": "ca-2026-08-28-13-nv-07",
+    "employeeId": "nv-07",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "b9aea5b429258233cdd11192"
+    },
+    "id": "pc-cv-07-3-2",
+    "taskShiftId": "cv-07-3-2",
+    "shiftLinkId": "cv-07-3-2",
+    "assignmentId": "ca-2026-08-29-07-nv-07",
+    "employeeId": "nv-07",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787976000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "cfd6df1770a20a4a1e794d6d"
+    },
+    "id": "pc-cv-08-1-1",
+    "taskShiftId": "cv-08-1-1",
+    "shiftLinkId": "cv-08-1-1",
+    "assignmentId": "ca-2026-08-01-07-nv-08",
+    "employeeId": "nv-08",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "f2e83571eed3ac27b0dd4311"
+    },
+    "id": "pc-cv-08-1-2",
+    "taskShiftId": "cv-08-1-2",
+    "shiftLinkId": "cv-08-1-2",
+    "assignmentId": "ca-2026-08-01-13-nv-08",
+    "employeeId": "nv-08",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785578400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "858bb182d41b942780a61185"
+    },
+    "id": "pc-cv-08-2-1",
+    "taskShiftId": "cv-08-2-1",
+    "shiftLinkId": "cv-08-2-1",
+    "assignmentId": "ca-2026-08-15-13-nv-08",
+    "employeeId": "nv-08",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "3b4206a9ebd72f59d6d394b0"
+    },
+    "id": "pc-cv-08-2-2",
+    "taskShiftId": "cv-08-2-2",
+    "shiftLinkId": "cv-08-2-2",
+    "assignmentId": "ca-2026-08-16-07-nv-08",
+    "employeeId": "nv-08",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786852800000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "55747c1c4f16a8d8c9b268d5"
+    },
+    "id": "pc-cv-08-3-1",
+    "taskShiftId": "cv-08-3-1",
+    "shiftLinkId": "cv-08-3-1",
+    "assignmentId": "ca-2026-08-24-13-nv-08",
+    "employeeId": "nv-08",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "bd9635ec05f68e9d005e4690"
+    },
+    "id": "pc-cv-08-3-2",
+    "taskShiftId": "cv-08-3-2",
+    "shiftLinkId": "cv-08-3-2",
+    "assignmentId": "ca-2026-08-29-13-nv-08",
+    "employeeId": "nv-08",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787997600000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "81948530b0ece3ba6cea6fa4"
+    },
+    "id": "pc-cv-09-1-1",
+    "taskShiftId": "cv-09-1-1",
+    "shiftLinkId": "cv-09-1-1",
+    "assignmentId": "ca-2026-08-02-07-nv-09",
+    "employeeId": "nv-09",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "3d51fcbd33a6c378049efda9"
+    },
+    "id": "pc-cv-09-1-2",
+    "taskShiftId": "cv-09-1-2",
+    "shiftLinkId": "cv-09-1-2",
+    "assignmentId": "ca-2026-08-02-13-nv-09",
+    "employeeId": "nv-09",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785664800000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "8a217bd4e272fd9588a0f601"
+    },
+    "id": "pc-cv-09-2-1",
+    "taskShiftId": "cv-09-2-1",
+    "shiftLinkId": "cv-09-2-1",
+    "assignmentId": "ca-2026-08-11-07-nv-09",
+    "employeeId": "nv-09",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "1b24428505a2704645a8f797"
+    },
+    "id": "pc-cv-09-2-2",
+    "taskShiftId": "cv-09-2-2",
+    "shiftLinkId": "cv-09-2-2",
+    "assignmentId": "ca-2026-08-11-13-nv-09",
+    "employeeId": "nv-09",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786442400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "53f8d3df63630aba690d6ec7"
+    },
+    "id": "pc-cv-09-3-1",
+    "taskShiftId": "cv-09-3-1",
+    "shiftLinkId": "cv-09-3-1",
+    "assignmentId": "ca-2026-08-25-13-nv-09",
+    "employeeId": "nv-09",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "e5fcd1ecafe61d154a7fcb50"
+    },
+    "id": "pc-cv-09-3-2",
+    "taskShiftId": "cv-09-3-2",
+    "shiftLinkId": "cv-09-3-2",
+    "assignmentId": "ca-2026-08-26-07-nv-09",
+    "employeeId": "nv-09",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787716800000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "857207dc07ba8d2bc4fd87c6"
+    },
+    "id": "pc-cv-10-1-1",
+    "taskShiftId": "cv-10-1-1",
+    "shiftLinkId": "cv-10-1-1",
+    "assignmentId": "ca-2026-08-05-07-nv-10",
+    "employeeId": "nv-10",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "5d8bafad92a4a19309420377"
+    },
+    "id": "pc-cv-10-1-2",
+    "taskShiftId": "cv-10-1-2",
+    "shiftLinkId": "cv-10-1-2",
+    "assignmentId": "ca-2026-08-05-13-nv-10",
+    "employeeId": "nv-10",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785924000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "5ddb6410008772da3d4cd317"
+    },
+    "id": "pc-cv-10-2-1",
+    "taskShiftId": "cv-10-2-1",
+    "shiftLinkId": "cv-10-2-1",
+    "assignmentId": "ca-2026-08-14-13-nv-10",
+    "employeeId": "nv-10",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "e80fc87f52a5b8a5cac48e7e"
+    },
+    "id": "pc-cv-10-2-2",
+    "taskShiftId": "cv-10-2-2",
+    "shiftLinkId": "cv-10-2-2",
+    "assignmentId": "ca-2026-08-20-07-nv-10",
+    "employeeId": "nv-10",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787198400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "d8d476eaf9b26e47dfa19359"
+    },
+    "id": "pc-cv-10-3-1",
+    "taskShiftId": "cv-10-3-1",
+    "shiftLinkId": "cv-10-3-1",
+    "assignmentId": "ca-2026-08-29-07-nv-10",
+    "employeeId": "nv-10",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "d66950c76e1415963e8df925"
+    },
+    "id": "pc-cv-10-3-2",
+    "taskShiftId": "cv-10-3-2",
+    "shiftLinkId": "cv-10-3-2",
+    "assignmentId": "ca-2026-08-29-13-nv-10",
+    "employeeId": "nv-10",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787997600000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "326b53fbe096778f4b1c51d1"
+    },
+    "id": "pc-cv-11-1-1",
+    "taskShiftId": "cv-11-1-1",
+    "shiftLinkId": "cv-11-1-1",
+    "assignmentId": "ca-2026-08-01-07-nv-11",
+    "employeeId": "nv-11",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "a5e3cf6fc1f48998681affe0"
+    },
+    "id": "pc-cv-11-1-2",
+    "taskShiftId": "cv-11-1-2",
+    "shiftLinkId": "cv-11-1-2",
+    "assignmentId": "ca-2026-08-01-13-nv-11",
+    "employeeId": "nv-11",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785578400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "ac8368dfbe42589160d35a07"
+    },
+    "id": "pc-cv-11-2-1",
+    "taskShiftId": "cv-11-2-1",
+    "shiftLinkId": "cv-11-2-1",
+    "assignmentId": "ca-2026-08-15-07-nv-11",
+    "employeeId": "nv-11",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "a090265e69279e738f5c3795"
+    },
+    "id": "pc-cv-11-2-2",
+    "taskShiftId": "cv-11-2-2",
+    "shiftLinkId": "cv-11-2-2",
+    "assignmentId": "ca-2026-08-15-13-nv-11",
+    "employeeId": "nv-11",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786788000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "bbc38b3b67630e3cf97245a8"
+    },
+    "id": "pc-cv-11-3-1",
+    "taskShiftId": "cv-11-3-1",
+    "shiftLinkId": "cv-11-3-1",
+    "assignmentId": "ca-2026-08-24-07-nv-11",
+    "employeeId": "nv-11",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "8a26ba6d3c747f8624104204"
+    },
+    "id": "pc-cv-11-3-2",
+    "taskShiftId": "cv-11-3-2",
+    "shiftLinkId": "cv-11-3-2",
+    "assignmentId": "ca-2026-08-24-13-nv-11",
+    "employeeId": "nv-11",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787565600000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "ea322fc3d79646f1e17a8adf"
+    },
+    "id": "pc-cv-12-1-1",
+    "taskShiftId": "cv-12-1-1",
+    "shiftLinkId": "cv-12-1-1",
+    "assignmentId": "ca-2026-08-02-13-nv-12",
+    "employeeId": "nv-12",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "ce1f6ead1f2f9188c96e6415"
+    },
+    "id": "pc-cv-12-1-2",
+    "taskShiftId": "cv-12-1-2",
+    "shiftLinkId": "cv-12-1-2",
+    "assignmentId": "ca-2026-08-03-07-nv-12",
+    "employeeId": "nv-12",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785729600000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "202d6c8dea65dae07a90dad6"
+    },
+    "id": "pc-cv-12-2-1",
+    "taskShiftId": "cv-12-2-1",
+    "shiftLinkId": "cv-12-2-1",
+    "assignmentId": "ca-2026-08-12-07-nv-12",
+    "employeeId": "nv-12",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "1108caffe59fe663c14e9c10"
+    },
+    "id": "pc-cv-12-2-2",
+    "taskShiftId": "cv-12-2-2",
+    "shiftLinkId": "cv-12-2-2",
+    "assignmentId": "ca-2026-08-12-13-nv-12",
+    "employeeId": "nv-12",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786528800000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "45a981e9b2ebe9cb100663a4"
+    },
+    "id": "pc-cv-12-3-1",
+    "taskShiftId": "cv-12-3-1",
+    "shiftLinkId": "cv-12-3-1",
+    "assignmentId": "ca-2026-08-26-13-nv-12",
+    "employeeId": "nv-12",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "f70c93aa80e709396a293e16"
+    },
+    "id": "pc-cv-12-3-2",
+    "taskShiftId": "cv-12-3-2",
+    "shiftLinkId": "cv-12-3-2",
+    "assignmentId": "ca-2026-08-27-07-nv-12",
+    "employeeId": "nv-12",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787803200000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "8eae9de9e70dc89983e52602"
+    },
+    "id": "pc-cv-13-1-1",
+    "taskShiftId": "cv-13-1-1",
+    "shiftLinkId": "cv-13-1-1",
+    "assignmentId": "ca-2026-08-05-13-nv-13",
+    "employeeId": "nv-13",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "8d6aa44204c0675e14c99b39"
+    },
+    "id": "pc-cv-13-1-2",
+    "taskShiftId": "cv-13-1-2",
+    "shiftLinkId": "cv-13-1-2",
+    "assignmentId": "ca-2026-08-06-07-nv-13",
+    "employeeId": "nv-13",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785988800000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "b92ed06a1c86a9a1d51d55f9"
+    },
+    "id": "pc-cv-13-2-1",
+    "taskShiftId": "cv-13-2-1",
+    "shiftLinkId": "cv-13-2-1",
+    "assignmentId": "ca-2026-08-15-07-nv-13",
+    "employeeId": "nv-13",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "6b67662794203babc982403b"
+    },
+    "id": "pc-cv-13-2-2",
+    "taskShiftId": "cv-13-2-2",
+    "shiftLinkId": "cv-13-2-2",
+    "assignmentId": "ca-2026-08-20-13-nv-13",
+    "employeeId": "nv-13",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787220000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "9e6c98698d789f845b10a446"
+    },
+    "id": "pc-cv-13-3-1",
+    "taskShiftId": "cv-13-3-1",
+    "shiftLinkId": "cv-13-3-1",
+    "assignmentId": "ca-2026-08-29-13-nv-13",
+    "employeeId": "nv-13",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "217c283a854be81ab3e62555"
+    },
+    "id": "pc-cv-13-3-2",
+    "taskShiftId": "cv-13-3-2",
+    "shiftLinkId": "cv-13-3-2",
+    "assignmentId": "ca-2026-08-30-07-nv-13",
+    "employeeId": "nv-13",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1788062400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "dfd29bae05e5d49fd96199dd"
+    },
+    "id": "pc-cv-14-1-1",
+    "taskShiftId": "cv-14-1-1",
+    "shiftLinkId": "cv-14-1-1",
+    "assignmentId": "ca-2026-08-01-07-nv-14",
+    "employeeId": "nv-14",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "9c5644263e90fadc5ca942e0"
+    },
+    "id": "pc-cv-14-1-2",
+    "taskShiftId": "cv-14-1-2",
+    "shiftLinkId": "cv-14-1-2",
+    "assignmentId": "ca-2026-08-01-13-nv-14",
+    "employeeId": "nv-14",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785578400000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "fa4542639d338274f5f83973"
+    },
+    "id": "pc-cv-14-2-1",
+    "taskShiftId": "cv-14-2-1",
+    "shiftLinkId": "cv-14-2-1",
+    "assignmentId": "ca-2026-08-10-07-nv-14",
+    "employeeId": "nv-14",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "8f08f128e22a36c71fe399e0"
+    },
+    "id": "pc-cv-14-2-2",
+    "taskShiftId": "cv-14-2-2",
+    "shiftLinkId": "cv-14-2-2",
+    "assignmentId": "ca-2026-08-10-13-nv-14",
+    "employeeId": "nv-14",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1786356000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "0fa01abd617db868b5a81359"
+    },
+    "id": "pc-cv-14-3-1",
+    "taskShiftId": "cv-14-3-1",
+    "shiftLinkId": "cv-14-3-1",
+    "assignmentId": "ca-2026-08-23-13-nv-14",
+    "employeeId": "nv-14",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "71d6d6ee186f8c462e1a8e6c"
+    },
+    "id": "pc-cv-14-3-2",
+    "taskShiftId": "cv-14-3-2",
+    "shiftLinkId": "cv-14-3-2",
+    "assignmentId": "ca-2026-08-24-07-nv-14",
+    "employeeId": "nv-14",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787544000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "48abb67ae205ce0a6080b37d"
+    },
+    "id": "pc-cv-15-1-1",
+    "taskShiftId": "cv-15-1-1",
+    "shiftLinkId": "cv-15-1-1",
+    "assignmentId": "ca-2026-08-03-13-nv-15",
+    "employeeId": "nv-15",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "a17f3aab4b7da9932d1a82bf"
+    },
+    "id": "pc-cv-15-1-2",
+    "taskShiftId": "cv-15-1-2",
+    "shiftLinkId": "cv-15-1-2",
+    "assignmentId": "ca-2026-08-04-07-nv-15",
+    "employeeId": "nv-15",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1785816000000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "e90f328b1c59a7a61dfae5f4"
+    },
+    "id": "pc-cv-15-2-1",
+    "taskShiftId": "cv-15-2-1",
+    "shiftLinkId": "cv-15-2-1",
+    "assignmentId": "ca-2026-08-13-07-nv-15",
+    "employeeId": "nv-15",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "63a8830852e72a2d2a31ac13"
+    },
+    "id": "pc-cv-15-2-2",
+    "taskShiftId": "cv-15-2-2",
+    "shiftLinkId": "cv-15-2-2",
+    "assignmentId": "ca-2026-08-18-13-nv-15",
+    "employeeId": "nv-15",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787047200000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "1f591de0ef683d59f40b85a3"
+    },
+    "id": "pc-cv-15-3-1",
+    "taskShiftId": "cv-15-3-1",
+    "shiftLinkId": "cv-15-3-1",
+    "assignmentId": "ca-2026-08-27-13-nv-15",
+    "employeeId": "nv-15",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "0b4911fc740796eada1b2cb8"
+    },
+    "id": "pc-cv-15-3-2",
+    "taskShiftId": "cv-15-3-2",
+    "shiftLinkId": "cv-15-3-2",
+    "assignmentId": "ca-2026-08-28-07-nv-15",
+    "employeeId": "nv-15",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1787889600000"
+      }
+    },
+    "note": "Nội dung minh họa đã được ẩn danh."
+  },
+  {
+    "_id": {
+      "$oid": "abb9a0c587b6931c3e71246a"
+    },
+    "id": "pc-chung-nv-02",
+    "taskShiftId": "cv-chung-1",
+    "shiftLinkId": "cv-chung-1",
+    "assignmentId": "ca-2026-09-15-07-nv-02",
+    "employeeId": "nv-02",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1789444800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e5ea43c6de7be4ad4c601931"
+    },
+    "id": "pc-chung-nv-05",
+    "taskShiftId": "cv-chung-1",
+    "shiftLinkId": "cv-chung-1",
+    "assignmentId": "ca-2026-09-15-07-nv-05",
+    "employeeId": "nv-05",
+    "personalStatus": "DONE",
+    "doneAt": {
+      "$date": {
+        "$numberLong": "1789444800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8c8d08ac095873c72bff1af3"
+    },
+    "id": "pc-cho-admin",
+    "taskShiftId": "cv-cho-admin-1",
+    "shiftLinkId": "cv-cho-admin-1",
+    "assignmentId": "ca-2026-08-05-13-nv-01",
+    "employeeId": "nv-01",
+    "personalStatus": "TODO",
+    "note": "Nội dung minh họa đã được ẩn danh.",
+    "transferredTo": "p4-6af9b04d6c3831118cd07712",
+    "waitingAdmin": false
+  },
+  {
+    "_id": {
+      "$oid": "6af9b04d6c3831118cd07716"
+    },
+    "id": "p4-6af9b04d6c3831118cd07712",
+    "taskId": "cv-cho-admin",
+    "taskShiftId": "p4-6af9b04d6c3831118cd07711",
+    "shiftLinkId": "p4-6af9b04d6c3831118cd07711",
+    "assignmentId": "p4-6af992b1b2dd08da90cd41fb",
+    "employeeId": "nv-01",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "fromTaskAssignmentId": "pc-cho-admin",
+    "transferredTo": "p4-6af9b5f4ed3fe4f1d80b4650",
+    "waitingAdmin": false
+  },
+  {
+    "_id": {
+      "$oid": "6af9b5f5ed3fe4f1d80b4654"
+    },
+    "id": "p4-6af9b5f4ed3fe4f1d80b4650",
+    "taskId": "cv-cho-admin",
+    "taskShiftId": "p4-6af9b5f4ed3fe4f1d80b464f",
+    "shiftLinkId": "p4-6af9b5f4ed3fe4f1d80b464f",
+    "assignmentId": "p4-6af99323b2dd08da90cd421b",
+    "employeeId": "nv-02",
+    "personalStatus": "TODO",
+    "doneAt": null,
+    "fromTaskAssignmentId": "p4-6af9b04d6c3831118cd07712",
+    "waitingAdmin": true
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee28"
+    },
+    "id": "p4-6af9e49f7c0fe08a17bcee13",
+    "taskId": "p4-viewing-lx-6af9e49f7c0fe08a17bcee10",
+    "taskShiftId": "p4-6af9e49f7c0fe08a17bcee12",
+    "shiftLinkId": "p4-6af9e49f7c0fe08a17bcee12",
+    "assignmentId": "p4-6af9cc174bc09909d8774361",
+    "employeeId": "nv-13",
+    "personalStatus": "TODO",
+    "doneAt": null
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee2f"
+    },
+    "id": "p4-6af9e4a07c0fe08a17bcee19",
+    "taskId": "p4-viewing-lx-6af9e4a07c0fe08a17bcee16",
+    "taskShiftId": "p4-6af9e4a07c0fe08a17bcee18",
+    "shiftLinkId": "p4-6af9e4a07c0fe08a17bcee18",
+    "assignmentId": "p4-6af9cc174bc09909d8774361",
+    "employeeId": "nv-13",
+    "personalStatus": "TODO",
+    "doneAt": null
+  },
+  {
+    "_id": {
+      "$oid": "6af9e4a07c0fe08a17bcee36"
+    },
+    "id": "p4-6af9e4a07c0fe08a17bcee1f",
+    "taskId": "p4-viewing-lx-6af9e4a07c0fe08a17bcee1c",
+    "taskShiftId": "p4-6af9e4a07c0fe08a17bcee1e",
+    "shiftLinkId": "p4-6af9e4a07c0fe08a17bcee1e",
+    "assignmentId": "p4-6af9cc174bc09909d877437a",
+    "employeeId": "nv-15",
+    "personalStatus": "TODO",
+    "doneAt": null
+  },
+  {
+    "_id": {
+      "$oid": "6afb25f429b799683b594ae8"
+    },
+    "id": "p4-6afb25f429b799683b594ae2",
+    "taskId": "p4-6afb25f429b799683b594ae0",
+    "taskShiftId": "p4-6afb25f429b799683b594ae1",
+    "shiftLinkId": "p4-6afb25f429b799683b594ae1",
+    "assignmentId": "p4-6af9cc174bc09909d8774361",
+    "employeeId": "nv-13",
+    "personalStatus": "TODO",
+    "doneAt": null
+  },
+  {
+    "_id": {
+      "$oid": "6afb59f3ee9c8c05f08f3196"
+    },
+    "id": "p4-6afb59f2ee9c8c05f08f3187",
+    "taskId": "p4-viewing-lx-6afb59f2ee9c8c05f08f3184",
+    "taskShiftId": "p4-6afb59f2ee9c8c05f08f3186",
+    "shiftLinkId": "p4-6afb59f2ee9c8c05f08f3186",
+    "assignmentId": "p4-6af9cc174bc09909d8774380",
+    "employeeId": "nv-08",
+    "personalStatus": "TODO",
+    "doneAt": null
+  },
+  {
+    "_id": {
+      "$oid": "6afb59f3ee9c8c05f08f319d"
+    },
+    "id": "p4-6afb59f3ee9c8c05f08f318d",
+    "taskId": "p4-viewing-lx-6afb59f2ee9c8c05f08f318a",
+    "taskShiftId": "p4-6afb59f2ee9c8c05f08f318c",
+    "shiftLinkId": "p4-6afb59f2ee9c8c05f08f318c",
+    "assignmentId": "p4-6af9cc174bc09909d8774387",
+    "employeeId": "nv-12",
+    "personalStatus": "TODO",
+    "doneAt": null
+  }
+]

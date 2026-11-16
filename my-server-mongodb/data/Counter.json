@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "GC-202611",
+    "value": {
+      "$numberInt": "3"
+    }
+  },
+  {
+    "_id": "PAYOS",
+    "value": {
+      "$numberInt": "100003"
+    }
+  },
+  {
+    "_id": "PC-202611",
+    "value": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": "HD-202611",
+    "value": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": "BL-202611",
+    "value": {
+      "$numberInt": "1"
+    }
+  }
+]

@@ -33,16 +33,82 @@
     >
   </nav>
   <div class="portal-profile">
-    <button
-      class="icon-btn employee-notification"
-      (click)="notificationOpen.set(!notificationOpen())"
-      aria-label="Thông báo"
-      [attr.aria-expanded]="notificationOpen()"
-    >
-      <app-icon name="bell" [size]="20" /><span *ngIf="notifications.unread()">{{
-        notifications.unread()
-      }}</span>
-    </button>
+    <div class="employee-notifications">
+      <button
+        #notificationToggle
+        type="button"
+        class="icon-btn employee-notification"
+        (click)="toggleNotifications()"
+        aria-label="Thông báo"
+        aria-controls="employee-notifications"
+        [attr.aria-expanded]="notificationOpen()"
+        [class.has-unread]="notifications.unread() > 0"
+      >
+        <app-icon name="bell" [size]="20" /><span *ngIf="notifications.unread()">{{
+          notifications.unread()
+        }}</span>
+      </button>
+      <section
+        *ngIf="notificationOpen()"
+        id="employee-notifications"
+        class="notification-panel"
+        aria-label="Thông báo của tôi"
+      >
+        <div class="notification-heading">
+          <strong>Thông báo</strong
+          ><button
+            class="btn sm"
+            type="button"
+            [disabled]="
+              notifications.loading() || notifications.saving() || !notifications.unread()
+            "
+            (click)="notifications.markRead()"
+          >
+            Đọc tất cả</button
+          ><button
+            class="notification-close"
+            type="button"
+            aria-label="Đóng thông báo"
+            (click)="closeNotifications()"
+          >
+            <app-icon name="close" />
+          </button>
+        </div>
+        <p role="status" *ngIf="notifications.loading()">Đang tải thông báo…</p>
+        <div *ngIf="notifications.error()" role="alert">
+          <p class="error">{{ notifications.error() }}</p>
+          <button
+            type="button"
+            class="btn sm"
+            [disabled]="notifications.loading()"
+            (click)="notifications.refresh()"
+          >
+            Thử lại
+          </button>
+        </div>
+        <p
+          class="muted"
+          *ngIf="
+            !notifications.loading() && !notifications.error() && !notifications.items().length
+          "
+        >
+          Chưa có thông báo.
+        </p>
+        <button
+          type="button"
+          class="notification-item"
+          *ngFor="let item of notifications.items()"
+          [class.unread]="!item.read"
+          [disabled]="item.read || notifications.saving() || notifications.loading()"
+          (click)="notifications.markRead(item.id)"
+          [attr.aria-label]="(item.read ? 'Đã đọc: ' : 'Đánh dấu đã đọc: ') + item.title"
+        >
+          <strong>{{ item.title }}</strong
+          ><span>{{ item.body }}</span
+          ><small>{{ item.createdAt | date: 'dd/MM/yyyy HH:mm' }}</small>
+        </button>
+      </section>
+    </div>
     <img
       *ngIf="employee?.avatar"
       class="avatar"
@@ -62,36 +128,7 @@
 <main class="employee-main">
   <p *ngIf="profileLoading()" role="status">Đang tải hồ sơ nhân viên…</p>
   <p class="error" *ngIf="profileError()" role="alert">{{ profileError() }}</p>
-  <section *ngIf="notificationOpen()" class="emp-card" aria-label="Thông báo của tôi">
-    <h2>Thông báo</h2>
-    <p role="status" *ngIf="notifications.loading()">Đang tải thông báo…</p>
-    <p class="error" role="alert" *ngIf="notifications.error()">{{ notifications.error() }}</p>
-    <button class="emp-btn" (click)="notifications.refresh()" [disabled]="notifications.loading()">
-      Tải lại
-    </button>
-    <button
-      class="emp-btn"
-      (click)="notifications.markRead()"
-      [disabled]="notifications.saving() || !notifications.unread()"
-    >
-      Đánh dấu tất cả đã đọc
-    </button>
-    <p *ngIf="!notifications.loading() && !notifications.items().length">Chưa có thông báo.</p>
-    <article *ngFor="let item of notifications.items()">
-      <strong>{{ item.title }}</strong>
-      <p>{{ item.body }}</p>
-      <small>{{ item.createdAt | date: 'dd/MM/yyyy HH:mm' }}</small>
-      <button
-        class="emp-btn"
-        *ngIf="!item.read"
-        (click)="notifications.markRead(item.id)"
-        [disabled]="notifications.saving()"
-      >
-        Đánh dấu đã đọc
-      </button>
-    </article>
-  </section>
-  <router-outlet />
+  <app-back-navigation /><router-outlet />
 </main>
 <footer class="portal-footer employee-footer">
   <span>© 2026 Houzz Uni (Công ty CP Bất Động Sản Houzz Uni). Bảo lưu mọi quyền.</span>

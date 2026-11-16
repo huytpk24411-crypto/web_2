@@ -1,0 +1,1246 @@
+[
+  {
+    "_id": {
+      "$oid": "9a7dd574e9a258f8d328be1e"
+    },
+    "id": "gc-0001",
+    "customerId": "kh-05",
+    "roomId": "phong-01",
+    "employeeId": "nv-06",
+    "contact": {
+      "name": "Khách liên hệ 5",
+      "phone": "0900000021"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1786762800000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1786762800000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1786935600000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786762800000"
+      }
+    },
+    "viewingId": "lx-0005",
+    "paymentId": "ttien-0005",
+    "creditedToDepositId": "coc-0005",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1786777200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1019e32b550e39ae85378b04"
+    },
+    "id": "gc-0002",
+    "customerId": "kh-07",
+    "roomId": "phong-03",
+    "employeeId": "nv-08",
+    "contact": {
+      "name": "Khách liên hệ 7",
+      "phone": "0900000023"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1787281200000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1787281200000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1787454000000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787281200000"
+      }
+    },
+    "viewingId": "lx-0007",
+    "paymentId": "ttien-0008",
+    "creditedToDepositId": "coc-0007",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1787295600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0b20141461bc3ceec1a278e9"
+    },
+    "id": "gc-0003",
+    "customerId": "kh-09",
+    "roomId": "phong-05",
+    "employeeId": "nv-10",
+    "contact": {
+      "name": "Khách liên hệ 9",
+      "phone": "0900000025"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1787799600000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1787799600000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1787972400000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787799600000"
+      }
+    },
+    "viewingId": "lx-0009",
+    "paymentId": "ttien-0011",
+    "creditedToDepositId": "coc-0009",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1787814000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "91d09235bb50cc9652916130"
+    },
+    "id": "gc-0004",
+    "customerId": "kh-11",
+    "roomId": "phong-07",
+    "employeeId": "nv-03",
+    "contact": {
+      "name": "Khách liên hệ 11",
+      "phone": "0900000027"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1788663600000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1788663600000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1788836400000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788663600000"
+      }
+    },
+    "viewingId": "lx-0011",
+    "paymentId": "ttien-0014",
+    "creditedToDepositId": "coc-0011",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1788678000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "823090e0e6a1d1e231d1f538"
+    },
+    "id": "gc-0005",
+    "customerId": "kh-13",
+    "roomId": "phong-09",
+    "employeeId": "nv-05",
+    "contact": {
+      "name": "Khách liên hệ 13",
+      "phone": "0900000029"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1789182000000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1789182000000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1789354800000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789182000000"
+      }
+    },
+    "viewingId": "lx-0013",
+    "paymentId": "ttien-0017",
+    "creditedToDepositId": "coc-0013",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1789196400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66f29c4d768743594297ca1a"
+    },
+    "id": "gc-0006",
+    "customerId": "kh-15",
+    "roomId": "phong-11",
+    "employeeId": "nv-07",
+    "contact": {
+      "name": "Khách liên hệ 15",
+      "phone": "0900000031"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1789700400000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1789700400000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1789873200000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789700400000"
+      }
+    },
+    "viewingId": "lx-0015",
+    "paymentId": "ttien-0020",
+    "creditedToDepositId": "coc-0015",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1789714800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64599f1c16015807b6309e7f"
+    },
+    "id": "gc-0007",
+    "customerId": "kh-17",
+    "roomId": "phong-13",
+    "employeeId": "nv-09",
+    "contact": {
+      "name": "Khách liên hệ 17",
+      "phone": "0900000033"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1790218800000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1790218800000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1790391600000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790218800000"
+      }
+    },
+    "viewingId": "lx-0017",
+    "paymentId": "ttien-0023",
+    "creditedToDepositId": "coc-0017",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1790233200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3ee0c031eb4c5adc11722861"
+    },
+    "id": "gc-0008",
+    "customerId": "kh-18",
+    "roomId": "phong-15",
+    "employeeId": "nv-02",
+    "contact": {
+      "name": "Khách liên hệ 18",
+      "phone": "0900000034"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1790996400000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1790996400000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1791169200000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1790996400000"
+      }
+    },
+    "viewingId": "lx-0018",
+    "paymentId": "ttien-0025",
+    "creditedToDepositId": "coc-0018",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1791010800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2e9a22bd9e41720948f21031"
+    },
+    "id": "gc-0009",
+    "customerId": "kh-19",
+    "roomId": "phong-17",
+    "employeeId": "nv-03",
+    "contact": {
+      "name": "Khách liên hệ 19",
+      "phone": "0900000035"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1791255600000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1791255600000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1791428400000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791255600000"
+      }
+    },
+    "viewingId": "lx-0019",
+    "paymentId": "ttien-0027",
+    "creditedToDepositId": "coc-0019",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1791270000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "89f20d9a90ca3c72024a3e96"
+    },
+    "id": "gc-0010",
+    "customerId": "kh-20",
+    "roomId": "phong-19",
+    "employeeId": "nv-04",
+    "contact": {
+      "name": "Khách liên hệ 20",
+      "phone": "0900000036"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1791514800000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1791514800000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1791687600000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1791514800000"
+      }
+    },
+    "viewingId": "lx-0020",
+    "paymentId": "ttien-0029",
+    "creditedToDepositId": "coc-0020",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1791529200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6cb39cb2113879a38aaf19c0"
+    },
+    "id": "gc-0011",
+    "customerId": "kh-22",
+    "roomId": "phong-21",
+    "employeeId": "nv-06",
+    "contact": {
+      "name": "Khách liên hệ 22",
+      "phone": "0900000038"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1792033200000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1792033200000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1792206000000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792033200000"
+      }
+    },
+    "viewingId": "lx-0022",
+    "paymentId": "ttien-0032",
+    "creditedToDepositId": "coc-0022",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1792047600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "68be258063d3762d4d59b9fe"
+    },
+    "id": "gc-0012",
+    "customerId": "kh-24",
+    "roomId": "phong-47",
+    "employeeId": "nv-08",
+    "contact": {
+      "name": "Khách liên hệ 24",
+      "phone": "0900000040"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1792551600000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1792551600000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1792724400000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1792551600000"
+      }
+    },
+    "viewingId": "lx-0024",
+    "paymentId": "ttien-0035",
+    "creditedToDepositId": "coc-0024",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1792566000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2363f8a35195c180e9b725c9"
+    },
+    "id": "gc-0013",
+    "customerId": "kh-25",
+    "roomId": "phong-23",
+    "employeeId": "nv-02",
+    "contact": {
+      "name": "Khách hàng 25",
+      "phone": "0900000041"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1793674800000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "viewingId": "lx-0025",
+    "paymentId": "ttien-0037",
+    "creditedToDepositId": "coc-0025",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1793516400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b6951c55e4320b1746920604"
+    },
+    "id": "gc-0014",
+    "customerId": "kh-27",
+    "roomId": "phong-27",
+    "employeeId": "nv-01",
+    "contact": {
+      "name": "Khách hàng 27",
+      "phone": "0900000043"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "EXPIRED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1793674800000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "viewingId": "lx-0027",
+    "paymentId": "ttien-0040",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1793879942928"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b607eb799d34aeb8c339309"
+    },
+    "id": "gc-0015",
+    "customerId": "kh-28",
+    "roomId": "phong-28",
+    "employeeId": "nv-02",
+    "contact": {
+      "name": "Khách hàng 28",
+      "phone": "0900000044"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "EXPIRED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1793674800000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "viewingId": "lx-0028",
+    "paymentId": "ttien-0041",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1793879942928"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "437e4a519fb0ca9b7f9b6398"
+    },
+    "id": "gc-0016",
+    "customerId": "kh-29",
+    "roomId": "phong-29",
+    "employeeId": "nv-03",
+    "contact": {
+      "name": "Khách hàng 29",
+      "phone": "0900000045"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "EXPIRED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1793674800000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "viewingId": "lx-0029",
+    "paymentId": "ttien-0042",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1793879942928"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f3d195e52ab3be9c8641a50c"
+    },
+    "id": "gc-0017",
+    "customerId": "kh-30",
+    "roomId": "phong-30",
+    "employeeId": "nv-04",
+    "contact": {
+      "name": "Khách hàng 30",
+      "phone": "0900000046"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CANCELLED",
+    "isActive": false,
+    "paidAt": null,
+    "lockStartsAt": null,
+    "expiresAt": null,
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "viewingId": "lx-0030",
+    "cancellation": {
+      "reason": "Nội dung minh họa đã được ẩn danh.",
+      "at": {
+        "$date": {
+          "$numberLong": "1794157200000"
+        }
+      },
+      "by": "admin"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4ff844721a6438fc5e6f15fc"
+    },
+    "id": "gc-0018",
+    "customerId": "kh-31",
+    "roomId": "phong-31",
+    "employeeId": "nv-05",
+    "contact": {
+      "name": "Khách hàng 31",
+      "phone": "0900000047"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "EXPIRED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793242800000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1793242800000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1793415600000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793242800000"
+      }
+    },
+    "paymentId": "ttien-0043"
+  },
+  {
+    "_id": {
+      "$oid": "97ef884e58dee98020ade291"
+    },
+    "id": "gc-0019",
+    "customerId": "kh-32",
+    "roomId": "phong-32",
+    "employeeId": "nv-06",
+    "contact": {
+      "name": "Khách hàng 32",
+      "phone": "0900000048"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CANCELLED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1793761200000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "viewingId": "lx-0032",
+    "paymentId": "ttien-0044"
+  },
+  {
+    "_id": {
+      "$oid": "36b7ea1cde256b4c5bdb9d42"
+    },
+    "id": "gc-0020",
+    "customerId": "kh-33",
+    "roomId": "phong-33",
+    "employeeId": "nv-07",
+    "contact": {
+      "name": "Khách hàng 33",
+      "phone": "0900000049"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1793761200000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "viewingId": "lx-0033",
+    "paymentId": "ttien-0045",
+    "creditedToDepositId": "coc-0027",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1793602800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1bfcc61c5be1f581894e1317"
+    },
+    "id": "gc-0021",
+    "customerId": "kh-34",
+    "roomId": "phong-34",
+    "employeeId": "nv-08",
+    "contact": {
+      "name": "Khách hàng 34",
+      "phone": "0900000050"
+    },
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "status": "CONVERTED",
+    "isActive": false,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1793761200000"
+      }
+    },
+    "policyVersionId": "GIU_CHO",
+    "policyLevelId": "GIU_CHO-1",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "viewingId": "lx-0034",
+    "paymentId": "ttien-0047",
+    "creditedToDepositId": "coc-0028",
+    "convertedAt": {
+      "$date": {
+        "$numberLong": "1793602800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6af0956aab5b481e72bbbd15"
+    },
+    "id": "gc-e63162ac-781d-461c-b201-0cad2655a9db",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "contact": {
+      "name": "Khách liên hệ 1",
+      "phone": "0900000017"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794151786610"
+      }
+    },
+    "customerId": "kh-01",
+    "expiresAt": null,
+    "isActive": false,
+    "lockStartsAt": null,
+    "moveIn": "2026-11-11",
+    "note": "",
+    "paidAt": null,
+    "policyLevelId": "GIU_CHO-1",
+    "policyVersionId": "GIU_CHO",
+    "roomId": "phong-48",
+    "status": "CANCELLED",
+    "cancellation": {
+      "reason": "Nội dung minh họa đã được ẩn danh.",
+      "at": {
+        "$date": {
+          "$numberLong": "1794157200000"
+        }
+      },
+      "by": "admin"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afabf73540231e55f2d1201"
+    },
+    "id": "gc-de655727-3925-4739-ad7c-0434d00695e2",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "contact": {
+      "name": "Khách hàng 43",
+      "phone": "0900000059"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794817907285"
+      }
+    },
+    "customerId": "kh-6af9b41ded3fe4f1d80b464b",
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1794818807285"
+      }
+    },
+    "isActive": false,
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1794817907285"
+      }
+    },
+    "moveIn": "2026-11-18",
+    "note": "",
+    "number": "GC-202611-0001",
+    "paidAt": null,
+    "paymentExpiresAt": {
+      "$date": {
+        "$numberLong": "1794818807285"
+      }
+    },
+    "policyLevelId": "GIU_CHO-1",
+    "policyVersionId": "GIU_CHO",
+    "roomId": "phong-30",
+    "roomSnapshot": {
+      "id": "phong-30",
+      "code": "PHONG_30",
+      "name": "Căn hộ Rattan Tropical",
+      "type": "Căn hộ",
+      "address": "Đường Lê Văn Việt, Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh",
+      "propertyId": "b5",
+      "propertyName": "Hi-Tech Home Tăng Nhơn Phú",
+      "ownerId": "chu-10",
+      "monthlyRent": {
+        "$numberInt": "5000000"
+      },
+      "area": {
+        "$numberInt": "36"
+      },
+      "capacity": {
+        "$numberInt": "3"
+      }
+    },
+    "status": "CANCELLED",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794817934366"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afae177540231e55f2d2792"
+    },
+    "id": "gc-b8d58b27-9e7b-4664-ba9e-b3351526d6de",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "contact": {
+      "name": "Khách hàng 43",
+      "phone": "0900000059"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794826615020"
+      }
+    },
+    "customerId": "kh-6af9b41ded3fe4f1d80b464b",
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1794827515020"
+      }
+    },
+    "isActive": false,
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1794826615020"
+      }
+    },
+    "moveIn": "2026-11-19",
+    "note": "",
+    "number": "GC-202611-0002",
+    "paidAt": null,
+    "paymentExpiresAt": {
+      "$date": {
+        "$numberLong": "1794827515020"
+      }
+    },
+    "policyLevelId": "GIU_CHO-1",
+    "policyVersionId": "GIU_CHO",
+    "roomId": "phong-30",
+    "roomSnapshot": {
+      "id": "phong-30",
+      "code": "PHONG_30",
+      "name": "Căn hộ Rattan Tropical",
+      "type": "Căn hộ",
+      "address": "Đường Lê Văn Việt, Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh",
+      "propertyId": "b5",
+      "propertyName": "Hi-Tech Home Tăng Nhơn Phú",
+      "ownerId": "chu-10",
+      "monthlyRent": {
+        "$numberInt": "5000000"
+      },
+      "area": {
+        "$numberInt": "36"
+      },
+      "capacity": {
+        "$numberInt": "3"
+      }
+    },
+    "status": "EXPIRED",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794827571893"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afb4402540231e55f2d3643"
+    },
+    "id": "gc-75c3db33-2644-4a28-8dc4-f83ebbcd4d81",
+    "amount": {
+      "$numberInt": "10000"
+    },
+    "contact": {
+      "name": "Khách hàng 43",
+      "phone": "0900000059"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794851842615"
+      }
+    },
+    "customerId": "kh-6af9b41ded3fe4f1d80b464b",
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1795024699994"
+      }
+    },
+    "isActive": true,
+    "lockStartsAt": {
+      "$date": {
+        "$numberLong": "1794851899994"
+      }
+    },
+    "moveIn": "2026-11-19",
+    "note": "",
+    "number": "GC-202611-0003",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1794851899994"
+      }
+    },
+    "paymentExpiresAt": {
+      "$date": {
+        "$numberLong": "1794852742615"
+      }
+    },
+    "policyLevelId": "p5-6afb43cba422453fccf52261",
+    "policyVersionId": "p5-6afb43cba422453fccf52260",
+    "roomId": "phong-30",
+    "roomSnapshot": {
+      "id": "phong-30",
+      "code": "PHONG_30",
+      "name": "Căn hộ Rattan Tropical",
+      "type": "Căn hộ",
+      "address": "Đường Lê Văn Việt, Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh",
+      "propertyId": "b5",
+      "propertyName": "Hi-Tech Home Tăng Nhơn Phú",
+      "ownerId": "chu-10",
+      "monthlyRent": {
+        "$numberInt": "5000000"
+      },
+      "area": {
+        "$numberInt": "36"
+      },
+      "capacity": {
+        "$numberInt": "3"
+      }
+    },
+    "status": "ACTIVE",
+    "paymentId": "ttien-fca04a3d-6ac8-426c-9c76-cc0a143086d2",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794851899994"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  }
+]

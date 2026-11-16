@@ -1,0 +1,379 @@
+[
+  {
+    "_id": {
+      "$oid": "49903c58d2810503622aa42d"
+    },
+    "id": "fpt",
+    "name": "Trường Đại học FPT - Campus TP.HCM",
+    "campus": "Campus TP.HCM · khu Quận 9",
+    "address": "Lô E2a-7 Đường D1 Long Thạnh Mỹ",
+    "lat": {
+      "$numberDouble": "10.8414179"
+    },
+    "lng": {
+      "$numberDouble": "106.8100399"
+    },
+    "logo": "/assets/schools/fpt.png",
+    "source": "https://www.openstreetmap.org/way/1022939891",
+    "logoUrl": "/assets/schools/fpt.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.8100399"
+        },
+        {
+          "$numberDouble": "10.8414179"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b45f6faa80d99d1931bac159"
+    },
+    "id": "hcmiu",
+    "name": "Trường Đại học Quốc tế",
+    "campus": "Khu ĐHQG",
+    "address": "Khu ĐHQG",
+    "lat": {
+      "$numberDouble": "10.8776808"
+    },
+    "lng": {
+      "$numberDouble": "106.8012827"
+    },
+    "logo": "/assets/schools/hcmiu.png",
+    "source": "https://www.openstreetmap.org/way/1419109086",
+    "logoUrl": "/assets/schools/hcmiu.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.8012827"
+        },
+        {
+          "$numberDouble": "10.8776808"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0d6308a308e66403a0bbfcd1"
+    },
+    "id": "hcmuaf",
+    "name": "Trường Đại học Nông Lâm TP.HCM",
+    "campus": "Cơ sở Linh Trung",
+    "address": "Đỗ Mười Linh Trung",
+    "lat": {
+      "$numberDouble": "10.8723619"
+    },
+    "lng": {
+      "$numberDouble": "106.7898363"
+    },
+    "logo": "/assets/schools/hcmuaf.jpg",
+    "source": "https://www.openstreetmap.org/way/1212036325",
+    "logoUrl": "/assets/schools/hcmuaf.jpg",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7898363"
+        },
+        {
+          "$numberDouble": "10.8723619"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "085c7f44c832089294c6bcd7"
+    },
+    "id": "hcmus",
+    "name": "Trường Đại học Khoa học Tự nhiên",
+    "campus": "Cơ sở 2 · Khu ĐHQG",
+    "address": "Cơ sở 2 · Khu ĐHQG",
+    "lat": {
+      "$numberDouble": "10.8761964"
+    },
+    "lng": {
+      "$numberDouble": "106.7969492"
+    },
+    "logo": "/assets/schools/hcmus.png",
+    "source": "https://www.openstreetmap.org/way/1419105579",
+    "logoUrl": "/assets/schools/hcmus.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7969492"
+        },
+        {
+          "$numberDouble": "10.8761964"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ae70a85d7e7deca8dc74cbbe"
+    },
+    "id": "hcmussh",
+    "name": "Trường Đại học Khoa học Xã hội và Nhân văn",
+    "campus": "Cơ sở 2 · Khu ĐHQG",
+    "address": "Cơ sở 2 · Khu ĐHQG",
+    "lat": {
+      "$numberDouble": "10.8710357"
+    },
+    "lng": {
+      "$numberDouble": "106.8001813"
+    },
+    "logo": "/assets/schools/hcmussh.png",
+    "source": "https://www.openstreetmap.org/way/1419197268",
+    "logoUrl": "/assets/schools/hcmussh.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.8001813"
+        },
+        {
+          "$numberDouble": "10.8710357"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cc01c86b9e7419c5f4c2792a"
+    },
+    "id": "hcmut",
+    "name": "Trường Đại học Bách khoa",
+    "campus": "Cơ sở Dĩ An",
+    "address": "Cơ sở Dĩ An",
+    "lat": {
+      "$numberDouble": "10.8802192"
+    },
+    "lng": {
+      "$numberDouble": "106.8057041"
+    },
+    "logo": "/assets/schools/hcmut.png",
+    "source": "https://www.openstreetmap.org/way/1419118309",
+    "logoUrl": "/assets/schools/hcmut.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.8057041"
+        },
+        {
+          "$numberDouble": "10.8802192"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8bdce277309b92ed21ea7a45"
+    },
+    "id": "hcmute",
+    "name": "Trường Đại học Công nghệ Kỹ thuật TP.HCM",
+    "campus": "Cơ sở Võ Văn Ngân",
+    "address": "1 Võ Văn Ngân",
+    "lat": {
+      "$numberDouble": "10.8520722"
+    },
+    "lng": {
+      "$numberDouble": "106.7717145"
+    },
+    "logo": "/assets/schools/hcmute.png",
+    "source": "https://www.openstreetmap.org/way/218273808",
+    "logoUrl": "/assets/schools/hcmute.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7717145"
+        },
+        {
+          "$numberDouble": "10.8520722"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c35885822f2a4a178dd35f84"
+    },
+    "id": "hub",
+    "name": "Trường Đại học Ngân hàng TP.HCM",
+    "campus": "Cơ sở Thủ Đức",
+    "address": "56 Hoàng Diệu 2",
+    "lat": {
+      "$numberDouble": "10.8571239"
+    },
+    "lng": {
+      "$numberDouble": "106.7608407"
+    },
+    "logo": "/assets/schools/hub.png",
+    "source": "https://www.openstreetmap.org/way/301514506",
+    "logoUrl": "/assets/schools/hub.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7608407"
+        },
+        {
+          "$numberDouble": "10.8571239"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d175be62edf9ed73b2b0f149"
+    },
+    "id": "uel",
+    "name": "Trường Đại học Kinh tế - Luật",
+    "campus": "Khu đô thị ĐHQG-HCM",
+    "address": "669 QL1A, Linh Xuân, TP. Thủ Đức, TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.8701"
+    },
+    "lng": {
+      "$numberDouble": "106.7781"
+    },
+    "logo": "/assets/schools/uel.jpg",
+    "logoUrl": "/assets/schools/uel.jpg",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7781"
+        },
+        {
+          "$numberDouble": "10.8701"
+        }
+      ]
+    },
+    "source": "catalog.json; vị trí tham chiếu của đồ án"
+  },
+  {
+    "_id": {
+      "$oid": "02c1a4bf0bc1cd443b2ea7b8"
+    },
+    "id": "ufm",
+    "name": "Trường Đại học Tài chính - Marketing",
+    "campus": "Cơ sở Võ Văn Hát · khu Quận 9",
+    "address": "306 Võ Văn Hát",
+    "lat": {
+      "$numberDouble": "10.8145273"
+    },
+    "lng": {
+      "$numberDouble": "106.8092252"
+    },
+    "logo": "/assets/schools/ufm.png",
+    "source": "https://www.openstreetmap.org/relation/16241635",
+    "logoUrl": "/assets/schools/ufm.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.8092252"
+        },
+        {
+          "$numberDouble": "10.8145273"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cd9907044dcbe23cc87597cc"
+    },
+    "id": "uit",
+    "name": "Trường Đại học Công nghệ Thông tin",
+    "campus": "Khu ĐHQG",
+    "address": "Khu ĐHQG",
+    "lat": {
+      "$numberDouble": "10.8699883"
+    },
+    "lng": {
+      "$numberDouble": "106.8034308"
+    },
+    "logo": "/assets/schools/uit.png",
+    "source": "https://www.openstreetmap.org/way/1303838982",
+    "logoUrl": "/assets/schools/uit.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.8034308"
+        },
+        {
+          "$numberDouble": "10.8699883"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a33182a8affbb578e78557f1"
+    },
+    "id": "ush",
+    "name": "Trường Đại học Thể dục Thể thao TP.HCM",
+    "campus": "Cơ sở Linh Trung",
+    "address": "Cơ sở Linh Trung",
+    "lat": {
+      "$numberDouble": "10.8720215"
+    },
+    "lng": {
+      "$numberDouble": "106.7958388"
+    },
+    "logo": "/assets/schools/ush.png",
+    "source": "https://www.openstreetmap.org/way/290326852",
+    "logoUrl": "/assets/schools/ush.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7958388"
+        },
+        {
+          "$numberDouble": "10.8720215"
+        }
+      ]
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0a283e7752a7dc57c652e16b"
+    },
+    "id": "uth",
+    "name": "Trường Đại học Giao thông vận tải TP.HCM",
+    "campus": "Cơ sở Bình Thạnh",
+    "address": "2 Võ Oanh, Phường 25, Quận Bình Thạnh, TP. Hồ Chí Minh",
+    "lat": {
+      "$numberDouble": "10.8045"
+    },
+    "lng": {
+      "$numberDouble": "106.7172"
+    },
+    "logo": "/assets/schools/uth.png",
+    "logoUrl": "/assets/schools/uth.png",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        {
+          "$numberDouble": "106.7172"
+        },
+        {
+          "$numberDouble": "10.8045"
+        }
+      ]
+    },
+    "source": "catalog.json; vị trí tham chiếu của đồ án"
+  }
+]

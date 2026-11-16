@@ -1,6 +1,17 @@
-import { Component, effect, inject, signal } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import {
+  Component,
+  DestroyRef,
+  ElementRef,
+  HostListener,
+  ViewChild,
+  effect,
+  inject,
+  signal,
+} from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router } from '@angular/router';
+import { EmployeeProfileAPIService } from '../../services/employee-profile-apiservice';
+import { EmployeeProfile } from '../../classes/EmployeeProfile';
 import { firstValueFrom } from 'rxjs';
 import { apiMessage } from '../../services/api-message';
 import { NotificationService } from '../../services/notification-service';
@@ -15,16 +26,38 @@ export class EmployeeLayoutComponent {
   auth = inject(AuthService);
   private router = inject(Router);
   notifications = inject(NotificationService);
-  private http = inject(HttpClient);
+  private profileApi = inject(EmployeeProfileAPIService);
   private profile = signal<{
     owner: string;
-    value: { avatar: string; position: string; fullName: string };
+    value: EmployeeProfile;
   } | null>(null);
   readonly profileError = signal('');
   readonly profileLoading = signal(false);
   readonly notificationOpen = signal(false);
+  @ViewChild('notificationToggle') private notificationToggle?: ElementRef<HTMLButtonElement>;
+  private element = inject(ElementRef<HTMLElement>);
+  private destroyRef = inject(DestroyRef);
+  toggleNotifications() {
+    this.notificationOpen.update((open) => !open);
+    if (this.notificationOpen()) void this.notifications.refresh();
+  }
+  closeNotifications() {
+    this.notificationOpen.set(false);
+    this.notificationToggle?.nativeElement.focus();
+  }
+  @HostListener('document:keydown.escape') onEscape() {
+    if (this.notificationOpen()) this.closeNotifications();
+  }
+  @HostListener('document:click', ['$event']) onOutsideClick(event: MouseEvent) {
+    const panel = this.element.nativeElement.querySelector('.employee-notifications');
+    if (this.notificationOpen() && event.target instanceof Node && !panel?.contains(event.target))
+      this.notificationOpen.set(false);
+  }
   private version = 0;
   constructor() {
+    this.router.events.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((event) => {
+      if (event instanceof NavigationEnd) this.notificationOpen.set(false);
+    });
     effect(() => {
       const account = this.auth.account();
       const authenticated = this.auth.serverAuthenticated();
@@ -38,10 +71,7 @@ export class EmployeeLayoutComponent {
   private async loadProfile(owner: string, version: number) {
     try {
       const value = await firstValueFrom(
-        this.http.get<{ avatar: string; position: string; fullName: string }>('/data/me/employee', {
-          withCredentials: true,
-          timeout: 10000,
-        }),
+        this.profileApi.getProfile(),
       );
       if (owner === this.auth.account()?.id && version === this.version)
         this.profile.set({ owner, value });

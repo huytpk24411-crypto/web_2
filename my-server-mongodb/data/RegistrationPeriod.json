@@ -1,0 +1,418 @@
+[
+  {
+    "_id": {
+      "$oid": "dd3ff292fb54feb48d55b8a8"
+    },
+    "id": "tuan-2026-07-27",
+    "name": "Tuần 2026-07-27",
+    "weekStart": "2026-07-27",
+    "weekEnd": "2026-08-02",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1784768400000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1785070800000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "d50c18fb57cba9dec029cad7"
+    },
+    "id": "tuan-2026-08-03",
+    "name": "Tuần 2026-08-03",
+    "weekStart": "2026-08-03",
+    "weekEnd": "2026-08-09",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1785373200000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1785675600000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "0e34c16256b2d33e3a2978b8"
+    },
+    "id": "tuan-2026-08-10",
+    "name": "Tuần 2026-08-10",
+    "weekStart": "2026-08-10",
+    "weekEnd": "2026-08-16",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1785978000000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1786280400000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "34f49f361a54278863f223ad"
+    },
+    "id": "tuan-2026-08-17",
+    "name": "Tuần 2026-08-17",
+    "weekStart": "2026-08-17",
+    "weekEnd": "2026-08-23",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1786582800000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1786885200000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "c8dbe8ccf905e8c333c337c9"
+    },
+    "id": "tuan-2026-08-24",
+    "name": "Tuần 2026-08-24",
+    "weekStart": "2026-08-24",
+    "weekEnd": "2026-08-30",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1787187600000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1787490000000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "395443cb26320e03b5fd777c"
+    },
+    "id": "tuan-2026-08-31",
+    "name": "Tuần 2026-08-31",
+    "weekStart": "2026-08-31",
+    "weekEnd": "2026-09-06",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1787792400000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1788094800000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "69c31b2cb455d2b377ae5e2f"
+    },
+    "id": "tuan-2026-09-07",
+    "name": "Tuần 2026-09-07",
+    "weekStart": "2026-09-07",
+    "weekEnd": "2026-09-13",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1788397200000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1788699600000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "8cd5ee95ef0b9fab28b84dea"
+    },
+    "id": "tuan-2026-09-14",
+    "name": "Tuần 2026-09-14",
+    "weekStart": "2026-09-14",
+    "weekEnd": "2026-09-20",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1789002000000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1789304400000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "3351913a5f9903e8d9a7482d"
+    },
+    "id": "tuan-2026-09-21",
+    "name": "Tuần 2026-09-21",
+    "weekStart": "2026-09-21",
+    "weekEnd": "2026-09-27",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1789606800000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1789909200000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "b0669176d2e2879c0e01a543"
+    },
+    "id": "tuan-2026-09-28",
+    "name": "Tuần 2026-09-28",
+    "weekStart": "2026-09-28",
+    "weekEnd": "2026-10-04",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1790211600000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1790514000000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "d1e8e875d81128ef56e19062"
+    },
+    "id": "tuan-2026-10-05",
+    "name": "Tuần 2026-10-05",
+    "weekStart": "2026-10-05",
+    "weekEnd": "2026-10-11",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1790816400000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1791118800000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "4145b408d4ed0fec8bf5f275"
+    },
+    "id": "tuan-2026-10-12",
+    "name": "Tuần 2026-10-12",
+    "weekStart": "2026-10-12",
+    "weekEnd": "2026-10-18",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1791421200000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1791723600000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "6fce0fdf0f98874ba4d4e436"
+    },
+    "id": "tuan-2026-10-19",
+    "name": "Tuần 2026-10-19",
+    "weekStart": "2026-10-19",
+    "weekEnd": "2026-10-25",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1792026000000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1792328400000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "f34dbe313d2bb138febc308a"
+    },
+    "id": "tuan-2026-10-26",
+    "name": "Tuần 2026-10-26",
+    "weekStart": "2026-10-26",
+    "weekEnd": "2026-11-01",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1792630800000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1792933200000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "22861aa3c07ed3edeca58844"
+    },
+    "id": "tuan-2026-11-02",
+    "name": "Tuần 2026-11-02",
+    "weekStart": "2026-11-02",
+    "weekEnd": "2026-11-08",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1793235600000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1793538000000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  },
+  {
+    "_id": {
+      "$oid": "6af98f5eb2dd08da90cd41c9"
+    },
+    "id": "p4-6af98f5eb2dd08da90cd41b8",
+    "name": "Đợt đăng ký tuần 2026-11-15",
+    "weekStart": "2026-11-16",
+    "weekEnd": "2026-11-22",
+    "opensAt": {
+      "$date": {
+        "$numberLong": "1794445200000"
+      }
+    },
+    "closesAt": {
+      "$date": {
+        "$numberLong": "1794747600000"
+      }
+    },
+    "minShifts": {
+      "$numberInt": "5"
+    },
+    "maxShifts": {
+      "$numberInt": "8"
+    },
+    "status": "FINALIZED"
+  }
+]

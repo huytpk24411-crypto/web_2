@@ -1,0 +1,977 @@
+[
+  {
+    "_id": {
+      "$oid": "4b5dbf0fef6190bb42f71dea"
+    },
+    "id": "hh-08-nv-01",
+    "employeeId": "nv-01",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-2",
+    "rateBps": {
+      "$numberInt": "3000"
+    },
+    "amount": {
+      "$numberInt": "3780000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "dc39be579f5fcda3ce416847"
+    },
+    "id": "hh-08-nv-02",
+    "employeeId": "nv-02",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "5a426341be3bae38805c71cc"
+    },
+    "id": "hh-08-nv-03",
+    "employeeId": "nv-03",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "0d765e04b6afb21d63cd02f9"
+    },
+    "id": "hh-08-nv-04",
+    "employeeId": "nv-04",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "708d314663b29ea1dc4eab13"
+    },
+    "id": "hh-08-nv-05",
+    "employeeId": "nv-05",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "bc06b43e09b081411da62899"
+    },
+    "id": "hh-08-nv-06",
+    "employeeId": "nv-06",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "420000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "ef189109302f04ac8ab8d9bc"
+    },
+    "id": "hh-08-nv-07",
+    "employeeId": "nv-07",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "450000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "21b99c932003e526e1b7c85b"
+    },
+    "id": "hh-08-nv-08",
+    "employeeId": "nv-08",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "520000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "3894df1660d9ca3ea05d884a"
+    },
+    "id": "hh-08-nv-09",
+    "employeeId": "nv-09",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "460000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "69e3752db0c0de9f8a9d5871"
+    },
+    "id": "hh-08-nv-10",
+    "employeeId": "nv-10",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "390000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "7d1cff0ca2fe967c62ab9180"
+    },
+    "id": "hh-08-nv-11",
+    "employeeId": "nv-11",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "a5473f04b54362b23da22867"
+    },
+    "id": "hh-08-nv-12",
+    "employeeId": "nv-12",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "1f190f0c1a11615734914d3b"
+    },
+    "id": "hh-08-nv-13",
+    "employeeId": "nv-13",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "9aa855a675884631c5dbcbf1"
+    },
+    "id": "hh-08-nv-14",
+    "employeeId": "nv-14",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "1f75b6b25843da9ec743c76f"
+    },
+    "id": "hh-08-nv-15",
+    "employeeId": "nv-15",
+    "periodId": "luong-08",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "c17557d14d6da3d3f3aac148"
+    },
+    "id": "hh-09-nv-01",
+    "employeeId": "nv-01",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "98c6a0c62ecb227d2719227c"
+    },
+    "id": "hh-09-nv-02",
+    "employeeId": "nv-02",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "430000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "73569ead9d87dad96e133dfe"
+    },
+    "id": "hh-09-nv-03",
+    "employeeId": "nv-03",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "440000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "c1b2536950d7e93b7d10219d"
+    },
+    "id": "hh-09-nv-04",
+    "employeeId": "nv-04",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "470000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "30f890755cd4c733ab4a4ae3"
+    },
+    "id": "hh-09-nv-05",
+    "employeeId": "nv-05",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "440000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "16519afb32d0b88e20ff2e0e"
+    },
+    "id": "hh-09-nv-06",
+    "employeeId": "nv-06",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "420000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "bec22d1cee3bebd49a2978a1"
+    },
+    "id": "hh-09-nv-07",
+    "employeeId": "nv-07",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "620000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "cf7c49e9e73563d7dd373599"
+    },
+    "id": "hh-09-nv-08",
+    "employeeId": "nv-08",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "480000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "7e0f527b9a527cd4ba353797"
+    },
+    "id": "hh-09-nv-09",
+    "employeeId": "nv-09",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "490000"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "ef0180568116f52e7083715f"
+    },
+    "id": "hh-09-nv-10",
+    "employeeId": "nv-10",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "a98d8396ca667cc8f0345863"
+    },
+    "id": "hh-09-nv-11",
+    "employeeId": "nv-11",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "602c49c6010ac64e32b894ce"
+    },
+    "id": "hh-09-nv-12",
+    "employeeId": "nv-12",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "3efd4d399b9d29900f0bd19e"
+    },
+    "id": "hh-09-nv-13",
+    "employeeId": "nv-13",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "3485c4626b2fc9c5376f7e77"
+    },
+    "id": "hh-09-nv-14",
+    "employeeId": "nv-14",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "5897959546682ced9770d048"
+    },
+    "id": "hh-09-nv-15",
+    "employeeId": "nv-15",
+    "periodId": "luong-09",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "PAID"
+  },
+  {
+    "_id": {
+      "$oid": "c2c463bb7de829125c526951"
+    },
+    "id": "hh-10-nv-01",
+    "employeeId": "nv-01",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "08e283dbfcb0f1461b014a98"
+    },
+    "id": "hh-10-nv-02",
+    "employeeId": "nv-02",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "360000"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "4a6bfd8c317663729c5a9cc5"
+    },
+    "id": "hh-10-nv-03",
+    "employeeId": "nv-03",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "430000"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "0611548fab6cc7d52ee4da72"
+    },
+    "id": "hh-10-nv-04",
+    "employeeId": "nv-04",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "560000"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "3a3e07e1ed9ddd61f873d4fa"
+    },
+    "id": "hh-10-nv-05",
+    "employeeId": "nv-05",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "460000"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "ca5e67c5c8a3325e567235c9"
+    },
+    "id": "hh-10-nv-06",
+    "employeeId": "nv-06",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "380000"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "46abe4b06eee25334d788b51"
+    },
+    "id": "hh-10-nv-07",
+    "employeeId": "nv-07",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "430000"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "03faddc972aed4897e339610"
+    },
+    "id": "hh-10-nv-08",
+    "employeeId": "nv-08",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "890000"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "25811475e99caf35b7bcc438"
+    },
+    "id": "hh-10-nv-09",
+    "employeeId": "nv-09",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "3654b151f025a48bbaa22ceb"
+    },
+    "id": "hh-10-nv-10",
+    "employeeId": "nv-10",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "0c8cf5ae78f27da7b214d4aa"
+    },
+    "id": "hh-10-nv-11",
+    "employeeId": "nv-11",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "c81e971b50b88919c9c22e75"
+    },
+    "id": "hh-10-nv-12",
+    "employeeId": "nv-12",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "b8d973e21a0fa9216a036f60"
+    },
+    "id": "hh-10-nv-13",
+    "employeeId": "nv-13",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "de6075cf9a3ec55a3e1e76fd"
+    },
+    "id": "hh-10-nv-14",
+    "employeeId": "nv-14",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "8f975e60c35d34a9533943a9"
+    },
+    "id": "hh-10-nv-15",
+    "employeeId": "nv-15",
+    "periodId": "luong-10",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "status": "CLOSED"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e429977"
+    },
+    "employeeId": "nv-01",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e429966"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e429978"
+    },
+    "employeeId": "nv-02",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e429967"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e429979"
+    },
+    "employeeId": "nv-03",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "600000"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e429968"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e42997a"
+    },
+    "employeeId": "nv-04",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e429969"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e42997b"
+    },
+    "employeeId": "nv-05",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e42996a"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e42997c"
+    },
+    "employeeId": "nv-06",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e42996b"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e42997d"
+    },
+    "employeeId": "nv-07",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e42996c"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e42997e"
+    },
+    "employeeId": "nv-08",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e42996d"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e42997f"
+    },
+    "employeeId": "nv-09",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e42996e"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e429980"
+    },
+    "employeeId": "nv-10",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e42996f"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e429981"
+    },
+    "employeeId": "nv-11",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e429970"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e429982"
+    },
+    "employeeId": "nv-12",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e429971"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e429983"
+    },
+    "employeeId": "nv-13",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e429972"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e429984"
+    },
+    "employeeId": "nv-14",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1924f73417d00e429973"
+  },
+  {
+    "_id": {
+      "$oid": "6aee1925f73417d00e429985"
+    },
+    "employeeId": "nv-15",
+    "periodId": "luong-11",
+    "policyLevelId": "HOA_HONG-1",
+    "rateBps": {
+      "$numberInt": "2000"
+    },
+    "amount": {
+      "$numberInt": "0"
+    },
+    "policyVersionId": "HOA_HONG",
+    "status": "DRAFT",
+    "id": "p5-6aee1925f73417d00e429974"
+  }
+]

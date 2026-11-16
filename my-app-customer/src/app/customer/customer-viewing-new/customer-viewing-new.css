@@ -160,6 +160,20 @@
 .tabs {
   margin: 12px 0;
 }
+.history-page {
+  padding-top: 28px;
+}
+.history-page .section-heading h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.history-page .tabs {
+  justify-content: flex-end;
+  margin: 24px 0;
+}
+.history-page .viewing-row {
+  padding: 24px 0;
+}
 .booking-success {
   max-width: 900px;
   margin-inline: auto;

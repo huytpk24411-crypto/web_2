@@ -1,37 +1,145 @@
-:host {
+﻿:host {
   display: block;
 }
 .deposit-heading {
-  padding: 20px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 20px;
 }
 .document-meta {
-  margin-bottom: 6px;
+  margin-bottom: 5px;
+}
+.deposit-heading .emp-title {
+  font-size: 21px;
+}
+.deposit-heading .emp-title > span {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--primary-dark);
+}
+.deposit-heading > .emp-actions .emp-btn {
+  min-height: 34px;
+  padding: 8px 12px;
+  font-size: 12px;
+  background: var(--soft);
+}
+.money-input {
+  position: relative;
+}
+.deposit-grid .money-input input {
+  padding-right: 48px;
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+.money-input small {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  pointer-events: none;
+}
+.drafts-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  background: var(--surface);
+  border-radius: 10px;
+}
+.drafts-card > div {
+  width: 100%;
+}
+.drafts-card > p,
+.drafts-card .emp-subtitle {
+  margin: 0;
+  font-size: 12px;
+}
+.draft-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  padding: 14px 10px;
+  border-radius: 6px;
+}
+.draft-row.current {
+  background: var(--soft);
+  border-left: 3px solid var(--primary);
 }
 .deposit-grid {
-  grid-template-columns: minmax(0, 2.05fr) minmax(300px, 1fr);
+  grid-template-columns: minmax(0, 2.05fr) minmax(320px, 1fr);
+}
+.deposit-grid .grid {
+  gap: 0 18px;
+}
+.deposit-grid .field {
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.deposit-grid app-form-error:empty {
+  display: none;
+}
+.deposit-grid .field input,
+.deposit-grid select,
+.deposit-grid .control {
+  min-height: 42px;
+  padding: 9px 12px;
+  font-size: 13px;
+}
+.deposit-grid input[readonly],
+.identity-fields:disabled input {
+  background: var(--background);
+}
+.deposit-section,
+.deposit-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .deposit-section {
-  margin: 0 0 20px;
-  padding-bottom: 14px;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
   border-bottom: 1px solid var(--line);
 }
-.deposit-section > span {
+.deposit-section h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.deposit-section h3 > span {
   display: inline-grid;
   place-items: center;
+  flex-shrink: 0;
   width: 28px;
   height: 28px;
-  padding: 0;
   border-radius: 6px;
   background: var(--primary);
   color: var(--surface);
+  font-size: 13px;
+}
+.deposit-section .emp-btn {
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 11px;
+}
+.customer-hint {
+  margin: -4px 0 12px;
 }
 .input-icon {
   display: block;
   position: relative;
 }
 .input-icon input {
-  width: 100%;
-  padding-right: 38px;
+  padding-right: 36px;
 }
 .input-icon app-icon {
   position: absolute;
@@ -41,65 +149,121 @@
   color: var(--muted);
   pointer-events: none;
 }
+.identity-fields {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.identity-wide {
+  grid-column: 1 / -1;
+}
 .document-attachments {
-  padding-top: 18px;
+  padding-top: 14px;
   border-top: 1px solid var(--line);
 }
 .document-attachments .emp-card-head {
-  border: 0;
+  margin-bottom: 12px;
   padding: 0;
-  margin-bottom: 4px;
+  border: 0;
+  gap: 8px;
   font-size: 12px;
 }
-.document-attachments .emp-card-head strong {
+.document-attachments strong,
+.identity-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
-.attachment-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 12px;
+.deposit-grid .identity-card {
+  margin-bottom: 0;
+  gap: 8px;
+  border: 1px solid var(--line);
+  background: var(--soft);
+  overflow: hidden;
+  padding: 12px;
+  border-radius: 10px;
 }
-.attachment-placeholder {
+.identity-card img,
+.identity-placeholder {
+  width: 100%;
+  border-radius: 5px;
+  object-fit: contain;
+  background: var(--surface);
+  height: 80px;
+}
+.identity-placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-height: 140px;
-  padding: 14px 8px;
+  gap: 8px;
+  color: var(--muted);
   border: 1px dashed var(--line);
-  border-radius: var(--radius);
-  background: var(--soft);
-  text-align: center;
+}
+.attachment-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px !important;
+}
+.identity-card .emp-btn {
+  min-height: 30px;
+  padding: 5px 8px;
+  font-size: 11px;
+  background: var(--surface);
+}
+.identity-actions {
+  justify-content: space-between;
+  margin-top: 12px;
   font-size: 12px;
 }
-.attachment-placeholder app-icon {
-  color: var(--primary-dark);
-}
-.attachment-placeholder small {
-  color: var(--muted);
-}
-.room-address {
-  margin: 4px 0;
+.identity-actions p {
+  margin: 0;
+  color: var(--green);
 }
 .inline-room {
-  padding: 14px;
+  padding: 10px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--background);
 }
-.payment-method {
+.room-address {
+  margin: 3px 0;
+}
+.room-facts {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 18px 14px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 12px;
+  padding: 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  background: var(--soft);
+  font-size: 11px;
+}
+.deposit-formula {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--soft);
+  color: var(--primary-dark);
+  font-size: 12px;
+}
+.payment-method {
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
   cursor: pointer;
   font-size: 12px;
+  min-height: 86px;
+  border-radius: 10px;
+  align-items: flex-start;
 }
 .payment-method.selected {
   border-color: var(--primary-dark);
@@ -107,8 +271,9 @@
   background: var(--background);
 }
 .payment-method input {
+  min-height: auto;
   accent-color: var(--primary);
-  margin-top: 4px;
+  margin-top: 3px;
 }
 .payment-method:focus-within {
   outline: 2px solid var(--primary);
@@ -116,36 +281,41 @@
 }
 .payment-method small {
   display: block;
+  margin-top: 4px;
   color: var(--muted);
-  margin-top: 6px;
-}
-.receiving-account {
-  margin-top: 16px;
-}
-.receiving-account p,
-.summary-policy p {
-  margin: 6px 0 0;
-}
-.summary-title {
-  margin: 4px 0 14px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
-  font-size: 20px;
+  font-size: 11px;
 }
 .deposit-summary {
-  top: 100px;
+  top: 109px;
 }
 .deposit-summary > .emp-card {
   border-color: color-mix(in srgb, var(--primary-dark) 25%, var(--line));
 }
-.summary-details > div {
+.summary-heading {
   display: flex;
-  align-items: baseline;
   justify-content: space-between;
-  gap: 14px;
-  padding: 12px 0;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 8px;
   border-bottom: 1px solid var(--line);
-  font-size: 13px;
+}
+.summary-heading h2 {
+  margin: 3px 0 0;
+  font-size: 18px;
+}
+.summary-heading app-icon {
+  color: var(--primary-dark);
+}
+.summary-details > div,
+.deposit-summary .emp-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
 }
 .summary-details span {
   color: var(--muted);
@@ -155,11 +325,16 @@
   overflow-wrap: anywhere;
 }
 .summary-amount {
-  margin: 18px 0;
-  padding: 18px 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 16px 0;
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--background);
+  background: var(--soft);
+  border-color: color-mix(in srgb, var(--primary) 20%, var(--line));
 }
 .summary-amount small {
   font-size: 11px;
@@ -167,14 +342,57 @@
   color: var(--primary-dark);
 }
 .summary-amount .emp-stat-value {
-  font-size: clamp(24px, 2.3vw, 32px);
+  margin: 0;
+  font-size: clamp(21px, 1.9vw, 27px);
+}
+.amount-words {
+  grid-column: 1 / -1;
+  margin: 0;
+  text-align: right;
+  font-size: 11px;
+}
+.summary-amount .emp-badge {
+  grid-column: 1 / -1;
+  justify-self: end;
 }
 .summary-policy {
-  margin-bottom: 22px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 12px;
+}
+.summary-policy p {
+  margin: 5px 0 0;
+}
+.deposit-summary .emp-block {
+  min-height: 44px;
 }
 .summary-secondary {
-  margin-top: 10px;
-  font-size: 13px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+.deposit-summary .tip {
+  margin: 10px 0 0;
+}
+.deposit-preview-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: color-mix(in srgb, var(--text) 50%, transparent);
+}
+.deposit-preview-dialog {
+  box-sizing: border-box;
+  width: min(900px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--background);
+}
+.deposit-preview-dialog app-deposit-sheet {
+  margin-top: 16px;
 }
 @media (max-width: 760px) {
   .deposit-grid {
@@ -183,7 +401,83 @@
   .deposit-summary {
     position: static;
   }
-  .attachment-grid {
-    gap: 6px;
+  .deposit-section {
+    flex-wrap: wrap;
   }
+}
+/* Deposit form follows the supplied desktop frame. */
+.deposit-heading::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.deposit-grid > .emp-stack > .emp-card {
+  border-radius: 10px;
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--text) 7%, transparent);
+}
+.deposit-grid .field > span:first-child {
+  font-size: 12px;
+  font-weight: 400;
+}
+.deposit-grid .field input,
+.deposit-grid select {
+  border-color: color-mix(in srgb, var(--primary-dark) 19%, var(--line));
+  border-radius: 7px;
+}
+.deposit-grid .field input:focus,
+.deposit-grid select:focus {
+  border-color: var(--primary);
+}
+.deposit-grid .control {
+  background: var(--background);
+  border-radius: 7px;
+  font-weight: 500;
+}
+.drafts-card > .emp-btn {
+  border: 0;
+  background: transparent;
+  padding: 6px;
+  min-height: 30px;
+  font-size: 12px;
+}
+.draft-description {
+  display: grid;
+  gap: 4px;
+}
+.draft-description strong {
+  font-size: 13px;
+}
+.draft-description span,
+.draft-description small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.attachment-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700 !important;
+}
+.attachment-label app-icon {
+  color: var(--green);
+}
+.summary-heading > app-icon {
+  padding: 9px;
+  background: var(--soft);
+  border-radius: 8px;
+  box-sizing: content-box;
+}
+.payment-method strong {
+  color: var(--primary-dark);
+  font-size: 13px;
+}
+.deposit-summary .emp-primary {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+.deposit-summary .emp-primary:hover {
+  background: var(--primary);
 }

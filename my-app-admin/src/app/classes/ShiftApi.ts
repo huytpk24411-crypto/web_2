@@ -87,6 +87,7 @@ export interface TaskCreate {
 }
 export interface TaskReject {
   reason: string;
+  viewingStartTime?: string;
   shiftId?: string;
   assigneeAssignmentIds?: string[];
 }
@@ -99,6 +100,7 @@ export interface ApiTask {
       fullName: string;
       employeeCode: string;
       checkOutAt: string | null;
+      doneAt?: string | null;
     }[];
   } | null;
   currentShift?: {

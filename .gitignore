@@ -54,6 +54,11 @@ test-results/
 test-results-*/
 __pycache__/
 
+# Private refactoring checkpoints, database backups and separately delivered documents
+/.local-backups/
+/.local-tools/
+/.local-artifacts/
+
 # Ba ứng dụng Angular: khách hàng, nhân viên, quản trị
 /my-app-*/node_modules/
 /my-app-*/dist/

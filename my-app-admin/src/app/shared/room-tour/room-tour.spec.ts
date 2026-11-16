@@ -78,16 +78,27 @@ describe('API_TOUR_FIXTURES', () => {
       expect(ids).toEqual(['living', 'kitchen', 'bathroom', 'bedroom']);
       expect(new Set(ids).size).toBe(ids.length);
       expect(tour.startScene).toBe('living');
-      expect(tour.pitchLimit).toBe(12);
+      expect(tour.pitchLimit).toBe(55);
       for (const scene of tour.scenes) {
         expect(scene.image).toBe(
-          `/assets/tours/PHONG_${roomId.slice('phong-'.length)}/${scene.id}.webp`,
+          `/assets/tours/PHONG_${roomId.slice('phong-'.length)}/${scene.id}-v2.webp`,
         );
         expect(images.has(scene.image)).toBe(false);
         images.add(scene.image);
-        expect(scene.initialYaw).toBe(0);
+        expect(Number.isFinite(scene.initialYaw)).toBe(true);
+        expect(Math.abs(scene.initialYaw!)).toBeLessThanOrEqual(180);
         expect(scene.hotspots.map((hotspot) => hotspot.target).sort()).toEqual(
-          scene.id === 'living' ? ['bathroom', 'bedroom', 'kitchen'] : ['living'],
+          tour.roomId === 'phong-46'
+            ? scene.id === 'living'
+              ? ['bedroom', 'kitchen']
+              : scene.id === 'kitchen'
+                ? ['bathroom', 'living']
+                : scene.id === 'bathroom'
+                  ? ['kitchen']
+                  : ['living']
+            : scene.id === 'living'
+              ? ['bathroom', 'bedroom', 'kitchen']
+              : ['living'],
         );
         for (const hotspot of scene.hotspots) {
           expect(ids).toContain(hotspot.target);
@@ -103,28 +114,24 @@ describe('API_TOUR_FIXTURES', () => {
     expect(images.size).toBe(20);
   });
 
-  it('giữ hướng trái/phải/sau theo bố cục, bao gồm bếp Loft và phòng tắm Blue Gallery', () => {
+  it('mọi khu vực đều có đường đi từ phòng khách và có lối quay lại', () => {
     for (const tour of Object.values(API_TOUR_FIXTURES)) {
-      const hotspots = tour.scenes.find((scene) => scene.id === 'living')!.hotspots;
-      const yaw = (target: string) => hotspots.find((hotspot) => hotspot.target === target)!.yaw;
-      expect(yaw('kitchen')).toBeLessThan(0);
-      expect(yaw('bedroom')).toBeGreaterThan(0);
-      if (['phong-48', 'phong-50'].includes(tour.roomId)) {
-        expect(yaw('kitchen')).toBeLessThan(-90);
-      }
-      if (tour.roomId !== 'phong-47') expect(yaw('bedroom')).toBeGreaterThan(90);
-      if (['phong-46', 'phong-47'].includes(tour.roomId)) {
-        expect(yaw('bathroom')).toBeLessThan(-90);
-      }
-      if (tour.roomId === 'phong-50') expect(yaw('bathroom')).toBeGreaterThan(90);
-      for (const scene of tour.scenes.filter((scene) => scene.id !== 'living')) {
-        const back = scene.hotspots.find((hotspot) => hotspot.target === 'living')!;
-        if (tour.roomId === 'phong-49' && scene.id === 'kitchen') {
-          expect(back.yaw).toBeGreaterThan(0);
-          expect(back.yaw).toBeLessThan(90);
-        } else {
-          expect(Math.abs(back.yaw)).toBe(180);
+      const reachable = (start: string) => {
+        const seen = new Set<string>();
+        const pending = [start];
+        while (pending.length) {
+          const id = pending.pop()!;
+          if (seen.has(id)) continue;
+          seen.add(id);
+          pending.push(
+            ...tour.scenes.find((scene) => scene.id === id)!.hotspots.map((h) => h.target),
+          );
         }
+        return seen;
+      };
+      for (const scene of tour.scenes) {
+        expect(reachable(tour.startScene).has(scene.id)).toBe(true);
+        expect(reachable(scene.id).has(tour.startScene)).toBe(true);
       }
     }
   });
@@ -188,8 +195,10 @@ describe('RoomTourComponent', () => {
     expect(fixture.componentInstance.fov()).toBe(40);
     fixture.componentInstance.zoom(100);
     expect(fixture.componentInstance.fov()).toBe(90);
+    fixture.componentInstance.activeScene.set({ ...ROOM_TOUR_FIXTURE.scenes[0], initialYaw: 125 });
     fixture.componentInstance.resetView();
-    expect(fixture.componentInstance.fov()).toBe(75);
+    expect(fixture.componentInstance.fov()).toBe(60);
+    expect(fixture.componentInstance['yaw']).toBe(125);
     fixture.nativeElement.querySelector('.close').click();
     expect(closed).toHaveBeenCalledOnce();
     fixture.destroy();
@@ -198,6 +207,7 @@ describe('RoomTourComponent', () => {
   it.each([
     { pitchLimit: undefined, expectedPitch: 85, expectedFov: 90 },
     { pitchLimit: 12, expectedPitch: 12, expectedFov: 75 },
+    { pitchLimit: 55, expectedPitch: 55, expectedFov: 75 },
   ])(
     'kẹp góc khi kéo/phím và zoom với pitchLimit=$pitchLimit',
     ({ pitchLimit, expectedPitch, expectedFov }) => {
@@ -236,14 +246,14 @@ describe('RoomTourComponent', () => {
         expect(component.fov()).toBe(40);
         component.resetView();
         expect(component['pitch']).toBe(0);
-        expect(component.fov()).toBe(75);
+        expect(component.fov()).toBe(60);
       } finally {
         fixture.destroy();
       }
     },
   );
 
-  it('kẹp cả quán tính ở +/-12°, không cho vượt giới hạn sau khi thả chuột', () => {
+  it('kẹp cả quán tính ở +/-55°, không cho vượt giới hạn sau khi thả chuột', () => {
     const fixture = TestBed.createComponent(RoomTourComponent);
     const component = fixture.componentInstance;
     component.tour = structuredClone(API_TOUR_FIXTURES['phong-46']);
@@ -263,12 +273,14 @@ describe('RoomTourComponent', () => {
       component.loading.set(false);
       component.interact();
       component['animate'](1000);
+      component['animate'](1020);
+      expect(component['yaw']).toBe(0);
       component['velocityPitch'] = 10000;
       component['animate'](1050);
-      expect(component['pitch']).toBe(12);
+      expect(component['pitch']).toBe(55);
       component['velocityPitch'] = -10000;
       component['animate'](1100);
-      expect(component['pitch']).toBe(-12);
+      expect(component['pitch']).toBe(-55);
     } finally {
       frame.mockRestore();
       fixture.destroy();
@@ -286,9 +298,13 @@ describe('RoomTourComponent', () => {
       fixture.detectChanges();
       expect(fixture.nativeElement.querySelectorAll('.tour-note')).toHaveLength(1);
       expect(fixture.nativeElement.querySelector('.tour-note').textContent.trim()).toBe(
-        'Ảnh mô phỏng 360° dựng từ ảnh góc chụp',
+        'Không gian mô phỏng từ ảnh phòng · Có bổ sung góc khuất',
       );
       const zoomOut = fixture.nativeElement.querySelector('button[aria-label="Thu nhỏ"]');
+      expect(zoomOut.disabled).toBe(false);
+      component.zoom(100);
+      fixture.detectChanges();
+      expect(component.fov()).toBe(75);
       expect(zoomOut.disabled).toBe(true);
       component.zoom(-5);
       fixture.detectChanges();

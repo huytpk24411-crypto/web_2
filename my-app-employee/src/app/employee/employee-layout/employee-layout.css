@@ -68,7 +68,7 @@
   border-right: 1px solid var(--line);
   color: var(--muted);
 }
-.employee-notification::after {
+.employee-notification.has-unread::after {
   content: '';
   position: absolute;
   top: -2px;
@@ -168,8 +168,7 @@
     height: 42px;
     gap: 24px;
   }
-  .employee-header .profile-name,
-  .employee-notification {
+  .employee-header .profile-name {
     display: none;
   }
   .employee-header .portal-profile {
@@ -190,5 +189,103 @@
 @media (max-width: 380px) {
   .employee-header .icon-btn span {
     display: none;
+  }
+}
+
+.employee-notifications {
+  position: relative;
+}
+.notification-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  width: 380px;
+  max-width: calc(100vw - 28px);
+  max-height: min(540px, 75vh);
+  overflow: auto;
+  z-index: 1100;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 14px 40px #172b4d26;
+  color: var(--text);
+  text-align: left;
+}
+.notification-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+}
+.notification-heading strong {
+  margin-right: auto;
+}
+.notification-close {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.notification-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: left;
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.notification-item.unread {
+  background: var(--soft);
+  border-left: 3px solid var(--primary);
+}
+.notification-item small {
+  color: var(--muted);
+  font-size: 11px;
+}
+.notification-item:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.notification-item:not(:disabled):hover {
+  border-color: var(--primary);
+}
+@media (max-width: 760px) {
+  .notification-panel {
+    position: fixed;
+    right: 14px;
+    top: 70px;
+  }
+  .employee-header .employee-notification {
+    display: inline-flex;
+    padding: 6px;
+    margin: 0;
+  }
+  .employee-header .avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .employee-header .portal-profile {
+    gap: 2px;
+  }
+}
+@media (max-width: 380px) {
+  .employee-header .employee-notification span {
+    display: inline;
   }
 }

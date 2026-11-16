@@ -11,48 +11,97 @@ export const API_ACCOUNT: Account = {
   name: 'Khách kiểm thử',
   role: 'CUSTOMER',
 };
-function tour(
-  number: number,
-  kitchen: number,
-  bathroom: number,
-  bedroom: number,
-  back = 180,
-): RoomTour {
-  return {
-    roomId: `phong-${number}`,
-    startScene: 'living',
-    pitchLimit: 12,
-    scenes: ['living', 'kitchen', 'bathroom', 'bedroom'].map((id) => ({
-      id,
-      label: id,
-      image: `/assets/tours/PHONG_${number}/${id}.webp`,
-      initialYaw: 0,
-      hotspots:
-        id === 'living'
-          ? [
-              { target: 'kitchen', label: 'Bếp', yaw: kitchen, pitch: -6 },
-              { target: 'bathroom', label: 'Phòng tắm', yaw: bathroom, pitch: -6 },
-              { target: 'bedroom', label: 'Phòng ngủ', yaw: bedroom, pitch: -6 },
-            ]
-          : [
-              {
-                target: 'living',
-                label: 'Phòng khách',
-                yaw: id === 'kitchen' ? back : 180,
-                pitch: -6,
-              },
-            ],
-    })),
-  };
-}
+const tourLinks: Record<number, Record<string, [string, number][]>> = {
+  '46': {
+    living: [
+      ['kitchen', -96],
+      ['bedroom', 130],
+    ],
+    kitchen: [
+      ['living', 16],
+      ['bathroom', -120],
+    ],
+    bathroom: [['kitchen', 128]],
+    bedroom: [['living', 135]],
+  },
+  '47': {
+    living: [
+      ['kitchen', -83],
+      ['bathroom', -115],
+      ['bedroom', 108],
+    ],
+    kitchen: [['living', 108]],
+    bathroom: [['living', 122]],
+    bedroom: [['living', 144]],
+  },
+  '48': {
+    living: [
+      ['kitchen', -44],
+      ['bathroom', -115],
+      ['bedroom', 122],
+    ],
+    kitchen: [['living', 65]],
+    bathroom: [['living', 133]],
+    bedroom: [['living', 140]],
+  },
+  '49': {
+    living: [
+      ['kitchen', -90],
+      ['bathroom', -137],
+      ['bedroom', 94],
+    ],
+    kitchen: [['living', 104]],
+    bathroom: [['living', 108]],
+    bedroom: [['living', 133]],
+  },
+  '50': {
+    living: [
+      ['kitchen', -115],
+      ['bathroom', 148],
+      ['bedroom', 108],
+    ],
+    kitchen: [['living', 30]],
+    bathroom: [['living', 130]],
+    bedroom: [['living', 135]],
+  },
+};
+const initialViews: Record<number, Record<string, number>> = {
+  '46': { kitchen: -55, bathroom: 20, bedroom: 35 },
+  '47': { kitchen: 0, bathroom: -55, bedroom: 45 },
+  '48': { kitchen: -25, bathroom: 0, bedroom: -30 },
+  '49': { kitchen: -10, bathroom: -50, bedroom: 20 },
+  '50': { kitchen: -75, bathroom: 15, bedroom: 0 },
+};
+const sceneLabels: Record<string, string> = {
+  living: 'Phòng khách',
+  kitchen: 'Bếp',
+  bathroom: 'Phòng tắm',
+  bedroom: 'Phòng ngủ',
+};
 export const API_TOUR_FIXTURES: Record<string, RoomTour> = Object.fromEntries(
-  [
-    tour(46, -65, -155, 125),
-    tour(47, -65, -155, 70),
-    tour(48, -120, 180, 125),
-    tour(49, -65, 180, 125, 70),
-    tour(50, -120, 155, 125),
-  ].map((value) => [value.roomId, value]),
+  [46, 47, 48, 49, 50].map((number) => {
+    const roomId = 'phong-' + number;
+    return [
+      roomId,
+      {
+        roomId,
+        startScene: 'living',
+        pitchLimit: 55,
+        scenes: ['living', 'kitchen', 'bathroom', 'bedroom'].map((id) => ({
+          id,
+          label: sceneLabels[id],
+          image: '/assets/tours/PHONG_' + number + '/' + id + '-v2.webp',
+          initialYaw: initialViews[number][id] ?? 0,
+          hotspots: tourLinks[number][id].map(([target, yaw]) => ({
+            target,
+            label: sceneLabels[target],
+            yaw,
+            pitch: -8,
+          })),
+        })),
+      },
+    ];
+  }),
 );
 export const API_ROOMS: CatalogRoom[] = [46, 47, 48, 49, 50, 45, 44].map((number) => ({
   id: `phong-${number}`,

@@ -15,6 +15,8 @@ import { CustomerRoomDetailComponent } from './customer-room-detail/customer-roo
 import { CustomerRoomListComponent } from './customer-room-list/customer-room-list';
 import { CustomerRoutingModule } from './customer-routing-module';
 import { CustomerViewingNewComponent } from './customer-viewing-new/customer-viewing-new';
+import { CustomerHoldPolicyComponent } from './customer-hold-policy/customer-hold-policy';
+import { CustomerBookingListComponent } from './customer-booking-list/customer-booking-list';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { CustomerViewingNewComponent } from './customer-viewing-new/customer-vie
     CustomerBookingReceiptComponent,
     CustomerFavoritesComponent,
     CustomerBookingNewComponent,
+    CustomerBookingListComponent,
+    CustomerHoldPolicyComponent,
     CustomerHomeComponent,
     HomeHeroCarouselComponent,
     HomeSearchComponent,

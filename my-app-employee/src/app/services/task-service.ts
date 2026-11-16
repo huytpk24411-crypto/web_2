@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { AuthService } from './auth-service';
 import { ShiftService } from './shift-service';
 import { Task } from '../classes/Task';
+import { ApiViewingRoom } from '../classes/ShiftApi';
 @Injectable({ providedIn: 'root' })
 export class TaskService {
   private auth = inject(AuthService);
@@ -44,7 +45,11 @@ export class TaskService {
           .map(() => this.auth.account()!.id),
       }));
   }
-  async toggleRequest(taskId: string, assignmentId: string) {
+  async completeRequest(
+    taskId: string,
+    assignmentId: string,
+    viewingDetails?: Pick<ApiViewingRoom, 'detailId' | 'viewStatus' | 'note'>[],
+  ) {
     const task = this.shifts.api.state().tasks.find((t) => t.id === taskId);
     const row = task?.currentAssignees.find((a) => a.assignmentId === assignmentId);
     if (
@@ -52,12 +57,12 @@ export class TaskService {
       !task?.editable ||
       task.status === 'PENDING_CONFIRM' ||
       task.mine?.current !== true ||
-      task.kind === 'VIEWING'
+      row.personalStatus === 'DONE'
     )
       throw new Error('Công việc không thuộc ca đang làm của bạn.');
     await this.shifts.api.write(
       `tasks/${taskId}/my-status`,
-      { assignmentId, personalStatus: row?.personalStatus === 'DONE' ? 'TODO' : 'DONE' },
+      { assignmentId, personalStatus: 'DONE', ...(viewingDetails ? { viewingDetails } : {}) },
       'PUT',
     );
     await this.shifts.api.loadTasks(assignmentId);

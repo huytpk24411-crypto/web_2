@@ -1,0 +1,2264 @@
+[
+  {
+    "_id": {
+      "$oid": "8be7e3d0c4fbfb831cd59252"
+    },
+    "id": "ttien-0001",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0001",
+    "amount": {
+      "$numberInt": "8600000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0001",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1785741300000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-01",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1785742020000"
+      }
+    },
+    "bankTransactionRef": "DEMO-aae658f1233676df593f",
+    "receipt": {
+      "id": "bl-0001",
+      "number": "BL-2026-000001",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1785742020000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 1",
+        "roomCode": "PHONG_46",
+        "amount": {
+          "$numberInt": "8600000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9e609366404e95f53d1639c4"
+    },
+    "id": "ttien-0002",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0002",
+    "amount": {
+      "$numberInt": "5500000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0002",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1786000500000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-01",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1786001220000"
+      }
+    },
+    "bankTransactionRef": "DEMO-ad45191a1b477caa345a",
+    "receipt": {
+      "id": "bl-0002",
+      "number": "BL-2026-000002",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1786001220000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 2",
+        "roomCode": "PHONG_14",
+        "amount": {
+          "$numberInt": "5500000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1b5df6a491481c2a227337de"
+    },
+    "id": "ttien-0003",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0003",
+    "amount": {
+      "$numberInt": "5300000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0003",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1786259700000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-01",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1786260420000"
+      }
+    },
+    "bankTransactionRef": "DEMO-15a9f1526c6f645124c7",
+    "receipt": {
+      "id": "bl-0003",
+      "number": "BL-2026-000003",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1786260420000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 3",
+        "roomCode": "PHONG_16",
+        "amount": {
+          "$numberInt": "5300000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "57bcff8c069410d4e42e4301"
+    },
+    "id": "ttien-0004",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0004",
+    "amount": {
+      "$numberInt": "5800000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0004",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1786518900000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-01",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1786519620000"
+      }
+    },
+    "bankTransactionRef": "DEMO-b2582450f7a81e667fef",
+    "receipt": {
+      "id": "bl-0004",
+      "number": "BL-2026-000004",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1786519620000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 4",
+        "roomCode": "PHONG_18",
+        "amount": {
+          "$numberInt": "5800000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2f284e3cdf17d6ecc9cf72ec"
+    },
+    "id": "ttien-0005",
+    "purpose": "HOLD",
+    "holdId": "gc-0001",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "QR",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0005",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1786762800000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-06",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1786763520000"
+      }
+    },
+    "bankTransactionRef": "DEMO-1bf0319bb9ea497b05bf",
+    "receipt": {
+      "id": "bl-0005",
+      "number": "BL-2026-000005",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1786763520000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 5",
+        "roomCode": "PHONG_01",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "151504237853251335123dcc"
+    },
+    "id": "ttien-0006",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0005",
+    "amount": {
+      "$numberInt": "3200000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0006",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1786778100000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-06",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1786778820000"
+      }
+    },
+    "bankTransactionRef": "DEMO-7be67eb3609ceed4e9ac",
+    "receipt": {
+      "id": "bl-0006",
+      "number": "BL-2026-000006",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1786778820000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 5",
+        "roomCode": "PHONG_01",
+        "amount": {
+          "$numberInt": "3200000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "52c7888a46561f140bac4e49"
+    },
+    "id": "ttien-0007",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0006",
+    "amount": {
+      "$numberInt": "4500000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0007",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1787037300000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-07",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1787038020000"
+      }
+    },
+    "bankTransactionRef": "DEMO-e13c01ba1953c8538430",
+    "receipt": {
+      "id": "bl-0007",
+      "number": "BL-2026-000007",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1787038020000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 6",
+        "roomCode": "PHONG_02",
+        "amount": {
+          "$numberInt": "4500000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1c54049c0703801c8f4573f0"
+    },
+    "id": "ttien-0008",
+    "purpose": "HOLD",
+    "holdId": "gc-0002",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "QR",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0008",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1787281200000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-08",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1787281920000"
+      }
+    },
+    "bankTransactionRef": "DEMO-b39df18fd4af5c688343",
+    "receipt": {
+      "id": "bl-0008",
+      "number": "BL-2026-000008",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1787281920000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 7",
+        "roomCode": "PHONG_03",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "3aa135a2c3498743c537ca05"
+    },
+    "id": "ttien-0009",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0007",
+    "amount": {
+      "$numberInt": "4200000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0009",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1787296500000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-08",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1787297220000"
+      }
+    },
+    "bankTransactionRef": "DEMO-41295c25191adbf07a45",
+    "receipt": {
+      "id": "bl-0009",
+      "number": "BL-2026-000009",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1787297220000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 7",
+        "roomCode": "PHONG_03",
+        "amount": {
+          "$numberInt": "4200000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e14e7b0f9c094a9c14d65c83"
+    },
+    "id": "ttien-0010",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0008",
+    "amount": {
+      "$numberInt": "4600000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0010",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1787555700000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-09",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1787556420000"
+      }
+    },
+    "bankTransactionRef": "DEMO-12fa666a85c61be7c4ae",
+    "receipt": {
+      "id": "bl-0010",
+      "number": "BL-2026-000010",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1787556420000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 8",
+        "roomCode": "PHONG_04",
+        "amount": {
+          "$numberInt": "4600000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "126eb676066942d5dca7bef2"
+    },
+    "id": "ttien-0011",
+    "purpose": "HOLD",
+    "holdId": "gc-0003",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "CASH",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0011",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1787799600000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-10",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1787800320000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0011",
+      "number": "BL-2026-000011",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1787800320000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 9",
+        "roomCode": "PHONG_05",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "ef5eff7eeda840298afe1d15"
+    },
+    "id": "ttien-0012",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0009",
+    "amount": {
+      "$numberInt": "2900000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0012",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1787814900000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-10",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1787815620000"
+      }
+    },
+    "bankTransactionRef": "DEMO-82f4f45a2d6c43c86972",
+    "receipt": {
+      "id": "bl-0012",
+      "number": "BL-2026-000012",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1787815620000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 9",
+        "roomCode": "PHONG_05",
+        "amount": {
+          "$numberInt": "2900000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "f00205e14a5f7b250e25b79b"
+    },
+    "id": "ttien-0013",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0010",
+    "amount": {
+      "$numberInt": "4300000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0013",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1788419700000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-02",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1788420420000"
+      }
+    },
+    "bankTransactionRef": "DEMO-ff4133ab36d4956f2ac7",
+    "receipt": {
+      "id": "bl-0013",
+      "number": "BL-2026-000013",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1788420420000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 10",
+        "roomCode": "PHONG_06",
+        "amount": {
+          "$numberInt": "4300000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "61cab7cadc5c4c737441f509"
+    },
+    "id": "ttien-0014",
+    "purpose": "HOLD",
+    "holdId": "gc-0004",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0014",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1788663600000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-03",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1788664320000"
+      }
+    },
+    "bankTransactionRef": "DEMO-c9f231738b5962f64a4e",
+    "receipt": {
+      "id": "bl-0014",
+      "number": "BL-2026-000014",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1788664320000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 11",
+        "roomCode": "PHONG_07",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c9621ba7e5ae6a8d4753f0b4"
+    },
+    "id": "ttien-0015",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0011",
+    "amount": {
+      "$numberInt": "3400000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0015",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1788678900000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-03",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1788679620000"
+      }
+    },
+    "bankTransactionRef": "DEMO-835fe56f232a9e56adf9",
+    "receipt": {
+      "id": "bl-0015",
+      "number": "BL-2026-000015",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1788679620000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 11",
+        "roomCode": "PHONG_07",
+        "amount": {
+          "$numberInt": "3400000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0a9503953b6888ca73b51d14"
+    },
+    "id": "ttien-0016",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0012",
+    "amount": {
+      "$numberInt": "4700000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0016",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1788938100000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-04",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1788938820000"
+      }
+    },
+    "bankTransactionRef": "DEMO-386a8ec41618bf1412ce",
+    "receipt": {
+      "id": "bl-0016",
+      "number": "BL-2026-000016",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1788938820000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 12",
+        "roomCode": "PHONG_08",
+        "amount": {
+          "$numberInt": "4700000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "20160f9c4c76a56fe98e1ec2"
+    },
+    "id": "ttien-0017",
+    "purpose": "HOLD",
+    "holdId": "gc-0005",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "QR",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0017",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1789182000000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-05",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1789182720000"
+      }
+    },
+    "bankTransactionRef": "DEMO-338999fcdc4a4241abfc",
+    "receipt": {
+      "id": "bl-0017",
+      "number": "BL-2026-000017",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1789182720000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 13",
+        "roomCode": "PHONG_09",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "48c75a402173ce356adccef7"
+    },
+    "id": "ttien-0018",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0013",
+    "amount": {
+      "$numberInt": "3400000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0018",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1789197300000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-05",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1789198020000"
+      }
+    },
+    "bankTransactionRef": "DEMO-19ea147b28421324a2da",
+    "receipt": {
+      "id": "bl-0018",
+      "number": "BL-2026-000018",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1789198020000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 13",
+        "roomCode": "PHONG_09",
+        "amount": {
+          "$numberInt": "3400000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "c86d837dc9956f2cdaeec120"
+    },
+    "id": "ttien-0019",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0014",
+    "amount": {
+      "$numberInt": "4200000"
+    },
+    "method": "CASH",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0019",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1789456500000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-06",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1789457220000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0019",
+      "number": "BL-2026-000019",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1789457220000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 14",
+        "roomCode": "PHONG_10",
+        "amount": {
+          "$numberInt": "4200000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "72286fa8a49d13cd519d7a90"
+    },
+    "id": "ttien-0020",
+    "purpose": "HOLD",
+    "holdId": "gc-0006",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "QR",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0020",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1789700400000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-07",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1789701120000"
+      }
+    },
+    "bankTransactionRef": "DEMO-5996b0bc423f14a4b515",
+    "receipt": {
+      "id": "bl-0020",
+      "number": "BL-2026-000020",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1789701120000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 15",
+        "roomCode": "PHONG_11",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6c50bd0972d4a7be61c16fbe"
+    },
+    "id": "ttien-0021",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0015",
+    "amount": {
+      "$numberInt": "5200000"
+    },
+    "method": "CASH",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0021",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1789715700000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-07",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1789716420000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0021",
+      "number": "BL-2026-000021",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1789716420000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 15",
+        "roomCode": "PHONG_11",
+        "amount": {
+          "$numberInt": "5200000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b71b513bc5b19732070ef1cb"
+    },
+    "id": "ttien-0022",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0016",
+    "amount": {
+      "$numberInt": "4800000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0022",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1789974900000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-08",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1789975620000"
+      }
+    },
+    "bankTransactionRef": "DEMO-05ca662a734cd844903f",
+    "receipt": {
+      "id": "bl-0022",
+      "number": "BL-2026-000022",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1789975620000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 16",
+        "roomCode": "PHONG_12",
+        "amount": {
+          "$numberInt": "4800000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6893948d84d71e2e769d9f53"
+    },
+    "id": "ttien-0023",
+    "purpose": "HOLD",
+    "holdId": "gc-0007",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0023",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1790218800000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-09",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1790219520000"
+      }
+    },
+    "bankTransactionRef": "DEMO-29a4c96513bc3c3d2aa9",
+    "receipt": {
+      "id": "bl-0023",
+      "number": "BL-2026-000023",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1790219520000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 17",
+        "roomCode": "PHONG_13",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cf8f27a21265add03df30135"
+    },
+    "id": "ttien-0024",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0017",
+    "amount": {
+      "$numberInt": "3900000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0024",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1790234100000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-09",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1790234820000"
+      }
+    },
+    "bankTransactionRef": "DEMO-d7e57bd2e28f13f7933e",
+    "receipt": {
+      "id": "bl-0024",
+      "number": "BL-2026-000024",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1790234820000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 17",
+        "roomCode": "PHONG_13",
+        "amount": {
+          "$numberInt": "3900000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e945b7aa16da71aa35fe8ba7"
+    },
+    "id": "ttien-0025",
+    "purpose": "HOLD",
+    "holdId": "gc-0008",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "CASH",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0025",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1790996400000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-02",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1790997120000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0025",
+      "number": "BL-2026-000025",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1790997120000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 18",
+        "roomCode": "PHONG_15",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a9b7c4f2bca4bb6f1131d9d7"
+    },
+    "id": "ttien-0026",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0018",
+    "amount": {
+      "$numberInt": "2600000"
+    },
+    "method": "CASH",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0026",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1791011700000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-02",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1791012420000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0026",
+      "number": "BL-2026-000026",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1791012420000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 18",
+        "roomCode": "PHONG_15",
+        "amount": {
+          "$numberInt": "2600000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "587a1e924ccf2951c2c8c804"
+    },
+    "id": "ttien-0027",
+    "purpose": "HOLD",
+    "holdId": "gc-0009",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "CASH",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0027",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1791255600000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-03",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1791256320000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0027",
+      "number": "BL-2026-000027",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1791256320000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 19",
+        "roomCode": "PHONG_17",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "51fd2b48aafcc0122f872a05"
+    },
+    "id": "ttien-0028",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0019",
+    "amount": {
+      "$numberInt": "3300000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0028",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1791270900000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-03",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1791271620000"
+      }
+    },
+    "bankTransactionRef": "DEMO-4806d5c52d55bad89c40",
+    "receipt": {
+      "id": "bl-0028",
+      "number": "BL-2026-000028",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1791271620000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 19",
+        "roomCode": "PHONG_17",
+        "amount": {
+          "$numberInt": "3300000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0ab62cb97ce36ab8c8446a48"
+    },
+    "id": "ttien-0029",
+    "purpose": "HOLD",
+    "holdId": "gc-0010",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "CASH",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0029",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1791514800000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-04",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1791515520000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0029",
+      "number": "BL-2026-000029",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1791515520000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 20",
+        "roomCode": "PHONG_19",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "62fc860d6a03bd22bc4a283b"
+    },
+    "id": "ttien-0030",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0020",
+    "amount": {
+      "$numberInt": "4600000"
+    },
+    "method": "CASH",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0030",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1791530100000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-04",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1791530820000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0030",
+      "number": "BL-2026-000030",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1791530820000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 20",
+        "roomCode": "PHONG_19",
+        "amount": {
+          "$numberInt": "4600000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7cd31ae64a9461526fcd7159"
+    },
+    "id": "ttien-0031",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0021",
+    "amount": {
+      "$numberInt": "4600000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0031",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1791789300000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-05",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1791790020000"
+      }
+    },
+    "bankTransactionRef": "DEMO-add8885a72296cfe8908",
+    "receipt": {
+      "id": "bl-0031",
+      "number": "BL-2026-000031",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1791790020000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 21",
+        "roomCode": "PHONG_20",
+        "amount": {
+          "$numberInt": "4600000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1d7ea5dcb9f1f6526ab533ee"
+    },
+    "id": "ttien-0032",
+    "purpose": "HOLD",
+    "holdId": "gc-0011",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "QR",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0032",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1792033200000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-06",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1792033920000"
+      }
+    },
+    "bankTransactionRef": "DEMO-92b2045eea2720780b94",
+    "receipt": {
+      "id": "bl-0032",
+      "number": "BL-2026-000032",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1792033920000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 22",
+        "roomCode": "PHONG_21",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "9f80b8d4b0e40165f828b876"
+    },
+    "id": "ttien-0033",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0022",
+    "amount": {
+      "$numberInt": "2800000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0033",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1792048500000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-06",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1792049220000"
+      }
+    },
+    "bankTransactionRef": "DEMO-395c030f141b3a115ba9",
+    "receipt": {
+      "id": "bl-0033",
+      "number": "BL-2026-000033",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1792049220000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 22",
+        "roomCode": "PHONG_21",
+        "amount": {
+          "$numberInt": "2800000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b08633f6bfad40c7799af87c"
+    },
+    "id": "ttien-0034",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0023",
+    "amount": {
+      "$numberInt": "4300000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0034",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1792307700000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-07",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1792308420000"
+      }
+    },
+    "bankTransactionRef": "DEMO-a7e94072c40b4175cb28",
+    "receipt": {
+      "id": "bl-0034",
+      "number": "BL-2026-000034",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1792308420000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 23",
+        "roomCode": "PHONG_22",
+        "amount": {
+          "$numberInt": "4300000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "077381af4cc72c669791d24b"
+    },
+    "id": "ttien-0035",
+    "purpose": "HOLD",
+    "holdId": "gc-0012",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "QR",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0035",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1792551600000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-08",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1792552320000"
+      }
+    },
+    "bankTransactionRef": "DEMO-cc465a1aeb1bb65520c1",
+    "receipt": {
+      "id": "bl-0035",
+      "number": "BL-2026-000035",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1792552320000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 24",
+        "roomCode": "PHONG_47",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "739e3b17afde0c149f3c70f4"
+    },
+    "id": "ttien-0036",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0024",
+    "amount": {
+      "$numberInt": "7900000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0036",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1792566900000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-08",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1792567620000"
+      }
+    },
+    "bankTransactionRef": "DEMO-3f1286b7576275873501",
+    "receipt": {
+      "id": "bl-0036",
+      "number": "BL-2026-000036",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1792567620000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách liên hệ 24",
+        "roomCode": "PHONG_47",
+        "amount": {
+          "$numberInt": "7900000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0d3c47cd561a7d5da0cb93f1"
+    },
+    "id": "ttien-0037",
+    "purpose": "HOLD",
+    "holdId": "gc-0013",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "CASH",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0037",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-02",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793502720000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0037",
+      "number": "BL-2026-000037",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793502720000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 25",
+        "roomCode": "PHONG_23",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "7f437e381e0a0a2356cd2955"
+    },
+    "id": "ttien-0038",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0025",
+    "amount": {
+      "$numberInt": "3000000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0038",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793517300000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-02",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793518020000"
+      }
+    },
+    "bankTransactionRef": "DEMO-5a24bbd618be060a7d26",
+    "receipt": {
+      "id": "bl-0038",
+      "number": "BL-2026-000038",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793518020000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 25",
+        "roomCode": "PHONG_23",
+        "amount": {
+          "$numberInt": "3000000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4207ea79b74e33c119a95d6f"
+    },
+    "id": "ttien-0039",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0026",
+    "amount": {
+      "$numberInt": "6000000"
+    },
+    "method": "BANK_TRANSFER",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0039",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793517300000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-03",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793518020000"
+      }
+    },
+    "bankTransactionRef": "DEMO-bd455df7c1691631f2e8",
+    "receipt": {
+      "id": "bl-0039",
+      "number": "BL-2026-000039",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793518020000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 26",
+        "roomCode": "PHONG_24",
+        "amount": {
+          "$numberInt": "6000000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2b243f1ad75eb70b9d9726c9"
+    },
+    "id": "ttien-0040",
+    "purpose": "HOLD",
+    "holdId": "gc-0014",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "CASH",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0040",
+    "status": "PENDING",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "confirmedByEmployeeId": null,
+    "confirmedAt": null
+  },
+  {
+    "_id": {
+      "$oid": "430f87478d0ccd92be7205a9"
+    },
+    "id": "ttien-0041",
+    "purpose": "HOLD",
+    "holdId": "gc-0015",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "QR",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0041",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-02",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793502720000"
+      }
+    },
+    "bankTransactionRef": "DEMO-d7224a65bec51a403463",
+    "receipt": {
+      "id": "bl-0040",
+      "number": "BL-2026-000040",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793502720000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 28",
+        "roomCode": "PHONG_28",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "11867d40494b2805d81266dd"
+    },
+    "id": "ttien-0042",
+    "purpose": "HOLD",
+    "holdId": "gc-0016",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "QR",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0042",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793502000000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-03",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793502720000"
+      }
+    },
+    "bankTransactionRef": "DEMO-89f41f59566451eb2c76",
+    "receipt": {
+      "id": "bl-0041",
+      "number": "BL-2026-000041",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793502720000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 29",
+        "roomCode": "PHONG_29",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "1c7ba28f38a0e03b86d9e1a1"
+    },
+    "id": "ttien-0043",
+    "purpose": "HOLD",
+    "holdId": "gc-0018",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "CASH",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0043",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793242800000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-05",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793243520000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0042",
+      "number": "BL-2026-000042",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793243520000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 31",
+        "roomCode": "PHONG_31",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "8ca3d0d732a70be54c25217c"
+    },
+    "id": "ttien-0044",
+    "purpose": "HOLD",
+    "holdId": "gc-0019",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "CASH",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0044",
+    "status": "REJECTED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "confirmedByEmployeeId": null,
+    "confirmedAt": null,
+    "rejection": {
+      "employeeId": "nv-06",
+      "at": {
+        "$date": {
+          "$numberLong": "1793589120000"
+        }
+      },
+      "reason": "Nội dung minh họa đã được ẩn danh."
+    }
+  },
+  {
+    "_id": {
+      "$oid": "0914bedf82edf19e0f173c80"
+    },
+    "id": "ttien-0045",
+    "purpose": "HOLD",
+    "holdId": "gc-0020",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "QR",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0045",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-07",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793589120000"
+      }
+    },
+    "bankTransactionRef": "DEMO-4e0e1478d909c894ef1d",
+    "receipt": {
+      "id": "bl-0043",
+      "number": "BL-2026-000043",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793589120000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 33",
+        "roomCode": "PHONG_33",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "e93095a8082598bc624060e9"
+    },
+    "id": "ttien-0046",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0027",
+    "amount": {
+      "$numberInt": "4500000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0046",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793603700000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-07",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793604420000"
+      }
+    },
+    "bankTransactionRef": "DEMO-f23feeb3bac5666f19e9",
+    "receipt": {
+      "id": "bl-0044",
+      "number": "BL-2026-000044",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793604420000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 33",
+        "roomCode": "PHONG_33",
+        "amount": {
+          "$numberInt": "4500000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6d422fafe8d6cd1aadc05907"
+    },
+    "id": "ttien-0047",
+    "purpose": "HOLD",
+    "holdId": "gc-0021",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "method": "CASH",
+    "payee": null,
+    "idempotencyKey": "seed:ttien-0047",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793588400000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-08",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793589120000"
+      }
+    },
+    "receipt": {
+      "id": "bl-0045",
+      "number": "BL-2026-000045",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793589120000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 34",
+        "roomCode": "PHONG_34",
+        "amount": {
+          "$numberInt": "1000000"
+        },
+        "title": "Thu tiền giữ chỗ"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a9a62cbc87adbd8b5619734f"
+    },
+    "id": "ttien-0048",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0028",
+    "amount": {
+      "$numberInt": "3600000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0048",
+    "status": "REJECTED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793603700000"
+      }
+    },
+    "confirmedByEmployeeId": null,
+    "confirmedAt": null,
+    "bankTransactionRef": "DEMO-11a143f486497f3265c9",
+    "rejection": {
+      "employeeId": null,
+      "at": {
+        "$date": {
+          "$numberLong": "1794157200000"
+        }
+      },
+      "reason": "Nội dung minh họa đã được ẩn danh."
+    }
+  },
+  {
+    "_id": {
+      "$oid": "912efd93c7e2e5af434bb750"
+    },
+    "id": "ttien-0049",
+    "purpose": "DEPOSIT",
+    "depositId": "coc-0029",
+    "amount": {
+      "$numberInt": "4300000"
+    },
+    "method": "QR",
+    "payee": "OWNER",
+    "idempotencyKey": "seed:ttien-0049",
+    "status": "CONFIRMED",
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1793430900000"
+      }
+    },
+    "confirmedByEmployeeId": "nv-09",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1793431620000"
+      }
+    },
+    "bankTransactionRef": "DEMO-216aaa05fdc9c40b13e7",
+    "receipt": {
+      "id": "bl-0046",
+      "number": "BL-2026-000046",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1793431620000"
+        }
+      },
+      "snapshot": {
+        "payerName": "Khách hàng 35",
+        "roomCode": "PHONG_35",
+        "amount": {
+          "$numberInt": "4300000"
+        },
+        "title": "Thu tiền cọc thuộc chủ phòng"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afabf73540231e55f2d1214"
+    },
+    "id": "ttien-c5159271-060a-4885-896e-ebb1290130e6",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794817907602"
+      }
+    },
+    "customerId": "kh-6af9b41ded3fe4f1d80b464b",
+    "description": "GC100001",
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1794818807285"
+      }
+    },
+    "holdId": "gc-de655727-3925-4739-ad7c-0434d00695e2",
+    "idempotencyKey": "7af675c4-ac10-47c7-9882-4a2fa3240cb8",
+    "method": "BANK_TRANSFER",
+    "orderCode": {
+      "$numberLong": "910000000049"
+    },
+    "provider": "PAYOS",
+    "purpose": "HOLD",
+    "roomId": "phong-30",
+    "status": "PENDING",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794817917114"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afae177540231e55f2d27a5"
+    },
+    "id": "ttien-3e2342db-e51a-43c6-98b4-cb5a3e67b2d6",
+    "amount": {
+      "$numberInt": "1000000"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794826615169"
+      }
+    },
+    "customerId": "kh-6af9b41ded3fe4f1d80b464b",
+    "description": "GC100002",
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1794827515020"
+      }
+    },
+    "holdId": "gc-b8d58b27-9e7b-4664-ba9e-b3351526d6de",
+    "idempotencyKey": "f53a3076-8ebd-4f36-b336-216face65740",
+    "method": "BANK_TRANSFER",
+    "orderCode": {
+      "$numberLong": "910000000050"
+    },
+    "provider": "PAYOS",
+    "purpose": "HOLD",
+    "roomId": "phong-30",
+    "status": "PENDING",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794826617346"
+      }
+    },
+    "version": {
+      "$numberInt": "1"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6afb4402540231e55f2d3656"
+    },
+    "id": "ttien-fca04a3d-6ac8-426c-9c76-cc0a143086d2",
+    "amount": {
+      "$numberInt": "10000"
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794851842735"
+      }
+    },
+    "customerId": "kh-6af9b41ded3fe4f1d80b464b",
+    "description": "GC100003",
+    "expiresAt": {
+      "$date": {
+        "$numberLong": "1794852742615"
+      }
+    },
+    "holdId": "gc-75c3db33-2644-4a28-8dc4-f83ebbcd4d81",
+    "idempotencyKey": "c2a36709-7742-447a-be5d-743920518a2e",
+    "method": "BANK_TRANSFER",
+    "orderCode": {
+      "$numberLong": "910000000051"
+    },
+    "provider": "PAYOS",
+    "purpose": "HOLD",
+    "roomId": "phong-30",
+    "status": "CONFIRMED",
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794851899994"
+      }
+    },
+    "version": {
+      "$numberInt": "2"
+    },
+    "bankTransactionRef": "DEMO-448622a24849392b411e",
+    "confirmedAt": {
+      "$date": {
+        "$numberLong": "1794851899994"
+      }
+    },
+    "confirmedBy": "SYSTEM",
+    "confirmedByEmployeeId": null,
+    "paidAt": {
+      "$date": {
+        "$numberLong": "1794851899994"
+      }
+    },
+    "receipt": {
+      "id": "bl-ttien-fca04a3d-6ac8-426c-9c76-cc0a143086d2",
+      "paymentId": "ttien-fca04a3d-6ac8-426c-9c76-cc0a143086d2",
+      "number": "BL-202611-0001",
+      "issuedAt": {
+        "$date": {
+          "$numberLong": "1794851899994"
+        }
+      },
+      "snapshot": {
+        "title": "Biên lai giữ chỗ",
+        "holdId": "gc-75c3db33-2644-4a28-8dc4-f83ebbcd4d81",
+        "holdNumber": "GC-202611-0003",
+        "payerName": "Khách hàng 43",
+        "payerPhone": "0900000059",
+        "roomCode": "PHONG_30",
+        "roomName": "Căn hộ Rattan Tropical",
+        "roomAddress": "Đường Lê Văn Việt, Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh",
+        "amount": {
+          "$numberInt": "10000"
+        },
+        "method": "BANK_TRANSFER",
+        "paidAt": {
+          "$date": {
+            "$numberLong": "1794851899994"
+          }
+        },
+        "expiresAt": {
+          "$date": {
+            "$numberLong": "1795024699994"
+          }
+        }
+      }
+    }
+  }
+]

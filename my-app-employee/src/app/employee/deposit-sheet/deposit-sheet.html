@@ -1,0 +1,148 @@
+<article class="deposit-a4" *ngIf="sheet() as s" aria-label="Phiếu thu cọc A4">
+  <div class="sheet-letterhead">
+    <div>
+      <div class="sheet-brand">iHOUZZ <span>Uni</span></div>
+      <strong>{{ s.company?.name || '—' }}</strong>
+      <div>MST: {{ s.company?.taxCode || '—' }} · Hotline: {{ s.company?.hotline || '—' }}</div>
+      <div>{{ s.company?.address || '—' }}</div>
+    </div>
+    <div class="sheet-reference">
+      <div class="sheet-national">
+        <strong>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</strong>
+        <div>Độc lập – Tự do – Hạnh phúc</div>
+      </div>
+      Số phiếu: <strong>{{ s.deposit.number || 'Chưa cấp' }}</strong
+      ><br />Ngày giờ lập:
+      {{ s.deposit.createdAt ? (s.deposit.createdAt | date: 'HH:mm dd/MM/yyyy') : 'Chưa cấp' }}
+    </div>
+  </div>
+  <h1>HỢP ĐỒNG ĐẶT CỌC GIỮ PHÒNG &amp; PHIẾU THU CỌC</h1>
+  <p class="sheet-intro">
+    Hôm nay, ngày {{ s.deposit.createdAt ? (s.deposit.createdAt | date: 'dd/MM/yyyy') : '…/…/……' }},
+    các bên gồm có:
+  </p>
+  <section class="sheet-party">
+    <h2>BÊN NHẬN CỌC (BÊN A)</h2>
+    <p>
+      <strong>{{ s.company?.name || '—' }}</strong>
+    </p>
+    <p>MST: {{ s.company?.taxCode || '—' }} · Hotline: {{ s.company?.hotline || '—' }}</p>
+    <p>Địa chỉ: {{ s.company?.address || '—' }}</p>
+    <p>
+      Nhân viên lập: <strong>{{ s.employee.fullName || '—' }}</strong> · Mã NV:
+      {{ s.employee.employeeCode || '—' }}
+    </p>
+  </section>
+  <section class="sheet-party">
+    <h2>BÊN ĐẶT CỌC (BÊN B)</h2>
+    <p>
+      Họ và tên: <strong>{{ s.customer.fullName || '—' }}</strong> · SĐT:
+      {{ s.customer.phone || '—' }}
+    </p>
+    <p>
+      CCCD: {{ s.customer.identity?.number || '—' }} · Ngày cấp:
+      {{
+        s.customer.identity?.issuedDate
+          ? (s.customer.identity!.issuedDate | date: 'dd/MM/yyyy')
+          : '—'
+      }}
+    </p>
+    <p>Nơi cấp: {{ s.customer.identity?.issuedPlace || '—' }}</p>
+    <p>Địa chỉ thường trú: {{ s.customer.permanentAddress || '—' }}</p>
+  </section>
+  <section>
+    <h2>THÔNG TIN PHÒNG &amp; TIỀN CỌC</h2>
+    <p>
+      Phòng: <strong>{{ s.room.code || '—' }} · {{ s.room.name || '—' }}</strong> · Tòa:
+      {{ s.room.propertyName || '—' }} · Tầng: {{ s.room.floor ?? '—' }}
+    </p>
+    <p>
+      Địa chỉ phòng: {{ s.room.address || '—' }} · Loại phòng:
+      {{ s.room.type ? (s.room.type | roomType) : '—' }}
+    </p>
+    <p>
+      Giá thuê/tháng:
+      <strong>{{
+        s.deposit.proposedLease.monthlyRent == null
+          ? s.room.monthlyRent == null
+            ? '—'
+            : (s.room.monthlyRent | number) + ' đ'
+          : (s.deposit.proposedLease.monthlyRent | number) + ' đ'
+      }}</strong>
+    </p>
+    <p class="sheet-fees">
+      <span *ngIf="s.room.electricityPrice != null"
+        >Điện: {{ s.room.electricityPrice | number }} đ/kWh. </span
+      ><span *ngIf="s.room.waterPrice != null"
+        >Nước: {{ s.room.waterPrice | number }} đ/người/tháng. </span
+      ><span *ngFor="let fee of s.room.fees">{{ fee.name }}: {{ fee.amount | number }} đ. </span>
+    </p>
+    <p>
+      Thời hạn: {{ s.deposit.proposedLease.months ?? '—' }} tháng · Từ
+      {{
+        s.deposit.proposedLease.startDate
+          ? (s.deposit.proposedLease.startDate | date: 'dd/MM/yyyy')
+          : '—'
+      }}
+      đến
+      {{
+        s.deposit.proposedLease.endDate
+          ? (s.deposit.proposedLease.endDate | date: 'dd/MM/yyyy')
+          : '—'
+      }}
+    </p>
+    <div class="sheet-totals">
+      <p>
+        Tổng tiền cọc: <strong>{{ s.deposit.totalRequired | number }} đ</strong> · Tiền giữ chỗ được
+        trừ: <strong>{{ s.deposit.holdCredit | number }} đ</strong>
+      </p>
+      <p *ngIf="s.hold">Phiếu giữ chỗ: {{ s.hold.number }}</p>
+      <p>
+        <strong>SỐ TIỀN ĐÃ THU: {{ s.deposit.collected.amount | number }} đ</strong>
+      </p>
+      <p>
+        Bằng chữ: <strong>{{ amountWords() }}</strong>
+      </p>
+    </div>
+    <p>
+      Hình thức đã thu:
+      <strong>{{ s.deposit.collected.method === 'CASH' ? 'Tiền mặt' : 'Chuyển khoản' }}</strong> ·
+      Ghi nhận lúc:
+      {{
+        s.deposit.collected.at ? (s.deposit.collected.at | date: 'HH:mm dd/MM/yyyy') : 'Chưa cấp'
+      }}
+    </p>
+    <p>Ghi chú: {{ s.deposit.collected.note || '—' }}</p>
+  </section>
+  <section class="sheet-terms">
+    <h2>ĐIỀU KHOẢN THỎA THUẬN</h2>
+    <ol>
+      <li>Bên A nhận tiền cọc để giữ phòng nêu trên cho Bên B đến ngày bắt đầu thuê.</li>
+      <li>
+        Nếu Bên B không ký hợp đồng thuê hoặc không dọn vào ở theo thỏa thuận, Bên B mất toàn bộ số
+        tiền đã đặt cọc.
+      </li>
+      <li>
+        Khi hai bên ký hợp đồng thuê, số tiền cọc chuyển thành tiền đảm bảo của hợp đồng thuê.
+      </li>
+    </ol>
+  </section>
+  <div class="sheet-signatures">
+    <div>
+      <strong>BÊN ĐẶT CỌC (BÊN B)</strong>
+      <small>(Ký và ghi rõ họ tên)</small>
+      <div class="signature-space" aria-label="Chỗ ký trống bên B"></div>
+      <strong>{{ s.customer.fullName }}</strong>
+    </div>
+    <div>
+      <strong>BÊN NHẬN CỌC (ĐẠI DIỆN BÊN A)</strong>
+      <small>(Ký và ghi rõ họ tên)</small>
+      <div class="signature-space" aria-label="Chỗ ký trống bên A"></div>
+      <strong>{{ s.employee.fullName }}</strong>
+    </div>
+  </div>
+  <div class="sheet-footer">
+    <span>Phiếu thu cọc · {{ s.deposit.number || 'Chưa cấp' }}</span
+    ><span>iHOUZZ Uni</span>
+  </div>
+</article>

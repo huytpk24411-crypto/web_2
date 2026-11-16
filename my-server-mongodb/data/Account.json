@@ -1,0 +1,1949 @@
+[
+  {
+    "_id": {
+      "$oid": "fcb6e253ba9f52019489a205"
+    },
+    "id": "admin",
+    "phone": "0900000001",
+    "name": "Quản trị viên 01",
+    "fullName": "Quản trị viên 01",
+    "role": "ADMIN",
+    "roles": [
+      {
+        "role": "ADMIN",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "admin1@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_admin_01"
+  },
+  {
+    "_id": {
+      "$oid": "07eb7f001ef380e22160adfc"
+    },
+    "id": "tk-nv-01",
+    "phone": "0900000002",
+    "name": "Nhân viên 01",
+    "fullName": "Nhân viên 01",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee1@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_01"
+  },
+  {
+    "_id": {
+      "$oid": "a37bbd479c3985bb183ee543"
+    },
+    "id": "tk-nv-02",
+    "phone": "0900000003",
+    "name": "Nhân viên 02",
+    "fullName": "Nhân viên 02",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee2@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_02"
+  },
+  {
+    "_id": {
+      "$oid": "c3a4bc80da35238126ab9483"
+    },
+    "id": "tk-nv-03",
+    "phone": "0900000004",
+    "name": "Nhân viên 03",
+    "fullName": "Nhân viên 03",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee3@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_03"
+  },
+  {
+    "_id": {
+      "$oid": "fd417e96784c4d07b8085112"
+    },
+    "id": "tk-nv-04",
+    "phone": "0900000005",
+    "name": "Nhân viên 04",
+    "fullName": "Nhân viên 04",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee4@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_04"
+  },
+  {
+    "_id": {
+      "$oid": "ee92394c6eba20edcb46b66a"
+    },
+    "id": "tk-nv-05",
+    "phone": "0900000006",
+    "name": "Nhân viên 05",
+    "fullName": "Nhân viên 05",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee5@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_05"
+  },
+  {
+    "_id": {
+      "$oid": "4254be5b92fa085696b27e24"
+    },
+    "id": "tk-nv-06",
+    "phone": "0900000007",
+    "name": "Nhân viên 06",
+    "fullName": "Nhân viên 06",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee6@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_06"
+  },
+  {
+    "_id": {
+      "$oid": "865d1ed62cd5100ebe97caeb"
+    },
+    "id": "tk-nv-07",
+    "phone": "0900000008",
+    "name": "Nhân viên 07",
+    "fullName": "Nhân viên 07",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee7@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_07"
+  },
+  {
+    "_id": {
+      "$oid": "629296cc6eac8ca2518948b9"
+    },
+    "id": "tk-nv-08",
+    "phone": "0900000009",
+    "name": "Nhân viên 08",
+    "fullName": "Nhân viên 08",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee8@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_08"
+  },
+  {
+    "_id": {
+      "$oid": "10f45bc39091575f2b17fff8"
+    },
+    "id": "tk-nv-09",
+    "phone": "0900000010",
+    "name": "Nhân viên 09",
+    "fullName": "Nhân viên 09",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee9@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_09"
+  },
+  {
+    "_id": {
+      "$oid": "114e834160200d2eb36923b9"
+    },
+    "id": "tk-nv-10",
+    "phone": "0900000011",
+    "name": "Nhân viên 10",
+    "fullName": "Nhân viên 10",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee10@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_10"
+  },
+  {
+    "_id": {
+      "$oid": "5e03eb8d3dacbe7f0167d0e6"
+    },
+    "id": "tk-nv-11",
+    "phone": "0900000012",
+    "name": "Nhân viên 11",
+    "fullName": "Nhân viên 11",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee11@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_11"
+  },
+  {
+    "_id": {
+      "$oid": "1bddf2603688808a28e4ce60"
+    },
+    "id": "tk-nv-12",
+    "phone": "0900000013",
+    "name": "Nhân viên 12",
+    "fullName": "Nhân viên 12",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee12@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_12"
+  },
+  {
+    "_id": {
+      "$oid": "ce10afe4e3d5b1bbc2933239"
+    },
+    "id": "tk-nv-13",
+    "phone": "0900000014",
+    "name": "Nhân viên 13",
+    "fullName": "Nhân viên 13",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee13@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_13"
+  },
+  {
+    "_id": {
+      "$oid": "8002df874988e9a8cf8b669d"
+    },
+    "id": "tk-nv-14",
+    "phone": "0900000015",
+    "name": "Nhân viên 14",
+    "fullName": "Nhân viên 14",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee14@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_14"
+  },
+  {
+    "_id": {
+      "$oid": "0e9861b889f43e8957f41bb2"
+    },
+    "id": "tk-nv-15",
+    "phone": "0900000016",
+    "name": "Nhân viên 15",
+    "fullName": "Nhân viên 15",
+    "role": "EMPLOYEE",
+    "roles": [
+      {
+        "role": "EMPLOYEE",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "employee15@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_employee_15"
+  },
+  {
+    "_id": {
+      "$oid": "c5366025f37b55162604d782"
+    },
+    "id": "tk-kh-01",
+    "phone": "0900000017",
+    "name": "Khách hàng 01",
+    "fullName": "Khách hàng 01",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer1@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_01"
+  },
+  {
+    "_id": {
+      "$oid": "20b683021dfc53c2b98fcfad"
+    },
+    "id": "tk-kh-02",
+    "phone": "0900000018",
+    "name": "Khách hàng 02",
+    "fullName": "Khách hàng 02",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer2@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_02"
+  },
+  {
+    "_id": {
+      "$oid": "d5ce9ace7adfcaa806fd8cc5"
+    },
+    "id": "tk-kh-03",
+    "phone": "0900000019",
+    "name": "Khách hàng 03",
+    "fullName": "Khách hàng 03",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer3@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_03"
+  },
+  {
+    "_id": {
+      "$oid": "192eec43b56779fb100831cb"
+    },
+    "id": "tk-kh-04",
+    "phone": "0900000020",
+    "name": "Khách hàng 04",
+    "fullName": "Khách hàng 04",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer4@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_04"
+  },
+  {
+    "_id": {
+      "$oid": "9d5f1d391d47715a429e33d0"
+    },
+    "id": "tk-kh-05",
+    "phone": "0900000021",
+    "name": "Khách hàng 05",
+    "fullName": "Khách hàng 05",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer5@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_05"
+  },
+  {
+    "_id": {
+      "$oid": "0e4ad4deff5acae6e24c717f"
+    },
+    "id": "tk-kh-06",
+    "phone": "0900000022",
+    "name": "Khách hàng 06",
+    "fullName": "Khách hàng 06",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer6@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_06"
+  },
+  {
+    "_id": {
+      "$oid": "4b3a2f50c5b6109d99149f76"
+    },
+    "id": "tk-kh-07",
+    "phone": "0900000023",
+    "name": "Khách hàng 07",
+    "fullName": "Khách hàng 07",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer7@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_07"
+  },
+  {
+    "_id": {
+      "$oid": "c52b51d83cf0afc36e5be48a"
+    },
+    "id": "tk-kh-08",
+    "phone": "0900000024",
+    "name": "Khách hàng 08",
+    "fullName": "Khách hàng 08",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer8@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_08"
+  },
+  {
+    "_id": {
+      "$oid": "9da93936ac5637bf47f26533"
+    },
+    "id": "tk-kh-09",
+    "phone": "0900000025",
+    "name": "Khách hàng 09",
+    "fullName": "Khách hàng 09",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer9@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_09"
+  },
+  {
+    "_id": {
+      "$oid": "9f1df7c73d3266f54383f2f8"
+    },
+    "id": "tk-kh-10",
+    "phone": "0900000026",
+    "name": "Khách hàng 10",
+    "fullName": "Khách hàng 10",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer10@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_10"
+  },
+  {
+    "_id": {
+      "$oid": "a4715eeaff0c90cc119aa5e3"
+    },
+    "id": "tk-kh-11",
+    "phone": "0900000027",
+    "name": "Khách hàng 11",
+    "fullName": "Khách hàng 11",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer11@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_11"
+  },
+  {
+    "_id": {
+      "$oid": "d7b71ff5a9a1666902635b4c"
+    },
+    "id": "tk-kh-12",
+    "phone": "0900000028",
+    "name": "Khách hàng 12",
+    "fullName": "Khách hàng 12",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer12@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_12"
+  },
+  {
+    "_id": {
+      "$oid": "295d838d8a30b08d4e9e0ee5"
+    },
+    "id": "tk-kh-13",
+    "phone": "0900000029",
+    "name": "Khách hàng 13",
+    "fullName": "Khách hàng 13",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer13@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_13"
+  },
+  {
+    "_id": {
+      "$oid": "38dddafd1fb680987354ba09"
+    },
+    "id": "tk-kh-14",
+    "phone": "0900000030",
+    "name": "Khách hàng 14",
+    "fullName": "Khách hàng 14",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer14@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_14"
+  },
+  {
+    "_id": {
+      "$oid": "3baf342d2d012fae4fbe060f"
+    },
+    "id": "tk-kh-15",
+    "phone": "0900000031",
+    "name": "Khách hàng 15",
+    "fullName": "Khách hàng 15",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer15@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_15"
+  },
+  {
+    "_id": {
+      "$oid": "baf818b614e033dfcb26353e"
+    },
+    "id": "tk-kh-16",
+    "phone": "0900000032",
+    "name": "Khách hàng 16",
+    "fullName": "Khách hàng 16",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer16@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_16"
+  },
+  {
+    "_id": {
+      "$oid": "bcfa1ba1ddbd32f23c63dcbd"
+    },
+    "id": "tk-kh-17",
+    "phone": "0900000033",
+    "name": "Khách hàng 17",
+    "fullName": "Khách hàng 17",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer17@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_17"
+  },
+  {
+    "_id": {
+      "$oid": "7ed7a9bf4b154a13dc17a5ba"
+    },
+    "id": "tk-kh-18",
+    "phone": "0900000034",
+    "name": "Khách hàng 18",
+    "fullName": "Khách hàng 18",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer18@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_18"
+  },
+  {
+    "_id": {
+      "$oid": "2ddc0593bcf9f22b0829f9e9"
+    },
+    "id": "tk-kh-19",
+    "phone": "0900000035",
+    "name": "Khách hàng 19",
+    "fullName": "Khách hàng 19",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer19@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_19"
+  },
+  {
+    "_id": {
+      "$oid": "c7644ed2664127670c3c6a96"
+    },
+    "id": "tk-kh-20",
+    "phone": "0900000036",
+    "name": "Khách hàng 20",
+    "fullName": "Khách hàng 20",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer20@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_20"
+  },
+  {
+    "_id": {
+      "$oid": "c81a81778e1c228b7c9c08ee"
+    },
+    "id": "tk-kh-21",
+    "phone": "0900000037",
+    "name": "Khách hàng 21",
+    "fullName": "Khách hàng 21",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer21@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_21"
+  },
+  {
+    "_id": {
+      "$oid": "e92bd498bb5bb5fd4854ad81"
+    },
+    "id": "tk-kh-22",
+    "phone": "0900000038",
+    "name": "Khách hàng 22",
+    "fullName": "Khách hàng 22",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer22@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_22"
+  },
+  {
+    "_id": {
+      "$oid": "8e9d520a4237fb758dfa12f4"
+    },
+    "id": "tk-kh-23",
+    "phone": "0900000039",
+    "name": "Khách hàng 23",
+    "fullName": "Khách hàng 23",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer23@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_23"
+  },
+  {
+    "_id": {
+      "$oid": "a62d0ebe93632b11538a530f"
+    },
+    "id": "tk-kh-24",
+    "phone": "0900000040",
+    "name": "Khách hàng 24",
+    "fullName": "Khách hàng 24",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer24@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_24"
+  },
+  {
+    "_id": {
+      "$oid": "2dcafa511921071010d7d987"
+    },
+    "id": "tk-kh-25",
+    "phone": "0900000041",
+    "name": "Khách hàng 25",
+    "fullName": "Khách hàng 25",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer25@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_25"
+  },
+  {
+    "_id": {
+      "$oid": "5229090a79f55cf1c8b4a9af"
+    },
+    "id": "tk-kh-26",
+    "phone": "0900000042",
+    "name": "Khách hàng 26",
+    "fullName": "Khách hàng 26",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer26@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_26"
+  },
+  {
+    "_id": {
+      "$oid": "618f9c04ea18b3256719733f"
+    },
+    "id": "tk-kh-27",
+    "phone": "0900000043",
+    "name": "Khách hàng 27",
+    "fullName": "Khách hàng 27",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer27@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_27"
+  },
+  {
+    "_id": {
+      "$oid": "5b9928268b6e4a3f170a5c51"
+    },
+    "id": "tk-kh-28",
+    "phone": "0900000044",
+    "name": "Khách hàng 28",
+    "fullName": "Khách hàng 28",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer28@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_28"
+  },
+  {
+    "_id": {
+      "$oid": "66c63425e1ca34c457f6f984"
+    },
+    "id": "tk-kh-29",
+    "phone": "0900000045",
+    "name": "Khách hàng 29",
+    "fullName": "Khách hàng 29",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer29@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_29"
+  },
+  {
+    "_id": {
+      "$oid": "4e5897c8841d029e01c778a1"
+    },
+    "id": "tk-kh-30",
+    "phone": "0900000046",
+    "name": "Khách hàng 30",
+    "fullName": "Khách hàng 30",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer30@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_30"
+  },
+  {
+    "_id": {
+      "$oid": "307655185842cd2b0f097379"
+    },
+    "id": "tk-kh-31",
+    "phone": "0900000047",
+    "name": "Khách hàng 31",
+    "fullName": "Khách hàng 31",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer31@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_31"
+  },
+  {
+    "_id": {
+      "$oid": "b645b397ea86926a4c2d6acb"
+    },
+    "id": "tk-kh-32",
+    "phone": "0900000048",
+    "name": "Khách hàng 32",
+    "fullName": "Khách hàng 32",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer32@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_32"
+  },
+  {
+    "_id": {
+      "$oid": "3dd190f67cd4ac71bb80e536"
+    },
+    "id": "tk-kh-33",
+    "phone": "0900000049",
+    "name": "Khách hàng 33",
+    "fullName": "Khách hàng 33",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer33@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_33"
+  },
+  {
+    "_id": {
+      "$oid": "cf4f3d5ebce580ebba39dcd8"
+    },
+    "id": "tk-kh-34",
+    "phone": "0900000050",
+    "name": "Khách hàng 34",
+    "fullName": "Khách hàng 34",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer34@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_34"
+  },
+  {
+    "_id": {
+      "$oid": "df27aa58266d23c6c10a8bd6"
+    },
+    "id": "tk-kh-35",
+    "phone": "0900000051",
+    "name": "Khách hàng 35",
+    "fullName": "Khách hàng 35",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer35@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_35"
+  },
+  {
+    "_id": {
+      "$oid": "95ff6d03e40ca2058ec3480b"
+    },
+    "id": "tk-kh-36",
+    "phone": "0900000052",
+    "name": "Khách hàng 36",
+    "fullName": "Khách hàng 36",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer36@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_36"
+  },
+  {
+    "_id": {
+      "$oid": "d6efc4803093312ecb816d09"
+    },
+    "id": "tk-kh-37",
+    "phone": "0900000053",
+    "name": "Khách hàng 37",
+    "fullName": "Khách hàng 37",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer37@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_37"
+  },
+  {
+    "_id": {
+      "$oid": "a77fd204cdc82e28ec19a02e"
+    },
+    "id": "tk-kh-38",
+    "phone": "0900000054",
+    "name": "Khách hàng 38",
+    "fullName": "Khách hàng 38",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer38@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_38"
+  },
+  {
+    "_id": {
+      "$oid": "8ca822a6ecf767b2a51bcc2f"
+    },
+    "id": "tk-kh-39",
+    "phone": "0900000055",
+    "name": "Khách hàng 39",
+    "fullName": "Khách hàng 39",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer39@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_39"
+  },
+  {
+    "_id": {
+      "$oid": "37dcd3145921e0fd2e390581"
+    },
+    "id": "tk-kh-40",
+    "phone": "0900000056",
+    "name": "Khách hàng 40",
+    "fullName": "Khách hàng 40",
+    "role": "CUSTOMER",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1785549600000"
+          }
+        }
+      }
+    ],
+    "status": "ACTIVE",
+    "email": "customer40@example.invalid",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    },
+    "username": "demo_customer_40"
+  },
+  {
+    "_id": {
+      "$oid": "6ae9fcf4af0e7548b48362b6"
+    },
+    "id": "tk-kh-6ae9fcf4af0e7548b48362b6",
+    "phone": "0900000057",
+    "name": "Khách hàng 41",
+    "fullName": "Khách hàng 41",
+    "role": "CUSTOMER",
+    "status": "ACTIVE",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1793719540738"
+          }
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793719540738"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1793719540738"
+      }
+    },
+    "username": "demo_customer_41",
+    "email": "customer41@example.invalid"
+  },
+  {
+    "_id": {
+      "$oid": "6af83dd4256b9a6c7b9bade2"
+    },
+    "id": "tk-kh-6af83dd4256b9a6c7b9bade2",
+    "username": "demo_customer_42",
+    "phone": "0900000058",
+    "name": "Khách hàng 42",
+    "fullName": "Khách hàng 42",
+    "role": "CUSTOMER",
+    "status": "ACTIVE",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1794653652515"
+          }
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794653652515"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794653652515"
+      }
+    },
+    "email": "customer42@example.invalid"
+  },
+  {
+    "_id": {
+      "$oid": "6af9b41ded3fe4f1d80b4649"
+    },
+    "id": "tk-kh-6af9b41ded3fe4f1d80b4649",
+    "phone": "0900000059",
+    "name": "Khách hàng 43",
+    "fullName": "Khách hàng 43",
+    "role": "CUSTOMER",
+    "status": "ACTIVE",
+    "roles": [
+      {
+        "role": "CUSTOMER",
+        "assignedAt": {
+          "$date": {
+            "$numberLong": "1794749469396"
+          }
+        }
+      }
+    ],
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1794749469396"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1794749469396"
+      }
+    },
+    "username": "demo_customer_43",
+    "email": "customer43@example.invalid"
+  }
+]

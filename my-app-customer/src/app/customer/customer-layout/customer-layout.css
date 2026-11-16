@@ -193,6 +193,32 @@
 .account-chevron {
   transform: rotate(90deg);
 }
+.customer-header [data-tooltip] {
+  position: relative;
+}
+.customer-header [data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 7px 10px;
+  border-radius: var(--radius);
+  color: var(--surface);
+  background: var(--text);
+  box-shadow: var(--shadow-sm);
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  visibility: hidden;
+  z-index: 2;
+}
+.customer-header [data-tooltip]:hover::before,
+.customer-header [data-tooltip]:focus-visible::before {
+  visibility: visible;
+}
 .account-panel,
 .notification-panel {
   position: absolute;
@@ -287,54 +313,6 @@
 .notification-item:not(:disabled):hover {
   border-color: var(--primary);
 }
-.customer-footer {
-  background: var(--background);
-  margin-top: 25px;
-  padding: 38px 0 0;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  gap: 54px;
-  align-items: start;
-  padding-bottom: 24px;
-  font-size: 14px;
-  color: var(--muted);
-}
-.footer-brand {
-  max-width: 480px;
-}
-.footer-grid h4 {
-  margin: 0 0 12px;
-  color: var(--text);
-  font-size: 15px;
-}
-.footer-brand p {
-  margin: 12px 0 0;
-  line-height: 1.8;
-  color: var(--text);
-}
-.footer-brand app-brand {
-  display: block;
-  margin-bottom: 12px;
-}
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.footer-links a {
-  color: var(--text);
-}
-.footer-links a::after {
-  bottom: 7px;
-}
-.footer-bottom {
-  font-size: 12px;
-  color: var(--muted);
-  border-top: 1px solid var(--line);
-  padding: 20px 0 26px;
-}
 @media (max-width: 1050px) {
   .header-inner {
     gap: 16px;
@@ -348,9 +326,6 @@
   .header-inner nav > a,
   .login {
     font-size: 12px;
-  }
-  .footer-grid {
-    gap: 25px;
   }
 }
 @media (max-width: 760px) {
@@ -393,19 +368,13 @@
     top: 72px;
     right: 16px;
   }
-  .footer-grid {
-    gap: 22px;
-  }
-  .customer-footer {
-    padding-top: 30px;
-  }
 }
 @media (max-width: 440px) {
+  .header-actions .hold-link {
+    display: none;
+  }
   .header-inner nav {
     gap: 20px;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr;
   }
 }
 @media (prefers-reduced-motion: reduce) {

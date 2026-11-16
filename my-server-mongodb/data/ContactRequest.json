@@ -1,0 +1,470 @@
+[
+  {
+    "_id": {
+      "$oid": "0adc4966b2b5f9af3f49630b"
+    },
+    "id": "tv-001",
+    "name": "Khách liên hệ 1",
+    "phone": "0900000017",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "dedupeHash": "4b0bd7beacaeed81d5d33bed0acfd7bb2d1560f295a1d15a749977d14d7f403b",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785549600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2d7de1e12a410eccbdc3952d"
+    },
+    "id": "tv-002",
+    "name": "Khách liên hệ 2",
+    "phone": "0900000018",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-02",
+    "dedupeHash": "926bd4de3cb1a6e4c7db3e588045849e86f32e5a1beddfca43980ce2ebd319fd",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785722400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "05f756bce5065efb0acf711c"
+    },
+    "id": "tv-003",
+    "name": "Khách liên hệ 3",
+    "phone": "0900000019",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-03",
+    "dedupeHash": "2553dda7a835799685cc669936052672bc5859047e7890a8c3fc51a300bd52ea",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1785895200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5b299f1c118bfca92c228393"
+    },
+    "id": "tv-004",
+    "name": "Khách liên hệ 4",
+    "phone": "0900000020",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "dedupeHash": "e587082cf406250afe05e09af9965bce6d59fd43308fec4a941a44c9b8863106",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786068000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "43b46439d127edc8ae4f8163"
+    },
+    "id": "tv-005",
+    "name": "Khách liên hệ 5",
+    "phone": "0900000021",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-05",
+    "dedupeHash": "ba5b0e9decb620de6b71adcf77a1773ee3c4928bf44cbbe404474cf7f91cb394",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786240800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aa97f495d3155d9c8ecc487"
+    },
+    "id": "tv-006",
+    "name": "Khách liên hệ 6",
+    "phone": "0900000022",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-06",
+    "dedupeHash": "fb4ccbef197b3d89eea5c6bbe5965d7a373e4084bc6d802279923e75742b6423",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786413600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2ea64d69cce757231b30ac2c"
+    },
+    "id": "tv-007",
+    "name": "Khách liên hệ 7",
+    "phone": "0900000023",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "dedupeHash": "c2639c0d496fe21127ca6a2166c2cba995bb65ff5dd8b4d783c8710a4eaa7003",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786586400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "d2bd83cb64e54855e3d84261"
+    },
+    "id": "tv-008",
+    "name": "Khách liên hệ 8",
+    "phone": "0900000024",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-08",
+    "dedupeHash": "04d82180e133474cf46998e5255ae8904311ac0ad72cf0c4f08fd49deecb45d8",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786759200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "97be9f2c31d7c5aae1540d86"
+    },
+    "id": "tv-009",
+    "name": "Khách liên hệ 9",
+    "phone": "0900000025",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-09",
+    "dedupeHash": "cfe6884e45fb9ba59d84a48c5d5d3cc08faa5b539d140fd17c5c6153fee732a9",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1786932000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4a6a123f46e442e58f23fccc"
+    },
+    "id": "tv-010",
+    "name": "Khách liên hệ 10",
+    "phone": "0900000026",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "dedupeHash": "ba785ea5e377f79d6722169b3aac0db17c30dd4c36a9efc1ad3915042b9a1c55",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787104800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2366039398152e7ad4b402e1"
+    },
+    "id": "tv-011",
+    "name": "Khách liên hệ 11",
+    "phone": "0900000027",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-11",
+    "dedupeHash": "8a8f50e9139e4dd33db7677a393e2c1c48f3163e4dee89a3727aa750595e253a",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787277600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "91d91efcd72e44706636e8df"
+    },
+    "id": "tv-012",
+    "name": "Khách liên hệ 12",
+    "phone": "0900000028",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-12",
+    "dedupeHash": "549888333fa2f0fa856485c3ed2969ef009d8c8d13ba122341c7d10bea04bdc7",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787450400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "991975b91bc0617a8c08762a"
+    },
+    "id": "tv-013",
+    "name": "Khách liên hệ 13",
+    "phone": "0900000029",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "dedupeHash": "8f21177893fc469bb5e66bcecf434947389e51aa2cbf4a323143023d00643050",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787623200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "2c2c9e0a1eb9d2886bf12272"
+    },
+    "id": "tv-014",
+    "name": "Khách liên hệ 14",
+    "phone": "0900000030",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-14",
+    "dedupeHash": "276279f4c151d3ae6b538d992b07e16e1450d5782ef2dcb3a9e5d86ef78cb729",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787796000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "82615771fc9c17f0a89c8a9a"
+    },
+    "id": "tv-015",
+    "name": "Khách liên hệ 15",
+    "phone": "0900000031",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-15",
+    "dedupeHash": "45da6e9cbcd657a706b6ac9b8e70c94057f83c4dd544f2449eb935a5dd29caac",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1787968800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "cf7b952c7f419b13be7cdee4"
+    },
+    "id": "tv-016",
+    "name": "Khách liên hệ 16",
+    "phone": "0900000032",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "dedupeHash": "add9eed5d755d622a36d2b5e614345c2189b40dd1916b257673f7781f7fc12e4",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788141600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "425cddc43f895824d40a1833"
+    },
+    "id": "tv-017",
+    "name": "Khách liên hệ 17",
+    "phone": "0900000033",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-02",
+    "dedupeHash": "dd6b2f8d3e6cb591f3da35fbe9d287572cf221cb187f037e2cded71db83d67a5",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788314400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "05b09f0766415360c813d7f1"
+    },
+    "id": "tv-018",
+    "name": "Khách liên hệ 18",
+    "phone": "0900000034",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-03",
+    "dedupeHash": "8f91b9c7a1dc001c785faf1d1f559a7e2c8bf953f5ba3013f4d83ddc11a2fd22",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788487200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "24f6ecbf3476a632bc851ae8"
+    },
+    "id": "tv-019",
+    "name": "Khách liên hệ 19",
+    "phone": "0900000035",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "dedupeHash": "8428c4d7f9a8da25bc29cc1eb337e5a016a769024e9c9f4dddcc89995a2b53f2",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788660000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "dcdd292f2f2451e170461e0d"
+    },
+    "id": "tv-020",
+    "name": "Khách liên hệ 20",
+    "phone": "0900000036",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-05",
+    "dedupeHash": "4e81455a370f1422f8676dfb2844f21d7641f71e31d424f5d9a5a9c5dd71fe58",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1788832800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "07de0184ac7326f0a25c7f4d"
+    },
+    "id": "tv-021",
+    "name": "Khách liên hệ 21",
+    "phone": "0900000037",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-06",
+    "dedupeHash": "16cda14e6a00931052c9ec228a4cec845bcdfec7d40aea9373e58fb9f749832e",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789005600000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "497c281943d7ba65d41865b6"
+    },
+    "id": "tv-022",
+    "name": "Khách liên hệ 22",
+    "phone": "0900000038",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "dedupeHash": "52af919b3093b53eba1fe3a5e6e17c2c8fed82046d3265408d5655b561f1a07a",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789178400000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "b303cde65e2b2756757e39f3"
+    },
+    "id": "tv-023",
+    "name": "Khách liên hệ 23",
+    "phone": "0900000039",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-08",
+    "dedupeHash": "44561dee66fab9ab4083a3623edb4ccb57dae76e181c34be4d4f3f9958114b7e",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789351200000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "a79f3421b2debbd1945e7799"
+    },
+    "id": "tv-024",
+    "name": "Khách liên hệ 24",
+    "phone": "0900000040",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "RESPONDED",
+    "respondedBy": "nv-09",
+    "dedupeHash": "32404b5755e79880bd79c13993bc021e6ed00f1bd3745a9a16b070e313954f19",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1789524000000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "4d692e2502f97eb775766b9e"
+    },
+    "id": "tv-vang-lai",
+    "name": "Khách liên hệ 25",
+    "phone": "0900000070",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "dedupeHash": "34d71d702335b4943ffb1b05145cfafd82feac89f2c957dc032f26c80fd07b14",
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793584800000"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6ae9fd08af0e7548b48362bc"
+    },
+    "id": "tv-6ae9fd08af0e7548b48362bc",
+    "name": "Khách liên hệ 26",
+    "phone": "0900000071",
+    "email": "contact@example.invalid",
+    "message": "Nội dung minh họa đã được ẩn danh.",
+    "status": "PENDING",
+    "respondedBy": null,
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1793719560673"
+      }
+    },
+    "dedupeHash": "a0115be3cd01ecebc7f24555fb438a47ff57e4738dea1af1b1d5644c96d9f2e6"
+  }
+]
