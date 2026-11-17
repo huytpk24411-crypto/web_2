@@ -1,9 +1,10 @@
-const { GridFSBucket } = require("mongodb");
+const { GridFSBucket, ObjectId } = require("mongodb");
 const { Readable } = require("node:stream");
 const { pipeline } = require("node:stream/promises");
 const path = require("node:path");
 const crypto = require("node:crypto");
 const fileUpload = require("../../my-server/node_modules/express-fileupload");
+const { createMediaStorage } = require("../media-storage");
 
 const folders = new Set([
   "rooms",
@@ -24,7 +25,7 @@ const examples = new Set([
   "attendance/demo-evidence.png",
 ]);
 
-function registerMediaRoutes({ app, database, uploadDirectory }) {
+function registerMediaRoutes({ app, database, uploadDirectory, storage = createMediaStorage() }) {
   const bucket = new GridFSBucket(database, { bucketName: "Upload" });
   const requireUser = (req, res, next) => {
     if (!req.session?.user)
@@ -66,6 +67,20 @@ function registerMediaRoutes({ app, database, uploadDirectory }) {
             });
         const name = `${crypto.randomUUID()}${extension}`;
         const filename = `${req.params.folder}/${name}`;
+        if (storage?.enabled) {
+          const target = await storage.upload(filename, file.data, file.mimetype);
+          try {
+            // Keep the existing URL and file metadata contract used by customer profiles.
+            await database.collection("Upload.files").insertOne({
+              _id: new ObjectId(), filename, length: file.data.length, uploadDate: new Date(),
+              metadata: { contentType: file.mimetype, accountId: req.session.user.id, storage: target },
+            });
+          } catch (error) {
+            await storage.remove(target).catch(() => {});
+            throw error;
+          }
+          return res.status(201).send({ url: `/uploads/${filename}` });
+        }
         const target = bucket.openUploadStream(filename, {
           metadata: {
             contentType: file.mimetype,
@@ -109,6 +124,15 @@ function registerMediaRoutes({ app, database, uploadDirectory }) {
         file.metadata?.accountId !== user.id
       )
         return res.status(403).end();
+      if (file.metadata?.storage?.provider === "supabase") {
+        if (!storage) throw new Error("Supabase media credentials are missing");
+        res.set({
+          "Cache-Control": privateFile ? "private, no-store" : "public, max-age=3600",
+          "Referrer-Policy": "no-referrer",
+          Vary: "Cookie, X-iHouzz-Portal, Referer",
+        });
+        return res.redirect(302, await storage.url(filename));
+      }
       res.set({
         "Content-Type":
           file.metadata?.contentType || "application/octet-stream",

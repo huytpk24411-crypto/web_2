@@ -75,3 +75,15 @@ test("build rejects backend URLs containing credentials, paths or insecure proto
     assert.throws(() => vercelConfig(url), /HTTPS origin/);
   }
 });
+
+test("optional Supabase image routing covers all portals and leaves other assets local", () => {
+  const { routes } = vercelConfig("https://backend.example.test", "https://project.example.test/storage/v1/object/public/ihouzz-public");
+  const rule = routes.find((route) => route.dest?.includes("/storage/v1/object/public/"));
+  const matcher = new RegExp(rule.src);
+  for (const prefix of ["/", "/staff/", "/management/"]) {
+    assert.equal((prefix + "assets/auth/login.jpg").replace(matcher, rule.dest), "https://project.example.test/storage/v1/object/public/ihouzz-public/assets/auth/login.jpg");
+  }
+  assert.equal(matcher.test("/staff/assets/fonts/regular.woff2"), false);
+  assert.equal(matcher.test("/uploads/cccd/front.png"), false);
+  assert.throws(() => vercelConfig("https://backend.example.test", "https://project.example.test/storage/v1/object/private/identity"), /public bucket/);
+});

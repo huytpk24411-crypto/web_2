@@ -19,7 +19,7 @@ function mountPortal(web, { prefix, directory }) {
   });
 }
 
-async function start() {
+async function start({ frontends = true } = {}) {
   const portals = [
     ["customer", "/"],
     ["employee", "/staff"],
@@ -31,7 +31,7 @@ async function start() {
       `my-app-${portal}/dist/my-app-${portal}/browser`,
     ),
   }));
-  for (const portal of portals)
+  for (const portal of frontends ? portals : [])
     if (!fs.existsSync(path.join(portal.directory, "index.html")))
       throw new Error(
         "Missing production build. Run npm run build:deploy first.",
@@ -69,13 +69,15 @@ async function start() {
         )
       : next(),
   );
-  for (const portal of portals.slice(1)) mountPortal(web, portal);
-  web.use(express.static(portals[0].directory));
-  web.get("/{*route}", (req, res, next) => {
-    if (path.extname(req.path)) return next();
-    res.set("Cache-Control", "no-cache");
-    res.sendFile(path.join(portals[0].directory, "index.html"));
-  });
+  if (frontends) {
+    for (const portal of portals.slice(1)) mountPortal(web, portal);
+    web.use(express.static(portals[0].directory));
+    web.get("/{*route}", (req, res, next) => {
+      if (path.extname(req.path)) return next();
+      res.set("Cache-Control", "no-cache");
+      res.sendFile(path.join(portals[0].directory, "index.html"));
+    });
+  }
   web.use((req, res) => res.status(404).send({ message: "Not found" }));
   web.use((error, req, res, next) => {
     if (res.headersSent) return next(error);

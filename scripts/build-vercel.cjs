@@ -3,8 +3,8 @@ const path = require("node:path");
 const { root, checkNode, runNpm } = require("./workspace.cjs");
 const { PORTALS, vercelConfig } = require("./deployment-routes.cjs");
 
-function packagePortals(workspaceRoot, backendUrl) {
-  const config = vercelConfig(backendUrl);
+function packagePortals(workspaceRoot, backendUrl, publicAssetBaseUrl) {
+  const config = vercelConfig(backendUrl, publicAssetBaseUrl);
   const sources = PORTALS.map(({ name, base }) => ({
     name,
     base,
@@ -42,7 +42,7 @@ async function build() {
     await runNpm(directory, ["ci", "--include=dev"]);
     await runNpm(directory, ["run", "build", "--", "--base-href", base]);
   }
-  packagePortals(root, backendUrl);
+  packagePortals(root, backendUrl, process.env.PUBLIC_ASSET_BASE_URL);
   console.log("Vercel frontend ready: /, /staff/, /management/");
 }
 

@@ -8,6 +8,8 @@
     "start": "node scripts/start.cjs",
     "build:deploy": "node scripts/build-deploy.cjs",
     "build:vercel": "node scripts/build-vercel.cjs",
+    "build:backend": "node scripts/build-backend.cjs",
+    "start:backend": "node scripts/serve-backend.cjs",
     "start:deploy": "node scripts/serve-deploy.cjs",
     "test:deploy": "node --test scripts/serve-deploy.spec.cjs scripts/deployment-routes.spec.cjs",
     "build": "node scripts/check.cjs build",
