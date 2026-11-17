@@ -10,8 +10,10 @@ async function main() {
       "run",
       action === "test" ? "test:unit" : "build",
     ]);
-  if (action === "test")
+  if (action === "test") {
     await runNpm(path.join(root, "my-server-mongodb"), ["run", "test"]);
+    await runNpm(root, ["run", "test:deploy"]);
+  }
 }
 main().catch((error) => {
   console.error(error.message);

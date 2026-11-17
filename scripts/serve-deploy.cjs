@@ -5,6 +5,19 @@ process.env.NODE_ENV ||= "production";
 process.env.CUSTOMER_APP_URL ||= process.env.RENDER_EXTERNAL_URL;
 const express = require("../my-server-mongodb/node_modules/express");
 
+function mountPortal(web, { prefix, directory }) {
+  // String routes also match a trailing slash in Express's default routing mode.
+  // Match only the bare prefix so the canonical portal root can serve its HTML.
+  web.get(new RegExp(`^${prefix}$`), (req, res) =>
+    res.redirect(302, prefix + "/" + req.url.slice(prefix.length)),
+  );
+  web.use(prefix, express.static(directory), (req, res, next) => {
+    if (req.method !== "GET" || path.extname(req.path)) return next();
+    res.set("Cache-Control", "no-cache");
+    res.sendFile(path.join(directory, "index.html"));
+  });
+}
+
 async function start() {
   const portals = [
     ["customer", "/"],
@@ -57,14 +70,7 @@ async function start() {
         )
       : next(),
   );
-  for (const { prefix, directory } of portals.slice(1)) {
-    web.get(prefix, (req, res) => res.redirect(302, prefix + "/"));
-    web.use(prefix, express.static(directory), (req, res, next) => {
-      if (req.method !== "GET" || path.extname(req.path)) return next();
-      res.set("Cache-Control", "no-cache");
-      res.sendFile(path.join(directory, "index.html"));
-    });
-  }
+  for (const portal of portals.slice(1)) mountPortal(web, portal);
   web.use(express.static(portals[0].directory));
   web.get("/{*route}", (req, res, next) => {
     if (path.extname(req.path)) return next();
@@ -95,7 +101,7 @@ async function start() {
   return server;
 }
 
-module.exports = { start };
+module.exports = { start, mountPortal };
 if (require.main === module)
   start().catch((error) => {
     console.error(error.name + ": deployment startup failed");
