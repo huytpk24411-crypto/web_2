@@ -36,16 +36,23 @@ function assetInventory(workspaceRoot) {
 
 async function verifiedCopy(storage, target, bytes, contentType) {
   const bucket = storage.client.storage.from(target.bucket);
-  let existing = await bucket.download(target.objectPath);
+  const download = () => bucket.download(target.objectPath, { cacheNonce: crypto.randomUUID() }, { cache: "no-store" });
+  let existing = await download();
   if (existing.error) {
     if (!["404", "400"].includes(String(existing.error.statusCode)) && existing.error.message !== "Object not found") {
       throw new Error("Cannot inspect destination media object");
     }
     const uploaded = await bucket.upload(target.objectPath, bytes, { contentType, cacheControl: target.bucket === storage.privateBucket ? "0" : "86400", upsert: false });
     if (uploaded.error) throw new Error("Media copy failed");
-    existing = await bucket.download(target.objectPath);
+    // A successful write can briefly precede availability at the download endpoint.
+    for (let attempt = 0; attempt < 4; attempt++) {
+      existing = await download();
+      if (!existing.error) break;
+      if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, 250 * 2 ** attempt));
+    }
   }
-  if (existing.error || digest(Buffer.from(await existing.data.arrayBuffer())) !== digest(bytes)) {
+  if (existing.error) throw new Error("Destination image is not readable after upload; retry migration");
+  if (digest(Buffer.from(await existing.data.arrayBuffer())) !== digest(bytes)) {
     throw new Error("Destination image checksum differs from source; no source data was changed");
   }
   return { ...target, sha256: digest(bytes), verifiedAt: new Date() };

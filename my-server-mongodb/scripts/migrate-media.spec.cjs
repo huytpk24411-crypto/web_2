@@ -33,6 +33,24 @@ test("migration rejects an existing public bucket for private documents", async 
   await assert.rejects(ensureBuckets(storage), /incorrect privacy/);
 });
 
+test("image verification waits for a just-uploaded object without overwriting it", async () => {
+  let reads = 0, uploads = 0;
+  const bytes = Buffer.from("just-uploaded");
+  const storage = { privateBucket: "private-images", client: { storage: { from: () => ({
+    download: async (key, options) => {
+      assert.ok(options.cacheNonce);
+      reads++;
+      return reads < 3 ? { error: { statusCode: "404" } } : { data: new Blob([bytes]) };
+    },
+    upload: async () => { uploads++; return { data: {} }; },
+  }) } } };
+  const target = { bucket: "private-images", objectPath: "uploads/cccd/example.png" };
+  const copied = await verifiedCopy(storage, target, bytes, "image/png");
+  assert.equal(copied.sha256.length, 64);
+  assert.equal(uploads, 1);
+  assert.equal(reads, 3);
+});
+
 test("three frontend image folders deduplicate only when their contents match", (t) => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "ihouzz-images-"));
   t.after(() => fs.rmSync(root, { recursive: true, force: true }));
