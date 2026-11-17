@@ -4,7 +4,7 @@ import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { AuthService } from './auth-service';
 import { ViewingCartAPIService } from './viewing-cart-apiservice';
-import { ViewingService } from './viewing-service';
+import { ViewingService, VIEWING_CHECKOUT_PENDING } from './viewing-service';
 import { RoomService } from './room-service';
 import { API_ACCOUNT, API_ROOMS } from '../testing/api-fixtures';
 import { ViewingOut } from '../classes/Viewing';
@@ -118,6 +118,8 @@ describe('VIEW-API: cart, availability, checkout, update, delete', () => {
     expect(request.request.method).toBe('POST');
     expect(request.request.withCredentials).toBe(true);
     expect(request.request.body).toEqual(details);
+    expect(request.request.timeout).toBe(60000);
+    expect(request.request.headers.get('Idempotency-Key')).toBeTruthy();
     request.flush(
       JSON.stringify({
         bookingId: 'dl-test',
@@ -170,6 +172,36 @@ describe('VIEW-API: cart, availability, checkout, update, delete', () => {
       http.expectNone('/viewing-cart/checkout');
     },
   );
+
+  it('reuses the checkout key after an uncertain response even when the server already consumed the cart', async () => {
+    const first = viewings.schedule(details);
+    const rejected = expect(first).rejects.toThrow(VIEWING_CHECKOUT_PENDING);
+    const cart = http.expectOne('/viewing-cart');
+    expect(cart.request.timeout).toBe(60000);
+    cart.flush('["phong-48","phong-49"]');
+    await Promise.resolve();
+    await Promise.resolve();
+    const checkout = http.expectOne('/viewing-cart/checkout');
+    const key = checkout.request.headers.get('Idempotency-Key');
+    expect(key).toBeTruthy();
+    checkout.error(new ProgressEvent('timeout'));
+    await rejected;
+    http.expectNone('/viewing-cart/checkout');
+
+    const retry = viewings.schedule(details);
+    http.expectOne('/viewing-cart').flush('[]');
+    await Promise.resolve();
+    await Promise.resolve();
+    http.expectOne('/viewing-cart/add').flush('["phong-48"]');
+    await Promise.resolve();
+    http.expectOne('/viewing-cart/add').flush('["phong-48","phong-49"]');
+    await Promise.resolve();
+    const replay = http.expectOne('/viewing-cart/checkout');
+    expect(replay.request.headers.get('Idempotency-Key')).toBe(key);
+    replay.flush(JSON.stringify({ bookingId: 'dl-test', viewings: [record] }));
+    expect((await retry).bookingId).toBe('dl-test');
+    http.expectNone('/viewing-cart/checkout');
+  });
 
   it('A3 map đủ trường mới, lịch cũ nhiều phòng/snapshot và ẩn khi đổi tài khoản', async () => {
     const loaded = viewings.refreshMine();

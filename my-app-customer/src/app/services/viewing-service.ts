@@ -9,6 +9,8 @@ import { apiMessage } from './api-message';
 import { canScheduleViewing } from '../classes/Room';
 
 export const VIEWING_SHIFT_ERROR = 'Giờ xem phải bắt đầu trong 07:00–10:30 hoặc 13:00–16:30.';
+export const VIEWING_CHECKOUT_PENDING =
+  'Chưa nhận được kết quả đặt lịch từ máy chủ. Vui lòng kiểm tra danh sách lịch xem hoặc xác nhận lại cùng thông tin để đối soát.';
 export function isViewingShiftTime(time: string): boolean {
   return /^(?:(?:07|08|09|10|13|14|15|16):(?:00|30))$/.test(time);
 }
@@ -39,7 +41,8 @@ export class ViewingService {
   private rooms = inject(RoomService);
   private cartApi = inject(ViewingCartAPIService);
   private http = inject(HttpClient);
-  private options = { withCredentials: true, timeout: 10000 };
+  private options = { withCredentials: true, timeout: 60000 };
+  private checkoutKeys = new Map<string, string>();
   private remote = signal<{ owner: string; items: Viewing[] } | null>(null);
   private roomAvailable(id: string): boolean {
     const room = this.rooms.get(id);
@@ -100,6 +103,12 @@ export class ViewingService {
       if (!this.roomAvailable(item.roomId))
         throw new Error('Có phòng không còn trống. Vui lòng chọn lại.');
     }
+    const requestFingerprint = owner + ':' + JSON.stringify(data);
+    let requestKey = this.checkoutKeys.get(requestFingerprint);
+    if (!requestKey) {
+      requestKey = crypto.randomUUID();
+      this.checkoutKeys.set(requestFingerprint, requestKey);
+    }
     try {
       const cart = await this.getCart();
       // A2 consumes only items; preserve unrelated rooms in the session cart.
@@ -108,10 +117,13 @@ export class ViewingService {
         await firstValueFrom(this.cartApi.add(item.roomId));
       }
       this.checkOwner(owner);
-      const result = await firstValueFrom(this.cartApi.checkout(data));
+      const result = await firstValueFrom(this.cartApi.checkout(data, requestKey));
       this.checkOwner(owner);
+      this.checkoutKeys.delete(requestFingerprint);
       return { bookingId: result.bookingId, viewings: result.viewings.map((v) => this.fromApi(v)) };
     } catch (error) {
+      if (error instanceof HttpErrorResponse && (error.status === 0 || error.status >= 500))
+        throw Object.assign(new Error(VIEWING_CHECKOUT_PENDING), { status: error.status });
       throw viewingApiError(error, 'Không đặt được lịch xem. Vui lòng thử lại.');
     }
   }

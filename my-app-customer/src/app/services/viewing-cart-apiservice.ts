@@ -13,7 +13,7 @@ export interface ViewingCheckout {
 
 @Injectable({ providedIn: 'root' })
 export class ViewingCartAPIService {
-  private options = { responseType: 'text' as const, withCredentials: true, timeout: 2000 };
+  private options = { responseType: 'text' as const, withCredentials: true, timeout: 60000 };
   constructor(private http: HttpClient) {}
 
   add(roomId: string) {
@@ -35,8 +35,11 @@ export class ViewingCartAPIService {
       catchError(this.handleError),
     );
   }
-  checkout(details: ViewingCheckout) {
-    return this.http.post('/viewing-cart/checkout', details, this.options).pipe(
+  checkout(details: ViewingCheckout, requestKey: string) {
+    return this.http.post('/viewing-cart/checkout', details, {
+      ...this.options,
+      headers: { 'Idempotency-Key': requestKey },
+    }).pipe(
       map((res) => JSON.parse(res) as { bookingId: string; viewings: ViewingOut[] }),
       // A checkout must never be retried automatically: it may already have been saved.
       catchError(this.handleError),
