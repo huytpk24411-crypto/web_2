@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, retry, throwError } from 'rxjs';
+import { catchError, map, throwError } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthAPIService {
@@ -29,7 +29,6 @@ export class AuthAPIService {
   profile() {
     return this.http.get('/auth/profile', this.options).pipe(
       map((res) => JSON.parse(res) as unknown),
-      retry(1),
       catchError(this.handleError),
     );
   }

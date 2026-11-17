@@ -1,4 +1,4 @@
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import {
@@ -9,6 +9,7 @@ import {
   provideRouter,
 } from '@angular/router';
 import { AuthService } from '../services/auth-service';
+import { adminHttpInterceptor } from '../services/admin-http-interceptor';
 import { API_ACCOUNT } from '../testing/api-fixtures';
 import { Role } from './Account';
 import { AuthGuard } from './auth.guard';
@@ -17,15 +18,23 @@ import { GuestGuard } from './guest.guard';
 describe('Server session and roles', () => {
   let auth: AuthService, http: HttpTestingController;
   beforeEach(() => {
+    vi.useFakeTimers();
     sessionStorage.removeItem('ihouzz-session');
     sessionStorage.removeItem('ihouzz-session-source');
     TestBed.configureTestingModule({
-      providers: [provideHttpClient(), provideHttpClientTesting(), provideRouter([])],
+      providers: [
+        provideHttpClient(withInterceptors([adminHttpInterceptor])),
+        provideHttpClientTesting(),
+        provideRouter([]),
+      ],
     });
     auth = TestBed.inject(AuthService);
     http = TestBed.inject(HttpTestingController);
   });
-  afterEach(() => http.verify());
+  afterEach(() => {
+    http.verify();
+    vi.useRealTimers();
+  });
   it('ignores forged browser privileges until profile completes', async () => {
     sessionStorage.setItem('ihouzz-session', JSON.stringify({ ...API_ACCOUNT, role: 'ADMIN' }));
     sessionStorage.setItem('ihouzz-session-source', 'server');
@@ -44,8 +53,10 @@ describe('Server session and roles', () => {
       auth.account.set({ ...API_ACCOUNT, role: 'ADMIN' });
       auth.serverAuthenticated.set(true);
       const pending = auth.restoreApiSession();
-      for (let i = 0; i < 2; i++)
+      for (let i = 0; i < (status === 503 ? 2 : 1); i++) {
         http.expectOne('/auth/profile').flush('{}', { status, statusText: 'Rejected' });
+        if (status === 503 && i === 0) await vi.advanceTimersByTimeAsync(750);
+      }
       await pending;
       expect(auth.account()).toBeNull();
       expect(auth.serverAuthenticated()).toBe(false);

@@ -1986,10 +1986,15 @@ function createShiftService(dependencies) {
       status: { $in: ["CHO_XAC_NHAN", "DA_XAC_NHAN"] },
       startAt: { $gt: now },
     }).toArray();
+    const taskIds = [
+      ...new Set(viewings.map((viewing) => viewing.taskId).filter(Boolean)),
+    ];
+    const tasks = taskIds.length
+      ? await p4Collections.Task.find({ id: { $in: taskIds } }).toArray()
+      : [];
+    const tasksById = new Map(tasks.map((task) => [task.id, task]));
     for (const viewing of viewings) {
-      const task =
-        viewing.taskId &&
-        (await p4Collections.Task.findOne({ id: viewing.taskId }));
+      const task = viewing.taskId && tasksById.get(viewing.taskId);
       if (
         !task ||
         (task.kind === "VIEWING" && task.status === "WAITING_ADMIN")
@@ -1997,6 +2002,11 @@ function createShiftService(dependencies) {
         await p4Execute(req, `repairViewing:${viewing.id}`, (plan) =>
           p4EnsureViewingTask(plan, viewing),
         );
+        if (viewing.taskId)
+          tasksById.set(
+            viewing.taskId,
+            await p4Collections.Task.findOne({ id: viewing.taskId }),
+          );
       }
     }
   }

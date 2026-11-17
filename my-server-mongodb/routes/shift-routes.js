@@ -611,7 +611,7 @@ function registerShiftRoutes(dependencies) {
     dependencies.p4Route(async (req, res) => {
       await dependencies.p4Maintenance();
       const result = {};
-      for (const type of [
+      const types = [
         "Shift",
         "ShiftAssignment",
         "Attendance",
@@ -620,10 +620,15 @@ function registerShiftRoutes(dependencies) {
         "PeriodRegistration",
         "Policy",
         "PolicyLevel",
-      ])
-        result[type] = (
-          await dependencies.p4Collections[type].find({}).toArray()
-        ).map(dependencies.p4Clean);
+      ];
+      const snapshots = await Promise.all(
+        types.map((type) =>
+          dependencies.p4Collections[type].find({}).toArray(),
+        ),
+      );
+      types.forEach((type, index) => {
+        result[type] = snapshots[index].map(dependencies.p4Clean);
+      });
       result.ShiftAssignment = result.ShiftAssignment.map((a) => ({
         source: null,
         ...a,

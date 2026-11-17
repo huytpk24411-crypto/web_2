@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, retry, throwError } from 'rxjs';
+import { catchError, map, throwError } from 'rxjs';
 import { ContactRequest } from '../classes/ContactRequest';
 import { FavoriteRecord, ViewingRecord } from '../classes/CustomerApi';
 import { Notification } from '../classes/Notification';
@@ -13,7 +13,6 @@ export class CustomerAPIService {
   favorites() {
     return this.http.get('/favorites/', this.options).pipe(
       map((res) => JSON.parse(res) as FavoriteRecord[]),
-      retry(1),
       catchError(this.handleError),
     );
   }
@@ -38,7 +37,6 @@ export class CustomerAPIService {
   viewings() {
     return this.http.get('/viewings/mine', this.options).pipe(
       map((res) => JSON.parse(res) as ViewingRecord[]),
-      retry(1),
       catchError(this.handleError),
     );
   }
@@ -51,7 +49,6 @@ export class CustomerAPIService {
   notifications() {
     return this.http.get('/notifications', this.options).pipe(
       map((res) => JSON.parse(res) as Notification[]),
-      retry(1),
       catchError(this.handleError),
     );
   }

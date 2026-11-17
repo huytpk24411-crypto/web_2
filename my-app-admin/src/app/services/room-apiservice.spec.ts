@@ -1,4 +1,4 @@
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { RoomAPIService } from './room-apiservice';
@@ -6,16 +6,24 @@ import { RoomService } from './room-service';
 import { PropertyAPIService } from './property-apiservice';
 import { SchoolAPIService } from './school-apiservice';
 import { LocationService } from './location-service';
+import { adminHttpInterceptor } from './admin-http-interceptor';
 import { API_ROOMS, API_PROPERTIES, API_SCHOOLS, API_RELATIONS } from '../testing/api-fixtures';
 describe('Catalog API transport and initialization', () => {
   let http: HttpTestingController;
   beforeEach(() => {
+    vi.useFakeTimers();
     TestBed.configureTestingModule({
-      providers: [provideHttpClient(), provideHttpClientTesting()],
+      providers: [
+        provideHttpClient(withInterceptors([adminHttpInterceptor])),
+        provideHttpClientTesting(),
+      ],
     });
     http = TestBed.inject(HttpTestingController);
   });
-  afterEach(() => http.verify());
+  afterEach(() => {
+    http.verify();
+    vi.useRealTimers();
+  });
   it('preserves API room tours and encodes IDs', () => {
     const loaded = vi.fn();
     TestBed.inject(RoomAPIService).getRoom('a/b ?').subscribe(loaded);
@@ -82,6 +90,7 @@ describe('Catalog API transport and initialization', () => {
         const req = http.expectOne('/data/rooms');
         if (!status) req.error(new ProgressEvent('error'));
         else req.flush('offline', { status, statusText: 'Unavailable' });
+        if (attempt === 0) await vi.advanceTimersByTimeAsync(750);
       }
       // forkJoin cancels its other pending reads when a source fails.
       http
@@ -96,10 +105,12 @@ describe('Catalog API transport and initialization', () => {
       expect(rooms.error()).toBe('Không kết nối được máy chủ. Vui lòng thử lại.');
       const detail = rooms.getFromApi('phong-48');
       const rejected = expect(detail).rejects.toMatchObject({ status: 503 });
-      for (let attempt = 0; attempt < 2; attempt++)
+      for (let attempt = 0; attempt < 2; attempt++) {
         http
           .expectOne('/data/rooms/phong-48')
           .flush('{}', { status: 503, statusText: 'Unavailable' });
+        if (attempt === 0) await vi.advanceTimersByTimeAsync(750);
+      }
       await rejected;
       const retry = rooms.refresh();
       flushCatalog();

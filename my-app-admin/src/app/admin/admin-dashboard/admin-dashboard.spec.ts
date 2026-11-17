@@ -69,6 +69,33 @@ describe('Admin summary API', () => {
     expect(api.summary()).toBeNull();
     expect(api.error()).toBe('Không kết nối được máy chủ. Vui lòng thử lại.');
   });
+  it('shares an in-flight month request across layout and dashboard navigation', async () => {
+    const first = api.refresh('2026-10');
+    const second = api.refresh('2026-10');
+    const request = http.expectOne('/data/admin/summary?month=2026-10');
+    request.flush({ ...report, month: '2026-10' });
+    await Promise.all([first, second]);
+    expect(api.summary()?.month).toBe('2026-10');
+    const next = api.refresh('2026-10');
+    http
+      .expectOne('/data/admin/summary?month=2026-10')
+      .flush({ ...report, month: '2026-10', revenue: 42 });
+    await next;
+    expect(api.summary()?.revenue).toBe(42);
+  });
+  it('keeps the latest month selected when navigation switches away and back during loading', async () => {
+    const october = api.refresh('2026-10');
+    const november = api.refresh('2026-11');
+    const octoberAgain = api.refresh('2026-10');
+    const reads = http.match('/data/admin/summary?month=2026-10');
+    expect(reads).toHaveLength(2);
+    reads[1].flush({ ...report, month: '2026-10', revenue: 42 });
+    reads[0].flush({ ...report, month: '2026-10', revenue: 1 });
+    http.expectOne('/data/admin/summary?month=2026-11').flush(report);
+    await Promise.all([october, november, octoberAgain]);
+    expect(api.summary()?.month).toBe('2026-10');
+    expect(api.summary()?.revenue).toBe(42);
+  });
   it('hides previous administrator data and ignores a late response after account change', async () => {
     const pending = api.refresh('2026-10');
     account.set({ id: 'admin-b', role: 'ADMIN' });

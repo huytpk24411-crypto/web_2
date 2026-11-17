@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, retry, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { Room } from '../classes/Room';
 import { RoomTour } from '../classes/RoomTour';
 export type CatalogRoom = Room & { tour?: RoomTour };
@@ -19,14 +19,12 @@ export class RoomAPIService {
   getRooms(): Observable<CatalogRoom[]> {
     return this._http.get('/data/rooms', this.requestOptions).pipe(
       map((res) => JSON.parse(res) as CatalogRoom[]),
-      retry(1),
       catchError(this.handleError),
     );
   }
   getRoom(id: string): Observable<CatalogRoom> {
     return this._http.get('/data/rooms/' + encodeURIComponent(id), this.requestOptions).pipe(
       map((res) => JSON.parse(res) as CatalogRoom),
-      retry(1),
       catchError(this.handleError),
     );
   }

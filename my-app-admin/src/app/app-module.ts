@@ -19,6 +19,7 @@ import { SharedModule } from './shared/shared-module';
 import { PropertyAPIService } from './services/property-apiservice';
 import { RoomAPIService } from './services/room-apiservice';
 import { AuthService, sessionInterceptor } from './services/auth-service';
+import { adminHttpInterceptor } from './services/admin-http-interceptor';
 import { RoomService } from './services/room-service';
 import { SchoolAPIService } from './services/school-apiservice';
 import { cleanupBrowserStorage } from './data/legacy-storage';
@@ -31,7 +32,7 @@ registerLocaleData(localeVi);
       inject(BackNavigationService);
     }),
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(withInterceptors([sessionInterceptor])),
+    provideHttpClient(withInterceptors([sessionInterceptor, adminHttpInterceptor])),
     provideAppInitializer(() => {
       cleanupBrowserStorage();
       return inject(AuthService).restoreApiSession();

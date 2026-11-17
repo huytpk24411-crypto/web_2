@@ -1,4 +1,4 @@
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { firstValueFrom } from 'rxjs';
@@ -6,6 +6,8 @@ import { AdminCatalogAPIService } from './admin-catalog-apiservice';
 import { AuthAPIService } from './auth-apiservice';
 import { AuthService } from './auth-service';
 import { ShiftAPIService } from './shift-apiservice';
+import { adminHttpInterceptor } from './admin-http-interceptor';
+import { RoomAPIService } from './room-apiservice';
 
 // Exercise the actual fetch transport, including its AbortController deadline.
 describe('admin data over a delayed hosting connection', () => {
@@ -38,7 +40,7 @@ describe('admin data over a delayed hosting connection', () => {
     );
     TestBed.configureTestingModule({
       providers: [
-        provideHttpClient(withFetch()),
+        provideHttpClient(withFetch(), withInterceptors([adminHttpInterceptor])),
         {
           provide: AuthService,
           useValue: {
@@ -65,6 +67,17 @@ describe('admin data over a delayed hosting connection', () => {
     requests[0].respond([{ id: 'employee-test' }]);
     expect(await result).toEqual({ value: [{ id: 'employee-test' }] });
     expect(api.error()).toBe('');
+  });
+
+  it('allows the bootstrap room catalog to finish after a twenty-second hosting delay', async () => {
+    const result = firstValueFrom(TestBed.inject(RoomAPIService).getRooms()).then(
+      (value) => ({ value }),
+      (error) => ({ error }),
+    );
+    await vi.advanceTimersByTimeAsync(20000);
+    expect(requests[0].signal.aborted).toBe(false);
+    requests[0].respond([]);
+    expect(await result).toEqual({ value: [] });
   });
 
   it('restores an admin session when the profile takes more than two seconds', async () => {

@@ -12,6 +12,7 @@ export class AdminDashboardAPI {
   private auth = inject(AuthService);
   private data = signal<{ owner: string; summary: AdminSummary } | null>(null);
   private version = 0;
+  private inFlight?: { owner: string; month: string; request: Promise<void> };
   readonly loading = signal(false);
   readonly error = signal('');
   readonly summary = computed(() =>
@@ -27,6 +28,7 @@ export class AdminDashboardAPI {
         authenticated = this.auth.serverAuthenticated();
       untracked(() => {
         this.version++;
+        this.inFlight = undefined;
         this.data.set(null);
         this.error.set('');
         this.loading.set(false);
@@ -42,7 +44,18 @@ export class AdminDashboardAPI {
     }).formatToParts(new Date());
     return `${parts.find((p) => p.type === 'year')!.value}-${parts.find((p) => p.type === 'month')!.value}`;
   }
-  async refresh(month = this.currentMonth()) {
+  refresh(month = this.currentMonth()): Promise<void> {
+    const actor = this.auth.account();
+    if (actor?.role !== 'ADMIN' || !this.auth.serverAuthenticated()) return Promise.resolve();
+    const existing = this.inFlight;
+    if (existing?.owner === actor.id && existing.month === month) return existing.request;
+    const loading = this.load(month).finally(() => {
+      if (this.inFlight?.request === loading) this.inFlight = undefined;
+    });
+    this.inFlight = { owner: actor.id, month, request: loading };
+    return loading;
+  }
+  private async load(month: string) {
     const actor = this.auth.account();
     if (actor?.role !== 'ADMIN' || !this.auth.serverAuthenticated()) return;
     const version = ++this.version;
