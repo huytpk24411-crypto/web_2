@@ -40,7 +40,7 @@ export class ShiftAPIService {
       ? this.data()
       : this.empty(),
   );
-  private options = { withCredentials: true, timeout: 10000 };
+  private options = { withCredentials: true, timeout: 60000 };
   constructor() {
     effect(() => {
       const account = this.auth.account(),

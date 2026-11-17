@@ -4,7 +4,7 @@ import { catchError, map, retry, throwError } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthAPIService {
-  private options = { responseType: 'text' as const, withCredentials: true, timeout: 2000 };
+  private options = { responseType: 'text' as const, withCredentials: true, timeout: 60000 };
   constructor(private http: HttpClient) {}
 
   register(phone: string, password: string, name: string, username: string, email?: string) {

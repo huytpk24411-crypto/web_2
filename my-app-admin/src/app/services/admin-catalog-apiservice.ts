@@ -16,7 +16,7 @@ export class AdminCatalogAPIService {
   private pending = new Map<string, { key: string; body: unknown }>();
   private generation = 0;
   private session = `${this.auth.account()?.id}:${this.auth.serverAuthenticated()}`;
-  private options = { withCredentials: true, timeout: 5000 };
+  private options = { withCredentials: true, timeout: 60000 };
   constructor() {
     effect(() => {
       const session = `${this.auth.account()?.id}:${this.auth.serverAuthenticated()}`;
