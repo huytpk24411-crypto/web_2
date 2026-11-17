@@ -1,5 +1,5 @@
 import { Component, computed, inject, signal } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, ValidatorFn, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DepositService } from '../../services/deposit-service';
 import { RoomService } from '../../services/room-service';
@@ -9,6 +9,13 @@ import { PHONE_PATTERN } from '../../shared/validators';
 import { DepositDocumentService } from '../../services/deposit-document-service';
 import { DepositDraft, DepositDraftData, DepositSheet } from '../../classes/DepositSheet';
 import { depositLeaseEnd, vietnameseMoney } from '../../shared/vietnamese-money';
+
+const identityTextLength = (minimum: number, maximum: number): ValidatorFn => (control) => {
+  const length = typeof control.value === 'string' ? control.value.trim().length : 0;
+  if (length < minimum) return { minlength: { requiredLength: minimum, actualLength: length } };
+  if (length > maximum) return { maxlength: { requiredLength: maximum, actualLength: length } };
+  return null;
+};
 @Component({
   selector: 'app-employee-deposit-dossier-frame',
   standalone: false,
@@ -130,8 +137,8 @@ export class EmployeeDepositNewComponent {
   identityForm = this.fb.nonNullable.group({
     idNumber: ['', [Validators.required, Validators.pattern(/^\d{12}$/)]],
     issuedOn: ['', Validators.required],
-    issuedBy: ['', Validators.required],
-    permanentAddress: ['', Validators.required],
+    issuedBy: ['', [Validators.required, identityTextLength(2, 200)]],
+    permanentAddress: ['', [Validators.required, identityTextLength(5, 500)]],
     frontImageUrl: [
       '',
       [

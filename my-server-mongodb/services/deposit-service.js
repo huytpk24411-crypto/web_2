@@ -1974,7 +1974,7 @@ function createDepositService(dependencies) {
           "HOLD_CUSTOMER_MISMATCH",
           400,
         );
-      p3Assert(p3CompleteIdentity(customer), "CUSTOMER_IDENTITY_REQUIRED", 400);
+      p3Assert(await p3CompleteIdentity(customer), "CUSTOMER_IDENTITY_REQUIRED", 400);
       p3Assert(
         await p3IdentityAccess(req, customer),
         "CUSTOMER_NOT_ASSIGNED",
@@ -2389,22 +2389,18 @@ function createDepositService(dependencies) {
 
   // REAL-02: exact customer lookup starts a bounded deposit workflow on the server session.
   function p3IdentityFile(url) {
-    return (
-      typeof url === "string" &&
-      /^\/uploads\/cccd\/[a-zA-Z0-9_-]+\.(jpe?g|png|webp)$/i.test(url) &&
-      require("fs").existsSync(
-        dependencies.path.join(
-          dependencies.serverDirectory,
-          "..",
-          "my-server",
-          "public",
-          url,
-        ),
-      )
-    );
+    return require("../identity-file").identityFileExists(url, {
+      database: dependencies.database,
+      publicDirectory: dependencies.path.join(
+        dependencies.serverDirectory,
+        "..",
+        "my-server",
+        "public",
+      ),
+    });
   }
 
-  function p3CompleteIdentity(customer) {
+  async function p3CompleteIdentity(customer) {
     const i = customer.identity;
     return (
       typeof i?.number === "string" &&
@@ -2416,8 +2412,8 @@ function createDepositService(dependencies) {
       i.issuedPlace.trim().length >= 2 &&
       typeof customer.permanentAddress === "string" &&
       customer.permanentAddress.trim().length >= 5 &&
-      p3IdentityFile(i.frontImage) &&
-      p3IdentityFile(i.backImage)
+      (await p3IdentityFile(i.frontImage)) &&
+      (await p3IdentityFile(i.backImage))
     );
   }
 
@@ -2433,7 +2429,7 @@ function createDepositService(dependencies) {
       permanentAddress: body.permanentAddress,
     };
     p3Assert(
-      p3CompleteIdentity(candidate) &&
+      (await p3CompleteIdentity(candidate)) &&
         body.issuedBy.length <= 200 &&
         body.permanentAddress.length <= 500,
       "INVALID_IDENTITY",

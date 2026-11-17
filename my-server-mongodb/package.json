@@ -9,7 +9,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "seed": "node seed.js",
-    "test": "node --test password-reset.spec.cjs sms-esms.spec.cjs payment-return-url.spec.cjs mongo-session-store.spec.cjs"
+    "test": "node --test password-reset.spec.cjs sms-esms.spec.cjs payment-return-url.spec.cjs mongo-session-store.spec.cjs identity-file.spec.cjs"
   },
   "dependencies": {
     "body-parser": "^2.4.0",

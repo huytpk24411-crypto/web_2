@@ -270,6 +270,24 @@ describe('EmployeeDepositNewComponent with HTTP data', () => {
     fixture.destroy();
   });
 
+  it('shows incomplete identity text before sending a deposit customer profile to the server', async () => {
+    const { fixture, http } = await employeeHttpTest(EmployeeDepositNewComponent);
+    const c = fixture.componentInstance;
+    c.form.patchValue({ customerName: 'Khách minh họa', phone: '0901234567', roomId: ROOM.id });
+    c.identityForm.setValue({ ...CUSTOMER_IDENTITY, permanentAddress: ' hcm ' });
+    expect(await c.saveIdentity()).toBe(false);
+    expect(c.identityForm.controls.permanentAddress.hasError('minlength')).toBe(true);
+    fixture.detectChanges();
+    expect(fixture.nativeElement.textContent).toContain('ít nhất 5 ký tự');
+    http.expectNone('/data/customers/deposit-profile');
+    c.identityForm.patchValue({ permanentAddress: CUSTOMER_IDENTITY.permanentAddress, issuedBy: ' x ' });
+    expect(await c.saveIdentity()).toBe(false);
+    expect(c.identityForm.controls.issuedBy.hasError('minlength')).toBe(true);
+    http.expectNone('/data/customers/deposit-profile');
+    http.verify();
+    fixture.destroy();
+  });
+
   it('keeps manually entered details when phone lookup finds no existing customer', async () => {
     const { fixture, http } = await employeeHttpTest(EmployeeDepositNewComponent);
     const c = fixture.componentInstance;
