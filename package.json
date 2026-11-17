@@ -6,6 +6,8 @@
   "scripts": {
     "setup": "node scripts/setup.cjs",
     "start": "node scripts/start.cjs",
+    "build:deploy": "node scripts/build-deploy.cjs",
+    "start:deploy": "node scripts/serve-deploy.cjs",
     "build": "node scripts/check.cjs build",
     "test": "node scripts/check.cjs test",
     "data:check": "node my-server-mongodb/scripts/check-data.cjs",

@@ -1893,13 +1893,10 @@ function createDepositService(dependencies) {
         result("Payment", existing.id);
         return plan;
       }
-      const counter = await dependencies.p3Collections.Counter.findOneAndUpdate(
-        { _id: "PAYOS" },
-        [{ $set: { value: { $add: [{ $ifNull: ["$value", 100000] }, 1] } } }],
-        { upsert: true, returnDocument: "after" },
-      );
-      const orderCode = counter.value,
-        description = `GC${orderCode}`;
+      // Separate local and hosted databases can use the same merchant channel.
+      // A copied seed counter must not reuse a gateway order created elsewhere.
+      const orderCode = Date.now() * 1000 + dependencies.crypto.randomInt(1000),
+        description = `GC${orderCode.toString(36).slice(-7).toUpperCase()}`;
       p3Assert(
         Number.isSafeInteger(orderCode) &&
           orderCode > 0 &&

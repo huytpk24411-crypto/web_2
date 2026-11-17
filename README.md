@@ -33,9 +33,19 @@ Sau khi chạy `npm run setup`, điền `PAYOS_CLIENT_ID`, `PAYOS_API_KEY`, `PAY
 
 `CUSTOMER_APP_URL` là địa chỉ giao diện khách hàng của môi trường đó. Khi chạy local, hệ thống giữ đúng hostname và cổng của trình duyệt lúc tạo thanh toán, kể cả `localhost` hoặc `127.0.0.1`, để quay về cùng phiên đăng nhập. Link payOS đã tạo được tái sử dụng cùng đơn hàng và giữ địa chỉ quay về đã lưu lúc tạo.
 
-Webhook của kênh payOS phải tới backend sử dụng database đã tạo đơn. Mỗi bản clone chạy database riêng cần dùng kênh thử riêng, hoặc cùng kết nối một backend/database khi dùng chung kênh thanh toán. Sao chép khóa sang nhiều database độc lập có thể trùng `orderCode` và gửi webhook về sai nơi. Bản dữ liệu phát triển có bộ đếm chứng từ được sao chép cùng dữ liệu.
+Webhook của kênh payOS phải tới backend sử dụng database đã tạo đơn. Các máy truy cập website online cùng dùng một backend/database. Các bản local chạy database độc lập nên dùng kênh thử riêng để webhook cập nhật đúng nơi. Mã đơn payOS mới dùng thời gian và phần ngẫu nhiên để tránh tái sử dụng mã từ bộ đếm trong bản dữ liệu sao chép.
 
-Session hiện lưu trong bộ nhớ API. Khởi động lại API sẽ yêu cầu đăng nhập lại. Trạng thái thanh toán và biên lai lưu trong MongoDB, có thể mở lại từ danh sách giữ chỗ sau khi đăng nhập. Trình duyệt xác nhận tiền qua webhook hoặc tra cứu payOS đã kiểm tra phía backend.
+Chế độ local mặc định lưu session trong bộ nhớ API. Khởi động lại API local sẽ yêu cầu đăng nhập lại. Chế độ production lưu session trong MongoDB và dùng cookie HTTPS. Trạng thái thanh toán và biên lai lưu trong MongoDB. Trình duyệt xác nhận tiền qua webhook hoặc tra cứu payOS đã kiểm tra phía backend.
+
+## Triển khai trên Render
+
+Tạo Web Service từ repository, chọn runtime Node và gói phù hợp. Cấu hình build `npm run build:deploy`, start `npm run start:deploy`, health check `/healthz`. Giữ Root Directory là thư mục gốc repository. Build cài dependency bằng lockfile và biên dịch riêng cả ba ứng dụng Angular.
+
+Thiết lập `NODE_VERSION=24.20.0`, `NODE_ENV=production`, `MONGODB_URI`, `MONGODB_DB` và `SESSION_SECRET` ngẫu nhiên ít nhất 32 ký tự. Backend tự lấy URL giao diện từ `RENDER_EXTERNAL_URL` do Render cấp. Với hosting khác, đặt `CUSTOMER_APP_URL` bằng URL HTTPS của website và `PORT` bằng cổng của hosting. Atlas cần cho phép các outbound IP của dịch vụ kết nối.
+
+Các giao diện chạy tại `/` cho customer, `/staff/` cho employee và `/management/` cho admin. Ba thư mục `my-app-*` được build và phục vụ riêng. Các API dùng chung MongoDB. Phiên đăng nhập lưu trong collection `Session`, ảnh mới tải lên lưu trong GridFS `Upload.files` và `Upload.chunks`. API tải giấy tờ yêu cầu đăng nhập và kiểm tra quyền. Gói Atlas Free dùng chung giới hạn dung lượng cho dữ liệu và ảnh.
+
+Tiếp tục cấu hình ba khóa payOS trong biến môi trường Render và trỏ webhook tới `https://TEN_WEBSITE/payos/webhook` để bật thanh toán online. Gói Render Free có thể ngủ sau thời gian không có truy cập, vì vậy lần mở lại có thể chờ dịch vụ khởi động.
 
 ## Thư mục
 
@@ -59,4 +69,4 @@ scripts/                     Setup, start, build, test, proxy dùng chung
 
 `npm run build` biên dịch production cả ba app. `npm test` chạy unit test ba app và backend. Có thể chạy `npm start` riêng trong một app; proxy sẽ bật backend local khi thiếu. Khi chạy đồng thời nhiều cổng, dùng lệnh ở thư mục gốc để quản lý tiến trình thống nhất.
 
-Backend hiện thiết kế cho **một tiến trình API** với hàng đợi và journal bền vững trong MongoDB; session dùng MemoryStore nên khởi động lại phải đăng nhập lại. Chưa cấu hình chạy đa instance hay session store cho triển khai công cộng. File upload mới nằm trên ổ đĩa local, cần sao lưu cùng database. Các tài liệu bàn giao tổng hợp MD, draw.io và Word được xuất riêng ngoài repository theo yêu cầu.
+Backend hiện thiết kế cho **một tiến trình API** với hàng đợi và journal bền vững trong MongoDB. Production lưu session và upload trong MongoDB. Các ảnh tải lên khi chạy server local riêng nằm trên ổ đĩa local, cần sao lưu cùng database. Các tài liệu bàn giao tổng hợp MD, draw.io và Word được xuất riêng ngoài repository theo yêu cầu.

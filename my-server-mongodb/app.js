@@ -8,7 +8,8 @@ try {
 
 const express = require("express");
 const app = express();
-const port = Number(process.env.API_PORT || 3002);
+const port = Number(process.env.API_PORT || process.env.PORT || 3002);
+if (process.env.NODE_ENV === "production") app.set("trust proxy", 1);
 if (!Number.isInteger(port) || port < 0 || port > 65535)
   throw new Error("Invalid API_PORT");
 
@@ -26,6 +27,7 @@ function cors() {
       "http://localhost:4200",
       "http://localhost:4201",
       "http://localhost:4202",
+      ...(process.env.CUSTOMER_APP_URL ? [new URL(process.env.CUSTOMER_APP_URL).origin] : []),
     ],
     credentials: true,
   });
@@ -37,6 +39,7 @@ app.post("/payos/webhook", express.json({ limit: "100kb" }), (req, res, next) =>
 );
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
+const databaseHandles = require("./config/database").createDatabase();
 const {
   portalRoles,
   portalOf,
@@ -45,7 +48,7 @@ const {
   sessionStore,
   portalSessions,
   sessionMiddleware,
-} = require("./middleware/portal-session").createPortalSessions();
+} = require("./middleware/portal-session").createPortalSessions({ database: databaseHandles.database });
 app.use(sessionMiddleware);
 const crypto = require("crypto");
 const bodyParser = require("body-parser");
@@ -71,7 +74,7 @@ const {
   viewingDetailCollection,
   notificationCollection,
   auditCollection,
-} = require("./config/database").createDatabase();
+} = databaseHandles;
 const p3Collections = Object.fromEntries(
   [
     "Hold",
@@ -195,9 +198,10 @@ require("./routes/shift-routes").registerShiftRoutes(dependencies);
 require("./routes/payroll-routes").registerPayrollRoutes(dependencies);
 require("./routes/catalog-routes").registerAdminCatalogRoutes(dependencies);
 
-async function start() {
+async function start(options = {}) {
   try {
     await client.connect();
+    await sessionStore.initialize?.();
     await roomCollection.createIndex({ id: 1 }, { unique: true });
     await roomCollection.createIndex({ code: 1 }, { unique: true });
     await roomCollection.createIndex(
@@ -271,6 +275,7 @@ async function start() {
     await dependencies.initializeP4();
     await dependencies.initializeP5();
     await dependencies.initializeP6();
+    if (options.listen === false) return app;
     return await new Promise((resolve, reject) => {
       const server = app.listen(port, () => {
         console.log(`My Server listening on port ${port}`);

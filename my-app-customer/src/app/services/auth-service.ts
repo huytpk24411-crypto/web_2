@@ -174,6 +174,8 @@ export class AuthService {
 
 export const sessionInterceptor: HttpInterceptorFn = (request, next) => {
   const auth = inject(AuthService);
+  if (request.url.startsWith('/') && !request.url.startsWith('//'))
+    request = request.clone({ setHeaders: { 'X-iHouzz-Portal': 'customer' } });
   return next(request).pipe(
     catchError((error) => {
       if (

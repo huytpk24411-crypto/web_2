@@ -62,13 +62,13 @@ function registerLoginRoutes(dependencies) {
           res.cookie(dependencies.rememberCookieName(portal), account.phone, {
             maxAge: 30 * 24 * 60 * 60 * 1000,
             httpOnly: false,
-            secure: false,
+            secure: process.env.NODE_ENV === "production",
             sameSite: "lax",
           });
         } else {
           res.clearCookie(dependencies.rememberCookieName(portal), {
             sameSite: "lax",
-            secure: false,
+            secure: process.env.NODE_ENV === "production",
           });
         }
         res.send({ message: "Login successful!", user: req.session.user });
@@ -98,7 +98,7 @@ function registerLoginRoutes(dependencies) {
         );
         res.clearCookie(
           dependencies.sessionCookieName(dependencies.portalOf(req)),
-          { httpOnly: true, sameSite: "lax", secure: false },
+          { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production" },
         );
         res.send({ message: "Logout successful!" });
       } catch (error) {
