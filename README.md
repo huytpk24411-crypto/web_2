@@ -27,6 +27,16 @@ Mật khẩu dùng chung cho bản dữ liệu khôi phục được sinh ngẫu
 - `npm run data:restore -- --database TEN_DB` khôi phục nếu database trống. `--replace` là thao tác thay dữ liệu có chủ đích; công cụ sao lưu riêng trước khi thay và không tự thực hiện khi setup. Không dùng `--replace` cho database đang vận hành khi chưa kiểm tra bản sao lưu.
 - Để thanh toán ngân hàng thật, cấu hình **khóa payOS của chính bạn**, `CUSTOMER_APP_URL` và webhook công khai `/payos/webhook` theo tài khoản merchant. Repository không chứa khóa dùng chung. Tiền giữ chỗ hiện là **10.000 đ để thử**, vẫn là tiền thật nếu dùng payOS thật. SMS chỉ gửi được sau khi có nhà cung cấp, tên gửi và mẫu OTP đã duyệt; chưa cấu hình thì hệ thống báo chưa sẵn sàng.
 
+## Thanh toán khi chạy riêng trên máy khác
+
+Sau khi chạy `npm run setup`, điền `PAYOS_CLIENT_ID`, `PAYOS_API_KEY`, `PAYOS_CHECKSUM_KEY` trong `my-server-mongodb/.env`. Lấy ba giá trị từ kênh thanh toán payOS dùng cho môi trường đó. Khởi động lại API sau khi sửa `.env`. Chạy `npm run payments:check` để kiểm tra biến nào còn thiếu. Lệnh chỉ in trạng thái có hoặc thiếu giá trị.
+
+`CUSTOMER_APP_URL` là địa chỉ giao diện khách hàng của môi trường đó. Khi chạy local, hệ thống giữ đúng hostname và cổng của trình duyệt lúc tạo thanh toán, kể cả `localhost` hoặc `127.0.0.1`, để quay về cùng phiên đăng nhập. Link payOS đã tạo được tái sử dụng cùng đơn hàng và giữ địa chỉ quay về đã lưu lúc tạo.
+
+Webhook của kênh payOS phải tới backend sử dụng database đã tạo đơn. Mỗi bản clone chạy database riêng cần dùng kênh thử riêng, hoặc cùng kết nối một backend/database khi dùng chung kênh thanh toán. Sao chép khóa sang nhiều database độc lập có thể trùng `orderCode` và gửi webhook về sai nơi. Bản dữ liệu phát triển có bộ đếm chứng từ được sao chép cùng dữ liệu.
+
+Session hiện lưu trong bộ nhớ API. Khởi động lại API sẽ yêu cầu đăng nhập lại. Trạng thái thanh toán và biên lai lưu trong MongoDB, có thể mở lại từ danh sách giữ chỗ sau khi đăng nhập. Trình duyệt xác nhận tiền qua webhook hoặc tra cứu payOS đã kiểm tra phía backend.
+
 ## Thư mục
 
 ```text

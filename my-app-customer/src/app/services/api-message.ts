@@ -5,6 +5,8 @@ export const CONNECTION_ERROR = 'Không kết nối được máy chủ. Vui lò
 const messages: Record<string, string> = {
   PAYMENT_GATEWAY_NOT_CONFIGURED: 'Chưa cấu hình cổng thanh toán. Vui lòng liên hệ nhân viên.',
   PAYMENT_GATEWAY_REQUIRED: 'Vui lòng thanh toán qua cổng ngân hàng.',
+  PAYMENT_RETURN_URL_INVALID:
+    'Địa chỉ quay về sau thanh toán chưa đúng. Vui lòng liên hệ người cấu hình máy chủ.',
   INVALID_SIGNATURE: 'Chữ ký thanh toán không hợp lệ.',
   FLOW_CHANGED: 'Quy trình cọc đã thay đổi.',
   CONTRACT_NOT_SIGNED: 'Hợp đồng chưa ký.',

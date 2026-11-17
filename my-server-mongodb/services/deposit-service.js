@@ -1,3 +1,5 @@
+const { paymentReturnAppUrl } = require("../config/payment-return-url");
+
 // CommonJS services retain the existing rules and MongoDB native-driver operations.
 function createDepositService(dependencies) {
   // P3 helpers are exported for pure-function and MongoDB integration specs.
@@ -687,7 +689,7 @@ function createDepositService(dependencies) {
     }
   }
 
-  async function payosEnsureLink(id) {
+  async function payosEnsureLink(id, req) {
     let payment = await p3Find("Payment", id);
     const hold = await p3Find("Hold", payment.holdId),
       config = payosConfig();
@@ -699,7 +701,24 @@ function createDepositService(dependencies) {
       "HOLD_EXPIRED",
     );
     if (!payment.checkoutUrl) {
-      const receiptUrl = `${config.customerAppUrl}/bookings/${hold.id}/receipt?payos=`;
+      if (!payment.returnAppUrl) {
+        const returnPlan = Object.assign(p3Plan("Payment", id), {
+          opId: `p3-payos-return-${dependencies.crypto.randomUUID()}`,
+          now: new Date(),
+          actorId: null,
+        });
+        await p3Change(
+          returnPlan,
+          "Payment",
+          payment,
+          {
+            returnAppUrl: paymentReturnAppUrl(req),
+          },
+          { status: "PENDING" },
+        );
+        payment = await p3Commit(returnPlan, "payosReturnUrlSaved");
+      }
+      const receiptUrl = `${payment.returnAppUrl}/bookings/${encodeURIComponent(hold.id)}/receipt?payos=`;
       let link;
       try {
         link = await payosCreateLink(
@@ -1564,7 +1583,7 @@ function createDepositService(dependencies) {
           result = await p3Serial(async () => {
             await p3Recover();
             await p3Expire();
-            return payosEnsureLink(result.id);
+            return payosEnsureLink(result.id, req);
           });
         if (action === "saveDepositCustomer") {
           req.session.depositIdentityContext = {
@@ -1902,6 +1921,7 @@ function createDepositService(dependencies) {
         expiresAt: hold.expiresAt,
         createdAt: now,
         idempotencyKey: req.get("Idempotency-Key"),
+        returnAppUrl: paymentReturnAppUrl(req),
       });
       result("Payment", payment.id);
       await p3Create(plan, "Payment", payment);
