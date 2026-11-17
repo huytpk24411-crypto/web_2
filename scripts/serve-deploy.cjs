@@ -4,6 +4,7 @@ const root = path.resolve(__dirname, "..");
 process.env.NODE_ENV ||= "production";
 process.env.CUSTOMER_APP_URL ||= process.env.RENDER_EXTERNAL_URL;
 const express = require("../my-server-mongodb/node_modules/express");
+const { API_PATHS } = require("./deployment-routes.cjs");
 
 function mountPortal(web, { prefix, directory }) {
   // String routes also match a trailing slash in Express's default routing mode.
@@ -61,10 +62,8 @@ async function start() {
       res.status(503).send({ status: "unavailable" });
     }
   });
-  const apiPaths =
-    /^\/(?:data(?:\/|$)|auth(?:\/|$)|api(?:\/|$)|uploads(?:\/|$)|payos\/webhook(?:\/|$)|user-login$|user-register$|viewing-cart(?:\/|$)|favorites\/|contact-requests(?:\/|$)|notifications(?:\/|$)|audit-logs(?:\/|$)|viewing-details(?:\/|$)|viewings(?:$|\/(?!new(?:\/|$))))/;
   web.use((req, res, next) =>
-    apiPaths.test(req.path)
+    API_PATHS.test(req.path)
       ? api.app(req, res, () =>
           res.status(404).send({ message: "API not found" }),
         )
