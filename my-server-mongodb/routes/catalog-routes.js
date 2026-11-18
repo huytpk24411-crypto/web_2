@@ -489,32 +489,6 @@ function registerAdminCatalogRoutes(dependencies) {
     }),
   );
 
-  dependencies.app.post(
-    "/data/admin/employees/:id/reset-password",
-    dependencies.p6Admin,
-    dependencies.p6Route(async (req, res) => {
-      dependencies.p3Assert(
-        !req.get("Idempotency-Key") || req.body?.temporaryPassword,
-        "TEMPORARY_PASSWORD_REQUIRED_FOR_RETRY",
-        400,
-      );
-      const password = dependencies.p6Password(req.body);
-      const result = await dependencies.p6Execute(req, async (plan) => {
-        const employee = await dependencies.p6Get("Employee", req.params.id),
-          account = await dependencies.p6Foreign("Account", employee.accountId);
-        dependencies.p6Effect(
-          plan,
-          "Account",
-          account,
-          { ...dependencies.p6Credentials(password), updatedAt: plan.at },
-          "RESET_PASSWORD",
-        );
-        return { id: employee.id, phone: account.phone };
-      });
-      res.send({ ...result, temporaryPassword: password });
-    }),
-  );
-
   dependencies.app.delete(
     "/data/admin/employees/:id",
     dependencies.p6Admin,

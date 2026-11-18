@@ -172,17 +172,6 @@ export class StaffService {
     this.acceptEmployee(saved);
     await this.shiftApi.refresh();
   }
-  async resetPassword(id: string): Promise<void> {
-    const result = await this.catalogApi.write<{ phone: string; temporaryPassword: string }>(
-      'POST',
-      `/data/admin/employees/${encodeURIComponent(id)}/reset-password`,
-    );
-    this.temporaryPassword.set({
-      employeeId: id,
-      phone: result.phone,
-      password: result.temporaryPassword,
-    });
-  }
   async uploadAvatar(file: File): Promise<string> {
     return (await firstValueFrom(this.uploads.uploadEmployee(file))).url;
   }

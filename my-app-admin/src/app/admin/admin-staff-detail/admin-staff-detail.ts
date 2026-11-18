@@ -11,14 +11,6 @@ import { addDays, DetailTab, StaffPage, weekStart } from '../staff-page';
   styleUrl: './admin-staff-detail.css',
 })
 export class AdminStaffDetailComponent extends StaffPage implements OnInit {
-  async resetPassword(): Promise<void> {
-    try {
-      await this.repository.resetPassword(this.employeeId);
-      this.error = '';
-    } catch (error) {
-      this.error = error instanceof Error ? error.message : 'Không đặt lại được mật khẩu.';
-    }
-  }
   private destroyRef = inject(DestroyRef);
 
   private route = inject(ActivatedRoute);

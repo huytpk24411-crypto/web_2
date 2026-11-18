@@ -143,8 +143,7 @@ export class AdminCatalogAPIService {
     const signature = JSON.stringify({ method, path, body });
     let request = this.pending.get(signature);
     if (!request) {
-      const credentials =
-        method === 'POST' && (path === '/data/admin/employees' || path.endsWith('/reset-password'));
+      const credentials = method === 'POST' && path === '/data/admin/employees';
       request = {
         key: crypto.randomUUID(),
         body: credentials ? { ...(body as object), temporaryPassword: crypto.randomUUID() } : body,

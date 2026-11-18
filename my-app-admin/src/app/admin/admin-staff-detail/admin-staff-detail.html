@@ -48,25 +48,11 @@
       >
     </div>
     <div class="row">
-      <button
-        class="btn"
-        (click)="resetPassword()"
-        [disabled]="!repository.catalogApi.online() || repository.catalogApi.saving()"
-      >
-        Đặt lại mật khẩu
-      </button>
       <button class="btn primary" (click)="editEmployee(person)">Sửa hồ sơ</button
       ><button class="btn danger-button" (click)="openDeactivate(person, true)">
         Ngừng hoạt động
       </button>
     </div>
-  </section>
-  <section class="panel" *ngIf="repository.temporaryPassword() as credentials" role="status">
-    <p>
-      Điện thoại: {{ credentials.phone }} · Mật khẩu tạm:
-      <strong>{{ credentials.password }}</strong>
-    </p>
-    <button class="btn" (click)="repository.temporaryPassword.set(null)">Ẩn mật khẩu</button>
   </section>
   <ng-template #missingDetail
     ><section class="panel empty">
