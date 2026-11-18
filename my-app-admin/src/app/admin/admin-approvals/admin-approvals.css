@@ -115,3 +115,29 @@
 .finance-modal p.approval-error {
   color: var(--accent);
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 760px) {
+  .approval-tabs {
+    overflow-x: auto;
+    gap: 20px;
+  }
+  .approval-tabs button {
+    flex-shrink: 0;
+  }
+  .approval-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .approval-table {
+    min-width: 850px;
+  }
+  .finance-modal dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .finance-modal {
+    width: 100%;
+    max-height: calc(100dvh - 32px);
+  }
+}

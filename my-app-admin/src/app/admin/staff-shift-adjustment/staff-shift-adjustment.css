@@ -393,3 +393,58 @@ select:focus-visible {
   padding-bottom: 30px;
   justify-content: center;
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 760px) {
+  .adjust-backdrop {
+    z-index: 3000;
+    padding: 12px;
+  }
+  .adjust-dialog {
+    width: 100%;
+    max-height: calc(100dvh - 24px);
+    border-radius: 14px;
+  }
+  .adjust-dialog header {
+    padding: 14px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .adjust-dialog h2 {
+    font-size: 20px;
+  }
+  .adjust-body {
+    padding: 14px;
+    min-width: 0;
+    overflow-y: auto;
+  }
+  .board-heading,
+  .legend,
+  .adjust-dialog footer {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .adjust-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .adjust-dialog footer {
+    padding: 14px;
+  }
+  .adjust-dialog footer > span {
+    flex-basis: 100%;
+  }
+  .adjust-dialog footer button {
+    flex: 1 1 130px;
+    min-height: 44px;
+  }
+  .success-dialog {
+    width: 100%;
+  }
+  .success-content {
+    padding: 16px;
+  }
+  .replacement-board {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}

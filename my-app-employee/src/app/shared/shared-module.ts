@@ -9,12 +9,6 @@ import { DialogFocusDirective } from './dialog-focus.directive';
 import { FormErrorComponent } from './form-error/form-error';
 import { IconComponent } from './icon/icon';
 import { ImageFallbackDirective } from './image-fallback.directive';
-import { MapSearchComponent } from './map-search/map-search';
-import { ReceiptPreviewComponent } from './receipt-preview/receipt-preview';
-import { RoomCardComponent } from './room-card/room-card';
-import { RoomFiltersComponent } from './room-filters/room-filters';
-import { RoomGalleryComponent } from './room-gallery/room-gallery';
-import { RoomTourComponent } from './room-tour/room-tour';
 import { SearchSelectComponent } from './search-select/search-select';
 import { StatusBadgeComponent } from './status-badge/status-badge';
 import { ToastComponent } from './toast/toast';
@@ -27,17 +21,11 @@ registerLocaleData(localeVi);
     PolicyTypePipe,
     PolicyLevelPipe,
     SearchSelectComponent,
-    RoomGalleryComponent,
-    RoomTourComponent,
-    RoomFiltersComponent,
     ImageFallbackDirective,
     DialogFocusDirective,
     IconComponent,
     BrandComponent,
-    RoomCardComponent,
-    MapSearchComponent,
     StatusBadgeComponent,
-    ReceiptPreviewComponent,
     FormErrorComponent,
     ToastComponent,
   ],
@@ -48,9 +36,6 @@ registerLocaleData(localeVi);
     PolicyTypePipe,
     PolicyLevelPipe,
     SearchSelectComponent,
-    RoomGalleryComponent,
-    RoomTourComponent,
-    RoomFiltersComponent,
     ImageFallbackDirective,
     DialogFocusDirective,
     CommonModule,
@@ -59,10 +44,7 @@ registerLocaleData(localeVi);
     RouterModule,
     IconComponent,
     BrandComponent,
-    RoomCardComponent,
-    MapSearchComponent,
     StatusBadgeComponent,
-    ReceiptPreviewComponent,
     FormErrorComponent,
     ToastComponent,
   ],

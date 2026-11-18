@@ -371,3 +371,66 @@ textarea:focus-visible {
     padding: 0;
   }
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 1100px) {
+  .finance-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .finance-heading,
+  .finance-card-head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .finance-actions {
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 600px) {
+  .finance-heading {
+    margin-bottom: 20px;
+  }
+  .finance-heading h1 {
+    font-size: 23px;
+  }
+  .finance-heading > div:first-child {
+    min-width: 0;
+  }
+  .finance-card {
+    padding: 16px;
+  }
+  .finance-stat {
+    padding: 16px 12px;
+  }
+  .finance-stat .stat-value {
+    font-size: 23px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .finance-stat .stat-label {
+    max-width: 100%;
+    padding-right: 20px;
+  }
+  .finance-stat .stat-icon {
+    width: 22px;
+    height: 22px;
+    right: 8px;
+    top: 12px;
+  }
+  .finance-btn {
+    white-space: normal;
+    min-height: 44px;
+  }
+  .finance-select {
+    width: 100%;
+    min-width: 0;
+    font-size: 16px;
+  }
+  .finance-modal dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+  }
+  .finance-modal dd {
+    margin-bottom: 10px;
+  }
+}

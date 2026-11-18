@@ -216,3 +216,41 @@ textarea.invalid {
   font-weight: 700;
   color: var(--text);
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .about-container {
+    width: calc(100% - 28px);
+  }
+  .about-page,
+  .contact-page {
+    padding-block: 24px;
+  }
+  .contact-form-panel {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+  .field-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .contact-figure img {
+    height: 240px;
+  }
+  .contact-side h2 {
+    font-size: 28px;
+  }
+  .submit-button {
+    width: 100%;
+  }
+  .company-card-row > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}

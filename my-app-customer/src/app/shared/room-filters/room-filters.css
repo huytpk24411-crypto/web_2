@@ -201,7 +201,7 @@ legend {
     position: fixed;
     inset: 0;
     background: #142c5270;
-    z-index: 899;
+    z-index: 1900;
     animation: filter-backdrop-enter var(--dur) var(--ease);
   }
   .expanded {
@@ -209,7 +209,7 @@ legend {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 900;
+    z-index: 2000;
     background: white;
     border-radius: 20px 20px 0 0;
     max-height: 85dvh;

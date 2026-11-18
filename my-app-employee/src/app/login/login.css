@@ -35,3 +35,16 @@
   margin: 0;
   accent-color: var(--primary);
 }
+
+@media screen and (max-width: 600px) {
+  .staff-title {
+    gap: 12px;
+  }
+  .staff-shield {
+    width: 38px;
+    height: 38px;
+  }
+  .staff-heading h1 {
+    font-size: 27px;
+  }
+}

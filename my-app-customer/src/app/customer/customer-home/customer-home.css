@@ -254,3 +254,56 @@ h2 {
     transform: none;
   }
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 1000px) {
+  .home-container {
+    width: calc(100% - 40px);
+    padding-bottom: 48px;
+  }
+  .home-room-grid,
+  .school-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .map-discovery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .home-benefits {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .home-benefits > span {
+    border: 0;
+    padding: 0;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .home-container {
+    width: calc(100% - 28px);
+  }
+  .home-section {
+    margin-top: 44px;
+  }
+  .home-heading,
+  .home-notice {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  h2 {
+    font-size: 27px;
+  }
+  .home-room-grid,
+  .school-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .home-heading {
+    margin-bottom: 20px;
+  }
+  .school-tile {
+    padding: 16px;
+  }
+}

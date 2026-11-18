@@ -1,8 +1,5 @@
 @import './app/shared/portal.css';
 @import './app/employee/employee-ui.css';
-@import 'leaflet/dist/leaflet.css';
-@import 'leaflet.markercluster/dist/MarkerCluster.css';
-@import './app/shared/map-markers.css';
 :root {
   --primary: #0057ec;
   --primary-dark: #07477f;
@@ -2061,5 +2058,219 @@ button:focus-visible {
   }
   .auth-switch {
     font-size: 16px;
+  }
+}
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 760px) {
+  html {
+    scroll-padding-top: 130px;
+  }
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+  main,
+  section,
+  article,
+  aside,
+  form,
+  fieldset,
+  .panel,
+  .grid > *,
+  .split > *,
+  .row > * {
+    min-width: 0;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  dd,
+  .notice,
+  .empty,
+  .inline-room {
+    overflow-wrap: anywhere;
+  }
+  .row,
+  .section-heading {
+    flex-wrap: wrap;
+  }
+  .row > .field {
+    flex: 1 1 180px;
+  }
+  .btn,
+  .icon-btn,
+  .emp-btn,
+  .finance-btn,
+  .pagination button {
+    min-height: 44px !important;
+  }
+  .icon-btn,
+  .pagination button {
+    min-width: 44px;
+  }
+  .pagination {
+    flex-wrap: wrap;
+  }
+  input:not([type='checkbox']):not([type='radio']):not([type='range']),
+  select,
+  textarea,
+  .field input,
+  .field select,
+  .control {
+    font-size: 16px !important;
+    max-width: 100%;
+  }
+  input[type='date'],
+  input[type='datetime-local'],
+  input[type='time'] {
+    min-width: 0;
+    width: 100%;
+  }
+  input[type='file'] {
+    width: 100%;
+    font-size: 13px;
+  }
+  .table-wrap,
+  .table-scroll,
+  .emp-table-wrap,
+  .report-table-wrap,
+  .approval-table-wrap,
+  .matrix-scroll {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .data-table,
+  .emp-table {
+    min-width: 620px;
+  }
+  .modal-backdrop {
+    z-index: 3000;
+    padding: 12px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+  .modal {
+    max-width: 100%;
+    max-height: calc(100dvh - 32px);
+    padding: 20px 16px;
+  }
+  .modal h2 {
+    padding-right: 32px;
+    font-size: 21px;
+  }
+  .modal .actions {
+    flex-wrap: wrap;
+  }
+  .modal .actions > .btn {
+    flex: 1 1 140px;
+  }
+  .loading {
+    padding: 40px 16px;
+  }
+  .receipt-paper {
+    padding: 20px 16px;
+    overflow-wrap: anywhere;
+  }
+  .receipt-paper dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+  }
+  .receipt-paper dd {
+    margin: 0 0 12px;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 480px) {
+  .grid.two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .section-heading {
+    align-items: flex-start;
+  }
+  .actions > .btn {
+    flex: 1 1 140px;
+  }
+  .stats,
+  .grid.four {
+    gap: 10px;
+  }
+  .stat {
+    padding: 14px 12px;
+  }
+  .stat strong {
+    font-size: 23px;
+    overflow-wrap: anywhere;
+  }
+  .inline-room {
+    align-items: flex-start;
+  }
+  .inline-room img {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+  }
+  .auth-visual {
+    min-height: 190px;
+  }
+  .auth-visual-copy {
+    padding-top: 92px;
+  }
+  .auth-visual-copy h2 {
+    font-size: 25px;
+  }
+  .auth-panel {
+    padding: 76px 20px 32px;
+  }
+  .auth-heading h1 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 1000px) {
+  app-employee-deposit-new {
+    .deposit-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .deposit-summary {
+      position: static;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  app-employee-deposit-new {
+    .deposit-preview-backdrop {
+      padding: 12px;
+      z-index: 3000;
+    }
+    .deposit-preview-dialog {
+      padding: 16px 12px;
+      max-height: calc(100dvh - 24px);
+    }
+    .draft-row {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .deposit-grid .field input,
+    .deposit-grid select,
+    .deposit-grid .control {
+      font-size: 16px;
+      min-height: 44px;
+    }
+    .deposit-section {
+      flex-wrap: wrap;
+    }
+    .deposit-title {
+      font-size: 22px;
+    }
+    .deposit-summary {
+      padding: 16px;
+    }
+    .summary-heading {
+      flex-wrap: wrap;
+    }
   }
 }

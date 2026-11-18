@@ -124,3 +124,36 @@ pre {
   padding: 32px;
   color: var(--muted);
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 900px) {
+  .audit-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (max-width: 600px) {
+  .catalog-page .page-title,
+  .catalog-actions,
+  .catalog-pagination {
+    flex-wrap: wrap;
+  }
+  .catalog-fields,
+  .audit-values,
+  .audit-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .catalog-page .panel {
+    padding: 16px;
+  }
+  .catalog-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .catalog-tabs a {
+    flex-shrink: 0;
+    min-height: 44px;
+  }
+  .catalog-page table {
+    min-width: 640px;
+  }
+}

@@ -398,3 +398,40 @@
     transform: none;
   }
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 760px) {
+  .header-inner nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+  .header-inner nav > a {
+    flex-shrink: 0;
+    font-size: 13px;
+  }
+  .header-actions {
+    gap: 0;
+  }
+  .account-panel {
+    position: fixed;
+    right: 14px;
+    top: 72px;
+  }
+  .customer-header [data-tooltip]::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 380px) {
+  .header-inner {
+    width: calc(100% - 20px);
+  }
+  .header-actions > .btn {
+    padding-inline: 8px;
+    font-size: 12px;
+  }
+  .customer-header .favorite-link {
+    display: none;
+  }
+}

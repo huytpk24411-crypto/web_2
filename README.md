@@ -20,6 +20,9 @@ Mật khẩu dùng chung cho bản dữ liệu khôi phục được sinh ngẫu
 
 ## Cấu hình và dữ liệu
 
+- Khi phát sinh doanh thu đầu tiên của một tháng chưa có kỳ lương, backend tự tạo kỳ `OPEN` theo tháng ghi nhận ở múi giờ Việt Nam, rồi liên kết doanh thu công ty và nhân viên vào kỳ đó. Kỳ có sẵn được tái sử dụng; kỳ `CLOSED` hoặc `PAID` không tự mở lại. Vì vậy hồ sơ cọc mới vẫn bị chặn nếu tháng hiện tại đã chốt, theo quy tắc đã thống nhất.
+- Cả ba giao diện có bố cục điện thoại: form xếp một cột, menu admin thu gọn, bộ lọc và nút thao tác xuống hàng; bảng quản trị/lịch ca nhiều cột cuộn ngang trong khung riêng. Bản customer giữ bản đồ và tour 360; các bản sao component không dùng ở admin/employee đã được loại bỏ.
+
 - `my-server-mongodb/.env.example`: mẫu MongoDB, cổng, phiên đăng nhập, payOS, SMS. Có thể sửa `MONGODB_URI`, `MONGODB_DB`, các cổng và `CUSTOMER_APP_URL` trong `.env`.
 - API MongoDB mặc định 3002; upload và danh mục tiện ích mặc định 3000. Các ứng dụng dùng proxy cùng nguồn và header cổng riêng; đăng nhập ba vai trò không ghi đè cookie của nhau.
 - `my-server-mongodb/data/manifest.json` mô tả bản chụp dữ liệu hiện tại đã làm sạch: 47 collection, 8.140 bản ghi, checksum và index. Giữ ID, liên kết, số tiền, trạng thái và lịch sử nghiệp vụ; thông tin cá nhân, mật khẩu gốc, ảnh định danh và khóa thanh toán đã được thay hoặc loại bỏ. Ảnh xác minh demo có nhãn placeholder, không phải giấy tờ thật.
@@ -38,6 +41,10 @@ Webhook của kênh payOS phải tới backend sử dụng database đã tạo �
 Chế độ local mặc định lưu session trong bộ nhớ API. Khởi động lại API local sẽ yêu cầu đăng nhập lại. Chế độ production lưu session trong MongoDB và dùng cookie HTTPS. Trạng thái thanh toán và biên lai lưu trong MongoDB. Trình duyệt xác nhận tiền qua webhook hoặc tra cứu payOS đã kiểm tra phía backend.
 
 ## Triển khai trên Render
+
+Môi trường đang dùng tách frontend Vercel, backend Render, ảnh Supabase và database Atlas. Trên Vercel dùng `npm run build:vercel`, `BACKEND_URL` trỏ tới Render và `PUBLIC_ASSET_BASE_URL` trỏ bucket public. Trên Render dùng build `npm run build:backend`, start `npm run start:backend`, health check `/healthz`; đặt `CUSTOMER_APP_URL` bằng URL Vercel. Ảnh mới dùng `MEDIA_STORAGE=supabase` cùng cấu hình trong `.env.example`; khóa Supabase chỉ đặt ở backend. Giấy tờ dùng bucket private và được kiểm tra quyền trước khi cấp URL tải.
+
+Cách triển khai gộp cả ba giao diện trên Render dưới đây vẫn được hỗ trợ cho môi trường riêng:
 
 Tạo Web Service từ repository, chọn runtime Node và gói phù hợp. Cấu hình build `npm run build:deploy`, start `npm run start:deploy`, health check `/healthz`. Giữ Root Directory là thư mục gốc repository. Build cài dependency bằng lockfile và biên dịch riêng cả ba ứng dụng Angular.
 
@@ -69,4 +76,4 @@ scripts/                     Setup, start, build, test, proxy dùng chung
 
 `npm run build` biên dịch production cả ba app. `npm test` chạy unit test ba app và backend. Có thể chạy `npm start` riêng trong một app; proxy sẽ bật backend local khi thiếu. Khi chạy đồng thời nhiều cổng, dùng lệnh ở thư mục gốc để quản lý tiến trình thống nhất.
 
-Backend hiện thiết kế cho **một tiến trình API** với hàng đợi và journal bền vững trong MongoDB. Production lưu session và upload trong MongoDB. Các ảnh tải lên khi chạy server local riêng nằm trên ổ đĩa local, cần sao lưu cùng database. Các tài liệu bàn giao tổng hợp MD, draw.io và Word được xuất riêng ngoài repository theo yêu cầu.
+Backend hiện thiết kế cho **một tiến trình API** với hàng đợi và journal bền vững trong MongoDB. Production lưu session trong MongoDB; ảnh tải lên dùng Supabase khi MEDIA_STORAGE=supabase, hoặc GridFS khi chọn MEDIA_STORAGE=gridfs. Các ảnh tải lên khi chạy server local riêng nằm trên ổ đĩa local, cần sao lưu cùng database. Các tài liệu bàn giao tổng hợp MD, draw.io và Word được xuất riêng ngoài repository theo yêu cầu.

@@ -226,3 +226,54 @@
   display: block;
   color: var(--muted);
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 600px) {
+  .period-actions {
+    flex-wrap: wrap;
+  }
+  .period-action {
+    flex: 1 1 140px;
+    min-width: 0;
+  }
+  .period-action .btn {
+    width: 100%;
+    white-space: normal;
+  }
+  .schedule-tabs {
+    overflow-x: auto;
+  }
+  .schedule-tabs button {
+    flex-shrink: 0;
+    padding-inline: 16px;
+  }
+  .assignment-popover {
+    width: calc(100vw - 24px);
+    max-width: 100%;
+  }
+  .remove-assignment {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    width: 32px;
+    height: 32px;
+  }
+  .task-manager,
+  .pending-confirm {
+    padding: 14px;
+  }
+  .task-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .task-pagination,
+  .wizard-steps,
+  .wizard-actions {
+    flex-wrap: wrap;
+  }
+  .staff-page .task-wizard {
+    max-width: 100%;
+    width: 100%;
+    padding: 16px;
+    max-height: calc(100dvh - 32px);
+  }
+}

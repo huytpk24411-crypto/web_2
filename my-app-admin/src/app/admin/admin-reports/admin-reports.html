@@ -46,72 +46,86 @@
         Báo cáo không tái dựng lịch sử theo tháng.
       </p>
       <div class="report-table-wrap">
-        <table class="policy-table">
-          <thead>
-            <tr>
-              <th>Tòa / Loại phòng</th>
-              <th>Tổng</th>
-              <th>Trống</th>
-              <th>Đang giữ</th>
-              <th>Đã thuê</th>
-              <th>Bảo trì</th>
-              <th>Cọc</th>
-              <th>Cọc yêu cầu (VNĐ)</th>
-              <th>Cọc đã xác nhận (VNĐ)</th>
-              <th>Hợp đồng</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let row of report.rows">
-              <td>{{ row.propertyName }}<br />{{ row.roomType | roomType }}</td>
-              <td>{{ row.total }}</td>
-              <td>{{ row.byStatus['AVAILABLE'] || 0 }}</td>
-              <td>{{ row.byStatus['HELD'] || 0 }}</td>
-              <td>{{ row.byStatus['RENTED'] || 0 }}</td>
-              <td>{{ row.byStatus['MAINTENANCE'] || 0 }}</td>
-              <td>{{ row.depositCount }}</td>
-              <td class="numeric">{{ row.depositRequired | number }}</td>
-              <td class="numeric">{{ row.depositConfirmed | number }}</td>
-              <td>{{ row.contractCount }}</td>
-            </tr>
-            <tr *ngIf="!report.rows.length">
-              <td colspan="10">Chưa có phòng.</td>
-            </tr>
-          </tbody>
-        </table>
+        <div
+          class="report-table-wrap"
+          tabindex="0"
+          role="region"
+          aria-label="Bảng số liệu và chính sách, cuộn ngang để xem đầy đủ"
+        >
+          <table class="policy-table">
+            <thead>
+              <tr>
+                <th>Tòa / Loại phòng</th>
+                <th>Tổng</th>
+                <th>Trống</th>
+                <th>Đang giữ</th>
+                <th>Đã thuê</th>
+                <th>Bảo trì</th>
+                <th>Cọc</th>
+                <th>Cọc yêu cầu (VNĐ)</th>
+                <th>Cọc đã xác nhận (VNĐ)</th>
+                <th>Hợp đồng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of report.rows">
+                <td>{{ row.propertyName }}<br />{{ row.roomType | roomType }}</td>
+                <td>{{ row.total }}</td>
+                <td>{{ row.byStatus['AVAILABLE'] || 0 }}</td>
+                <td>{{ row.byStatus['HELD'] || 0 }}</td>
+                <td>{{ row.byStatus['RENTED'] || 0 }}</td>
+                <td>{{ row.byStatus['MAINTENANCE'] || 0 }}</td>
+                <td>{{ row.depositCount }}</td>
+                <td class="numeric">{{ row.depositRequired | number }}</td>
+                <td class="numeric">{{ row.depositConfirmed | number }}</td>
+                <td>{{ row.contractCount }}</td>
+              </tr>
+              <tr *ngIf="!report.rows.length">
+                <td colspan="10">Chưa có phòng.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   </ng-container>
   <section class="finance-card config-card">
     <h2>Địa điểm chấm công GPS</h2>
     <p>Bán kính áp dụng lấy từ địa điểm làm việc trên hệ thống.</p>
-    <table class="policy-table">
-      <thead>
-        <tr>
-          <th>Địa điểm / Địa chỉ</th>
-          <th>Tọa độ</th>
-          <th>Bán kính (m)</th>
-          <th>Trạng thái</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let location of locations()">
-          <td>
-            {{ location.name }}
-            <p>{{ location.address }}</p>
-          </td>
-          <td>
-            {{ location.geo?.coordinates?.[1] ?? location.lat ?? '—' }},
-            {{ location.geo?.coordinates?.[0] ?? location.lng ?? '—' }}
-          </td>
-          <td>{{ location.allowedRadiusM }}</td>
-          <td>{{ isActive(location) ? 'Hoạt động' : 'Ngừng hoạt động' }}</td>
-        </tr>
-        <tr *ngIf="!loading() && !error() && !locations().length">
-          <td colspan="4">Chưa có địa điểm làm việc.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div
+      class="report-table-wrap"
+      tabindex="0"
+      role="region"
+      aria-label="Bảng số liệu và chính sách, cuộn ngang để xem đầy đủ"
+    >
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>Địa điểm / Địa chỉ</th>
+            <th>Tọa độ</th>
+            <th>Bán kính (m)</th>
+            <th>Trạng thái</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let location of locations()">
+            <td>
+              {{ location.name }}
+              <p>{{ location.address }}</p>
+            </td>
+            <td>
+              {{ location.geo?.coordinates?.[1] ?? location.lat ?? '—' }},
+              {{ location.geo?.coordinates?.[0] ?? location.lng ?? '—' }}
+            </td>
+            <td>{{ location.allowedRadiusM }}</td>
+            <td>{{ isActive(location) ? 'Hoạt động' : 'Ngừng hoạt động' }}</td>
+          </tr>
+          <tr *ngIf="!loading() && !error() && !locations().length">
+            <td colspan="4">Chưa có địa điểm làm việc.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <a routerLink="/admin/catalog/work-locations">Quản lý địa điểm làm việc</a>
     <h3>Chính sách phạt đi trễ hiệu lực</h3>
     <article *ngFor="let policy of latePolicies">
@@ -144,25 +158,32 @@
         Tổng doanh thu: <strong>{{ report.revenue | number }} đ</strong> ·
         {{ report.contractCount }} hợp đồng hoàn tất.
       </p>
-      <table class="policy-table">
-        <thead>
-          <tr>
-            <th>Nhân viên</th>
-            <th>Doanh thu (VNĐ)</th>
-            <th>Số hợp đồng</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of report.topEmployees">
-            <td>{{ row.name }}</td>
-            <td class="numeric">{{ row.revenue | number }}</td>
-            <td class="numeric">{{ row.contractCount }}</td>
-          </tr>
-          <tr *ngIf="!report.topEmployees.length">
-            <td colspan="3">Chưa có doanh thu trong tháng.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div
+        class="report-table-wrap"
+        tabindex="0"
+        role="region"
+        aria-label="Bảng số liệu và chính sách, cuộn ngang để xem đầy đủ"
+      >
+        <table class="policy-table">
+          <thead>
+            <tr>
+              <th>Nhân viên</th>
+              <th>Doanh thu (VNĐ)</th>
+              <th>Số hợp đồng</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of report.topEmployees">
+              <td>{{ row.name }}</td>
+              <td class="numeric">{{ row.revenue | number }}</td>
+              <td class="numeric">{{ row.contractCount }}</td>
+            </tr>
+            <tr *ngIf="!report.topEmployees.length">
+              <td colspan="3">Chưa có doanh thu trong tháng.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </ng-container>
   </section>
   <section class="finance-card config-card">
@@ -171,59 +192,68 @@
       Khoảng mức gồm mốc dưới, không gồm mốc trên. Bỏ trống mốc trên để không giới hạn. Tạo phiên
       bản mới để thay đổi chính sách.
     </p>
-    <table class="policy-table">
-      <thead>
-        <tr>
-          <th>Chính sách</th>
-          <th>Phiên bản / Hiệu lực</th>
-          <th>Mức</th>
-          <th>Trạng thái</th>
-          <th>Thao tác</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let policy of policyVersions">
-          <td>{{ policy.name }}<br />{{ policy.type | policyType }}</td>
-          <td>
-            {{ policy.version }} · {{ policy.effectiveFrom | date: 'dd/MM/yyyy HH:mm' }}<br />{{
-              policy.effectiveTo
-                ? (policy.effectiveTo | date: 'dd/MM/yyyy HH:mm')
-                : 'Không giới hạn'
-            }}
-          </td>
-          <td>
-            <p *ngFor="let l of policy.levels">
-              {{ l | policyLevel: policy.type }}
-            </p>
-          </td>
-          <td>
-            <app-status-badge [status]="policy.status" /><span *ngIf="policy.status === 'RETIRED'">
-              Hết hiệu lực</span
-            >
-          </td>
-          <td>
-            <button
-              class="finance-btn"
-              [disabled]="payrollApi.saving()"
-              (click)="copyPolicy(policy)"
-            >
-              Sao chép thành bản mới
-            </button>
-            <button
-              *ngIf="policy.status === 'DRAFT'"
-              class="finance-btn"
-              [disabled]="payrollApi.saving()"
-              (click)="activatePolicy(policy.id)"
-            >
-              Kích hoạt
-            </button>
-          </td>
-        </tr>
-        <tr *ngIf="!policyVersions.length">
-          <td colspan="5">Chưa có chính sách.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div
+      class="report-table-wrap"
+      tabindex="0"
+      role="region"
+      aria-label="Bảng số liệu và chính sách, cuộn ngang để xem đầy đủ"
+    >
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>Chính sách</th>
+            <th>Phiên bản / Hiệu lực</th>
+            <th>Mức</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let policy of policyVersions">
+            <td>{{ policy.name }}<br />{{ policy.type | policyType }}</td>
+            <td>
+              {{ policy.version }} · {{ policy.effectiveFrom | date: 'dd/MM/yyyy HH:mm' }}<br />{{
+                policy.effectiveTo
+                  ? (policy.effectiveTo | date: 'dd/MM/yyyy HH:mm')
+                  : 'Không giới hạn'
+              }}
+            </td>
+            <td>
+              <p *ngFor="let l of policy.levels">
+                {{ l | policyLevel: policy.type }}
+              </p>
+            </td>
+            <td>
+              <app-status-badge [status]="policy.status" /><span
+                *ngIf="policy.status === 'RETIRED'"
+              >
+                Hết hiệu lực</span
+              >
+            </td>
+            <td>
+              <button
+                class="finance-btn"
+                [disabled]="payrollApi.saving()"
+                (click)="copyPolicy(policy)"
+              >
+                Sao chép thành bản mới
+              </button>
+              <button
+                *ngIf="policy.status === 'DRAFT'"
+                class="finance-btn"
+                [disabled]="payrollApi.saving()"
+                (click)="activatePolicy(policy.id)"
+              >
+                Kích hoạt
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="!policyVersions.length">
+            <td colspan="5">Chưa có chính sách.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <form (ngSubmit)="savePolicy()" #policyForm="ngForm">
       <h3>Tạo phiên bản nháp</h3>
       <div class="config-fields two">

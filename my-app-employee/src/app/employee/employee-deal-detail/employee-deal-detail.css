@@ -326,3 +326,50 @@ a.choice:hover {
 .dossier > a.emp-btn {
   margin-top: 16px;
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 760px) {
+  .deal-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .deal-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .deal-filters :is(input, select) {
+    min-height: 44px;
+    font-size: 16px;
+  }
+  .contract-tabs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .contract-tabs .emp-btn {
+    flex: 1 1 140px;
+  }
+  .dossier-head {
+    margin: -14px -14px 16px;
+    padding: 14px;
+  }
+  .a4-stage {
+    padding: 12px;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .choices,
+  .contract-facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .contract-foot {
+    flex-wrap: wrap;
+  }
+  .emp-stat-value {
+    font-size: 22px;
+  }
+  .deposit-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

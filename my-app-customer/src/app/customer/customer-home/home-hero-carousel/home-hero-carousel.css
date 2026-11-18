@@ -399,3 +399,73 @@ h1 {
     transform: none;
   }
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 1000px) {
+  .hero-container {
+    width: calc(100% - 80px);
+  }
+  .hero-title-line {
+    white-space: normal;
+  }
+}
+@media screen and (max-width: 600px) {
+  .home-hero {
+    min-height: 650px;
+    padding-top: 112px;
+  }
+  .hero-container {
+    width: calc(100% - 40px);
+  }
+  .hero-content {
+    padding: 30px 0 40px;
+    grid-template-rows: auto auto minmax(130px, auto) auto auto;
+    row-gap: 18px;
+  }
+  .hero-eyebrow {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: clamp(30px, 8vw, 42px);
+    letter-spacing: -0.8px;
+  }
+  .slide-info-stack {
+    height: 140px;
+  }
+  .slide-caption h2 {
+    font-size: 20px;
+    -webkit-line-clamp: 2;
+  }
+  .slide-caption p {
+    font-size: 13px;
+  }
+  .slide-meta {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .slide-meta strong {
+    font-size: 22px;
+  }
+  .hero-actions {
+    align-items: stretch;
+  }
+  .hero-actions > :is(a, button) {
+    flex: 1 1 160px;
+    justify-content: center;
+  }
+  .edge-navigation {
+    display: none;
+  }
+  .progress-track {
+    width: 60px;
+  }
+  .carousel-controls {
+    gap: 4px;
+  }
+  .slide-selectors {
+    gap: 0;
+  }
+  .slide-selectors button {
+    min-width: 32px;
+  }
+}

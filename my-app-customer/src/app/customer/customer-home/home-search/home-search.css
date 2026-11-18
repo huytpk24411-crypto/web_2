@@ -152,3 +152,48 @@ input::placeholder {
   outline-offset: 3px;
   box-shadow: var(--focus-ring);
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 1000px) {
+  :host {
+    width: calc(100% - 40px);
+    margin-top: -24px;
+  }
+  .home-search-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .field {
+    border: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  :host {
+    width: calc(100% - 28px);
+    margin-top: -16px;
+  }
+  .search-shell {
+    padding: 20px 16px 14px;
+    border-radius: 18px;
+  }
+  .home-search-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .field {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .search-submit {
+    width: 100%;
+  }
+  .location-options {
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .search-footer {
+    justify-content: flex-start;
+  }
+}

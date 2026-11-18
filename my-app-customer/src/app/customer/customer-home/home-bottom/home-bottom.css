@@ -267,3 +267,51 @@ h2 {
     transform: none;
   }
 }
+
+/* Mobile layouts: keep wide data inside its own scroll region. */
+@media screen and (max-width: 1000px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .steps-grid {
+    gap: 20px;
+  }
+  .home-cta {
+    padding: 32px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .home-section,
+  .home-cta {
+    margin-top: 44px;
+  }
+  .home-heading,
+  .home-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  .collection-grid,
+  .steps-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  .collection {
+    min-height: 280px;
+  }
+  h2,
+  .home-cta h2 {
+    font-size: 27px;
+  }
+  .home-cta {
+    padding: 24px 20px;
+  }
+  .faq summary {
+    font-size: 16px;
+    padding: 18px 0;
+    gap: 16px;
+  }
+  .faq details p {
+    padding: 0 0 20px;
+  }
+}
