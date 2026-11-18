@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 import { AuthService } from '../../services/auth-service';
 import { FavoriteService } from '../../services/favorite-service';
 import { NotificationService } from '../../services/notification-service';
+import { RoomService } from '../../services/room-service';
 @Component({
   selector: 'app-customer-layout',
   standalone: false,
@@ -35,6 +36,9 @@ export class CustomerLayoutComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private zone = inject(NgZone);
   private routeSubscription?: Subscription;
+  private rooms = inject(RoomService);
+  private catalogTimer?: ReturnType<typeof setInterval>;
+  private readonly onCatalogWake = () => this.refreshRoomAvailability(0);
   private motion?: MediaQueryList;
   private previousY = 0;
   private direction = 0;
@@ -53,11 +57,15 @@ export class CustomerLayoutComponent implements OnInit, OnDestroy {
         this.accountOpen.set(false);
         this.notificationsOpen.set(false);
         this.syncRoute();
+        this.refreshRoomAvailability();
       }
     });
     this.zone.runOutsideAngular(() => {
       window.addEventListener('scroll', this.onScroll, { passive: true });
       this.motion?.addEventListener('change', this.onMotionChange);
+      window.addEventListener('focus', this.onCatalogWake);
+      document.addEventListener('visibilitychange', this.onCatalogWake);
+      this.catalogTimer = setInterval(() => this.refreshRoomAvailability(), 60000);
     });
   }
 
@@ -65,6 +73,16 @@ export class CustomerLayoutComponent implements OnInit, OnDestroy {
     window.removeEventListener('scroll', this.onScroll);
     this.motion?.removeEventListener('change', this.onMotionChange);
     this.routeSubscription?.unsubscribe();
+    window.removeEventListener('focus', this.onCatalogWake);
+    document.removeEventListener('visibilitychange', this.onCatalogWake);
+    if (this.catalogTimer) clearInterval(this.catalogTimer);
+  }
+
+  private refreshRoomAvailability(maxAgeMs = 30000) {
+    const path = this.router.url.split(/[?#]/)[0];
+    if (document.visibilityState !== 'visible' || !/^(\/|\/rooms(?:\/.*)?|\/favorites)$/.test(path))
+      return;
+    this.zone.run(() => void this.rooms.refreshAvailability(maxAgeMs));
   }
 
   private syncRoute() {

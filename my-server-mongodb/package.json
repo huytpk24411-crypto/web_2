@@ -9,7 +9,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "seed": "node seed.js",
-    "test": "node --test password-reset.spec.cjs sms-esms.spec.cjs payment-return-url.spec.cjs mongo-session-store.spec.cjs identity-file.spec.cjs media-storage.spec.cjs scripts/migrate-media.spec.cjs admin-read-performance.spec.cjs payroll-auto-period.spec.cjs"
+    "test": "node --test password-reset.spec.cjs sms-esms.spec.cjs payment-return-url.spec.cjs mongo-session-store.spec.cjs identity-file.spec.cjs media-storage.spec.cjs scripts/migrate-media.spec.cjs admin-read-performance.spec.cjs payroll-auto-period.spec.cjs contract-visibility.spec.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

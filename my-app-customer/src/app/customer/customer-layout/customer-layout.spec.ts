@@ -5,6 +5,7 @@ import { provideRouter, Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth-service';
 import { FavoriteService } from '../../services/favorite-service';
 import { NotificationService } from '../../services/notification-service';
+import { RoomService } from '../../services/room-service';
 import { CustomerModule } from '../customer-module';
 import { CustomerLayoutComponent } from './customer-layout';
 
@@ -18,6 +19,7 @@ describe('CustomerLayoutComponent header', () => {
   const logout = vi.fn(async () => true);
   const refresh = vi.fn(async () => undefined);
   const markRead = vi.fn();
+  const refreshAvailability = vi.fn(async () => undefined);
 
   beforeEach(async () => {
     y = 0;
@@ -43,6 +45,7 @@ describe('CustomerLayoutComponent header', () => {
         provideRouter([]),
         { provide: AuthService, useValue: { account, logout, error: signal('') } },
         { provide: FavoriteService, useValue: { ids: signal(['room-1']), error: signal('') } },
+        { provide: RoomService, useValue: { refreshAvailability } },
         {
           provide: NotificationService,
           useValue: {
@@ -79,6 +82,25 @@ describe('CustomerLayoutComponent header', () => {
     window.dispatchEvent(new Event('scroll'));
     fixture.detectChanges();
   }
+
+  it('refreshes room availability on focus only on a visible customer catalog page', () => {
+    vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('visible');
+    render();
+    window.dispatchEvent(new Event('focus'));
+    expect(refreshAvailability).toHaveBeenCalledWith(0);
+    refreshAvailability.mockClear();
+    url = '/bookings';
+    window.dispatchEvent(new Event('focus'));
+    expect(refreshAvailability).not.toHaveBeenCalled();
+    url = '/rooms';
+    vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('hidden');
+    document.dispatchEvent(new Event('visibilitychange'));
+    expect(refreshAvailability).not.toHaveBeenCalled();
+    fixture.destroy();
+    vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('visible');
+    window.dispatchEvent(new Event('focus'));
+    expect(refreshAvailability).not.toHaveBeenCalled();
+  });
 
   it('overlays only the home path and keeps the 24–72px hysteresis', () => {
     url = '/?source=header';

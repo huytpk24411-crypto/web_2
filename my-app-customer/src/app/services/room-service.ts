@@ -1,6 +1,6 @@
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { firstValueFrom, forkJoin } from 'rxjs';
-import { Room, RoomSnapshot } from '../classes/Room';
+import { isPublicRoom, Room, RoomSnapshot } from '../classes/Room';
 import { apiMessage } from './api-message';
 import { LocationService } from './location-service';
 import { PropertyAPIService } from './property-apiservice';
@@ -36,11 +36,11 @@ export class RoomService {
   readonly apiAvailable = signal(false);
   private loadVersion = 0;
   private catalogReady?: Promise<void>;
+  private availabilityRefresh?: Promise<void>;
+  private lastRoomReadAt = 0;
   readonly publishedRooms = computed(() =>
     this.catalog()
-      .filter(
-        (r) => r.publicationStatus === 'PUBLISHED' && ['AVAILABLE', 'HELD'].includes(r.status),
-      )
+      .filter(isPublicRoom)
       .map((room) =>
         room.images.length
           ? room
@@ -81,6 +81,7 @@ export class RoomService {
         rooms.map((room) => ({ ...room, status: room.status || room.businessStatus })),
       );
       this.apiAvailable.set(true);
+      this.lastRoomReadAt = Date.now();
     } catch (error) {
       if (version !== this.loadVersion) return;
       this.apiAvailable.set(false);
@@ -94,6 +95,30 @@ export class RoomService {
   async refresh(): Promise<void> {
     this.catalogReady = this.loadCatalog(this.roomApi, this.propertyApi, this.schoolApi);
     await this.catalogReady;
+  }
+  refreshAvailability(maxAgeMs = 30000): Promise<void> {
+    if (this.availabilityRefresh) return this.availabilityRefresh;
+    if (this.loading() || !this.apiAvailable() || Date.now() - this.lastRoomReadAt < maxAgeMs)
+      return Promise.resolve();
+    const version = this.loadVersion;
+    this.availabilityRefresh = (async () => {
+      try {
+        const rooms = await firstValueFrom(this.roomApi.getRooms());
+        if (version !== this.loadVersion) return;
+        if (!Array.isArray(rooms)) throw new Error('Phản hồi danh mục không hợp lệ.');
+        this.catalog.set(
+          rooms.map((room) => ({ ...room, status: room.status || room.businessStatus })),
+        );
+        this.lastRoomReadAt = Date.now();
+        this.error.set('');
+      } catch (error) {
+        if (version === this.loadVersion)
+          this.error.set(apiMessage(error, 'Không cập nhật được trạng thái phòng.'));
+      } finally {
+        this.availabilityRefresh = undefined;
+      }
+    })();
+    return this.availabilityRefresh;
   }
   get(id: string): Room | undefined {
     return this.catalog().find((r) => r.id === id);
@@ -126,10 +151,23 @@ export class RoomService {
     return snapshot ? { ...snapshot, price: snapshot.monthlyRent, images: [] } : undefined;
   }
   async getFromApi(id: string): Promise<Room> {
-    const room = await firstValueFrom(this.roomApi.getRoom(id));
-    if (!['AVAILABLE', 'HELD'].includes(room.status) || room.publicationStatus !== 'PUBLISHED')
-      throw new Error('Phòng hiện không còn trống hoặc tin đã ngừng đăng.');
-    return room;
+    try {
+      const room = await firstValueFrom(this.roomApi.getRoom(id));
+      if (!isPublicRoom(room)) {
+        this.catalog.update((rooms) => rooms.filter((r) => r.id !== id));
+        throw new Error('Phòng hiện không còn trống hoặc tin đã ngừng đăng.');
+      }
+      this.catalog.update((rooms) =>
+        rooms.some((item) => item.id === id)
+          ? rooms.map((item) => (item.id === id ? room : item))
+          : [...rooms, room],
+      );
+      return room;
+    } catch (error) {
+      if ((error as { status?: number }).status === 404)
+        this.catalog.update((rooms) => rooms.filter((r) => r.id !== id));
+      throw error;
+    }
   }
   filter(filter: RoomFilter, includeUnavailable = false): Room[] {
     const normalize = (text: string) =>

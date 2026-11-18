@@ -20,12 +20,20 @@ function createCommonService(dependencies) {
             status: "ACTIVE",
           })
         : null;
-    return ["ADMIN", "EMPLOYEE"].includes(account?.role)
-      ? {}
-      : {
-          status: { $in: ["AVAILABLE", "HELD"] },
-          publicationStatus: "PUBLISHED",
-        };
+    if (["ADMIN", "EMPLOYEE"].includes(account?.role)) return {};
+    // A signed contract is awaiting the admin decision. Check the contract as
+    // well as the room lock so older room records cannot leak into the catalog.
+    const pending = await dependencies.p3Collections.Contract.find(
+      { status: "SIGNED" },
+      { projection: { _id: 0, roomId: 1 } },
+    ).toArray();
+    return {
+      status: { $in: ["AVAILABLE", "HELD"] },
+      businessStatus: { $nin: ["RENTED", "MAINTENANCE"] },
+      publicationStatus: "PUBLISHED",
+      "lock.kind": { $ne: "CONTRACT" },
+      id: { $nin: [...new Set(pending.map((row) => row.roomId).filter(Boolean))] },
+    };
   }
 
   // P2 uses the DATA-01 business IDs for FKs, except Viewing.customerId (Account ObjectId).

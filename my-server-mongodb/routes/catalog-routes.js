@@ -8,6 +8,7 @@ function registerPublicCatalogRoutes(dependencies) {
   });
 
   dependencies.app.get("/data/rooms", dependencies.cors(), async (req, res) => {
+    res.set("Cache-Control", "private, no-store");
     try {
       await dependencies.p3ReadBarrier();
       const result = await dependencies.roomCollection
@@ -25,6 +26,7 @@ function registerPublicCatalogRoutes(dependencies) {
     "/data/rooms/search",
     dependencies.cors(),
     async (req, res) => {
+      res.set("Cache-Control", "private, no-store");
       try {
         await dependencies.p3ReadBarrier();
         if (req.query.q !== undefined && typeof req.query.q !== "string") {
@@ -57,6 +59,7 @@ function registerPublicCatalogRoutes(dependencies) {
     "/data/rooms/slug/:slug",
     dependencies.cors(),
     async (req, res) => {
+      res.set("Cache-Control", "private, no-store");
       try {
         await dependencies.p3ReadBarrier();
         const result = await dependencies.roomCollection.findOne(
@@ -84,10 +87,11 @@ function registerPublicCatalogRoutes(dependencies) {
     "/data/rooms/:id",
     dependencies.cors(),
     async (req, res) => {
+      res.set("Cache-Control", "private, no-store");
       try {
         await dependencies.p3ReadBarrier();
         const result = await dependencies.roomCollection.findOne(
-          { id: req.params.id, ...(await dependencies.roomReadFilter(req)) },
+          { $and: [{ id: req.params.id }, await dependencies.roomReadFilter(req)] },
           { projection: { _id: 0 } },
         );
         if (!result)

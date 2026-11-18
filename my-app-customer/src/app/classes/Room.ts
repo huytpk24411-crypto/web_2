@@ -49,6 +49,17 @@ export interface Room {
   mediaStatus?: 'design-reference' | 'illustrative' | 'confirmed';
 }
 
+export function isPublicRoom(
+  room: Pick<Room, 'status' | 'publicationStatus' | 'businessStatus' | 'lock'>,
+): boolean {
+  return (
+    room.publicationStatus === 'PUBLISHED' &&
+    ['AVAILABLE', 'HELD'].includes(room.status) &&
+    !['RENTED', 'MAINTENANCE'].includes(room.businessStatus || room.status) &&
+    room.lock?.kind !== 'CONTRACT'
+  );
+}
+
 export function canScheduleViewing(
   room?: Pick<Room, 'status' | 'publicationStatus' | 'lock'>,
 ): boolean {

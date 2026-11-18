@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, effect, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Room, canScheduleViewing } from '../../classes/Room';
@@ -67,6 +67,17 @@ export class CustomerRoomDetailComponent {
     return '/rooms';
   }
   constructor() {
+    effect(() => {
+      const room = this.currentRoom();
+      const visible = this.rooms.rooms();
+      if (room && this.rooms.apiAvailable() && !visible.some((item) => item.id === room.id)) {
+        this.room = undefined;
+        this.galleryOpen = false;
+        this.tourOpen = false;
+        this.policyOpen.set(false);
+        this.loadError.set('Phòng hiện không còn trống hoặc tin đã ngừng đăng.');
+      }
+    });
     this.route.params.pipe(takeUntilDestroyed()).subscribe((p) => {
       const id = String(p['id']);
       this.roomId = id;

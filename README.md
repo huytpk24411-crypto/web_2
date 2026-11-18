@@ -22,6 +22,7 @@ Mật khẩu dùng chung cho bản dữ liệu khôi phục được sinh ngẫu
 
 - Khi phát sinh doanh thu đầu tiên của một tháng chưa có kỳ lương, backend tự tạo kỳ `OPEN` theo tháng ghi nhận ở múi giờ Việt Nam, rồi liên kết doanh thu công ty và nhân viên vào kỳ đó. Kỳ có sẵn được tái sử dụng; kỳ `CLOSED` hoặc `PAID` không tự mở lại. Vì vậy hồ sơ cọc mới vẫn bị chặn nếu tháng hiện tại đã chốt, theo quy tắc đã thống nhất.
 - Cả ba giao diện có bố cục điện thoại: form xếp một cột, menu admin thu gọn, bộ lọc và nút thao tác xuống hàng; bảng quản trị/lịch ca nhiều cột cuộn ngang trong khung riêng. Bản customer giữ bản đồ và tour 360; các bản sao component không dùng ở admin/employee đã được loại bỏ.
+- Hợp đồng `SIGNED` (đã ký, chờ admin duyệt) làm phòng tạm ẩn khỏi danh sách, tìm kiếm và link chi tiết của customer; admin/employee vẫn xem được. Admin xác nhận khách bỏ cọc thì phòng được mở lại; duyệt thành công tiếp tục giữ phòng khỏi danh mục công khai theo quy trình hiện tại. Danh mục customer kiểm tra lại khi quay về tab, chuyển trang hoặc mỗi 60 giây khi đang xem danh mục; các lượt đọc đồng thời được gộp và chỉ tải lại phòng.
 
 - `my-server-mongodb/.env.example`: mẫu MongoDB, cổng, phiên đăng nhập, payOS, SMS. Có thể sửa `MONGODB_URI`, `MONGODB_DB`, các cổng và `CUSTOMER_APP_URL` trong `.env`.
 - API MongoDB mặc định 3002; upload và danh mục tiện ích mặc định 3000. Các ứng dụng dùng proxy cùng nguồn và header cổng riêng; đăng nhập ba vai trò không ghi đè cookie của nhau.
