@@ -438,6 +438,76 @@ function createCatalogService(dependencies) {
     );
   }
 
+  async function p6PrepareImageOrder(op, cursor) {
+    const remaining = op.plan.effects.slice(cursor);
+    const moving = remaining.filter(
+      (effect) =>
+        effect.type === "RoomImage" &&
+        effect.before &&
+        effect.after &&
+        effect.before.order !== effect.after.order,
+    );
+    if (!moving.length) return null;
+
+    // Park changing positions before assigning the final order. The unique
+    // (roomId, order) index otherwise rejects swaps and cover-image changes.
+    // Persist these steps first so interrupted and legacy operations can resume.
+    const stages = [],
+      parked = new Map(),
+      nextOrder = new Map();
+    for (const effect of moving) {
+      const before = effect.before;
+      if (!nextOrder.has(before.roomId)) {
+        const images = await p6Collections.RoomImage.find({
+          roomId: before.roomId,
+        }).toArray();
+        nextOrder.set(
+          before.roomId,
+          Math.min(0, ...images.map((image) => image.order)) - 1,
+        );
+      }
+      const order = nextOrder.get(before.roomId);
+      dependencies.p3Assert(Number.isSafeInteger(order), "INVALID_IMAGE_ORDER");
+      nextOrder.set(before.roomId, order - 1);
+      parked.set(before.id, order);
+      stages.push({
+        type: "RoomImage",
+        before,
+        after: { ...before, order },
+        action: "REORDER_STAGE",
+        internal: true,
+      });
+    }
+    const effects = [
+      ...op.plan.effects.slice(0, cursor),
+      ...stages,
+      ...remaining.map((effect) =>
+        effect.type === "RoomImage" && parked.has(effect.before?.id)
+          ? {
+              ...effect,
+              auditBefore: effect.before,
+              before: { ...effect.before, order: parked.get(effect.before.id) },
+            }
+          : effect,
+      ),
+    ];
+    const saved = await dependencies.auditCollection.updateOne(
+      { id: op.id, state: "PENDING", cursor },
+      { $set: { "plan.effects": effects, imageOrderPrepared: true } },
+    );
+    dependencies.p3Assert(
+      saved.matchedCount === 1,
+      "CATALOG_RECOVERY_REQUIRED",
+      503,
+    );
+    return {
+      ...op,
+      cursor,
+      imageOrderPrepared: true,
+      plan: { ...op.plan, effects },
+    };
+  }
+
   async function p6Run(op) {
     for (let i = op.cursor || 0; i < op.plan.effects.length; i++) {
       const effect = op.plan.effects[i],
@@ -446,6 +516,10 @@ function createCatalogService(dependencies) {
       const id = effect.after?.id || effect.before.id,
         current = await col.findOne({ id });
       if (current?._p6Token !== token) {
+        if (effect.type === "RoomImage" && !op.imageOrderPrepared) {
+          const prepared = await p6PrepareImageOrder(op, i);
+          if (prepared) return p6Run(prepared);
+        }
         let applied = true;
         if (!effect.after) {
           if (current)
@@ -481,18 +555,19 @@ function createCatalogService(dependencies) {
         entityType: effect.type,
         entityId: id,
         action: effect.action,
-        before: p6Safe(effect.before),
+        before: p6Safe(effect.auditBefore || effect.before),
         after: p6Safe(effect.after),
         actorId: op.actorId,
         at: op.at,
         reason: op.reason,
         ...(effect.roomSnapshot ? { roomSnapshot: effect.roomSnapshot } : {}),
       };
-      await dependencies.auditCollection.updateOne(
-        { id: event.id },
-        { $setOnInsert: event },
-        { upsert: true },
-      );
+      if (!effect.internal)
+        await dependencies.auditCollection.updateOne(
+          { id: event.id },
+          { $setOnInsert: event },
+          { upsert: true },
+        );
       await dependencies.auditCollection.updateOne(
         { id: op.id },
         { $set: { cursor: i + 1 } },
