@@ -1,4 +1,4 @@
-import { provideHttpClient } from '@angular/common/http';
+import { HttpErrorResponse, provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { signal } from '@angular/core';
@@ -29,6 +29,12 @@ describe('P5 payroll transport and isolation', () => {
     await Promise.resolve();
   });
   afterEach(() => http.verify());
+  it('explains rejected policy ranges with a usable message', () => {
+    const error = new HttpErrorResponse({ status: 400, error: { code: 'INVALID_POLICY_RANGE' } });
+    expect(api.message(error)).toBe(
+      'Mốc trên phải lớn hơn mốc dưới. Để trống mốc trên nếu không giới hạn.',
+    );
+  });
   it('uses payroll-month revenue for salaries while keeping actual company revenue separate', () => {
     const report = {
       month: '2026-12',

@@ -22,7 +22,11 @@ describe('Admin live operational reports', () => {
         },
         {
           provide: PayrollAPIService,
-          useValue: { currentMonth: () => '2026-11', state: () => ({ policies: [], reports: {} }) },
+          useValue: {
+            currentMonth: () => '2026-11',
+            state: () => ({ policies: [], reports: {} }),
+            write: vi.fn().mockResolvedValue({}),
+          },
         },
       ],
     });
@@ -61,5 +65,90 @@ describe('Admin live operational reports', () => {
     expect(component.occupancy()).toBeNull();
     expect(component.locations()).toEqual([]);
     expect(component.error()).toBe('Không kết nối được máy chủ. Vui lòng thử lại.');
+  });
+  function latePolicy() {
+    component.policyType = 'PHAT_TRE';
+    component.policyName = 'Phiên bản phạt đi trễ';
+    component.policyFrom = '2026-11-19T08:00';
+    component.policyLevels = [
+      { from: 1, to: 2, amount: 20000, rateBps: null },
+      { from: 2, to: 3, amount: 50000, rateBps: null },
+      { from: 3, to: 5, amount: 100000, rateBps: null },
+    ];
+    return TestBed.inject(PayrollAPIService).write;
+  }
+  it.each([1, 0])(
+    'identifies the invalid first range and prevents a write when upper bound is %s',
+    async (to) => {
+      const write = latePolicy();
+      component.policyLevels[0].to = to;
+      await component.savePolicy();
+      expect(component.policyError()).toContain('Mức 1: mốc trên phải lớn hơn mốc dưới');
+      expect(write).not.toHaveBeenCalled();
+    },
+  );
+  it('accepts touching ranges, preserves the final unlimited bound and sends Vietnam dates', async () => {
+    const write = latePolicy();
+    component.policyLevels[2].to = null;
+    await component.savePolicy();
+    expect(component.policyError()).toBe('');
+    expect(write).toHaveBeenCalledWith(
+      'admin/policies',
+      expect.objectContaining({
+        type: 'PHAT_TRE',
+        effectiveFrom: '2026-11-19T01:00:00.000Z',
+        effectiveTo: null,
+        levels: component.policyLevels,
+      }),
+    );
+    expect(component.toast()).toContain('phiên bản nháp');
+  });
+  it('prevents overlapping ranges without changing entered values', async () => {
+    const write = latePolicy();
+    component.policyLevels[1].from = 1;
+    await component.savePolicy();
+    expect(component.policyError()).toContain('Mức 2 chồng khoảng với mức 1');
+    expect(component.policyLevels[1].from).toBe(1);
+    expect(write).not.toHaveBeenCalled();
+  });
+  it('continues the next level from the preceding upper bound', () => {
+    latePolicy();
+    component.addPolicyLevel();
+    expect(component.policyLevels.at(-1)).toEqual({ from: 5, to: null, amount: 0, rateBps: null });
+  });
+  it('requires an explicit final upper bound before appending and never edits it automatically', () => {
+    latePolicy();
+    component.policyLevels[2].to = null;
+    component.addPolicyLevel();
+    expect(component.policyLevels).toHaveLength(3);
+    expect(component.policyLevels[2].to).toBeNull();
+    expect(component.policyError()).toContain('Nhập mốc trên');
+  });
+  it('keeps the hold policy at a single level', () => {
+    component.policyType = 'GIU_CHO';
+    component.changePolicyType();
+    component.addPolicyLevel();
+    expect(component.policyLevels).toHaveLength(1);
+    expect(component.policyError()).toContain('một mức');
+  });
+  it('rejects invalid money and effective dates before sending a policy', async () => {
+    const write = latePolicy();
+    component.policyLevels[1].amount = -1;
+    await component.savePolicy();
+    expect(component.policyError()).toContain('Mức 2: số tiền');
+    component.policyLevels[1].amount = 50000;
+    component.policyTo = component.policyFrom;
+    await component.savePolicy();
+    expect(component.policyError()).toContain('Ngày hết hiệu lực phải sau');
+    expect(write).not.toHaveBeenCalled();
+  });
+  it('starts the commission form with the five agreed BR-18 levels', () => {
+    expect(component.policyLevels.map(({ from, to, rateBps }) => [from, to, rateBps])).toEqual([
+      [0, 10000000, 2000],
+      [10000000, 15000000, 3000],
+      [15000000, 20000000, 3500],
+      [20000000, 30000000, 4000],
+      [30000000, null, 4500],
+    ]);
   });
 });

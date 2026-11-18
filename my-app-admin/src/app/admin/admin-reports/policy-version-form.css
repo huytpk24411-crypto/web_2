@@ -1,0 +1,43 @@
+.policy-version-form .policy-help {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 12px 0 20px;
+}
+.policy-version-form input,
+.policy-version-form select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: inherit;
+  font: inherit;
+}
+.policy-level {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  padding: 18px;
+  border-radius: 12px;
+}
+.policy-level h4,
+.policy-level .policy-level-error {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+.policy-level .finance-btn {
+  justify-self: start;
+}
+.policy-level-error {
+  color: #be1c2c;
+  font-size: 13px;
+}
+@media (max-width: 640px) {
+  .policy-version-form .config-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

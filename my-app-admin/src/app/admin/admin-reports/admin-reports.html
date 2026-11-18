@@ -254,8 +254,19 @@
         </tbody>
       </table>
     </div>
-    <form (ngSubmit)="savePolicy()" #policyForm="ngForm">
+    <form class="policy-version-form" (ngSubmit)="savePolicy()" #policyForm="ngForm">
       <h3>Tạo phiên bản nháp</h3>
+      <p class="policy-help">
+        Mốc dưới được tính trong khoảng, mốc trên không tính trong khoảng. Mốc trên phải lớn hơn mốc
+        dưới; để trống mốc trên của mức cuối nếu không giới hạn.
+        {{
+          policyType === 'PHAT_TRE'
+            ? 'Mốc tính bằng phút đi trễ.'
+            : policyType === 'HOA_HONG'
+              ? 'Mốc tính bằng doanh thu VNĐ; các bậc hoa hồng theo BR-18 đã thống nhất.'
+              : 'Tiền giữ chỗ áp dụng một mức.'
+        }}
+      </p>
       <div class="config-fields two">
         <label
           >Loại *
@@ -287,7 +298,8 @@
           <input name="policyTo" type="datetime-local" [(ngModel)]="policyTo"
         /></label>
       </div>
-      <div class="config-fields" *ngFor="let level of policyLevels; let i = index">
+      <div class="config-fields policy-level" *ngFor="let level of policyLevels; let i = index">
+        <h4>Mức {{ i + 1 }}</h4>
         <label
           >Mốc dưới *
           <input
@@ -297,9 +309,20 @@
             step="1"
             required
             [(ngModel)]="level.from"
+            [attr.aria-label]="'Mốc dưới mức ' + (i + 1)"
+            (ngModelChange)="policyError.set('')"
         /></label>
         <label
-          >Mốc trên <input [name]="'to-' + i" type="number" min="0" step="1" [(ngModel)]="level.to"
+          >Mốc trên
+          <input
+            [name]="'to-' + i"
+            type="number"
+            min="0"
+            step="1"
+            [(ngModel)]="level.to"
+            placeholder="Không giới hạn"
+            [attr.aria-label]="'Mốc trên mức ' + (i + 1)"
+            (ngModelChange)="policyError.set('')"
         /></label>
         <label *ngIf="policyType === 'HOA_HONG'"
           >Tỷ lệ (bps: 100 = 1%) *
@@ -311,6 +334,8 @@
             step="1"
             required
             [(ngModel)]="level.rateBps"
+            [attr.aria-label]="'Tỷ lệ mức ' + (i + 1)"
+            (ngModelChange)="policyError.set('')"
         /></label>
         <label *ngIf="policyType !== 'HOA_HONG'"
           >Số tiền (VNĐ) *
@@ -321,19 +346,31 @@
             step="1"
             required
             [(ngModel)]="level.amount"
+            [attr.aria-label]="'Số tiền mức ' + (i + 1)"
+            (ngModelChange)="policyError.set('')"
         /></label>
         <button
           type="button"
           class="finance-btn"
           [disabled]="policyLevels.length === 1 || payrollApi.saving()"
-          (click)="policyLevels.splice(i, 1)"
+          (click)="policyLevels.splice(i, 1); policyError.set('')"
         >
           Bỏ mức {{ i + 1 }}
         </button>
+        <p class="policy-level-error" role="alert" *ngIf="policyLevelError(i) as error">
+          {{ error }}
+        </p>
       </div>
       <p class="config-error" role="alert" *ngIf="policyError()">{{ policyError() }}</p>
       <div class="finance-actions">
-        <button type="button" class="finance-btn" (click)="addPolicyLevel()">Thêm mức</button
+        <button
+          type="button"
+          class="finance-btn"
+          [disabled]="payrollApi.saving()"
+          *ngIf="policyType !== 'GIU_CHO'"
+          (click)="addPolicyLevel()"
+        >
+          Thêm mức</button
         ><button
           class="finance-btn primary"
           [disabled]="payrollApi.saving() || payrollApi.loading() || policyForm.invalid"
