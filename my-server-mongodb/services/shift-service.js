@@ -57,8 +57,8 @@ function createShiftService(dependencies) {
         PERIOD_IN_USE:
           "Không thể xóa đợt đã có nhân viên nhận ca hoặc đã có công việc.",
         PERIOD_STATE: "Trạng thái đợt không cho phép thao tác này.",
-        PERIOD_OPEN_WINDOW:
-          "Chỉ được mở đợt từ 08:00 thứ Năm đến trước 20:00 Chủ nhật trước tuần đăng ký.",
+        PERIOD_OPEN_WINDOW: "Tuần làm việc đã bắt đầu, không thể mở đăng ký.",
+        PAST_WEEK: "Không được tạo hoặc mở đợt đăng ký cho tuần đã qua.",
         TASK_LOCKED: "Công việc đã hoàn thành hoặc đã hủy, không thể thay đổi.",
         TASK_NOT_PENDING_CONFIRM: "Công việc không ở trạng thái chờ xác nhận.",
         TASK_PENDING_CONFIRM:
@@ -406,11 +406,26 @@ function createShiftService(dependencies) {
 
   function p4Open(period, now = new Date()) {
     p4Require(
-      period.status === "OPEN" &&
-        new Date(period.opensAt) <= now &&
-        now < new Date(period.closesAt),
+      period.status === "OPEN" && now < p4RegistrationDeadline(period),
       "REGISTRATION_CLOSED",
     );
+  }
+
+  const p4RegistrationDeadline = (period) => p4At(period.weekStart, "00:00");
+
+  async function p4OpenPeriods(now = new Date()) {
+    const today = new Date(+now + 7 * 3600000).toISOString().slice(0, 10);
+    return (
+      await p4Collections.RegistrationPeriod.find({
+        status: "OPEN",
+        weekStart: { $gt: today },
+      })
+        .sort({ weekStart: 1 })
+        .toArray()
+    ).map((period) => ({
+      ...p4Clean(period),
+      closesAt: p4RegistrationDeadline(period),
+    }));
   }
 
   async function p4Registration(plan, periodId, employeeId) {
@@ -1953,7 +1968,7 @@ function createShiftService(dependencies) {
       status: { $in: ["DRAFT", "OPEN"] },
     }).toArray();
     for (const p of periods) {
-      if (now >= new Date(p.closesAt))
+      if (now >= p4RegistrationDeadline(p))
         await p4Execute(req, "autoClose", async (plan) =>
           p4Close(plan, p, "CLOSED"),
         );
@@ -2164,6 +2179,9 @@ function createShiftService(dependencies) {
     ]).size;
     return {
       ...p4Clean(period),
+      ...(["DRAFT", "OPEN"].includes(period.status)
+        ? { closesAt: p4RegistrationDeadline(period) }
+        : {}),
       shiftCount: shifts.length,
       assignmentCount,
       taskCount,
@@ -2252,6 +2270,11 @@ function createShiftService(dependencies) {
     p4Staff: { enumerable: true, get: () => p4Staff },
     p4Owned: { enumerable: true, get: () => p4Owned },
     p4Open: { enumerable: true, get: () => p4Open },
+    p4OpenPeriods: { enumerable: true, get: () => p4OpenPeriods },
+    p4RegistrationDeadline: {
+      enumerable: true,
+      get: () => p4RegistrationDeadline,
+    },
     p4Registration: { enumerable: true, get: () => p4Registration },
     p4Register: { enumerable: true, get: () => p4Register },
     p4Cancel: { enumerable: true, get: () => p4Cancel },

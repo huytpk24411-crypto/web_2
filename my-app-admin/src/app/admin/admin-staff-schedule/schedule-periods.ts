@@ -110,7 +110,6 @@ export abstract class SchedulePeriods extends StaffPage {
   private periodFormState = signal({
     name: '',
     weekStart: '',
-    opensAt: '',
     closesAt: '',
     capacity: 6,
     locationId: '',
@@ -129,7 +128,12 @@ export abstract class SchedulePeriods extends StaffPage {
     return this.periods.find((period) => period.weekStart === this.currentWeek);
   }
   registrationWindow(period: RegistrationPeriod) {
-    return Date.now() >= Date.parse(period.opensAt) && Date.now() < Date.parse(period.closesAt);
+    return Date.now() < Date.parse(`${period.weekStart}T00:00:00+07:00`);
+  }
+  get earliestRegistrationWeek() {
+    const today = new Date(Date.now() + 7 * 3600000).toISOString().slice(0, 10);
+    const day = new Date(`${today}T00:00:00Z`).getUTCDay();
+    return addDays(today, 7 - ((day + 6) % 7));
   }
   get sortedPeriods() {
     return [...this.periods].sort((a, b) => b.weekStart.localeCompare(a.weekStart));
@@ -160,7 +164,7 @@ export abstract class SchedulePeriods extends StaffPage {
     if (action === 'open') {
       if (period.status !== 'DRAFT') return 'Chỉ mở đợt chưa mở đăng ký.';
       if (!this.registrationWindow(period))
-        return 'Chỉ mở được từ 08:00 thứ Năm đến trước 20:00 Chủ Nhật tuần trước.';
+        return 'Tuần làm việc đã bắt đầu, không thể mở đăng ký.';
     }
     if (action === 'close' && period.status !== 'OPEN') return 'Chỉ đóng đợt đang mở đăng ký.';
     if (action === 'finalize' && period.status !== 'CLOSED')
@@ -251,7 +255,10 @@ export abstract class SchedulePeriods extends StaffPage {
     } catch (error) {
       this.error = error instanceof Error ? error.message : 'Không tạo được đợt đăng ký.';
       const code = (error as { code?: string }).code;
-      if (code === 'WEEK_EXISTS' || code === 'MONDAY_REQUIRED') this.periodWeekError = this.error;
+      if (
+        ['WEEK_EXISTS', 'MONDAY_REQUIRED', 'PAST_WEEK', 'PERIOD_OPEN_WINDOW'].includes(code || '')
+      )
+        this.periodWeekError = this.error;
       if (code === 'NAME_REQUIRED') this.periodNameError = this.error;
     } finally {
       this.busy = false;
@@ -261,14 +268,14 @@ export abstract class SchedulePeriods extends StaffPage {
   resetPeriodForm(week?: string): void {
     if (this.busy) return;
     let monday = week || this.currentWeek;
-    if (!week)
+    if (monday < this.earliestRegistrationWeek) monday = this.earliestRegistrationWeek;
+    if (!week || monday !== week)
       while (this.periods.some((period) => period.weekStart === monday))
         monday = addDays(monday, 7);
     this.periodForm = {
       name: this.defaultPeriodName(monday),
       weekStart: monday,
-      opensAt: `${addDays(monday, -4)}T08:00`,
-      closesAt: `${addDays(monday, -1)}T20:00`,
+      closesAt: `${monday}T00:00`,
       capacity: 6,
       locationId: this.locations[0]?.id || '',
     };
@@ -312,14 +319,15 @@ export abstract class SchedulePeriods extends StaffPage {
       date.toISOString().slice(0, 10) !== value ||
       date.getUTCDay() !== 1
         ? 'Ngày bắt đầu đợt phải là thứ Hai.'
-        : this.periods.some((period) => period.weekStart === value)
-          ? 'Tuần này đã có đợt đăng ký.'
-          : '';
+        : Date.parse(`${value}T00:00:00+07:00`) <= Date.now()
+          ? 'Chọn tuần làm việc chưa bắt đầu.'
+          : this.periods.some((period) => period.weekStart === value)
+            ? 'Tuần này đã có đợt đăng ký.'
+            : '';
     if (!Number.isNaN(date.getTime())) {
       this.periodForm = {
         ...this.periodForm,
-        opensAt: `${addDays(value, -4)}T08:00`,
-        closesAt: `${addDays(value, -1)}T20:00`,
+        closesAt: `${value}T00:00`,
       };
     }
   }

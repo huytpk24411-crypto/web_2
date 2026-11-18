@@ -24,7 +24,7 @@ describe('P4 transport and account isolation', () => {
     api = TestBed.inject(ShiftAPIService);
     http = TestBed.inject(HttpTestingController);
     TestBed.tick();
-    http.expectOne('/data/registration-periods/current').flush(null);
+    http.expectOne('/data/registration-periods').flush([]);
     http.expectOne('/data/me/shift-assignments').flush([]);
     await Promise.resolve();
     await Promise.resolve();
@@ -106,14 +106,14 @@ describe('P4 transport and account isolation', () => {
   );
   it('keeps unavailable reads empty and reports permission errors', async () => {
     const read = api.refresh();
-    http.expectOne('/data/registration-periods/current').flush(null);
+    http.expectOne('/data/registration-periods').flush([]);
     http.expectOne('/data/me/shift-assignments').error(new ProgressEvent('error'));
     await read;
     expect(api.online()).toBe(true);
     expect(api.state().assignments).toEqual([]);
     expect(api.error()).toContain('Không kết nối được máy chủ');
     const retry = api.refresh();
-    http.expectOne('/data/registration-periods/current').flush(null);
+    http.expectOne('/data/registration-periods').flush([]);
     http
       .expectOne('/data/me/shift-assignments')
       .flush({ code: 'NOT_YOUR_ASSIGNMENT' }, { status: 403, statusText: 'Forbidden' });

@@ -8,7 +8,10 @@ import { EmployeeModule } from './employee-module';
 import { AuthService } from '../services/auth-service';
 import { RoomService } from '../services/room-service';
 
-export async function employeeHttpTest<T>(component: Type<T>) {
+export async function employeeHttpTest<T>(
+  component: Type<T>,
+  values: Record<string, unknown> = {},
+) {
   await TestBed.configureTestingModule({
     imports: [EmployeeModule],
     providers: [
@@ -50,7 +53,7 @@ export async function employeeHttpTest<T>(component: Type<T>) {
   const http = TestBed.inject(HttpTestingController);
   const fixture = TestBed.createComponent(component);
   fixture.detectChanges();
-  await flushEmployeeReads(http);
+  await flushEmployeeReads(http, values);
   fixture.detectChanges();
   return { fixture, http };
 }
@@ -59,7 +62,7 @@ export async function flushEmployeeReads(
   values: Record<string, unknown> = {},
 ) {
   const defaults: Record<string, unknown> = {
-    '/data/registration-periods/current': null,
+    '/data/registration-periods': [],
     '/data/me/shift-assignments': [],
     '/data/me/payroll-periods': [],
     '/data/holds/creditable': [],

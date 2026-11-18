@@ -12,7 +12,9 @@ export class EmployeeShiftRegisterComponent {
   shifts = inject(ShiftService);
   private selection = signal<string[]>([]);
   get selected() {
-    return this.selection();
+    return this.selection().filter((id) =>
+      this.shifts.registrationShifts.some((shift) => shift.id === id),
+    );
   }
   set selected(value: string[]) {
     this.selection.set(value);
@@ -54,8 +56,21 @@ export class EmployeeShiftRegisterComponent {
   isMine(id: string) {
     return this.shifts.mine().some((s) => s.shiftId === id);
   }
+  async changePeriod(id: string) {
+    this.selected = [];
+    this.error = '';
+    this.toast = '';
+    await this.shifts.api.selectRegistrationPeriod(id);
+  }
   toggle(id: string) {
-    if (this.isMine(id) || this.shifts.remaining(id) <= 0) return;
+    if (
+      !this.shifts.canRegister ||
+      this.busy ||
+      this.shifts.api.loading() ||
+      this.isMine(id) ||
+      this.shifts.remaining(id) <= 0
+    )
+      return;
     this.selected = this.selected.includes(id)
       ? this.selected.filter((x) => x !== id)
       : [...this.selected, id];

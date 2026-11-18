@@ -23,7 +23,8 @@ export function shiftApiMessage(error: unknown): string {
     NAME_REQUIRED: 'Vui lòng nhập tên.',
     PERIOD_IN_USE: 'Không thể xóa đợt đã có nhân viên nhận ca hoặc đã có công việc.',
     PERIOD_STATE: 'Trạng thái đợt không cho phép thao tác này.',
-    PERIOD_OPEN_WINDOW: 'Chỉ mở từ 08:00 thứ Năm đến trước 20:00 Chủ Nhật tuần trước.',
+    PERIOD_OPEN_WINDOW: 'Tuần làm việc đã bắt đầu, không thể mở đăng ký.',
+    PAST_WEEK: 'Không được tạo hoặc mở đợt đăng ký cho tuần đã qua.',
     TASK_LOCKED: 'Công việc đã hoàn thành hoặc đã hủy, không thể thay đổi.',
     ASSIGNEE_DONE: 'Không thể bỏ nhân viên đã hoàn thành phần việc.',
     ASSIGNEES_REQUIRED: 'Chọn ít nhất một nhân viên.',
@@ -71,6 +72,7 @@ export class ShiftAPIService {
   private pending = new Map<string, string>();
   private uploaded = new WeakMap<File, string>();
   private taskAssignmentId = '';
+  private registrationPeriodId = '';
   private taskOwner = this.auth.account()?.id;
   readonly online = computed(() => this.auth.serverAuthenticated());
   readonly loading = signal(false);
@@ -97,6 +99,7 @@ export class ShiftAPIService {
         this.generation++;
         this.owner.set('');
         this.data.set(this.empty());
+        this.registrationPeriodId = '';
         if (!server || this.taskOwner !== account?.id) this.taskAssignmentId = '';
         this.taskOwner = account?.id;
         this.error.set('');
@@ -139,10 +142,13 @@ export class ShiftAPIService {
         next.assignments = admin.ShiftAssignment;
         next.tasks = admin.Task;
       } else {
-        const [period, assignments] = await Promise.all([
-          this.get<ApiPeriod | null>('registration-periods/current'),
+        const [periods, assignments] = await Promise.all([
+          this.get<ApiPeriod[]>('registration-periods'),
           this.get<ApiAssignment[]>('me/shift-assignments'),
         ]);
+        const period =
+          periods.find((period) => period.id === this.registrationPeriodId) || periods[0] || null;
+        next.periods = periods;
         next.period = period;
         next.assignments = assignments;
         next.shifts = period
@@ -166,6 +172,10 @@ export class ShiftAPIService {
     } finally {
       if (version === this.generation) this.loading.set(false);
     }
+  }
+  async selectRegistrationPeriod(id: string) {
+    this.registrationPeriodId = id;
+    await this.refresh();
   }
   async write<T>(
     path: string,

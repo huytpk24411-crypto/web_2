@@ -1,16 +1,18 @@
 function registerShiftRoutes(dependencies) {
   dependencies.app.get(
+    "/data/registration-periods",
+    dependencies.p4Employee,
+    dependencies.p4Route(async (req, res) => {
+      res.set("Cache-Control", "private, no-store");
+      res.send(await dependencies.p4OpenPeriods());
+    }),
+  );
+  dependencies.app.get(
     "/data/registration-periods/current",
     dependencies.p4Employee,
     dependencies.p4Route(async (req, res) => {
-      const now = new Date();
-      const period =
-        await dependencies.p4Collections.RegistrationPeriod.findOne({
-          status: "OPEN",
-          opensAt: { $lte: now },
-          closesAt: { $gt: now },
-        });
-      res.send(dependencies.p4Clean(period));
+      res.set("Cache-Control", "private, no-store");
+      res.send((await dependencies.p4OpenPeriods())[0] || null);
     }),
   );
 
@@ -88,11 +90,21 @@ function registerShiftRoutes(dependencies) {
         registration = await dependencies.p4Execute(
           req,
           `submit:${periodId}`,
-          async (plan) =>
-            dependencies.p4Set(plan, "PeriodRegistration", registration, {
-              submittedAt: plan.at,
-              status: "CONFIRMED",
-            }),
+          async (plan) => {
+            dependencies.p4Open(
+              await dependencies.p4Get("RegistrationPeriod", periodId),
+              plan.at,
+            );
+            return dependencies.p4Set(
+              plan,
+              "PeriodRegistration",
+              registration,
+              {
+                submittedAt: plan.at,
+                status: "CONFIRMED",
+              },
+            );
+          },
         );
       }
       res
@@ -401,6 +413,15 @@ function registerShiftRoutes(dependencies) {
             400,
           );
           dependencies.p4Require(
+            dependencies.p4At(dependencies.p4Day(weekStart, 7), "00:00") >
+              plan.at,
+            "PAST_WEEK",
+          );
+          dependencies.p4Require(
+            dependencies.p4RegistrationDeadline({ weekStart }) > plan.at,
+            "PERIOD_OPEN_WINDOW",
+          );
+          dependencies.p4Require(
             !(await dependencies.p4Collections.RegistrationPeriod.findOne({
               weekStart,
             })),
@@ -417,14 +438,8 @@ function registerShiftRoutes(dependencies) {
             name: name.trim(),
             weekStart,
             weekEnd: dependencies.p4Day(weekStart, 6),
-            opensAt: dependencies.p4At(
-              dependencies.p4Day(weekStart, -4),
-              "08:00",
-            ),
-            closesAt: dependencies.p4At(
-              dependencies.p4Day(weekStart, -1),
-              "20:00",
-            ),
+            opensAt: plan.at,
+            closesAt: dependencies.p4RegistrationDeadline({ weekStart }),
             minShifts: 5,
             maxShifts: 8,
             status: "DRAFT",
@@ -546,14 +561,22 @@ function registerShiftRoutes(dependencies) {
               );
               if (p.status === status) return dependencies.p4Clean(p);
               if (action === "open") {
+                dependencies.p4Require(p.status === "DRAFT", "PERIOD_STATE");
                 dependencies.p4Require(
-                  p.status === "DRAFT" &&
-                    new Date(p.opensAt) <= plan.at &&
-                    plan.at < new Date(p.closesAt),
+                  dependencies.p4At(
+                    dependencies.p4Day(p.weekStart, 7),
+                    "00:00",
+                  ) > plan.at,
+                  "PAST_WEEK",
+                );
+                dependencies.p4Require(
+                  dependencies.p4RegistrationDeadline(p) > plan.at,
                   "PERIOD_OPEN_WINDOW",
                 );
                 return dependencies.p4Set(plan, "RegistrationPeriod", p, {
                   status,
+                  opensAt: plan.at,
+                  closesAt: dependencies.p4RegistrationDeadline(p),
                 });
               }
               dependencies.p4Require(

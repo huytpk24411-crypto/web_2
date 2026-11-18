@@ -25,7 +25,7 @@
       >.
     </h1>
     <p class="emp-subtitle">
-      Thiết lập lịch làm việc của bạn cho tuần tới để hệ thống tự động chuẩn bị ca trực và nhiệm vụ.
+      Chọn tuần đang mở đăng ký để thiết lập lịch làm việc và chuẩn bị cho ca trực.
     </p>
     <div class="rules">
       <div>
@@ -63,17 +63,19 @@
 <section class="emp-card week-bar">
   <div class="emp-card-head">
     <div class="emp-actions">
-      <div class="week-navigation">
-        <button class="emp-btn" disabled aria-label="Tuần trước" title="Đợt đăng ký hiện tại">
-          ‹</button
-        ><span
-          ><app-icon name="calendar" [size]="16" /> Tuần
-          {{ shifts.registrationShifts[0]?.date | date: 'dd/MM' }} –
-          {{ shifts.registrationShifts[13]?.date | date: 'dd/MM/yyyy' }}</span
-        ><button class="emp-btn" disabled aria-label="Tuần sau" title="Đợt đăng ký hiện tại">
-          ›
-        </button>
-      </div>
+      <label class="week-navigation" *ngIf="shifts.registrationPeriods.length">
+        <app-icon name="calendar" [size]="16" />
+        <select
+          aria-label="Chọn tuần đăng ký"
+          [ngModel]="shifts.period.id"
+          (ngModelChange)="changePeriod($event)"
+          [disabled]="busy || shifts.api.loading()"
+        >
+          <option *ngFor="let period of shifts.registrationPeriods" [value]="period.id">
+            Tuần {{ period.weekStart | date: 'dd/MM' }} – {{ period.weekEnd | date: 'dd/MM/yyyy' }}
+          </option>
+        </select>
+      </label>
       <span class="emp-badge emp-success">{{
         !shifts.period.id ? 'Chưa có đợt đang mở' : '● Đang mở đăng ký'
       }}</span>
@@ -83,12 +85,15 @@
       ><button
         class="emp-btn emp-primary"
         (click)="submit()"
-        [disabled]="busy || shifts.api.loading() || !shifts.period.id"
+        [disabled]="busy || shifts.api.loading() || !shifts.canRegister"
       >
         Xác nhận đăng ký {{ selected.length ? '(' + selected.length + ')' : '' }}
       </button>
     </div>
   </div>
+  <p class="emp-subtitle" *ngIf="shifts.period.closesAt">
+    Hạn đăng ký {{ shifts.period.closesAt | date: 'HH:mm dd/MM/yyyy' : '+0700' }} (giờ Việt Nam).
+  </p>
   <div class="row between small">
     <strong
       >Tiến độ lựa chọn:
@@ -129,7 +134,13 @@
         <input
           type="checkbox"
           [checked]="selected.includes(shift.id) || isMine(shift.id)"
-          [disabled]="isMine(shift.id) || shifts.remaining(shift.id) === 0"
+          [disabled]="
+            busy ||
+            shifts.api.loading() ||
+            !shifts.canRegister ||
+            isMine(shift.id) ||
+            shifts.remaining(shift.id) === 0
+          "
           (change)="toggle(shift.id)"
           [attr.aria-label]="dayNames[day] + ' ' + shift.label + ' ' + shift.date"
         />

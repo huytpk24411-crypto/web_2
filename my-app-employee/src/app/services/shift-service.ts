@@ -18,13 +18,15 @@ export class ShiftService {
         const previous = this.now();
         const now = Date.now();
         this.now.set(now);
-        // Revalidate the server flag once when a registered shift starts.
+        const registrationDeadline = Date.parse(this.period.closesAt || '');
+        // Refresh when registration closes or a registered shift starts.
         if (
           !this.api.loading() &&
-          this.mine().some((a) => {
-            const start = Date.parse(this.shift(a.shiftId)?.startsAt || '');
-            return a.status === 'REGISTERED' && previous < start && now >= start;
-          })
+          ((previous < registrationDeadline && now >= registrationDeadline) ||
+            this.mine().some((a) => {
+              const start = Date.parse(this.shift(a.shiftId)?.startsAt || '');
+              return a.status === 'REGISTERED' && previous < start && now >= start;
+            }))
         )
           void this.api.refresh();
       });
@@ -65,12 +67,24 @@ export class ShiftService {
   }
   get period() {
     const p = this.api.state().period;
-    return { id: p?.id || '', label: p?.name || 'Chưa có đợt đang mở', maxPerEmployee: 8 };
+    return {
+      id: p?.id || '',
+      label: p?.name || 'Chưa có đợt đang mở',
+      maxPerEmployee: p?.maxShifts || 8,
+      closesAt: p?.closesAt,
+    };
+  }
+  get registrationPeriods() {
+    return this.api.state().periods;
+  }
+  get canRegister() {
+    return !!this.period.id && this.now() < Date.parse(this.period.closesAt || '');
   }
   get registrationShifts() {
     return this.shifts.filter((s) => s.periodId === this.period.id);
   }
   async registerRequest(ids: string[]) {
+    if (!this.canRegister) throw new Error('Đợt đăng ký chưa mở hoặc đã hết hạn.');
     await this.api.write('me/shift-registrations', {
       periodId: this.period.id,
       shiftIds: ids,

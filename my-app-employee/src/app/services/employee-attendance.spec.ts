@@ -31,7 +31,7 @@ describe('Employee attendance and tasks over HTTP', () => {
     return req;
   }
   async function refresh(status = 'REGISTERED') {
-    (await request('GET', '/data/registration-periods/current')).flush(null);
+    (await request('GET', '/data/registration-periods')).flush([]);
     http.expectOne('/data/me/shift-assignments').flush([{ ...assignment, status }]);
   }
   beforeEach(async () => {
@@ -64,6 +64,23 @@ describe('Employee attendance and tasks over HTTP', () => {
   it.each(['SHIFT_FULL', 'ALREADY_REGISTERED', 'WEEKLY_SHIFT_LIMIT', 'REQUIRE_5_TO_8_SHIFTS'])(
     'does not register locally after %s',
     async (code) => {
+      const loading = shifts.api.refresh();
+      (await request('GET', '/data/registration-periods')).flush([
+        {
+          id: 'open-week',
+          name: 'Tuần đang mở',
+          weekStart: '2099-01-05',
+          weekEnd: '2099-01-11',
+          opensAt: '2098-12-01T00:00:00+07:00',
+          closesAt: '2099-01-05T00:00:00+07:00',
+          minShifts: 5,
+          maxShifts: 8,
+          status: 'OPEN',
+        },
+      ]);
+      http.expectOne('/data/me/shift-assignments').flush([assignment]);
+      (await request('GET', '/data/shifts?periodId=open-week')).flush([]);
+      await loading;
       const pending = shifts.registerRequest(['shift-b']),
         rejected = expect(pending).rejects.toThrow();
       http

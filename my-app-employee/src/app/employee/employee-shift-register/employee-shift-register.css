@@ -98,16 +98,16 @@
   background: var(--soft);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-}
-.week-navigation > span {
-  display: flex;
-  align-items: center;
   gap: 8px;
-  font-size: 14px;
+  padding-left: 10px;
+  max-width: 100%;
 }
-.week-navigation .emp-btn {
+.week-navigation select {
   border: 0;
   background: transparent;
+  min-width: 0;
+  width: auto;
+  font-size: 14px;
 }
 .selection-progress {
   display: block;

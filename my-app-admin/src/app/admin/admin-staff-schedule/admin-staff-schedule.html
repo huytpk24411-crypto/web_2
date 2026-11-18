@@ -281,6 +281,7 @@
             class="control"
             type="date"
             name="weekStart"
+            [min]="earliestRegistrationWeek"
             [ngModel]="periodForm.weekStart"
             (ngModelChange)="onPeriodWeekChange($event)"
             required
@@ -296,12 +297,7 @@
           ></label
         ><label class="field"
           ><span>Mở đăng ký</span
-          ><input
-            class="control"
-            type="datetime-local"
-            name="opensAt"
-            [(ngModel)]="periodForm.opensAt"
-            disabled /></label
+          ><input class="control" type="text" value="Khi admin bấm Mở" disabled /></label
         ><label class="field"
           ><span>Đóng đăng ký</span
           ><input

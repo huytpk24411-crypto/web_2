@@ -35,7 +35,8 @@ describe('P4 transport and account isolation', () => {
     ['NAME_REQUIRED', 'Vui lòng nhập tên.'],
     ['PERIOD_IN_USE', 'Không thể xóa đợt đã có nhân viên nhận ca hoặc đã có công việc.'],
     ['PERIOD_STATE', 'Trạng thái đợt không cho phép thao tác này.'],
-    ['PERIOD_OPEN_WINDOW', 'Chỉ mở từ 08:00 thứ Năm đến trước 20:00 Chủ Nhật tuần trước.'],
+    ['PERIOD_OPEN_WINDOW', 'Tuần làm việc đã bắt đầu, không thể mở đăng ký.'],
+    ['PAST_WEEK', 'Không được tạo hoặc mở đợt đăng ký cho tuần đã qua.'],
     ['TASK_LOCKED', 'Công việc đã hoàn thành hoặc đã hủy, không thể thay đổi.'],
     ['TASK_NOT_PENDING_CONFIRM', 'Công việc không ở trạng thái chờ xác nhận.'],
     [

@@ -973,6 +973,7 @@ describe('SHIFT-06 schedule matrix, task wizard and registration periods', () =>
   it('shows only the relevant period action and describes a disabled opening without row paragraphs', async () => {
     periods = ['DRAFT', 'OPEN', 'CLOSED', 'FINALIZED'].map((status) => ({
       ...makePeriod(),
+      ...(status === 'DRAFT' ? { weekStart: '2000-01-03', weekEnd: '2000-01-09' } : {}),
       id: status,
       status: status as ApiPeriod['status'],
       canDelete: status === 'CLOSED',
@@ -1003,7 +1004,7 @@ describe('SHIFT-06 schedule matrix, task wizard and registration periods', () =>
       '[data-period-id="DRAFT"] .period-row-actions button:last-child',
     )!;
     expect(open.disabled).toBe(true);
-    expect(open.title).toContain('trước 20:00 Chủ Nhật');
+    expect(open.title).toContain('Tuần làm việc đã bắt đầu');
     const reason = document.getElementById(open.getAttribute('aria-describedby')!);
     expect(reason?.classList.contains('sr-only')).toBe(true);
     expect(reason?.textContent?.trim()).toBe(open.title);
@@ -1118,12 +1119,14 @@ describe('SHIFT-06 schedule matrix, task wizard and registration periods', () =>
     http.expectNone('/data/admin/registration-periods');
   });
 
-  it('explains state restrictions and enforces the exclusive Sunday closing boundary', () => {
+  it('allows opening early and on Sunday night, then blocks at Monday midnight in Vietnam', () => {
     const period = page.currentPeriod!;
-    vi.spyOn(Date, 'now').mockReturnValue(Date.parse(period.opensAt));
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse('2098-12-15T10:00:00+07:00'));
     expect(page.periodActionReason(period, 'open')).toBe('');
     vi.spyOn(Date, 'now').mockReturnValue(Date.parse(period.closesAt));
-    expect(page.periodActionReason(period, 'open')).toContain('trước 20:00 Chủ Nhật');
+    expect(page.periodActionReason(period, 'open')).toBe('');
+    vi.spyOn(Date, 'now').mockReturnValue(Date.parse(period.weekStart + 'T00:00:00+07:00'));
+    expect(page.periodActionReason(period, 'open')).toContain('Tuần làm việc đã bắt đầu');
     expect(page.periodActionReason(period, 'close')).toContain('đang mở');
     expect(page.periodActionReason(period, 'finalize')).toContain('Đóng đợt');
   });
