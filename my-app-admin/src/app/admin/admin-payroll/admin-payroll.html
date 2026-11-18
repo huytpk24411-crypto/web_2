@@ -5,8 +5,8 @@
       <span class="finance-badge">{{ period.periodId ? period.status : 'Chưa có kỳ lương' }}</span>
       <p>Kỳ lương trên hệ thống · {{ period.label }}</p>
       <p>
-        Tháng chưa có kỳ sẽ được mở tự động. Khi kỳ hiện tại đã chốt hoặc đã trả, doanh thu tính
-        lương mới được cộng sang kỳ tháng sau. Doanh thu công ty ghi đúng tháng thực thu.
+        Tháng chưa có kỳ sẽ được mở tự động. Doanh thu tính lương mới được cộng vào kỳ đầu tiên còn
+        nhận doanh thu, bỏ qua các tháng đã chốt hoặc đã trả. Doanh thu công ty ghi đúng tháng thực thu.
       </p>
     </div>
     <div class="finance-actions">

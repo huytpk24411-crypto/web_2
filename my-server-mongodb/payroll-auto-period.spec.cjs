@@ -8,6 +8,7 @@ function fixture(
   period = null,
   now = new Date("2026-12-31T17:30:00Z"),
   nextPeriod = null,
+  laterPeriods = [],
 ) {
   const empty = {
     findOne: async () => null,
@@ -20,15 +21,12 @@ function fixture(
     p3Collections: {
       PayrollPeriod: {
         findOne: async (query) => {
-          const local = new Date(now.getTime() + 7 * 3600000);
-          const year = local.getUTCFullYear(),
-            month = local.getUTCMonth() + 1;
-          if (query.year === year && query.month === month) return period;
-          assert.deepEqual(query, {
-            year: month === 12 ? year + 1 : year,
-            month: month === 12 ? 1 : month + 1,
-          });
-          return nextPeriod;
+          return (
+            [period, nextPeriod, ...laterPeriods].find(
+              (row) =>
+                row && row.year === query.year && row.month === query.month,
+            ) || null
+          );
         },
       },
       BrokerageAgreement: {
@@ -215,7 +213,7 @@ for (const status of ["OPEN", "CALCULATED"])
   });
 
 for (const status of ["CLOSED", "PAID"])
-  test(`does not reopen or skip the next ${status} period`, async () => {
+  test(`skips the next ${status} period and creates the following open month`, async () => {
     const old = {
       id: "old",
       code: "2027-01",
@@ -233,14 +231,130 @@ for (const status of ["CLOSED", "PAID"])
       version: 7,
     };
     const { deps, plan, deposit, room } = fixture(old, undefined, next);
-    await assert.rejects(deps.p3RecognizeDeposit(plan, deposit, room), {
-      code: "PAYROLL_NEXT_CLOSED",
-      status: 409,
-    });
-    assert.deepEqual(plan.effects, []);
+    await deps.p3RecognizeDeposit(plan, deposit, room);
+    const created = plan.effects.filter(
+      (e) => e.kind === "insert" && e.type === "PayrollPeriod",
+    );
+    assert.equal(created.length, 1);
+    assert.equal(created[0].record.code, "2027-03");
+    assert.equal(created[0].record.status, "OPEN");
+    assert.equal(plan.compensation.revenue.periodId, created[0].record.id);
+    assert.equal(
+      plan.effects.find(
+        (e) => e.kind === "insert" && e.type === "CompanyRevenue",
+      ).record.periodId,
+      old.id,
+    );
+    assert(
+      !plan.effects.some(
+        (e) =>
+          e.kind === "change" &&
+          e.type === "PayrollPeriod" &&
+          [old.id, next.id].includes(e.id),
+      ),
+    );
     assert.equal(old.version, 6);
     assert.equal(next.version, 7);
   });
+
+test("skips several locked months and reuses the first CALCULATED period", async () => {
+  const locked = ["CLOSED", "PAID", "CLOSED"].map((status, index) => ({
+    id: `locked-${index}`,
+    code: `2027-0${index + 1}`,
+    year: 2027,
+    month: index + 1,
+    status,
+    version: 7,
+  }));
+  const target = {
+    id: "target",
+    code: "2027-04",
+    year: 2027,
+    month: 4,
+    status: "CALCULATED",
+    version: 2,
+  };
+  const before = structuredClone(locked);
+  const { deps, plan, deposit, room } = fixture(
+    locked[0],
+    undefined,
+    locked[1],
+    [locked[2], target],
+  );
+  await deps.p3RecognizeDeposit(plan, deposit, room);
+  assert.equal(plan.compensation.revenue.periodId, target.id);
+  assert(
+    !plan.effects.some(
+      (e) => e.kind === "insert" && e.type === "PayrollPeriod",
+    ),
+  );
+  const transaction = plan.effects.find(
+    (e) => e.kind === "insert" && e.type === "BrokerageTransaction",
+  ).record;
+  assert.equal(transaction.recognitionMonth, "2027-01");
+  assert.equal(transaction.payrollMonth, "2027-04");
+  assert.equal(transaction.carriedFromMonth, "2027-01");
+  assert.deepEqual(locked, before);
+});
+
+test("uses the first missing month even when later months already exist", async () => {
+  const old = {
+    id: "old",
+    code: "2027-01",
+    year: 2027,
+    month: 1,
+    status: "CLOSED",
+  };
+  const later = [
+    { id: "march", code: "2027-03", year: 2027, month: 3, status: "CLOSED" },
+    { id: "april", code: "2027-04", year: 2027, month: 4, status: "OPEN" },
+  ];
+  const { deps, plan, deposit, room } = fixture(old, undefined, null, later);
+  await deps.p3RecognizeDeposit(plan, deposit, room);
+  assert.equal(
+    plan.effects.find((e) => e.kind === "insert" && e.type === "PayrollPeriod")
+      .record.code,
+    "2027-02",
+  );
+});
+
+test("carries across a year of locked periods without changing the actual revenue month", async () => {
+  const locked = Array.from({ length: 13 }, (_, index) => {
+    const date = new Date(Date.UTC(2026, 11 + index, 1));
+    return {
+      id: `locked-${index}`,
+      code: date.toISOString().slice(0, 7),
+      year: date.getUTCFullYear(),
+      month: date.getUTCMonth() + 1,
+      status: index % 2 ? "PAID" : "CLOSED",
+      version: 4,
+    };
+  });
+  const { deps, plan, deposit, room } = fixture(
+    locked[0],
+    new Date("2026-12-31T15:30:00Z"),
+    locked[1],
+    locked.slice(2),
+  );
+  await deps.p3RecognizeDeposit(plan, deposit, room);
+  const created = plan.effects.filter(
+    (e) => e.kind === "insert" && e.type === "PayrollPeriod",
+  );
+  assert.equal(created.length, 1);
+  assert.equal(created[0].record.code, "2028-01");
+  const transaction = plan.effects.find(
+    (e) => e.kind === "insert" && e.type === "BrokerageTransaction",
+  ).record;
+  assert.equal(transaction.recognitionMonth, "2026-12");
+  assert.equal(transaction.payrollMonth, "2028-01");
+  assert.equal(transaction.carriedFromMonth, "2026-12");
+  assert.equal(
+    plan.effects.find((e) => e.kind === "insert" && e.type === "CompanyRevenue")
+      .record.periodId,
+    locked[0].id,
+  );
+  assert(locked.every((period) => period.version === 4));
+});
 
 test("December carry crosses the year without changing the original collection date", async () => {
   const now = new Date("2026-12-31T15:30:00Z");

@@ -57,7 +57,8 @@ async function start({ frontends = true } = {}) {
   web.get("/healthz", async (req, res) => {
     try {
       await api.database.command({ ping: 1 });
-      res.send({ status: "ok" });
+      res.set("Cache-Control", "no-store");
+      res.send({ status: "ok", revision: process.env.RENDER_GIT_COMMIT || null });
     } catch {
       res.status(503).send({ status: "unavailable" });
     }

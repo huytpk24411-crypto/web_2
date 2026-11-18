@@ -14,8 +14,6 @@ const messages: Record<string, string> = {
     'Ngày hợp đồng không hợp lệ. Vui lòng kiểm tra ngày bắt đầu và ngày kết thúc.',
   ALREADY_DECIDED: 'Hợp đồng này đã được xác nhận.',
   PAYROLL_CLOSED: 'Kỳ lương tháng này đã đóng, không ghi được doanh thu.',
-  PAYROLL_NEXT_CLOSED:
-    'Kỳ lương tháng kế tiếp cũng đã đóng hoặc đã trả. Vui lòng liên hệ admin để xử lý kỳ nhận khoản chuyển sang.',
   OUTSIDE_CHECK_IN_WINDOW: 'Chỉ được check-in trong giờ ca làm.',
   TASK_NOT_PENDING_CONFIRM: 'Công việc không ở trạng thái chờ xác nhận.',
   TASK_PENDING_CONFIRM: 'Công việc đang chờ xác nhận hoàn thành, hãy xác nhận hoặc trả lại trước.',

@@ -14,8 +14,6 @@ function createDepositService(dependencies) {
       CONTRACT_NOT_SIGNED: "Hợp đồng chưa ký.",
       ALREADY_DECIDED: "Hợp đồng này đã được xác nhận.",
       PAYROLL_CLOSED: "Kỳ lương tháng này đã đóng, không ghi được doanh thu.",
-      PAYROLL_NEXT_CLOSED:
-        "Kỳ lương tháng kế tiếp cũng đã đóng hoặc đã trả. Vui lòng liên hệ admin để xử lý kỳ nhận khoản chuyển sang.",
       PAYMENT_GATEWAY_ERROR:
         "Không kết nối được cổng thanh toán. Vui lòng thử lại.",
       INVALID_DRAFT: "Nháp không hợp lệ.",
@@ -803,16 +801,12 @@ function createDepositService(dependencies) {
       recognitionMonth = p3Month(now),
       companyPeriod = await p3Period(plan, now, true);
     let period = companyPeriod;
-    if (["CLOSED", "PAID"].includes(companyPeriod.status)) {
-      const nextMonth = dependencies.p5MonthBounds(recognitionMonth).end;
+    while (["CLOSED", "PAID"].includes(period.status)) {
+      const nextMonth = dependencies.p5MonthBounds(period.code).end;
       period = await p3Period(plan, nextMonth, true);
-      p3Assert(
-        !["CLOSED", "PAID"].includes(period.status),
-        "PAYROLL_NEXT_CLOSED",
-      );
     }
     // Company revenue stays in the actual collection month. Only the employee
-    // commission basis is carried to next month's mutable payroll period.
+    // commission basis moves to the first subsequent mutable payroll period.
     const company = await p3CompanyRevenue(plan, companyPeriod);
     let employee = await dependencies.p3Collections.EmployeeRevenue.findOne({
       employeeId: deposit.employeeId,
