@@ -28,6 +28,9 @@ export interface ApiPolicy {
   levels: ApiPolicyLevel[];
 }
 export interface ApiPayrollTransaction {
+  recognitionMonth?: string;
+  payrollMonth?: string;
+  carriedFromMonth?: string | null;
   id: string;
   contractId: string;
   room: string;
@@ -64,6 +67,14 @@ export interface ApiPayslip {
   transactions: ApiPayrollTransaction[];
 }
 export interface ApiRevenueReport {
+  payrollRevenue?: number;
+  carriedPayrollRevenue?: number;
+  payrollTopEmployees?: {
+    employeeId: string;
+    name: string;
+    revenue: number;
+    contractCount: number;
+  }[];
   month: string;
   revenue: number;
   contractCount: number;

@@ -92,6 +92,25 @@ async function setup() {
 
 describe('EmployeeDepositReceiptComponent (B2)', () => {
   afterEach(() => vi.restoreAllMocks());
+  it('shows the collection month and carried payroll month outside the customer receipt', async () => {
+    const { fixture, http } = await setup();
+    http
+      .expectOne('/data/deposits/deposit-test/sheet')
+      .flush({
+        ...SHEET,
+        deposit: { ...SHEET.deposit, recognitionMonth: '2026-11', payrollMonth: '2026-12' },
+      });
+    await new Promise((resolve) => setTimeout(resolve));
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const text = fixture.nativeElement.textContent;
+    expect(text).toContain('Doanh thu công ty ghi nhận tháng 2026-11');
+    expect(text).toContain('được cộng sang kỳ 2026-12');
+    expect(fixture.nativeElement.querySelector('.deposit-a4').textContent).not.toContain(
+      'được cộng sang kỳ',
+    );
+    http.verify();
+  });
   it.each(['CASH', 'BANK_TRANSFER'] as const)(
     'renders B2, empty signature spaces and actions for %s',
     async (method) => {

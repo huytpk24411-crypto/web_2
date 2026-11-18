@@ -36,6 +36,8 @@ export interface DepositSheet {
     status: string;
     statusLabel: string;
     createdAt: string | null;
+    recognitionMonth?: string;
+    payrollMonth?: string;
     totalRequired: number;
     holdCredit: number;
     amountDue: number;

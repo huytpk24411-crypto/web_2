@@ -326,11 +326,18 @@ function createPayrollService(dependencies) {
     return { policy, levels };
   }
 
-  async function p5Transactions(code) {
+  async function p5Transactions(code, payroll = false) {
     const { start, end } = p5MonthBounds(code);
     return p5Collections.BrokerageTransaction.find({
       status: "RECOGNIZED",
-      recognizedAt: { $gte: start, $lt: end },
+      ...(payroll
+        ? {
+            $or: [
+              { payrollMonth: code },
+              { payrollMonth: null, recognizedAt: { $gte: start, $lt: end } },
+            ],
+          }
+        : { recognizedAt: { $gte: start, $lt: end } }),
     }).toArray();
   }
 
@@ -381,6 +388,9 @@ function createPayrollService(dependencies) {
         customer: customer?.fullName || customer?.name || "",
         amount: t.finalFee,
         at: t.recognizedAt,
+        recognitionMonth: t.recognitionMonth,
+        payrollMonth: t.payrollMonth,
+        carriedFromMonth: t.carriedFromMonth,
         status: t.status,
       });
     }
@@ -428,7 +438,7 @@ function createPayrollService(dependencies) {
     const rows =
       slip.revenueDetails ||
       (await p5TransactionDetails(
-        (await p5Transactions(period.code)).filter(
+        (await p5Transactions(period.code, true)).filter(
           (t) =>
             t.employeeRevenueId === revenue?.id ||
             t.employeeId === slip.employeeId,
@@ -459,7 +469,7 @@ function createPayrollService(dependencies) {
     p5Mutable(period);
     const { end } = p5MonthBounds(period.code);
     const { policy, levels } = await p5Policy(new Date(end.getTime() - 1));
-    const transactions = await p5Transactions(period.code);
+    const transactions = await p5Transactions(period.code, true);
     const attendanceCounts = await p5AttendanceCounts(period.code);
     const existingRevenues = await p5Collections.EmployeeRevenue.find({
       periodId: id,
@@ -594,8 +604,9 @@ function createPayrollService(dependencies) {
     const company = await p5Collections.CompanyRevenue.findOne({
       periodId: id,
     });
+    const companyTransactions = await p5Transactions(period.code);
     dependencies.p3Assert(
-      transactions.every((t) => t.companyRevenueId === company?.id),
+      companyTransactions.every((t) => t.companyRevenueId === company?.id),
       "REVENUE_REFERENCE_MISMATCH",
     );
     const revenue = p5Sum(transactions.map((t) => t.finalFee));
@@ -605,8 +616,11 @@ function createPayrollService(dependencies) {
     );
     p5Effect(plan, "CompanyRevenue", company, {
       periodId: id,
-      revenue: p5Sum([revenue, company?.forfeitedHoldRevenue || 0]),
-      transactionCount: transactions.length,
+      revenue: p5Sum([
+        ...companyTransactions.map((t) => t.finalFee),
+        company?.forfeitedHoldRevenue || 0,
+      ]),
+      transactionCount: companyTransactions.length,
     });
     return p5Effect(plan, "PayrollPeriod", claimed, {
       status: "CALCULATED",
@@ -647,27 +661,29 @@ function createPayrollService(dependencies) {
   async function p5Report(code) {
     const rows = await p5Transactions(code),
       employees = await p5Collections.Employee.find({}).toArray();
+    const payrollRows = await p5Transactions(code, true);
     const revenues = await p5Collections.EmployeeRevenue.find({}).toArray();
-    const ranked = employees
-      .map((e) => {
-        const mine = rows.filter(
-          (t) =>
-            t.employeeId === e.id ||
-            revenues.some(
-              (r) => r.id === t.employeeRevenueId && r.employeeId === e.id,
-            ),
+    const rank = (transactions) =>
+      employees
+        .map((e) => {
+          const mine = transactions.filter(
+            (t) =>
+              t.employeeId === e.id ||
+              revenues.some(
+                (r) => r.id === t.employeeRevenueId && r.employeeId === e.id,
+              ),
+          );
+          return {
+            employeeId: e.id,
+            name: e.fullName,
+            revenue: p5Sum(mine.map((t) => t.finalFee)),
+            contractCount: p5ContractCount(mine),
+          };
+        })
+        .sort(
+          (a, b) =>
+            b.revenue - a.revenue || a.employeeId.localeCompare(b.employeeId),
         );
-        return {
-          employeeId: e.id,
-          name: e.fullName,
-          revenue: p5Sum(mine.map((t) => t.finalFee)),
-          contractCount: p5ContractCount(mine),
-        };
-      })
-      .sort(
-        (a, b) =>
-          b.revenue - a.revenue || a.employeeId.localeCompare(b.employeeId),
-      );
     const period = await p5Collections.PayrollPeriod.findOne({ code });
     const company = period
       ? await p5Collections.CompanyRevenue.findOne({ periodId: period.id })
@@ -684,12 +700,17 @@ function createPayrollService(dependencies) {
     const lateDetails = await Promise.all(adjustments.map(p5LateDetails));
     return {
       month: code,
+      payrollRevenue: p5Sum(payrollRows.map((t) => t.finalFee)),
+      carriedPayrollRevenue: p5Sum(
+        payrollRows.filter((t) => t.carriedFromMonth).map((t) => t.finalFee),
+      ),
+      payrollTopEmployees: rank(payrollRows),
       revenue: p5Sum([
         ...rows.map((t) => t.finalFee),
         company?.forfeitedHoldRevenue || 0,
       ]),
       contractCount: p5ContractCount(rows),
-      topEmployees: ranked,
+      topEmployees: rank(rows),
       commission: p5Sum(slips.map((s) => s.commissionAmount)),
       baseSalary: p5Sum(slips.map((s) => s.baseSalary)),
       bonus: p5Sum(slips.map((s) => s.totalBonus || 0)),

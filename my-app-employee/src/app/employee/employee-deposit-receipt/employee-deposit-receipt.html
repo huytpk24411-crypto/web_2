@@ -16,6 +16,17 @@
       >
     </div>
   </div>
+  <p
+    class="emp-alert emp-info no-print"
+    *ngIf="
+      s.deposit.payrollMonth &&
+      s.deposit.recognitionMonth &&
+      s.deposit.payrollMonth !== s.deposit.recognitionMonth
+    "
+  >
+    Doanh thu công ty ghi nhận tháng {{ s.deposit.recognitionMonth }}. Do kỳ lương tháng này đã
+    chốt, phần doanh thu tính hoa hồng của bạn được cộng sang kỳ {{ s.deposit.payrollMonth }}.
+  </p>
   <ol class="receipt-steps no-print" aria-label="Tiến độ hồ sơ cọc">
     <li>
       <span class="step-icon"><app-icon name="check" [size]="20" /></span>
@@ -122,9 +133,7 @@
           <app-icon name="info" [size]="18" />
           <p>
             Nhân viên đã nhận
-            {{
-              s.deposit.collected.method === 'CASH' ? 'tiền mặt trực tiếp' : 'tiền chuyển khoản'
-            }}
+            {{ s.deposit.collected.method === 'CASH' ? 'tiền mặt trực tiếp' : 'tiền chuyển khoản' }}
             từ khách hàng. Khoản tiền được ghi nhận khi lập hồ sơ cọc.
           </p>
         </div>

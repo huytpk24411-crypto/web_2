@@ -171,6 +171,8 @@ export class PayrollAPIService {
   periodView(code: string) {
     const period = this.state().periods.find((p) => p.code === code);
     const report = this.state().reports[code];
+    const ranked = report?.payrollTopEmployees ?? report?.topEmployees ?? [];
+    const payrollRevenue = report?.payrollRevenue ?? report?.revenue ?? 0;
     return {
       id: code,
       periodId: period?.id || '',
@@ -178,7 +180,9 @@ export class PayrollAPIService {
       status: period?.status || 'OPEN',
       closedAt: period?.closedAt || null,
       paidAt: period?.paidAt || null,
-      revenue: report?.revenue || 0,
+      revenue: payrollRevenue,
+      companyRevenue: report?.revenue || 0,
+      carriedRevenue: report?.carriedPayrollRevenue || 0,
       commission: report?.commission || 0,
       salary: (report?.baseSalary || 0) + (report?.bonus || 0),
       fine: report?.deductions || 0,
@@ -186,14 +190,14 @@ export class PayrollAPIService {
       growth: null,
       shiftCount: report?.shiftCount || 0,
       lateCount: report?.lateCount || 0,
-      leader1: report?.topEmployees[0]?.name || '—',
-      leader2: report?.topEmployees[1]?.name || '—',
-      team1: report?.topEmployees[0]?.revenue || 0,
-      team2: report?.topEmployees[1]?.revenue || 0,
-      count1: report?.topEmployees[0]?.contractCount || 0,
-      count2: report?.topEmployees[1]?.contractCount || 0,
-      target1: report?.revenue || 1,
-      target2: report?.revenue || 1,
+      leader1: ranked[0]?.name || '—',
+      leader2: ranked[1]?.name || '—',
+      team1: ranked[0]?.revenue || 0,
+      team2: ranked[1]?.revenue || 0,
+      count1: ranked[0]?.contractCount || 0,
+      count2: ranked[1]?.contractCount || 0,
+      target1: payrollRevenue || 1,
+      target2: payrollRevenue || 1,
     };
   }
 }

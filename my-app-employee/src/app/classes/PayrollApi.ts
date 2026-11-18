@@ -28,6 +28,9 @@ export interface ApiPolicy {
   levels: ApiPolicyLevel[];
 }
 export interface ApiPayrollTransaction {
+  recognitionMonth?: string;
+  payrollMonth?: string;
+  carriedFromMonth?: string | null;
   id: string;
   contractId: string;
   room: string;

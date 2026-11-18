@@ -117,7 +117,13 @@
             <tbody>
               <tr *ngFor="let row of payroll.transactions(slip)">
                 <td>{{ row.id }}</td>
-                <td>{{ row.customer }} · {{ row.room }}</td>
+                <td>
+                  {{ row.customer }} · {{ row.room }}
+                  <small *ngIf="row.carriedFromMonth">
+                    · Chuyển từ tháng {{ row.carriedFromMonth }} sang kỳ
+                    {{ row.payrollMonth }}</small
+                  >
+                </td>
                 <td>{{ row.status === 'RECOGNIZED' ? 'Đã ghi nhận' : row.status }}</td>
                 <td class="emp-number">{{ row.amount | number }} đ</td>
                 <td class="emp-number">{{ slip.commissionRate * 100 }}%</td>

@@ -14,6 +14,8 @@ function createDepositService(dependencies) {
       CONTRACT_NOT_SIGNED: "Hợp đồng chưa ký.",
       ALREADY_DECIDED: "Hợp đồng này đã được xác nhận.",
       PAYROLL_CLOSED: "Kỳ lương tháng này đã đóng, không ghi được doanh thu.",
+      PAYROLL_NEXT_CLOSED:
+        "Kỳ lương tháng kế tiếp cũng đã đóng hoặc đã trả. Vui lòng liên hệ admin để xử lý kỳ nhận khoản chuyển sang.",
       PAYMENT_GATEWAY_ERROR:
         "Không kết nối được cổng thanh toán. Vui lòng thử lại.",
       INVALID_DRAFT: "Nháp không hợp lệ.",
@@ -798,8 +800,20 @@ function createDepositService(dependencies) {
     ).toArray();
     p3Assert(agreements.length === 1, "AGREEMENT_NOT_CONFIGURED");
     const agreement = agreements[0],
-      period = await p3Period(plan, now),
-      company = await p3CompanyRevenue(plan, period);
+      recognitionMonth = p3Month(now),
+      companyPeriod = await p3Period(plan, now, true);
+    let period = companyPeriod;
+    if (["CLOSED", "PAID"].includes(companyPeriod.status)) {
+      const nextMonth = dependencies.p5MonthBounds(recognitionMonth).end;
+      period = await p3Period(plan, nextMonth, true);
+      p3Assert(
+        !["CLOSED", "PAID"].includes(period.status),
+        "PAYROLL_NEXT_CLOSED",
+      );
+    }
+    // Company revenue stays in the actual collection month. Only the employee
+    // commission basis is carried to next month's mutable payroll period.
+    const company = await p3CompanyRevenue(plan, companyPeriod);
     let employee = await dependencies.p3Collections.EmployeeRevenue.findOne({
       employeeId: deposit.employeeId,
       periodId: period.id,
@@ -833,7 +847,11 @@ function createDepositService(dependencies) {
       holdCredit: deposit.holdCredit,
       total: deposit.totalRequired,
       recognizedAt: now,
-      recognitionMonth: p3Month(now),
+      recognitionMonth,
+      payrollMonth: period.code,
+      payrollPeriodId: period.id,
+      carriedFromMonth:
+        period.id === companyPeriod.id ? null : recognitionMonth,
       status: "RECOGNIZED",
       outcome: "PENDING",
       employeeId: deposit.employeeId,
@@ -862,6 +880,8 @@ function createDepositService(dependencies) {
       brokerageTransactionId: transaction.id,
       roomSnapshot: transaction.roomSnapshot,
       agreementSnapshot: transaction.agreementSnapshot,
+      recognitionMonth,
+      payrollMonth: period.code,
     });
     await p3Create(plan, "BrokerageTransaction", transaction);
     plan.effects.push({

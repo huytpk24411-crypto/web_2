@@ -426,6 +426,9 @@ function registerDepositRoutes(dependencies) {
             dependencies.p3StatusLabels.Deposit[deposit.status] ||
             deposit.status,
           createdAt: deposit.createdAt,
+          recognitionMonth:
+            deposit.recognitionMonth || transaction?.recognitionMonth,
+          payrollMonth: deposit.payrollMonth || transaction?.payrollMonth,
           totalRequired: deposit.totalRequired,
           holdCredit: deposit.holdCredit ?? 0,
           amountDue: deposit.amountDue,

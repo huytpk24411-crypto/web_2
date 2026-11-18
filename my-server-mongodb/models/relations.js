@@ -91,6 +91,7 @@ ref("BrokerageTransaction", "agreementId", "BrokerageAgreement", {
 });
 ref("BrokerageTransaction", "employeeRevenueId", "EmployeeRevenue");
 ref("BrokerageTransaction", "companyRevenueId", "CompanyRevenue");
+ref("BrokerageTransaction", "payrollPeriodId", "PayrollPeriod");
 ref("BrokerageTransaction", "employeeId", "Employee");
 ref("BrokerageTransaction", "customerId", "Customer");
 ref("BrokerageTransaction", "roomId", "Room", { historical: true });

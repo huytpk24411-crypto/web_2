@@ -5,8 +5,8 @@
       <span class="finance-badge">{{ period.periodId ? period.status : 'Chưa có kỳ lương' }}</span>
       <p>Kỳ lương trên hệ thống · {{ period.label }}</p>
       <p>
-        Tháng chưa có kỳ sẽ được mở tự động khi ghi nhận doanh thu. Kỳ đã chốt hoặc đã trả được giữ
-        nguyên.
+        Tháng chưa có kỳ sẽ được mở tự động. Khi kỳ hiện tại đã chốt hoặc đã trả, doanh thu tính
+        lương mới được cộng sang kỳ tháng sau. Doanh thu công ty ghi đúng tháng thực thu.
       </p>
     </div>
     <div class="finance-actions">
@@ -66,11 +66,14 @@
   <section class="finance-stats" aria-label="Tổng quan lương và doanh thu">
     <article class="finance-stat">
       <span class="finance-icon stat-icon"><app-icon name="wallet" /></span
-      ><span class="stat-label">TỔNG DOANH THU</span
+      ><span class="stat-label">DOANH THU TÍNH LƯƠNG</span
       ><strong class="stat-value finance-blue"
         >{{ period.revenue | number: '1.0-0' : 'vi' }} đ</strong
       >
-      <p>Doanh thu môi giới đã ghi nhận trong kỳ</p>
+      <p>Công ty thực thu trong tháng: {{ period.companyRevenue | number }} đ</p>
+      <p *ngIf="period.carriedRevenue">
+        Gồm {{ period.carriedRevenue | number }} đ chuyển từ kỳ trước
+      </p>
     </article>
     <article class="finance-stat">
       <span class="finance-icon amber stat-icon"><app-icon name="star" /></span
@@ -470,6 +473,9 @@
           <dd>
             <p *ngFor="let t of selectedSlip?.transactions">
               {{ t.id }} · {{ t.room }} · {{ t.amount | number }} đ
+              <small *ngIf="t.carriedFromMonth">
+                · Chuyển từ tháng {{ t.carriedFromMonth }} sang kỳ {{ t.payrollMonth }}</small
+              >
             </p>
           </dd>
           <dt>Điều chỉnh và phạt trễ</dt>

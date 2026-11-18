@@ -29,6 +29,40 @@ describe('P5 payroll transport and isolation', () => {
     await Promise.resolve();
   });
   afterEach(() => http.verify());
+  it('uses payroll-month revenue for salaries while keeping actual company revenue separate', () => {
+    const report = {
+      month: '2026-12',
+      revenue: 1000000,
+      payrollRevenue: 3100000,
+      carriedPayrollRevenue: 2100000,
+      contractCount: 1,
+      commission: 620000,
+      baseSalary: 5000000,
+      bonus: 0,
+      deductions: 0,
+      netPay: 5620000,
+      shiftCount: 0,
+      lateCount: 0,
+      topEmployees: [
+        { employeeId: 'other', name: 'Doanh thu thực thu', revenue: 1000000, contractCount: 1 },
+      ],
+      payrollTopEmployees: [
+        {
+          employeeId: 'employee',
+          name: 'Nhân viên có khoản chuyển',
+          revenue: 3100000,
+          contractCount: 2,
+        },
+      ],
+    };
+    vi.spyOn(api, 'state').mockReturnValue({ ...api.state(), reports: { '2026-12': report } });
+    const period = api.periodView('2026-12');
+    expect(period.revenue).toBe(3100000);
+    expect(period.companyRevenue).toBe(1000000);
+    expect(period.carriedRevenue).toBe(2100000);
+    expect(period.leader1).toBe('Nhân viên có khoản chuyển');
+    expect(period.team1).toBe(3100000);
+  });
   it('reports connection errors and keeps rejected reads empty', async () => {
     const unavailable = api.refresh();
     http.expectOne('/data/me/payroll-periods').error(new ProgressEvent('error'));
