@@ -69,11 +69,6 @@
               },
               {
                 "glob": "*",
-                "input": "public/assets/people",
-                "output": "/assets/"
-              },
-              {
-                "glob": "*",
                 "input": "public/assets/placeholders",
                 "output": "/assets/"
               },

@@ -27,12 +27,8 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/mcp.json
+.vscode/
+*.code-workspace
 .history/*
 
 # Miscellaneous
@@ -49,7 +45,7 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
-# Browser test artifacts (screenshots for review are in docs/screenshots)
+# Browser test artifacts
 playwright-report/
 test-results/
 test-results-*/
